@@ -74,11 +74,11 @@ public class PBXTargetDependency extends PBXObject {
 		setStringValue(NAME_KEY, value);
 	}
 
-	public PBXObjectRef<PBXContainerItemProxy> getTarget() {
-		return (PBXObjectRef<PBXContainerItemProxy>) getPBXObjectRefValue(TARGET_KEY);
+	public PBXObjectRef<PBXNativeTarget> getTarget() {
+		return (PBXObjectRef<PBXNativeTarget>) getPBXObjectRefValue(TARGET_KEY);
 	}
 
-	public void setTarget(PBXObjectRef<PBXContainerItemProxy> value) {
+	public void setTarget(PBXObjectRef<PBXNativeTarget> value) {
 		setPBXObjectRefValue(TARGET_KEY, value);
 	}
 
