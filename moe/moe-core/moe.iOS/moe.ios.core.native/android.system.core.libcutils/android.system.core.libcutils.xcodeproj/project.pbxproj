@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		237439F7187AEB3200325A0A /* malloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 237439F6187AEB3200325A0A /* malloc.c */; };
+		D97202AE183BE3DE00078841 /* atomic.c in Sources */ = {isa = PBXBuildFile; fileRef = D972028B183BE3DE00078841 /* atomic.c */; };
+		D97202AF183BE3DE00078841 /* config_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = D972028C183BE3DE00078841 /* config_utils.c */; };
+		D97202B2183BE3DE00078841 /* fs.c in Sources */ = {isa = PBXBuildFile; fileRef = D972028F183BE3DE00078841 /* fs.c */; };
+		D97202B3183BE3DE00078841 /* hashmap.c in Sources */ = {isa = PBXBuildFile; fileRef = D9720290183BE3DE00078841 /* hashmap.c */; };
+		D97202B4183BE3DE00078841 /* iosched_policy.c in Sources */ = {isa = PBXBuildFile; fileRef = D9720291183BE3DE00078841 /* iosched_policy.c */; };
+		D97202B7183BE3DE00078841 /* load_file.c in Sources */ = {isa = PBXBuildFile; fileRef = D9720294183BE3DE00078841 /* load_file.c */; };
+		D97202B9183BE3DE00078841 /* multiuser.c in Sources */ = {isa = PBXBuildFile; fileRef = D9720296183BE3DE00078841 /* multiuser.c */; };
+		D97202BA183BE3DE00078841 /* native_handle.c in Sources */ = {isa = PBXBuildFile; fileRef = D9720297183BE3DE00078841 /* native_handle.c */; };
+		D97202BB183BE3DE00078841 /* open_memstream.c in Sources */ = {isa = PBXBuildFile; fileRef = D9720298183BE3DE00078841 /* open_memstream.c */; };
+		D97202BD183BE3DE00078841 /* process_name.c in Sources */ = {isa = PBXBuildFile; fileRef = D972029A183BE3DE00078841 /* process_name.c */; };
+		D97202C0183BE3DE00078841 /* record_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = D972029D183BE3DE00078841 /* record_stream.c */; };
+		D97202C1183BE3DE00078841 /* sched_policy.c in Sources */ = {isa = PBXBuildFile; fileRef = D972029E183BE3DE00078841 /* sched_policy.c */; };
+		D97202C2183BE3DE00078841 /* socket_inaddr_any_server.c in Sources */ = {isa = PBXBuildFile; fileRef = D972029F183BE3DE00078841 /* socket_inaddr_any_server.c */; };
+		D97202C3183BE3DE00078841 /* socket_local_client.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202A0183BE3DE00078841 /* socket_local_client.c */; };
+		D97202C4183BE3DE00078841 /* socket_local_server.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202A1183BE3DE00078841 /* socket_local_server.c */; };
+		D97202C5183BE3DE00078841 /* socket_loopback_client.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202A2183BE3DE00078841 /* socket_loopback_client.c */; };
+		D97202C6183BE3DE00078841 /* socket_loopback_server.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202A3183BE3DE00078841 /* socket_loopback_server.c */; };
+		D97202C7183BE3DE00078841 /* socket_network_client.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202A4183BE3DE00078841 /* socket_network_client.c */; };
+		D97202C8183BE3DE00078841 /* sockets.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202A5183BE3DE00078841 /* sockets.c */; };
+		D97202C9183BE3DE00078841 /* str_parms.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202A6183BE3DE00078841 /* str_parms.c */; };
+		D97202CA183BE3DE00078841 /* strdup8to16.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202A7183BE3DE00078841 /* strdup8to16.c */; };
+		D97202CB183BE3DE00078841 /* strdup16to8.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202A8183BE3DE00078841 /* strdup16to8.c */; };
+		D97202CC183BE3DE00078841 /* threads.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202A9183BE3DE00078841 /* threads.c */; };
+		D97202D1183BF21900078841 /* ashmem-host.c in Sources */ = {isa = PBXBuildFile; fileRef = D97202D0183BF21900078841 /* ashmem-host.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2350E7BE18DA17BD00285E6C /* AndroidConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AndroidConfig.h; sourceTree = "<group>"; };
+		2353A60C17CE1AE5005CF3CC /* liblibcutils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibcutils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		237439F6187AEB3200325A0A /* malloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = malloc.c; sourceTree = "<group>"; };
+		23844E2C19E2A907000DFC86 /* LibCUtils-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LibCUtils-Prefix.pch"; sourceTree = "<group>"; };
+		2395DA6E1877109700950DD5 /* MOE-Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Common.h"; sourceTree = "<group>"; };
+		23A22F70187594F00060BF79 /* MOE-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MOE-Prefix.pch"; sourceTree = "<group>"; };
+		D972028B183BE3DE00078841 /* atomic.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = atomic.c; sourceTree = "<group>"; };
+		D972028C183BE3DE00078841 /* config_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = config_utils.c; sourceTree = "<group>"; };
+		D972028F183BE3DE00078841 /* fs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fs.c; sourceTree = "<group>"; };
+		D9720290183BE3DE00078841 /* hashmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hashmap.c; sourceTree = "<group>"; };
+		D9720291183BE3DE00078841 /* iosched_policy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iosched_policy.c; sourceTree = "<group>"; };
+		D9720294183BE3DE00078841 /* load_file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = load_file.c; sourceTree = "<group>"; };
+		D9720296183BE3DE00078841 /* multiuser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = multiuser.c; sourceTree = "<group>"; };
+		D9720297183BE3DE00078841 /* native_handle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = native_handle.c; sourceTree = "<group>"; };
+		D9720298183BE3DE00078841 /* open_memstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = open_memstream.c; sourceTree = "<group>"; };
+		D972029A183BE3DE00078841 /* process_name.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = process_name.c; sourceTree = "<group>"; };
+		D972029D183BE3DE00078841 /* record_stream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = record_stream.c; sourceTree = "<group>"; };
+		D972029E183BE3DE00078841 /* sched_policy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sched_policy.c; sourceTree = "<group>"; };
+		D972029F183BE3DE00078841 /* socket_inaddr_any_server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = socket_inaddr_any_server.c; sourceTree = "<group>"; };
+		D97202A0183BE3DE00078841 /* socket_local_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = socket_local_client.c; sourceTree = "<group>"; };
+		D97202A1183BE3DE00078841 /* socket_local_server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = socket_local_server.c; sourceTree = "<group>"; };
+		D97202A2183BE3DE00078841 /* socket_loopback_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = socket_loopback_client.c; sourceTree = "<group>"; };
+		D97202A3183BE3DE00078841 /* socket_loopback_server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = socket_loopback_server.c; sourceTree = "<group>"; };
+		D97202A4183BE3DE00078841 /* socket_network_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = socket_network_client.c; sourceTree = "<group>"; };
+		D97202A5183BE3DE00078841 /* sockets.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sockets.c; sourceTree = "<group>"; };
+		D97202A6183BE3DE00078841 /* str_parms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = str_parms.c; sourceTree = "<group>"; };
+		D97202A7183BE3DE00078841 /* strdup8to16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strdup8to16.c; sourceTree = "<group>"; };
+		D97202A8183BE3DE00078841 /* strdup16to8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strdup16to8.c; sourceTree = "<group>"; };
+		D97202A9183BE3DE00078841 /* threads.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = threads.c; sourceTree = "<group>"; };
+		D97202D0183BF21900078841 /* ashmem-host.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ashmem-host.c"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2353A60917CE1AE5005CF3CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2353A5EE17CE19B5005CF3CC = {
+			isa = PBXGroup;
+			children = (
+				D9A0F132183A94F500523C62 /* Android Root */,
+				23844E2B19E2A8EB000DFC86 /* Supporting Files */,
+				2353A83917CE26CD005CF3CC /* Common Configuration */,
+				2353A5FA17CE1AD7005CF3CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2353A5FA17CE1AD7005CF3CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2353A60C17CE1AE5005CF3CC /* liblibcutils.a */,
+			);
+			name = Products;
+			path = MOE;
+			sourceTree = "<group>";
+		};
+		2353A60E17CE1AE5005CF3CC /* libcutils */ = {
+			isa = PBXGroup;
+			children = (
+				237439F5187AEB0F00325A0A /* dlmalloc */,
+				D97202D0183BF21900078841 /* ashmem-host.c */,
+				D972028B183BE3DE00078841 /* atomic.c */,
+				D972028C183BE3DE00078841 /* config_utils.c */,
+				D972028F183BE3DE00078841 /* fs.c */,
+				D9720290183BE3DE00078841 /* hashmap.c */,
+				D9720291183BE3DE00078841 /* iosched_policy.c */,
+				D9720294183BE3DE00078841 /* load_file.c */,
+				D9720296183BE3DE00078841 /* multiuser.c */,
+				D9720297183BE3DE00078841 /* native_handle.c */,
+				D9720298183BE3DE00078841 /* open_memstream.c */,
+				D972029A183BE3DE00078841 /* process_name.c */,
+				D972029D183BE3DE00078841 /* record_stream.c */,
+				D972029E183BE3DE00078841 /* sched_policy.c */,
+				D972029F183BE3DE00078841 /* socket_inaddr_any_server.c */,
+				D97202A0183BE3DE00078841 /* socket_local_client.c */,
+				D97202A1183BE3DE00078841 /* socket_local_server.c */,
+				D97202A2183BE3DE00078841 /* socket_loopback_client.c */,
+				D97202A3183BE3DE00078841 /* socket_loopback_server.c */,
+				D97202A4183BE3DE00078841 /* socket_network_client.c */,
+				D97202A5183BE3DE00078841 /* sockets.c */,
+				D97202A6183BE3DE00078841 /* str_parms.c */,
+				D97202A7183BE3DE00078841 /* strdup8to16.c */,
+				D97202A8183BE3DE00078841 /* strdup16to8.c */,
+				D97202A9183BE3DE00078841 /* threads.c */,
+			);
+			path = libcutils;
+			sourceTree = "<group>";
+		};
+		2353A83917CE26CD005CF3CC /* Common Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				2350E7BE18DA17BD00285E6C /* AndroidConfig.h */,
+				2395DA6E1877109700950DD5 /* MOE-Common.h */,
+				23A22F70187594F00060BF79 /* MOE-Prefix.pch */,
+			);
+			name = "Common Configuration";
+			path = ../moe.base/src/main/native;
+			sourceTree = "<group>";
+		};
+		237439F5187AEB0F00325A0A /* dlmalloc */ = {
+			isa = PBXGroup;
+			children = (
+				237439F6187AEB3200325A0A /* malloc.c */,
+			);
+			name = dlmalloc;
+			path = "../../../bionic/libc/upstream-dlmalloc";
+			sourceTree = "<group>";
+		};
+		23844E2B19E2A8EB000DFC86 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				23844E2C19E2A907000DFC86 /* LibCUtils-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = src/main/native;
+			sourceTree = "<group>";
+		};
+		23F4C1B718CDCE5000EF5181 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				23F4C1B818CDCEB000EF5181 /* core */,
+			);
+			path = system;
+			sourceTree = "<group>";
+		};
+		23F4C1B818CDCEB000EF5181 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				2353A60E17CE1AE5005CF3CC /* libcutils */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		D9A0F132183A94F500523C62 /* Android Root */ = {
+			isa = PBXGroup;
+			children = (
+				23F4C1B718CDCE5000EF5181 /* system */,
+			);
+			name = "Android Root";
+			path = ../../../../../aosp;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2353A60B17CE1AE5005CF3CC /* libcutils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2353A61517CE1AE5005CF3CC /* Build configuration list for PBXNativeTarget "libcutils" */;
+			buildPhases = (
+				2353A60817CE1AE5005CF3CC /* Sources */,
+				2353A60917CE1AE5005CF3CC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libcutils;
+			productName = cutils;
+			productReference = 2353A60C17CE1AE5005CF3CC /* liblibcutils.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2353A5EF17CE19B5005CF3CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = 2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.system.core.libcutils" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2353A5EE17CE19B5005CF3CC;
+			productRefGroup = 2353A5FA17CE1AD7005CF3CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2353A60B17CE1AE5005CF3CC /* libcutils */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2353A60817CE1AE5005CF3CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D97202BD183BE3DE00078841 /* process_name.c in Sources */,
+				D97202C6183BE3DE00078841 /* socket_loopback_server.c in Sources */,
+				D97202CB183BE3DE00078841 /* strdup16to8.c in Sources */,
+				D97202C4183BE3DE00078841 /* socket_local_server.c in Sources */,
+				D97202B2183BE3DE00078841 /* fs.c in Sources */,
+				237439F7187AEB3200325A0A /* malloc.c in Sources */,
+				D97202BA183BE3DE00078841 /* native_handle.c in Sources */,
+				D97202D1183BF21900078841 /* ashmem-host.c in Sources */,
+				D97202B7183BE3DE00078841 /* load_file.c in Sources */,
+				D97202C2183BE3DE00078841 /* socket_inaddr_any_server.c in Sources */,
+				D97202AF183BE3DE00078841 /* config_utils.c in Sources */,
+				D97202B3183BE3DE00078841 /* hashmap.c in Sources */,
+				D97202B4183BE3DE00078841 /* iosched_policy.c in Sources */,
+				D97202C5183BE3DE00078841 /* socket_loopback_client.c in Sources */,
+				D97202CA183BE3DE00078841 /* strdup8to16.c in Sources */,
+				D97202CC183BE3DE00078841 /* threads.c in Sources */,
+				D97202C8183BE3DE00078841 /* sockets.c in Sources */,
+				D97202BB183BE3DE00078841 /* open_memstream.c in Sources */,
+				D97202C7183BE3DE00078841 /* socket_network_client.c in Sources */,
+				D97202C1183BE3DE00078841 /* sched_policy.c in Sources */,
+				D97202B9183BE3DE00078841 /* multiuser.c in Sources */,
+				D97202AE183BE3DE00078841 /* atomic.c in Sources */,
+				D97202C9183BE3DE00078841 /* str_parms.c in Sources */,
+				D97202C0183BE3DE00078841 /* record_stream.c in Sources */,
+				D97202C3183BE3DE00078841 /* socket_local_client.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2353A5F317CE19B5005CF3CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					"DEBUG=1",
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_DEPENDENCY_INFO_FILE = "../../build/common/native/xcode/$(PRODUCT_NAME)_dependency_info.dat";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = Debug;
+		};
+		2353A5F417CE19B5005CF3CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					NDEBUG,
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_DEPENDENCY_INFO_FILE = "../../build/common/native/xcode/$(PRODUCT_NAME)_dependency_info.dat";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = Release;
+		};
+		2353A61617CE1AE5005CF3CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/cutils.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/src/main/native/LibCUtils-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/bionic/libc/kernel/common\"",
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2353A61717CE1AE5005CF3CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/cutils.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/src/main/native/LibCUtils-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/bionic/libc/kernel/common\"",
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.system.core.libcutils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2353A5F317CE19B5005CF3CC /* Debug */,
+				2353A5F417CE19B5005CF3CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2353A61517CE1AE5005CF3CC /* Build configuration list for PBXNativeTarget "libcutils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2353A61617CE1AE5005CF3CC /* Debug */,
+				2353A61717CE1AE5005CF3CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2353A5EF17CE19B5005CF3CC /* Project object */;
+}

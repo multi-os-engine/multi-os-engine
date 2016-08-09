@@ -1,0 +1,113 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+package ios.avkit.protocol;
+
+
+import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
+import org.moe.natj.objc.ann.ObjCProtocolName;
+import org.moe.natj.objc.ann.Selector;
+
+import ios.avkit.AVPictureInPictureController;
+import ios.foundation.NSError;
+
+@Generated
+@Library("AVKit")
+@Runtime(ObjCRuntime.class)
+@ObjCProtocolName("AVPictureInPictureControllerDelegate")
+public interface AVPictureInPictureControllerDelegate {
+	@Generated
+	@IsOptional
+	@Selector("pictureInPictureController:failedToStartPictureInPictureWithError:")
+	default void pictureInPictureControllerFailedToStartPictureInPictureWithError(
+			AVPictureInPictureController pictureInPictureController, NSError error) {
+		throw new java.lang.UnsupportedOperationException();
+	}
+
+	/**
+	 * pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:">iOS Dev Center</a>
+	 */
+	@Generated
+	@IsOptional
+	@Selector("pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:")
+	default void pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
+			AVPictureInPictureController pictureInPictureController,
+			@ObjCBlock(name = "call_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler") Block_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler) {
+		throw new java.lang.UnsupportedOperationException();
+	}
+
+	@Runtime(ObjCRuntime.class)
+	@Generated
+    public interface Block_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler {
+		@Generated
+        void call_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
+				boolean arg0);
+	}
+
+	/**
+	 * pictureInPictureControllerDidStartPictureInPicture:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureControllerDidStartPictureInPicture:">iOS Dev Center</a>
+	 */
+	@Generated
+	@IsOptional
+	@Selector("pictureInPictureControllerDidStartPictureInPicture:")
+	default void pictureInPictureControllerDidStartPictureInPicture(
+			AVPictureInPictureController pictureInPictureController) {
+		throw new java.lang.UnsupportedOperationException();
+	}
+
+	/**
+	 * pictureInPictureControllerDidStopPictureInPicture:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureControllerDidStopPictureInPicture:">iOS Dev Center</a>
+	 */
+	@Generated
+	@IsOptional
+	@Selector("pictureInPictureControllerDidStopPictureInPicture:")
+	default void pictureInPictureControllerDidStopPictureInPicture(
+			AVPictureInPictureController pictureInPictureController) {
+		throw new java.lang.UnsupportedOperationException();
+	}
+
+	/**
+	 * pictureInPictureControllerWillStartPictureInPicture:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureControllerWillStartPictureInPicture:">iOS Dev Center</a>
+	 */
+	@Generated
+	@IsOptional
+	@Selector("pictureInPictureControllerWillStartPictureInPicture:")
+	default void pictureInPictureControllerWillStartPictureInPicture(
+			AVPictureInPictureController pictureInPictureController) {
+		throw new java.lang.UnsupportedOperationException();
+	}
+
+	/**
+	 * pictureInPictureControllerWillStopPictureInPicture:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureControllerWillStopPictureInPicture:">iOS Dev Center</a>
+	 */
+	@Generated
+	@IsOptional
+	@Selector("pictureInPictureControllerWillStopPictureInPicture:")
+	default void pictureInPictureControllerWillStopPictureInPicture(
+			AVPictureInPictureController pictureInPictureController) {
+		throw new java.lang.UnsupportedOperationException();
+	}
+}

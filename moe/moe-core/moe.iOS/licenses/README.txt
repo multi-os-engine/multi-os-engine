@@ -1,0 +1,1 @@
+This folder contains the licenses for the 3rd party components used in the Intel Multi-OS Engine.

@@ -1,0 +1,302 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+package ios.mapkit;
+
+
+import org.moe.natj.general.NatJ;
+import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
+import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
+import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
+
+import ios.NSObject;
+import ios.coregraphics.opaque.CGContextRef;
+import ios.coregraphics.struct.CGPoint;
+import ios.coregraphics.struct.CGRect;
+import ios.mapkit.struct.MKMapPoint;
+import ios.mapkit.struct.MKMapRect;
+import ios.mapkit.protocol.MKOverlay;
+import org.moe.natj.c.ann.FunctionPtr;
+import org.moe.natj.general.ann.NInt;
+import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ptr.VoidPtr;
+import org.moe.natj.objc.Class;
+import org.moe.natj.objc.SEL;
+import ios.foundation.NSArray;
+import ios.foundation.NSMethodSignature;
+import ios.foundation.NSSet;
+
+@Generated
+@Library("MapKit")
+@Runtime(ObjCRuntime.class)
+@ObjCClassBinding
+public class MKOverlayRenderer extends NSObject {
+	static {
+		NatJ.register();
+	}
+
+	@Generated
+	protected MKOverlayRenderer(Pointer peer) {
+		super(peer);
+	}
+
+	@Generated
+	@Owned
+	@Selector("alloc")
+	public static native MKOverlayRenderer alloc();
+
+	/**
+	 * alpha</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instp/MKOverlayRenderer/alpha">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("alpha")
+	@NFloat
+	public native double alpha();
+
+	/**
+	 * canDrawMapRect:zoomScale:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/canDrawMapRect:zoomScale:">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("canDrawMapRect:zoomScale:")
+	public native boolean canDrawMapRectZoomScale(@ByValue MKMapRect mapRect,
+			@NFloat double zoomScale);
+
+	/**
+	 * contentScaleFactor</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instp/MKOverlayRenderer/contentScaleFactor">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("contentScaleFactor")
+	@NFloat
+	public native double contentScaleFactor();
+
+	/**
+	 * drawMapRect:zoomScale:inContext:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/drawMapRect:zoomScale:inContext:">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("drawMapRect:zoomScale:inContext:")
+	public native void drawMapRectZoomScaleInContext(
+			@ByValue MKMapRect mapRect, @NFloat double zoomScale,
+			CGContextRef context);
+
+	@Generated
+	@Selector("init")
+	public native MKOverlayRenderer init();
+
+	/**
+	 * initWithOverlay:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/initWithOverlay:">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("initWithOverlay:")
+	public native MKOverlayRenderer initWithOverlay(
+			@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
+
+	/**
+	 * mapPointForPoint:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/mapPointForPoint:">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("mapPointForPoint:")
+	@ByValue
+	public native MKMapPoint mapPointForPoint(@ByValue CGPoint point);
+
+	/**
+	 * mapRectForRect:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/mapRectForRect:">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("mapRectForRect:")
+	@ByValue
+	public native MKMapRect mapRectForRect(@ByValue CGRect rect);
+
+	/**
+	 * overlay</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instp/MKOverlayRenderer/overlay">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("overlay")
+	@MappedReturn(ObjCObjectMapper.class)
+	public native MKOverlay overlay();
+
+	/**
+	 * pointForMapPoint:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/pointForMapPoint:">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("pointForMapPoint:")
+	@ByValue
+	public native CGPoint pointForMapPoint(@ByValue MKMapPoint mapPoint);
+
+	/**
+	 * rectForMapRect:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/rectForMapRect:">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("rectForMapRect:")
+	@ByValue
+	public native CGRect rectForMapRect(@ByValue MKMapRect mapRect);
+
+	/**
+	 * alpha</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instp/MKOverlayRenderer/alpha">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("setAlpha:")
+	public native void setAlpha(@NFloat double value);
+
+	/**
+	 * setNeedsDisplay</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/setNeedsDisplay">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("setNeedsDisplay")
+	public native void setNeedsDisplay();
+
+	/**
+	 * setNeedsDisplayInMapRect:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/setNeedsDisplayInMapRect:">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("setNeedsDisplayInMapRect:")
+	public native void setNeedsDisplayInMapRect(@ByValue MKMapRect mapRect);
+
+	/**
+	 * setNeedsDisplayInMapRect:zoomScale:</br>
+	Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayRenderer_class/index.html#//apple_ref/occ/instm/MKOverlayRenderer/setNeedsDisplayInMapRect:zoomScale:">iOS Dev Center</a>
+	 */
+	@Generated
+	@Selector("setNeedsDisplayInMapRect:zoomScale:")
+	public native void setNeedsDisplayInMapRectZoomScale(
+			@ByValue MKMapRect mapRect, @NFloat double zoomScale);
+
+	@Generated
+	@Selector("accessInstanceVariablesDirectly")
+	public static native boolean accessInstanceVariablesDirectly();
+
+	@Generated
+	@Selector("allocWithZone:")
+	@MappedReturn(ObjCObjectMapper.class)
+	public static native Object allocWithZone(VoidPtr zone);
+
+	@Generated
+	@Selector("automaticallyNotifiesObserversForKey:")
+	public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+	@Generated
+	@Selector("cancelPreviousPerformRequestsWithTarget:")
+	public static native void cancelPreviousPerformRequestsWithTarget(
+			@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+	@Generated
+	@Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+	public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+			@Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+			@Mapped(ObjCObjectMapper.class) Object anArgument);
+
+	@Generated
+	@Selector("classFallbacksForKeyedArchiver")
+	public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+	@Generated
+	@Selector("classForKeyedUnarchiver")
+	public static native Class classForKeyedUnarchiver();
+
+	@Generated
+	@Selector("debugDescription")
+	public static native String debugDescription_static();
+
+	@Generated
+	@Selector("description")
+	public static native String description_static();
+
+	@Generated
+	@Selector("hash")
+	@NUInt
+	public static native long hash_static();
+
+	@Generated
+	@Selector("initialize")
+	public static native void initialize();
+
+	@Generated
+	@Selector("instanceMethodForSelector:")
+	@FunctionPtr(name = "call_instanceMethodForSelector_ret")
+	public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(
+			SEL aSelector);
+
+	@Generated
+	@Selector("instanceMethodSignatureForSelector:")
+	public static native NSMethodSignature instanceMethodSignatureForSelector(
+			SEL aSelector);
+
+	@Generated
+	@Selector("instancesRespondToSelector:")
+	public static native boolean instancesRespondToSelector(SEL aSelector);
+
+	@Generated
+	@Selector("isSubclassOfClass:")
+	public static native boolean isSubclassOfClass(Class aClass);
+
+	@Generated
+	@Selector("keyPathsForValuesAffectingValueForKey:")
+	public static native NSSet<String> keyPathsForValuesAffectingValueForKey(
+			String key);
+
+	@Generated
+	@Selector("load")
+	public static native void load_objc();
+
+	@Generated
+	@Owned
+	@Selector("new")
+	@MappedReturn(ObjCObjectMapper.class)
+	public static native Object new_objc();
+
+	@Generated
+	@Selector("resolveClassMethod:")
+	public static native boolean resolveClassMethod(SEL sel);
+
+	@Generated
+	@Selector("resolveInstanceMethod:")
+	public static native boolean resolveInstanceMethod(SEL sel);
+
+	@Generated
+	@Selector("setVersion:")
+	public static native void setVersion(@NInt long aVersion);
+
+	@Generated
+	@Selector("superclass")
+	public static native Class superclass_static();
+
+	@Generated
+	@Selector("version")
+	@NInt
+	public static native long version();
+}

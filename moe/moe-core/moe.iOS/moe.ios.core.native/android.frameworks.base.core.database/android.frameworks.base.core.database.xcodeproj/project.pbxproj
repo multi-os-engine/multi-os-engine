@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		570D6FF31C0463D000F32C83 /* android_os_MemoryFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570D6FEC1C0463D000F32C83 /* android_os_MemoryFile.cpp */; };
+		570D6FF51C0463D000F32C83 /* android_os_Parcel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570D6FEE1C0463D000F32C83 /* android_os_Parcel.cpp */; };
+		570D6FF61C0463D000F32C83 /* android_os_SystemClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570D6FEF1C0463D000F32C83 /* android_os_SystemClock.cpp */; };
+		570D6FF81C0463D000F32C83 /* android_util_Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570D6FF11C0463D000F32C83 /* android_util_Log.cpp */; };
+		570D6FF91C0463D000F32C83 /* CursorWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570D6FF21C0463D000F32C83 /* CursorWindow.cpp */; };
+		5715ABB81CA12EA300BC315E /* android_os_Process.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5715ABB71CA12EA300BC315E /* android_os_Process.cpp */; };
+		5715ABBA1CA13D8D00BC315E /* android_os_MessageQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5715ABB91CA13D8D00BC315E /* android_os_MessageQueue.cpp */; };
+		5726C6C41C05B2DF004E2B92 /* liblibutils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5726C6C31C05B2DF004E2B92 /* liblibutils.a */; };
+		572ADC4F1C06FC150076E5FD /* Register.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 572ADC4E1C06FC150076E5FD /* Register.cpp */; };
+		5779F3A51BFF030B002DDC7C /* android_database_CursorWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5779F39F1BFF0288002DDC7C /* android_database_CursorWindow.cpp */; };
+		5779F3A61BFF030B002DDC7C /* android_database_SQLiteCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5779F3A01BFF0288002DDC7C /* android_database_SQLiteCommon.cpp */; };
+		5779F3A81BFF030B002DDC7C /* android_database_SQLiteConnection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5779F3A21BFF0288002DDC7C /* android_database_SQLiteConnection.cpp */; };
+		5779F3A91BFF030B002DDC7C /* android_database_SQLiteDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5779F3A31BFF0288002DDC7C /* android_database_SQLiteDebug.cpp */; };
+		5779F3AA1BFF030B002DDC7C /* android_database_SQLiteGlobal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5779F3A41BFF0288002DDC7C /* android_database_SQLiteGlobal.cpp */; };
+		57AFF9061C08549700A5CBCF /* libbinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF9051C08549700A5CBCF /* libbinder.a */; };
+		57AFF9081C08595600A5CBCF /* android_util_Binder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF9071C08595600A5CBCF /* android_util_Binder.cpp */; };
+		57F0FCF01C92B91C0040C97E /* android_content_ContextImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57F0FCEF1C92B91C0040C97E /* android_content_ContextImpl.cpp */; };
+		57F0FCF21C9305910040C97E /* android_content_res_AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57F0FCF11C9305910040C97E /* android_content_res_AssetManager.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2353A66C17CE1B21005CF3CC /* libdatabase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdatabase.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		238453BD19E2C2AA000DFC86 /* AndroidConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AndroidConfig.h; sourceTree = "<group>"; };
+		238453BE19E2C2AA000DFC86 /* MOE-Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Common.h"; sourceTree = "<group>"; };
+		570D6FEA1C04569700F32C83 /* Database-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Database-Prefix.pch"; sourceTree = "<group>"; };
+		570D6FEC1C0463D000F32C83 /* android_os_MemoryFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = android_os_MemoryFile.cpp; path = frameworks/base/core/jni/android_os_MemoryFile.cpp; sourceTree = "<group>"; };
+		570D6FEE1C0463D000F32C83 /* android_os_Parcel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = android_os_Parcel.cpp; path = frameworks/base/core/jni/android_os_Parcel.cpp; sourceTree = "<group>"; };
+		570D6FEF1C0463D000F32C83 /* android_os_SystemClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = android_os_SystemClock.cpp; path = frameworks/base/core/jni/android_os_SystemClock.cpp; sourceTree = "<group>"; };
+		570D6FF11C0463D000F32C83 /* android_util_Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = android_util_Log.cpp; path = frameworks/base/core/jni/android_util_Log.cpp; sourceTree = "<group>"; };
+		570D6FF21C0463D000F32C83 /* CursorWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CursorWindow.cpp; path = frameworks/base/core/jni/CursorWindow.cpp; sourceTree = "<group>"; };
+		5715ABB71CA12EA300BC315E /* android_os_Process.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = android_os_Process.cpp; path = frameworks/base/core/jni/android_os_Process.cpp; sourceTree = "<group>"; };
+		5715ABB91CA13D8D00BC315E /* android_os_MessageQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = android_os_MessageQueue.cpp; path = frameworks/base/core/jni/android_os_MessageQueue.cpp; sourceTree = "<group>"; };
+		5726C6C31C05B2DF004E2B92 /* liblibutils.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblibutils.a; path = "../android.system.core.libutils/build/xcode/Release-iphonesimulator/liblibutils.a"; sourceTree = "<group>"; };
+		572ADC4E1C06FC150076E5FD /* Register.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Register.cpp; path = "../moe/moe-core/moe.iOS/moe.ios.core.native/android.frameworks.base.core.database/src/main/native/Register.cpp"; sourceTree = "<group>"; };
+		5779F39F1BFF0288002DDC7C /* android_database_CursorWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = android_database_CursorWindow.cpp; path = frameworks/base/core/jni/android_database_CursorWindow.cpp; sourceTree = "<group>"; };
+		5779F3A01BFF0288002DDC7C /* android_database_SQLiteCommon.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = android_database_SQLiteCommon.cpp; path = frameworks/base/core/jni/android_database_SQLiteCommon.cpp; sourceTree = "<group>"; };
+		5779F3A21BFF0288002DDC7C /* android_database_SQLiteConnection.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = android_database_SQLiteConnection.cpp; path = frameworks/base/core/jni/android_database_SQLiteConnection.cpp; sourceTree = "<group>"; };
+		5779F3A31BFF0288002DDC7C /* android_database_SQLiteDebug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = android_database_SQLiteDebug.cpp; path = frameworks/base/core/jni/android_database_SQLiteDebug.cpp; sourceTree = "<group>"; };
+		5779F3A41BFF0288002DDC7C /* android_database_SQLiteGlobal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = android_database_SQLiteGlobal.cpp; path = frameworks/base/core/jni/android_database_SQLiteGlobal.cpp; sourceTree = "<group>"; };
+		57AFF9051C08549700A5CBCF /* libbinder.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbinder.a; path = "../android.frameworks.base.native.binder/build/xcode/Release-iphonesimulator/libbinder.a"; sourceTree = "<group>"; };
+		57AFF9071C08595600A5CBCF /* android_util_Binder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = android_util_Binder.cpp; path = frameworks/base/core/jni/android_util_Binder.cpp; sourceTree = "<group>"; };
+		57F0FCEF1C92B91C0040C97E /* android_content_ContextImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = android_content_ContextImpl.cpp; path = frameworks/base/core/jni/android_content_ContextImpl.cpp; sourceTree = "<group>"; };
+		57F0FCF11C9305910040C97E /* android_content_res_AssetManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = android_content_res_AssetManager.cpp; path = frameworks/base/core/jni/android_content_res_AssetManager.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2353A66917CE1B21005CF3CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57AFF9061C08549700A5CBCF /* libbinder.a in Frameworks */,
+				5726C6C41C05B2DF004E2B92 /* liblibutils.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2353A5EE17CE19B5005CF3CC = {
+			isa = PBXGroup;
+			children = (
+				57AFF9051C08549700A5CBCF /* libbinder.a */,
+				5726C6C31C05B2DF004E2B92 /* liblibutils.a */,
+				D9A0F132183A94F500523C62 /* Android KitKat Root */,
+				D94FEED4183AB17100589FCA /* Common Configuration */,
+				2353A5FA17CE1AD7005CF3CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2353A5FA17CE1AD7005CF3CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2353A66C17CE1B21005CF3CC /* libdatabase.a */,
+			);
+			name = Products;
+			path = MOE;
+			sourceTree = "<group>";
+		};
+		5779F39B1BFF01DC002DDC7C /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5779F39C1BFF01F4002DDC7C /* base */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+		5779F39C1BFF01F4002DDC7C /* base */ = {
+			isa = PBXGroup;
+			children = (
+				5779F39D1BFF0204002DDC7C /* core */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
+		5779F39D1BFF0204002DDC7C /* core */ = {
+			isa = PBXGroup;
+			children = (
+				5779F39E1BFF0218002DDC7C /* jni */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		5779F39E1BFF0218002DDC7C /* jni */ = {
+			isa = PBXGroup;
+			children = (
+				5715ABB91CA13D8D00BC315E /* android_os_MessageQueue.cpp */,
+				5715ABB71CA12EA300BC315E /* android_os_Process.cpp */,
+				57F0FCF11C9305910040C97E /* android_content_res_AssetManager.cpp */,
+				57F0FCEF1C92B91C0040C97E /* android_content_ContextImpl.cpp */,
+				570D6FEC1C0463D000F32C83 /* android_os_MemoryFile.cpp */,
+				570D6FEE1C0463D000F32C83 /* android_os_Parcel.cpp */,
+				570D6FEF1C0463D000F32C83 /* android_os_SystemClock.cpp */,
+				570D6FF11C0463D000F32C83 /* android_util_Log.cpp */,
+				570D6FF21C0463D000F32C83 /* CursorWindow.cpp */,
+				57AFF9071C08595600A5CBCF /* android_util_Binder.cpp */,
+				5779F39F1BFF0288002DDC7C /* android_database_CursorWindow.cpp */,
+				5779F3A01BFF0288002DDC7C /* android_database_SQLiteCommon.cpp */,
+				5779F3A21BFF0288002DDC7C /* android_database_SQLiteConnection.cpp */,
+				5779F3A31BFF0288002DDC7C /* android_database_SQLiteDebug.cpp */,
+				5779F3A41BFF0288002DDC7C /* android_database_SQLiteGlobal.cpp */,
+				572ADC4E1C06FC150076E5FD /* Register.cpp */,
+			);
+			name = jni;
+			sourceTree = "<group>";
+		};
+		D94FEED4183AB17100589FCA /* Common Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				570D6FEA1C04569700F32C83 /* Database-Prefix.pch */,
+				238453BD19E2C2AA000DFC86 /* AndroidConfig.h */,
+				238453BE19E2C2AA000DFC86 /* MOE-Common.h */,
+			);
+			name = "Common Configuration";
+			path = ../moe.base/src/main/native;
+			sourceTree = "<group>";
+		};
+		D9A0F132183A94F500523C62 /* Android KitKat Root */ = {
+			isa = PBXGroup;
+			children = (
+				5779F39B1BFF01DC002DDC7C /* frameworks */,
+			);
+			name = "Android KitKat Root";
+			path = ../../../../../aosp;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2353A66B17CE1B21005CF3CC /* database */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2353A67517CE1B21005CF3CC /* Build configuration list for PBXNativeTarget "database" */;
+			buildPhases = (
+				2353A66817CE1B21005CF3CC /* Sources */,
+				2353A66917CE1B21005CF3CC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = database;
+			productName = crypto;
+			productReference = 2353A66C17CE1B21005CF3CC /* libdatabase.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2353A5EF17CE19B5005CF3CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = 2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.frameworks.base.core.database" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2353A5EE17CE19B5005CF3CC;
+			productRefGroup = 2353A5FA17CE1AD7005CF3CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2353A66B17CE1B21005CF3CC /* database */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2353A66817CE1B21005CF3CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57F0FCF01C92B91C0040C97E /* android_content_ContextImpl.cpp in Sources */,
+				5715ABB81CA12EA300BC315E /* android_os_Process.cpp in Sources */,
+				57F0FCF21C9305910040C97E /* android_content_res_AssetManager.cpp in Sources */,
+				57AFF9081C08595600A5CBCF /* android_util_Binder.cpp in Sources */,
+				5779F3A51BFF030B002DDC7C /* android_database_CursorWindow.cpp in Sources */,
+				570D6FF61C0463D000F32C83 /* android_os_SystemClock.cpp in Sources */,
+				5779F3A61BFF030B002DDC7C /* android_database_SQLiteCommon.cpp in Sources */,
+				5715ABBA1CA13D8D00BC315E /* android_os_MessageQueue.cpp in Sources */,
+				570D6FF91C0463D000F32C83 /* CursorWindow.cpp in Sources */,
+				570D6FF31C0463D000F32C83 /* android_os_MemoryFile.cpp in Sources */,
+				5779F3A81BFF030B002DDC7C /* android_database_SQLiteConnection.cpp in Sources */,
+				5779F3A91BFF030B002DDC7C /* android_database_SQLiteDebug.cpp in Sources */,
+				570D6FF51C0463D000F32C83 /* android_os_Parcel.cpp in Sources */,
+				5779F3AA1BFF030B002DDC7C /* android_database_SQLiteGlobal.cpp in Sources */,
+				570D6FF81C0463D000F32C83 /* android_util_Log.cpp in Sources */,
+				572ADC4F1C06FC150076E5FD /* Register.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2353A5F317CE19B5005CF3CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					"DEBUG=1",
+					U_I18N_IMPLEMENTATION,
+					U_COMMON_IMPLEMENTATION,
+				);
+				HEADER_SEARCH_PATHS = "";
+				LD_DEPENDENCY_INFO_FILE = "../../build/common/native/xcode/$(PRODUCT_NAME)_dependency_info.dat";
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = Debug;
+		};
+		2353A5F417CE19B5005CF3CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					NDEBUG,
+					U_I18N_IMPLEMENTATION,
+					U_COMMON_IMPLEMENTATION,
+				);
+				HEADER_SEARCH_PATHS = "";
+				LD_DEPENDENCY_INFO_FILE = "../../build/common/native/xcode/$(PRODUCT_NAME)_dependency_info.dat";
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = Release;
+		};
+		2353A67617CE1B21005CF3CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DSTROOT = /tmp/crypto.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/src/main/native/Database-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					U_I18N_IMPLEMENTATION,
+					U_COMMON_IMPLEMENTATION,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/frameworks/base/core/jni\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+					"\"$(ANDROID_ROOT)/frameworks/base/include\"",
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+					"\"$(ANDROID_ROOT)/frameworks/base/native/include\"",
+					"\"$(ANDROID_ROOT)/external/sqlite/android\"",
+					"\"$(ANDROID_ROOT)/bionic/libc/kernel/uapi\"",
+					"\"$(ANDROID_ROOT)/bionic/libc/kernel/uapi/asm-x86\"",
+					"\"$(ANDROID_ROOT)/art/runtime\"",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../android.system.core.libutils/build/xcode/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					"$(SRCROOT)/../android.frameworks.base.native.binder/build/xcode/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2353A67717CE1B21005CF3CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DSTROOT = /tmp/crypto.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/src/main/native/Database-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/frameworks/base/core/jni\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+					"\"$(ANDROID_ROOT)/frameworks/base/include\"",
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+					"\"$(ANDROID_ROOT)/frameworks/base/native/include\"",
+					"\"$(ANDROID_ROOT)/external/sqlite/android\"",
+					"\"$(ANDROID_ROOT)/bionic/libc/kernel/uapi\"",
+					"\"$(ANDROID_ROOT)/bionic/libc/kernel/uapi/asm-x86\"",
+					"\"$(ANDROID_ROOT)/art/runtime\"",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../android.system.core.libutils/build/xcode/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					"$(SRCROOT)/../android.frameworks.base.native.binder/build/xcode/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.frameworks.base.core.database" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2353A5F317CE19B5005CF3CC /* Debug */,
+				2353A5F417CE19B5005CF3CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2353A67517CE1B21005CF3CC /* Build configuration list for PBXNativeTarget "database" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2353A67617CE1B21005CF3CC /* Debug */,
+				2353A67717CE1B21005CF3CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2353A5EF17CE19B5005CF3CC /* Project object */;
+}

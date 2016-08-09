@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2341FACE19E2FD0E00470D08 /* BacktraceMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341FAC419E2FD0E00470D08 /* BacktraceMap.cpp */; };
+		2341FAD119E2FD0E00470D08 /* thread_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 2341FAC719E2FD0E00470D08 /* thread_utils.c */; };
+		2341FAD319E2FD0E00470D08 /* UnwindCurrent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2341FAC919E2FD0E00470D08 /* UnwindCurrent.cpp */; };
+		237FAEB81BA9CF4900720738 /* Backtrace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 237FAEB71BA9CF4900720738 /* Backtrace.cpp */; settings = {ASSET_TAGS = (); }; };
+		23DEC3D51BA8563E00CEA6C3 /* BacktraceCurrent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DEC3D31BA8563E00CEA6C3 /* BacktraceCurrent.cpp */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2341FAC319E2FD0E00470D08 /* BacktraceLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BacktraceLog.h; sourceTree = "<group>"; };
+		2341FAC419E2FD0E00470D08 /* BacktraceMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BacktraceMap.cpp; sourceTree = "<group>"; };
+		2341FAC719E2FD0E00470D08 /* thread_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thread_utils.c; sourceTree = "<group>"; };
+		2341FAC819E2FD0E00470D08 /* thread_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thread_utils.h; sourceTree = "<group>"; };
+		2341FAC919E2FD0E00470D08 /* UnwindCurrent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnwindCurrent.cpp; sourceTree = "<group>"; };
+		2341FACA19E2FD0E00470D08 /* UnwindCurrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnwindCurrent.h; sourceTree = "<group>"; };
+		2350E7BE18DA17BD00285E6C /* AndroidConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AndroidConfig.h; sourceTree = "<group>"; };
+		237FAEB71BA9CF4900720738 /* Backtrace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Backtrace.cpp; sourceTree = "<group>"; };
+		2395DA6E1877109700950DD5 /* MOE-Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Common.h"; sourceTree = "<group>"; };
+		23A22F70187594F00060BF79 /* MOE-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MOE-Prefix.pch"; sourceTree = "<group>"; };
+		23DEC3D31BA8563E00CEA6C3 /* BacktraceCurrent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BacktraceCurrent.cpp; sourceTree = "<group>"; };
+		23DEC3D41BA8563E00CEA6C3 /* BacktraceCurrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BacktraceCurrent.h; sourceTree = "<group>"; };
+		23F4C1BE18CDD09300EF5181 /* liblibbacktrace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibbacktrace.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23F4C1BB18CDD09300EF5181 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2353A5EE17CE19B5005CF3CC = {
+			isa = PBXGroup;
+			children = (
+				D9A0F132183A94F500523C62 /* Android Root */,
+				2353A83917CE26CD005CF3CC /* Common Configuration */,
+				2353A5FA17CE1AD7005CF3CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2353A5FA17CE1AD7005CF3CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23F4C1BE18CDD09300EF5181 /* liblibbacktrace.a */,
+			);
+			name = Products;
+			path = MOE;
+			sourceTree = "<group>";
+		};
+		2353A83917CE26CD005CF3CC /* Common Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				2350E7BE18DA17BD00285E6C /* AndroidConfig.h */,
+				2395DA6E1877109700950DD5 /* MOE-Common.h */,
+				23A22F70187594F00060BF79 /* MOE-Prefix.pch */,
+			);
+			name = "Common Configuration";
+			path = ../moe.base/src/main/native;
+			sourceTree = "<group>";
+		};
+		23F4C1B718CDCE5000EF5181 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				23F4C1B818CDCEB000EF5181 /* core */,
+			);
+			path = system;
+			sourceTree = "<group>";
+		};
+		23F4C1B818CDCEB000EF5181 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				23F4C1FC18CDD10F00EF5181 /* libbacktrace */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		23F4C1FC18CDD10F00EF5181 /* libbacktrace */ = {
+			isa = PBXGroup;
+			children = (
+				237FAEB71BA9CF4900720738 /* Backtrace.cpp */,
+				23DEC3D31BA8563E00CEA6C3 /* BacktraceCurrent.cpp */,
+				23DEC3D41BA8563E00CEA6C3 /* BacktraceCurrent.h */,
+				2341FAC319E2FD0E00470D08 /* BacktraceLog.h */,
+				2341FAC419E2FD0E00470D08 /* BacktraceMap.cpp */,
+				2341FAC719E2FD0E00470D08 /* thread_utils.c */,
+				2341FAC819E2FD0E00470D08 /* thread_utils.h */,
+				2341FAC919E2FD0E00470D08 /* UnwindCurrent.cpp */,
+				2341FACA19E2FD0E00470D08 /* UnwindCurrent.h */,
+			);
+			path = libbacktrace;
+			sourceTree = "<group>";
+		};
+		D9A0F132183A94F500523C62 /* Android Root */ = {
+			isa = PBXGroup;
+			children = (
+				23F4C1B718CDCE5000EF5181 /* system */,
+			);
+			name = "Android Root";
+			path = ../../../../../aosp;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23F4C1BD18CDD09300EF5181 /* libbacktrace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23F4C1BF18CDD09300EF5181 /* Build configuration list for PBXNativeTarget "libbacktrace" */;
+			buildPhases = (
+				23F4C1BA18CDD09300EF5181 /* Sources */,
+				23F4C1BB18CDD09300EF5181 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libbacktrace;
+			productName = system;
+			productReference = 23F4C1BE18CDD09300EF5181 /* liblibbacktrace.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2353A5EF17CE19B5005CF3CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = 2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.system.core.libbacktrace" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2353A5EE17CE19B5005CF3CC;
+			productRefGroup = 2353A5FA17CE1AD7005CF3CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23F4C1BD18CDD09300EF5181 /* libbacktrace */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23F4C1BA18CDD09300EF5181 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23DEC3D51BA8563E00CEA6C3 /* BacktraceCurrent.cpp in Sources */,
+				2341FAD119E2FD0E00470D08 /* thread_utils.c in Sources */,
+				237FAEB81BA9CF4900720738 /* Backtrace.cpp in Sources */,
+				2341FACE19E2FD0E00470D08 /* BacktraceMap.cpp in Sources */,
+				2341FAD319E2FD0E00470D08 /* UnwindCurrent.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2353A5F317CE19B5005CF3CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					"DEBUG=1",
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_DEPENDENCY_INFO_FILE = "../../build/common/native/xcode/$(PRODUCT_NAME)_dependency_info.dat";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = Debug;
+		};
+		2353A5F417CE19B5005CF3CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					NDEBUG,
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_DEPENDENCY_INFO_FILE = "../../build/common/native/xcode/$(PRODUCT_NAME)_dependency_info.dat";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = Release;
+		};
+		23F4C1C018CDD09300EF5181 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../moe.base/src/main/native/MOE-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+					"\"$(ANDROID_ROOT)/system/core/base/include\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		23F4C1C118CDD09300EF5181 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../moe.base/src/main/native/MOE-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+					"\"$(ANDROID_ROOT)/system/core/base/include\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.system.core.libbacktrace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2353A5F317CE19B5005CF3CC /* Debug */,
+				2353A5F417CE19B5005CF3CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23F4C1BF18CDD09300EF5181 /* Build configuration list for PBXNativeTarget "libbacktrace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23F4C1C018CDD09300EF5181 /* Debug */,
+				23F4C1C118CDD09300EF5181 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2353A5EF17CE19B5005CF3CC /* Project object */;
+}

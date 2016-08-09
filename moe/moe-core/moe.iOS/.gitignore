@@ -1,0 +1,21 @@
+# Generated Eclipse files
+**/.classpath
+**/.project
+**/.settings
+
+# Eclipse build folders
+**/bin
+**/.metadata
+
+# Generated build folders
+**/.gradle
+**/build
+
+# Machine local Xcode files
+**/*.xccheckout
+**/*.xcodeproj/project.xcworkspace/xcuserdata
+**/*.xcodeproj/xcuserdata
+
+# Machine local OSX Finder files
+**/.DS_Store
+

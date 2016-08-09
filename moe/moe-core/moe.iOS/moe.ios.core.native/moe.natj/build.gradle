@@ -1,0 +1,95 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+String customRepo = System.getenv("MOE_MAVEN_ADDR")
+if ((customRepo == null) || (customRepo.length() == 0)) {
+    customRepo = System.getenv("MOE_HOME")
+}
+if ((customRepo != null) && (customRepo.length() > 0)) {
+    repositories {
+        maven {
+            url(customRepo)
+        }
+    }
+}
+
+repositories {
+    if (project.hasProperty("moe.natj.repo")) {
+        maven {
+            url project.property("moe.natj.repo")
+        }
+    } else {
+        mavenLocal()
+    }
+    maven {
+        url uri(System.getenv("MOE_HOME") + "/gradle")
+    }
+}
+
+configurations {
+    natives
+}
+
+dependencies {
+    natives('org.moe:natj-ios:1.0.+') {
+        artifact {
+            name = 'natj-ios'
+            extension = 'a'
+            type = 'a'
+            classifier = 'Release-iphoneos'
+        }
+        artifact {
+            name = 'natj-ios'
+            extension = 'a'
+            type = 'a'
+            classifier = 'Debug-iphoneos'
+        }
+        artifact {
+            name = 'natj-ios'
+            extension = 'a'
+            type = 'a'
+            classifier = 'Release-iphonesimulator'
+        }
+        artifact {
+            name = 'natj-ios'
+            extension = 'a'
+            type = 'a'
+            classifier = 'Debug-iphonesimulator'
+        }
+    }
+}
+
+task buildNative(type: Copy) {
+    from configurations.natives
+    into 'build/'
+    rename { filename ->
+        if(filename.endsWith("Release-iphoneos.a")) {
+            'Release-iphoneos/libnatj.a'
+        } else if(filename.endsWith("Debug-iphoneos.a")) {
+            'Debug-iphoneos/libnatj.a'
+        } else if(filename.endsWith("Release-iphonesimulator.a")) {
+            'Release-iphonesimulator/libnatj.a'
+        } else if(filename.endsWith("Debug-iphonesimulator.a")) {
+            'Debug-iphonesimulator/libnatj.a'
+        }
+    }
+}
+
+apply plugin: 'moe-native-android-component'
+
+nativeAndroidComponent {
+  target_platform = "ios"
+}
