@@ -1,0 +1,66 @@
+{
+  "platform": "OS X",
+  "package-base": "org.undefined",
+  "base-sdk": "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk",
+  "header-search-paths": [
+    "${PROJECT}/../../llvm/tools/clang/include"
+  ],
+  "user-header-search-paths": [
+    "${PROJECT}/../../llvm/tools/clang/include"
+  ],
+  "framework-search-paths": [],
+  "source": "#import \"clang-c/Index.h\"\n#import \"clang-c/Documentation.h\"\n",
+  "output": "src/main/java",
+  "docsets": [],
+  "unit-rules": [
+    {
+      "final": true,
+      "conditions": [
+        {
+          "condition": "path-prefix",
+          "value": "${SDK}"
+        }
+      ],
+      "actions": [
+        {
+          "action": "handling-mode",
+          "value": "external"
+        },
+        {
+          "action": "replace-package-base",
+          "value": "osx"
+        }
+      ]
+    },
+    {
+      "final": false,
+      "conditions": [
+        {
+          "condition": "path-prefix",
+          "value": "${PROJECT}/../../llvm/tools/clang/include/"
+        }
+      ],
+      "actions": [
+        {
+          "action": "replace-package-base",
+          "value": "org.clang"
+        },
+        {
+          "action": "replace-library",
+          "value": "clang"
+        }
+      ]
+    }
+  ],
+  "logs-path": "${PROJECT}/log/natjgen-${DATETIME}.html",
+  "type-config-input": "${PROJECT}/binding.ngtconf",
+  "type-config-output": "${PROJECT}/binding.out.ngtconf",
+  "type-config-clean-output": false,
+  "header-file-resolving-paths": [
+    "${SDK}/usr/include",
+    "${SDK}/System/Library/Frameworks"
+  ],
+  "other-cflags": [],
+  "inject-default-cflags": true,
+  "use-included-std-headers": true
+}
