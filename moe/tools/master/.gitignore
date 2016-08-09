@@ -1,0 +1,16 @@
+# Output directories & Gradle
+.gradle
+bin
+build
+out
+
+# Idea
+.idea
+
+# Eclipse
+.classpath
+.project
+.settings
+master.iml
+master.ipr
+master.iws
