@@ -1,0 +1,143 @@
+/************************/
+/** Build Script Setup **/
+/************************/
+
+buildscript {
+    // Add central and local Maven repos
+    repositories {
+        maven {
+            url uri(System.getenv("MOE_HOME") + "/gradle")
+        }
+//<<---REGION:USE_KOTLIN_PLUGIN
+        maven {
+            url 'http://oss.sonatype.org/content/repositories/snapshots'
+        }
+//>>---REGION:USE_KOTLIN_PLUGIN
+        mavenCentral()
+    }
+    dependencies {
+        // MOE plugin
+        classpath 'org.moe.gradle:moeGradlePlugin:1.1.+'
+//<<---REGION:USE_KOTLIN_PLUGIN
+
+        // Kotlin plugin
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.1-SNAPSHOT'
+//>>---REGION:USE_KOTLIN_PLUGIN
+    }
+}
+
+/*******************/
+/** Project Setup **/
+/*******************/
+
+// Apply plugins
+//<<---REGION:USE_ECLIPSE_PLUGIN
+apply plugin: 'eclipse'
+//>>---REGION:USE_ECLIPSE_PLUGIN
+//<<---REGION:USE_SCALA_PLUGIN
+apply plugin: 'scala'
+//>>---REGION:USE_SCALA_PLUGIN
+apply plugin: 'moe'
+//<<---REGION:USE_IDEA_PLUGIN
+apply plugin: 'idea'
+//>>---REGION:USE_IDEA_PLUGIN
+//<<---REGION:USE_KOTLIN_PLUGIN
+apply plugin: 'kotlin'
+//>>---REGION:USE_KOTLIN_PLUGIN
+
+// Set source and target to Java 8
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+// Set maven repository
+repositories {
+    maven {
+        url uri(System.getenv("MOE_HOME") + "/gradle")
+    }
+//<<---REGION:USE_KOTLIN_PLUGIN
+    maven {
+        url 'http://oss.sonatype.org/content/repositories/snapshots'
+    }
+//>>---REGION:USE_KOTLIN_PLUGIN
+    mavenCentral()
+}
+
+// Exclude all files from Gradle's test runner
+test { exclude '**' }
+
+// Setup MOE
+moe {
+    xcode.mainTarget = '${_PLACEHOLDER_MOE_PROJECT_NAME}'
+    xcode.testTarget = '${_PLACEHOLDER_MOE_PROJECT_NAME}-Test'
+//<<---REGION:USE_CUSTOM_PRODUCT_NAME
+    xcode.mainProductName = '${_PLACEHOLDER_MOE_PRODUCT_NAME}'
+    xcode.testProductName = '${_PLACEHOLDER_MOE_PRODUCT_NAME}-Test'
+//>>---REGION:USE_CUSTOM_PRODUCT_NAME
+    xcode.packageName = '${_PLACEHOLDER_MOE_PACKAGE_NAME}'
+//<<---REGION:USE_CUSTOM_LAUNCH_SCREEN_FILE_PATH
+    xcode.launchScreenFilePath = '${_PLACEHOLDER_MOE_LAUNCH_SCREEN_FILE_PATH}'
+//>>---REGION:USE_CUSTOM_LAUNCH_SCREEN_FILE_PATH
+//<<---REGION:USE_CUSTOM_BUNDLE_ID
+    xcode.bundleID = '${_PLACEHOLDER_MOE_BUNDLE_ID}'
+//>>---REGION:USE_CUSTOM_BUNDLE_ID
+
+}
+
+// Set dependencies
+dependencies {
+    // Compile with 'jar' files in the project's 'lib' directory
+    compile fileTree(dir: 'lib', include: '*.jar')
+//<<---REGION:USE_KOTLIN_PLUGIN
+
+    // Add kotlin dependency
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:0.1-SNAPSHOT'
+
+//>>---REGION:USE_KOTLIN_PLUGIN
+
+//<<---REGION:USE_SCALA_PLUGIN
+
+    // Add scala dependency
+    compile "org.scala-lang:scala-library:${_PLACEHOLDER_SCALA_VERSION}"
+//>>---REGION:USE_SCALA_PLUGIN
+}
+
+//<<---REGION:USE_SCALA_PLUGIN
+compileScala { classpath = classpath.plus(fileTree(moe.sdk.coreJarPath)) }
+//>>---REGION:USE_SCALA_PLUGIN
+
+//<<---REGION:USE_ECLIPSE_PLUGIN
+// Setup Eclipse
+eclipse {
+    classpath {
+        // Remove the default JRE container, MOE SDK will take its place
+        file.whenMerged { classpath ->
+            project.moe.fixJavaDocAndSources(classpath)
+            classpath.entries.removeAll { entry ->
+                entry.kind == 'con' && entry.path.startsWith('org.eclipse.jdt.launching.JRE_CONTAINER')
+            }
+        }
+    }
+
+    // Set MOE natures and build commands
+    project {
+        natures 'org.moe.mdt.appnature'
+        buildCommand 'org.moe.mdt.generalbuilder'
+    }
+}
+//>>---REGION:USE_ECLIPSE_PLUGIN
+//<<---REGION:USE_IDEA_PLUGIN
+
+// Setup Idea
+idea {
+    module {
+        jdkName='MOE SDK'
+    }
+}
+//>>---REGION:USE_IDEA_PLUGIN
+//<<---REGION:USE_KOTLIN_PLUGIN
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+}
+//>>---REGION:USE_KOTLIN_PLUGIN
+
