@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.moe.natjgen.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.moe.natjgen.application"
+            name="NatJGen">
+         <property
+               name="appName"
+               value="NatJGen">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

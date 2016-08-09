@@ -1,0 +1,101 @@
+apply plugin:'java'
+apply plugin: 'maven-publish'
+
+compileJava {
+    targetCompatibility = 1.7
+    sourceCompatibility = 1.7
+}
+
+ext {
+    moeProject = 'MOE_MDT_NATJGEN'
+    moeVersion = [:]
+}
+
+initMOEProject(project, [vMajor: 1, vMinor: 1, vPatch: 0])
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+configurations {
+    natjmac
+    clang
+}
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+    compile 'org.moe:natj-api:1.0.+'
+    compile 'org.moe:moeCommonUtils:1.1.+'
+    compile 'org.moe:moeBindingClang:3.8.+'
+    compile 'org.slf4j:slf4j-api:1.6.1'
+    compile 'org.apache.commons:commons-lang3:3.0'
+    compile 'org.apache.ant:ant:1.8.2'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'org.xerial:sqlite-jdbc:3.8.10.1'
+    compile 'org.eclipse.jdt:org.eclipse.jdt.core:3.10.0'
+
+    testCompile 'junit:junit:4.12'
+
+    natjmac('org.moe:natj-mac:1.0.+') {
+        artifact {
+            name = 'natj-mac'
+            extension = 'dylib'
+            type = 'dylib'
+            classifier = 'Release'
+        }
+    }
+    clang('org.moe:moeBindingClang:3.8.+') {
+        artifact {
+            name = 'moeBindingClang'
+            extension = 'dylib'
+            type = 'dylib'
+            classifier = 'libclang_moe_macosx_x86_64'
+        }
+    }
+}
+
+tasks.withType(Test) {
+    forkEvery 0
+    systemProperty "java.library.path", project.getProjectDir().getAbsolutePath() + "/build/prebuilt-natives"
+}
+
+jar {
+    baseName = 'natjgen'
+
+    doFirst {
+        from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+        exclude 'META-INF/*.SF'
+    }
+
+    manifest {
+        attributes("Class-Path": ".")
+        attributes("Main-Class": "org.moe.natjgen.Main")
+    }
+
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'org.moe'
+            artifactId 'moeMdtNatjgen'
+
+            from components.java
+        }
+    }
+}
+
+task copyNatJNative(type: Copy) {
+    from configurations.natjmac
+    into 'build/prebuilt-natives/'
+    exclude '*.jar'
+    rename { 'libnatj.dylib' }
+}
+task copyClangNative(type: Copy) {
+    from configurations.clang
+    into 'build/prebuilt-natives/'
+    exclude '*.jar'
+    rename { 'libclang.dylib' }
+}
+test.dependsOn copyClangNative, copyNatJNative
