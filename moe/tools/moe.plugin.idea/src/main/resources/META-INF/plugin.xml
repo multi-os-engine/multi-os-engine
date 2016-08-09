@@ -1,0 +1,158 @@
+<idea-plugin version="2">
+  <id>org.moe</id>
+  <name>Multi-OS Engine Plugin</name>
+  <version>1.0.0.1</version>
+
+  <vendor url="http://www.moe.com">MOE</vendor>
+
+  <description><![CDATA[
+      Multi-OS Engine IDE plugin for Android Studio
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Initial release
+    ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+      <configurationType implementation="org.moe.idea.runconfig.configuration.local.MOERunConfigurationTypeLocal" />
+      <configurationType implementation="org.moe.idea.runconfig.configuration.remote.MOERunConfigurationTypeRemote" />
+      <!-- <configurationType implementation="org.moe.idea.runconfig.configuration.cloud.MOERunConfigurationTypeCloud" /> -->
+
+      <toolWindow id="Multi-OS Engine" anchor="bottom" icon="/icons/moe_tool.png"
+                  secondary="false"
+                  factoryClass="org.moe.idea.ui.MOEToolWindowFactory"/>
+
+      <programRunner implementation="org.moe.idea.runconfig.MOEProgramRunner"/>
+
+      <projectTemplatesFactory implementation="org.moe.idea.builder.MOEProjectTemplatesFactory"/>
+
+      <sdkType implementation="org.moe.idea.sdk.MOESdkType"/>
+
+      <!--
+      <stepsBeforeRunProvider implementation="MOEGradleTaskProvider" />
+
+      <applicationConfigurable instance="MOESdkConfigurable" groupId="tools"/>
+      -->
+
+      <moduleConfigurable instance="org.moe.idea.configurable.MOEModuleConfigurable"/>
+
+  </extensions>
+
+    <application-components>
+        <component>
+            <implementation-class>org.moe.idea.component.MOEApplicationComponent</implementation-class>
+        </component>
+    </application-components>
+
+    <project-components>
+        <component>
+            <implementation-class>org.moe.idea.ui.MOEToolWindow</implementation-class>
+        </component>
+
+        <component>
+            <implementation-class>org.moe.idea.component.MOEProjectComponent</implementation-class>
+        </component>
+    </project-components>
+
+  <actions>
+
+      <action id="MOE.NewClass"
+              text="Multi-OS Engine Class"
+              description="Create new Multi-OS Engine class"
+              class="org.moe.idea.actions.MOENewClassAction"
+              icon="/icons/moe_small.png">
+          <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
+      </action>
+
+      <action id="MOE.NewModule"
+              text="Multi-OS Engine Module"
+              description="Create new Multi-OS Engine module"
+              class="org.moe.idea.actions.MOENewModuleAction"
+              icon="/icons/moe_small.png">
+          <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
+      </action>
+
+      <action id="MOE.NewProject"
+              text="Multi-OS Engine Project"
+              description="Create new Multi-OS Engine project"
+              class="org.moe.idea.actions.MOENewProjectAction"
+              icon="/icons/moe_small.png">
+          <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
+      </action>
+
+
+      <group id="MOEModuleActions.Separator">
+          <separator/>
+          <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="EditSource" anchor="after"/>
+      </group>
+
+      <group id="MOEModuleActions" text="Multi-OS Engine Actions" popup="true" icon="/icons/moe_small.png">
+          <separator/>
+
+          <action id="org.moe.idea.OpenXcodeProject"
+                  class="org.moe.idea.actions.MOEOpenXcodeAction"
+                  text="Open Project in Xcode"
+                  description="Open Project in Xcode"/>
+
+          <action id="MOE.GenerateBinding" class="org.moe.idea.actions.MOEGenerateBindingAction"
+                  text="Generate Bindings"
+                  description="Generate Bindings"/>
+
+          <action id="MOE.SynchronizeToXcode"
+                  class="org.moe.idea.actions.SynchronizeToXcodeAction"
+                  text="Synchronize to Xcode"
+                  description="Generate UI Interface Bindings"/>
+
+          <action id="MOE.SynchronizeToJava"
+                  class="org.moe.idea.actions.SynchronizeToJavaAction"
+                  text="Synchronize to Java"
+                  description="Generate UI Interface Bindings"/>
+
+          <action id="MOE.LinkThirdPartyFramework"
+                  class="org.moe.idea.actions.MOELinkThirdpartyFramework"
+                  text="Link third party framework to Xcode"
+                  description="Link third party framework to Xcode"/>
+
+          <action id="MOE.LinkThirdPartyLibraries"
+                  class="org.moe.idea.actions.MOELinkThirdpartyLibraries"
+                  text="Link third party libraries to Xcode"
+                  description="Link third party libraries to Xcode"/>
+          <action id="MOE.LinkPodThirdPartyLibraries"
+                  class="org.moe.idea.actions.LinkPodThirdPartyLibraries"
+                  text="Link CocoaPods to Xcode"
+                  description="Link CocoaPods to Xcode"/>
+
+          <separator/>
+          <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="MOEModuleActions.Separator" anchor="after"/>
+      </group>
+      <group id="MOEModuleActions.SeparatorEnd">
+          <separator/>
+          <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="MOEModuleActions" anchor="after"/>
+      </group>
+
+
+      <group id="MOEBuildActions">
+          <separator/>
+          <action id="MOECreateIpaAction"
+                  class="org.moe.idea.actions.MOECreateIpaAction"
+                  text="Export IPA for Application"
+                  description="Create an Ipa file for application"/>
+              <add-to-group group-id="BuildMenu" anchor="last"/>
+          <separator/>
+      </group>
+
+  </actions>
+
+  <depends>org.jetbrains.plugins.gradle</depends>
+
+</idea-plugin>

@@ -1,0 +1,56 @@
+buildscript {
+  repositories {
+    maven { 
+        url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' 
+    }
+  }
+}
+
+plugins {
+  id "org.jetbrains.intellij" version "0.1.10"
+}
+
+def PLUGIN_NMAE = 'moe_intellij_plugin'
+intellij {
+  version 'IC-15.0'
+  plugins = ['gradle']
+  pluginName PLUGIN_NMAE
+  downloadSources false
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+apply plugin: 'maven-publish'
+
+ext {
+  moeProject = 'MOE_PLUGIN_IDEA'
+  moeVersion = [:]
+}
+
+initMOEProject(project, [vMajor: 1, vMinor: 1, vPatch: 0])
+
+repositories {
+  mavenLocal()
+  jcenter()
+}
+
+dependencies {
+  compile 'org.moe:moeCommonUtils:1.1.+'
+  compile 'org.moe:moeDocumentPbxproj:1.1.+'
+  compile 'org.moe:moeDocumentXib:1.1.+'
+  compile 'org.moe:moeProjectGenerator:1.3.+'
+
+  testCompile 'junit:junit:[4,)'
+}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      groupId 'org.moe'
+      artifactId PLUGIN_NMAE
+
+      artifact "build/distributions/" + PLUGIN_NMAE + ".zip"
+    }
+  }
+}
