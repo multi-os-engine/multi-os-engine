@@ -1,0 +1,167 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+
+sourceCompatibility = "1.6"
+targetCompatibility = "1.6"
+
+// Versioning
+ext {
+    moeProject = 'MOE_IOS_DEVICE_LAUNCHER'
+    moeVersion = [:]
+}
+initMOEProject(project, [vMajor: 1, vMinor: 1, vPatch: 0])
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+configurations {
+    osxnatives
+    winnatives
+}
+
+dependencies {
+    compile 'org.moe:natj-api:1.0.+'
+    compile 'org.slf4j:slf4j-api:1.7.7'
+    compile 'org.slf4j:slf4j-simple:1.7.7'
+    compile 'org.moe:moeCommonUtils:1.1.+'
+    compile 'org.moe:moeProtocolGdbremote:1.1.+'
+    compile 'org.moe:moeBindingLibimobiledevice:1.1.+'
+
+    osxnatives('org.moe:natj-mac:1.0.+') {
+        artifact {
+            name = 'natj-mac'
+            extension = 'dylib'
+            type = 'dylib'
+            classifier = 'Release'
+        }
+    }
+    osxnatives('org.moe:moeBindingLibimobiledevice:1.1.+') {
+        transitive = false
+        artifact {
+            name = 'moeBindingLibimobiledevice'
+            extension = 'dylib'
+            type = 'dylib'
+            classifier = 'libimobiledevice_macosx_x86_64'
+        }
+    }
+
+    winnatives('org.moe:natj-win:1.0.+') {
+        artifact {
+            name = 'natj-win'
+            extension = 'dll'
+            type = 'dll'
+            classifier = 'Release'
+        }
+    }
+    winnatives('org.moe:moeBindingLibimobiledevice:1.1.+') {
+        transitive = false
+        artifact {
+            name = 'moeBindingLibimobiledevice'
+            extension = 'dll'
+            type = 'dll'
+            classifier = 'libimobiledevice_windows_x86_64'
+        }
+    }
+    winnatives('org.moe:moeBindingLibimobiledevice:1.1.+') {
+        transitive = false
+        artifact {
+            name = 'moeBindingLibimobiledevice'
+            extension = 'dll'
+            type = 'dll'
+            classifier = 'libeay32_windows_x86_64'
+        }
+    }
+    winnatives('org.moe:moeBindingLibimobiledevice:1.1.+') {
+        transitive = false
+        artifact {
+            name = 'moeBindingLibimobiledevice'
+            extension = 'dll'
+            type = 'dll'
+            classifier = 'ssleay32_windows_x86_64'
+        }
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs('src/main/resources', 'build/natives')
+        }
+    }
+}
+
+jar {
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    manifest { attributes 'Main-Class': 'org.moe.ios.device.launcher.Main' }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'org.moe'
+            artifactId 'moeIosDeviceLauncher'
+
+            from components.java
+        }
+    }
+}
+
+/*
+Copy native lib.
+ */
+
+/* moving native libraries outside of jar
+task copyOSXNatJNative(type: Copy) {
+    from configurations.osxnatives
+    into 'build/natives/macosx/x86_64/'
+    rename { String filename ->
+        if (filename.startsWith("natj-mac")) {
+            'libnatj.dylib'
+        } else if (filename.startsWith("moeBindingLibimobiledevice")) {
+            'libimobiledevice.dylib'
+        } else {
+            throw new IllegalArgumentException("unknown library " + filename);
+        }
+    }
+}
+processResources.dependsOn copyOSXNatJNative
+
+task copyWinNatJNative(type: Copy) {
+    from configurations.winnatives
+    into 'build/natives/windows/x86_64/'
+    rename { String filename ->
+        if (filename.startsWith("natj-win")) {
+            'libnatj.dll'
+        } else if (filename.endsWith("libimobiledevice_windows_x86_64.dll")) {
+            'libimobiledevice.dll'
+        } else if (filename.endsWith("libeay32_windows_x86_64.dll")) {
+            'libeay32.dll'
+        } else if (filename.endsWith("ssleay32_windows_x86_64.dll")) {
+            'ssleay32.dll'
+        } else {
+            throw new IllegalArgumentException("unknown library " + filename);
+        }
+    }
+}
+processResources.dependsOn copyWinNatJNative
+*/
