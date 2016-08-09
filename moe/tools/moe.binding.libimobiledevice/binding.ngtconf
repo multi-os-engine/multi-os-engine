@@ -1,0 +1,2370 @@
+[
+  {
+    "c-function": [
+      {
+        "afc_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_file_open": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_file_write": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ],
+                    "use": "c.const-byte-ptr"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_get_device_info_key": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_get_file_info": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_make_directory": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_make_link": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "3": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_read_directory": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_remove_path": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_remove_path_and_contents": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_rename_path": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_set_file_time": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "afc_truncate": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "debugserver_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "debugserver_client_send": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ],
+                    "use": "c.const-byte-ptr"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "debugserver_client_set_environment_hex_encoded": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "debugserver_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "debugserver_command_new": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "debugserver_decode_string": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "debugserver_encode_string": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "diagnostics_relay_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "diagnostics_relay_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "diagnostics_relay_query_ioregistry_entry": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "diagnostics_relay_query_ioregistry_plane": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "diagnostics_relay_request_diagnostics": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_relay_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_relay_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_relay_request_sources": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string.array",
+                      "c.const-byte-ptr-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file_relay_request_sources_timeout": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string.array",
+                      "c.const-byte-ptr-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heartbeat_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heartbeat_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "house_arrest_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "house_arrest_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "house_arrest_send_command": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "idevice_connection_send": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ],
+                    "use": "c.const-byte-ptr"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "idevice_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "idevice_new_with_connection": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_archive": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_client_get_path_for_bundle_identifier": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_client_option_add": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_install": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_remove_archive": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_restore": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_uninstall": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_upgrade": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_client_new": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_client_new_with_handshake": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_client_set_label": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_get_value": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_pair": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_remove_value": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_service_descriptor_free": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_set_value": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_start_service": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_start_service_with_escrow_bag": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_start_session": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_stop_session": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_unpair": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_validate_pair": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "misagent_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "misagent_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "misagent_remove": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobile_image_mounter_lookup_image": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobile_image_mounter_mount_image": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "4": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobile_image_mounter_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobile_image_mounter_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobile_image_mounter_upload_image": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "3": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup2_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup2_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup2_send_message": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup2_send_raw": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup2_send_request": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "3": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup2_send_status_response": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup_request_backup": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "3": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup_request_restore": [
+          {
+            "location": [
+              {
+                "3": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilebackup_send_error": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilesync_anchors_free": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilesync_anchors_new": [
+          {
+            "location": [
+              {
+                "-1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              },
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilesync_cancel": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilesync_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilesync_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mobilesync_start": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "np_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "np_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "np_observe_notification": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "np_observe_notifications": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string.array",
+                      "c.const-byte-ptr-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "np_post_notification": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_dict_get_item": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_dict_insert_item": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_dict_remove_item": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_dict_set_item": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_from_bin": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ],
+                    "use": "c.const-byte-ptr"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_from_xml": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ],
+                    "use": "c.const-byte-ptr"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_new_data": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_new_string": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_set_data_val": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_set_key_val": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_set_string_val": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "property_list_service_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "restored_client_new": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "restored_client_set_label": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "restored_get_value": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "restored_query_value": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sbservices_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sbservices_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sbservices_get_icon_pngdata": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "sbservices_get_icon_state": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "screenshotr_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "screenshotr_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "service_client_factory_start_service": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "3": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "service_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "service_send": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ],
+                    "use": "c.const-byte-ptr"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "syslog_relay_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "syslog_relay_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "webinspector_client_new": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "webinspector_client_start_service": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

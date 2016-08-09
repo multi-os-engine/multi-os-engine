@@ -1,0 +1,75 @@
+{
+  "platform": "OS X",
+  "architecture": "x86_64",
+  "package-base": "org.undefined",
+  "base-sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "header-search-paths": [
+    "${PROJECT}/src/main/headers",
+    "${PROJECT}/build/native/macosx/x86_64/libimobiledevice-build/include",
+    "${PROJECT}/build/native/macosx/x86_64/libplist-build/include"
+  ],
+  "user-header-search-paths": [],
+  "framework-search-paths": [],
+  "source": "#include \u003cinclude.h\u003e\n",
+  "output": "src/main/java",
+  "docsets": [],
+  "unit-rules": [
+    {
+      "final": true,
+      "conditions": [
+        {
+          "condition": "path-prefix",
+          "value": "${SDK}"
+        }
+      ],
+      "actions": [
+        {
+          "action": "handling-mode",
+          "value": "external"
+        },
+        {
+          "action": "replace-package-base",
+          "value": "osx"
+        }
+      ]
+    },
+    {
+      "final": true,
+      "conditions": [
+        {
+          "condition": "path-prefix",
+          "value": "${PROJECT}/build/native/macosx/x86_64/libimobiledevice-build/include"
+        }
+      ],
+      "actions": [
+        {
+          "action": "replace-package-base",
+          "value": "org.libimobiledevice"
+        }
+      ]
+    },
+    {
+      "final": true,
+      "conditions": [
+        {
+          "condition": "path-prefix",
+          "value": "${PROJECT}/build/native/macosx/x86_64/libplist-build/include"
+        }
+      ],
+      "actions": [
+        {
+          "action": "replace-package-base",
+          "value": "org.libplist"
+        }
+      ]
+    }
+  ],
+  "logs-path": "${PROJECT}/log/natjgen-${DATETIME}.html",
+  "type-config-input": "${PROJECT}/binding.ngtconf",
+  "type-config-output": "${PROJECT}/binding.out.ngtconf",
+  "type-config-clean-output": false,
+  "header-file-resolving-paths": [
+    "${SDK}/usr/include",
+    "${SDK}/System/Library/Frameworks"
+  ]
+}
