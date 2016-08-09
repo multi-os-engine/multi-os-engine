@@ -1,0 +1,87 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+apply plugin: 'maven-publish'
+
+def buildNativeTarget(project, configuration, sdk, target) {
+    mkdir("build/xcode/$configuration-$sdk")
+    def log = file("build/xcode/$configuration-$sdk/build-${target}.log")
+    try {
+        exec {
+            executable = "xcodebuild"
+
+            args "-project", "$project"
+            args "-target", "$target"
+            args "-sdk", "$sdk"
+            args "-configuration", "$configuration"
+
+            /*
+             * Uncomment to enable build with address sanitizer, Xcode 7+ required
+             */
+            // args 'OTHER_CFLAGS=$(OTHER_CFLAGS) -fsanitize=address'
+
+            setIgnoreExitValue false
+
+            FileOutputStream ostream = new FileOutputStream(log);
+            setErrorOutput(ostream)
+            setStandardOutput(ostream)
+        }
+    } catch (GradleException ex) {
+        logger.error(log.text)
+        throw new GradleException("Failed to build native components", ex)
+    }
+}
+
+String[] outputs = [
+    'build/xcode/Release-iphoneos/libnatj.a',
+    'build/xcode/Debug-iphoneos/libnatj.a',
+    'build/xcode/Release-iphonesimulator/libnatj.a',
+    'build/xcode/Debug-iphonesimulator/libnatj.a'
+]
+
+task buildNative (/*dependsOn: rootProject.checkNative*/) << {
+    buildNativeTarget("natj.xcodeproj", "Release", "iphoneos", "natj")
+    buildNativeTarget("natj.xcodeproj", "Release", "iphonesimulator", "natj")
+    buildNativeTarget("natj.xcodeproj", "Debug", "iphoneos", "natj")
+    buildNativeTarget("natj.xcodeproj", "Debug", "iphonesimulator", "natj")
+}
+
+buildNative.inputs.files file('../libffi/build/Release-iphoneos/libffi.a')
+buildNative.inputs.files file('../libffi/build/Debug-iphonesimulator/libffi.a')
+buildNative.inputs.files file('../libffi/build/Release-iphoneos/libffi.a')
+buildNative.inputs.files file('../libffi/build/Debug-iphonesimulator/libffi.a')
+buildNative.inputs.files fileTree('../src/native').getFiles().toArray()
+buildNative.inputs.files 'natj.xcodeproj/project.pbxproj'
+buildNative.outputs.files outputs
+
+tasks.publish.dependsOn(buildNative)
+
+task clean () {
+    file("build").deleteDir()
+}
+
+publishing {
+    publications {
+        mavenNative(MavenPublication) {
+            groupId 'org.moe'
+            artifactId 'natj-ios'
+
+            for (o in outputs) {
+              artifact source:o, extension:"a", classifier: new File(o).getParentFile().getName()
+            }
+        }
+    }
+}

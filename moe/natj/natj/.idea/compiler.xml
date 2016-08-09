@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dyntype_main" target="1.6" />
+      <module name="dyntype_test" target="1.6" />
+      <module name="natj-ctests_main" target="1.7" />
+      <module name="natj-ctests_test" target="1.7" />
+      <module name="natj-cxxtests_main" target="1.6" />
+      <module name="natj-cxxtests_test" target="1.6" />
+      <module name="natj-ios_main" target="1.6" />
+      <module name="natj-ios_test" target="1.6" />
+      <module name="natj-mac_main" target="1.6" />
+      <module name="natj-mac_test" target="1.6" />
+      <module name="natj-ndk_main" target="1.6" />
+      <module name="natj-ndk_test" target="1.6" />
+      <module name="natj-objctests_main" target="1.8" />
+      <module name="natj-objctests_test" target="1.8" />
+      <module name="natj-processor_main" target="1.8" />
+      <module name="natj-processor_test" target="1.8" />
+      <module name="natj-tvos_main" target="1.6" />
+      <module name="natj-tvos_test" target="1.6" />
+      <module name="natj-win_main" target="1.6" />
+      <module name="natj-win_test" target="1.6" />
+      <module name="natj_main" target="1.7" />
+      <module name="natj_test" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
