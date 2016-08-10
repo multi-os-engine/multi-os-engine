@@ -132,13 +132,15 @@ unzip $MOE_HOME/intellij_plugins/moe_intellij_plugin.zip -d $MOE_TMP/moe_intelli
 cp -av $MOE_TMP/moe_intellij_plugin/ $MOE_HOME/intellij_plugins
 
 # adding IntelliJ IDEA UI designer plugin
-mkdir -p $MOE_TMP/moe_uiprototyper_plugin
-cp $target_repo/org/moe/UIPrototyper/moe_uiprototyper_plugin.zip $MOE_TMP/moe_uiprototyper_plugin.zip
-unzip $MOE_TMP/moe_uiprototyper_plugin.zip -d $MOE_TMP/moe_uiprototyper_plugin
-mkdir -p $MOE_HOME/intellij_plugins/moe_uiprototyper_plugin
-cp -av $MOE_TMP/moe_uiprototyper_plugin/xrt_UIPrototyper/ $MOE_HOME/intellij_plugins/moe_uiprototyper_plugin
-cd $MOE_HOME/intellij_plugins
-zip -r moe_uiprototyper_plugin.zip moe_uiprototyper_plugin
+if [ -e $target_repo/org/moe/UIPrototyper/moe_uiprototyper_plugin.zip ]; then
+	mkdir -p $MOE_TMP/moe_uiprototyper_plugin
+	cp $target_repo/org/moe/UIPrototyper/moe_uiprototyper_plugin.zip $MOE_TMP/moe_uiprototyper_plugin.zip
+	unzip $MOE_TMP/moe_uiprototyper_plugin.zip -d $MOE_TMP/moe_uiprototyper_plugin
+	mkdir -p $MOE_HOME/intellij_plugins/moe_uiprototyper_plugin
+	cp -av $MOE_TMP/moe_uiprototyper_plugin/xrt_UIPrototyper/ $MOE_HOME/intellij_plugins/moe_uiprototyper_plugin
+	cd $MOE_HOME/intellij_plugins
+	zip -r moe_uiprototyper_plugin.zip moe_uiprototyper_plugin
+fi
 
 # copy wrapnatjgen.jar
 cp $target_repo/org/moe/moeNatjgenCliTool/1.1.0.${qualifier}-${build_number}/moeNatjgenCliTool-1.1.0.${qualifier}-${build_number}.jar $MOE_HOME/tools/wrapnatjgen.jar
