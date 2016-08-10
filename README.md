@@ -59,24 +59,24 @@ repo sync
 
 Install macOS MinGW build environment:
 	
-	Install brew from http://brew.sh
+- Install brew from http://brew.sh
 ```	
 	brew tap homebrew/versions
 	brew install autogen autoconf automake openssl libtool pkg-config
 	brew install wget
 	brew install wine
 ```
-	On OS X 10.9, 10.10:
+- On OS X 10.9, 10.10:
 ```
 	brew install gcc48
 ```
-	On OS X 10.11:
+- On OS X 10.11:
 ```
 	brew install gcc
 	brew install cloog
 ```
 Setup MinGW environment:
-	On OS X 10.9, 10.10:
+- On OS X 10.9, 10.10:
 
 ```
 	cd moe/moe-core/Builder
@@ -86,7 +86,7 @@ Setup MinGW environment:
 	export PATH=$PATH:/usr/local/mingw/bin
 ```
 	
-	On OS X 10.11:
+- On OS X 10.11:
 ```
 	cd moe/moe-core/Builder
 	chmod +x mingw-w64-3.10-osx10.11.sh
