@@ -52,7 +52,7 @@ repo init -u https://github.com/multi-os-engine/manifest.git
 repo sync
 ```
 
-Get the source code from development branch with initial support of Windows and Bitcode: 
+Note: if you want to get the source code from development branch with initial support of Windows and bitcode, switch to "moe-windows-bitcode" branch : 
 ```
 repo init -u https://github.com/multi-os-engine/manifest.git -b moe-windows-bitcode
 repo sync
@@ -67,35 +67,23 @@ Install macOS MinGW build environment:
 	brew install wget
 	brew install wine
 ```
-- On macOS 10.10:
-```
-	brew install gcc48
-```
-- On macOS 10.11:
-```
-	brew install gcc
-	brew install cloog
-```
-Setup MinGW environment:
-- On macOS 10.10:
 
-```
-	cd moe/moe-core/Builder
-	chmod +x mingw-w64-3.10-osx10.9.sh
-	./mingw-w64-3.10-osx10.9.sh
-```	
-Add to your ~/.bash_profile
-```	
-	export PATH=$PATH:/usr/local/mingw/bin
-```
-	
-- On macOS 10.11:
-```
-	cd moe/moe-core/Builder
-	chmod +x mingw-w64-3.10-osx10.11.sh
-	./mingw-w64-3.10-osx10.11.sh
-```	
-Add to your ~/.bash_profile
+- Install gcc
+
+| macOS 10.10 | macOS 10.11 |
+| --- | --- |
+| `brew install gcc48` | `brew install gcc` |
+|  | `brew install cloog` |
+
+Setup MinGW environment:
+
+| macOS 10.10 | macOS 10.11 |
+| --- | --- |
+| `cd moe/moe-core/Builder` | `cd moe/moe-core/Builder` |
+| `chmod +x mingw-w64-3.10-osx10.9.sh` | `chmod +x mingw-w64-3.10-osx10.11.sh` |
+| `./mingw-w64-3.10-osx10.9.sh` | `./mingw-w64-3.10-osx10.11.sh` |
+
+Add /usr/local/mingw/bin to $PATH in your ~/.bash_profile
 ```	
 	export PATH=$PATH:/usr/local/mingw/bin
 ```
