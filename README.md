@@ -9,7 +9,7 @@ Getting Started
 ---------------
 
 - Visit [Multi-OS Engine](TBD) page to download binary packages
-- Walk through our [Quick Start Tutorials](http://multi-os-engine.github.io/doc) to configure your development environment and learn hwo to develop applications using Multi-OS Engine.
+- Walk through our [Quick Start Tutorials](http://doc.multi-os-engine.org) to configure your development environment and learn hwo to develop applications using Multi-OS Engine.
 - Ask questions on the [Multi-OS Engine Forum](https://discuss.multi-os-engine.org/)
 
 
@@ -66,32 +66,36 @@ Install macOS MinGW build environment:
 	brew install wget
 	brew install wine
 ```
-- On OS X 10.9, 10.10:
+- On macOS 10.10:
 ```
 	brew install gcc48
 ```
-- On OS X 10.11:
+- On macOS 10.11:
 ```
 	brew install gcc
 	brew install cloog
 ```
 Setup MinGW environment:
-- On OS X 10.9, 10.10:
+- On macOS 10.10:
 
 ```
 	cd moe/moe-core/Builder
 	chmod +x mingw-w64-3.10-osx10.9.sh
 	./mingw-w64-3.10-osx10.9.sh
+```	
 	Add to your ~/.bash_profile
+```	
 	export PATH=$PATH:/usr/local/mingw/bin
 ```
 	
-- On OS X 10.11:
+- On macOS 10.11:
 ```
 	cd moe/moe-core/Builder
 	chmod +x mingw-w64-3.10-osx10.11.sh
 	./mingw-w64-3.10-osx10.11.sh
+```	
 	Add to your ~/.bash_profile
+```	
 	export PATH=$PATH:/usr/local/mingw/bin
 ```
 
@@ -106,9 +110,11 @@ Install other dependenies
   brew install cmake jasmin gpg ant
 ```
 
-Build all:
+Build all Multi-OS Engine components:
 ```
 cd moe/moe-core/Builder
 ./build-all.sh final <build_number> <maven_repo>
 ```
-where maven_repo is any folder to place the built binaries
+where `<maven_repo`> is any folder to place the built binaries
+
+Built package will be placed to $MOE_HOME folder or to `<maven_repo`>/moe_home folder if $MOE_HOME variable doesn't exists.
