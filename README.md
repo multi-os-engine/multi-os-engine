@@ -61,6 +61,7 @@ repo sync
 Install macOS MinGW build environment:
 	
 - Install brew from http://brew.sh
+- Install the following packages
 ```	
 	brew tap homebrew/versions
 	brew install autogen autoconf automake openssl libtool pkg-config
@@ -72,18 +73,17 @@ Install macOS MinGW build environment:
 
 | macOS 10.10 | macOS 10.11 |
 | --- | --- |
-| `brew install gcc48` | `brew install gcc` |
-|  | `brew install cloog` |
+| `brew install gcc48`<br> `brew install cloog` | `brew install gcc` |
 
 Setup MinGW environment:
+- Build mingw:
 
 | macOS 10.10 | macOS 10.11 |
 | --- | --- |
-| `cd moe/moe-core/Builder` | `cd moe/moe-core/Builder` |
-| `chmod +x mingw-w64-3.10-osx10.9.sh` | `chmod +x mingw-w64-3.10-osx10.11.sh` |
-| `./mingw-w64-3.10-osx10.9.sh` | `./mingw-w64-3.10-osx10.11.sh` |
+| `cd moe/moe-core/Builder`<br>`chmod +x mingw-w64-3.10-osx10.9.sh`<br> `./mingw-w64-3.10-osx10.9.sh`| `cd moe/moe-core/Builder`<br>`chmod +x mingw-w64-3.10-osx10.11.sh`<br> `./mingw-w64-3.10-osx10.11.sh`|
 
-Add /usr/local/mingw/bin to $PATH in your ~/.bash_profile
+
+- Add /usr/local/mingw/bin to $PATH in your ~/.bash_profile:
 ```	
 	export PATH=$PATH:/usr/local/mingw/bin
 ```
