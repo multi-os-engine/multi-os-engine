@@ -11,6 +11,7 @@ Getting Started
 - Visit [Multi-OS Engine](TBD) page to download binary packages
 - Walk through our [Quick Start Tutorials](http://doc.multi-os-engine.org) to configure your development environment and learn hwo to develop applications using Multi-OS Engine.
 - Ask questions on the [Multi-OS Engine Forum](https://discuss.multi-os-engine.org/)
+- Submit issues to https://github.com/multi-os-engine/multi-os-engine/issues
 
 
 System Requirements
@@ -83,7 +84,7 @@ Setup MinGW environment:
 	chmod +x mingw-w64-3.10-osx10.9.sh
 	./mingw-w64-3.10-osx10.9.sh
 ```	
-	Add to your ~/.bash_profile
+Add to your ~/.bash_profile
 ```	
 	export PATH=$PATH:/usr/local/mingw/bin
 ```
@@ -94,7 +95,7 @@ Setup MinGW environment:
 	chmod +x mingw-w64-3.10-osx10.11.sh
 	./mingw-w64-3.10-osx10.11.sh
 ```	
-	Add to your ~/.bash_profile
+Add to your ~/.bash_profile
 ```	
 	export PATH=$PATH:/usr/local/mingw/bin
 ```
@@ -109,7 +110,10 @@ Install other dependenies
 ```
   brew install cmake jasmin gpg ant
 ```
-
+To build Multi-OS Engine pluign for Android Studio and IntelliJ IDEA, you should install IntelliJ IDEA 16 and set IDEA_HOME environment variable pointing to the IDEA installation folder, for example:
+```
+export IDEA_HOME=/Applications/IntelliJ\ IDEA\ CE.app/Contents/
+```
 Build all Multi-OS Engine components:
 ```
 cd moe/moe-core/Builder
