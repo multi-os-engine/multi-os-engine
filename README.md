@@ -43,7 +43,7 @@ Installation on Windows
 - Download binary package here [here](https://github.com/multi-os-engine/multi-os-engine/releases/download/1.0.853/multi_os_engine_1.0.853.tar.gz) and unzip it
 - Set MOE_HOME environment variable poining to the extracted files
 - Run Android Studio or IntelliJ IDEA
-- Go to Settings -> Plugins menu and install two plugins from <MOE install folder>/intellij_plugins folder using "Install plugin from disk" button
+- Go to Settings -> Plugins menu and install two plugins from `<MOE folder`>/intellij_plugins folder using "Install plugin from disk" button
 
 Building from source code
 -------------------------
