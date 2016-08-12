@@ -44,7 +44,7 @@ Installation on macOS
 Installation on Windows
 -----------------------
 
-- Download binary package here [here](https://github.com/multi-os-engine/multi-os-engine/releases/download/1.0.853/multi_os_engine_1.0.853.tar.gz) and unzip it
+- Download binary package [here](https://github.com/multi-os-engine/multi-os-engine/releases/download/1.0.853/multi_os_engine_1.0.853.tar.gz) and unzip it
 - Set MOE_HOME environment variable poining to the extracted files
 - Install Java Development Kit 8
 - Install Android Studio or IntelliJ IDEA
