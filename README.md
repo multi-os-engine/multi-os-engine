@@ -35,15 +35,23 @@ System Requirements
 Installation on macOS
 ----------------------
 
-Download binary package [here](https://github.com/multi-os-engine/multi-os-engine/releases/download/1.0.853/multi_os_engine_1.0.853.tar.gz), unzip it and run moe_install.sh script in the root folder.
+- Install Android Studio or IntelliJ IDEA
+- Install Android SDK
+- Install Java Development Kit 8
+- Download MOE binary package [here](https://github.com/multi-os-engine/multi-os-engine/releases/download/1.0.853/multi_os_engine_1.0.853.tar.gz), unzip it and run moe_install.sh script in the root folder.
+
 
 Installation on Windows
 -----------------------
 
 - Download binary package here [here](https://github.com/multi-os-engine/multi-os-engine/releases/download/1.0.853/multi_os_engine_1.0.853.tar.gz) and unzip it
 - Set MOE_HOME environment variable poining to the extracted files
-- Run Android Studio or IntelliJ IDEA
-- Go to Settings -> Plugins menu and install two plugins from `<MOE folder`>/intellij_plugins folder using "Install plugin from disk" button
+- Install Java Development Kit 8
+- Install Android Studio or IntelliJ IDEA
+- Run Android Studio or IntelliJ IDEA, go to Settings -> Plugins menu and install two plugins from `<MOE folder`>/intellij_plugins folder using "Install plugin from disk" button
+- Install Android SDK
+- Install MOE to remote macOS machine and make sure the machine is accessible using SSH
+- install Apple iTunes to Windows host to be able to deploy your iOS applications to iOS device on Windows
 
 Building from source code
 -------------------------
