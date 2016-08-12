@@ -9,7 +9,7 @@ Getting Started
 ---------------
 
 - Download binary package [here](https://github.com/multi-os-engine/multi-os-engine/releases/download/1.0.853/multi_os_engine_1.0.853.tar.gz)
-- Walk through our [Quick Start Tutorials](http://doc.multi-os-engine.org) to configure your development environment and learn hwo to develop applications using Multi-OS Engine.
+- Walk through our [Quick Start Tutorials](http://doc.multi-os-engine.org) to configure your development environment and learn how to develop applications using Multi-OS Engine.
 - Ask questions on the [Multi-OS Engine Forum](https://discuss.multi-os-engine.org/)
 - Submit issues to https://github.com/multi-os-engine/multi-os-engine/issues
 
