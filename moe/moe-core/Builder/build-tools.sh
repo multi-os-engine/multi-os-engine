@@ -37,10 +37,12 @@ call_sub ../../tools/moe.binding.libimobiledevice moe-binding-libimobiledevice-b
 call_sub ../../natj/natjgen/natjgen.cli.tool moe-build-natjgen-cli-tool.sh &&
 call_sub ../../tools/moe.document.pbxproj moe-document-pbxproj-build.sh &&
 call_sub ../../tools/moe.document.xib moe-document-xib-build.sh &&
+call_sub ../../tools/moe.tools.natjgen moe-tools-natjgen-build.sh &&
 call_sub ../../tools/moe.generator.project moe-generator-project-build.sh &&
 call_sub ../../tools/moe.ios.device.launcher moe-ios-device-launcher-build.sh &&
 call_sub ../../tools/moe.ios.simulator.launcher moe-ios-simulator-launcher-build.sh &&
 call_sub ../../tools/moe.build.gradle moe-build-gradle-build.sh &&
+call_sub ../../tools/moe.plugin.gradle moe-plugin-gradle-build.sh &&
 call_sub ../../tools/moe.executable.builder moe-executable-builder-build.sh &&
 call_sub ../../tools/moe.ui.transformer moe-tools-ui-transformer.sh &&
 #call_sub ../../tools/moe.ui.designer moe-tools-ui-designer.sh &&
