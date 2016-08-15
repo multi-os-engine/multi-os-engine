@@ -1,0 +1,112 @@
+/*
+Copyright (C) 2016 Migeran
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+plugins {
+    id "com.jfrog.bintray" version "1.7"
+}
+
+group 'org.multi-os-engine'
+version '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+def moe_home = System.getenv('MOE_HOME_PATH')
+if (moe_home == null) {
+    throw new GradleException('Env var MOE_HOME_PATH is not set')
+}
+
+task sdk(type: Zip) {
+    into('sdk') {
+        from files("$moe_home/sdk") {
+            include 'moe-core.jar'
+            include 'moe-ios-javadoc.jar'
+            include 'moe-ios-junit.jar'
+            include 'moe-ios.jar'
+            include 'iphoneos/MOE.framework/**/*'
+            include 'iphonesimulator/MOE.framework/**/*'
+        }
+    }
+    into('tools') {
+        from files("$moe_home/tools") {
+            include 'dex2oat'
+            include 'dx'
+            include 'dx.jar'
+            include 'ios-device.jar'
+            include 'java8support.jar'
+            include 'macosx/x86_64/*.dylib'
+            include 'preloaded-classes'
+            include 'proguard-full.cfg'
+            include 'proguard.cfg'
+            include 'proguard.jar'
+            include 'retrolambda.jar'
+            include 'UITransformer-res/**/*'
+            include 'uiTransformer.jar'
+            include 'windows/x86_64/*.dll'
+            include 'wrapnatjgen.jar'
+        }
+        from files('.') {
+            include 'gradlew.zip'
+        }
+    }
+}
+
+bintray {
+    if (project.hasProperty('bintray.user')) {
+        user = property('bintray.user')
+    }
+    if (project.hasProperty('bintray.key')) {
+        key = property('bintray.key')
+    }
+
+    publications = ['mavenJava']
+
+    pkg {
+        repo = 'maven'
+        name = 'moe-sdk'
+        userOrg = 'multi-os-engine'
+        websiteUrl = 'https://multi-os-engine.org'
+        vcsUrl = 'https://github.com/multi-os-engine/multi-os-engine'
+        licenses = ['Apache-2.0']
+        labels = ['moe', 'multi-os-engine']
+        publicDownloadNumbers = false
+
+        publish = true
+
+        version {
+            name = project.version
+        }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact sdk {
+            }
+        }
+    }
+}
