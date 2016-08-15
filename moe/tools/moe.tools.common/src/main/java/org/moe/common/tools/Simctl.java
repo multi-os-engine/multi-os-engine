@@ -27,6 +27,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Simctl {
     private static final String SIMCTL = "simctl";
@@ -81,14 +82,14 @@ public class Simctl {
 
         File container = new File(paths[0]);
 
-        if(!container.exists()) {
+        if (!container.exists()) {
             throw new RuntimeException("Can not get app container path: " + containerPath);
         }
 
         return container.getAbsolutePath();
     }
 
-    public static String launch(String deviceUDID, String bundleId, List<String> args) throws IOException {
+    public static String launch(String deviceUDID, String bundleId, List<String> args, Map<String, String> env) throws IOException {
 
         ArrayList<String> list = new ArrayList<String>();
         list.add(deviceUDID);
@@ -97,10 +98,10 @@ public class Simctl {
             list.addAll(args);
         }
 
-        return runCommand(Cmd.Launch, list.toArray(new String[list.size()]));
+        return runCommand(Cmd.Launch, list.toArray(new String[list.size()]), env);
     }
 
-    public static ExecRunner spawn(String deviceUDID, String appPath, List<String> args) throws IOException {
+    public static ExecRunner spawn(String deviceUDID, String appPath, List<String> args, Map<String, String> env) throws IOException {
 
         SimpleExec exec = SimpleExec.getExec(Xcode.getSimctlPath().toString());
         List<String> execArgs = exec.getArguments();
@@ -112,7 +113,15 @@ public class Simctl {
             execArgs.addAll(args);
         }
 
-        return exec.getRunner();
+        final ExecRunner runner = exec.getRunner();
+
+        if (env != null) {
+            for (Map.Entry<String, String> entry : env.entrySet()) {
+                runner.getBuilder().environment().put("SIMCTL_CHILD_" + entry.getKey(), entry.getValue());
+            }
+        }
+
+        return runner;
     }
 
     public static Simulator getByUdid(String simulatorUdid) throws RuntimeException {
@@ -144,6 +153,10 @@ public class Simctl {
     }
 
     private static String runCommand(Cmd command, String[] args) throws RuntimeException {
+        return runCommand(command, args, null);
+    }
+
+    private static String runCommand(Cmd command, String[] args, Map<String, String> env) throws RuntimeException {
         SimpleExec exec = SimpleExec.getExec(Xcode.getSimctlPath().toString());
         List<String> execArgs = exec.getArguments();
         execArgs.add(command.cmd());
@@ -156,9 +169,22 @@ public class Simctl {
             }
         }
 
+        final ExecRunner runner;
+        try {
+            runner = exec.getRunner();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        if (env != null) {
+            for (Map.Entry<String, String> entry : env.entrySet()) {
+                runner.getBuilder().environment().put("SIMCTL_CHILD_" + entry.getKey(), entry.getValue());
+            }
+        }
+
         String output;
         try {
-            output = ExecOutputCollector.collect(exec);
+            output = ExecOutputCollector.collect(runner);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

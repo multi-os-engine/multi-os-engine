@@ -18,8 +18,9 @@ package org.moe.common.ios;
 
 import org.moe.common.exec.AbstractExec;
 import org.moe.common.exec.ExecOutputCollector;
-import org.moe.common.exec.ExecRunner;
+import org.moe.common.exec.GradleExec;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,15 +29,17 @@ import java.util.regex.Pattern;
 
 public class Device extends DeviceLauncher {
 
-    public static List<DeviceInfo> getDevices() throws IOException {
+    public static List<DeviceInfo> getDevices(File projectFile) throws IOException {
         List<DeviceInfo> result = new ArrayList<DeviceInfo>();
 
-        List<String> args = new ArrayList<String>();
+        if (projectFile == null) {
+            return result;
+        }
 
-        args.add("--list");
-
-        AbstractExec exec = createExecRunner(DeviceType.Device);
-        exec.getArguments().addAll(args);
+        GradleExec exec = new GradleExec(projectFile, null, projectFile);
+        exec.getArguments().add("moeListDevices");
+        exec.getArguments().add("-Dorg.gradle.daemon=true");
+        exec.getArguments().add("-Dorg.gradle.configureondemand=true");
 
         String output;
         try {
@@ -82,8 +85,8 @@ public class Device extends DeviceLauncher {
         return device;
     }
 
-    public static Process launchApp(String deviceUdid, String appPath, int jdwpPort, int remotePort, List<String> args) throws IOException {
-        AbstractExec exec = createExecRunner(DeviceType.Device);
+    public static Process launchApp(String deviceUdid, String appPath, int jdwpPort, int remotePort, List<String> args, File sdkToolsPath) throws IOException {
+        AbstractExec exec = createExecRunner(DeviceType.Device, sdkToolsPath);
         List<String> execArgs = exec.getArguments();
 
         execArgs.add("-a=" + appPath);

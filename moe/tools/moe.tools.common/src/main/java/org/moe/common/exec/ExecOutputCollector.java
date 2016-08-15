@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.common.exec;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class ExecOutputCollector {
 
@@ -24,14 +25,24 @@ public class ExecOutputCollector {
 
 	}
 
-	public static String collect(AbstractExec exec) throws IOException,
-			InterruptedException {
-		ExecRunner runner = exec.getRunner();
-        String output = collect(runner);
-		return output;
-	}
+    public static String collect(AbstractExec exec) throws IOException,
+            InterruptedException {
+        return collect(exec, null);
+    }
 
-	public static String collect(ExecRunner runner) throws IOException,
+    public static String collect(AbstractExec exec, Map<String, String> env) throws IOException,
+            InterruptedException {
+        ExecRunner runner = exec.getRunner();
+        String output = collect(runner, env);
+        return output;
+    }
+
+    public static String collect(ExecRunner runner) throws IOException,
+            InterruptedException {
+        return collect(runner, null);
+    }
+
+	public static String collect(ExecRunner runner, Map<String, String> env) throws IOException,
 			InterruptedException {
 
 		final StringBuilder out = new StringBuilder();
@@ -48,6 +59,13 @@ public class ExecOutputCollector {
                 err.append(line).append("\n");
             }
         });
+
+        if (env != null) {
+            final Map<String, String> environment = runner.getBuilder().environment();
+            for (Map.Entry<String, String> entry : env.entrySet()) {
+                environment.put(entry.getKey(), entry.getValue());
+            }
+        }
 
         int rc = runner.run(null);
         if (rc != 0) {

@@ -40,49 +40,5 @@ public class MOESDK {
 
     MOEBindingsBase bindings;
 
-    public static final String IOS_SIMULATOR_JAR = "ios-simulator.jar";
     public static final String IOS_DEVICE_JAR = "ios-device.jar";
-
-    public static final String HOME_ENV_VAR_NAME = "MOE_HOME";
-
-    public static final String HOME_PATH = getHomePath();
-    public static final String SDK_TOOLS_PATH = HOME_PATH + File.separator + MOEToolsBase.ROOT_DIR;
-
-
-    public MOESDK() {
-        if (OsUtils.isWindows()) {
-            createForWindows(HOME_PATH);
-        } else {
-            createForMacOs(HOME_PATH);
-        }
-    }
-
-    public void createForMacOs(String homePath) {
-        runtime = new MOERuntime(homePath);
-        bindings = new MOEBindingsMacOS(homePath);
-        tools = new MOEToolsMacOs(homePath);
-        if (runtime == null || bindings == null || tools == null) {
-            throw new NullPointerException();
-        }
-    }
-
-    public void createForWindows(String homePath) {
-
-        bindings = new MOEBindingsWindows(homePath);
-        tools = new MOEToolsWindows(homePath);
-
-        if (bindings == null || tools == null) {
-            throw new NullPointerException();
-        }
-    }
-
-    public static String getHomePath() {
-        String homePath = System.getenv(HOME_ENV_VAR_NAME);
-
-        if (homePath == null || homePath.isEmpty()) {
-            throw new InvalidPathException(homePath, "Invalid.MOE.Home.Path");
-        }
-
-        return homePath;
-    }
 }

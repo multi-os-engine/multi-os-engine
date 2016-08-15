@@ -17,41 +17,29 @@ limitations under the License.
 package org.moe.common.ios;
 
 import org.moe.common.exec.AbstractExec;
-import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.SimpleExec;
 import org.moe.common.utils.OsUtils;
-import org.moe.common.utils.SDKUtils;
 import org.moe.common.sdk.MOESDK;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 public class DeviceLauncher {
 
     enum DeviceType {
-        Device,
-        Simulator
+        Device
     }
 
-    public static String pathToSimulatorLib() {
-        return pathToLib(MOESDK.IOS_SIMULATOR_JAR);
+    public static String pathToDeviceLib(File sdkToolsPath) {
+        return pathToLib(MOESDK.IOS_DEVICE_JAR, sdkToolsPath);
     }
 
-    public static String pathToDeviceLib() {
-        return pathToLib(MOESDK.IOS_DEVICE_JAR);
-    }
-
-    public static AbstractExec createExecRunner(DeviceType type) {
+    public static AbstractExec createExecRunner(DeviceType type, File sdkToolsPath) {
         String libPath = "";
 
-        if (type == DeviceType.Simulator) {
-            libPath = pathToSimulatorLib();
-        } else {
-            libPath = pathToDeviceLib();
-        }
+        libPath = pathToDeviceLib(sdkToolsPath);
 
-        AbstractExec exec = SimpleExec.getExec("java", new File(SDKUtils.getSDKToolsPath()));
+        AbstractExec exec = SimpleExec.getExec("java", sdkToolsPath);
 
         List<String> args = exec.getArguments();
         if (OsUtils.isMac()) {
@@ -64,8 +52,8 @@ public class DeviceLauncher {
         return exec;
     }
 
-    private static String pathToLib(String libName) {
-        String toolsPath = SDKUtils.getSDKToolsPath();
+    private static String pathToLib(String libName, File sdkToolsPath) {
+        String toolsPath = sdkToolsPath.getAbsolutePath();
 
         if (toolsPath == null || toolsPath.isEmpty()) {
             throw new RuntimeException("Can't locate Multi-OS Engine home directory! Please make sure MOE_HOME environment variable is set.");

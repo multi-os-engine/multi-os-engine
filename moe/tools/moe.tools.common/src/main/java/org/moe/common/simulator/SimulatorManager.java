@@ -16,15 +16,17 @@ limitations under the License.
 
 package org.moe.common.simulator;
 
-import org.moe.common.exec.ExecRunner;
 import org.moe.common.application.Bundle;
+import org.moe.common.exec.ExecRunner;
 import org.moe.common.tools.Simctl;
 import org.moe.common.tools.SimulatorApp;
 import org.moe.common.tools.SimulatorService;
 import org.moe.common.tools.Xcode;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Executors;
 
 public class SimulatorManager {
@@ -36,6 +38,10 @@ public class SimulatorManager {
     }
 
     public Process installAndLaunchApp(String simulatorUdid, String appPath, final List<String> args) throws IOException, RuntimeException {
+        return installAndLaunchApp(simulatorUdid, appPath, args, new HashMap<String, String>());
+    }
+
+    public Process installAndLaunchApp(String simulatorUdid, String appPath, final List<String> args, final Map<String, String> env) throws IOException, RuntimeException {
         if (simulatorUdid.isEmpty()) {
             List<Simulator> simulators = SimulatorManager.getSimulators();
 
@@ -76,8 +82,7 @@ public class SimulatorManager {
         if (needToWaitForShutdown) {
             try {
                 result = waitForState(WAIT_TIMEOUT, simulatorUdid, SimulatorState.Shutdown);
-            }
-            catch (InterruptedException e) {
+            } catch (InterruptedException e) {
                 throw new RuntimeException("Previous simulator process wait timed out.");
             }
 
@@ -92,8 +97,7 @@ public class SimulatorManager {
 
         try {
             result = waitForState(WAIT_TIMEOUT, simulatorUdid, SimulatorState.Booted);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             throw new RuntimeException("Can not start simulator with udid: " + simulatorUdid + " Wait timed out.");
         }
 
@@ -103,14 +107,13 @@ public class SimulatorManager {
 
         try {
             Simctl.install(simulatorUdid, appPath);
-        }
-        catch (RuntimeException e) {
+        } catch (RuntimeException e) {
             throw new RuntimeException("Can not install application. Error: " + e.getMessage());
         }
 
         final String bundleId = Bundle.getBundleId(appPath);
 
-        if(bundleId == null) {
+        if (bundleId == null) {
             throw new RuntimeException("Failed to get application bundle Id.");
         }
 
@@ -119,9 +122,8 @@ public class SimulatorManager {
         ExecRunner runner;
 
         try {
-            runner = Simctl.spawn(BOOTED, Bundle.getExecutablePath(containerPath), args);
-        }
-        catch (RuntimeException e) {
+            runner = Simctl.spawn(BOOTED, Bundle.getExecutablePath(containerPath), args, env);
+        } catch (RuntimeException e) {
             throw new RuntimeException("Can not spawn application process. Error: " + e.getMessage());
         }
 
@@ -134,7 +136,7 @@ public class SimulatorManager {
                 try {
                     // TODO better way to check if launched
                     Thread.sleep(5000);
-                    Simctl.launch(BOOTED, bundleId, args);
+                    Simctl.launch(BOOTED, bundleId, args, env);
                 } catch (InterruptedException ignored) {
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -154,11 +156,9 @@ public class SimulatorManager {
 
             if (simulator == null) {
                 return false;
-            }
-            else if (simulator.state() == state) {
+            } else if (simulator.state() == state) {
                 return true;
-            }
-            else {
+            } else {
                 Thread.sleep(200);
                 millisWaited += 200;
             }
