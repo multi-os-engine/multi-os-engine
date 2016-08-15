@@ -221,8 +221,8 @@ execute "Preparing Windows build directory" mkdir -p "$BUILD_DIR_WINDOWS_X86_64"
 buildopenssl() {
     cd "$CHECKOUT_DIR/openssl"
 
-    CROSS_COMPILE="x86_64-w64-mingw32-" execute_internal "Configuring openssl" ./Configure mingw64 \
-        shared no-asm --prefix=/usr/local/mingw/x86_64-w64-mingw32 enable-deprecated
+    execute_internal "Configuring openssl" ./Configure darwin64-x86_64-cc \
+        no-shared no-dynamic no-asm --prefix="$BUILD_DIR_MACOSX_X86_64/openssl-build" enable-deprecated
     retcode=$?; if [ $retcode -ne 0 ]; then return $retcode; fi
 
     execute_internal "Building openssl depend" make depend
@@ -231,17 +231,30 @@ buildopenssl() {
     execute_internal "Building openssl" make
     retcode=$?; if [ $retcode -ne 0 ]; then return $retcode; fi
 
+    execute_internal "Installing openssl" make install
+    retcode=$?; if [ $retcode -ne 0 ]; then return $retcode; fi
+
+    execute_internal "Cleaning ($PROJECT)" make clean
+    retcode=$?; if [ $retcode -ne 0 ]; then return $retcode; fi
+
+    CROSS_COMPILE="x86_64-w64-mingw32-" execute_internal "Configuring openssl for Windows" ./Configure mingw64 \
+        shared no-asm --prefix=/usr/local/mingw/x86_64-w64-mingw32 enable-deprecated
+    retcode=$?; if [ $retcode -ne 0 ]; then return $retcode; fi
+
+    execute_internal "Building openssl depend for Windows" make depend
+    retcode=$?; if [ $retcode -ne 0 ]; then return $retcode; fi
+
+    execute_internal "Building openssl for Windows" make
+    retcode=$?; if [ $retcode -ne 0 ]; then return $retcode; fi
+
     # Workaround for openssl install bug
     rm -rf /usr/local/mingw/x86_64-w64-mingw32/ssl
 
-    execute_internal "Installing openssl" make install
+    execute_internal "Installing openssl for Windows" make install
     retcode=$?; if [ $retcode -ne 0 ]; then return $retcode; fi
 }
 
-BREW_OPENSSL_DIR="/usr/local/Cellar/openssl/$(ls -1 /usr/local/Cellar/openssl | tail -n 1)"
-execute "Checking brew openssl" [ -d "$BREW_OPENSSL_DIR" ]
-
-MY_PKG_CONFIG_PATHS=$BREW_OPENSSL_DIR/lib/pkgconfig
+MY_PKG_CONFIG_PATHS=/fakepath
 function update_pkgconfig {
     echo "Updating MY_PKG_CONFIG_PATHS"
     MY_PKG_CONFIG_PATHS=$MY_PKG_CONFIG_PATHS:$BUILD_DIR_MACOSX_X86_64/$1-build/lib/pkgconfig
@@ -290,7 +303,8 @@ function buildlib {
     return 0
 }
 
-execute "Building Windows openssl" buildopenssl
+execute "Building openssl" buildopenssl
+update_pkgconfig openssl
 
 MAC_CFLAGS="-DMOE" \
     WIN_CFLAGS="-DMOE" \
@@ -310,7 +324,7 @@ MAC_CFLAGS="-DMOE" \
     "" "ac_cv_func_malloc_0_nonnull=yes ac_cv_func_realloc_0_nonnull=yes"
 update_pkgconfig libusbmuxd
 
-MAC_CFLAGS="-DMOE -I$BREW_OPENSSL_DIR/include" \
+MAC_CFLAGS="-DMOE -I$BUILD_DIR_MACOSX_X86_64/openssl-build/include" \
     WIN_CFLAGS="-std=gnu99 -DMOE -DWIN32" \
     execute "Making libimobiledevice" buildlib libimobiledevice \
     "--without-cython" "--without-cython"
@@ -320,8 +334,9 @@ execute "Creating libimobiledevice.dylib" cc -dynamiclib -o libimobiledevice.dyl
     libusbmuxd-build/lib/libusbmuxd.a \
     libplist-build/lib/libplist.a \
     libimobiledevice-build/lib/libimobiledevice.a \
-    -lxml2 $BREW_OPENSSL_DIR/lib/libssl.a \
-    $BREW_OPENSSL_DIR/lib/libcrypto.a -lz
+    openssl-build/lib/libcrypto.a \
+    openssl-build/lib/libssl.a \
+    -lxml2 -lz
 
 cd "$BUILD_DIR_WINDOWS_X86_64"
 execute "Creating libimobiledevice.dll" /usr/local/mingw/bin/x86_64-w64-mingw32-g++ -shared -o \
