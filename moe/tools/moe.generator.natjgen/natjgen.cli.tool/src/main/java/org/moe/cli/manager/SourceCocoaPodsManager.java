@@ -70,7 +70,7 @@ public class SourceCocoaPodsManager extends AbstractCocoaPodsManager {
 
         for (SpecObject key : allUsedSpecs) {
         	//for iphonesimulator
-        	File simDep = new File(JPod.getAbsolutePath(), "/build/Release-iphonesimulator/" + key.getName());
+        	File simDep = new File(JPod.getAbsolutePath(), "/build/Release-iphonesimulator/");
         	File[] simFiles = simDep.listFiles();
         	if (simFiles != null) {
         		String nameRegexp = key.getName().replace("-", ".") + ".framework";
@@ -82,7 +82,7 @@ public class SourceCocoaPodsManager extends AbstractCocoaPodsManager {
         	}
         	
         	//for iphoneos
-        	File devDep = new File(JPod.getAbsolutePath(), "/build/Release-iphoneos/" + key.getName());
+        	File devDep = new File(JPod.getAbsolutePath(), "/build/Release-iphoneos/");
         	File[] devFiles = devDep.listFiles();
         	if (devFiles != null) {
         		String nameRegexp = key.getName().replace("-", ".") + ".framework";

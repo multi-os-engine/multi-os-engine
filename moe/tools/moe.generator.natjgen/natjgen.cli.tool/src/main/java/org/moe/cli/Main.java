@@ -34,6 +34,10 @@ public class Main {
 	private static final String LOG4J_FILENAME = "/log4j.properties";
 
 	public static void main(String[] argc) {
+		if (System.getenv("MOE_HOME") == null) {
+			System.err.println("MOE_HOME env var is not set");
+			System.exit(1);
+		}
 		try {
 			System.out.println("wrapnatjgen running...");
 			configureLogger();
