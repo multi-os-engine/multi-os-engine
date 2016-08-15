@@ -5,19 +5,20 @@
 buildscript {
     // Add central and local Maven repos
     repositories {
-        maven {
-            url uri(System.getenv("MOE_HOME") + "/gradle")
-        }
+        jcenter()
+//<<---REGION:USE_CUSTOM_BUILDSCRIPT_REPO
+            ${_PLACEHOLDER_CUSTOM_BUILDSCRIPT_REPO}
+//>>---REGION:USE_CUSTOM_BUILDSCRIPT_REPO
 //<<---REGION:USE_KOTLIN_PLUGIN
         maven {
             url 'http://oss.sonatype.org/content/repositories/snapshots'
         }
 //>>---REGION:USE_KOTLIN_PLUGIN
-        mavenCentral()
+        mavenLocal()
     }
     dependencies {
         // MOE plugin
-        classpath 'org.moe.gradle:moeGradlePlugin:1.1.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.0.+'
 //<<---REGION:USE_KOTLIN_PLUGIN
 
         // Kotlin plugin
@@ -50,17 +51,13 @@ sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 // Set maven repository
-repositories {
-    maven {
-        url uri(System.getenv("MOE_HOME") + "/gradle")
-    }
 //<<---REGION:USE_KOTLIN_PLUGIN
+repositories {
     maven {
         url 'http://oss.sonatype.org/content/repositories/snapshots'
     }
-//>>---REGION:USE_KOTLIN_PLUGIN
-    mavenCentral()
 }
+//>>---REGION:USE_KOTLIN_PLUGIN
 
 // Exclude all files from Gradle's test runner
 test { exclude '**' }
@@ -80,7 +77,10 @@ moe {
 //<<---REGION:USE_CUSTOM_BUNDLE_ID
     xcode.bundleID = '${_PLACEHOLDER_MOE_BUNDLE_ID}'
 //>>---REGION:USE_CUSTOM_BUNDLE_ID
-
+//<<---REGION:KEEP_XCODE_PROJECT
+    xcode.generateProject = false
+    xcode.xcodeProjectDirPath = '${_PLACEHOLDER_MOE_XCODE_PATH}'
+//>>---REGION:KEEP_XCODE_PROJECT
 }
 
 // Set dependencies
@@ -108,20 +108,9 @@ compileScala { classpath = classpath.plus(fileTree(moe.sdk.coreJarPath)) }
 //<<---REGION:USE_ECLIPSE_PLUGIN
 // Setup Eclipse
 eclipse {
-    classpath {
-        // Remove the default JRE container, MOE SDK will take its place
-        file.whenMerged { classpath ->
-            project.moe.fixJavaDocAndSources(classpath)
-            classpath.entries.removeAll { entry ->
-                entry.kind == 'con' && entry.path.startsWith('org.eclipse.jdt.launching.JRE_CONTAINER')
-            }
-        }
-    }
-
     // Set MOE natures and build commands
     project {
-        natures 'org.moe.mdt.appnature'
-        buildCommand 'org.moe.mdt.generalbuilder'
+        natures 'org.moe.natures.project'
     }
 }
 //>>---REGION:USE_ECLIPSE_PLUGIN

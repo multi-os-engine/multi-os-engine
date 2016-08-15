@@ -94,37 +94,48 @@ public final class ContentProvider {
     public static void generateXcConfigContent(File file, boolean isTest, Configuration config) {
         ContentWriter w = new ContentWriter(file);
         String sourceSet = isTest ? "test" : "main";
+
+        w.wl("// Gradle project base and build directories");
+        w.wl("MOE_PROJECT_DIR = ${SRCROOT}/" + config.getRelativePathToBasePrj());
+        if (config.getRelativePathToBasePrj().equals("../..") &&
+                config.getRelativePathToBuildDir().equals("..")) {
+            w.wl("MOE_PROJECT_BUILD_DIR = ${MOE_PROJECT_DIR}/build");
+        } else {
+            w.wl("MOE_PROJECT_BUILD_DIR = ${SRCROOT}/" + config.getRelativePathToBuildDir());
+        }
+        w.nl();
+
         w.wl("// Create sections from the art and oat files.");
-        w.wl("MOE_SECT_OAT = -sectcreate __OATDATA __oatdata \"${SRCROOT}/" + config.getRelativePathToBuildDir() + "/moe/" + sourceSet +
+        w.wl("MOE_SECT_OAT = -sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet +
                 "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"");
-        w.wl("MOE_SECT_ART = -sectcreate __ARTDATA __artdata \"${SRCROOT}/" + config.getRelativePathToBuildDir() + "/moe/" + sourceSet +
+        w.wl("MOE_SECT_ART = -sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet +
                 "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"");
         w.nl();
+
         w.wl("// Set the maximum and initial virtual memory protection for the segments.");
-        w.nl();
         w.wl("MOE_SEGPROT[sdk=iphoneos*] = -segprot __OATDATA rx rx -segprot __ARTDATA rw rw");
         w.wl("MOE_SEGPROT[sdk=iphonesimulator*] = -segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw");
 //        w.wl("MOE_SEGPROT[sdk=appletvos*] = -segprot __OATDATA rx rx -segprot __ARTDATA rw rw");
 //        w.wl("MOE_SEGPROT[sdk=appletvsimulator*] = -segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw");
         w.nl();
+
         w.wl("// Set the __PAGEZERO segment size.");
         w.wl("MOE_PAGEZERO[sdk=iphoneos*] =");
         w.wl("MOE_PAGEZERO[sdk=iphonesimulator*] = -pagezero_size 4096");
 //        w.wl("MOE_PAGEZERO[sdk=appletvos*] =");
 //        w.wl("MOE_PAGEZERO[sdk=appletvsimulator*] = -pagezero_size 4096");
         w.nl();
+
         w.wl("// Set frameworks paths.");
         IdentityHashMap<Enum, List<String>> properties = config.getDependenciesManifestsProperties();
+        w.wl("MOE_FRAMEWORK_PATH = ${MOE_PROJECT_BUILD_DIR}/moe/sdk/sdk/${PLATFORM_NAME}");
+        w.nl();
 
-        w.wl("MOE_FRAMEWORK_PATH = ${MOE_HOME}/sdk/${PLATFORM_NAME}");
+        w.wl("MOE_CUSTOM_STATIC_FRAMEWORK_PATH = ${MOE_PROJECT_BUILD_DIR}/libs/static/${PLATFORM_NAME}");
+        w.wl("MOE_CUSTOM_DYNAMIC_FRAMEWORK_PATH = ${MOE_PROJECT_BUILD_DIR}/libs/dynamic/${PLATFORM_NAME}");
         w.nl();
-        w.wl("MOE_CUSTOM_STATIC_FRAMEWORK_PATH = " + config.getRelativePathToBuildDir() +
-                "/libs/static/${PLATFORM_NAME}");
-        w.wl("MOE_CUSTOM_DYNAMIC_FRAMEWORK_PATH = " + config.getRelativePathToBuildDir() +
-                "/libs/dynamic/${PLATFORM_NAME}");
-        w.nl();
+
         w.wl("// Collect all MOE linker flags.");
-
         String customLDFlags = "MOE_CUSTOM_OTHER_LDFLAGS =";
         for (Enum flag : LINKER_FLAGS.values()) {
             List<String> flags = properties.get(flag);
@@ -135,18 +146,18 @@ public final class ContentProvider {
             }
         }
         customLDFlags += " -framework Foundation -framework UIKit";
-        
-        customLDFlags += " -L" + config.getRelativePathToBuildDir() + "/libs/static";
-        customLDFlags += " -L" + config.getRelativePathToBuildDir() + "/libs/static/${PLATFORM_NAME}";
-        customLDFlags += " -F" + config.getRelativePathToBuildDir() + "/libs/static";
-        customLDFlags += " -F" + config.getRelativePathToBuildDir() + "/libs/static/${PLATFORM_NAME}";
-        customLDFlags += " -F" + config.getRelativePathToBuildDir() + "/libs/dynamic";
-        customLDFlags += " -F" + config.getRelativePathToBuildDir() + "/libs/dynamic/${PLATFORM_NAME}";
-
+        customLDFlags += " -L${MOE_PROJECT_BUILD_DIR}/libs/static";
+        customLDFlags += " -L${MOE_PROJECT_BUILD_DIR}/libs/static/${PLATFORM_NAME}";
+        customLDFlags += " -F${MOE_PROJECT_BUILD_DIR}/libs/static";
+        customLDFlags += " -F${MOE_PROJECT_BUILD_DIR}/libs/static/${PLATFORM_NAME}";
+        customLDFlags += " -F${MOE_PROJECT_BUILD_DIR}/libs/dynamic";
+        customLDFlags += " -F${MOE_PROJECT_BUILD_DIR}/libs/dynamic/${PLATFORM_NAME}";
         w.wl(customLDFlags);
         w.nl();
+
         w.wl("MOE_OTHER_LDFLAGS = ${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++");
         w.nl();
+
         w.wl("// Disable BitCode.");
         w.wl("ENABLE_BITCODE = NO");
         w.close();
@@ -313,6 +324,14 @@ public final class ContentProvider {
             if (config.getUseKotlin()) {
                 w.enableRegion("USE_KOTLIN_PLUGIN");
             }
+            if (config.isKeepXcode()) {
+                w.enableRegion("KEEP_XCODE_PROJECT");
+                w.setPlaceholder("MOE_XCODE_PATH", config.getXcodeProjectPath());
+            }
+            if (System.getProperty("moe.project.custom.buildscript.repo") != null) {
+                w.enableRegion("USE_CUSTOM_BUILDSCRIPT_REPO");
+                w.setPlaceholder("CUSTOM_BUILDSCRIPT_REPO", System.getProperty("moe.project.custom.buildscript.repo"));
+            }
             w.writeAndClose();
         } finally {
             try {
@@ -351,7 +370,15 @@ public final class ContentProvider {
      */
     public static String getGradleBuildScriptContents(boolean isTest, Configuration config) {
         StringBuilder b = new StringBuilder();
-        b.append("cd \"${SRCROOT}/" + config.getRelativePathToBasePrj() + "\"\n\n");
+        b.append("\n# Check directories set by xcconfigs\n");
+        b.append("if [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n");
+        b.append("    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\n");
+        b.append("fi\n");
+        b.append("if [ ! -d \"$MOE_PROJECT_BUILD_DIR\" ]; then\n");
+        b.append("    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\n");
+        b.append("fi\n\n");
+
+        b.append("cd \"$MOE_PROJECT_DIR/\"\n\n");
 
         b.append("export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\n");
         b.append("java -version\n\n");

@@ -71,6 +71,8 @@ public final class Configuration extends AbstractConfiguration {
     public static final String USE_IDEA_PROPERTY_NAME = "Use Idea";
     public static final String USE_KOTLIN_PROPERTY_NAME = "Use Kotlin";
     public static final String USE_SCALA_PROPERTY_NAME = "Use Scala";
+    public static final String KEEP_XCODE_PROPERTY_NAME = "Keep Xcode Project";
+    public static final String XCODE_PROJECT_PATH_PROPERTY_NAME = "Xcode Project Path";
 
     public static final String TARGET_PLATFORM_IOS_UNIVERSAL = "Universal iOS";
     public static final String TARGET_PLATFORM_IOS_IPHONE = "iPhone";
@@ -214,6 +216,16 @@ public final class Configuration extends AbstractConfiguration {
      * Linked libraries.
      */
     private IdentityHashMap<Enum, List<String>> dependenciesManifestsProperties;
+
+    /**
+     * Keep Xcode project flag.
+     */
+    private boolean keepXcode = false;
+
+    /**
+     * Xcode project path.
+     */
+    private String xcodeProjectPath = "xcode";
 
     /**
      * Returns the names of pre-defined SDKs.
@@ -612,6 +624,42 @@ public final class Configuration extends AbstractConfiguration {
         return TARGET_PLATFORM_TVOS.equals(targetPlatform);
     }
 
+    /**
+     * Returns the Keep Xcode flag.
+     *
+     * @return keepXcode flag
+     */
+    public boolean isKeepXcode() {
+        return keepXcode;
+    }
+
+    /**
+     * Returns Xcode Project Path.
+     *
+     * @return xcodeProjectPath
+     */
+    public String getXcodeProjectPath() {
+        return xcodeProjectPath;
+    }
+
+    /**
+     * Sets the Keep XCode flag.
+     *
+     * @param keepXcode keep xcode flag
+     */
+    public void setKeepXcode(boolean keepXcode) {
+        this.keepXcode = keepXcode;
+    }
+
+    /**
+     * Sets the Xcode Project Path.
+     *
+     * @param xcodeProjectPath
+     */
+    public void setXcodeProjectPath(String xcodeProjectPath) {
+        this.xcodeProjectPath = xcodeProjectPath;
+    }
+
     @Override
     public void validate() throws ConfigurationValidationException {
         // targetPlatform
@@ -719,6 +767,10 @@ public final class Configuration extends AbstractConfiguration {
             return getUseIdea();
         } else if (USE_KOTLIN_PROPERTY_NAME.equals(key)) {
             return getUseKotlin();
+        } else if (KEEP_XCODE_PROPERTY_NAME.equals(key)) {
+            return isKeepXcode();
+        } else if (XCODE_PROJECT_PATH_PROPERTY_NAME.equals(key)) {
+            return getXcodeProjectPath();
         } else {
             return super.getProperty(key);
         }
@@ -792,6 +844,10 @@ public final class Configuration extends AbstractConfiguration {
             setUseIdea((Boolean) value);
         } else if (USE_KOTLIN_PROPERTY_NAME.equals(key)) {
             setUseKotlin((Boolean) value);
+        } else if (KEEP_XCODE_PROPERTY_NAME.equals(key)) {
+            setKeepXcode((Boolean) value);
+        } else if (XCODE_PROJECT_PATH_PROPERTY_NAME.equals(key)) {
+            setXcodeProjectPath((String) value);
         } else {
             super.setProperty(key, value);
         }
@@ -855,6 +911,10 @@ public final class Configuration extends AbstractConfiguration {
             return Boolean.class;
         } else if (USE_KOTLIN_PROPERTY_NAME.equals(key)) {
             return Boolean.class;
+        } else if (KEEP_XCODE_PROPERTY_NAME.equals(key)) {
+            return Boolean.class;
+        } else if (XCODE_PROJECT_PATH_PROPERTY_NAME.equals(key)) {
+            return String.class;
         } else {
             return super.getPropertyClass(key);
         }
@@ -893,7 +953,9 @@ public final class Configuration extends AbstractConfiguration {
                         USE_ECLIPSE_PROPERTY_NAME,
                         USE_IDEA_PROPERTY_NAME,
                         USE_KOTLIN_PROPERTY_NAME,
-                        USE_SCALA_PROPERTY_NAME
+                        USE_SCALA_PROPERTY_NAME,
+                        KEEP_XCODE_PROPERTY_NAME,
+                        XCODE_PROJECT_PATH_PROPERTY_NAME
                 });
     }
 

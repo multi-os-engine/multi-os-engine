@@ -484,9 +484,17 @@ public final class Generator {
      *
      * @throws IOException
      */
-    private void createGradleWrapper() throws IOException {
+    public void createGradleWrapper() throws IOException {
         if (config.getSkipGradleWrapper()) {
             return;
+        }
+
+        if (file == null) {
+            file = new ProjFile();
+        }
+
+        if (projectHelper == null) {
+            projectHelper = new ProjectHelper(file, new FileManager(config.getProjectRoot()));
         }
 
         FileManager fileManager = projectHelper.getFileManager();
@@ -507,7 +515,7 @@ public final class Generator {
      * @throws IOException
      */
     private void writeFile(String internalSubpath, String filename, String removableSuffix, boolean needInternalInOut) throws IOException {
-        String path = "/com/moe/generator/project";
+        String path = "/org/moe/generator/project";
         if (internalSubpath != null) {
             path += "/" + internalSubpath;
         }
