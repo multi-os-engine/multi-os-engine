@@ -140,7 +140,7 @@ class DeviceHelper {
         W4D_WAITING_THREAD = Thread.currentThread();
 
         // Register event listener
-        System.out.println("Waiting for iOS Deivce...");
+        System.out.println("Waiting for iOS Device...");
         final StringBuilder udidBuilder = new StringBuilder();
         USBDeviceWatcher.IUSBDeviceListener listener = new USBDeviceWatcher.IUSBDeviceListener() {
             @Override

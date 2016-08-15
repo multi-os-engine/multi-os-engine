@@ -180,7 +180,7 @@ public class Configuration extends AbstractConfiguration {
     }
 
     /**
-     * Sets the wait for deivce flag.
+     * Sets the wait for device flag.
      *
      * @param waitForDevice wait for device flag
      */
