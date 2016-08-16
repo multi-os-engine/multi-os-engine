@@ -56,6 +56,18 @@ Installation on Windows
 Building from source code
 -------------------------
 
+Install the 'repo' tool:
+```
+mkdir ~/bin
+PATH=~/bin:$PATH
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+```
+You may also install the repo using brew:
+```
+brew install repo
+```
+
 Get the source code from mainline branch:
 ```
 repo init -u https://github.com/multi-os-engine/manifest.git
@@ -83,7 +95,7 @@ Install macOS MinGW build environment:
 
 | macOS 10.10 | macOS 10.11 |
 | --- | --- |
-| `brew install gcc48`<br> `brew install cloog` | `brew install gcc` |
+| `brew install gcc48`<br> `brew install cloog` | `brew install gcc`<br> `brew install cloog` |
 
 Setup MinGW environment:
 - Build mingw:
