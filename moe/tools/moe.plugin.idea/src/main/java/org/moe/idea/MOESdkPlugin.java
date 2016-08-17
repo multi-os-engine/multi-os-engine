@@ -19,8 +19,6 @@ package org.moe.idea;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
-import org.moe.idea.sdk.MOESdkType;
-import org.moe.idea.utils.ModuleUtils;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleUtil;
@@ -28,6 +26,9 @@ import com.intellij.openapi.module.impl.scopes.ModuleWithDependenciesScope;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.moe.common.utils.ProjectUtil;
+import org.moe.idea.sdk.MOESdkType;
+import org.moe.idea.utils.ModuleUtils;
 import res.MOEIcons;
 import res.MOEText;
 
@@ -37,16 +38,12 @@ import java.util.Collection;
 import java.util.List;
 
 public class MOESdkPlugin {
-
-    public static final String SDK_ROOT_ENV_VAR_NAME = "MOE_HOME";
-
-
     public static String getResourcesFolderName() {
         return "resources";
     }
 
-    public static String getSdkRootPath() {
-        String sdkPath = System.getenv(SDK_ROOT_ENV_VAR_NAME);
+    public static String getSdkRootPath(Module module) {
+        String sdkPath = ProjectUtil.retrieveSDKPathFromGradle(new File(ModuleUtils.getModulePath(module)));
 
         if (sdkPath == null || sdkPath.isEmpty()) {
             Messages.showMessageDialog(MOEText.get("Invalid.SDK.Path"), "Error", MOEIcons.MOELogo);
@@ -55,18 +52,18 @@ public class MOESdkPlugin {
         return sdkPath;
     }
 
-    public static void getMOESdk() {
-        MOESdkType.getMOESdk();
+    public static void getMOESdk(Module module) {
+        MOESdkType.getMOESdk(module);
     }
 
-    public static List<File> getSdkJavaLibraries() {
+    public static List<File> getSdkJavaLibraries(String sdkPath) {
         List<File> jars = new ArrayList<File>();
 
-        List<File> files = getSdkJars();
+        List<File> files = getSdkJars(sdkPath);
 
         for (File file : files) {
             if (!file.getName().endsWith("-dex.jar") &&
-                !file.getName().endsWith("-javadoc.jar")) {
+                    !file.getName().endsWith("-javadoc.jar")) {
                 jars.add(file);
             }
         }
@@ -74,10 +71,10 @@ public class MOESdkPlugin {
         return jars;
     }
 
-    public static List<File> getSdkJavaDocs() {
+    public static List<File> getSdkJavaDocs(String sdkPath) {
         List<File> jars = new ArrayList<File>();
 
-        List<File> files = getSdkJars();
+        List<File> files = getSdkJars(sdkPath);
 
         for (File file : files) {
             if (file.getName().endsWith("-javadoc.jar")) {
@@ -88,10 +85,10 @@ public class MOESdkPlugin {
         return jars;
     }
 
-    private static List<File> getSdkJars() {
+    private static List<File> getSdkJars(String sdkPath) {
         List<File> jars = new ArrayList<File>();
 
-        File libsDir = new File(getSdkRootPath(), "sdk");
+        File libsDir = new File(sdkPath, "sdk");
 
         File[] files = libsDir.listFiles();
 
@@ -108,11 +105,11 @@ public class MOESdkPlugin {
         return jars;
     }
 
+
     public static Collection<Module> getMoeModules(Project project) {
         List<Module> modules = new ArrayList<Module>();
 
         for (Module module : ModuleManager.getInstance(project).getModules()) {
-
             if (isValidMoeModule(module)) {
                 modules.add(module);
             }
@@ -164,53 +161,6 @@ public class MOESdkPlugin {
         }
 
         return module;
-    }
-
-    public static File getXcodeProjectFile(Module module) {
-        if (module == null) {
-            return null;
-        }
-
-        File projectFile = null;
-        String xcodeProjectPath = ModuleUtils.getXcodeProjectPath(module);
-        if (xcodeProjectPath != null) {
-            projectFile = new File(xcodeProjectPath);
-        } else {
-            xcodeProjectPath = ModuleUtils.retrieveXcodeProjectPathFromGradle(module);
-            ModuleUtils.setXcodeProjectPath(module, xcodeProjectPath);
-        }
-
-        return projectFile;
-    }
-
-    public static String getProductName(Module module) {
-        if (module == null) {
-            return null;
-        }
-
-        String productName = ModuleUtils.getProductName(module);
-        if (productName == null) {
-            productName = ModuleUtils.retrieveProductNameFromGradle(module);
-            ModuleUtils.setProductName(module, productName);
-        }
-
-        return productName;
-    }
-
-    public static String getXcodeBuildAppPath(Module module, String arch, String configuration, boolean test) {
-        String appPath = getXcodeBuildSymPath(ModuleUtils.getModulePath(module)) + File.separator + configuration + "-";
-
-        if (arch.contains("arm")) {
-            appPath += "iphoneos";
-        } else {
-            appPath += "iphonesimulator";
-        }
-
-        String suffix = test ? "-Test" : "";
-
-        appPath += File.separator + getProductName(module) + suffix + ".app";
-
-        return appPath;
     }
 
     public static String getXcodeBuildSymPath(String modulePath) {

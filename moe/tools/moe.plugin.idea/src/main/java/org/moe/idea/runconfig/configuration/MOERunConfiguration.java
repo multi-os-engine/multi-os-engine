@@ -14,16 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package org.moe.idea.runconfig.configuration.local;
+package org.moe.idea.runconfig.configuration;
 
-import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
-import org.moe.common.simulator.Simulator;
-import org.moe.common.sdk.Sdk;
-import org.moe.common.sdk.SdkManager;
-
-import org.moe.common.simulator.SimulatorManager;
-import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
-import org.moe.idea.utils.JDOMHelper;
 import com.intellij.execution.RunManager;
 import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.configurations.ConfigurationFactory;
@@ -37,8 +29,15 @@ import com.intellij.openapi.util.JDOMExternalizerUtil;
 import com.intellij.openapi.util.WriteExternalException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.moe.common.sdk.Sdk;
+import org.moe.common.sdk.SdkManager;
+import org.moe.common.simulator.Simulator;
+import org.moe.common.simulator.SimulatorManager;
+import org.moe.common.utils.OsUtils;
+import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
+import org.moe.idea.utils.JDOMHelper;
 
-public class MOERunConfigurationLocal extends MOERunConfigurationBase {
+public class MOERunConfiguration extends MOERunConfigurationBase {
     private String simulatorUdid;
     private boolean runOnSimulator = true;
     private boolean runJUnitTests = false;
@@ -48,27 +47,28 @@ public class MOERunConfigurationLocal extends MOERunConfigurationBase {
     private String testClassName = "";
     private String testPackageName = "";
 
-    public MOERunConfigurationLocal(final Project project, final ConfigurationFactory factory) {
+    public MOERunConfiguration(final Project project, final ConfigurationFactory factory) {
         super(project, factory);
     }
 
     public static RunnerAndConfigurationSettings createRunConfiguration(Project project, Module module) throws Exception {
         RunManager runManager = RunManager.getInstance(project);
 
-        RunnerAndConfigurationSettings settings = runManager.createRunConfiguration(module.getName(), MOERunConfigurationTypeLocal.getInstance().getConfigurationFactories()[0]);
+        RunnerAndConfigurationSettings settings = runManager.createRunConfiguration(module.getName(), MOERunConfigurationType.getInstance().getConfigurationFactories()[0]);
 
-        MOERunConfigurationLocal configuration = (MOERunConfigurationLocal) settings.getConfiguration();
+        MOERunConfiguration configuration = (MOERunConfiguration) settings.getConfiguration();
 
         configuration.moduleName(module.getName());
 
-        for(Sdk sdk : SdkManager.list()) {
-            for(Simulator simulator : SimulatorManager.getSimulators()) {
-                if (sdk.version().contains(simulator.sdk())) {
-                    configuration.sdkVersion(sdk.version());
-                    configuration.runOnSimulator(true);
-                    configuration.simulatorDeviceName(simulator.udid());
+        if(OsUtils.isMac()) {
+            for (Sdk sdk : SdkManager.list()) {
+                for (Simulator simulator : SimulatorManager.getSimulators()) {
+                    if (sdk.version().contains(simulator.sdk())) {
+                        configuration.runOnSimulator(true);
+                        configuration.simulatorDeviceName(simulator.udid());
 
-                    break;
+                        break;
+                    }
                 }
             }
         }
@@ -79,7 +79,7 @@ public class MOERunConfigurationLocal extends MOERunConfigurationBase {
     @NotNull
     @Override
     public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
-        return new MOERunConfigurationEditorLocal(getProject());
+        return new MOERunConfigurationEditor(getProject());
     }
 
     @Override
@@ -177,7 +177,10 @@ public class MOERunConfigurationLocal extends MOERunConfigurationBase {
     @Override
     public void checkConfiguration() throws RuntimeConfigurationException {
         super.checkConfiguration();
-        MOEJUnitUtil.checkConfiguration(getModules()[0], testType, testPackageName, testClassName);
+        Module moduls[] = getModules();
+        if (moduls.length > 0) {
+            MOEJUnitUtil.checkConfiguration(moduls[0], testType, testPackageName, testClassName);
+        }
     }
 
     public String[] getTestArgs() {
@@ -185,6 +188,10 @@ public class MOERunConfigurationLocal extends MOERunConfigurationBase {
             return MOEJUnitUtil.getTestArgs(module, testType, testPackageName, testClassName);
         }
         return null;
+    }
+
+    public String getActionType() {
+        return actionType;
     }
 
 }

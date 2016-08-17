@@ -16,15 +16,7 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.common.exec.ExecOutputCollector;
-import org.moe.common.exec.SimpleExec;
-import org.moe.common.utils.OsUtils;
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.runconfig.MOEIpaConfiguration;
-import org.moe.idea.ui.MOEToolWindow;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileScope;
 import com.intellij.openapi.compiler.CompileStatusNotification;
@@ -33,6 +25,12 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
+import org.moe.common.exec.ExecOutputCollector;
+import org.moe.common.exec.SimpleExec;
+import org.moe.common.utils.OsUtils;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.runconfig.MOEIpaConfiguration;
+import org.moe.idea.ui.MOEToolWindow;
 import res.MOEIcons;
 import res.MOEText;
 
@@ -112,16 +110,16 @@ public class MOECreateIpaAction extends AnAction {
     public void update(AnActionEvent e) {
         Presentation presentation = getTemplatePresentation();
 
-        for (Module module : MOESdkPlugin.getMoeModules(getEventProject(e))) {
-            if (MOESdkPlugin.isValidMoeModule(module)) {
-                presentation.setEnabled(true);
-                presentation.setVisible(true);
+        DataContext dataContext = e.getDataContext();
+        Module module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
 
-                return;
-            }
+        boolean enabled = false;
+
+        if (module != null && MOESdkPlugin.isValidMoeModule(module)) {
+            enabled = true;
         }
 
-        presentation.setEnabled(false);
-        presentation.setVisible(false);
+        presentation.setEnabled(enabled);
+        presentation.setVisible(enabled);
     }
 }

@@ -16,10 +16,6 @@ limitations under the License.
 
 package org.moe.idea.utils;
 
-import org.moe.document.pbxproj.ProjFile;
-import org.moe.xcode.XCodeProjectFileManager;
-import org.moe.idea.MOESdkPlugin;
-import org.moe.common.constants.MOEManifestConstants.LINKER_FLAGS;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.ModuleAdapter;
 import com.intellij.openapi.project.Project;
@@ -27,6 +23,11 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
 import com.intellij.openapi.vfs.newvfs.events.*;
 import org.jetbrains.annotations.NotNull;
+import org.moe.common.constants.MOEManifestConstants.LINKER_FLAGS;
+import org.moe.common.utils.ProjectUtil;
+import org.moe.document.pbxproj.ProjFile;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.xcode.XCodeProjectFileManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -117,13 +118,6 @@ public class XCodeProjectSyncListener extends ModuleAdapter implements BulkFileL
                 if ((virtualFile == null) || (virtualFile.getExtension() == null) || !virtualFile.getExtension().equals("gradle")) {
                     return;
                 }
-
-                Module module = MOESdkPlugin.findModuleForFile(project, virtualFile);
-
-                if (MOESdkPlugin.isValidMoeModule(module)) {
-                    ModuleUtils.updateXcodeProjectPath(module);
-                    ModuleUtils.updateProductName(module);
-                }
             }
         }
     }
@@ -137,7 +131,7 @@ public class XCodeProjectSyncListener extends ModuleAdapter implements BulkFileL
             return;
         }
 
-        File xcodeProjectFile = MOESdkPlugin.getXcodeProjectFile(module);
+        File xcodeProjectFile = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(new File(ModuleUtils.getModulePath(module))));
         if ((xcodeProjectFile == null) || !xcodeProjectFile.exists()) {
             return;
         }

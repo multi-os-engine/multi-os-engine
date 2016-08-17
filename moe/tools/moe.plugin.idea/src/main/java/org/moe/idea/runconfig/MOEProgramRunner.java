@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.moe.idea.runconfig;
 
-import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 import com.intellij.debugger.DebugEnvironment;
 import com.intellij.debugger.DebuggerManagerEx;
 import com.intellij.debugger.DefaultDebugUIEnvironment;
@@ -42,6 +41,7 @@ import com.intellij.xdebugger.XDebuggerManager;
 import com.intellij.xdebugger.impl.XDebugSessionImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 
 public class MOEProgramRunner extends GenericProgramRunner {
     private static final String DEBUG = "Debug";

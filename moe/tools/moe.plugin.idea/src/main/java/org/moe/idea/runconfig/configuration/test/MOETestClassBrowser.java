@@ -41,7 +41,7 @@ public class MOETestClassBrowser extends BrowseModuleValueActionListener {
   private boolean myIncludeLibraryClasses;
 
   public MOETestClassBrowser(@NotNull Project project,
-                             @NotNull Module module,
+                             Module module,
                              @NotNull String dialogTitle,
                              boolean includeLibraryClasses) {
     super(project);
@@ -86,4 +86,9 @@ public class MOETestClassBrowser extends BrowseModuleValueActionListener {
     PsiClass selClass = chooser.getSelected();
     return selClass != null ? selClass.getQualifiedName() : null;
   }
+
+  public void setModule(Module module) {
+    this.module = module;
+  }
+
 }

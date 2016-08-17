@@ -16,11 +16,6 @@ limitations under the License.
 
 package org.moe.idea.component;
 
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.utils.XCodeProjectSyncListener;
-import org.moe.idea.compiler.MOECompileTask;
-import org.moe.idea.utils.FileEditorListener;
-import org.moe.idea.utils.ModuleUtils;
 import com.intellij.openapi.compiler.CompileTask;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.components.AbstractProjectComponent;
@@ -30,6 +25,10 @@ import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.util.messages.MessageBusConnection;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.utils.FileEditorListener;
+import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.XCodeProjectSyncListener;
 
 public class MOEProjectComponent extends AbstractProjectComponent {
     private MessageBusConnection messageBusConnection;
@@ -66,24 +65,11 @@ public class MOEProjectComponent extends AbstractProjectComponent {
 
         CompilerManager compilerManager = CompilerManager.getInstance(myProject);
 
-        for (CompileTask task : compilerManager.getAfterTasks()) {
-            if (task instanceof MOECompileTask) {
-                found = true;
-                break;
-            }
-        }
-
-        if (!found) {
-            CompilerManager.getInstance(myProject).addAfterTask(new MOECompileTask());
-        }
-
         for (Module module : ModuleManager.getInstance(myProject).getModules()) {
             if (MOESdkPlugin.isValidMoeModule(module)) {
                 if (module.getModuleFile() == null){
                     module.getProject().save();
                 }
-                ModuleUtils.updateXcodeProjectPath(module);
-                ModuleUtils.updateProductName(module);
             }
         }
     }

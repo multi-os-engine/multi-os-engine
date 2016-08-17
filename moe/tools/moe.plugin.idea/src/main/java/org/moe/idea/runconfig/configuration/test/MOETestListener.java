@@ -15,11 +15,11 @@
  */
 package org.moe.idea.runconfig.configuration.test;
 
-import org.moe.idea.runconfig.MOERunProfileState;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.execution.testframework.sm.ServiceMessageBuilder;
 import com.intellij.openapi.util.Comparing;
+import org.moe.idea.runconfig.MOERunProfileState;
 
 import java.util.Map;
 

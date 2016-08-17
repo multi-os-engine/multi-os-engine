@@ -16,12 +16,6 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.common.utils.OsUtils;
-import org.moe.common.exec.ExecOutputCollector;
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.ui.MOEToolWindow;
-import org.moe.idea.utils.ModuleUtils;
-import org.moe.idea.utils.natjgen.WrapNatJGenExec;
 import com.intellij.ide.IdeView;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.module.Module;
@@ -35,6 +29,13 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.common.exec.ExecOutputCollector;
+import org.moe.common.utils.OsUtils;
+import org.moe.common.utils.ProjectUtil;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.utils.ModuleUtils;
+import org.moe.tools.natjgen.WrapNatJGenExec;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,6 +43,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LinkPodThirdPartyLibraries extends AnAction {
 
@@ -67,29 +70,17 @@ public class LinkPodThirdPartyLibraries extends AnAction {
             return;
         }
 
-        Project project = e.getProject();
+        DataContext dataContext = e.getDataContext();
+        module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
 
-        if (project == null) {
-            return;
+        boolean enabled = false;
+
+        if (module != null && MOESdkPlugin.isValidMoeModule(module)) {
+            enabled = true;
         }
 
-        this.module = null;
-        for (Module module : ModuleManager.getInstance(project).getModules()) {
-            if (ModuleRootManager.getInstance(module).getFileIndex().isInContent(file)) {
-                if (MOESdkPlugin.isValidMoeModule(module)) {
-                    this.module = module;
-                }
-                break;
-            }
-        }
-
-        if (module == null) {
-            presentation.setEnabled(false);
-            presentation.setVisible(false);
-        } else {
-            presentation.setEnabled(true);
-            presentation.setVisible(true);
-        }
+        presentation.setEnabled(enabled);
+        presentation.setVisible(enabled);
     }
 
 
@@ -259,18 +250,23 @@ public class LinkPodThirdPartyLibraries extends AnAction {
 
             int MAX_ATTEMPTS = 3;
             int currentAttempt = 0;
+            File sdkToolsDir = new File(ProjectUtil.retrieveSDKPathFromGradle(new File(ModuleUtils.getModulePath(module))), "tools");
             while(currentAttempt < MAX_ATTEMPTS){
                 // Prepare NatJGen
-                WrapNatJGenExec exec = new WrapNatJGenExec();
+                WrapNatJGenExec exec = new WrapNatJGenExec(sdkToolsDir);
                 ArrayList<String> args = exec.getArguments();
 
                 args.add("--pod");
                 args.add(podFile);
                 args.add("--output-file-path");
                 args.add(outputFile);
+
+                final Map<String, String> env = new HashMap<String, String>();
+                env.put("MOE_HOME", sdkToolsDir.getParentFile().getAbsolutePath());
+
                 String out;
                 try {
-                    out = ExecOutputCollector.collect(exec);
+                    out = ExecOutputCollector.collect(exec, env);
                 } catch (IOException e) {
                     out = "NatJGen execution failed. I/O error. " + e.getMessage();
                 } catch (InterruptedException e) {

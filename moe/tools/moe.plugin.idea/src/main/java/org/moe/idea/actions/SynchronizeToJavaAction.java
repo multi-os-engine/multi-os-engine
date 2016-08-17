@@ -16,17 +16,6 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.common.utils.OsUtils;
-import org.moe.document.pbxproj.*;
-import org.moe.document.pbxproj.nextstep.Dictionary;
-import org.moe.document.xib.XIB;
-import org.moe.document.xib.XIBParser;
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.binding.MOEBindingGenerator;
-import org.moe.idea.binding.MOEGenerateBindingFactory;
-import org.moe.idea.utils.ModuleUtils;
-import org.moe.idea.utils.logger.LoggerFactory;
-import org.moe.idea.utils.natjgen.WrapNatJGenExec;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
@@ -44,6 +33,17 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
+import org.moe.common.utils.OsUtils;
+import org.moe.common.utils.ProjectUtil;
+import org.moe.document.pbxproj.*;
+import org.moe.document.pbxproj.nextstep.Dictionary;
+import org.moe.document.xib.XIB;
+import org.moe.document.xib.XIBParser;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.binding.MOEBindingGeneratorByJava;
+import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.logger.LoggerFactory;
+import org.moe.tools.natjgen.WrapNatJGenExec;
 
 import javax.swing.*;
 import java.awt.*;
@@ -101,7 +101,7 @@ public class SynchronizeToJavaAction extends AnAction {
 
         boolean isActionEnabled = isHeaderFile(files, module) || isXcodeFolder(files);
 
-        if(!WrapNatJGenExec.isNatJGenExist() || OsUtils.isWindows()) {
+        if(OsUtils.isWindows()) {
             isActionEnabled = false;
         }
 
@@ -260,7 +260,7 @@ public class SynchronizeToJavaAction extends AnAction {
 
                         List<VirtualFile> bindingList;
                         if (files.length == 1 && files[0] instanceof VirtualDirectoryImpl && files[0].getName().equals("xcode")) {
-                            File xcodeProject = MOESdkPlugin.getXcodeProjectFile(module);
+                            File xcodeProject = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(new File(ModuleUtils.getModulePath(module))));
 
                             if (xcodeProject == null || !xcodeProject.exists()) {
                                 return;
@@ -307,7 +307,7 @@ public class SynchronizeToJavaAction extends AnAction {
                         }
 
                         if (bindingList != null) {
-                            MOEBindingGenerator generator = MOEGenerateBindingFactory.getGenerator(false);
+                            MOEBindingGeneratorByJava generator = new MOEBindingGeneratorByJava();
                             generator.setPackage(packageName.getText());
                             generator.createFromPrototype(true);
 

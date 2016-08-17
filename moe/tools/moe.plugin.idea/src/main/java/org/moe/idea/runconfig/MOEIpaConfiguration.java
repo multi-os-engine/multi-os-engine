@@ -16,10 +16,6 @@ limitations under the License.
 
 package org.moe.idea.runconfig;
 
-import org.moe.common.developer.ProvisioningProfile;
-import org.moe.common.developer.SigningIdentity;
-import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
-import org.moe.idea.utils.ModuleUtils;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.components.*;
 import com.intellij.openapi.module.Module;
@@ -27,6 +23,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import org.jetbrains.annotations.Nullable;
+import org.moe.common.developer.ProvisioningProfile;
+import org.moe.common.developer.SigningIdentity;
+import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
+import org.moe.idea.utils.ModuleUtils;
 
 @State(
         name = "MOEIpaConfiguration",

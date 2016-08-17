@@ -16,18 +16,19 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.common.exec.SimpleExec;
-import org.moe.common.utils.OsUtils;
-import org.moe.idea.MOESdkPlugin;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.moe.common.exec.SimpleExec;
+import org.moe.common.utils.OsUtils;
+import org.moe.common.utils.ProjectUtil;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.utils.ModuleUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,15 +42,16 @@ public class MOEOpenXcodeAction extends AnAction {
             return;
         }
 
-        File project = MOESdkPlugin.getXcodeProjectFile(module);
-        if ((project == null) || !project.exists()) {
+        File xcodeFile = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(new File(ModuleUtils.getModulePath(module))));
+        if ((xcodeFile == null) || !xcodeFile.exists()) {
+            Messages.showErrorDialog("Xcode project not exist", "Open Xcode Project");
             return;
         }
 
         try {
-            SimpleExec.getOpen("xcode", project.getAbsolutePath()).getRunner().run(null);
+            SimpleExec.getOpen("xcode", xcodeFile.getAbsolutePath()).getRunner().run(null);
         } catch (IOException ignored) {
-            System.out.println("Could not open project " + project.getAbsolutePath() + "\n" + ignored.getMessage());
+            System.out.println("Could not open project " + xcodeFile.getAbsolutePath() + "\n" + ignored.getMessage());
         }
     }
 
@@ -73,22 +75,12 @@ public class MOEOpenXcodeAction extends AnAction {
             return;
         }
 
-        Project project = e.getProject();
-
-        if(project == null) {
-            return;
-        }
-
-        for(Module module : ModuleManager.getInstance(project).getModules()) {
-            if(ModuleRootManager.getInstance(module).getFileIndex().isInContent(file)) {
-                this.module = module;
-            }
-        }
+        DataContext dataContext = e.getDataContext();
+        module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
 
         boolean enabled = false;
         if ((module != null) && MOESdkPlugin.isValidMoeModule(module)) {
-            File xcodeFile = MOESdkPlugin.getXcodeProjectFile(module);
-            enabled = ((xcodeFile != null) && xcodeFile.exists());
+            enabled = true;
         }
 
         presentation.setEnabled(enabled);

@@ -16,7 +16,15 @@ limitations under the License.
 
 package org.moe.idea.binding;
 
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.*;
 import com.intellij.util.ui.UIUtil;
+import org.moe.common.utils.ProjectUtil;
 import org.moe.document.pbxproj.*;
 import org.moe.document.pbxproj.nextstep.Array;
 import org.moe.document.pbxproj.nextstep.Dictionary;
@@ -27,13 +35,8 @@ import org.moe.generator.project.FileResult;
 import org.moe.generator.project.ProjectHelper;
 import org.moe.generator.project.XcodeTarget;
 import org.moe.idea.MOESdkPlugin;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.vfs.VfsUtil;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.*;
+import org.moe.idea.utils.ModuleUtils;
+import org.moe.tools.natjgen.binding.MOEBindingGenerator;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -46,10 +49,9 @@ import java.util.regex.Pattern;
 
 import static org.moe.generator.project.Generator.SOURCE_TREE_GROUP;
 
-public class MOEBindingGeneratorByJava implements MOEBindingGenerator {
+public class MOEBindingGeneratorByJava {
     private PsiManager psiManager;
 
-    @Override
     public void generate(DataContext dataContext, String action_title){
         VirtualFile[] files = CommonDataKeys.VIRTUAL_FILE_ARRAY.getData(dataContext);
         Module module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
@@ -57,12 +59,10 @@ public class MOEBindingGeneratorByJava implements MOEBindingGenerator {
         generate(module, files, action_title);
     }
 
-    @Override
     public void generate(Module module, VirtualFile file, String action_title){
         generate(module, new VirtualFile[]{file}, action_title);
     }
 
-    @Override
     public void generate(final Module module, final VirtualFile[] files, String action_title) {
 
         UIUtil.invokeAndWaitIfNeeded(new Runnable() {
@@ -79,7 +79,7 @@ public class MOEBindingGeneratorByJava implements MOEBindingGenerator {
 
                                     if (nativeClassName != null) {
                                         try {
-                                            File xcodeProjectFile = MOESdkPlugin.getXcodeProjectFile(module);
+                                            File xcodeProjectFile = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(new File(ModuleUtils.getModulePath(module))));
 
                                             if ((xcodeProjectFile == null) || !xcodeProjectFile.exists()) {
                                                 return;
@@ -207,12 +207,10 @@ public class MOEBindingGeneratorByJava implements MOEBindingGenerator {
 
     }
 
-    @Override
     public void setPackage(String packageName) {
 
     }
 
-    @Override
     public void createFromPrototype(boolean create) {
 
     }
@@ -252,7 +250,7 @@ public class MOEBindingGeneratorByJava implements MOEBindingGenerator {
                 PBXFileReference pbxFileRef = (PBXFileReference)pbxFile.value;
                 String filePath = pbxFileRef.getPath();
                 if (filePath.endsWith(extension)) {
-                    String xCodeProjectName = MOESdkPlugin.getXcodeProjectFile(module).getName();
+                    String xCodeProjectName = ProjectUtil.retrieveXcodeProjectPathFromGradle(new File(ModuleUtils.getModulePath(module)));
 
                     if (filePath.startsWith(xCodeProjectName)) {
                         filePath = filePath.replace(xCodeProjectName + "/", "");
@@ -335,7 +333,7 @@ public class MOEBindingGeneratorByJava implements MOEBindingGenerator {
                             nativeKey.append(String.format(" %s:(%s*)", methodParams[i], type.getPresentableText()));
                         }
                     }
-                    String nativeIBAction = IBACTION_TEMPLATE.replace(METHOD_DEFINITION, nativeParams.toString().trim());
+                    String nativeIBAction = MOEBindingGenerator.IBACTION_TEMPLATE.replace(MOEBindingGenerator.METHOD_DEFINITION, nativeParams.toString().trim());
                     buffer.put(nativeKey.toString().trim(), nativeIBAction);
                 }
             }
@@ -378,8 +376,8 @@ public class MOEBindingGeneratorByJava implements MOEBindingGenerator {
             if(skeletonAnnotation != null){
                 PsiType returnType = outlet.getReturnType();
                 if(!(returnType instanceof PsiPrimitiveType)){
-                    String nativeIBAction = IBOUTLET_TEMPLATE.replace(ELEMENT_TYPE, returnType.getPresentableText());
-                    nativeIBAction = nativeIBAction.replace(OUTLET_NAME, skeletonAnnotation);
+                    String nativeIBAction = MOEBindingGenerator.IBOUTLET_TEMPLATE.replace(MOEBindingGenerator.ELEMENT_TYPE, returnType.getPresentableText());
+                    nativeIBAction = nativeIBAction.replace(MOEBindingGenerator.OUTLET_NAME, skeletonAnnotation);
 
                     buffer.put(skeletonAnnotation, nativeIBAction);
                 }
@@ -894,11 +892,11 @@ public class MOEBindingGeneratorByJava implements MOEBindingGenerator {
 
             //generate header content
             String headerFileContent = contentHeader.toString();
-            headerFileContent = headerFileContent.replace(INTERFACE_NAME, interfaceName);
-            headerFileContent = headerFileContent.replace(PROJECT_NAME, projectName);
-            headerFileContent = headerFileContent.replace(OUTLET_DEFINITION, outlets);
-            headerFileContent = headerFileContent.replace(ACTION_DEFINITION, actions);
-            headerFileContent = headerFileContent.replace(SUPER_CLASS, javaClass.getSuperClass().getName());
+            headerFileContent = headerFileContent.replace(MOEBindingGenerator.INTERFACE_NAME, interfaceName);
+            headerFileContent = headerFileContent.replace(MOEBindingGenerator.PROJECT_NAME, projectName);
+            headerFileContent = headerFileContent.replace(MOEBindingGenerator.OUTLET_DEFINITION, outlets);
+            headerFileContent = headerFileContent.replace(MOEBindingGenerator.ACTION_DEFINITION, actions);
+            headerFileContent = headerFileContent.replace(MOEBindingGenerator.SUPER_CLASS, javaClass.getSuperClass().getName());
 
             String path = xCodeProject_file.getParentFile().getPath() + File.separator + xCodeProject_file.getName().substring(0, xCodeProject_file.getName().lastIndexOf(".")) + File.separator + "Generated";
             String fileName = interfaceName + extension;

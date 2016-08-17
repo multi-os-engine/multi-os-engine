@@ -16,16 +16,6 @@ limitations under the License.
 
 package org.moe.idea.runconfig;
 
-import org.moe.common.ios.Device;
-import org.moe.common.simulator.SimulatorManager;
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
-import org.moe.idea.runconfig.configuration.local.MOERunConfigurationLocal;
-import org.moe.idea.runconfig.configuration.remote.MOERunConfigurationRemote;
-import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
-import org.moe.idea.runconfig.configuration.test.MOETestListener;
-import org.moe.idea.runconfig.configuration.test.MOETestResultParser;
-import org.moe.idea.ui.MOEToolWindow;
 import com.intellij.execution.DefaultExecutionResult;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.ExecutionResult;
@@ -40,11 +30,21 @@ import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ui.ConsoleView;
+import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.util.Key;
 import org.jetbrains.annotations.NotNull;
+import org.moe.common.exec.ExecRunner;
+import org.moe.common.exec.GradleExec;
+import org.moe.idea.runconfig.configuration.MOERunConfiguration;
+import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
+import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
+import org.moe.idea.runconfig.configuration.test.MOETestListener;
+import org.moe.idea.runconfig.configuration.test.MOETestResultParser;
+import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.utils.ModuleUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -100,9 +100,6 @@ public class MOERunProfileState extends CommandLineState {
             throw new ExecutionException("Invalid architecture for " + runConfiguration.getClass().getName());
         }
 
-        String appPath = MOESdkPlugin.getXcodeBuildAppPath(ModuleManager.getInstance(runConfiguration.getProject()).findModuleByName(runConfiguration.moduleName()),
-                runConfiguration.architecture(), runConfiguration.configuration(), runConfiguration.runJUnitTests());
-
         int debugPort = 0;
         int debugRemotePort = 0;
         needResultParser = false;
@@ -114,82 +111,110 @@ public class MOERunProfileState extends CommandLineState {
         }
 
         Process process = null;
+        StringBuilder optionsStringBuilder = null;
 
         List<String> args = new ArrayList<String>();
         String deviceUdid = runConfiguration.deviceUdid();
 
         boolean runOnSimulator = false;
+        if (runConfiguration instanceof MOERunConfiguration) {
 
-        if (runConfiguration instanceof MOERunConfigurationLocal) {
-            MOERunConfigurationLocal configurationLocal = (MOERunConfigurationLocal) runConfiguration;
-
-            if (configurationLocal.runOnSimulator()) {
-                runOnSimulator = true;
-                deviceUdid = configurationLocal.simulatorUdid();
-
-                if(debugPort > 0) {
-                    args.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=" + Integer.toString(debugPort));
-                }
-            }
-
-            testArgs = configurationLocal.getTestArgs();
+            MOERunConfiguration configurationLocal = (MOERunConfiguration) runConfiguration;
 
             if (configurationLocal.runJUnitTests()) {
-
+                testArgs = configurationLocal.getTestArgs();
                 needResultParser = true;
-            }
-        }
-        else if (runConfiguration instanceof MOERunConfigurationRemote) {
-            File appDirectory = new File(appPath);
-
-            if (!appDirectory.isDirectory()) {
-                appPath = appPath.replace(runConfiguration.configuration() + "-iphoneos" + File.separator, "");
+                args.add("moeTest");
+            } else {
+                args.add("moeLaunch");
             }
 
-            appDirectory = new File(appPath);
+            boolean isDebug = configurationLocal.getActionType().equals("Debug");
 
-            if (!appDirectory.isDirectory()) {
-                MOEToolWindow.getInstance(project).log("Unable to locate app directory at path: %s", appPath);
-                throw new ExecutionException("Unable to locate app directory at path for " + runConfiguration.getClass().getName());
+            if (optionsStringBuilder == null) {
+                optionsStringBuilder = new StringBuilder();
+                optionsStringBuilder.append("-Pmoe.launcher.options=");
             }
-        }
 
-        if (runOnSimulator) {
-            SimulatorManager manager = new SimulatorManager();
+            optionsStringBuilder.append("config:" + configurationLocal.configuration());
+            optionsStringBuilder.append(",");
 
-            if (testArgs != null) {
-                args.add("-args");
-                for (String arg : testArgs) {
-                    if (arg != null) {
-                        args.add(arg);
+            if (configurationLocal.isRemoteBuildEnabled()) {
+                args.add("-Pmoe.remotebuild.properties.ignore");
+                args.add("-Pmoe.remotebuild.host=" + configurationLocal.getRemoteHost());
+                args.add("-Pmoe.remotebuild.port=" + Integer.toString(configurationLocal.getRemotePort()));
+                args.add("-Pmoe.remotebuild.user=" + configurationLocal.getRemoteUser());
+                args.add("-Pmoe.remotebuild.knownhosts=" + configurationLocal.getRemoteKnownhosts());
+                args.add("-Pmoe.remotebuild.identity=" + configurationLocal.getRemoteIdentity());
+                args.add("-Pmoe.remotebuild.keychain.pass=" + configurationLocal.getRemoteKeychainPass());
+                args.add("-Pmoe.remotebuild.keychain.locktimeout=" + Integer.toString(configurationLocal.getRemoteKeychainLocktimeout()));
+                args.add("-Pmoe.remotebuild.gradle.repositories=" + configurationLocal.getRemoteGradleRepositories());
+            }
+
+            if (configurationLocal.runOnSimulator()) {
+                deviceUdid = configurationLocal.simulatorUdid();
+
+                args.add("-Pmoe.launcher.simulators=" + deviceUdid);
+                if (isDebug) {
+                    if (optionsStringBuilder == null) {
+                        optionsStringBuilder = new StringBuilder();
+                        optionsStringBuilder.append("-Pmoe.launcher.options=");
                     }
+                    optionsStringBuilder.append("debug:" + Integer.toString(debugPort));
+                    optionsStringBuilder.append(",");
+                }
+            } else {
+                args.add("-Pmoe.launcher.devices=" + deviceUdid);
+                if (isDebug) {
+                    if (optionsStringBuilder == null) {
+                        optionsStringBuilder = new StringBuilder();
+                        optionsStringBuilder.append("-Pmoe.launcher.options=");
+                    }
+                    optionsStringBuilder.append("debug:" + Integer.toString(debugPort) + ":" + Integer.toString(debugRemotePort));
+                    optionsStringBuilder.append(",");
                 }
             }
 
-            try {
-                process = manager.installAndLaunchApp(deviceUdid, appPath, args);
-            }
-            catch (IOException e) {
-                throw new ExecutionException("Exec failure for configuration type " + runConfiguration.getClass().getName() + ". " + e.getMessage());
-            }
-        } else {
-            MOEToolWindow.getInstance(project).log("iOS Device: %s", deviceUdid);
-            MOEToolWindow.getInstance(project).log("Launching application: %s", appPath);
-
             if (testArgs != null) {
-                args.add("-x=-args");
+                if (optionsStringBuilder == null) {
+                    optionsStringBuilder = new StringBuilder();
+                    optionsStringBuilder.append("-Pmoe.launcher.options=");
+                }
+                optionsStringBuilder.append("raw-test-output");
+                optionsStringBuilder.append(",");
                 for (String arg : testArgs) {
-                    if (arg != null) {
-                        args.add("-x=" + arg);
-                    }
+                    optionsStringBuilder.append("arg:" + arg);
+                    optionsStringBuilder.append(",");
                 }
             }
 
+            Module module = ModuleManager.getInstance(runConfiguration.getProject()).findModuleByName(runConfiguration.moduleName());
+            File f = new File(ModuleUtils.getModulePath(module));
+            GradleExec exec = new GradleExec(f);
+            if (optionsStringBuilder != null) {
+                String optionsString = optionsStringBuilder.toString();
+                optionsString = optionsString.substring(0, optionsString.length() - 1);
+                args.add(optionsString);
+            }
+            exec.getArguments().addAll(args);
+            ExecRunner runner = null;
             try {
-                process = Device.launchApp(deviceUdid, appPath, debugPort, debugRemotePort, args);
+                runner = exec.getRunner();
             } catch (IOException e) {
-                throw new ExecutionException("Exec failure for configuration type " + runConfiguration.getClass().getName() + ". " + e.getMessage());
+                throw new ExecutionException("GradleExec error", e);
             }
+
+            if (runner != null) {
+                runner.getBuilder().directory(f);
+            }
+
+            try {
+                ProcessBuilder builder = runner.getBuilder();
+                process = builder.start();
+            } catch (IOException e) {
+                throw new ExecutionException("Gradle launch error", e);
+            }
+
         }
 
         if (process == null) {

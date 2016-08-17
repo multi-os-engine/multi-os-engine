@@ -17,6 +17,8 @@ limitations under the License.
 package org.moe.idea.sdk;
 
 import com.google.common.collect.Lists;
+import com.intellij.openapi.module.Module;
+import org.moe.common.utils.ProjectUtil;
 import org.moe.idea.MOESdkPlugin;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.projectRoots.*;
@@ -33,6 +35,7 @@ import com.intellij.util.SystemProperties;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.idea.utils.ModuleUtils;
 import res.MOEIcons;
 import res.MOEText;
 
@@ -43,7 +46,8 @@ import java.util.List;
 import static com.intellij.openapi.projectRoots.JavaSdk.checkForJdk;
 
 public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
-    private static final String NAME = MOEText.get("SDK.Name");
+    private String name;
+    private String sdkRootPath;
 
     private static final String VERSION = MOEText.get("SDK.Version");
 
@@ -51,9 +55,10 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
 
     private final Sdk javaSdk;
 
-    private MOESdkType() {
-        super(NAME);
-
+    private MOESdkType(String name, String rootPath) {
+        super(name);
+        this.name = name;
+        this.sdkRootPath = rootPath;
         javaSdk = getJDK();
     }
 
@@ -75,17 +80,17 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
     @Nullable
     @Override
     public String suggestHomePath() {
-        return MOESdkPlugin.getSdkRootPath();
+        return sdkRootPath;
     }
 
     @Override
     public boolean isValidSdkHome(String path) {
-        return MOESdkPlugin.getSdkRootPath().equals(path);
+        return sdkRootPath.equals(path);
     }
 
     @Override
     public String suggestSdkName(String s, String s1) {
-        return NAME + " " + VERSION;
+        return name;
     }
 
     @Nullable
@@ -96,7 +101,7 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
 
     @NotNull @Override
     public String getPresentableName() {
-        return NAME;
+        return name;
     }
 
     @Override
@@ -129,9 +134,9 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
     @Override
     public boolean isRootTypeApplicable(@NotNull OrderRootType type) {
         return type == OrderRootType.CLASSES ||
-            type == OrderRootType.SOURCES ||
-            type == JavadocOrderRootType.getInstance() ||
-            type == AnnotationOrderRootType.getInstance();
+                type == OrderRootType.SOURCES ||
+                type == JavadocOrderRootType.getInstance() ||
+                type == AnnotationOrderRootType.getInstance();
     }
 
     private void setupSdkRoots(Sdk sdk, Sdk jdk) {
@@ -140,12 +145,12 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
 
         LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
 
-        for(File file : MOESdkPlugin.getSdkJavaLibraries()) {
+        for(File file : MOESdkPlugin.getSdkJavaLibraries(sdkRootPath)) {
             VirtualFile virtualFile = localFileSystem.findFileByIoFile(file);
             sdkModificator.addRoot(virtualFile, OrderRootType.CLASSES);
         }
 
-        for (File file : MOESdkPlugin.getSdkJavaDocs()) {
+        for (File file : MOESdkPlugin.getSdkJavaDocs(sdkRootPath)) {
             if (file.exists()) {
                 VirtualFile virtualFile = localFileSystem.findFileByIoFile(file);
                 sdkModificator.addRoot(virtualFile, JavadocOrderRootType.getInstance());
@@ -153,7 +158,7 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
         }
 
         sdkModificator.setVersionString(jdk.getVersionString());
-        sdkModificator.setHomePath(MOESdkPlugin.getSdkRootPath());
+        sdkModificator.setHomePath(sdkRootPath);
         sdkModificator.commitChanges();
     }
 
@@ -180,8 +185,20 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
         return sdk;
     }
 
-    public static Sdk getMOESdk() {
-        String moeRootPath = MOESdkPlugin.getSdkRootPath();
+    public static Sdk getMOESdk(Module module) {
+        if (module == null) {
+            return null;
+        }
+        String modulePath = ModuleUtils.getModulePath(module);
+        if (modulePath == null) {
+            return null;
+        }
+        String moeRootPath = ProjectUtil.retrieveSDKPathFromGradle(new File(modulePath));
+        if (moeRootPath == null) {
+            return null;
+        }
+
+        String name = new File(moeRootPath).getName();
 
         if(moeRootPath == null) {
             return null;
@@ -207,7 +224,7 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
             return null;
         }
 
-        MOESdkType sdkType = new MOESdkType();
+        MOESdkType sdkType = new MOESdkType(name, moeRootPath);
 
         final Sdk sdk = ProjectJdkTable.getInstance().createSdk(sdkType.suggestSdkName(null, null), sdkType);
 

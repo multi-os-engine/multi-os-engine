@@ -1,9 +1,9 @@
 <idea-plugin version="2">
   <id>org.moe</id>
   <name>Multi-OS Engine Plugin</name>
-  <version>1.0.0.1</version>
+  <version>1.0.0</version>
 
-  <vendor url="http://www.moe.com">MOE</vendor>
+  <vendor url="https://multi-os-engine.org">Multi-OS Engine</vendor>
 
   <description><![CDATA[
       Multi-OS Engine IDE plugin for Android Studio
@@ -24,9 +24,7 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-      <configurationType implementation="org.moe.idea.runconfig.configuration.local.MOERunConfigurationTypeLocal" />
-      <configurationType implementation="org.moe.idea.runconfig.configuration.remote.MOERunConfigurationTypeRemote" />
-      <!-- <configurationType implementation="org.moe.idea.runconfig.configuration.cloud.MOERunConfigurationTypeCloud" /> -->
+      <configurationType implementation="org.moe.idea.runconfig.configuration.MOERunConfigurationType" />
 
       <toolWindow id="Multi-OS Engine" anchor="bottom" icon="/icons/moe_tool.png"
                   secondary="false"
@@ -36,23 +34,9 @@
 
       <projectTemplatesFactory implementation="org.moe.idea.builder.MOEProjectTemplatesFactory"/>
 
-      <sdkType implementation="org.moe.idea.sdk.MOESdkType"/>
-
-      <!--
-      <stepsBeforeRunProvider implementation="MOEGradleTaskProvider" />
-
-      <applicationConfigurable instance="MOESdkConfigurable" groupId="tools"/>
-      -->
-
       <moduleConfigurable instance="org.moe.idea.configurable.MOEModuleConfigurable"/>
 
   </extensions>
-
-    <application-components>
-        <component>
-            <implementation-class>org.moe.idea.component.MOEApplicationComponent</implementation-class>
-        </component>
-    </application-components>
 
     <project-components>
         <component>

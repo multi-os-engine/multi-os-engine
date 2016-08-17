@@ -16,9 +16,6 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.utils.logger.LoggerFactory;
-import org.moe.template.MOEClassTemplate;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.diagnostic.Logger;
@@ -32,6 +29,9 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.Nullable;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.utils.logger.LoggerFactory;
+import org.moe.template.MOEClassTemplate;
 import res.MOEIcons;
 
 import javax.swing.*;

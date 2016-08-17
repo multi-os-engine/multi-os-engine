@@ -16,15 +16,15 @@ limitations under the License.
 
 package org.moe.idea.compiler;
 
-import org.moe.common.exec.ExecRunnerBase;
-import org.moe.common.exec.GradleExec;
-import org.moe.common.exec.ExecRunner;
-import org.moe.idea.ui.MOEToolWindow;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.common.exec.ExecRunner;
+import org.moe.common.exec.ExecRunnerBase;
+import org.moe.common.exec.GradleExec;
+import org.moe.idea.ui.MOEToolWindow;
 import res.MOEText;
 
 import java.io.File;

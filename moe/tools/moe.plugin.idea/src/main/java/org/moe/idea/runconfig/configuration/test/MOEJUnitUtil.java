@@ -16,8 +16,6 @@ limitations under the License.
 
 package org.moe.idea.runconfig.configuration.test;
 
-import org.moe.idea.runconfig.MOERunProfileState;
-import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 import com.intellij.execution.ExecutionBundle;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.Executor;
@@ -37,6 +35,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.model.java.JavaModuleSourceRootTypes;
+import org.moe.idea.runconfig.MOERunProfileState;
+import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 
 import java.util.ArrayList;
 import java.util.Iterator;

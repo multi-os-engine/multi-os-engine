@@ -16,10 +16,6 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.utils.logger.LoggerFactory;
-import org.moe.template.MOEClassTemplate;
-import org.moe.template.MOEClassTemplateGenerator;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -33,6 +29,10 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.utils.logger.LoggerFactory;
+import org.moe.template.MOEClassTemplate;
+import org.moe.template.MOEClassTemplateGenerator;
 
 
 public class MOENewClassAction extends AnAction {

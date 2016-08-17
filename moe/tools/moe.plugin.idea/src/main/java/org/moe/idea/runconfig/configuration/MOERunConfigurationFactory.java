@@ -16,10 +16,6 @@ limitations under the License.
 
 package org.moe.idea.runconfig.configuration;
 
-import org.moe.idea.runconfig.configuration.local.MOERunConfigurationLocal;
-import org.moe.idea.runconfig.configuration.local.MOERunConfigurationTypeLocal;
-import org.moe.idea.runconfig.configuration.remote.MOERunConfigurationRemote;
-import org.moe.idea.runconfig.configuration.remote.MOERunConfigurationTypeRemote;
 import com.intellij.execution.RunManager;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationType;
@@ -44,10 +40,8 @@ class MOERunConfigurationFactory extends ConfigurationFactory {
     public RunConfiguration createTemplateConfiguration(@NotNull Project project) {
         ConfigurationType type = getType();
 
-        if (type instanceof MOERunConfigurationTypeLocal) {
-            return new MOERunConfigurationLocal(project, this);
-        } else if (type instanceof MOERunConfigurationTypeRemote) {
-            return new MOERunConfigurationRemote(project, this);
+        if (type instanceof MOERunConfigurationType) {
+            return new MOERunConfiguration(project, this);
         }
 
         return super.createTemplateConfiguration(project, RunManager.getInstance(project));

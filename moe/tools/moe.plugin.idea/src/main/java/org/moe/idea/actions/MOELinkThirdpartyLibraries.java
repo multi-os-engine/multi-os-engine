@@ -16,17 +16,7 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.common.utils.OsUtils;
-import org.moe.idea.ui.MOEUniversalLibraryPanel;
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.binding.MOEWrapNatjgenLibGenerator;
-import org.moe.idea.ui.MOECopyBundlePanel;
-import org.moe.idea.ui.MOEFrameworkDependencyPanel;
-import org.moe.idea.utils.ModuleUtils;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -39,6 +29,17 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.impl.VirtualDirectoryImpl;
 import com.intellij.ui.components.JBTabbedPane;
 import org.jetbrains.annotations.Nullable;
+import org.moe.common.utils.OsUtils;
+import org.moe.common.utils.ProjectUtil;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.ui.MOECopyBundlePanel;
+import org.moe.idea.ui.MOEFrameworkDependencyPanel;
+import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.ui.MOEUniversalLibraryPanel;
+import org.moe.idea.utils.ModuleUtils;
+import org.moe.tools.natjgen.binding.IConsole;
+import org.moe.tools.natjgen.binding.IMonitor;
+import org.moe.tools.natjgen.binding.MOEWrapNatjgenLibGenerator;
 
 import javax.swing.*;
 import java.io.*;
@@ -72,29 +73,17 @@ public class MOELinkThirdpartyLibraries extends AnAction {
             return;
         }
 
-        Project project = e.getProject();
+        DataContext dataContext = e.getDataContext();
+        module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
 
-        if (project == null) {
-            return;
+        boolean enabled = false;
+
+        if (module != null && MOESdkPlugin.isValidMoeModule(module)) {
+            enabled = true;
         }
 
-        module = null;
-        for (Module module : ModuleManager.getInstance(project).getModules()) {
-            if (ModuleRootManager.getInstance(module).getFileIndex().isInContent(file)) {
-                if (MOESdkPlugin.isValidMoeModule(module)) {
-                    this.module = module;
-                }
-                break;
-            }
-        }
-
-        if (module == null) {
-            presentation.setEnabled(false);
-            presentation.setVisible(false);
-        } else {
-            presentation.setEnabled(true);
-            presentation.setVisible(true);
-        }
+        presentation.setEnabled(enabled);
+        presentation.setVisible(enabled);
     }
 
     @Override
@@ -219,11 +208,28 @@ public class MOELinkThirdpartyLibraries extends AnAction {
                             ldFlagsFile == null ? null : ldFlagsFile.getPath(),
                             bundleContent == null ? null : bundleContent.toString(),
                             outFile.getPath(),
-                            module,
-                            progressIndicator);
+                            new File(ModuleUtils.getModulePath(module)),
+                            new IConsole() {
+                                @Override
+                                public void write(String s) {
+                                    MOEToolWindow.getInstance(module.getProject()).log(s);
+                                }
+                            },
+                            new IMonitor() {
+                                @Override
+                                public void setText(String s) {
+                                    progressIndicator.setText(s);
+                                }
+
+                                @Override
+                                public boolean isCanceled() {
+                                    return false;
+                                }
+                            });
 
                     progressIndicator.setText("Generate...");
-                    generator.generate("--library");
+                    File sdkToolsDir = new File(ProjectUtil.retrieveSDKPathFromGradle(new File(ModuleUtils.getModulePath(module))), "tools");
+                    generator.generate(sdkToolsDir, "--library");
                     
                     progressIndicator.stop();
 

@@ -16,23 +16,6 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.common.utils.OsUtils;
-import org.moe.common.PasswordEntry;
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.runconfig.MOEIpaConfiguration;
-import org.moe.idea.runconfig.configuration.remote.MOERemoteConfiguration;
-import org.moe.idea.ui.MOEToolWindow;
-import org.moe.common.developer.ProvisioningProfile;
-import org.moe.common.developer.SigningIdentity;
-import org.moe.common.sdk.Sdk;
-import org.moe.common.sdk.SdkManager;
-import org.moe.common.simulator.Simulator;
-import org.moe.common.simulator.SimulatorManager;
-import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
-import org.moe.idea.runconfig.configuration.remote.MOERunConfigurationRemote;
-import org.moe.idea.runconfig.configuration.remote.MOERunConfigurationTypeRemote;
-import org.moe.idea.utils.ProvisioningProfileComboItem;
-import org.moe.idea.utils.SigningIdentityComboItem;
 import com.intellij.execution.RunManager;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.ide.passwordSafe.PasswordSafeException;
@@ -43,6 +26,20 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.ValidationInfo;
 import org.jetbrains.annotations.Nullable;
+import org.moe.common.PasswordEntry;
+import org.moe.common.developer.ProvisioningProfile;
+import org.moe.common.developer.SigningIdentity;
+import org.moe.common.sdk.Sdk;
+import org.moe.common.sdk.SdkManager;
+import org.moe.common.simulator.Simulator;
+import org.moe.common.simulator.SimulatorManager;
+import org.moe.common.utils.OsUtils;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.runconfig.MOEIpaConfiguration;
+import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
+import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.utils.ProvisioningProfileComboItem;
+import org.moe.idea.utils.SigningIdentityComboItem;
 import res.MOEIcons;
 import res.MOEText;
 
@@ -143,9 +140,6 @@ public class MOECreateIpaDialog extends DialogWrapper {
         }
 
         if (!checkBaseConfig(configuration)) {
-            if (configuration instanceof MOERunConfigurationRemote) {
-                Messages.showMessageDialog("Remote configuration is invalid.", MOEText.get("Remote.Build"), MOEIcons.MOELogo);
-            }
             return;
         }
 
@@ -212,13 +206,13 @@ public class MOECreateIpaDialog extends DialogWrapper {
             return;
         }
 
-        List<RunConfiguration> RemoteConfigs = RunManager.getInstance(project).getConfigurationsList(MOERunConfigurationTypeRemote.getInstance());
+        /*List<RunConfiguration> RemoteConfigs = RunManager.getInstance(project).getConfigurationsList(MOERunConfigurationTypeRemote.getInstance());
 
         if (!RemoteConfigs.isEmpty()) {
             for (RunConfiguration conf : RemoteConfigs) {
                 remoteConfigComboBox.addItem(new ConfigComboItem(conf));
             }
-        }
+        }*/
 
         if (remoteConfigComboBox.getItemCount() > 0) {
             remoteConfigComboBox.setSelectedIndex(0);
@@ -233,11 +227,11 @@ public class MOECreateIpaDialog extends DialogWrapper {
 
         moduleComboBox.addItem(configuration.moduleName());
 
-        if (configuration instanceof MOERunConfigurationRemote) {
+        /*if (configuration instanceof MOERunConfigurationRemote) {
             signingIdentityComboBox.addItem(((MOERunConfigurationRemote) configuration).certificatePath());
             provisioningProfileComboBox.addItem(((MOERunConfigurationRemote) configuration).profilePath());
             sdkCombo.addItem(configuration.sdkVersion());
-        }
+        }*/
 
     }
 
@@ -275,11 +269,11 @@ public class MOECreateIpaDialog extends DialogWrapper {
 
             configuration = new MOEIpaConfiguration(project, module, signingIdentity, provisioningProfile);
 
-            if (remoteCheckBox.isSelected() && (remoteConfigComboBox.getSelectedItem() != null) && (((ConfigComboItem)remoteConfigComboBox.getSelectedItem()).runConfiguraion instanceof MOERunConfigurationRemote)) {
+            /*if (remoteCheckBox.isSelected() && (remoteConfigComboBox.getSelectedItem() != null) && (((ConfigComboItem)remoteConfigComboBox.getSelectedItem()).runConfiguraion instanceof MOERunConfigurationRemote)) {
                 MOERunConfigurationBase runConfiguration = (MOERunConfigurationBase)((ConfigComboItem) remoteConfigComboBox.getSelectedItem()).runConfiguraion;
                 configuration.runConfiguration(runConfiguration);
                 sdkVertion = runConfiguration.sdkVersion();
-            }
+            }*/
 
             configuration.sdkVersion(sdkVertion);
         }
@@ -288,7 +282,7 @@ public class MOECreateIpaDialog extends DialogWrapper {
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private boolean checkRemoteConfig(MOERunConfigurationRemote configuration) {
+    /*private boolean checkRemoteConfig(MOERunConfigurationRemote configuration) {
         if ((configuration.sdkVersion() == null) || configuration.sdkVersion().isEmpty() ||
                 (configuration.certificatePath() == null) || configuration.certificatePath().isEmpty() ||
                 (configuration.profilePath() == null) || configuration.profilePath().isEmpty() ) {
@@ -317,12 +311,12 @@ public class MOECreateIpaDialog extends DialogWrapper {
         }
 
         return retVal;
-    }
+    }*/
 
     private <T extends RunConfiguration> boolean checkBaseConfig(T configuration) {
-        if (configuration instanceof MOERunConfigurationRemote) {
+        /*if (configuration instanceof MOERunConfigurationRemote) {
             return checkRemoteConfig((MOERunConfigurationRemote) configuration);
-        }
+        }*/
         return false;
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

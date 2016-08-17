@@ -16,12 +16,6 @@ limitations under the License.
 
 package org.moe.idea.runconfig.configuration;
 
-import org.moe.common.PasswordEntry;
-import org.moe.common.constants.ProductType;
-import org.moe.common.variant.ModeVariant;
-import org.moe.idea.runconfig.MOERunProfileState;
-import org.moe.idea.utils.ModuleUtils;
-import org.moe.idea.utils.JDOMHelper;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.*;
@@ -38,6 +32,13 @@ import com.intellij.openapi.util.WriteExternalException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.common.PasswordEntry;
+import org.moe.common.constants.ProductType;
+import org.moe.common.utils.OsUtils;
+import org.moe.common.variant.ModeVariant;
+import org.moe.idea.runconfig.MOERunProfileState;
+import org.moe.idea.utils.JDOMHelper;
+import org.moe.idea.utils.ModuleUtils;
 
 public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         implements RunConfigurationWithSuppressedDefaultDebugAction,
@@ -46,7 +47,6 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
 
     public static final String DEFAULT_CONFIGURATION = "Debug";
     protected static PasswordSafe safeStorage = PasswordSafe.getInstance();
-    protected String sdkVersion;
     protected String architecture;
     protected String configuration;
     protected String deviceUdid;
@@ -57,6 +57,16 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
     private String moduleName;
     private String modulePath;
     protected Module module;
+    public String actionType;
+    protected boolean remoteBuildEnabled = false;
+    protected String remoteHost;
+    protected int remotePort;
+    protected String remoteUser;
+    protected String remoteKnownhosts;
+    protected String remoteIdentity;
+    protected String remoteKeychainPass;
+    protected int remoteKeychainLocktimeout;
+    protected String remoteGradleRepositories;
 
     public MOERunConfigurationBase(final Project project, final ConfigurationFactory factory) {
         super(project, factory, "");
@@ -102,24 +112,6 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
             }
         }
         return modulePath;
-    }
-
-    public String sdkVersion() {
-        return sdkVersion;
-    }
-
-    public void sdkVersion(String sdkVersion) {
-        this.sdkVersion = sdkVersion;
-    }
-
-    public String sdkVersionNumber() {
-        String version = sdkVersion();
-
-        if (version.contains(" ")) {
-            version = version.substring(version.indexOf(" ") + 1);
-        }
-
-        return version;
     }
 
     public void deviceUdid(String deviceUdid) {
@@ -170,9 +162,82 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         this.configuration = configuration;
     }
 
+    public String getRemoteHost() {
+        return remoteHost;
+    }
+
+    public void setRemoteHost(String remoteHost) {
+        this.remoteHost = remoteHost;
+    }
+
+    public int getRemotePort() {
+        return remotePort;
+    }
+
+    public void setRemotePort(int remotePort) {
+        this.remotePort = remotePort;
+    }
+
+    public String getRemoteUser() {
+        return remoteUser;
+    }
+
+    public void setRemoteUser(String remotePUser) {
+        this.remoteUser = remotePUser;
+    }
+
+    public String getRemoteKnownhosts() {
+        return remoteKnownhosts;
+    }
+
+    public void setRemoteKnownhosts(String remoteKnownhosts) {
+        this.remoteKnownhosts = remoteKnownhosts;
+    }
+
+    public String getRemoteIdentity() {
+        return remoteIdentity;
+    }
+
+    public void setRemoteIdentity(String remoteIdentity) {
+        this.remoteIdentity = remoteIdentity;
+    }
+
+    public String getRemoteKeychainPass() {
+        return remoteKeychainPass;
+    }
+
+    public boolean isRemoteBuildEnabled() {
+        return remoteBuildEnabled;
+    }
+
+    public void setRemoteBuildEnabled(boolean remoteBuildEnabled) {
+        this.remoteBuildEnabled = remoteBuildEnabled;
+    }
+
+    public void setRemoteKeychainPass(String remoteKeychainPass) {
+        this.remoteKeychainPass = remoteKeychainPass;
+    }
+
+    public int getRemoteKeychainLocktimeout() {
+        return remoteKeychainLocktimeout;
+    }
+
+    public void setRemoteKeychainLocktimeout(int remoteKeychainLocktimeout) {
+        this.remoteKeychainLocktimeout = remoteKeychainLocktimeout;
+    }
+
+    public String getRemoteGradleRepositories() {
+        return remoteGradleRepositories;
+    }
+
+    public void setRemoteGradleRepositories(String remoteGradleRepositories) {
+        this.remoteGradleRepositories = remoteGradleRepositories;
+    }
+
     @Nullable
     @Override
     public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment executionEnvironment) throws ExecutionException {
+        this.actionType = executor.getActionName();
         try {
             moduleName(moduleName);
         } catch (Exception e) {
@@ -193,16 +258,21 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
             return;
         }
 
-        sdkVersion(JDOMExternalizerUtil.readField(element, "sdkVersion"));
         architecture(JDOMExternalizerUtil.readField(element, "architecture"));
         configuration(JDOMHelper.readString(element, "configuration", "Debug"));
-
         deviceUdid(JDOMExternalizerUtil.readField(element, "deviceUdid"));
-
         debugPort(JDOMHelper.readInteger(element, "debugPort", 8000));
         debugRemotePort(JDOMHelper.readInteger(element, "debugRemotePort", 8000));
-
         productType(ProductType.valueOf(JDOMHelper.readString(element, "productType", ProductType.app.name())));
+        setRemoteBuildEnabled(JDOMHelper.readBoolean(element, "remoteBuildEnabled", false));
+        setRemoteHost(JDOMExternalizerUtil.readField(element, "remoteHost"));
+        setRemotePort(JDOMHelper.readInteger(element, "remotePort", 0));
+        setRemoteUser(JDOMExternalizerUtil.readField(element, "remoteUser"));
+        setRemoteKnownhosts(JDOMExternalizerUtil.readField(element, "remoteKnownhosts"));
+        setRemoteIdentity(JDOMExternalizerUtil.readField(element, "remoteIdentity"));
+        setRemoteKeychainPass(JDOMExternalizerUtil.readField(element, "remoteKeychainPass"));
+        setRemoteKeychainLocktimeout(JDOMHelper.readInteger(element, "remoteKeychainLocktimeout", 0));
+        setRemoteGradleRepositories(JDOMExternalizerUtil.readField(element, "remoteGradleRepositories"));
 
     }
 
@@ -211,17 +281,21 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         super.writeExternal(element);
 
         JDOMExternalizerUtil.writeField(element, "moduleName", moduleName());
-        JDOMExternalizerUtil.writeField(element, "sdkVersion", sdkVersion());
-
         JDOMExternalizerUtil.writeField(element, "architecture", architecture());
         JDOMExternalizerUtil.writeField(element, "configuration", configuration());
-
         JDOMExternalizerUtil.writeField(element, "deviceUdid", deviceUdid());
-
         JDOMExternalizerUtil.writeField(element, "debugPort", Integer.toString(debugPort()));
         JDOMExternalizerUtil.writeField(element, "debugRemotePort", Integer.toString(debugRemotePort()));
-
         JDOMExternalizerUtil.writeField(element, "productType", productType.name());
+        JDOMExternalizerUtil.writeField(element, "remoteBuildEnabled", Boolean.toString(isRemoteBuildEnabled()));
+        JDOMExternalizerUtil.writeField(element, "remotePort", Integer.toString(getRemotePort()));
+        JDOMExternalizerUtil.writeField(element, "remoteKeychainLocktimeout", Integer.toString(getRemoteKeychainLocktimeout()));
+        JDOMExternalizerUtil.writeField(element, "remoteHost", getRemoteHost());
+        JDOMExternalizerUtil.writeField(element, "remoteUser", getRemoteUser());
+        JDOMExternalizerUtil.writeField(element, "remoteKnownhosts", getRemoteKnownhosts());
+        JDOMExternalizerUtil.writeField(element, "remoteIdentity", getRemoteIdentity());
+        JDOMExternalizerUtil.writeField(element, "remoteKeychainPass", getRemoteKeychainPass());
+        JDOMExternalizerUtil.writeField(element, "remoteGradleRepositories", getRemoteGradleRepositories());
     }
 
     @NotNull

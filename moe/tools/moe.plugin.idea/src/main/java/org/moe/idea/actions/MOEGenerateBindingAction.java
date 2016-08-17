@@ -17,11 +17,6 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.common.utils.OsUtils;
-import org.moe.idea.binding.MOEBindingGenerator;
-import org.moe.idea.binding.MOEGenerateBindingFactory;
-import org.moe.idea.utils.logger.LoggerFactory;
-import org.moe.idea.utils.natjgen.WrapNatJGenExec;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
@@ -33,19 +28,30 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.impl.VirtualDirectoryImpl;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
+import org.moe.common.utils.OsUtils;
+import org.moe.common.utils.ProjectUtil;
+import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.logger.LoggerFactory;
+import org.moe.tools.natjgen.WrapNatJGenExec;
+import org.moe.tools.natjgen.binding.IConsole;
+import org.moe.tools.natjgen.binding.IMonitor;
+import org.moe.tools.natjgen.binding.MOEBindingGenerator;
+import org.moe.tools.natjgen.binding.MOEBindingGeneratorByXcode;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.util.ArrayList;
 
 public class MOEGenerateBindingAction extends AnAction {
 
     public static final String ACTION_TITLE = "Generate Bindings";
 
-
-
     private static final Logger LOG = LoggerFactory.getLogger(MOEGenerateBindingAction.class);
 
     private static boolean isJavaClass = false;
+    private ProgressIndicator progressIndicator;
 
     public MOEGenerateBindingAction() {
         super(ACTION_TITLE);
@@ -96,7 +102,7 @@ public class MOEGenerateBindingAction extends AnAction {
         VirtualFile[] files = CommonDataKeys.VIRTUAL_FILE_ARRAY.getData(e.getDataContext());
         boolean isActionEnabled = isHeaderFile(files) || isFolderWithHeaders(files);
 
-        if(!WrapNatJGenExec.isNatJGenExist() || OsUtils.isWindows()) {
+        if(OsUtils.isWindows()) {
             isActionEnabled = false;
         }
 
@@ -153,17 +159,43 @@ public class MOEGenerateBindingAction extends AnAction {
             ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
                 @Override
                 public void run() {
-                    ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+                    progressIndicator = ProgressManager.getInstance().getProgressIndicator();
                     if (progressIndicator == null) {
                         progressIndicator = new EmptyProgressIndicator();
                         progressIndicator.start();
                         progressIndicator.popState();
                     }
 
-                    MOEBindingGenerator generator = MOEGenerateBindingFactory.getGenerator(false);
+                    MOEBindingGenerator generator =  new MOEBindingGeneratorByXcode();
                     generator.setPackage(packageName.getText());
                     generator.createFromPrototype(false);
-                    generator.generate(dataContext, ACTION_TITLE);
+
+                    VirtualFile[] virtualFiles = CommonDataKeys.VIRTUAL_FILE_ARRAY.getData(dataContext);
+                    java.util.List<File> files = new ArrayList<File>();
+                    for (VirtualFile vf : virtualFiles) {
+                        files.add(new File(vf.getPath()));
+                    }
+                    final Module module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
+                    File sdkToolsDir = new File(ProjectUtil.retrieveSDKPathFromGradle(new File(ModuleUtils.getModulePath(module))), "tools");
+                    generator.generate(sdkToolsDir, new File(ModuleUtils.getModulePath(module)),
+                            files.toArray(new File[]{}),
+                            ACTION_TITLE,
+                            new IConsole() {
+                                @Override
+                                public void write(String s) {
+                                    MOEToolWindow.getInstance(module.getProject()).log(s);
+                                }
+                            }, new IMonitor() {
+                                @Override
+                                public void setText(String s) {
+                                    progressIndicator.setText(s);
+                                }
+
+                                @Override
+                                public boolean isCanceled() {
+                                    return false;
+                                }
+                            });
 
                     progressIndicator.cancel();
                 }

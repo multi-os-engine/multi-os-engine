@@ -16,8 +16,6 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
-import org.moe.idea.actions.MOELinkThirdpartyFramework;
-import org.moe.common.constants.MOEManifestConstants.BUNDLE_RESOURCES;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
@@ -25,6 +23,8 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.components.JBList;
+import org.moe.common.constants.MOEManifestConstants.BUNDLE_RESOURCES;
+import org.moe.idea.actions.MOELinkThirdpartyFramework;
 
 import javax.swing.*;
 import java.awt.*;

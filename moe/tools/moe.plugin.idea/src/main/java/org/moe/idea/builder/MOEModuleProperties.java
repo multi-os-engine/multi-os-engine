@@ -17,8 +17,6 @@ limitations under the License.
 
 package org.moe.idea.builder;
 
-import org.moe.idea.MOESdkPlugin;
-
 public class MOEModuleProperties {
     private String projectName;
     private String productName;
@@ -26,6 +24,8 @@ public class MOEModuleProperties {
     private String companyIdentifier;
     private String projectRoot;
     private String mainClassName = "Main";
+    private String xcodeProjectPath;
+    private boolean keepXcodeProject;
 
     public String getProjectRoot() {
         return projectRoot;
@@ -67,15 +67,27 @@ public class MOEModuleProperties {
         return companyIdentifier;
     }
 
-    public String getSdkHome() {
-        return MOESdkPlugin.getSdkRootPath();
-    }
-
     public String getMainClassName() {
         return mainClassName;
     }
 
     public void setMainClassName(String mainClassName) {
         this.mainClassName = mainClassName;
+    }
+
+    public boolean isKeepXcodeProject() {
+        return keepXcodeProject;
+    }
+
+    public String getXcodeProjectPath() {
+        return xcodeProjectPath;
+    }
+
+    public void setXcodeProjectPath(String xcodeProjectPath) {
+        this.xcodeProjectPath = xcodeProjectPath;
+    }
+
+    public void setKeepXcodeProject(boolean keepXcodeProject) {
+        this.keepXcodeProject = keepXcodeProject;
     }
 }

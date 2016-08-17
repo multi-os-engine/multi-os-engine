@@ -29,7 +29,7 @@ public class MOETestClassVisibilityChecker implements JavaCodeFragment.Visibilit
 
   private Module module;
 
-  public MOETestClassVisibilityChecker(@NotNull Module module) {
+  public MOETestClassVisibilityChecker(Module module) {
     this.module = module;
   }
 
@@ -53,6 +53,10 @@ public class MOETestClassVisibilityChecker implements JavaCodeFragment.Visibilit
       return Visibility.NOT_VISIBLE;
     }
     return isVisible(module, (PsiClass)declaration) ? Visibility.VISIBLE : Visibility.NOT_VISIBLE;
+  }
+
+  public void setModule(Module module) {
+    this.module = module;
   }
 
 }

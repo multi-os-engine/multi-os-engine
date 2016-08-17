@@ -14,21 +14,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package org.moe.idea.runconfig.configuration.local;
-
-import org.moe.idea.runconfig.configuration.MOERunConfigurationTypeBase;
+package org.moe.idea.runconfig.configuration;
 
 import com.intellij.execution.configurations.ConfigurationTypeUtil;
+import org.jetbrains.annotations.NotNull;
 import res.MOEIcons;
 import res.MOEText;
 
-import org.jetbrains.annotations.NotNull;
-
 import javax.swing.*;
 
-public class MOERunConfigurationTypeLocal extends MOERunConfigurationTypeBase {
+public class MOERunConfigurationType extends MOERunConfigurationTypeBase {
 
-    public MOERunConfigurationTypeLocal() {
+    public MOERunConfigurationType() {
         super();
     }
 
@@ -50,10 +47,10 @@ public class MOERunConfigurationTypeLocal extends MOERunConfigurationTypeBase {
     @NotNull
     @Override
     public String getId() {
-        return MOERunConfigurationTypeLocal.class.getCanonicalName();
+        return MOERunConfigurationType.class.getCanonicalName();
     }
 
-    public static MOERunConfigurationTypeLocal getInstance() {
-        return ConfigurationTypeUtil.findConfigurationType(MOERunConfigurationTypeLocal.class);
+    public static MOERunConfigurationType getInstance() {
+        return ConfigurationTypeUtil.findConfigurationType(MOERunConfigurationType.class);
     }
 }

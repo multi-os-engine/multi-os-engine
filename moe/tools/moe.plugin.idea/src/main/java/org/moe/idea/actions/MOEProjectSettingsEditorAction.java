@@ -16,9 +16,9 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.idea.ui.MOEProjectSettingsEditor;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import org.moe.idea.ui.MOEProjectSettingsEditor;
 
 public class MOEProjectSettingsEditorAction extends AnAction {
     @Override

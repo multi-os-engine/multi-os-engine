@@ -15,11 +15,11 @@
  */
 package org.moe.idea.runconfig.configuration.test;
 
-import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 import com.intellij.execution.Executor;
 import com.intellij.execution.testframework.sm.runner.SMTRunnerConsoleProperties;
 import com.intellij.execution.testframework.sm.runner.SMTestLocator;
 import org.jetbrains.annotations.NotNull;
+import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 
 public class MOETestConsoleProperties extends SMTRunnerConsoleProperties {
   public MOETestConsoleProperties(@NotNull MOERunConfigurationBase configuration, @NotNull Executor executor) {

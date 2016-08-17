@@ -16,13 +16,6 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import org.moe.common.utils.OsUtils;
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.binding.MOEWrapNatjgenLibGenerator;
-import org.moe.idea.ui.MOECopyBundlePanel;
-import org.moe.idea.ui.MOEFrameworkDependencyPanel;
-import org.moe.idea.ui.MOEUniversalFrameworkPanel;
-import org.moe.idea.utils.ModuleUtils;
 import com.intellij.ide.IdeView;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.module.Module;
@@ -36,9 +29,21 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.components.JBTabbedPane;
 import org.jetbrains.annotations.Nullable;
+import org.moe.common.utils.OsUtils;
+import org.moe.common.utils.ProjectUtil;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.ui.MOECopyBundlePanel;
+import org.moe.idea.ui.MOEFrameworkDependencyPanel;
+import org.moe.idea.ui.MOEUniversalFrameworkPanel;
+import org.moe.idea.utils.ModuleUtils;
+import org.moe.tools.natjgen.binding.IMonitor;
+import org.moe.tools.natjgen.binding.MOEWrapNatjgenLibGenerator;
 
 import javax.swing.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -70,29 +75,17 @@ public class MOELinkThirdpartyFramework extends AnAction {
             return;
         }
 
-        Project project = e.getProject();
+        DataContext dataContext = e.getDataContext();
+        module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
 
-        if (project == null) {
-            return;
+        boolean enabled = false;
+
+        if (module != null && MOESdkPlugin.isValidMoeModule(module)) {
+            enabled = true;
         }
 
-        module = null;
-        for (Module module : ModuleManager.getInstance(project).getModules()) {
-            if (ModuleRootManager.getInstance(module).getFileIndex().isInContent(file)) {
-                if (MOESdkPlugin.isValidMoeModule(module)) {
-                    this.module = module;
-                    break;
-                }
-            }
-        }
-
-        if (module == null) {
-            presentation.setEnabled(false);
-            presentation.setVisible(false);
-        } else {
-            presentation.setEnabled(true);
-            presentation.setVisible(true);
-        }
+        presentation.setEnabled(enabled);
+        presentation.setVisible(enabled);
     }
 
 
@@ -226,13 +219,24 @@ public class MOELinkThirdpartyFramework extends AnAction {
                         File outFile = new File(libFolder, virtualFiles.get(0).getNameWithoutExtension() + ".jar");
 
                         MOEWrapNatjgenLibGenerator generator = new MOEWrapNatjgenLibGenerator(frameworkContent.toString(),
-                                                                          null,
-                                                                          ldFlagsFile == null ? null : ldFlagsFile.getPath(),
-                                                                          bundleContent == null ? null : bundleContent.toString(),
-                                                                          outFile.getPath(),
-                                                                          module,
-                                                                          progressIndicator);
-                        generator.generate("--framework");
+                                null,
+                                ldFlagsFile == null ? null : ldFlagsFile.getPath(),
+                                bundleContent == null ? null : bundleContent.toString(),
+                                outFile.getPath(),
+                                new File(ModuleUtils.getModulePath(module)),
+                                null, new IMonitor() {
+                            @Override
+                            public void setText(String s) {
+                                progressIndicator.setText(s);
+                            }
+
+                            @Override
+                            public boolean isCanceled() {
+                                return false;
+                            }
+                        });
+                        File sdkToolsDir = new File(ProjectUtil.retrieveSDKPathFromGradle(new File(ModuleUtils.getModulePath(module))), "tools");
+                        generator.generate(sdkToolsDir, "--framework");
                     }
                 }
             } catch (Exception e) {

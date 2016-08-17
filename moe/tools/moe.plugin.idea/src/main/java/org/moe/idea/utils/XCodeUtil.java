@@ -17,13 +17,13 @@ limitations under the License.
 
 package org.moe.idea.utils;
 
-import java.io.File;
-import java.io.IOException;
-
+import com.intellij.openapi.diagnostic.Logger;
 import org.moe.common.exec.ExecOutputCollector;
 import org.moe.common.exec.SimpleExec;
 import org.moe.idea.utils.logger.LoggerFactory;
-import com.intellij.openapi.diagnostic.Logger;
+
+import java.io.File;
+import java.io.IOException;
 
 public class XCodeUtil {
 

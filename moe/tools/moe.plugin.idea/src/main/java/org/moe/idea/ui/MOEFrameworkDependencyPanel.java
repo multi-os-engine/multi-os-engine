@@ -16,12 +16,11 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
-import org.moe.idea.actions.MOELinkThirdpartyFramework;
-import org.moe.common.constants.MOEManifestConstants.LINKER_FLAGS;
-
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.components.JBList;
+import org.moe.common.constants.MOEManifestConstants.LINKER_FLAGS;
+import org.moe.idea.actions.MOELinkThirdpartyFramework;
 
 import javax.swing.*;
 import java.awt.*;

@@ -16,8 +16,6 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
-import org.moe.idea.actions.MOELinkThirdpartyFramework;
-import org.moe.common.constants.MOEManifestConstants.LIBRARIES_PATHS;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
@@ -25,6 +23,8 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.apache.sanselan.util.IOUtils;
+import org.moe.common.constants.MOEManifestConstants.LIBRARIES_PATHS;
+import org.moe.idea.actions.MOELinkThirdpartyFramework;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -75,10 +75,10 @@ public abstract class MOEAbstractFrameworkPanel extends JPanel implements MOEFra
         return isDynamic;
     }
 
-    public java.util.List<VirtualFile> getVirtualFiles() {
+    public List<VirtualFile> getVirtualFiles() {
         List<String> properties = getFiles();
 
-        java.util.List<VirtualFile> result = new ArrayList<VirtualFile>();
+        List<VirtualFile> result = new ArrayList<VirtualFile>();
         for (String fileName : properties) {
             File file = new File(fileName);
             if (file.exists()) {

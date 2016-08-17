@@ -16,23 +16,28 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-
-import org.moe.common.utils.OsUtils;
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.binding.MOEBindingGenerator;
-import org.moe.idea.binding.MOEGenerateBindingFactory;
-import org.moe.idea.utils.logger.LoggerFactory;
-import org.moe.idea.utils.natjgen.WrapNatJGenExec;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.impl.VirtualDirectoryImpl;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
+import org.moe.common.utils.OsUtils;
+import org.moe.common.utils.ProjectUtil;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.logger.LoggerFactory;
+import org.moe.tools.natjgen.WrapNatJGenExec;
+import org.moe.tools.natjgen.binding.IConsole;
+import org.moe.tools.natjgen.binding.IMonitor;
+import org.moe.tools.natjgen.binding.MOEBindingGenerator;
+import org.moe.tools.natjgen.binding.MOEBindingGeneratorByXcode;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -44,6 +49,8 @@ public class SynchronizeToXcodeAction extends AnAction {
     public static final String ACTION_TITLE = "Synchronize to Xcode";
 
     private static final Logger LOG = LoggerFactory.getLogger(SynchronizeToXcodeAction.class);
+
+    private ProgressIndicator progressIndicator;
 
 
     public SynchronizeToXcodeAction() {
@@ -99,7 +106,7 @@ public class SynchronizeToXcodeAction extends AnAction {
             }
             isModule &= module.getModuleFile() != null;
 
-            File xcodeFile = MOESdkPlugin.getXcodeProjectFile(module);
+            File xcodeFile = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(new File(ModuleUtils.getModulePath(module))));
             isXcode = ((xcodeFile != null) && xcodeFile.exists());
         }
 
@@ -114,7 +121,7 @@ public class SynchronizeToXcodeAction extends AnAction {
 
         boolean isActionEnabled = false;
         if (MOESdkPlugin.isValidMoeModule(module) && (isJavaFile(files) || isFolderWithJava(files)) &&
-                isModule(module) && WrapNatJGenExec.isNatJGenExist() && !OsUtils.isWindows()) {
+                !OsUtils.isWindows()) {
             isActionEnabled = true;
         }
 
@@ -128,11 +135,18 @@ public class SynchronizeToXcodeAction extends AnAction {
         final Module module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
         final VirtualFile[] files = CommonDataKeys.VIRTUAL_FILE_ARRAY.getData(e.getDataContext());
 
+        final File modulePath = new File(ModuleUtils.getModulePath(module));
+        File xcodeFile = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(modulePath));
+        if ((xcodeFile == null) || !xcodeFile.exists()) {
+            Messages.showErrorDialog("Xcode project not exist", "Open Xcode Project");
+            return;
+        }
+
         ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
             @Override
             public void run() {
                 try {
-                    ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+                    progressIndicator = ProgressManager.getInstance().getProgressIndicator();
                     if (progressIndicator == null) {
                         progressIndicator = new EmptyProgressIndicator();
                     }
@@ -146,12 +160,30 @@ public class SynchronizeToXcodeAction extends AnAction {
                     }
 
                     if (bindingList != null) {
-                        MOEBindingGenerator generator = MOEGenerateBindingFactory.getGenerator(true);
+                        MOEBindingGenerator generator = new MOEBindingGeneratorByXcode();
+                        File sdkToolsDir = new File(ProjectUtil.retrieveSDKPathFromGradle(modulePath), "tools");
                         for (VirtualFile file : bindingList) {
 
                             progressIndicator.setText("Synchronize " + file .getName() + "...");
+                            generator.generate(sdkToolsDir, modulePath,
+                                    new File(file.getPath()),
+                                    ACTION_TITLE,
+                                    new IConsole() {
+                                        @Override
+                                        public void write(String s) {
+                                            MOEToolWindow.getInstance(module.getProject()).log(s);
+                                        }
+                                    }, new IMonitor() {
+                                        @Override
+                                        public void setText(String s) {
+                                            progressIndicator.setText(s);
+                                        }
 
-                            generator.generate(module, file, ACTION_TITLE);
+                                        @Override
+                                        public boolean isCanceled() {
+                                            return false;
+                                        }
+                                    });
                         }
                     }
                     progressIndicator.cancel();

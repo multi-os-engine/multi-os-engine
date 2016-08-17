@@ -17,13 +17,6 @@ limitations under the License.
 package org.moe.idea.builder;
 
 import com.google.common.io.Files;
-import org.moe.common.utils.OsUtils;
-import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.runconfig.configuration.local.MOERunConfigurationLocal;
-import org.moe.idea.sdk.MOESdkType;
-import org.moe.idea.ui.MOEToolWindow;
-import org.moe.idea.wizards.project.MOEWizardPageOne;
-import org.moe.template.ProjectTemplate;
 import com.intellij.codeInsight.actions.ReformatCodeProcessor;
 import com.intellij.execution.RunManager;
 import com.intellij.execution.RunnerAndConfigurationSettings;
@@ -42,13 +35,18 @@ import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.module.StdModuleTypes;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.ui.configuration.ModulesProvider;
+import com.intellij.openapi.roots.ui.configuration.projectRoot.ProjectSdksModel;
+import com.intellij.openapi.roots.ui.configuration.projectRoot.daemon.ProjectStructureElement;
+import com.intellij.openapi.roots.ui.configuration.projectRoot.daemon.SdkProjectStructureElement;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.pom.java.LanguageLevel;
 import org.apache.commons.codec.Charsets;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -58,11 +56,16 @@ import org.jetbrains.jps.model.java.JavaSourceRootProperties;
 import org.jetbrains.plugins.gradle.settings.DistributionType;
 import org.jetbrains.plugins.gradle.settings.GradleProjectSettings;
 import org.jetbrains.plugins.gradle.util.GradleConstants;
-import res.MOEText;
+import org.moe.common.utils.OsUtils;
+import org.moe.generator.project.ProjectTemplate;
+import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.runconfig.configuration.MOERunConfiguration;
+import org.moe.idea.sdk.MOESdkType;
+import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.wizards.project.MOEWizardPageOne;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,19 +108,15 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         Project project = rootModel.getProject();
         Module module = rootModel.getModule();
 
-        myJdk = MOESdkType.getMOESdk();
+        myJdk = MOESdkType.getJDK();
+
+        ProjectRootManager.getInstance(project).setProjectSdk(myJdk);
 
         rootModel.getModuleExtension(LanguageLevelModuleExtension.class).setLanguageLevel(MOESdkType.REQUIRED_JAVA_LANGUAGE_LEVEL);
 
         super.setupRootModel(rootModel);
 
         ProjectRootManager projectRootManager = ProjectRootManager.getInstance(project);
-
-        if (projectRootManager.getProjectSdk() == null) {
-            projectRootManager.setProjectSdk(MOESdkType.findValidJdk());
-        }
-
-        rootModel.getModuleExtension(LanguageLevelModuleExtension.class).setLanguageLevel(MOESdkType.REQUIRED_JAVA_LANGUAGE_LEVEL);
 
         String projectPath = rootModel.getProject().getBasePath();
 
@@ -198,14 +197,21 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
             contentRoot.refresh(false, true);
         }
 
-        if (OsUtils.isMac()) {
-            StartupManager.getInstance(project).runWhenProjectIsInitialized(new Runnable() {
-                @Override
-                public void run() {
-                    configureRun(rootModel);
-                }
-            });
+        Sdk sdk = MOESdkType.getMOESdk(rootModel.getModule());
+        if (sdk != null) {
+            rootModel.setSdk(sdk);
+        } else {
+            MOEToolWindow.getInstance(project).error("Error, unable set Sdk.");
         }
+        rootModel.getModuleExtension(LanguageLevelModuleExtension.class).setLanguageLevel(MOESdkType.REQUIRED_JAVA_LANGUAGE_LEVEL);
+
+
+        StartupManager.getInstance(project).runWhenProjectIsInitialized(new Runnable() {
+            @Override
+            public void run() {
+                configureRun(rootModel);
+            }
+        });
     }
 
     @Override
@@ -243,45 +249,22 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         moduleProperties.setProjectRoot(path);
 
-        String templatePath = "/template/wizard/" + template.getType().toString().toLowerCase() + ".zip";
+        ProjectTemplate projectTemplate = new ProjectTemplate();
 
-        InputStream templateStream = MOEModuleBuilder.class.getResourceAsStream(templatePath);
+        String packageName = String.format("%s.%s.%s", moduleProperties.getCompanyIdentifier(), moduleProperties.getOrganizationName(), moduleProperties.getProductName());
 
-        RuntimeException exception = null;
+        packageName = packageName.replace(" ", "").trim().toLowerCase();
 
-        if (templateStream == null) {
-            exception = new RuntimeException("Missing project templates, please re-install " + MOEText.get("SDK.Name"));
-        }
+        projectTemplate.rootPath(moduleProperties.getProjectRoot())
+                .packageName(packageName)
+                .projectName(moduleProperties.getProductName())
+                .organizationName(moduleProperties.getOrganizationName())
+                .companyIdentifier(moduleProperties.getCompanyIdentifier())
+                .mainClassName(moduleProperties.getMainClassName())
+                .keepXcode(moduleProperties.isKeepXcodeProject())
+                .xcodeProjectPath(moduleProperties.getXcodeProjectPath());
 
-        if (exception == null) {
-            ProjectTemplate projectTemplate = new ProjectTemplate();
-
-            String packageName = String.format("%s.%s.%s", moduleProperties.getCompanyIdentifier(), moduleProperties.getOrganizationName(), moduleProperties.getProductName());
-
-            packageName = packageName.replace(" ", "").trim().toLowerCase();
-
-            projectTemplate.rootPath(moduleProperties.getProjectRoot())
-                    .packageName(packageName)
-                    .projectName(moduleProperties.getProductName())
-                    .organizationName(moduleProperties.getOrganizationName())
-                    .companyIdentifier(moduleProperties.getCompanyIdentifier())
-                    .mainClassName(moduleProperties.getMainClassName())
-                    .sdkHome(MOESdkPlugin.getSdkRootPath());
-
-            projectTemplate.createProject(templateStream);
-        }
-
-        try {
-            if (templateStream != null) {
-                templateStream.close();
-            }
-        } catch (IOException e) {
-            MOEToolWindow.getInstance(project).log("Failed to close template input stream");
-        }
-
-        if (exception != null) {
-            throw exception;
-        }
+        projectTemplate.createProject(template.getType().toString().toLowerCase() + ".zip");
     }
 
     private void configureGradle(ModifiableRootModel rootModel) throws IOException {
@@ -342,7 +325,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         RunnerAndConfigurationSettings settings = null;
 
         try {
-            settings = MOERunConfigurationLocal.createRunConfiguration(project, module);
+            settings = MOERunConfiguration.createRunConfiguration(project, module);
         }
         catch (Exception e) {
             MOEToolWindow.getInstance(project).log("Failed create run configuration: " + e.getMessage());
