@@ -352,6 +352,9 @@ public class MoeSDK {
                 addedRepositories.add(repository);
             }
         });
+        project.getRepositories().maven(repo -> {
+            repo.setUrl("https://dl.bintray.com/multi-os-engine/maven/");
+        });
 
         // Retrieve files
         final Set<File> files;
