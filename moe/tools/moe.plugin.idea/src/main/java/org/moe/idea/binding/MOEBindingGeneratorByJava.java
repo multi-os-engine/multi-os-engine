@@ -19,6 +19,7 @@ package org.moe.idea.binding;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -36,6 +37,7 @@ import org.moe.generator.project.ProjectHelper;
 import org.moe.generator.project.XcodeTarget;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.logger.LoggerFactory;
 import org.moe.tools.natjgen.binding.MOEBindingGenerator;
 
 import java.io.*;
@@ -50,6 +52,9 @@ import java.util.regex.Pattern;
 import static org.moe.generator.project.Generator.SOURCE_TREE_GROUP;
 
 public class MOEBindingGeneratorByJava {
+
+    private static final Logger LOG = LoggerFactory.getLogger(MOEBindingGeneratorByJava.class);
+
     private PsiManager psiManager;
 
     public void generate(DataContext dataContext, String action_title){
@@ -67,94 +72,95 @@ public class MOEBindingGeneratorByJava {
 
         UIUtil.invokeAndWaitIfNeeded(new Runnable() {
             public void run() {
-                for (VirtualFile file : files) {
-                    if ((file != null) && (module != null)) {
-                        psiManager = PsiManager.getInstance(module.getProject());
-                        PsiJavaFile javaFile = (PsiJavaFile) psiManager.findFile(file);
-                        if (javaFile != null) {
-                            for (PsiClass psiClass : javaFile.getClasses()) {
-                                if (isInstanceOfViewController(psiClass)) {
-                                    String nativeClassName = getNativeClassName(psiClass);
-                                    nativeClassName = (nativeClassName == null) ? psiClass.getName() : nativeClassName;
+                try {
+                    for (VirtualFile file : files) {
+                        if ((file != null) && (module != null)) {
+                            psiManager = PsiManager.getInstance(module.getProject());
+                            PsiJavaFile javaFile = (PsiJavaFile) psiManager.findFile(file);
+                            if (javaFile != null) {
+                                for (PsiClass psiClass : javaFile.getClasses()) {
+                                    if (isInstanceOfViewController(psiClass)) {
+                                        String nativeClassName = getNativeClassName(psiClass);
+                                        nativeClassName = (nativeClassName == null) ? psiClass.getName() : nativeClassName;
 
-                                    if (nativeClassName != null) {
-                                        try {
-                                            File xcodeProjectFile = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(new File(ModuleUtils.getModulePath(module))));
+                                        if (nativeClassName != null) {
+                                            //try {
+                                                File xcodeProjectFile = new File(ProjectUtil.retrieveXcodeProjectPathFromGradle(new File(ModuleUtils.getModulePath(module))));
 
-                                            if ((xcodeProjectFile == null) || !xcodeProjectFile.exists()) {
-                                                return;
-                                            }
+                                                if ((xcodeProjectFile == null) || !xcodeProjectFile.exists()) {
+                                                    return;
+                                                }
 
-                                            ProjFile xcodeProject = new ProjFile(xcodeProjectFile);
+                                                ProjFile xcodeProject = new ProjFile(xcodeProjectFile);
 
-                                            //TODO do not remove!!! Only in case of files update
-                                            File headerFile = getFileWithInterface(xcodeProjectFile, xcodeProject, module, nativeClassName, ".h");
-                                            File sourceFile = getFileWithInterface(xcodeProjectFile, xcodeProject, module, nativeClassName, ".m");
+                                                //TODO do not remove!!! Only in case of files update
+                                                File headerFile = getFileWithInterface(xcodeProjectFile, xcodeProject, module, nativeClassName, ".h");
+                                                File sourceFile = getFileWithInterface(xcodeProjectFile, xcodeProject, module, nativeClassName, ".m");
 
-                                            Map<String, String> actionMap = generateIBActions(psiClass);
-                                            Map<String, String> outletMap = generateIBOutlet(psiClass);
+                                                Map<String, String> actionMap = generateIBActions(psiClass);
+                                                Map<String, String> outletMap = generateIBOutlet(psiClass);
 
-                                            String xcodeProjectName = xcodeProjectFile.getName().substring(0, xcodeProjectFile.getName().lastIndexOf("."));
+                                                String xcodeProjectName = xcodeProjectFile.getName().substring(0, xcodeProjectFile.getName().lastIndexOf("."));
 //                                            PBXGroup group = getGroupByPath(xcodeProject, xcodeProjectName);
 
-                                            //TODO do not remove!!! Now we do not append methods, always rewrite!!!
+                                                //TODO do not remove!!! Now we do not append methods, always rewrite!!!
 //                                if(headerFile == null && sourceFile == null){
-                                            //generate outlets
-                                            StringBuilder outletContent = new StringBuilder();
-                                            for (String outlet : outletMap.values()) {
-                                                outletContent.append(outlet);
-                                                outletContent.append("\n");
-                                            }
-                                            String outlets = outletContent.toString();
-
-                                            //generate actions
-                                            StringBuilder actionContent = new StringBuilder();
-                                            for (String action : actionMap.values()) {
-                                                actionContent.append(action);
-                                                actionContent.append("\n");
-                                            }
-                                            String actions = actionContent.toString();
-
-                                            //create header file
-                                            boolean doesHeaderExist = headerFile != null;
-                                            headerFile = generateNewHeader(headerFile, psiClass, xcodeProjectFile, xcodeProjectName, outlets, actions, nativeClassName);
-
-                                            ProjectHelper projectHelper = new ProjectHelper(xcodeProject, new FileManager(xcodeProjectFile.getParentFile()));
-
-                                            Array<PBXObjectRef<PBXNativeTarget>> targets = xcodeProject.getRoot().getRootObject().getReferenced().getTargets();
-                                            List<XcodeTarget> mainTargets = new ArrayList<XcodeTarget>();
-                                            for (PBXObjectRef<PBXNativeTarget> target : targets) {
-                                                if (!target.getReferenced().getName().endsWith("-Test")) {
-                                                    mainTargets.add(new XcodeTarget(target, projectHelper));
+                                                //generate outlets
+                                                StringBuilder outletContent = new StringBuilder();
+                                                for (String outlet : outletMap.values()) {
+                                                    outletContent.append(outlet);
+                                                    outletContent.append("\n");
                                                 }
-                                            }
+                                                String outlets = outletContent.toString();
 
-                                            //add header to Xcode project
-                                            if (!doesHeaderExist) {
-                                                for (XcodeTarget target : mainTargets) {
-                                                    FileResult hFile = target.createFile(headerFile.getName(), null, "", SOURCE_TREE_GROUP);
-                                                    target.getSupportingFilesGroup().getChildren().add(hFile.getFileRef());
-                                                    hFile.getFileRef().getReferenced().setPath("Generated/" + headerFile.getName());
+                                                //generate actions
+                                                StringBuilder actionContent = new StringBuilder();
+                                                for (String action : actionMap.values()) {
+                                                    actionContent.append(action);
+                                                    actionContent.append("\n");
                                                 }
-                                            }
+                                                String actions = actionContent.toString();
 
-                                            //create source file
-                                            boolean doesSourceExist = sourceFile != null;
-                                            sourceFile = generateNewSource(sourceFile, psiClass, xcodeProjectFile, xcodeProjectName, outlets, actions, nativeClassName);
+                                                //create header file
+                                                boolean doesHeaderExist = headerFile != null;
+                                                headerFile = generateNewHeader(headerFile, psiClass, xcodeProjectFile, xcodeProjectName, outlets, actions, nativeClassName);
 
-                                            //add source file to Xcode project
-                                            if (!doesSourceExist) {
-                                                for (XcodeTarget target : mainTargets) {
-                                                    FileResult srcFile = target.createFile(sourceFile.getName(), null, "", SOURCE_TREE_GROUP);
-                                                    target.getSupportingFilesGroup().getChildren().add(srcFile.getFileRef());
-                                                    srcFile.getFileRef().getReferenced().setPath("Generated/" + sourceFile.getName());
-                                                    for (PBXObjectRef<PBXBuildPhase> buildPhase : target.getTarget().getBuildPhases()) {
-                                                        if (buildPhase.getReferenced() instanceof PBXSourcesBuildPhase) {
-                                                            createBuildFile(projectHelper, srcFile.getFileRef(), buildPhase.getReferenced());
+                                                ProjectHelper projectHelper = new ProjectHelper(xcodeProject, new FileManager(xcodeProjectFile.getParentFile()));
+
+                                                Array<PBXObjectRef<PBXNativeTarget>> targets = xcodeProject.getRoot().getRootObject().getReferenced().getTargets();
+                                                List<XcodeTarget> mainTargets = new ArrayList<XcodeTarget>();
+                                                for (PBXObjectRef<PBXNativeTarget> target : targets) {
+                                                    if (!target.getReferenced().getName().endsWith("-Test")) {
+                                                        mainTargets.add(new XcodeTarget(target, projectHelper));
+                                                    }
+                                                }
+
+                                                //add header to Xcode project
+                                                if (!doesHeaderExist) {
+                                                    for (XcodeTarget target : mainTargets) {
+                                                        FileResult hFile = target.createFile(headerFile.getName(), null, "", SOURCE_TREE_GROUP);
+                                                        target.getSupportingFilesGroup().getChildren().add(hFile.getFileRef());
+                                                        hFile.getFileRef().getReferenced().setPath("Generated/" + headerFile.getName());
+                                                    }
+                                                }
+
+                                                //create source file
+                                                boolean doesSourceExist = sourceFile != null;
+                                                sourceFile = generateNewSource(sourceFile, psiClass, xcodeProjectFile, xcodeProjectName, outlets, actions, nativeClassName);
+
+                                                //add source file to Xcode project
+                                                if (!doesSourceExist) {
+                                                    for (XcodeTarget target : mainTargets) {
+                                                        FileResult srcFile = target.createFile(sourceFile.getName(), null, "", SOURCE_TREE_GROUP);
+                                                        target.getSupportingFilesGroup().getChildren().add(srcFile.getFileRef());
+                                                        srcFile.getFileRef().getReferenced().setPath("Generated/" + sourceFile.getName());
+                                                        for (PBXObjectRef<PBXBuildPhase> buildPhase : target.getTarget().getBuildPhases()) {
+                                                            if (buildPhase.getReferenced() instanceof PBXSourcesBuildPhase) {
+                                                                createBuildFile(projectHelper, srcFile.getFileRef(), buildPhase.getReferenced());
+                                                            }
                                                         }
                                                     }
                                                 }
-                                            }
 //                                }
 //                                else if(headerFile != null && sourceFile == null){
 //                                    updateExistingHeader(headerFile, outletMap, actionMap, nativeClassName);
@@ -190,17 +196,20 @@ public class MOEBindingGeneratorByJava {
 //                                    updateExistingSource(sourceFile, new HashMap<String, String>(outletMap), new HashMap<String, String>(actionMap), nativeClassName);
 //                                }
 
-                                            xcodeProject.save();
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                            return;
-                                        }
+                                                xcodeProject.save();
+//                                            } catch (Exception e) {
+//                                                e.printStackTrace();
+//                                                return;
+//                                            }
 
+                                        }
                                     }
                                 }
                             }
                         }
                     }
+                } catch (Exception e) {
+                    LOG.error("Unable to generate binding", e);
                 }
             }
         });
