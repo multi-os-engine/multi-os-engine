@@ -19,4 +19,6 @@ package org.moe.idea.utils;
 public class Configuration {
     public final static String PLATFORM_IOS = "iOS";
     public final static String PLATFORM_OSX = "OS X";
+    public static final String RELEASE_NAME = "Release";
+    public static final String DEBUG_NAME = "Debug";
 }

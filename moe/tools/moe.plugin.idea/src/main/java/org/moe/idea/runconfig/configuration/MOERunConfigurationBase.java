@@ -35,8 +35,8 @@ import org.jetbrains.annotations.Nullable;
 import org.moe.common.PasswordEntry;
 import org.moe.common.constants.ProductType;
 import org.moe.common.utils.OsUtils;
-import org.moe.common.variant.ModeVariant;
 import org.moe.idea.runconfig.MOERunProfileState;
+import org.moe.idea.utils.Configuration;
 import org.moe.idea.utils.JDOMHelper;
 import org.moe.idea.utils.ModuleUtils;
 
@@ -71,7 +71,7 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
     public MOERunConfigurationBase(final Project project, final ConfigurationFactory factory) {
         super(project, factory, "");
 
-        configuration = ModeVariant.DEBUG_NAME;
+        configuration = Configuration.DEBUG_NAME;
         productType = ProductType.app;
     }
 

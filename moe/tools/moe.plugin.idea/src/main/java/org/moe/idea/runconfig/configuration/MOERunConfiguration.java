@@ -29,13 +29,10 @@ import com.intellij.openapi.util.JDOMExternalizerUtil;
 import com.intellij.openapi.util.WriteExternalException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.moe.common.sdk.Sdk;
-import org.moe.common.sdk.SdkManager;
-import org.moe.common.simulator.Simulator;
-import org.moe.common.simulator.SimulatorManager;
 import org.moe.common.utils.OsUtils;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.utils.JDOMHelper;
+import org.moe.idea.utils.SimCtl;
 
 public class MOERunConfiguration extends MOERunConfigurationBase {
     private String simulatorUdid;
@@ -61,15 +58,10 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         configuration.moduleName(module.getName());
 
         if(OsUtils.isMac()) {
-            for (Sdk sdk : SdkManager.list()) {
-                for (Simulator simulator : SimulatorManager.getSimulators()) {
-                    if (sdk.version().contains(simulator.sdk())) {
-                        configuration.runOnSimulator(true);
-                        configuration.simulatorDeviceName(simulator.udid());
-
-                        break;
-                    }
-                }
+            for (SimCtl.Device device : SimCtl.getDevices()) {
+                configuration.runOnSimulator(true);
+                configuration.simulatorDeviceName(device.udid);
+                break;
             }
         }
 

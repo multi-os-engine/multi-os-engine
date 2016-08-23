@@ -29,10 +29,6 @@ import org.jetbrains.annotations.Nullable;
 import org.moe.common.PasswordEntry;
 import org.moe.common.developer.ProvisioningProfile;
 import org.moe.common.developer.SigningIdentity;
-import org.moe.common.sdk.Sdk;
-import org.moe.common.sdk.SdkManager;
-import org.moe.common.simulator.Simulator;
-import org.moe.common.simulator.SimulatorManager;
 import org.moe.common.utils.OsUtils;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.runconfig.MOEIpaConfiguration;
@@ -170,19 +166,19 @@ public class MOECreateIpaDialog extends DialogWrapper {
                 }
             }
 
-            for (Sdk sdk : SdkManager.list()) {
-                boolean hasDevices = false;
-                for (Simulator simulator : SimulatorManager.getSimulators()) {
-                    if (sdk.version().contains(simulator.sdk())) {
-                        hasDevices = true;
-                        break;
-                    }
-                }
-
-                if (hasDevices) {
-                    sdkCombo.addItem(sdk.version());
-                }
-            }
+//            for (Sdk sdk : SdkManager.list()) {
+//                boolean hasDevices = false;
+//                for (Simulator simulator : SimulatorManager.getSimulators()) {
+//                    if (sdk.version().contains(simulator.sdk())) {
+//                        hasDevices = true;
+//                        break;
+//                    }
+//                }
+//
+//                if (hasDevices) {
+//                    sdkCombo.addItem(sdk.version());
+//                }
+//            }
         } catch (Exception e) {
             MOEToolWindow.getInstance(project).log(e.getMessage());
         }

@@ -41,17 +41,16 @@ import org.moe.common.exec.ExecRunnerBase;
 import org.moe.common.exec.GradleExec;
 import org.moe.common.ios.Device;
 import org.moe.common.ios.DeviceInfo;
-import org.moe.common.simulator.Simulator;
-import org.moe.common.simulator.SimulatorManager;
 import org.moe.common.utils.OsUtils;
-import org.moe.common.variant.ModeVariant;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.runconfig.configuration.test.MOETestClassBrowser;
 import org.moe.idea.runconfig.configuration.test.MOETestClassVisibilityChecker;
 import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.utils.Configuration;
 import org.moe.idea.utils.InputValidationHelper;
 import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.SimCtl;
 import res.MOEIcons;
 import res.MOEText;
 
@@ -244,8 +243,8 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         });
 
         configurationCombo.removeAllItems();
-        configurationCombo.addItem(ModeVariant.RELEASE_NAME);
-        configurationCombo.addItem(ModeVariant.DEBUG_NAME);
+        configurationCombo.addItem(Configuration.RELEASE_NAME);
+        configurationCombo.addItem(Configuration.DEBUG_NAME);
 
         if (configuration.configuration() != null) {
             configurationCombo.setSelectedItem(configuration.configuration());
@@ -326,10 +325,9 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         }
         simulatorCombo.removeAllItems();
 
-        for (Simulator simulator : SimulatorManager.getSimulators()) {
-            simulatorCombo.addItem(new MOERunConfigurationEditor.SimulatorComboItem(simulator));
-
-            if(selectedUdid != null && selectedUdid.equals(simulator.udid())) {
+        for (SimCtl.Device device : SimCtl.getDevices()) {
+            simulatorCombo.addItem(new MOERunConfigurationEditor.SimulatorComboItem(device));
+            if(selectedUdid != null && selectedUdid.equals(device.udid)) {
                 simulatorCombo.setSelectedIndex(simulatorCombo.getItemCount() - 1);
             }
         }
@@ -381,18 +379,18 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
     }
 
     private class SimulatorComboItem {
-        private Simulator simulator;
+        private SimCtl.Device device;
 
-        SimulatorComboItem(Simulator simulator) {
-            this.simulator = simulator;
+        SimulatorComboItem(SimCtl.Device device) {
+            this.device = device;
         }
 
         public String toString() {
-            return simulator.name() + " (" + simulator.sdk() + ")";
+            return device.name + " (" + device.runtime + ")";
         }
 
         String udid() {
-            return simulator.udid();
+            return device.udid;
         }
     }
 
