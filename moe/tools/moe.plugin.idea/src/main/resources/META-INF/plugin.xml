@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.moe</id>
   <name>Multi-OS Engine Plugin</name>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 
   <vendor url="https://multi-os-engine.org">Multi-OS Engine</vendor>
 
@@ -15,7 +15,7 @@
   </change-notes>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="131"/>
+  <idea-version since-build="143"/>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
        on how to target different products -->

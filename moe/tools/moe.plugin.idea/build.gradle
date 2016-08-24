@@ -16,6 +16,7 @@ intellij {
   plugins = ['gradle']
   pluginName PLUGIN_NAME
   downloadSources false
+  updateSinceUntilBuild false
 
   publish {
     if (project.hasProperty('intellij.user')) {
