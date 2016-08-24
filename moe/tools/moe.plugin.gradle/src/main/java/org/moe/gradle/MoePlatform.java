@@ -17,11 +17,13 @@ limitations under the License.
 package org.moe.gradle;
 
 import org.gradle.api.GradleException;
+import org.moe.common.constants.MOEManifestConstants;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.Require;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -81,6 +83,20 @@ public class MoePlatform {
             */
     };
 
+    public static final MoePlatform[] ALL_PLATFORMS = new MoePlatform[]{
+            /* NOTE: Unsupported but may be in the future
+            MACOS,
+            */
+            IOS,
+            IOS_SIMULATOR,
+            /* NOTE: Unsupported but may be in the future
+            TVOS,
+            TVOS_SIMULATOR,
+            WATCHOS,
+            WATCHOS_SIMULATOR,
+            */
+    };
+
     @NotNull
     public static MoePlatform getForDisplayName(@NotNull final String name) {
         Require.nonNull(name);
@@ -121,4 +137,33 @@ public class MoePlatform {
     public String toString() {
         return platformName;
     }
+
+    /**
+     * Get variant by manifest property.
+     *
+     * @param property manifest property
+     * @return property or null
+     */
+    public static MoePlatform getByManifestProperty(MOEManifestConstants.LIBRARIES_PATHS property) {
+        if (property == MOEManifestConstants.LIBRARIES_PATHS.MOE_ThirdpartyFramework_ios_device) {
+            return IOS;
+        }
+        if (property == MOEManifestConstants.LIBRARIES_PATHS.MOE_ThirdpartyFramework_ios_simulator) {
+            return IOS_SIMULATOR;
+        }
+        return null;
+    }
+
+    public static List<MoePlatform> getSupportedTargetVariants(Arch archVariant) {
+        List<MoePlatform> supported = new ArrayList<MoePlatform>();
+        for (MoePlatform currentTarget : ALL_PLATFORMS) {
+            for (Arch currentArch : currentTarget.archs) {
+                if (archVariant == currentArch) {
+                    supported.add(currentTarget);
+                }
+            }
+        }
+        return supported;
+    }
+
 }

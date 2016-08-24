@@ -30,10 +30,8 @@ import org.gradle.api.tasks.JavaExec;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.SourceSetContainer;
 import org.gradle.api.tasks.TaskContainer;
+import org.gradle.process.ExecSpec;
 import org.gradle.process.JavaExecSpec;
-import org.moe.common.exec.ExecRunnerBase;
-import org.moe.common.exec.ProcessHandler;
-import org.moe.common.simulator.SimulatorManager;
 import org.moe.gradle.AbstractMoePlugin;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.IgnoreUnused;
@@ -72,6 +70,7 @@ public class Launchers {
     private static final String MOE_LAUNCHER_CONFIG_OPTION = "config";
     private static final String MOE_LAUNCHER_NO_WAIT_DEVICE_OPTION = "no-wait-device";
     private static final String MOE_LAUNCHER_NO_BUILD_OPTION = "no-build";
+    private static final String MOE_LAUNCHER_NO_LAUNCH_OPTION = "no-launch";
     private static final String MOE_LAUNCHER_DEBUG_OPTION = "debug";
     private static final String MOE_LAUNCHER_ENV_OPTION = "env";
     private static final String MOE_LAUNCHER_VMARG_OPTION = "vmarg";
@@ -81,6 +80,7 @@ public class Launchers {
 
     private static class Options {
         boolean build = true;
+        boolean launch = true;
         boolean waitForDevice = true;
         Mode mode = Mode.RELEASE;
         Port debug;
@@ -129,6 +129,12 @@ public class Launchers {
                         project.getLogger().warn("Ignoring value for launcher option: '" + key + "'");
                     }
                     build = false;
+
+                } else if (MOE_LAUNCHER_NO_LAUNCH_OPTION.equals(key)) {
+                    if (value != null) {
+                        project.getLogger().warn("Ignoring value for launcher option: '" + key + "'");
+                    }
+                    launch = false;
 
                 } else if (MOE_LAUNCHER_DEBUG_OPTION.equals(key)) {
                     if (value == null) {
@@ -420,6 +426,78 @@ public class Launchers {
 
             if (outputFile != null) {
                 exec.args(OUTPUT_FILE_ARG + "=" + outputFile.getAbsolutePath());
+            }
+        }
+    }
+
+    private static class SimulatorLauncherBuilder {
+        // @formatter:off
+        private static final String UDID_ARG            = "--udid";
+        private static final String APP_PATH_ARG        = "--app-path";
+        private static final String LAUNCH_ARG_ARG      = "--launch-arg";
+        private static final String ENV_ARG             = "--env";
+        private static final String DEBUG_ARG           = "--debug";
+        // @formatter:on
+
+        private String udid;
+        private File appPath;
+        private final List<String> launchArgs = new ArrayList<>();
+        private final Map<String, String> envVars = new HashMap<>();
+        private Port debug;
+
+        private SimulatorLauncherBuilder setUDID(@Nullable String udid) {
+            this.udid = udid;
+            return this;
+        }
+
+        private SimulatorLauncherBuilder setAppPath(@Nullable File appPath) {
+            this.appPath = appPath;
+            return this;
+        }
+
+        @IgnoreUnused
+        private SimulatorLauncherBuilder addLaunchArgs(@NotNull String arg) {
+            launchArgs.add(Require.nonNull(arg));
+            return this;
+        }
+
+        @IgnoreUnused
+        private SimulatorLauncherBuilder putEnvVar(@NotNull String key, @Nullable String value) {
+            if (value == null) {
+                envVars.remove(Require.nonNull(key));
+            } else {
+                envVars.put(Require.nonNull(key), value);
+            }
+            return this;
+        }
+
+        private SimulatorLauncherBuilder setDebug(int local) {
+            debug = new Port(local, null);
+            return this;
+        }
+
+        private void build(@NotNull MoePlugin plugin, @NotNull ExecSpec exec) {
+            Require.nonNull(plugin);
+            Require.nonNull(exec);
+
+            exec.setWorkingDir(plugin.getSDK().getToolsDir().getAbsolutePath());
+
+            exec.setExecutable(plugin.getSDK().getSimlauncherExec());
+
+            if (udid != null) {
+                exec.args(UDID_ARG + "=" + udid);
+            }
+
+            if (appPath != null) {
+                exec.args(APP_PATH_ARG + "=" + appPath);
+            }
+
+            launchArgs.forEach(arg -> exec.args(LAUNCH_ARG_ARG + "=" + arg));
+
+            envVars.forEach((k, v) -> exec.args(ENV_ARG + "=" + k + "=" + v));
+
+            if (debug != null) {
+                exec.args(DEBUG_ARG + "=" + debug.local);
             }
         }
     }
@@ -720,6 +798,9 @@ public class Launchers {
         }
 
         for (String udid : devices) {
+            if (!options.launch) {
+                continue;
+            }
             task.getActions().add(t -> {
                 // Get proper Xcode settings
                 final Map<String, String> settings;
@@ -774,6 +855,9 @@ public class Launchers {
         }
 
         for (String udid : simulators) {
+            if (!options.launch) {
+                continue;
+            }
             task.getActions().add(t -> {
                 // Get proper Xcode settings
                 final Map<String, String> settings;
@@ -786,14 +870,6 @@ public class Launchers {
                 // Get app path
                 final File appPath = new File(settings.get("BUILT_PRODUCTS_DIR"), settings.get("FULL_PRODUCT_NAME"));
 
-                final List<String> args = new ArrayList<>();
-                if (options.debug != null) {
-                    args.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=" + options.debug.local);
-                }
-                args.addAll(options.vmargs);
-                args.add("-args");
-                args.addAll(options.args);
-
                 final JUnitTestCollector testCollector;
                 if (test && !options.rawTestOutput) {
                     testCollector = new JUnitTestCollector();
@@ -801,50 +877,35 @@ public class Launchers {
                     testCollector = null;
                 }
 
-                final Process process;
-                final SimulatorManager manager = new SimulatorManager();
-                final String errorMsg = "failed to launch application on simulator";
-                try {
-                    process = manager.installAndLaunchApp(udid, appPath.getAbsolutePath(), args, options.envs);
-
-                    if (process == null) {
-                        throw new GradleException(errorMsg);
-                    } else {
-                        final ProcessHandler processHandler = new ProcessHandler(process);
-
-                        processHandler.setListener(new ExecRunnerBase.ExecRunnerListener() {
-                            @Override
-                            public void stdout(String line) {
-                                if (testCollector != null) {
-                                    testCollector.appendLine(line);
-                                } else {
-                                    System.out.println(line);
-                                }
-                            }
-
-                            @Override
-                            public void stderr(String line) {
-                                if (testCollector != null) {
-                                    testCollector.appendLine(line);
-                                } else {
-                                    System.err.println(line);
-                                }
-                            }
-                        });
-
-                        if (processHandler.run(null) != 0) {
-                            throw new GradleException(errorMsg);
-                        }
+                TaskUtils.exec(project, exec -> {
+                    // Create simulator launcher
+                    final SimulatorLauncherBuilder builder = new SimulatorLauncherBuilder();
+                    if (udid != null) {
+                        builder.setUDID(udid);
                     }
-                } catch (GradleException e) {
-                    throw e;
-                } catch (Exception e) {
-                    throw new GradleException(errorMsg, e);
-                }
+                    if (options.debug != null) {
+                        builder.setDebug(options.debug.local);
+                    }
+                    options.envs.forEach(builder::putEnvVar);
+                    options.vmargs.forEach(builder::addLaunchArgs);
+                    builder.addLaunchArgs("-args");
+                    options.args.forEach(builder::addLaunchArgs);
+                    builder.setAppPath(appPath)
+                            .build(plugin, exec);
+
+                    if (testCollector != null) {
+                        final JUnitTestCollectorWriter writer = new JUnitTestCollectorWriter(testCollector);
+                        exec.setStandardOutput(writer);
+                        exec.setErrorOutput(writer);
+                    } else {
+                        exec.setStandardOutput(System.out);
+                        exec.setErrorOutput(System.err);
+                    }
+                });
 
                 if (testCollector != null) {
                     numFailedTests.getAndAdd(testCollector.getNumFailures() + testCollector.getNumErrors());
-                    writeJUnitReport(udid, testCollector, testOutputDir);
+                    writeJUnitReport(udid == null ? "unknown-simulator" : udid, testCollector, testOutputDir);
                 }
             });
         }

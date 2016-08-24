@@ -391,6 +391,7 @@ public class MoeSDK {
             validate(FIL, path, "tools/proguard.cfg");
             validate(FIL, path, "tools/proguard.jar");
             validate(FIL, path, "tools/retrolambda.jar");
+            validate(FIL | EXE, path, "tools/simlauncher");
             validate(DIR, path, "tools/UITransformer-res");
             validate(FIL, path, "tools/uiTransformer.jar");
             validate(DIR, path, "tools/windows/x86_64");
@@ -459,6 +460,7 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_PROGUARD_CFG;
     private @Nullable File MOE_SDK_PROGUARD_JAR;
     private @Nullable File MOE_SDK_RETROLAMBDA_JAR;
+    private @Nullable File MOE_SDK_SIMLAUNCHER_EXEC;
     private @Nullable File MOE_SDK_UITRANSFORMER_RES;
     private @Nullable File MOE_SDK_UITRANSFORMER_JAR;
     private @Nullable File MOE_SDK_WINDOWS_X86_64_SUPPORT;
@@ -488,6 +490,7 @@ public class MoeSDK {
         MOE_SDK_PROGUARD_CFG = path.resolve("tools/proguard.cfg").toFile();
         MOE_SDK_PROGUARD_JAR = path.resolve("tools/proguard.jar").toFile();
         MOE_SDK_RETROLAMBDA_JAR = path.resolve("tools/retrolambda.jar").toFile();
+        MOE_SDK_SIMLAUNCHER_EXEC = path.resolve("tools/simlauncher").toFile();
         MOE_SDK_UITRANSFORMER_RES = path.resolve("tools/UITransformer-res").toFile();
         MOE_SDK_UITRANSFORMER_JAR = path.resolve("tools/uiTransformer.jar").toFile();
         MOE_SDK_WINDOWS_X86_64_SUPPORT = path.resolve("tools/windows/x86_64").toFile();
@@ -608,6 +611,11 @@ public class MoeSDK {
     @NotNull
     public File getRetrolambdaJar() {
         return safeVariable(MOE_SDK_RETROLAMBDA_JAR, "MOE_SDK_RETROLAMBDA_JAR");
+    }
+
+    @NotNull
+    public File getSimlauncherExec() {
+        return safeVariable(MOE_SDK_SIMLAUNCHER_EXEC, "MOE_SDK_SIMLAUNCHER_EXEC");
     }
 
     @NotNull

@@ -27,8 +27,6 @@ import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.SourceSetContainer;
 import org.moe.common.configuration.ConfigurationValidationException;
-import org.moe.common.variant.ArchitectureVariant;
-import org.moe.common.variant.TargetVariant;
 import org.moe.generator.project.Generator;
 import org.moe.generator.project.config.Configuration;
 import org.moe.gradle.MoeExtension;
@@ -38,6 +36,7 @@ import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.options.XcodeOptions;
+import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
 
@@ -806,18 +805,18 @@ public class XcodeProjectGenerator extends AbstractBaseTask {
 
                                 List<String> subPaths = new ArrayList<>();
                                 if (libPathConst != LIBRARIES_PATHS.MOE_ThirdpartyFramework_universal) {
-                                    List<TargetVariant> targets = new ArrayList<>();
-                                    TargetVariant targetVariant = TargetVariant.getByManifestProperty(libPathConst);
+                                    List<MoePlatform> targets = new ArrayList<>();
+                                    MoePlatform targetVariant = MoePlatform.getByManifestProperty(libPathConst);
                                     if (targetVariant == null) {
-                                        ArchitectureVariant archVariant = ArchitectureVariant.getByManifestProperty(libPathConst);
+                                        Arch archVariant = Arch.getByManifestProperty(libPathConst);
                                         if (archVariant != null) {
-                                            targets.addAll(TargetVariant.getSupportedTargetVariants(archVariant));
+                                            targets.addAll(MoePlatform.getSupportedTargetVariants(archVariant));
                                         }
                                     } else {
                                         targets.add(targetVariant);
                                     }
-                                    for (TargetVariant target : targets) {
-                                        subPaths.add(target.getPlatformName());
+                                    for (MoePlatform target : targets) {
+                                        subPaths.add(target.platformName);
                                     }
                                 } else {
                                     subPaths.add("");
@@ -964,8 +963,8 @@ public class XcodeProjectGenerator extends AbstractBaseTask {
         if (!dynamicDir.exists()) {
             dynamicDir.mkdirs();
         }
-        for (TargetVariant variant : TargetVariant.getAll()) {
-            File targetDir = new File(dynamicDir, variant.getPlatformName());
+        for (MoePlatform variant : MoePlatform.ALL_PLATFORMS) {
+            File targetDir = new File(dynamicDir, variant.platformName);
             if (!targetDir.exists()) {
                 targetDir.mkdirs();
             }
@@ -979,8 +978,8 @@ public class XcodeProjectGenerator extends AbstractBaseTask {
         if (!staticDir.exists()) {
             staticDir.mkdirs();
         }
-        for (TargetVariant variant : TargetVariant.getAll()) {
-            File targetDir = new File(staticDir, variant.getPlatformName());
+        for (MoePlatform variant : MoePlatform.ALL_PLATFORMS) {
+            File targetDir = new File(staticDir, variant.platformName);
             if (!targetDir.exists()) {
                 targetDir.mkdirs();
             }
