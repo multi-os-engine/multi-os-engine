@@ -18,7 +18,6 @@ package org.moe.generator.project;
 
 import org.moe.common.constants.MOEManifestConstants.BUNDLE_RESOURCES;
 import org.moe.common.constants.MOEManifestConstants.LIBRARIES_PATHS;
-import org.moe.common.variant.TargetVariant;
 import org.moe.document.pbxproj.*;
 import org.moe.document.pbxproj.nextstep.Array;
 import org.moe.document.pbxproj.nextstep.NextStep;
@@ -254,6 +253,7 @@ public final class Generator {
         createBuildFile(moe_fw.getFileRef(), testFwBPRef.getReferenced());
 
         // Custom libraries
+        final String platformNames[] = new String[] { "iphoneos", "iphonesimulator" };
         IdentityHashMap<Enum, List<String>> properties = config.getDependenciesManifestsProperties();
         for (LIBRARIES_PATHS val : LIBRARIES_PATHS.values()) {
             List<String> pathList = properties.get(val);
@@ -266,8 +266,8 @@ public final class Generator {
 
                     if (path.contains("libs/dynamic/")) {
                         embedded = true;
-                        for (TargetVariant target : TargetVariant.getAll()) {
-                            if (path.contains("libs/dynamic/" + target.getPlatformName())) {
+                        for (String platformName : platformNames) {
+                            if (path.contains("libs/dynamic/" + platformName)) {
                                 libPath = name;
                                 srcTree = "MOE_CUSTOM_DYNAMIC_FRAMEWORK_PATH";
                                 break;
@@ -277,8 +277,8 @@ public final class Generator {
                             libPath = relativePathToBuildDir + "libs/dynamic/" + name;
                         }
                     } else if (path.contains("libs/static/")) {
-                        for (TargetVariant target : TargetVariant.getAll()) {
-                            if (path.contains("libs/static/" + target.getPlatformName())) {
+                        for (String platformName : platformNames) {
+                            if (path.contains("libs/static/" + platformName)) {
                                 libPath = name;
                                 srcTree = "MOE_CUSTOM_STATIC_FRAMEWORK_PATH";
                                 break;
