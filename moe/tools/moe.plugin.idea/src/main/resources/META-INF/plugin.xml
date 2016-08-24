@@ -124,17 +124,6 @@
           <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="MOEModuleActions" anchor="after"/>
       </group>
 
-
-      <group id="MOEBuildActions">
-          <separator/>
-          <action id="MOECreateIpaAction"
-                  class="org.moe.idea.actions.MOECreateIpaAction"
-                  text="Export IPA for Application"
-                  description="Create an Ipa file for application"/>
-              <add-to-group group-id="BuildMenu" anchor="last"/>
-          <separator/>
-      </group>
-
   </actions>
 
   <depends>org.jetbrains.plugins.gradle</depends>
