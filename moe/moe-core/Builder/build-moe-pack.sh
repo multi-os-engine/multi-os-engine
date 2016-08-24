@@ -68,11 +68,9 @@ $MOE_TMP/moe-tools/platform-tools/dx --dex --output $MOE_HOME/sdk/moe-ios-junit.
 mkdir -p $MOE_HOME/tools/macosx/x86_64
 mkdir -p $MOE_HOME/tools/windows/x86_64
 cp $target_repo/org/moe/moeIosDeviceLauncher/1.1.0.${qualifier}-${build_number}/moeIosDeviceLauncher-1.1.0.${qualifier}-${build_number}.jar $MOE_HOME/tools/ios-device.jar
-#cp $target_repo/org/moe/moeIosSimulatorLauncher/1.3.0.${qualifier}-${build_number}/moeIosSimulatorLauncher-1.3.0.${qualifier}-${build_number}.jar $MOE_HOME/tools/ios-simulator.jar
 cp $target_repo/org/moe/moeBindingLibimobiledevice/1.1.0.${qualifier}-${build_number}/moeBindingLibimobiledevice-1.1.0.${qualifier}-${build_number}-libimobiledevice_macosx_x86_64.dylib $MOE_HOME/tools/macosx/x86_64/libimobiledevice.dylib
 cp $target_repo/org/moe/natj-mac/1.0.0.${qualifier}-${build_number}/natj-mac-1.0.0.${qualifier}-${build_number}-Release.dylib $MOE_HOME/tools/macosx/x86_64/libnatj.dylib
 cp $target_repo/org/moe/moeBindingClang/3.8.0.${qualifier}-${build_number}/moeBindingClang-3.8.0.${qualifier}-${build_number}-libclang_moe_macosx_x86_64.dylib $MOE_HOME/tools/macosx/x86_64/libclang.dylib
-cp $target_repo/org/moe/moeExecutableBuilder/1.0.0.${qualifier}-${build_number}/moeExecutableBuilder-1.0.0.${qualifier}-${build_number}.jar $MOE_HOME/tools/moeExecutableBuilder.jar
 cp $target_repo/org/moe/moeBindingLibimobiledevice/1.1.0.${qualifier}-${build_number}/moeBindingLibimobiledevice-1.1.0.${qualifier}-${build_number}-libeay32_windows_x86_64.dll $MOE_HOME/tools/windows/x86_64/libeay32.dll
 cp $target_repo/org/moe/moeBindingLibimobiledevice/1.1.0.${qualifier}-${build_number}/moeBindingLibimobiledevice-1.1.0.${qualifier}-${build_number}-ssleay32_windows_x86_64.dll $MOE_HOME/tools/windows/x86_64/ssleay32.dll
 cp $target_repo/org/moe/moeBindingLibimobiledevice/1.1.0.${qualifier}-${build_number}/moeBindingLibimobiledevice-1.1.0.${qualifier}-${build_number}-libimobiledevice_windows_x86_64.dll $MOE_HOME/tools/windows/x86_64/libimobiledevice.dll
@@ -93,13 +91,6 @@ jar -xvf $target_repo/org/moe/moe-ios/1.0.0.${qualifier}-${build_number}/moe-ios
 rm -f NOTICE
 rm -f META-INF/LICENSE.TXT
 jar -cvf $MOE_HOME/sdk/moe-ios-javadoc.jar *
-
-# adding gradle plug-in	
-mkdir -p $MOE_HOME/gradle/org/moe
-cp -av $target_repo/org/moe/gradle $MOE_HOME/gradle/org/moe
-cp -av $target_repo/org/moe/moeProjectGenerator $MOE_HOME/gradle/org/moe
-cp -av $target_repo/org/moe/moeCommonUtils $MOE_HOME/gradle/org/moe/moeCommonUtils
-cp -av $target_repo/org/moe/moeDocumentPbxproj $MOE_HOME/gradle/org/moe
 
 # adding samples
 mkdir -p $MOE_HOME/samples
@@ -152,5 +143,8 @@ cp $MOE_HOME/tools/uiTransformer.jar $MOE_TMP/moeUITransformer
 cd $MOE_TMP/moeUITransformer
 jar -xvf $MOE_TMP/moeUITransformer/uiTransformer.jar
 cp -av UITransformer-res $MOE_HOME/tools
+
+# copy simlauncher
+cp $target_repo/other/simlauncher $MOE_HOME/tools/simlauncher
 
 echo MOE_HOME for Android Studio Releases prepared here: $MOE_HOME

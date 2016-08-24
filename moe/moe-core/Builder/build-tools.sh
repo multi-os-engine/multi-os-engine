@@ -31,7 +31,6 @@ call_sub ../../natj/natj natj-build.sh &&
 call_sub ../../../external/llvm moe_build_minsizerel.sh &&
 call_sub ../../tools/moe.tools.common moe-tools-common-build.sh &&
 call_sub ../../tools/moe.protocol.gdbremote moe-protocol-gdbremote-build.sh &&
-call_sub ../../tools/moe.mac.core moe-mac-core-build.sh &&
 call_sub ../../tools/moe.binding.clang moe-binding-clang-build.sh &&
 call_sub ../../tools/moe.binding.libimobiledevice moe-binding-libimobiledevice-build.sh &&
 call_sub ../../natj/natjgen/natjgen.cli.tool moe-build-natjgen-cli-tool.sh &&
@@ -41,11 +40,8 @@ call_sub ../../tools/moe.tools.natjgen moe-tools-natjgen-build.sh &&
 call_sub ../../tools/moe.generator.project moe-generator-project-build.sh &&
 call_sub ../../tools/moe.ios.device.launcher moe-ios-device-launcher-build.sh &&
 call_sub ../../tools/moe.ios.simulator.launcher moe-ios-simulator-launcher-build.sh &&
-call_sub ../../tools/moe.build.gradle moe-build-gradle-build.sh &&
 call_sub ../../tools/moe.plugin.gradle moe-plugin-gradle-build.sh &&
-call_sub ../../tools/moe.executable.builder moe-executable-builder-build.sh &&
 call_sub ../../tools/moe.ui.transformer moe-tools-ui-transformer.sh &&
 #call_sub ../../tools/moe.ui.designer moe-tools-ui-designer.sh &&
 call_sub ../../tools/moe.plugin.idea moe-plugin-idea-build.sh
 exit $?
-
