@@ -13,7 +13,6 @@
 		23AF45391ABB068F00EF7F42 /* context.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF42A31ABB068E00EF7F42 /* context.cc */; };
 		23AF453A1ABB068F00EF7F42 /* context_arch.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF42A51ABB068E00EF7F42 /* context_arch.cc */; };
 		23AF453B1ABB068F00EF7F42 /* entrypoints_init.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF42A61ABB068E00EF7F42 /* entrypoints_init.cc */; };
-		23AF453D1ABB068F00EF7F42 /* fault_handler.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF42A81ABB068E00EF7F42 /* fault_handler.cc */; };
 		23AF453E1ABB068F00EF7F42 /* instruction_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF42A91ABB068E00EF7F42 /* instruction_set.cc */; };
 		23AF453F1ABB068F00EF7F42 /* instruction_set_features.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF42AB1ABB068E00EF7F42 /* instruction_set_features.cc */; };
 		23AF45441ABB068F00EF7F42 /* memcmp16.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF42B11ABB068E00EF7F42 /* memcmp16.cc */; };
@@ -58,7 +57,6 @@
 		23AF45AD1ABB068F00EF7F42 /* quick_thread_entrypoints.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF43831ABB068E00EF7F42 /* quick_thread_entrypoints.cc */; };
 		23AF45AE1ABB068F00EF7F42 /* quick_throw_entrypoints.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF43841ABB068E00EF7F42 /* quick_throw_entrypoints.cc */; };
 		23AF45AF1ABB068F00EF7F42 /* quick_trampoline_entrypoints.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF43851ABB068E00EF7F42 /* quick_trampoline_entrypoints.cc */; };
-		23AF45B31ABB068F00EF7F42 /* fault_handler.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF438A1ABB068E00EF7F42 /* fault_handler.cc */; };
 		23AF45B41ABB068F00EF7F42 /* bitmap.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF43901ABB068E00EF7F42 /* bitmap.cc */; };
 		23AF45B51ABB068F00EF7F42 /* card_table.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF43931ABB068E00EF7F42 /* card_table.cc */; };
 		23AF45B71ABB068F00EF7F42 /* heap_bitmap.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF43971ABB068E00EF7F42 /* heap_bitmap.cc */; };
@@ -200,7 +198,6 @@
 		23AF46711ABB07D900EF7F42 /* registers_x86_64.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23AF42F91ABB068E00EF7F42 /* registers_x86_64.cc */; };
 		23CDF7F5192E031500EBA5E8 /* libinterpreter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CDF7F2192E02C600EBA5E8 /* libinterpreter.a */; };
 		23FE08571BD796C300924CF3 /* oat_quick_method_header.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23FE08551BD796C300924CF3 /* oat_quick_method_header.cc */; };
-		57ED171A1B5674A900605F42 /* MachException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57ED17111B56748100605F42 /* MachException.cpp */; };
 		57ED171B1B5674AF00605F42 /* MachoUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57ED17131B56748100605F42 /* MachoUtils.cpp */; };
 		6D6213F11BBC453C009F133F /* patchoat.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6D6213EF1BBC453C009F133F /* patchoat.cc */; };
 		6D6213F81BBC45A3009F133F /* art_field.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6D6213F31BBC45A3009F133F /* art_field.cc */; };
@@ -271,7 +268,6 @@
 		23AF42811ABB068E00EF7F42 /* context_arm.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = context_arm.cc; sourceTree = "<group>"; };
 		23AF42821ABB068E00EF7F42 /* context_arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context_arm.h; sourceTree = "<group>"; };
 		23AF42831ABB068E00EF7F42 /* entrypoints_init_arm.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entrypoints_init_arm.cc; sourceTree = "<group>"; };
-		23AF42841ABB068E00EF7F42 /* fault_handler_arm.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fault_handler_arm.cc; sourceTree = "<group>"; };
 		23AF42851ABB068E00EF7F42 /* instruction_set_features_arm.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = instruction_set_features_arm.cc; sourceTree = "<group>"; };
 		23AF42861ABB068E00EF7F42 /* instruction_set_features_arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = instruction_set_features_arm.h; sourceTree = "<group>"; };
 		23AF42881ABB068E00EF7F42 /* instruction_set_features_assembly_tests.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = instruction_set_features_assembly_tests.S; sourceTree = "<group>"; };
@@ -288,7 +284,6 @@
 		23AF42941ABB068E00EF7F42 /* context_arm64.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = context_arm64.cc; sourceTree = "<group>"; };
 		23AF42951ABB068E00EF7F42 /* context_arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context_arm64.h; sourceTree = "<group>"; };
 		23AF42961ABB068E00EF7F42 /* entrypoints_init_arm64.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entrypoints_init_arm64.cc; sourceTree = "<group>"; };
-		23AF42971ABB068E00EF7F42 /* fault_handler_arm64.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fault_handler_arm64.cc; sourceTree = "<group>"; };
 		23AF42981ABB068E00EF7F42 /* instruction_set_features_arm64.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = instruction_set_features_arm64.cc; sourceTree = "<group>"; };
 		23AF42991ABB068E00EF7F42 /* instruction_set_features_arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = instruction_set_features_arm64.h; sourceTree = "<group>"; };
 		23AF429B1ABB068E00EF7F42 /* jni_entrypoints_arm64.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = jni_entrypoints_arm64.S; sourceTree = "<group>"; };
@@ -304,7 +299,6 @@
 		23AF42A51ABB068E00EF7F42 /* context_arch.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = context_arch.cc; sourceTree = "<group>"; };
 		23AF42A61ABB068E00EF7F42 /* entrypoints_init.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entrypoints_init.cc; sourceTree = "<group>"; };
 		23AF42A71ABB068E00EF7F42 /* extra_arch.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = extra_arch.S; sourceTree = "<group>"; };
-		23AF42A81ABB068E00EF7F42 /* fault_handler.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fault_handler.cc; sourceTree = "<group>"; };
 		23AF42A91ABB068E00EF7F42 /* instruction_set.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = instruction_set.cc; sourceTree = "<group>"; };
 		23AF42AA1ABB068E00EF7F42 /* instruction_set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = instruction_set.h; sourceTree = "<group>"; };
 		23AF42AB1ABB068E00EF7F42 /* instruction_set_features.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = instruction_set_features.cc; sourceTree = "<group>"; };
@@ -322,7 +316,6 @@
 		23AF42DF1ABB068E00EF7F42 /* context_x86.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = context_x86.cc; sourceTree = "<group>"; };
 		23AF42E01ABB068E00EF7F42 /* context_x86.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context_x86.h; sourceTree = "<group>"; };
 		23AF42E11ABB068E00EF7F42 /* entrypoints_init_x86.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entrypoints_init_x86.cc; sourceTree = "<group>"; };
-		23AF42E21ABB068E00EF7F42 /* fault_handler_x86.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fault_handler_x86.cc; sourceTree = "<group>"; };
 		23AF42E31ABB068E00EF7F42 /* instruction_set_features_x86.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = instruction_set_features_x86.cc; sourceTree = "<group>"; };
 		23AF42E41ABB068E00EF7F42 /* instruction_set_features_x86.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = instruction_set_features_x86.h; sourceTree = "<group>"; };
 		23AF42E61ABB068E00EF7F42 /* jni_entrypoints_x86.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = jni_entrypoints_x86.S; sourceTree = "<group>"; };
@@ -454,8 +447,6 @@
 		23AF43841ABB068E00EF7F42 /* quick_throw_entrypoints.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quick_throw_entrypoints.cc; sourceTree = "<group>"; };
 		23AF43851ABB068E00EF7F42 /* quick_trampoline_entrypoints.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quick_trampoline_entrypoints.cc; sourceTree = "<group>"; };
 		23AF43871ABB068E00EF7F42 /* runtime_asm_entrypoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = runtime_asm_entrypoints.h; sourceTree = "<group>"; };
-		23AF438A1ABB068E00EF7F42 /* fault_handler.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fault_handler.cc; sourceTree = "<group>"; };
-		23AF438B1ABB068E00EF7F42 /* fault_handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fault_handler.h; sourceTree = "<group>"; };
 		23AF438E1ABB068E00EF7F42 /* atomic_stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atomic_stack.h; sourceTree = "<group>"; };
 		23AF438F1ABB068E00EF7F42 /* bitmap-inl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bitmap-inl.h"; sourceTree = "<group>"; };
 		23AF43901ABB068E00EF7F42 /* bitmap.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bitmap.cc; sourceTree = "<group>"; };
@@ -793,8 +784,6 @@
 		23CDF7F2192E02C600EBA5E8 /* libinterpreter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libinterpreter.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		23FE08551BD796C300924CF3 /* oat_quick_method_header.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = oat_quick_method_header.cc; sourceTree = "<group>"; };
 		23FE08561BD796C300924CF3 /* oat_quick_method_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oat_quick_method_header.h; sourceTree = "<group>"; };
-		57ED17111B56748100605F42 /* MachException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MachException.cpp; sourceTree = "<group>"; };
-		57ED17121B56748100605F42 /* MachException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachException.h; sourceTree = "<group>"; };
 		57ED17131B56748100605F42 /* MachoUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MachoUtils.cpp; sourceTree = "<group>"; };
 		57ED17141B56748100605F42 /* MachoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachoUtils.h; sourceTree = "<group>"; };
 		57ED17151B56748100605F42 /* xrtLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xrtLog.h; sourceTree = "<group>"; };
@@ -998,8 +987,6 @@
 				23AF43631ABB068E00EF7F42 /* elf_file_impl.h */,
 				23AF43641ABB068E00EF7F42 /* elf_utils.h */,
 				23AF43651ABB068E00EF7F42 /* entrypoints */,
-				23AF438A1ABB068E00EF7F42 /* fault_handler.cc */,
-				23AF438B1ABB068E00EF7F42 /* fault_handler.h */,
 				23AF438C1ABB068E00EF7F42 /* gc */,
 				23AF43F21ABB068E00EF7F42 /* gc_map.h */,
 				23AF43F31ABB068E00EF7F42 /* gc_root-inl.h */,
@@ -1157,7 +1144,6 @@
 				23AF42A51ABB068E00EF7F42 /* context_arch.cc */,
 				23AF42A61ABB068E00EF7F42 /* entrypoints_init.cc */,
 				23AF42A71ABB068E00EF7F42 /* extra_arch.S */,
-				23AF42A81ABB068E00EF7F42 /* fault_handler.cc */,
 				23AF42A91ABB068E00EF7F42 /* instruction_set.cc */,
 				23AF42AA1ABB068E00EF7F42 /* instruction_set.h */,
 				23AF42AB1ABB068E00EF7F42 /* instruction_set_features.cc */,
@@ -1186,7 +1172,6 @@
 				23AF42811ABB068E00EF7F42 /* context_arm.cc */,
 				23AF42821ABB068E00EF7F42 /* context_arm.h */,
 				23AF42831ABB068E00EF7F42 /* entrypoints_init_arm.cc */,
-				23AF42841ABB068E00EF7F42 /* fault_handler_arm.cc */,
 				23AF42851ABB068E00EF7F42 /* instruction_set_features_arm.cc */,
 				23AF42861ABB068E00EF7F42 /* instruction_set_features_arm.h */,
 				23AF42881ABB068E00EF7F42 /* instruction_set_features_assembly_tests.S */,
@@ -1210,7 +1195,6 @@
 				23AF42941ABB068E00EF7F42 /* context_arm64.cc */,
 				23AF42951ABB068E00EF7F42 /* context_arm64.h */,
 				23AF42961ABB068E00EF7F42 /* entrypoints_init_arm64.cc */,
-				23AF42971ABB068E00EF7F42 /* fault_handler_arm64.cc */,
 				23AF42981ABB068E00EF7F42 /* instruction_set_features_arm64.cc */,
 				23AF42991ABB068E00EF7F42 /* instruction_set_features_arm64.h */,
 				23AF429B1ABB068E00EF7F42 /* jni_entrypoints_arm64.S */,
@@ -1232,7 +1216,6 @@
 				23AF42DF1ABB068E00EF7F42 /* context_x86.cc */,
 				23AF42E01ABB068E00EF7F42 /* context_x86.h */,
 				23AF42E11ABB068E00EF7F42 /* entrypoints_init_x86.cc */,
-				23AF42E21ABB068E00EF7F42 /* fault_handler_x86.cc */,
 				23AF42E31ABB068E00EF7F42 /* instruction_set_features_x86.cc */,
 				23AF42E41ABB068E00EF7F42 /* instruction_set_features_x86.h */,
 				23AF42E61ABB068E00EF7F42 /* jni_entrypoints_x86.S */,
@@ -1720,8 +1703,6 @@
 		57ED170D1B56741100605F42 /* xrt */ = {
 			isa = PBXGroup;
 			children = (
-				57ED17111B56748100605F42 /* MachException.cpp */,
-				57ED17121B56748100605F42 /* MachException.h */,
 				57ED17131B56748100605F42 /* MachoUtils.cpp */,
 				57ED17141B56748100605F42 /* MachoUtils.h */,
 				57ED17151B56748100605F42 /* xrtLog.h */,
@@ -1958,7 +1939,6 @@
 				23AF46191ABB068F00EF7F42 /* dalvik_system_VMDebug.cc in Sources */,
 				23AF45F71ABB068F00EF7F42 /* jdwp_socket.cc in Sources */,
 				23AF460A1ABB068F00EF7F42 /* dex_cache.cc in Sources */,
-				23AF45B31ABB068F00EF7F42 /* fault_handler.cc in Sources */,
 				23AF46441ABB068F00EF7F42 /* runtime.cc in Sources */,
 				23AF46371ABB068F00EF7F42 /* offsets.cc in Sources */,
 				23AF46711ABB07D900EF7F42 /* registers_x86_64.cc in Sources */,
@@ -1978,7 +1958,6 @@
 				23AF45B41ABB068F00EF7F42 /* bitmap.cc in Sources */,
 				23AF46571ABB068F00EF7F42 /* dex_gc_map.cc in Sources */,
 				6D6214411BBC4952009F133F /* java_lang_StringFactory.cc in Sources */,
-				23AF453D1ABB068F00EF7F42 /* fault_handler.cc in Sources */,
 				23AF45811ABB068F00EF7F42 /* logging.cc in Sources */,
 				23AF45781ABB068F00EF7F42 /* allocator.cc in Sources */,
 				23AF45DD1ABB068F00EF7F42 /* task_processor.cc in Sources */,
@@ -2069,7 +2048,6 @@
 				23AF45391ABB068F00EF7F42 /* context.cc in Sources */,
 				23AF45C31ABB068F00EF7F42 /* mark_sweep.cc in Sources */,
 				23AF464D1ABB068F00EF7F42 /* thread_list.cc in Sources */,
-				57ED171A1B5674A900605F42 /* MachException.cpp in Sources */,
 				57ED171B1B5674AF00605F42 /* MachoUtils.cpp in Sources */,
 				6D6214311BBC48CE009F133F /* profiling_info.cc in Sources */,
 			);

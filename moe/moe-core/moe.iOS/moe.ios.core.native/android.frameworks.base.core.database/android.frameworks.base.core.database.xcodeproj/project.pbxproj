@@ -246,6 +246,7 @@
 					U_COMMON_IMPLEMENTATION,
 				);
 				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_DEPENDENCY_INFO_FILE = "../../build/common/native/xcode/$(PRODUCT_NAME)_dependency_info.dat";
 				OTHER_CFLAGS = (
 					"-fexceptions",
@@ -283,6 +284,7 @@
 					U_COMMON_IMPLEMENTATION,
 				);
 				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_DEPENDENCY_INFO_FILE = "../../build/common/native/xcode/$(PRODUCT_NAME)_dependency_info.dat";
 				OTHER_CFLAGS = (
 					"-fexceptions",
