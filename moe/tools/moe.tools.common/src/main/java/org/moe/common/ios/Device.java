@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.moe.common.ios;
 
-import org.moe.common.exec.AbstractExec;
 import org.moe.common.exec.ExecOutputCollector;
 import org.moe.common.exec.GradleExec;
 
@@ -27,7 +26,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Device extends DeviceLauncher {
+public class Device {
 
     public static List<DeviceInfo> getDevices(File projectFile) throws IOException {
         List<DeviceInfo> result = new ArrayList<DeviceInfo>();
@@ -83,23 +82,5 @@ public class Device extends DeviceLauncher {
         device = new DeviceInfo(name, uuid);
 
         return device;
-    }
-
-    public static Process launchApp(String deviceUdid, String appPath, int jdwpPort, int remotePort, List<String> args, File sdkToolsPath) throws IOException {
-        AbstractExec exec = createExecRunner(DeviceType.Device, sdkToolsPath);
-        List<String> execArgs = exec.getArguments();
-
-        execArgs.add("-a=" + appPath);
-        execArgs.add("-u=" + deviceUdid);
-
-        if (jdwpPort > 0) {
-            execArgs.add(String.format("-d=%s:%s", Integer.toString(jdwpPort), Integer.toString(remotePort)));
-        }
-
-        if ((args != null) && (args.size() != 0)) {
-            execArgs.addAll(args);
-        }
-
-        return exec.getRunner().execute();
     }
 }
