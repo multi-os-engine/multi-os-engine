@@ -41,11 +41,9 @@ import org.moe.document.pbxproj.nextstep.Dictionary;
 import org.moe.document.xib.XIB;
 import org.moe.document.xib.XIBParser;
 import org.moe.idea.MOESdkPlugin;
-import org.moe.idea.binding.MOEBindingGeneratorByJava;
 import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
-import org.moe.tools.natjgen.WrapNatJGenExec;
 import org.moe.tools.natjgen.binding.IConsole;
 import org.moe.tools.natjgen.binding.IMonitor;
 import org.moe.tools.natjgen.binding.MOEBindingGenerator;
@@ -66,6 +64,8 @@ public class SynchronizeToJavaAction extends AnAction {
     public static final String ACTION_TITLE = "Synchronize to Java";
 
     private static final Logger LOG = LoggerFactory.getLogger(SynchronizeToJavaAction.class);
+
+    private ProgressIndicator progressIndicator;
 
     @Contract("null -> false")
     private boolean isXcodeFolder(@Nullable VirtualFile[] files) {
@@ -229,8 +229,6 @@ public class SynchronizeToJavaAction extends AnAction {
             return myPanel;
         }
 
-        private ProgressIndicator progressIndicator;
-
         @Override
         protected void doOKAction() {
             ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
@@ -256,8 +254,7 @@ public class SynchronizeToJavaAction extends AnAction {
                             List<File> xibs = getStoryboardFiles(xcodeProject);
                             // Collect referenced files
                             LOG.debug("Collecting referenced classes");
-                            progressIndicator.setText("Preparing... (Collecting Referenced Classes)");
-                            progressIndicator.setText2("");
+                            progressIndicator.setText("Preparing...");
                             HashSet<String> referencedClasses = new HashSet<String>();
                             for (File xib : xibs) {
                                 XIB parsedXIB;
@@ -290,7 +287,7 @@ public class SynchronizeToJavaAction extends AnAction {
                             for (VirtualFile vf : bindingList) {
                                 files.add(new File(vf.getPath()));
                             }
-                            MOEBindingGenerator generator =  new MOEBindingGeneratorByXcode();
+                            MOEBindingGenerator generator = new MOEBindingGeneratorByXcode();
                             generator.setPackage(packageName.getText());
                             generator.createFromPrototype(false);
                             File sdkToolsDir = new File(ProjectUtil.retrieveSDKPathFromGradle(

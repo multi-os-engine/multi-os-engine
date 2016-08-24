@@ -34,11 +34,8 @@ import org.moe.idea.binding.MOEBindingGeneratorByJava;
 import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
-import org.moe.tools.natjgen.WrapNatJGenExec;
 import org.moe.tools.natjgen.binding.IConsole;
 import org.moe.tools.natjgen.binding.IMonitor;
-import org.moe.tools.natjgen.binding.MOEBindingGenerator;
-import org.moe.tools.natjgen.binding.MOEBindingGeneratorByXcode;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -141,6 +138,8 @@ public class SynchronizeToXcodeAction extends AnAction {
                     progressIndicator = ProgressManager.getInstance().getProgressIndicator();
                     if (progressIndicator == null) {
                         progressIndicator = new EmptyProgressIndicator();
+                        progressIndicator.start();
+                        progressIndicator.popState();
                     }
                     List<VirtualFile> bindingList;
                     if (files.length == 1 && files[0] instanceof VirtualDirectoryImpl) {
@@ -150,9 +149,23 @@ public class SynchronizeToXcodeAction extends AnAction {
                     }
                     if (bindingList != null) {
                         MOEBindingGeneratorByJava generator = new MOEBindingGeneratorByJava();
-                        generator.createFromPrototype(true);
-                        progressIndicator.setText("Synchronize...");
-                        generator.generate(module, bindingList.toArray(new VirtualFile[]{}), ACTION_TITLE);
+                        generator.generate(module, bindingList.toArray(new VirtualFile[]{}),
+                                ACTION_TITLE,
+                                new IConsole() {
+                                    @Override
+                                    public void write(String s) {
+                                        MOEToolWindow.getInstance(module.getProject()).log(s);
+                                    }
+                                }, new IMonitor() {
+                                    @Override
+                                    public void setText(String s) {
+                                        progressIndicator.setText(s);
+                                    }
+                                    @Override
+                                    public boolean isCanceled() {
+                                        return progressIndicator.isCanceled();
+                                    }
+                                });
                     }
                     progressIndicator.cancel();
                 } catch (Exception e) {
