@@ -438,6 +438,12 @@ public class LaunchHelper implements IStopReplyListener {
                     public void run() {
                         try {
                             protocol.send_ctrl_C();
+                            // TODO: this sleep is just a workaround, there is possibly a better fix for this
+                            try {
+                                Thread.sleep(500);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                             protocol.send_k();
                             try {
                                 waitingThread.join(5000);
@@ -571,6 +577,12 @@ public class LaunchHelper implements IStopReplyListener {
             } catch (InterruptedException e) {
                 try {
                     protocol.send_ctrl_C();
+                    // TODO: this sleep is just a workaround, there is possibly a better fix for this
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e2) {
+                        e2.printStackTrace();
+                    }
                     protocol.send_k();
                 } catch (IOException ignore) {
                     // Ignore
