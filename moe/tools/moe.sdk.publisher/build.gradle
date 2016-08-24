@@ -19,7 +19,7 @@ plugins {
 }
 
 group 'org.multi-os-engine'
-version '1.0.0'
+version '1.1.0'
 
 apply plugin: 'java'
 apply plugin: 'maven-publish'
@@ -63,6 +63,7 @@ task sdk(type: Zip) {
             include 'proguard.cfg'
             include 'proguard.jar'
             include 'retrolambda.jar'
+            include 'simlauncher'
             include 'UITransformer-res/**/*'
             include 'uiTransformer.jar'
             include 'windows/x86_64/*.dll'
