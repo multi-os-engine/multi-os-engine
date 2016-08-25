@@ -264,7 +264,8 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
                 .keepXcode(moduleProperties.isKeepXcodeProject())
                 .xcodeProjectPath(moduleProperties.getXcodeProjectPath());
 
-        projectTemplate.createProject(template.getType().toString().toLowerCase() + ".zip");
+        // TODO: Implement better handling of Gradle plugin version
+        projectTemplate.createProject(template.getType().toString().toLowerCase() + ".zip", "1.1.+", isNewProject);
     }
 
     private void configureGradle(ModifiableRootModel rootModel) throws IOException {

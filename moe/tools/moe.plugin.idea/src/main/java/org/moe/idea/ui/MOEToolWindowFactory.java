@@ -19,13 +19,13 @@ package org.moe.idea.ui;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowFactory;
+import com.intellij.util.ui.UIUtil;
 import org.jetbrains.annotations.NotNull;
 
 public class MOEToolWindowFactory implements ToolWindowFactory {
     @Override
     public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
-        MOEToolWindow window = MOEToolWindow.getInstance(project);
+        final MOEToolWindow window = MOEToolWindow.getInstance(project);
         window.initToolWindow(toolWindow);
-        window.showAndCreate(project);
     }
 }

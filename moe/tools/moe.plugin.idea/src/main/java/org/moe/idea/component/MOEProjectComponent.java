@@ -26,6 +26,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.util.messages.MessageBusConnection;
 import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.compiler.MOECompileTask;
 import org.moe.idea.utils.FileEditorListener;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.XCodeProjectSyncListener;
@@ -59,11 +60,18 @@ public class MOEProjectComponent extends AbstractProjectComponent {
         super.disposeComponent();
     }
 
+    private void installCompileTask() {
+        for (CompileTask task : CompilerManager.getInstance(myProject).getAfterTasks()) {
+            if (task instanceof MOECompileTask) {
+                return;
+            }
+        }
+        CompilerManager.getInstance(myProject).addAfterTask(new MOECompileTask());
+    }
+
     @Override
     public void projectOpened() {
-        boolean found = false;
-
-        CompilerManager compilerManager = CompilerManager.getInstance(myProject);
+        installCompileTask();
 
         for (Module module : ModuleManager.getInstance(myProject).getModules()) {
             if (MOESdkPlugin.isValidMoeModule(module)) {

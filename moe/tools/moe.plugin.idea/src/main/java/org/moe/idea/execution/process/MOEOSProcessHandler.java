@@ -1,5 +1,5 @@
 /*
-Copyright 2014-2016 Intel Corporation
+Copyright (C) 2016 Migeran
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,24 +14,32 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package org.moe.idea.runconfig;
+package org.moe.idea.execution.process;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.process.OSProcessHandler;
-import com.intellij.execution.process.ProcessTerminatedListener;
+import com.intellij.execution.process.UnixProcessManager;
+import com.intellij.openapi.util.SystemInfo;
+import org.jetbrains.annotations.NotNull;
 
-public class MOEProcessHandler extends OSProcessHandler {
+public class MOEOSProcessHandler extends OSProcessHandler {
 
-    public MOEProcessHandler(Process process , String command) throws ExecutionException {
-        super(process, command);
+    public MOEOSProcessHandler(@NotNull GeneralCommandLine commandLine) throws ExecutionException {
+        super(commandLine);
     }
 
-    public static MOEProcessHandler runCommand(final GeneralCommandLine commandLine) throws ExecutionException {
-        final MOEProcessHandler processHandler = new MOEProcessHandler(commandLine.createProcess(), commandLine.getCommandLineString());
+    @Override
+    public void destroyProcess() {
+        if (!interruptProcess()) {
+            super.destroyProcess();
+        }
+    }
 
-        ProcessTerminatedListener.attach(processHandler);
-
-        return processHandler;
+    private boolean interruptProcess() {
+        if (SystemInfo.isUnix) {
+            return UnixProcessManager.sendSigIntToProcessTree(getProcess());
+        }
+        return false;
     }
 }

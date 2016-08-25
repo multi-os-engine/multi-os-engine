@@ -21,6 +21,7 @@ import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ui.ConsoleView;
 import com.intellij.execution.ui.ConsoleViewContentType;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
@@ -28,6 +29,7 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.pom.Navigatable;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
 import com.intellij.util.ui.UIUtil;
@@ -63,18 +65,19 @@ public class MOEToolWindow extends AbstractProjectComponent {
     }
 
     public void show() {
-        if (this.window != null) {
-            this.window.activate(EmptyRunnable.getInstance());
-            this.window.show(null);
-        }
-    }
+        ApplicationManager.getApplication().assertIsDispatchThread();
 
-    public void showAndCreate(Project project) {
-        if (this.window == null) {
-            this.window = ToolWindowManager.getInstance(project).getToolWindow(MOEText.get("Console.Title"));
-            this.window.setIcon(MOEIcons.MOETool);
+        if (window == null) {
+            window = ToolWindowManager.getInstance(myProject).getToolWindow(MOEText.get("Console.Title"));
+            if (window == null) {
+                System.err.println("Failed to initialize window");
+                return;
+            }
+            window.setIcon(MOEIcons.MOETool);
         }
-        this.show();
+
+        window.activate(EmptyRunnable.getInstance());
+        window.show(EmptyRunnable.getInstance());
     }
 
     public void setTitle(String title) {
@@ -113,7 +116,12 @@ public class MOEToolWindow extends AbstractProjectComponent {
         this.printMessage(message, ConsoleViewContentType.ERROR_OUTPUT);
 
         //Focus the tool Window now, because we print a error message
-        this.show();
+        UIUtil.invokeLaterIfNeeded(new Runnable() {
+            @Override
+            public void run() {
+                show();
+            }
+        });
     }
 
     /**
@@ -166,6 +174,14 @@ public class MOEToolWindow extends AbstractProjectComponent {
         log(ConsoleViewContentType.ERROR_OUTPUT, format, args);
     }
 
+    public void log(String format) {
+        log(ConsoleViewContentType.SYSTEM_OUTPUT, format);
+    }
+
+    public void error(String format) {
+        log(ConsoleViewContentType.ERROR_OUTPUT, format);
+    }
+
     private void log(ConsoleViewContentType type, String format, Object... args) {
 
         String newLine = System.getProperty("line.separator");
@@ -198,5 +214,42 @@ public class MOEToolWindow extends AbstractProjectComponent {
                 System.out.print(line);
             }
         }
+    }
+
+    private void log(ConsoleViewContentType type, String text) {
+        if (consoleViewImpl != null) {
+            consoleViewImpl.print(text, type);
+        } else {
+            if (type == ConsoleViewContentType.ERROR_OUTPUT) {
+                System.err.print(text);
+            } else {
+                System.out.print(text);
+            }
+        }
+    }
+
+    @NotNull
+    public Navigatable getNavigatable() {
+        return new Navigatable() {
+            @Override
+            public void navigate(boolean b) {
+                UIUtil.invokeLaterIfNeeded(new Runnable() {
+                    @Override
+                    public void run() {
+                        show();
+                    }
+                });
+            }
+
+            @Override
+            public boolean canNavigate() {
+                return true;
+            }
+
+            @Override
+            public boolean canNavigateToSource() {
+                return false;
+            }
+        };
     }
 }

@@ -21,6 +21,7 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.CommandLineState;
+import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.filters.TextConsoleBuilder;
 import com.intellij.execution.filters.TextConsoleBuilderFactory;
 import com.intellij.execution.process.OSProcessHandler;
@@ -30,35 +31,28 @@ import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ui.ConsoleView;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.util.Key;
 import org.jetbrains.annotations.NotNull;
-import org.moe.common.exec.ExecRunner;
-import org.moe.common.exec.GradleExec;
+import org.moe.idea.compiler.MOEGradleRunner;
+import org.moe.idea.execution.process.MOEOSProcessHandler;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationBase;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.runconfig.configuration.test.MOETestListener;
 import org.moe.idea.runconfig.configuration.test.MOETestResultParser;
 import org.moe.idea.ui.MOEToolWindow;
-import org.moe.idea.utils.ModuleUtils;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import org.moe.idea.utils.logger.LoggerFactory;
 
 public class MOERunProfileState extends CommandLineState {
+    private static final Logger LOG = LoggerFactory.getLogger(MOERunProfileState.class);
 
-    private final MOERunConfigurationBase runConfiguration;
+    private final MOERunConfiguration runConfiguration;
     private Project project;
     private ProcessHandler processHandler;
-    private boolean needResultParser;
     private ConsoleView console;
-    String[] testArgs;
 
     public MOERunProfileState(Project project, ExecutionEnvironment environment) {
         super(environment);
@@ -67,8 +61,7 @@ public class MOERunProfileState extends CommandLineState {
             throw new RuntimeException("RunConfiguration can't be null.");
         }
 
-        this.runConfiguration = (MOERunConfigurationBase) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration();
-
+        this.runConfiguration = (MOERunConfiguration) getEnvironment().getRunnerAndConfigurationSettings().getConfiguration();
         this.project = project;
 
         try {
@@ -78,175 +71,50 @@ public class MOERunProfileState extends CommandLineState {
                 this.console = getConsole(this, environment.getExecutor(), runConfiguration, project);
             }
         } catch (ExecutionException e) {
-
+            LOG.error(e.getMessage(), e);
         }
     }
 
     @NotNull
     @Override
     protected ProcessHandler startProcess() throws ExecutionException {
-
-        MOEToolWindow.getInstance(project).show();
-
         return createProcessHandler();
     }
 
     @NotNull
     private OSProcessHandler createProcessHandler() throws ExecutionException {
-
         if (runConfiguration.configuration() == null) {
             throw new ExecutionException("Invalid build configuration for " + runConfiguration.getClass().getName());
         } else if (runConfiguration.architecture() == null) {
             throw new ExecutionException("Invalid architecture for " + runConfiguration.getClass().getName());
         }
 
-        int debugPort = 0;
-        int debugRemotePort = 0;
-        needResultParser = false;
-        testArgs = null;
-
-        if (runConfiguration.debug()) {
-            debugPort = runConfiguration.debugPort();
-            debugRemotePort = runConfiguration.debugRemotePort();
-        }
-
-        Process process = null;
-        StringBuilder optionsStringBuilder = null;
-
-        List<String> args = new ArrayList<String>();
-        String deviceUdid = runConfiguration.deviceUdid();
-
-        boolean runOnSimulator = false;
-        if (runConfiguration instanceof MOERunConfiguration) {
-
-            MOERunConfiguration configurationLocal = (MOERunConfiguration) runConfiguration;
-
-            if (configurationLocal.runJUnitTests()) {
-                testArgs = configurationLocal.getTestArgs();
-                needResultParser = true;
-                args.add("moeTest");
-            } else {
-                args.add("moeLaunch");
-            }
-
-            boolean isDebug = configurationLocal.getActionType().equals("Debug");
-
-            if (optionsStringBuilder == null) {
-                optionsStringBuilder = new StringBuilder();
-                optionsStringBuilder.append("-Pmoe.launcher.options=");
-            }
-
-            optionsStringBuilder.append("config:" + configurationLocal.configuration());
-            optionsStringBuilder.append(",");
-
-            if (configurationLocal.isRemoteBuildEnabled()) {
-                args.add("-Pmoe.remotebuild.properties.ignore");
-                args.add("-Pmoe.remotebuild.host=" + configurationLocal.getRemoteHost());
-                args.add("-Pmoe.remotebuild.port=" + Integer.toString(configurationLocal.getRemotePort()));
-                args.add("-Pmoe.remotebuild.user=" + configurationLocal.getRemoteUser());
-                args.add("-Pmoe.remotebuild.knownhosts=" + configurationLocal.getRemoteKnownhosts());
-                args.add("-Pmoe.remotebuild.identity=" + configurationLocal.getRemoteIdentity());
-                args.add("-Pmoe.remotebuild.keychain.pass=" + configurationLocal.getRemoteKeychainPass());
-                args.add("-Pmoe.remotebuild.keychain.locktimeout=" + Integer.toString(configurationLocal.getRemoteKeychainLocktimeout()));
-                args.add("-Pmoe.remotebuild.gradle.repositories=" + configurationLocal.getRemoteGradleRepositories());
-            }
-
-            if (configurationLocal.runOnSimulator()) {
-                deviceUdid = configurationLocal.simulatorUdid();
-
-                args.add("-Pmoe.launcher.simulators=" + deviceUdid);
-                if (isDebug) {
-                    if (optionsStringBuilder == null) {
-                        optionsStringBuilder = new StringBuilder();
-                        optionsStringBuilder.append("-Pmoe.launcher.options=");
-                    }
-                    optionsStringBuilder.append("debug:" + Integer.toString(debugPort));
-                    optionsStringBuilder.append(",");
-                }
-            } else {
-                args.add("-Pmoe.launcher.devices=" + deviceUdid);
-                if (isDebug) {
-                    if (optionsStringBuilder == null) {
-                        optionsStringBuilder = new StringBuilder();
-                        optionsStringBuilder.append("-Pmoe.launcher.options=");
-                    }
-                    optionsStringBuilder.append("debug:" + Integer.toString(debugPort) + ":" + Integer.toString(debugRemotePort));
-                    optionsStringBuilder.append(",");
-                }
-            }
-
-            if (testArgs != null) {
-                if (optionsStringBuilder == null) {
-                    optionsStringBuilder = new StringBuilder();
-                    optionsStringBuilder.append("-Pmoe.launcher.options=");
-                }
-                optionsStringBuilder.append("raw-test-output");
-                optionsStringBuilder.append(",");
-                for (String arg : testArgs) {
-                    optionsStringBuilder.append("arg:" + arg);
-                    optionsStringBuilder.append(",");
-                }
-            }
-
-            Module module = ModuleManager.getInstance(runConfiguration.getProject()).findModuleByName(runConfiguration.moduleName());
-            File f = new File(ModuleUtils.getModulePath(module));
-            GradleExec exec = new GradleExec(f);
-            if (optionsStringBuilder != null) {
-                String optionsString = optionsStringBuilder.toString();
-                optionsString = optionsString.substring(0, optionsString.length() - 1);
-                args.add(optionsString);
-            }
-            exec.getArguments().addAll(args);
-            ExecRunner runner = null;
-            try {
-                runner = exec.getRunner();
-            } catch (IOException e) {
-                throw new ExecutionException("GradleExec error", e);
-            }
-
-            if (runner != null) {
-                runner.getBuilder().directory(f);
-            }
-
-            try {
-                ProcessBuilder builder = runner.getBuilder();
-                process = builder.start();
-            } catch (IOException e) {
-                throw new ExecutionException("Gradle launch error", e);
-            }
-
-        }
-
-        if (process == null) {
-            MOEToolWindow.getInstance(project).log("Can't detect run configuration type (unsupported)");
-            throw new ExecutionException("Can't detect run configuration type for " + runConfiguration.getClass().getName());
-        }
-
-        final MOEProcessHandler handler = new MOEProcessHandler(process, null);
-
+        final MOEGradleRunner gradleRunner = new MOEGradleRunner(runConfiguration);
+        final boolean isDebug = runConfiguration.getActionType().equals("Debug");
+        final GeneralCommandLine commandLine = gradleRunner.construct(isDebug, true);
+        final OSProcessHandler handler = new MOEOSProcessHandler(commandLine);
+        handler.setShouldDestroyProcessRecursively(true);
         final MOETestResultParser parser = new MOETestResultParser(new MOETestListener(this));
 
+        final boolean isTest = runConfiguration.runJUnitTests();
         handler.addProcessListener(new ProcessListener() {
             @Override
-            public void startNotified(ProcessEvent processEvent) {
-
+            public void startNotified(ProcessEvent event) {
             }
 
             @Override
-            public void processTerminated(ProcessEvent processEvent) {
-                MOEToolWindow.getInstance(project).log("Application process has been terminated.");
+            public void processTerminated(ProcessEvent event) {
             }
 
             @Override
-            public void processWillTerminate(ProcessEvent processEvent, boolean b) {
-                handler.getProcess().destroy();
+            public void processWillTerminate(ProcessEvent event, boolean willBeDestroyed) {
             }
 
             @Override
-            public void onTextAvailable(ProcessEvent processEvent, Key key) {
-                String text = processEvent.getText();
+            public void onTextAvailable(ProcessEvent event, Key outputType) {
+                String text = event.getText();
 
-                if (needResultParser) {
+                if (isTest) {
                     parser.addOutput(text);
                 }
 
@@ -274,7 +142,7 @@ public class MOERunProfileState extends CommandLineState {
         return processHandler;
     }
 
-    public MOERunConfigurationBase getConfiguration(){
+    public MOERunConfigurationBase getConfiguration() {
         return runConfiguration;
     }
 

@@ -642,7 +642,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         exec.getArguments().addAll(args);
         ExecRunner runner = null;
         final MOEToolWindow toolWindow =  MOEToolWindow.getInstance(module.getProject());
-        toolWindow.showAndCreate(module.getProject());
+        toolWindow.show();
         try {
             runner = exec.getRunner();
             runner.setListener(new ExecRunnerBase.ExecRunnerListener() {
@@ -665,7 +665,6 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         }
 
         try {
-            ProcessBuilder builder = runner.getBuilder();
             Process process = runner.execute();
             int result = process.waitFor();
 
