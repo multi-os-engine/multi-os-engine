@@ -332,6 +332,7 @@ public final class ContentProvider {
                 w.enableRegion("USE_CUSTOM_BUILDSCRIPT_REPO");
                 w.setPlaceholder("CUSTOM_BUILDSCRIPT_REPO", System.getProperty("moe.project.custom.buildscript.repo"));
             }
+            w.setPlaceholder("MOE_VERSION", config.getMoeVersion());
             w.writeAndClose();
         } finally {
             try {

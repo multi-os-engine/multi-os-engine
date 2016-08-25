@@ -33,7 +33,7 @@ public class TestConfiguration extends TestAbstractConfiguration {
 
     @Before
     public void setup() {
-        configuration = new Configuration();
+        configuration = new Configuration("1.0.0");
         setAbstractConfiguration(configuration);
     }
 

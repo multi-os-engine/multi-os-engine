@@ -228,36 +228,6 @@ public final class Configuration extends AbstractConfiguration {
     private String xcodeProjectPath = "xcode";
 
     /**
-     * Returns the names of pre-defined SDKs.
-     *
-     * @return list of pre-defined SDKs
-     */
-    public static ArrayList<String> getKnownSdks() {
-        ArrayList<String> names = new ArrayList<String>();
-        names.add("1.0.+");
-        return names;
-    }
-
-    /**
-     * Returns the names of the supported gradle versions.
-     *
-     * @return list of supported gradle versions
-     */
-    public static ArrayList<String> getSupportedGradleVersions() {
-        ArrayList<String> names = new ArrayList<String>();
-        names.add("2.0");
-        names.add("2.1");
-        names.add("2.2");
-        names.add("2.2.1");
-        names.add("2.3");
-        names.add("2.4");
-        names.add("2.5");
-        names.add("2.6");
-        names.add("2.7");
-        return names;
-    }
-
-    /**
      * Returns a list of supported target platforms.
      *
      * @return list of supported target platforms
@@ -269,6 +239,27 @@ public final class Configuration extends AbstractConfiguration {
         targets.add(TARGET_PLATFORM_IOS_IPAD);
         targets.add(TARGET_PLATFORM_TVOS);
         return targets;
+    }
+
+    /**
+     * MOE version.
+     */
+    private final String moeVersion;
+
+    public Configuration(String moeVersion) {
+        if (moeVersion == null) {
+            throw new NullPointerException("MOE version cannot be null");
+        }
+        this.moeVersion = moeVersion;
+    }
+
+    /**
+     * Returns the MOE version.
+     *
+     * @return MOE version
+     */
+    public String getMoeVersion() {
+        return moeVersion;
     }
 
     /**

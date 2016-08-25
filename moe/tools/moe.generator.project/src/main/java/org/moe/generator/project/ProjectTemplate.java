@@ -108,9 +108,9 @@ public class ProjectTemplate {
         return keepXcode;
     }
 
-    public boolean createProject(String templateName) {
+    public boolean createProject(String templateName, String moeVersion) {
 
-        Configuration config = new Configuration();
+        Configuration config = new Configuration(moeVersion);
         config.setTargetPlatform("Universal iOS");
         config.setPackageName(packageName);
         config.setProductName("");

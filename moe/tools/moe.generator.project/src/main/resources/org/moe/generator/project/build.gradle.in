@@ -7,7 +7,7 @@ buildscript {
     repositories {
         jcenter()
 //<<---REGION:USE_CUSTOM_BUILDSCRIPT_REPO
-            ${_PLACEHOLDER_CUSTOM_BUILDSCRIPT_REPO}
+        ${_PLACEHOLDER_CUSTOM_BUILDSCRIPT_REPO}
 //>>---REGION:USE_CUSTOM_BUILDSCRIPT_REPO
 //<<---REGION:USE_KOTLIN_PLUGIN
         maven {
@@ -18,7 +18,7 @@ buildscript {
     }
     dependencies {
         // MOE plugin
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.0.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '${_PLACEHOLDER_MOE_VERSION}'
 //<<---REGION:USE_KOTLIN_PLUGIN
 
         // Kotlin plugin
