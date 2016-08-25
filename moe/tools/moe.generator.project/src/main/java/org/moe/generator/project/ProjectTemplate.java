@@ -108,7 +108,7 @@ public class ProjectTemplate {
         return keepXcode;
     }
 
-    public boolean createProject(String templateName, String moeVersion) {
+    public boolean createProject(String templateName, String moeVersion, boolean createGradleWrapper) {
 
         Configuration config = new Configuration(moeVersion);
         config.setTargetPlatform("Universal iOS");
@@ -120,7 +120,7 @@ public class ProjectTemplate {
         config.setKeepXcode(keepXcode);
         config.setXcodeProjectPath(xcodeProjectPath);
         config.setUseEclipse(useEclipse);
-
+        config.setProjectRoot(new File(rootPath));
         File build_gradle = new File(rootPath + File.separator + "build.gradle");
         build_gradle.getParentFile().mkdirs();
 
@@ -133,7 +133,19 @@ public class ProjectTemplate {
         try {
             extractTemplate(templateStream);
         } catch (IOException e) {
+            e.printStackTrace(System.err);
             return false;
+        }
+
+        if (createGradleWrapper) {
+            config.setGradleVersion("2.14.1");
+            Generator generator = new Generator(config);
+            try {
+                generator.createGradleWrapper();
+            } catch (IOException e) {
+                e.printStackTrace(System.err);
+                return false;
+            }
         }
 
         if (isKeepXcode()) {
@@ -151,8 +163,9 @@ public class ProjectTemplate {
                         return false;
                     }
                 });
-            } catch (Exception ignored) {
-
+            } catch (Exception e) {
+                e.printStackTrace(System.err);
+                return false;
             }
         }
 
@@ -160,7 +173,7 @@ public class ProjectTemplate {
             if (templateStream != null) {
                 templateStream.close();
             }
-        } catch (IOException e) {
+        } catch (IOException ignore) {
 
         }
 
