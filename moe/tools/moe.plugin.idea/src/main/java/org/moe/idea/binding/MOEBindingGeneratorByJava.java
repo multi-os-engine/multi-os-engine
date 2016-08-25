@@ -31,10 +31,10 @@ import org.moe.generator.project.FileManager;
 import org.moe.generator.project.FileResult;
 import org.moe.generator.project.ProjectHelper;
 import org.moe.generator.project.XcodeTarget;
+import org.moe.idea.utils.IMonitor;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
 import org.moe.tools.natjgen.binding.IConsole;
-import org.moe.tools.natjgen.binding.IMonitor;
 import org.moe.tools.natjgen.binding.MOEBindingGenerator;
 
 import java.io.*;
@@ -161,15 +161,19 @@ public class MOEBindingGeneratorByJava {
                                         }
                                     }
                                     xcodeProject.save();
-                                    if (console != null) {
-                                        console.write("Generate ended in " + ((double) (System.nanoTime()
-                                                - start_time) / 1000000000.0) + "s");
-                                    }
                                 }
                             }
                         }
                     }
                 }
+                if (monitor != null) {
+                    //monitor.addFraction(((double) count / files.length) * monitor.getFractionsSize());
+                    monitor.addFraction(((double) monitor.getFractionsSize() / files.length));
+                }
+            }
+            if (console != null) {
+                console.write("Generate ended in " + ((double) (System.nanoTime()
+                        - start_time) / 1000000000.0) + "s");
             }
         } catch (Exception e) {
             if (console != null) {

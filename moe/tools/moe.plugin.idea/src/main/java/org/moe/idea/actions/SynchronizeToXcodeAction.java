@@ -32,11 +32,10 @@ import org.moe.common.utils.ProjectUtil;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.binding.MOEBindingGeneratorByJava;
 import org.moe.idea.ui.MOEToolWindow;
+import org.moe.idea.utils.IMonitor;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
 import org.moe.tools.natjgen.binding.IConsole;
-import org.moe.tools.natjgen.binding.IMonitor;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -141,6 +140,7 @@ public class SynchronizeToXcodeAction extends AnAction {
                         progressIndicator.start();
                         progressIndicator.popState();
                     }
+                    //progressIndicator.setFraction((double) 1 / 3);
                     List<VirtualFile> bindingList;
                     if (files.length == 1 && files[0] instanceof VirtualDirectoryImpl) {
                         bindingList = getAllFilesWithExt((VirtualDirectoryImpl) files[0], ".java");
@@ -161,12 +161,25 @@ public class SynchronizeToXcodeAction extends AnAction {
                                     public void setText(String s) {
                                         progressIndicator.setText(s);
                                     }
+
+                                    @Override
+                                    public void addFraction(double var1) {
+                                        progressIndicator.setFraction(progressIndicator.getFraction() + var1);
+                                    }
+
+                                    @Override
+                                    public double getFractionsSize() {
+                                        return 1;
+                                        //return (double) 1 / 3;
+                                    }
+
                                     @Override
                                     public boolean isCanceled() {
                                         return progressIndicator.isCanceled();
                                     }
                                 });
                     }
+                    //progressIndicator.setFraction(progressIndicator.getFraction() + (double) 1 / 3);
                     progressIndicator.cancel();
                 } catch (Exception e) {
                     LOG.error("Unable to " + ACTION_TITLE, e);
