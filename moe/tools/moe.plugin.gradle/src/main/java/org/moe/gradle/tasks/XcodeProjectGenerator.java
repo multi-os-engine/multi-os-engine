@@ -510,7 +510,15 @@ public class XcodeProjectGenerator extends AbstractBaseTask {
         @NotNull final ConfigurableFileCollection dependencies = getDependencies();
         final IdentityHashMap<Enum, List<String>> enumListIdentityHashMap = collectDependenciesAttributes(dependencies);
 
-        Configuration conf = new Configuration();
+        final String pluginVersion = getMoeSDK().pluginVersion;
+        final String configPluginVersion;
+        if (pluginVersion.matches("\\d+\\.\\d+\\.\\d+")) {
+            configPluginVersion = pluginVersion.substring(0, pluginVersion.lastIndexOf('.'));
+        } else {
+            configPluginVersion = pluginVersion;
+        }
+
+        Configuration conf = new Configuration(configPluginVersion);
 
         conf.setApplicationExitOnSuspend(getApplicationExitOnSuspend());
         conf.setBundleShortVersionString(getBundleShortVersionString());

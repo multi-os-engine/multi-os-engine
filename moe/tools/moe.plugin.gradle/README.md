@@ -70,7 +70,7 @@ a set of predefined rules. The second part - which is optional - comes from the 
 (`<project>/proguard.append.cfg`) and contains a set of additional rules which are appended to the original
 configuration. If for some reason the original `proguard.cfg` configuration file is not good for your project then you
 can overwrite it by creating a `proguard.cfg` file in your project directory. The result of this task is a
-`proguarded.jar` file which contains the minimalized version of the application code which is required to run. Detailed
+`proguarded.jar` file which contains the minimized version of the application code which is required to run. Detailed
 information about what got stripped can be found in the `proguard.log` file which is in your build directory.
 
 ProGuard has three supported levels of trimming: `app` (default), `platform`, `all`
@@ -380,7 +380,7 @@ moe {
         // String, path to the Xcode project's directory.
         xcodeProjectDirPath
 
-        // List, list of supported interfase orientations.
+        // List, list of supported interface orientations.
         // - UIInterfaceOrientationPortrait
         // - UIInterfaceOrientationPortraitUpsideDown
         // - UIInterfaceOrientationLandscapeLeft
