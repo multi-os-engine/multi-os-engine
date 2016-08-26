@@ -148,7 +148,9 @@ public class Server {
             task.setGroup(MOE);
             task.setDescription("Tests the connection to the remote server");
             task.getActions().add(t -> {
-                settings.testConnection();
+                if (!settings.testConnection()) {
+                    throw new GradleException("Remote connection test failed");
+                }
             });
         });
 

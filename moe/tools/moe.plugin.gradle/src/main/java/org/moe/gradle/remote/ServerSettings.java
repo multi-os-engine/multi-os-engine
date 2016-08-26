@@ -585,7 +585,7 @@ class ServerSettings {
         return jsch.getSession(username, host, port == null ? 22 : port);
     }
 
-    public void testConnection() {
+    public boolean testConnection() {
         final Console console = System.console();
         if (console != null) {
             console.printf("Testing remote server connection:%n");
@@ -599,7 +599,7 @@ class ServerSettings {
             session = getJSchSession(getJSch());
         } catch (JSchException e) {
             printError(e.getMessage());
-            return;
+            return false;
         }
 
         session.setUserInfo(new UserInfo() {
@@ -640,7 +640,7 @@ class ServerSettings {
             session.connect(30000);
         } catch (JSchException e) {
             printError(e.getMessage());
-            return;
+            return false;
         }
 
         if (console != null) {
@@ -702,11 +702,13 @@ class ServerSettings {
                     System.out.printf("%1sKeychain unlocked successfully%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
                 }
                 session.disconnect();
-                return;
+                return true;
             }
             printError("Failed to unlock keychain: " + output);
+            return false;
         } catch (Throwable ignore) {
             printError("Failed to unlock keychain: unknown error");
+            return false;
         }
     }
 
