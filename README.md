@@ -8,49 +8,10 @@ Overview
 Getting Started
 ---------------
 
-- Download binary package [here](https://github.com/multi-os-engine/multi-os-engine/releases/download/1.0.853/multi_os_engine_1.0.853.tar.gz)
+- [Install Multi-OS Engine](https://multi-os-engine.org/start/)
 - Walk through our [Quick Start Tutorials](http://doc.multi-os-engine.org) to configure your development environment and learn how to develop applications using Multi-OS Engine.
 - Ask questions on the [Multi-OS Engine Forum](https://discuss.multi-os-engine.org/)
-- Submit issues to https://github.com/multi-os-engine/multi-os-engine/issues
-
-System Requirements
--------------------
-
-**Requirements for Apple* Mac OS X* hosts:**
-
-- Operating System: Apple macOS 10.10 or later
-- Android Studio 1.5 or later, Android Platform SDK
-- Java Development Kit (JDK) version 8
-- Apple Xcode 7.x
-
-**Requirements for Windows* hosts:**
-
-- Operating System: Microsoft Windows 7 x64 edition or later
-- Android Studio 1.5 or later, Android Platform SDK
-- Java Development Kit (JDK) version 8
-- Apple iTunes
-- Apple macOS host in LAN that has Multi-OS Engine installed and can be accessed using SSH
-
-Installation on macOS
-----------------------
-
-- Install Android Studio or IntelliJ IDEA
-- Install Android SDK
-- Install Java Development Kit 8
-- Download MOE binary package [here](https://github.com/multi-os-engine/multi-os-engine/releases/download/1.0.853/multi_os_engine_1.0.853.tar.gz), unzip it and run moe_install.sh script in the root folder.
-
-
-Installation on Windows
------------------------
-
-- Download binary package [here](https://github.com/multi-os-engine/multi-os-engine/releases/download/1.0.853/multi_os_engine_1.0.853.tar.gz) and unzip it
-- Set MOE_HOME environment variable poining to the extracted files
-- Install Java Development Kit 8
-- Install Android Studio or IntelliJ IDEA
-- Run Android Studio or IntelliJ IDEA, go to Settings -> Plugins menu and install two plugins from `<MOE folder>`/intellij_plugins folder using "Install plugin from disk" button
-- Install Android SDK
-- Install MOE to remote macOS machine and make sure the machine is accessible using SSH
-- install Apple iTunes to Windows host to be able to deploy your iOS applications to iOS device on Windows
+- Submit issues to our [Issue Tracker](https://github.com/multi-os-engine/multi-os-engine/issues)
 
 Building from source code
 -------------------------
@@ -146,4 +107,4 @@ where `<maven_repo>` is any folder to place the built binaries
 
 Built package will be placed to `$MOE_HOME` folder or to `<maven_repo>/moe_home` folder if `$MOE_HOME` variable doesn't exists.
 
-From here you may publish the SDK via the [Multi-OS Engine SDK Publisher](https://github.com/multi-os-engine/moe-sdk-publisher) project. See the project page for more information.
+From here you may publish the SDK via the [Multi-OS Engine SDK Publisher](https://github.com/multi-os-engine/moe-sdk-publisher) project to a Maven repository, to be used by the [MOE Gradle Plugin](https://github.com/multi-os-engine/moe-plugin-gradle). See the project page for more information.
