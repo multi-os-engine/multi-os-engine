@@ -81,11 +81,14 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     private void checkGradleVersion(Project project) {
         final String version = project.getGradle().getGradleVersion();
         final String[] components = version.split("\\.");
-        if (Integer.parseInt(components[0 /* Major */]) < GRADLE_MIN_VERSION_MAJOR
-                || Integer.parseInt(components[1 /* Minor */]) < GRADLE_MIN_VERSION_MINOR) {
-            throw new GradleException("The 'moe' plugin requires Gradle version " + GRADLE_MIN_VERSION_MAJOR + "." +
-                    GRADLE_MIN_VERSION_MINOR + " or higher! " + "Current version is " + version + ".");
+        final int major = Integer.parseInt(components[0 /* Major */]);
+        final int minor = Integer.parseInt(components[1 /* Minor */]);
+        if (major > GRADLE_MIN_VERSION_MAJOR ||
+                (major == GRADLE_MIN_VERSION_MAJOR && minor >= GRADLE_MIN_VERSION_MINOR)) {
+            return;
         }
+        throw new GradleException("The 'moe' plugin requires Gradle version " + GRADLE_MIN_VERSION_MAJOR + "." +
+                GRADLE_MIN_VERSION_MINOR + " or higher! " + "Current version is " + version + ".");
     }
 
     public final Logger getLogger() {
