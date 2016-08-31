@@ -526,7 +526,10 @@ public class XcodeProjectGenerator extends AbstractBaseTask {
         conf.setDependenciesManifestsProperties(enumListIdentityHashMap);
         conf.setDeploymentTarget(getDeploymentTarget());
         conf.setGradleVersion(getGradleVersion());
-        conf.setInfoPlistPath(getInfoPlistPath());
+        if (getInfoPlistPath() != null) {
+            final File file = getProject().file(getInfoPlistPath());
+            conf.setInfoPlistPath(FileUtils.getRelativeTo(getXcodeProjectDir(), file).toString().replaceAll("\\\\", "/"));
+        }
         conf.setMainClassName(getMainClassName());
         conf.setMainResourcesSet(getMainResources());
         final File mainUIStoryboardPath = getMainUIStoryboardPath();
@@ -547,7 +550,10 @@ public class XcodeProjectGenerator extends AbstractBaseTask {
         conf.setSupportedInterfaceOrientations(getSupportedInterfaceOrientations());
         conf.setSymRoot("$(SRCROOT)/" + FileUtils.getRelativeTo(getXcodeProjectDir(), new File(getSymRoot())).toString().replaceAll("\\\\", "/"));
         conf.setTargetPlatform(getTargetPlatform());
-        conf.setTestInfoPlistPath(getTestInfoPlistPath());
+        if (getTestInfoPlistPath() != null) {
+            final File file = getProject().file(getTestInfoPlistPath());
+            conf.setTestInfoPlistPath(FileUtils.getRelativeTo(getXcodeProjectDir(), file).toString().replaceAll("\\\\", "/"));
+        }
         conf.setTestResourcesSet(getTestResources());
         conf.setUseScala(getUseScala());
 

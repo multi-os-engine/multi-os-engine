@@ -52,6 +52,7 @@ The SDK's structure must be as follows, otherwise the validation will fail:
    +- proguard.cfg
    +- proguard.jar
    +- retrolambda.jar
+   +- simlauncher
    +- UITransformer-res
    +- uiTransformer.jar
    +- windows/x86_64/(libeay32|libimobiledevice|natj|ssleay32).dll
