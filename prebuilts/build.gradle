@@ -1,0 +1,211 @@
+/*
+Copyright (C) 2016 Migeran
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+import org.moe.prebuilts.Script
+
+task prebuildAll << {}
+
+task cleanAll << {
+    delete('build')
+}
+
+subprojects {
+    it.afterEvaluate {
+        prebuildAll.dependsOn it.tasks['prebuild']
+        cleanAll.dependsOn it.tasks['clean']
+    }
+}
+
+def binutils_version = 'binutils-2.24'
+def mingw_version = 'mingw-w64-v3.1.0'
+def gcc_version = 'gcc-5.3.0'
+
+task mingw(type: Script) {
+    progress 'Checking brew dependencies'
+    def BREW_GCC = checkDir '/usr/local/opt/gcc'
+    def BREW_GMP = checkDir '/usr/local/opt/gmp'
+    def BREW_MPFR = checkDir '/usr/local/opt/mpfr'
+    def BREW_MPC = checkDir '/usr/local/opt/libmpc'
+    def BREW_CLOOG = checkDir '/usr/local/opt/cloog'
+    def BREW_ISL = checkDir '/usr/local/opt/isl'
+
+    progress "Downloading $binutils_version"
+    workDir 'mingw'
+    download "${binutils_version}.tar.bz2", "http://ftp.gnu.org/gnu/binutils/${binutils_version}.tar.bz2"
+    exec 'rm', '-rf', "${binutils_version}"
+    exec 'tar', 'xjf', "${binutils_version}.tar.bz2"
+
+    env 'CC', 'gcc-5'
+    env 'CXX', 'g++-5'
+    env 'CPP', 'cpp-5'
+    env 'LD', 'gcc-5'
+
+    progress "Building 32-bit $binutils_version"
+    workDir "mingw/${binutils_version}/build32"
+    exec '../configure', '--target=i686-w64-mingw32',
+            '--disable-werror', '--disable-multilib',
+            "--prefix=${file('mingw').absolutePath}",
+            "--with-sysroot=${file('mingw').absolutePath}"
+    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', "install-strip"
+
+    progress "Building 64-bit $binutils_version"
+    workDir "mingw/${binutils_version}/build64"
+    exec '../configure', '--target=x86_64-w64-mingw32',
+            '--disable-werror', '--disable-multilib',
+            "--prefix=${file('mingw').absolutePath}",
+            "--with-sysroot=${file('mingw').absolutePath}",
+            '--enable-64-bit-bfd'
+    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', "install-strip"
+
+    progress "Downloading $mingw_version"
+    workDir 'mingw'
+    download "${mingw_version}.tar.bz2", "http://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/${mingw_version}.tar.bz2"
+    exec 'rm', '-rf', "${mingw_version}"
+    exec 'tar', 'xjf', "${mingw_version}.tar.bz2"
+
+    progress "Building 32-bit $mingw_version"
+    workDir "mingw/${mingw_version}/build-headers32"
+    exec "../mingw-w64-headers/configure", "--host=i686-w64-mingw32",
+            "--prefix=${file('mingw').absolutePath}/i686-w64-mingw32"
+    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', "install-strip"
+    rawWorkDir 'mingw/i686-w64-mingw32'
+    exec 'ln', '-s', 'lib', 'lib32'
+
+    progress "Building 64-bit $mingw_version"
+    workDir "mingw/${mingw_version}/build-headers64"
+    exec "../mingw-w64-headers/configure", "--host=x86_64-w64-mingw32",
+            "--prefix=${file('mingw').absolutePath}/x86_64-w64-mingw32"
+    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', "install-strip"
+    rawWorkDir 'mingw/x86_64-w64-mingw32'
+    exec 'ln', '-s', 'lib', 'lib64'
+
+    progress "Downloading $gcc_version"
+    workDir 'mingw'
+    download "${gcc_version}.tar.bz2", "ftp://gcc.gnu.org/pub/gcc/releases/${gcc_version}/${gcc_version}.tar.bz2"
+    exec 'rm', '-rf', "${gcc_version}"
+    exec 'tar', 'xjf', "${gcc_version}.tar.bz2"
+
+    env 'PATH', "${file('mingw').absolutePath}/bin:${System.getenv('PATH')}"
+
+    progress "Building 32-bit $gcc_version"
+    rawWorkDir 'mingw'
+    exec 'ln', '-s', 'i686-w64-mingw32', 'mingw'
+    workDir "mingw/${gcc_version}/build32"
+    exec '../configure', '--target=i686-w64-mingw32',
+            '--disable-multilib', '--enable-languages=c,c++,objc,obj-c++',
+            "--with-gmp=$BREW_GMP", "--with-mpfr=$BREW_MPFR", "--with-mpc=$BREW_MPC", "--with-cloog=$BREW_CLOOG", "--with-isl=$BREW_ISL",
+            '--with-system-zlib', '--enable-version-specific-runtime-libs', '--enable-libstdcxx-time=yes', '--enable-stage1-checking',
+            '--enable-checking=release', '--enable-lto', '--enable-threads=win32',
+            "--prefix=${file('mingw').absolutePath}",
+            "--with-sysroot=${file('mingw').absolutePath}"
+    exec 'make', 'all-gcc', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', "install-gcc"
+
+    progress "Building 64-bit $gcc_version"
+    rawWorkDir 'mingw'
+    exec 'rm', 'mingw'
+    exec 'ln', '-s', 'x86_64-w64-mingw32', 'mingw'
+    workDir "mingw/${gcc_version}/build64"
+    exec '../configure', '--target=x86_64-w64-mingw32',
+            '--disable-multilib', '--enable-languages=c,c++,objc,obj-c++',
+            "--with-gmp=$BREW_GMP", "--with-mpfr=$BREW_MPFR", "--with-mpc=$BREW_MPC", "--with-cloog=$BREW_CLOOG", "--with-isl=$BREW_ISL",
+            '--with-system-zlib', '--enable-version-specific-runtime-libs', '--enable-libstdcxx-time=yes', '--enable-stage1-checking',
+            '--enable-checking=release', '--enable-lto', '--enable-threads=win32',
+            "--prefix=${file('mingw').absolutePath}",
+            "--with-sysroot=${file('mingw').absolutePath}"
+    exec 'make', 'all-gcc', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', "install-gcc"
+
+    unset 'CC'
+    unset 'CXX'
+    unset 'CPP'
+    unset 'LD'
+
+    progress "Building 32-bit $mingw_version runtime"
+    rawWorkDir 'mingw'
+    exec 'rm', 'mingw'
+    exec 'ln', '-s', 'i686-w64-mingw32', 'mingw'
+    workDir "mingw/${mingw_version}/build-crt32"
+    exec '../mingw-w64-crt/configure', '--host=i686-w64-mingw32',
+            "--prefix=${file('mingw').absolutePath}/i686-w64-mingw32",
+            "--with-sysroot=${file('mingw').absolutePath}"
+    // NOTE: fix for 'Too many open files in system' error
+    exec 'make', "-j${Math.min(4, Runtime.getRuntime().availableProcessors())}"
+    exec 'make', "install-strip"
+
+    progress "Building 64-bit $mingw_version runtime"
+    rawWorkDir 'mingw'
+    exec 'rm', 'mingw'
+    exec 'ln', '-s', 'x86_64-w64-mingw32', 'mingw'
+    workDir "mingw/${mingw_version}/build-crt64"
+    exec '../mingw-w64-crt/configure', '--host=x86_64-w64-mingw32',
+            "--prefix=${file('mingw').absolutePath}/x86_64-w64-mingw32",
+            "--with-sysroot=${file('mingw').absolutePath}"
+    // NOTE: fix for 'Too many open files in system' error
+    exec 'make', "-j${Math.min(4, Runtime.getRuntime().availableProcessors())}"
+    exec 'make', "install-strip"
+
+    progress "Completing 32-bit $gcc_version"
+    rawWorkDir 'mingw'
+    exec 'rm', 'mingw'
+    exec 'ln', '-s', 'i686-w64-mingw32', 'mingw'
+    workDir "mingw/${gcc_version}/build32"
+    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', "install-strip"
+
+    progress "Completing 64-bit $gcc_version"
+    rawWorkDir 'mingw'
+    exec 'rm', 'mingw'
+    exec 'ln', '-s', 'x86_64-w64-mingw32', 'mingw'
+    workDir "mingw/${gcc_version}/build64"
+    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', "install-strip"
+
+    rawWorkDir 'mingw'
+    exec 'rm', 'mingw'
+
+    rawWorkDir 'mingw/i686-w64-mingw32/lib'
+    exec 'ln', '-s', '../../lib/gcc/i686-w64-mingw32/lib/libgcc_s.a', './'
+    exec 'ln', '-s', '../../lib/gcc/i686-w64-mingw32/lib/libgcc.a', './'
+
+    rawWorkDir 'mingw/x86_64-w64-mingw32/lib'
+    exec 'ln', '-s', '../../lib/gcc/x86_64-w64-mingw32/lib/libgcc_s.a', './'
+    exec 'ln', '-s', '../../lib/gcc/x86_64-w64-mingw32/lib/libgcc.a', './'
+
+    progress "Building 32-bit $mingw_version winpthreads"
+    workDir "mingw/${mingw_version}/mingw-w64-libraries/winpthreads/build64"
+    exec '../configure', '--host=i686-w64-mingw32',
+            "--prefix=${file('mingw').absolutePath}/i686-w64-mingw32"
+    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', "install-strip"
+
+    progress "Building 64-bit $mingw_version winpthreads"
+    workDir "mingw/${mingw_version}/mingw-w64-libraries/winpthreads/build64"
+    exec '../configure', '--host=x86_64-w64-mingw32',
+            "--prefix=${file('mingw').absolutePath}/x86_64-w64-mingw32"
+    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make', "install-strip"
+}
+
+task mingwPresence << {
+    if (!file('mingw').exists()) {
+        throw new GradleException("MinGW is not built")
+    }
+}

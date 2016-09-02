@@ -1,0 +1,6 @@
+include 'external/libffi'
+include 'external/libimobiledevice/openssl'
+include 'external/libimobiledevice/libxml2'
+include 'external/libimobiledevice/libplist'
+include 'external/libimobiledevice/libusbmuxd'
+include 'external/libimobiledevice/libimobiledevice'
