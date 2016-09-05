@@ -14,63 +14,16 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+evaluationDependsOn ':moe.tools.common'
+
 apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
 
 sourceCompatibility = "1.6"
 targetCompatibility = "1.6"
 
-// Versioning
-ext {
-    moeProject = 'MOE_GENERATOR_PROJECT'
-    moeVersion = [:]
-}
-initMOEProject(project, [vMajor: 1, vMinor: 3, vPatch: 1])
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-    jcenter()
-}
-
 dependencies {
-    compile 'org.moe:moeCommonUtils:1.1.+'
-    compile 'org.moe:moeDocumentPbxproj:1.1.+'
-
+    compile project(':moe.tools.common')
+    compile project(':moe.document.pbxproj')
     testCompile 'junit:junit:4.11'
-    testCompile('org.moe:moeCommonUtils:1.1.+') {
-        artifact {
-            name = 'moeCommonUtils'
-            type = 'jar'
-            classifier = 'test-common'
-        }
-    }
-}
-
-apply plugin: 'maven-publish'
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-task sourceJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId 'org.moe'
-            artifactId 'moeProjectGenerator'
-
-            from components.java
-
-            //artifact(javadocJar)
-            //artifact(sourceJar)
-        }
-    }
+    testCompile project(':moe.tools.common').sourceSets.testCommon.output
 }
