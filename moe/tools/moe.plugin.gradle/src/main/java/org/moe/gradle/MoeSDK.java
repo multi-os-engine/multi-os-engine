@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.gradle;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.tools.ant.taskdefs.condition.Os;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
@@ -33,6 +34,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -41,6 +43,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class MoeSDK {
     private static final Logger LOG = LoggerFactory.getLogger(MoeSDK.class);
@@ -110,8 +113,9 @@ public class MoeSDK {
             if (!(property instanceof String)) {
                 throw new GradleException("Value of " + MOE_LOCAL_SDK_PROPERTY + " property is not a String");
             }
-            final Path path = Paths.get((String) property);
-            sdk.validateCompleteSDK(path);
+            final Path path = Paths.get((String)property);
+            sdk.validatePartialSDK(path, true);
+            sdk.completePartialSDK(project, path, true);
             sdk.bakeSDKPaths(path);
             return sdk;
         }
@@ -120,7 +124,8 @@ public class MoeSDK {
         if (System.getenv(MOE_LOCAL_SDK_ENV) != null) {
             LOG.info("Using custom local MOE SDK (env)");
             final Path path = Paths.get(System.getenv(MOE_LOCAL_SDK_ENV));
-            sdk.validateCompleteSDK(path);
+            sdk.validatePartialSDK(path, true);
+            sdk.completePartialSDK(project, path, true);
             sdk.bakeSDKPaths(path);
             return sdk;
         }
@@ -136,7 +141,7 @@ public class MoeSDK {
         // Check for pre-installed SDK
         final Path SDK_PATH = USER_MOE_HOME.resolve("moe-sdk-" + sdkVersion);
         if (SDK_PATH.toFile().exists()) {
-            sdk.validateCompleteSDK(SDK_PATH);
+            sdk.validateCompleteSDK(SDK_PATH, false);
             sdk.bakeSDKPaths(SDK_PATH);
             return sdk;
         }
@@ -165,10 +170,10 @@ public class MoeSDK {
         });
 
         // Validate files
-        sdk.validatePartialSDK(TEMP_SDK_PATH);
+        sdk.validatePartialSDK(TEMP_SDK_PATH, false);
 
         // Process SDK
-        sdk.completePartialSDK(project, TEMP_SDK_PATH);
+        sdk.completePartialSDK(project, TEMP_SDK_PATH, false);
 
         // Move the SDK into place
         if (!TEMP_SDK_PATH.toFile().renameTo(SDK_PATH.toFile())) {
@@ -178,11 +183,19 @@ public class MoeSDK {
         return sdk;
     }
 
-    private void completePartialSDK(@NotNull Project project, @NotNull Path path) {
+    private void completePartialSDK(@NotNull Project project, @NotNull Path path, boolean isLocalSDK) {
         final ASync ios = new ASync(() -> {
+            final File cachedMD5File = path.resolve("sdk/moe-ios.jar.md5").toFile();
+            final File md5CheckInputFile = path.resolve("sdk/moe-ios.jar").toFile();
+
+            final AtomicReference<String> calculatedMD5Ref = new AtomicReference<>();
+            if (checkComponentUpToDate(md5CheckInputFile, cachedMD5File, calculatedMD5Ref)) {
+                return;
+            }
+
             LOG.info("Extracting retrolambda on moe-ios.jar");
             project.copy(spec -> {
-                spec.from(project.zipTree(path.resolve("sdk/moe-ios.jar").toFile()));
+                spec.from(project.zipTree(md5CheckInputFile));
                 spec.into(path.resolve("sdk/moe-ios-jar.dir").toFile());
             });
 
@@ -242,9 +255,18 @@ public class MoeSDK {
             }
 
             LOG.info("Created moe-ios-retro-dex.jar");
+            FileUtils.write(cachedMD5File, calculatedMD5Ref.get());
         });
 
         final ASync core = new ASync(() -> {
+            final File cachedMD5File = path.resolve("sdk/moe-core.jar.md5").toFile();
+            final File md5CheckInputFile = path.resolve("sdk/moe-core.jar").toFile();
+
+            final AtomicReference<String> calculatedMD5Ref = new AtomicReference<>();
+            if (checkComponentUpToDate(md5CheckInputFile, cachedMD5File, calculatedMD5Ref)) {
+                return;
+            }
+
             LOG.info("Running dx on moe-core.jar");
 
             final List<Object> cmd = new ArrayList<>();
@@ -269,9 +291,18 @@ public class MoeSDK {
             }
 
             LOG.info("Created moe-core.dex");
+            FileUtils.write(cachedMD5File, calculatedMD5Ref.get());
         });
 
         final ASync junit = new ASync(() -> {
+            final File cachedMD5File = path.resolve("sdk/moe-ios-junit.jar.md5").toFile();
+            final File md5CheckInputFile = path.resolve("sdk/moe-ios-junit.jar").toFile();
+
+            final AtomicReference<String> calculatedMD5Ref = new AtomicReference<>();
+            if (checkComponentUpToDate(md5CheckInputFile, cachedMD5File, calculatedMD5Ref)) {
+                return;
+            }
+
             LOG.info("Running dx on moe-ios-junit.jar");
 
             final List<Object> cmd = new ArrayList<>();
@@ -296,6 +327,7 @@ public class MoeSDK {
             }
 
             LOG.info("Created moe-ios-junit.dex");
+            FileUtils.write(cachedMD5File, calculatedMD5Ref.get());
         });
 
         // Wait for all tasks to complete
@@ -303,7 +335,23 @@ public class MoeSDK {
         core.join();
         junit.join();
 
-        validateCompleteSDK(path);
+        validateCompleteSDK(path, isLocalSDK);
+    }
+
+    private boolean checkComponentUpToDate(File input, File md5file, AtomicReference<String> out) {
+        final String calculatedMD5;
+        try {
+            calculatedMD5 = DigestUtils.md5Hex(new FileInputStream(input)).trim();
+        } catch (IOException ignore) {
+            throw new GradleException(ignore.getMessage(), ignore);
+        }
+        out.set(calculatedMD5);
+
+        if (!md5file.exists()) {
+            return false;
+        }
+        final String cachedMD5 = FileUtils.read(md5file);
+        return cachedMD5.length() != 0 && cachedMD5.trim().equalsIgnoreCase(calculatedMD5);
     }
 
     private static class ASync {
@@ -341,7 +389,7 @@ public class MoeSDK {
         }
 
         // Create an external dependency
-        final ExternalDependency dependency = (ExternalDependency) project.getDependencies().create(desc);
+        final ExternalDependency dependency = (ExternalDependency)project.getDependencies().create(desc);
         configuration.getDependencies().add(dependency);
 
         // Add repositories from buildscript to be able to download the SDK
@@ -369,7 +417,7 @@ public class MoeSDK {
         return Require.sizeEQ(files, 1, "Unexpected number of files in MOE SDK").iterator().next();
     }
 
-    private void validatePartialSDK(@NotNull Path path) {
+    private void validatePartialSDK(@NotNull Path path, boolean isLocalSDK) {
         Require.nonNull(path);
 
         try {
@@ -378,8 +426,10 @@ public class MoeSDK {
             validate(FIL, path, "sdk/moe-ios-javadoc.jar");
             validate(FIL, path, "sdk/moe-ios-junit.jar");
             validate(FIL, path, "sdk/moe-ios.jar");
-            validate(DIR, path, "sdk/iphoneos/MOE.framework");
-            validate(DIR, path, "sdk/iphonesimulator/MOE.framework");
+            if (!isLocalSDK) {
+                validate(DIR, path, "sdk/iphoneos/MOE.framework");
+                validate(DIR, path, "sdk/iphonesimulator/MOE.framework");
+            }
             validate(FIL | EXE, path, "tools/dex2oat");
             validate(FIL | EXE, path, "tools/dx");
             validate(FIL, path, "tools/dx.jar");
@@ -403,10 +453,10 @@ public class MoeSDK {
         }
     }
 
-    private void validateCompleteSDK(@NotNull Path path) {
+    private void validateCompleteSDK(@NotNull Path path, boolean isLocalSDK) {
         Require.nonNull(path);
 
-        validatePartialSDK(path);
+        validatePartialSDK(path, isLocalSDK);
         try {
             validate(FIL, path, "sdk/moe-core.dex");
             validate(FIL, path, "sdk/moe-ios-junit.dex");
