@@ -15,63 +15,19 @@ limitations under the License.
 */
 
 apply plugin: 'java'
-apply plugin: 'maven-publish'
 
-compileJava {
-    targetCompatibility = 1.6
-    sourceCompatibility = 1.6
-}
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
-// Versioning
-ext {
-    moeProject = 'MOE_TOOLS_NATJGEN'
-    moeVersion = [:]
-}
-initMOEProject(project, [vMajor: 1, vMinor: 0, vPatch: 0])
+targetCompatibility = 1.6
+sourceCompatibility = 1.6
 
 dependencies {
-    compile fileTree(dir: 'lib', include: ['*.jar'])
-    compile 'org.slf4j:slf4j-api:1.7.7'
-    compile 'commons-io:commons-io:2.4'
-    testCompile 'junit:junit:4.11'
-    compile 'org.moe:moeCommonUtils:1.1.+'
-    compile 'org.moe:moeDocumentPbxproj:1.1.+'
-    compile 'org.moe:moeDocumentXib:1.1.+'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile project(':moe.tools.common')
+    compile project(':moe.document.xib')
+    compile project(':moe.document.pbxproj')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 jar {
-    baseName = 'moeToolsNatjgen'
-    doFirst {
-        from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    }
     exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-task sourceJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId 'org.moe'
-            artifactId 'moeToolsNatjgen'
-
-            from components.java
-
-            //artifact(javadocJar)
-            //artifact(sourceJar)
-        }
-    }
 }
