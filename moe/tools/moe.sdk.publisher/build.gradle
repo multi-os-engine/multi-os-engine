@@ -19,60 +19,130 @@ plugins {
 }
 
 group 'org.multi-os-engine'
-version '1.1.0'
+version '1.2.0'
 
-apply plugin: 'java'
+apply plugin: 'base'
 apply plugin: 'maven-publish'
 
-sourceCompatibility = 1.8
+tasks.build.dependsOn ':ext_natj_mac'
+tasks.build.dependsOn ':ext_natj_win'
 
-repositories {
-    mavenCentral()
+def projectDeps = [
+        ':moe.generator.natjgen',
+        ':moe.ios.device.launcher',
+        ':moe.ios.simulator.launcher',
+        ':moe.ui.transformer',
+]
+
+projectDeps.each { evaluationDependsOn it }
+tasks.build {
+    projectDeps.each { dependsOn project(it).tasks.build }
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+def buildfiles(def proj, def subpath, def closure) {
+    files("${project(proj).buildDir.absolutePath}/$subpath", closure)
 }
 
-def moe_home = System.getenv('MOE_HOME_PATH')
-if (moe_home == null) {
-    throw new GradleException('Env var MOE_HOME_PATH is not set')
+def exactfile(def file) {
+    files(file.parentFile) {
+        include file.name
+    }
 }
 
-task sdk(type: Zip) {
-    into('sdk') {
-        from files("$moe_home/sdk") {
-            include 'moe-core.jar'
-            include 'moe-ios-javadoc.jar'
-            include 'moe-ios-junit.jar'
-            include 'moe-ios.jar'
-            include 'iphoneos/MOE.framework/**/*'
-            include 'iphonesimulator/MOE.framework/**/*'
+def getSDKCopySpec() {
+    copySpec {
+        into('sdk') {
+            from files(rootProject.external.moe_core.out.moe_core_jar) {
+                rename rootProject.external.moe_core.out.moe_core_jar.name, 'moe-core.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_jar.name, 'moe-ios.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_javadoc_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_javadoc_jar.name, 'moe-ios-javadoc.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_junit_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_junit_jar.name, 'moe-ios-junit.jar'
+            }
+        }
+        into('sdk/iphoneos/MOE.framework') {
+            from files(rootProject.external.moe_core.out.iphoneos_MOE_framework)
+        }
+        into('sdk/iphonesimulator/MOE.framework') {
+            from files(rootProject.external.moe_core.out.iphonesimulator_MOE_framework)
+        }
+        into('tools') {
+            from files(rootProject.external.moe_core.out.dex2oat_exec.parentFile) {
+                include rootProject.external.moe_core.out.dex2oat_exec.name
+            }
+            from files(rootProject.external.moe_core.out.dx_exec.parentFile) {
+                include rootProject.external.moe_core.out.dx_exec.name
+            }
+            from files(rootProject.external.moe_core.out.dx_jar.parentFile) {
+                include rootProject.external.moe_core.out.dx_jar.name
+            }
+
+            from buildfiles(':moe.ios.device.launcher', 'libs') {
+                include 'moe.ios.device.launcher.jar'
+                rename 'moe.ios.device.launcher.jar', 'ios-device.jar'
+            }
+
+            from buildfiles(':moe.ios.simulator.launcher', 'Release') { include 'simlauncher' }
+
+            from files(rootProject.external.moe_core.out.java8support_jar.parentFile) {
+                include rootProject.external.moe_core.out.java8support_jar.name
+            }
+            from files(rootProject.external.moe_core.out.preloaded_classes.parentFile) {
+                include rootProject.external.moe_core.out.preloaded_classes.name
+            }
+            from files(rootProject.external.moe_core.out.proguard_full_cfg.parentFile) {
+                include rootProject.external.moe_core.out.proguard_full_cfg.name
+            }
+            from files(rootProject.external.moe_core.out.proguard_cfg.parentFile) {
+                include rootProject.external.moe_core.out.proguard_cfg.name
+            }
+            from files(rootProject.external.moe_core.out.proguard_jar.parentFile) {
+                include rootProject.external.moe_core.out.proguard_jar.name
+            }
+            from files(rootProject.external.moe_core.out.retrolambda_jar.parentFile) {
+                include rootProject.external.moe_core.out.retrolambda_jar.name
+                rename rootProject.external.moe_core.out.retrolambda_jar.name, 'retrolambda.jar'
+            }
+
+            from buildfiles(':moe.ui.transformer', 'libs') {
+                include 'moe.ui.transformer.jar'
+                rename 'moe.ui.transformer.jar', 'uiTransformer.jar'
+            }
+            from buildfiles(':moe.ui.transformer', 'resources/main') { include 'UITransformer-res/**/*' }
+
+            from buildfiles(':moe.generator.natjgen', 'libs') {
+                include 'moe.generator.natjgen.jar'
+                rename 'moe.generator.natjgen.jar', 'wrapnatjgen.jar'
+            }
+
+            from files('.') {
+                include 'gradlew.zip'
+            }
+        }
+        into('tools/macosx/x86_64') {
+            from files(external.llvm.macos)
+            from files(external.libimobiledevice.macos)
+            from files(external.natj.mac)
+        }
+        into('tools/windows/x86_64') {
+            from files(external.libimobiledevice.windows)
+            from files(external.natj.win)
         }
     }
-    into('tools') {
-        from files("$moe_home/tools") {
-            include 'dex2oat'
-            include 'dx'
-            include 'dx.jar'
-            include 'ios-device.jar'
-            include 'java8support.jar'
-            include 'macosx/x86_64/*.dylib'
-            include 'preloaded-classes'
-            include 'proguard-full.cfg'
-            include 'proguard.cfg'
-            include 'proguard.jar'
-            include 'retrolambda.jar'
-            include 'simlauncher'
-            include 'UITransformer-res/**/*'
-            include 'uiTransformer.jar'
-            include 'windows/x86_64/*.dll'
-            include 'wrapnatjgen.jar'
-        }
-        from files('.') {
-            include 'gradlew.zip'
-        }
-    }
+}
+
+task sdk(type: Zip, dependsOn: build) {
+    with getSDKCopySpec()
+}
+
+task devsdk(type: Copy, dependsOn: build) {
+    destinationDir = file("$buildDir/dev-sdk")
+    with getSDKCopySpec()
 }
 
 bintray {
@@ -106,8 +176,7 @@ bintray {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact sdk {
-            }
+            artifact sdk {}
         }
     }
 }
