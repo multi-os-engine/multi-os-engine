@@ -19,75 +19,13 @@
  */
 
 apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
 
 sourceCompatibility = "1.6"
 targetCompatibility = "1.6"
 
-// Versioning
-ext {
-    moeProject = 'MOE_BINDING_LIBIMOBILEDEVICE'
-    moeVersion = [:]
-}
-initMOEProject(project, [vMajor: 1, vMinor: 1, vPatch: 0])
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
+tasks.classes.dependsOn ':ext_natj_mac'
+tasks.classes.dependsOn ':ext_natj_win'
 
 dependencies {
-    compile 'org.moe:natj-api:1.0.+'
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-task sourceJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId 'org.moe'
-            artifactId 'moeBindingLibimobiledevice'
-
-            from components.java
-
-            //artifact(javadocJar)
-            //artifact(sourceJar)
-
-            artifact source: 'build/native/macosx/x86_64/libimobiledevice.dylib',
-                    extension: "dylib",
-                    classifier: 'libimobiledevice_macosx_x86_64'
-
-            artifact source: 'build/native/windows/x86_64/libimobiledevice.dll',
-                    extension: "dll",
-                    classifier: 'libimobiledevice_windows_x86_64'
-
-            artifact source: 'build/native/windows/x86_64/libeay32.dll',
-                    extension: "dll",
-                    classifier: 'libeay32_windows_x86_64'
-
-            artifact source: 'build/native/windows/x86_64/ssleay32.dll',
-                    extension: "dll",
-                    classifier: 'ssleay32_windows_x86_64'
-        }
-    }
-}
-
-/*
-Compile native lib.
- */
-task compileLibimobiledeviceNative(type: Exec) {
-    commandLine './build-native.sh'
-}
-if (!project.hasProperty("moe.native.skip")) {
-    compileJava.dependsOn compileLibimobiledeviceNative
+    compile files(rootProject.external.natj.jar)
 }
