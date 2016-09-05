@@ -16,7 +16,6 @@
             <option value="$PROJECT_DIR$/natj-ndk" />
             <option value="$PROJECT_DIR$/natj-objctests" />
             <option value="$PROJECT_DIR$/natj-processor" />
-            <option value="$PROJECT_DIR$/natj-tvos" />
             <option value="$PROJECT_DIR$/natj-win" />
           </set>
         </option>

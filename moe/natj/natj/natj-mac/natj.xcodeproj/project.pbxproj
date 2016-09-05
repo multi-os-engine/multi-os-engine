@@ -1142,7 +1142,7 @@
 		23E37DAB17CE759700844AD6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				TargetAttributes = {
 					1E0345821B5E83D500DB0D19 = {
 						CreatedOnToolsVersion = 6.4;
@@ -1451,12 +1451,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../../../external/libffi/darwin_common/include\"",
-					"\"$(SRCROOT)/../../../../external/libffi/darwin_osx/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/macos/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include\"";
 				LD_DYLIB_INSTALL_NAME = "@rpath/libnatj.dylib";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../../external/libffi/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"";
+				LIBRARY_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/macos/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"";
+				MOE_PREBUILTS_DIR = "$(SRCROOT)/../../../../prebuilts";
 				OTHER_LDFLAGS = "-lffi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1468,12 +1466,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../../../../external/libffi/darwin_common/include\"",
-					"\"$(SRCROOT)/../../../../external/libffi/darwin_osx/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/macos/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include\"";
 				LD_DYLIB_INSTALL_NAME = "@rpath/libnatj.dylib";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../../external/libffi/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"";
+				LIBRARY_SEARCH_PATHS = "\"$(MOE_PREBUILTS_DIR)/external/libffi/build/macos/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"";
+				MOE_PREBUILTS_DIR = "$(SRCROOT)/../../../../prebuilts";
 				OTHER_LDFLAGS = "-lffi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1664,6 +1660,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1705,6 +1702,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

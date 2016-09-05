@@ -29,13 +29,18 @@ dependencies {
 }
 
 tasks.withType(Test) {
-    systemProperty 'java.library.path', file('../natj-mac/build/xcode/Release')
+    def nativeConfiguration = 'Release'
+    dependsOn ":natj-mac:build_TestClassesC_${nativeConfiguration}_macosx"
+
+    systemProperty 'java.library.path', file("../natj-mac/build/xcode/${nativeConfiguration}")
     testLogging.showStandardStreams = true
 }
-tasks.test.dependsOn(':natj-mac:buildCTestNative')
 
 task ansibleTestWinPrepare(type: Tar) {
-    dependsOn tasks.getByPath(':natj-win:buildTestClassesC')
+    def nativeConfiguration = 'Release'
+    dependsOn ":natj-win:build_TestClassesC_${nativeConfiguration}_Win64"
+    dependsOn ":natj-win:build_TestClassesC_${nativeConfiguration}_Win32"
+
     archiveName = "win-test.tar"
     into('classes') {
         from 'build/classes/test'
@@ -50,10 +55,10 @@ task ansibleTestWinPrepare(type: Tar) {
     }
     from '../gradlew.bat'
     into('natives') {
-        from '../natj-win/build/Release-Win64/TestClassesC.dll'
+        from "../natj-win/build/${nativeConfiguration}-Win64/TestClassesC.dll"
     }
     into('natives32') {
-        from '../natj-win/build/Release-Win32/TestClassesC.dll'
+        from "../natj-win/build/${nativeConfiguration}-Win32/TestClassesC.dll"
     }
     from '../build/libs/natj.jar'
 }

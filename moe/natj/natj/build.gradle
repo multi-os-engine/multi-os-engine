@@ -14,185 +14,29 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-allprojects { subproject ->
+for (target in ['ios', 'macos', 'windows']) {
+    task("prebuild_libffi_$target", type: Exec) {
+        workingDir '../../../prebuilts'
+        executable './gradlew'
+        args ":external/libffi:prebuild_$target"
 
-    String customRepo = System.getenv("MOE_MAVEN_ADDR")
-    if ((customRepo == null) || (customRepo.length() == 0)) {
-        customRepo = System.getenv("MOE_HOME")
-    }
-    if ((customRepo != null) && (customRepo.length() > 0)) {
-        subproject.repositories {
-            maven {
-                url(customRepo)
-            }
-        }
-    }
-
-    subproject.afterEvaluate {
-        // Lookup publish task
-        Task publishTask
-        try {
-            publishTask = subproject.tasks.getByName('publish')
-        } catch (UnknownTaskException ex) {
-            return
-        }
-
-        def versionDict = subproject.ext.moeVersion
-
-        // Do a sanity check right before the publish task!
-        // DO NOT SKIP!
-        def sanityCheck = subproject.tasks.create("publishSanityCheck") << {
-            def v = null
-            if (subproject.publishing.publications.findByName('mavenNative') != null) {
-                v = subproject.publishing.publications.mavenNative.version
-            } else {
-                v = subproject.publishing.publications.mavenJava.version
-            }
-            if (v != moeGetVersion(subproject)) {
-                throw new GradleException("Resolved version is illegal!")
-            }
-        }
-        if (subproject.tasks.findByName('buildNative') != null) {
-            subproject.tasks.getByName('buildNative').dependsOn sanityCheck
-        } else {
-            subproject.tasks.getByName('jar').dependsOn sanityCheck
-        }
-
-        // Set mode: dev or release
-        boolean hasQualifier = project.hasProperty("moe.publish.qualifier")
-        versionDict['dev'] = !hasQualifier
-        if (hasQualifier) {
-            String qual = project.property("moe.publish.qualifier")
-
-            if ("alpha".equals(qual) || "final".equals(qual)) {
-                versionDict['qualifier'] = qual
-            } else {
-                throw new GradleException("Unknown qualifier: '$qual'")
-            }
-
-            // Update build number
-            def buildNumberEnv = "BUILD_NUMBER"
-            def buildNumberVal = System.getenv(buildNumberEnv)
-            if (buildNumberVal != null) {
-                versionDict['build'] = Integer.parseInt(buildNumberVal)
-            } else {
-                // Add dummy target repo
-                subproject.publishing.repositories {
-                    maven {
-                        url('/invalid directory')
-                    }
-                }
-                return
-            }
-        }
-
-        // Update version number
-        if (subproject.publishing.publications.findByName('mavenNative') != null) {
-            subproject.publishing.publications.mavenNative.version = moeGetVersion(subproject)
-        } else {
-            subproject.publishing.publications.mavenJava.version = moeGetVersion(subproject)
-        }
-
-        // Update publish repository
-        subproject.publishing.repositories {
-            if (versionDict['dev'] == Boolean.TRUE) {
-                mavenLocal()
-            } else {
-                if (versionDict['qualifier'] == null) {
-                    throw new GradleException("Unexpected state")
-
-                } else {
-                    String mvnAddr = getRequiredEnv('PUBLISH_TARGET_REPO_ADDR')
-                    String mvnUser = getRequiredEnv('PUBLISH_TARGET_REPO_USER')
-                    String mvnPass = getRequiredEnv('PUBLISH_TARGET_REPO_PASS')
-                    maven {
-                        url mvnAddr
-                        if (mvnUser.length() > 0) {
-                            credentials {
-                                username = mvnUser
-                                password = mvnPass
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-def getRequiredEnv(name) {
-    String env = System.getenv(name)
-    if (env == null) {
-        throw new GradleException("Env $name is not set")
-    }
-    return env
-}
-
-def initMOEProject(project, versionComponents) {
-    if (project == null) {
-        throw new NullPointerException("Project cannot be null")
-    }
-    if (versionComponents == null) {
-        throw new NullPointerException("Version components cannot be null")
-    }
-    if (!(versionComponents instanceof Map)) {
-        throw new NullPointerException("Version components must be a map")
-    }
-
-    def versionDict = project.ext.moeVersion
-
-    // Set major version
-    def vComp = versionComponents.vMajor
-    if (vComp == null) {
-        throw new NullPointerException("vMajor is not defined!")
-    }
-    versionDict['major'] = vComp
-
-    // Set minor version
-    vComp = versionComponents.vMinor
-    if (vComp == null) {
-        throw new NullPointerException("vMinor is not defined!")
-    }
-    versionDict['minor'] = vComp
-
-    // Set patch version
-    vComp = versionComponents.vPatch
-    if (vComp == null) {
-        throw new NullPointerException("vPatch is not defined!")
-    }
-    versionDict['patch'] = vComp
-}
-
-def moeGetVersion(project) {
-    def v = project.ext.moeVersion
-    if (v['dev'] == Boolean.TRUE) {
-        return "${v['major']}.${v['minor']}.${v['patch']}.dev-SNAPSHOT"
-    } else {
-        def q = v['qualifier']
-        if (q != null) {
-            if (v['build'] == null) {
-                def buildNumberEnv = "BUILD_NUMBER"
-                throw new GradleException("Builds with qualifiers MUST have a build number!"
-                    + " Env $buildNumberEnv is not set!")
-            }
-            return "${v['major']}.${v['minor']}.${v['patch']}.${q}-${v['build']}"
-        } else {
-            throw new GradleException('Non-dev builds MUST have a qualifier')
-        }
+        def log = file("build/prebuild_libffi_${target}.log")
+        mkdir log.parentFile
+        FileOutputStream ostream = new FileOutputStream(log);
+        setErrorOutput(ostream)
+        setStandardOutput(ostream)
     }
 }
 
 allprojects {
-    // Versioning
-    ext {
-        moeVersion = [:]
-    }
-    initMOEProject(project, [vMajor: 1, vMinor: 0, vPatch: 0])
+    group 'org.moe'
+    version '1.1.0'
 }
 
 /****************************
  *  Java part (NatJ API)
  ****************************/
+
 apply plugin: 'maven-publish'
 apply plugin: 'java'
 
@@ -208,17 +52,21 @@ dependencies {
 }
 
 tasks.withType(Test) {
-    systemProperty 'java.library.path', file('natj-mac/build/xcode/Release')
+    def nativeConfiguration = 'Release'
+    dependsOn ":natj-mac:build_TestClasses_${nativeConfiguration}_macosx"
+
+    systemProperty 'java.library.path', file("natj-mac/build/xcode/${nativeConfiguration}")
 }
 
-tasks.compileJava.dependsOn(':natj-mac:buildNative')
-tasks.test.dependsOn(':natj-mac:buildTestNative')
+tasks.build.dependsOn ':natj-ios:build'
+tasks.build.dependsOn ':natj-mac:build'
+tasks.build.dependsOn ':natj-win:build'
 
 test {
     exclude 'org/moe/xosrt/binding/core/test/memory/**'
 }
 
-task sourcesJar (type : Jar) {
+task sourcesJar(type: Jar) {
     classifier = 'sources'
     from sourceSets.main.allSource
 }
@@ -227,17 +75,23 @@ artifacts {
     archives sourcesJar
 }
 
+task buildAll {
+    dependsOn 'build'
+    dependsOn ':natj-ios:buildAll'
+    dependsOn ':natj-mac:buildAll'
+    dependsOn ':natj-win:buildAll'
+}
+
 tasks.publish.dependsOn('build')
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId 'org.moe'
             artifactId 'natj-api'
 
             from components.java
 
-            artifact (sourcesJar) {
+            artifact(sourcesJar) {
                 classifier = 'sources'
             }
         }

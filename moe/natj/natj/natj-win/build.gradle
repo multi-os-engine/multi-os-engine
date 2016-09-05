@@ -14,18 +14,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-apply plugin: 'base'
 apply plugin: 'maven-publish'
 
-def pm5_configs = [ 'Debug', 'Release' ]
+def pm5_configs = ['Debug', 'Release']
 def pm5_platforms = [
-    [ name: 'Win32', mingw: 'i686-w64-mingw32' ],
-    [ name: 'Win64', mingw: 'x86_64-w64-mingw32' ]
+        [name: 'Win32', mingw: 'i686-w64-mingw32'],
+        [name: 'Win64', mingw: 'x86_64-w64-mingw32']
 ]
 def pm5_allOutputs = []
 
 def createBuildTask(pmProj, gDeps, pmConf, pmPlat, pmProducts, pm5_allOutputs) {
-    def tName = "${pmProj}${pmConf}${pmPlat['name']}"
+    def tName = "build_${pmProj}_${pmConf}_${pmPlat['name']}"
     def tOutputs = ["build/obj/${pmPlat['name']}/${pmConf}/${pmProj}"]
     for (product in pmProducts) {
         tOutputs += "build/${pmConf}-${pmPlat['name']}/${product}"
@@ -37,11 +36,14 @@ def createBuildTask(pmProj, gDeps, pmConf, pmPlat, pmProducts, pm5_allOutputs) {
             if (dep instanceof Task) {
                 dependsOn dep
             } else {
-                dependsOn "${dep}${pmConf}${pmPlat['name']}"
+                dependsOn "build_${dep}_${pmConf}_${pmPlat['name']}"
             }
         }
+        dependsOn ":prebuild_libffi_windows"
+
         workingDir 'build'
         executable "make"
+        environment 'PATH', "${System.getenv('PATH')}:${file('../../../../prebuilts/mingw/bin').absolutePath}"
         args "CC=${pmPlat['mingw']}-g++"
         args "CXX=${pmPlat['mingw']}-g++"
         args "AR=${pmPlat['mingw']}-ar"
@@ -68,6 +70,7 @@ task premake(type: Exec) {
         premakePostClean.execute()
     }
     executable "premake5"
+    environment 'MOE_PREBUILTS', file('../../../../prebuilts').absolutePath
     args 'gmake', '--os=windows', '--verbose'
     inputs.files files('premake5.lua')
     outputs.files files('build/Makefile', 'build/NatJ.make', 'build/NatJStatic.make', 'build/TestClassesCxx.make')
@@ -94,29 +97,35 @@ for (conf in pm5_configs) {
     }
 }
 
- task buildStaticNative() {
-     dependsOn pm_NatJStaticTasks
- }
+task buildStaticNative {
+    dependsOn pm_NatJStaticTasks
+}
 
-task buildNative() {
+task buildNative {
     dependsOn pm_NatJTasks
 }
 
- task buildTestClassesCxx() {
-     dependsOn pm_TestClassesCxxTasks
- }
+task buildTestClassesCxx {
+    dependsOn pm_TestClassesCxxTasks
+}
 
-task buildTestClassesC() {
+task buildTestClassesC {
     dependsOn pm_TestClassesCTasks
 }
 
-tasks.build.dependsOn(buildNative)
-tasks.publish.dependsOn(buildNative)
+task build {
+    dependsOn buildNative
+}
 
+task buildAll {
+    dependsOn build, buildStaticNative, buildTestClassesCxx, buildTestClassesC
+}
+
+// Configure publishing
+tasks.publish.dependsOn buildNative
 publishing {
     publications {
         mavenNative(MavenPublication) {
-            groupId 'org.moe'
             artifactId 'natj-win'
 
             for (conf in pm5_configs) {

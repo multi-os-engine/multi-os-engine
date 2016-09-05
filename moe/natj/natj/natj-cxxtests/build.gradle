@@ -31,8 +31,10 @@ dependencies {
 }
 
 task processCxxTests(type: JavaExec) {
-    classpath = files('../natj-processor/build/libs/natj-processor.jar', 'build/classes/test', '../build/classes/main',
-            'dyntype/build/classes/main')
+    dependsOn(sourceSets.test.output)
+
+    classpath = files("../natj-processor/build/libs/natj-processor-${version}.jar", 'build/classes/test',
+            '../build/classes/main', 'dyntype/build/classes/main')
     main 'org.moe.natj.processor.Main'
 
     args '-i', 'build/classes/test'
@@ -44,24 +46,39 @@ task processCxxTests(type: JavaExec) {
 
     inputs.files('build/classes/test')
     outputs.files('build/classes/processedCxxTest', 'build/native-gen/natj_cxx_stub.cpp', 'build/native-gen/natj_cxx_stub.hpp')
-}
-tasks.processCxxTests.dependsOn(sourceSets.test.output)
 
-tasks.getByPath(':natj-mac:buildCxxTestNative').dependsOn(processCxxTests)
-tasks.getByPath(':natj-win:buildTestClassesCxx').dependsOn(processCxxTests)
+    def logfile = file("build/processor.log")
+    mkdir logfile.parentFile
+    FileOutputStream ostream = new FileOutputStream(logfile);
+    setErrorOutput(ostream)
+    setStandardOutput(ostream)
+}
+
+tasks.getByPath(':natj-mac:build_TestClassesCxx_Release_macosx').dependsOn(processCxxTests)
+tasks.getByPath(':natj-mac:build_TestClassesCxx_Debug_macosx').dependsOn(processCxxTests)
+tasks.getByPath(':natj-win:build_TestClassesCxx_Release_Win64').dependsOn(processCxxTests)
+tasks.getByPath(':natj-win:build_TestClassesCxx_Release_Win32').dependsOn(processCxxTests)
+tasks.getByPath(':natj-win:build_TestClassesCxx_Debug_Win64').dependsOn(processCxxTests)
+tasks.getByPath(':natj-win:build_TestClassesCxx_Debug_Win32').dependsOn(processCxxTests)
 
 tasks.withType(Test) {
+    def nativeConfiguration = 'Release'
+    dependsOn ":natj-mac:build_TestClassesCxx_${nativeConfiguration}_macosx"
+
     doFirst {
         sourceSets.test.output.classesDir = 'build/classes/processedCxxTest'
     }
-    systemProperty 'java.library.path', file('../natj-mac/build/xcode/Release')
+
+    systemProperty 'java.library.path', file("../natj-mac/build/xcode/${nativeConfiguration}")
     testClassesDir = processCxxTests.outputs.files[0]
     testLogging.showStandardStreams = true
 }
-tasks.test.dependsOn(':natj-mac:buildCxxTestNative')
 
 task ansibleTestWinPrepare(type: Tar) {
-    dependsOn tasks.getByPath(':natj-win:buildTestClassesCxx')
+    def nativeConfiguration = 'Release'
+    dependsOn ":natj-win:build_TestClassesCxx_${nativeConfiguration}_Win64"
+    dependsOn ":natj-win:build_TestClassesCxx_${nativeConfiguration}_Win32"
+
     archiveName = "win-test.tar"
     into('classes') {
         from 'build/classes/processedCxxTest'
@@ -73,10 +90,10 @@ task ansibleTestWinPrepare(type: Tar) {
     }
     from '../gradlew.bat'
     into('natives') {
-        from '../natj-win/build/Release-Win64/TestClassesCxx.dll'
+        from "../natj-win/build/${nativeConfiguration}-Win64/TestClassesCxx.dll"
     }
     into('natives32') {
-        from '../natj-win/build/Release-Win32/TestClassesCxx.dll'
+        from "../natj-win/build/${nativeConfiguration}-Win32/TestClassesCxx.dll"
     }
     from '../build/libs/natj.jar'
 }

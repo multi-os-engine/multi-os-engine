@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":natj-cxxtests:main" external.linked.project.path="$MODULE_DIR$/../../../natj-cxxtests" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="natj" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":natj-cxxtests:main" external.linked.project.path="$MODULE_DIR$/../../../natj-cxxtests" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="org.moe" external.system.module.type="sourceSet" external.system.module.version="1.1.0" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/../../../natj-cxxtests/build/classes/main" />
     <content url="file://$MODULE_DIR$/../../../natj-cxxtests/src/main">

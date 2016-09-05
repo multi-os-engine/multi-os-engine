@@ -75,7 +75,6 @@ tasks.publish.dependsOn(buildNative)
 publishing {
     publications {
         mavenNative(MavenPublication) {
-            groupId 'org.moe'
             artifactId 'natj-ndk'
 
             for (o in outputs) {

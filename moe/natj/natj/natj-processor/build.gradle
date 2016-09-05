@@ -52,7 +52,6 @@ tasks.publish.dependsOn('build')
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId 'org.moe'
             artifactId 'natj-processor'
 
             from components.java

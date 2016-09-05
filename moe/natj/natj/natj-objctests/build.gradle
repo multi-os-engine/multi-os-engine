@@ -30,8 +30,10 @@ dependencies {
 }
 
 task processTestsClasses(type: JavaExec) {
+    dependsOn(sourceSets.test.output)
+
     args '-Dretrolambda.inputDir=build/classes/test'
-    args '-Dretrolambda.classpath=build/classes/test:../build/libs/natj.jar'
+    args "-Dretrolambda.classpath=build/classes/test:../build/libs/natj-${version}.jar"
     args '-Dretrolambda.defaultMethods=true'
     args '-Dretrolambda.natjSupport=true'
     args '-Dretrolambda.outputDir=build/classes/processedTestClasses'
@@ -41,14 +43,15 @@ task processTestsClasses(type: JavaExec) {
     inputs.files('build/classes/test')
     outputs.files('build/classes/processedTestClasses')
 }
-tasks.processTestsClasses.dependsOn(sourceSets.test.output)
 
 tasks.withType(Test) {
+    def nativeConfiguration = 'Release'
+    dependsOn tasks.processTestsClasses, ":natj-mac:build_TestClassesObjC_${nativeConfiguration}_macosx"
+
     doFirst {
         sourceSets.test.output.classesDir = 'build/classes/processedTestClasses'
     }
-    systemProperty 'java.library.path', file('../natj-mac/build/xcode/Release')
+    systemProperty 'java.library.path', file("../natj-mac/build/xcode/${nativeConfiguration}")
     testClassesDir = processTestsClasses.outputs.files[0]
     testLogging.showStandardStreams = true
 }
-tasks.test.dependsOn(tasks.processTestsClasses, ':natj-mac:buildObjCTestNative')

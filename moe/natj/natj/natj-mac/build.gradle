@@ -14,82 +14,112 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+
 apply plugin: 'maven-publish'
 
-def buildNativeTarget(project, configuration, sdk, target) {
-    mkdir("build/xcode/$configuration-$sdk")
-    def log = file("build/xcode/$configuration-$sdk/build-${target}.log")
-    try {
-        exec {
-            executable = "xcodebuild"
+ext {
+    nativeOutputs = []
+}
 
-            args "-project", "$project"
-            args "-target", "$target"
-            args "-sdk", "$sdk"
-            args "-configuration", "$configuration"
+def createXcodeTask(xcodeproject, configuration, sdk, target) {
+    task("build_${target}_${configuration}_${sdk}") {
+        // Calculate product directory
+        def productDest = "$buildDir/xcode/${configuration}"
 
-            setIgnoreExitValue false
+        // Disable incremental build, leave it to Xcode
+        inputs.property('timestamp', new Date().toString())
 
-            FileOutputStream ostream = new FileOutputStream(log);
-            setErrorOutput(ostream)
-            setStandardOutput(ostream)
+        // Set inputs and outputs
+        inputs.dir rootProject.file('src')
+        inputs.dir 'natj.xcodeproj'
+        if (target == 'natj') {
+            outputs.file "${productDest}/libnatj.dylib"
+            project.nativeOutputs.plus "${productDest}/libnatj.dylib"
+        } else {
+            dependsOn "build_natj_${configuration}_${sdk}"
         }
-    } catch (GradleException ex) {
-        logger.error(log.text)
-        throw new GradleException("Failed to build native components", ex)
+        dependsOn ":prebuild_libffi_macos"
+
+        // Prepare log file
+        def log = file("${productDest}/build-${target}.log")
+        mkdir log.parentFile
+        outputs.file(log)
+
+        // Add action
+        doLast {
+            try {
+                exec {
+                    executable 'xcodebuild'
+
+                    args '-project', xcodeproject
+                    args '-target', target
+                    args '-sdk', sdk
+                    args '-configuration', configuration
+
+                    /*
+                     * Uncomment to enable build with address sanitizer, Xcode 7+ required
+                     */
+                    // args 'OTHER_CFLAGS=$(OTHER_CFLAGS) -fsanitize=address'
+
+                    setIgnoreExitValue false
+
+                    FileOutputStream ostream = new FileOutputStream(log);
+                    setErrorOutput(ostream)
+                    setStandardOutput(ostream)
+                }
+            } catch (GradleException ex) {
+                logger.error(log.text)
+                throw new GradleException("Failed to build native components", ex)
+            }
+        }
     }
 }
 
-String[] outputs = [
-    'build/xcode/Release/libnatj.dylib',
-    'build/xcode/Debug/libnatj.dylib'
-]
-
-task buildNative << {
-    buildNativeTarget("natj.xcodeproj", "Release", "macosx", "natj")
-    buildNativeTarget("natj.xcodeproj", "Debug", "macosx", "natj")
+// Create build task
+task build {
+    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "natj")
+    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "natj")
 }
 
-task buildTestNative << {
-    buildNativeTarget("natj.xcodeproj", "Release", "macosx", "TestClasses")
-    buildNativeTarget("natj.xcodeproj", "Debug", "macosx", "TestClasses")
+// Create test tasks
+task build_TestClasses_macosx {
+    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClasses")
+    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClasses")
 }
 
-task buildCxxTestNative << {
-    buildNativeTarget("natj.xcodeproj", "Release", "macosx", "TestClassesCxx")
-    buildNativeTarget("natj.xcodeproj", "Debug", "macosx", "TestClassesCxx")
+task build_TestClassesC_macosx {
+    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesC")
+    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesC")
 }
 
-task buildCTestNative << {
-    buildNativeTarget("natj.xcodeproj", "Release", "macosx", "TestClassesC")
-    buildNativeTarget("natj.xcodeproj", "Debug", "macosx", "TestClassesC")
+task build_TestClassesCxx_macosx {
+    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesCxx")
+    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesCxx")
 }
 
-task buildObjCTestNative << {
-    buildNativeTarget("natj.xcodeproj", "Release", "macosx", "TestClassesObjC")
-    buildNativeTarget("natj.xcodeproj", "Debug", "macosx", "TestClassesObjC")
+task build_TestClassesObjC_macosx {
+    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesObjC")
+    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesObjC")
 }
 
-buildNative.inputs.files file('../libffi/build/Release/libffi.a')
-buildNative.inputs.files file('../libffi/build/Debug/libffi.a')
-buildNative.inputs.files fileTree('../src/native').getFiles().toArray()
-buildNative.inputs.files 'natj.xcodeproj/project.pbxproj'
-buildNative.outputs.files outputs
-
-tasks.publish.dependsOn(buildNative)
-
-task clean () {
-    file("build").deleteDir()
+task buildAll {
+    dependsOn build, build_TestClasses_macosx, build_TestClassesC_macosx, build_TestClassesCxx_macosx, build_TestClassesObjC_macosx
 }
 
+// Create clean task
+task clean << {
+    delete buildDir
+}
+
+// Setup publishing
+tasks.publish.dependsOn build
 publishing {
     publications {
         mavenNative(MavenPublication) {
-            groupId 'org.moe'
             artifactId 'natj-mac'
 
-            for (o in outputs) {
-              artifact source:o, extension:"dylib", classifier: new File(o).getParentFile().getName()
+            for (o in nativeOutputs) {
+                artifact source: o, extension: 'dylib', classifier: new File(o).getParentFile().getName()
             }
         }
     }

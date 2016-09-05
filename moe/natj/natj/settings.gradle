@@ -14,8 +14,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-include ':natj-ios', ':natj-mac', ':natj-win', 'natj-ndk'
+// Platforms
+include ':natj-ios'
+include ':natj-mac'
+include ':natj-win'
+include ':natj-ndk'
+
+// Launguage support
 include ':natj-processor'
-include ':natj-cxxtests', ':natj-cxxtests:dyntype'
+
+// Tests
 include ':natj-ctests'
 include ':natj-objctests'
+include ':natj-cxxtests'
+include ':natj-cxxtests:dyntype'
