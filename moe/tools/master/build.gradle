@@ -14,162 +14,151 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-
-allprojects { subproject ->
-
-    String customRepo = System.getenv("MOE_MAVEN_ADDR")
-    if ((customRepo == null) || (customRepo.length() == 0)) {
-        customRepo = System.getenv("MOE_HOME")
+allprojects {
+    repositories {
+        jcenter()
     }
-    if ((customRepo != null) && (customRepo.length() > 0)) {
-        subproject.repositories {
-            maven {
-                url(customRepo)
-            }
-        }
+}
+
+ext {
+    external = [:]
+    external.prebuilts = file('../../../prebuilts').absolutePath
+}
+
+/*
+ * PROJECT: external/libffi
+ */
+for (target in [[name: 'ios'],
+                [name: 'macos'],
+                [name: 'windows']]) {
+    task("prebuild_libffi_$target.name", type: Exec) {
+        workingDir external.prebuilts
+        executable './gradlew'
+        args ":external/libffi:prebuild_${target.name}"
+
+        def log = file("build/prebuild_libffi_${target.name}.log")
+        mkdir log.parentFile
+        FileOutputStream ostream = new FileOutputStream(log);
+        setErrorOutput(ostream)
+        setStandardOutput(ostream)
+    }
+}
+
+/*
+ * PROJECT: external/libimobiledevice/libimobiledevice
+ */
+ext {
+    external.libimobiledevice = [:]
+    external.libimobiledevice.root = "${external.prebuilts}/external/libimobiledevice/libimobiledevice"
+    external.libimobiledevice.jnipath = file("${external.libimobiledevice.root}/build/macos")
+}
+for (target in [[name: 'macos', outputs: ["${external.libimobiledevice.root}/build/macos/libimobiledevice.dylib"]],
+                [name: 'windows', outputs: ["${external.libimobiledevice.root}/build/windows/x86_64-w64-mingw32/libimobiledevice.dll"]]]) {
+    external.libimobiledevice[target.name] = target.outputs.collect { file(it) }
+
+    task("prebuild_libimobiledevice_${target.name}", type: Exec) {
+        workingDir external.prebuilts
+        executable './gradlew'
+        args ":external/libimobiledevice/libimobiledevice:prebuild_${target.name}"
+
+        def log = file("build/prebuild_libimobiledevice_${target.name}.log")
+        mkdir log.parentFile
+        FileOutputStream ostream = new FileOutputStream(log);
+        setErrorOutput(ostream)
+        setStandardOutput(ostream)
+    }
+}
+
+/*
+ * PROJECT: moe/natj/natj
+ */
+ext {
+    external.natj = [:]
+    external.natj.root = file('../../natj/natj').absolutePath
+    external.natj.jar = file("${external.natj.root}/build/libs/natj-1.1.0.jar")
+    external.natj.jnipath = file("${external.natj.root}/natj-mac/build/xcode/Release")
+}
+for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xcode/Release-iphoneos/libnatj.a",
+                                        "${external.natj.root}/natj-ios/build/xcode/Release-iphonesimulator/libnatj.a"]],
+                [name: 'mac', outputs: ["${external.natj.root}/natj-mac/build/xcode/Release/libnatj.dylib"]],
+                [name: 'win', outputs: ["${external.natj.root}/natj-win/build/Release-Win64/natj.dll"]]]) {
+    external.natj[target.name] = target.outputs.collect { file(it) }
+
+    task("build_ext_natj_${target.name}", type: Exec) {
+        workingDir external.natj.root
+        executable './gradlew'
+        args ":natj-${target.name}:build"
+
+        def log = file("build/ext_natj_${target.name}.log")
+        mkdir log.parentFile
+        FileOutputStream ostream = new FileOutputStream(log);
+        setErrorOutput(ostream)
+        setStandardOutput(ostream)
     }
 
-    subproject.afterEvaluate {
-        // Lookup publish task
-        Task publishTask
-        try {
-            publishTask = subproject.tasks.getByName('publish')
-        } catch (UnknownTaskException ex) {
-            return
-        }
-
-        def versionDict = subproject.ext.moeVersion
-
-        // Do a sanity check right before the publish task!
-        // DO NOT SKIP!
-        def sanityCheck = subproject.tasks.create("publishSanityCheck") << {
-            def v = subproject.publishing.publications.mavenJava.version
-            if (v != moeGetVersion(subproject)) {
-                throw new GradleException("Resolved version is illegal!")
-            }
-        }
-        subproject.tasks.getByName('jar').dependsOn sanityCheck
-
-        // Set mode: dev or release
-        boolean hasQualifier = project.hasProperty("moe.publish.qualifier")
-        versionDict['dev'] = !hasQualifier
-        if (hasQualifier) {
-            String qual = project.property("moe.publish.qualifier")
-
-            if ("alpha".equals(qual) || "final".equals(qual)) {
-                versionDict['qualifier'] = qual
-            } else {
-                throw new GradleException("Unknown qualifier: '$qual'")
-            }
-
-            // Update build number
-            def projectName = subproject.ext.moeProject
-            def buildNumberEnv = "${projectName}_BUILD_NUMBER"
-            def buildNumberVal = System.getenv(buildNumberEnv)
-            if (buildNumberVal != null) {
-                versionDict['build'] = Integer.parseInt(buildNumberVal)
-            } else {
-                // Add dummy target repo
-                subproject.publishing.repositories {
-                    maven {
-                        url('/invalid directory')
-                    }
-                }
-                return
-            }
-        }
-
-        // Update version number
-        subproject.publishing.publications.mavenJava.version = moeGetVersion(subproject)
-
-        // Update publish repository
-        subproject.publishing.repositories {
-            if (versionDict['dev'] == Boolean.TRUE) {
-                mavenLocal()
-            } else {
-                if (versionDict['qualifier'] == null) {
-                    throw new GradleException("Unexpected state")
-
-                } else {
-                    String mvnAddr = getRequiredEnv('PUBLISH_TARGET_REPO_ADDR')
-                    String mvnUser = getRequiredEnv('PUBLISH_TARGET_REPO_USER')
-                    String mvnPass = getRequiredEnv('PUBLISH_TARGET_REPO_PASS')
-                    maven {
-                        url mvnAddr
-                        if (mvnUser.length() > 0) {
-                            credentials {
-                                username = mvnUser
-                                password = mvnPass
-                            }
-                        }
-                    }
-                }
-            }
+    task("ext_natj_$target.name") {
+        if (project.hasProperty('moe.external.rebuild.natj') ||
+                target.outputs.findAll() { !file(it).exists() }.size() > 0 ||
+                !external.natj.jar.exists()) {
+            dependsOn "build_ext_natj_$target.name"
         }
     }
 }
 
-def getRequiredEnv(name) {
-    String env = System.getenv(name)
-    if (env == null) {
-        throw new GradleException("Env $name is not set")
-    }
-    return env
+/*
+ * PROJECT: moe/moe-core
+ */
+ext {
+    external.moe_core = [:]
+    external.moe_core.root = file('../../moe-core').absolutePath
+    external.moe_core.out = [:]
+    external.moe_core.out.moe_ios_jar = file("${external.moe_core.root}/moe.apple/moe.platform.ios/build/libs/moe-ios.jar")
+    external.moe_core.out.moe_ios_javadoc_jar = file("${external.moe_core.root}/moe.apple/moe.platform.ios/build/libs/moe-ios-javadoc.jar")
+    external.moe_core.out.moe_ios_junit_jar = file("${external.moe_core.root}/moe.apple/moe.platform.ios.junit/build/libs/moe.platform.ios.junit.jar")
+    external.moe_core.out.moe_core_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core.jar")
+    external.moe_core.out.moe_core_javadoc_jar = file("${external.moe_core.root}/moe.apple/moe.core.java/build/libs/core/moe-core-javadoc.jar")
+    external.moe_core.out.java8support_jar = file("${external.moe_core.root}/moe.apple/tools/java8support.jar")
+    external.moe_core.out.preloaded_classes = file('../../../aosp/frameworks/base/preloaded-classes')
+    external.moe_core.out.proguard_full_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard-full.cfg")
+    external.moe_core.out.proguard_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard.cfg")
+    external.moe_core.out.proguard_jar = file("${external.moe_core.root}/moe.apple/tools/proguard.jar")
+    external.moe_core.out.retrolambda_jar = file("${external.moe_core.root}/moe.apple/tools/retrolambda-2.0.2.jar")
+    external.moe_core.out.dx_exec = file("${external.moe_core.root}/moe.apple/tools/prebuilts/dx")
+    external.moe_core.out.dx_jar = file("${external.moe_core.root}/moe.apple/tools/prebuilts/lib/dx.jar")
+    external.moe_core.out.dex2oat_exec = file("${external.moe_core.root}/moe.apple/moe.core.native/android.art.dex2oat/build/xcode/Release-macos-macosx/dex2oat")
+    external.moe_core.out.iphoneos_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphoneos/MOE.framework")
+    external.moe_core.out.iphonesimulator_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphonesimulator/MOE.framework")
 }
 
-def initMOEProject(project, versionComponents) {
-    if (project == null) {
-        throw new NullPointerException("Project cannot be null")
-    }
-    if (versionComponents == null) {
-        throw new NullPointerException("Version components cannot be null")
-    }
-    if (!(versionComponents instanceof Map)) {
-        throw new NullPointerException("Version components must be a map")
-    }
+task("build_ext_moe_core", type: Exec) {
+    workingDir external.moe_core.root
+    executable './gradlew'
+    args "build"
 
-    def versionDict = project.ext.moeVersion
-
-    // Set major version
-    def vComp = versionComponents.vMajor
-    if (vComp == null) {
-        throw new NullPointerException("vMajor is not defined!")
-    }
-    versionDict['major'] = vComp
-
-    // Set minor version
-    vComp = versionComponents.vMinor
-    if (vComp == null) {
-        throw new NullPointerException("vMinor is not defined!")
-    }
-    versionDict['minor'] = vComp
-
-    // Set patch version
-    vComp = versionComponents.vPatch
-    if (vComp == null) {
-        throw new NullPointerException("vPatch is not defined!")
-    }
-    versionDict['patch'] = vComp
+    def log = file("build/ext_moe_core.log")
+    mkdir log.parentFile
+    FileOutputStream ostream = new FileOutputStream(log);
+    setErrorOutput(ostream)
+    setStandardOutput(ostream)
 }
 
-def moeGetVersion(project) {
-    def v = project.ext.moeVersion
-    if (v['dev'] == Boolean.TRUE) {
-        return "${v['major']}.${v['minor']}.${v['patch']}.dev-SNAPSHOT"
-    } else {
-        def q = v['qualifier']
-        if (q != null) {
-            if (v['build'] == null) {
-                def projectName = project.ext.moeProject
-                def buildNumberEnv = "${projectName}_BUILD_NUMBER"
-                throw new GradleException("Builds with qualifiers MUST have a build number!"
-                    + " Env $buildNumberEnv is not set!")
-            }
-            return "${v['major']}.${v['minor']}.${v['patch']}.${q}-${v['build']}"
-        } else {
-            throw new GradleException('Non-dev builds MUST have a qualifier')
-        }
+task("ext_moe_core") {
+    if (project.hasProperty('moe.external.rebuild.moe_core') ||
+            ((java.util.Map) external.moe_core.out).entrySet().findAll() { !file(it.value).exists() }.size() > 0) {
+        dependsOn "build_ext_moe_core"
+    }
+}
+
+/*
+ * PROJECT: external/llvm
+ */
+ext {
+    external.llvm = [:]
+    external.llvm.root = file("${external.prebuilts}/llvm/macos").absolutePath
+    external.llvm.jnipath = file("${external.llvm.root}/lib")
+    external.llvm.macos = file("${external.llvm.root}/lib/libclang.dylib")
+
+    if (!external.llvm.macos.exists()) {
+        logger.warn("WARNING: libclang is missing from $external.llvm.macos.absolutePath")
     }
 }
