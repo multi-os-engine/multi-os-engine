@@ -15,51 +15,11 @@ limitations under the License.
 */
 
 apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
 
 sourceCompatibility = "1.6"
 targetCompatibility = "1.6"
 
-// Versioning
-ext {
-    moeProject = 'MOE_PROTOCOL_GDBREMOTE'
-    moeVersion = [:]
-}
-initMOEProject(project, [vMajor: 1, vMinor: 1, vPatch: 0])
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.7'
-
     testCompile 'junit:junit:4.11'
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-task sourceJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId 'org.moe'
-            artifactId 'moeProtocolGdbremote'
-
-            from components.java
-
-            //artifact(javadocJar)
-            //artifact(sourceJar)
-        }
-    }
 }
