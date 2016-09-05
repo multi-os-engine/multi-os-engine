@@ -1,68 +1,62 @@
 buildscript {
-  repositories {
-    maven {
-        url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
+    repositories {
+        maven {
+            url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
+        }
     }
-  }
 }
 
 plugins {
-  id "org.jetbrains.intellij" version "0.1.10"
+    id "org.jetbrains.intellij" version "0.1.10"
 }
-
-def PLUGIN_NAME = 'moe_intellij_plugin'
-intellij {
-  version 'IC-15.0'
-  plugins = ['gradle']
-  pluginName PLUGIN_NAME
-  downloadSources false
-  updateSinceUntilBuild false
-
-  publish {
-    if (project.hasProperty('intellij.user')) {
-        username = property('intellij.user')
-    }
-    if (project.hasProperty('intellij.password')) {
-        password = property('intellij.password')
-    }
-  }
-}
-
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
 
 apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
-ext {
-  moeProject = 'MOE_PLUGIN_IDEA'
-  moeVersion = [:]
-}
+group 'org.multi-os-engine'
+version '1.1.0'
 
-initMOEProject(project, [vMajor: 1, vMinor: 1, vPatch: 0])
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
 
-repositories {
-  mavenLocal()
-  jcenter()
+tasks.classes.dependsOn ':ext_natj_mac'
+tasks.classes.dependsOn ':ext_natj_win'
+
+def PLUGIN_NAME = 'moe_intellij_plugin'
+
+intellij {
+    version 'IC-15.0'
+    plugins = ['gradle']
+    pluginName PLUGIN_NAME
+    downloadSources false
+    updateSinceUntilBuild false
+
+    publish {
+        if (project.hasProperty('intellij.user')) {
+            username = property('intellij.user')
+        }
+        if (project.hasProperty('intellij.password')) {
+            password = property('intellij.password')
+        }
+    }
 }
 
 dependencies {
-  compile 'org.moe:moeCommonUtils:1.1.+'
-  compile 'org.moe:moeDocumentPbxproj:1.1.+'
-  compile 'org.moe:moeDocumentXib:1.1.+'
-  compile 'org.moe:moeProjectGenerator:1.3.+'
-  compile 'org.moe:moeToolsNatjgen:1.0.+'
-
-  testCompile 'junit:junit:[4,)'
+    compile project(':moe.tools.common')
+    compile project(':moe.document.pbxproj')
+    compile project(':moe.document.xib')
+    compile project(':moe.generator.project')
+    compile project(':moe.tools.natjgen')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 publishing {
-  publications {
-    mavenJava(MavenPublication) {
-      groupId 'org.moe'
-      artifactId PLUGIN_NAME
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'org.multi-os-engine'
+            artifactId PLUGIN_NAME
 
-      artifact "build/distributions/" + PLUGIN_NAME + ".zip"
+            artifact file("build/distributions/${PLUGIN_NAME}.zip")
+        }
     }
-  }
 }
