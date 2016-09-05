@@ -15,88 +15,20 @@ limitations under the License.
 */
 
 apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
 
-// Versioning
-ext {
-    moeProject = 'MOE_BINDING_CLANG'
-    moeVersion = [:]
-}
-initMOEProject(project, [vMajor: 3, vMinor: 8, vPatch: 0])
-
-def CLANG_DYLIB_FILE = project.file('../../../external/llvm-build-minsizerel/lib/libclang.dylib')
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
-configurations {
-    natives
-}
+tasks.classes.dependsOn ':ext_natj_mac'
 
 dependencies {
     compile fileTree(dir: 'lib', include: '*.jar')
-    compile 'org.moe:natj-api:1.0.+'
-
-    testCompile 'junit:junit:4.11'
-
-    natives('org.moe:natj-mac:1.0.+') {
-        artifact {
-            name = 'natj-mac'
-            extension = 'dylib'
-            type = 'dylib'
-            classifier = 'Release'
-        }
-    }
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-task sourceJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
+    compile files(rootProject.external.natj.jar)
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 tasks.withType(Test) {
     forkEvery 0
-    systemProperty "java.library.path", "build/prebuilt-natives"
+    systemProperty "java.library.path", rootProject.external.llvm.jnipath.absolutePath +
+            File.pathSeparator + rootProject.external.natj.jnipath.absolutePath
 }
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId 'org.moe'
-            artifactId 'moeBindingClang'
-
-            from components.java
-
-            //artifact(javadocJar)
-            //artifact(sourceJar)
-
-            artifact source: CLANG_DYLIB_FILE,
-                    extension: "dylib",
-                    classifier: 'libclang_moe_macosx_x86_64'
-        }
-    }
-}
-
-task copyNatJNative(type: Copy) {
-    from configurations.natives
-    into 'build/prebuilt-natives/'
-    rename { 'libnatj.dylib' }
-}
-task copyClangNative(type: Copy) {
-    from CLANG_DYLIB_FILE
-    into 'build/prebuilt-natives/'
-    rename { 'libclang_moe.dylib' }
-}
-test.dependsOn copyNatJNative, copyClangNative

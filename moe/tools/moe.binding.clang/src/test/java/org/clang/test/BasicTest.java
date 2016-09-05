@@ -46,6 +46,7 @@ public class BasicTest {
 
 	@BeforeClass
 	public static void runTest() {
+		System.loadLibrary("clang");
 		long start_time = System.nanoTime();
 
 		String SDK_PATH = null;
