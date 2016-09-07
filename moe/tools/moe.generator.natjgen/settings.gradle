@@ -1,4 +1,0 @@
-rootProject.name = 'wrapnatjgen'
-
-include 'natjgen.cli.tool', 'org.moe.mdt.natjgen'
-
