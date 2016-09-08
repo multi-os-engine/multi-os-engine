@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension
+            point="org.eclipse.ui.startup">
+        <startup
+                class="org.moe.Startup">
+        </startup>
+    </extension>
+    <extension
+            id="org.moe.natures.project"
+            name="MOEProjectNature"
+            point="org.eclipse.core.resources.natures">
+        <runtime>
+            <run
+                    class="org.moe.MOEProjectNature">
+            </run>
+        </runtime>
+    </extension>
+    <extension
+            point="org.eclipse.core.expressions.propertyTesters">
+        <propertyTester
+                class="org.moe.testers.MOEProjectTester"
+                id="org.moe.testers.XcodeProjectTester"
+                namespace="org.moe"
+                properties="isMOE"
+                type="org.eclipse.core.resources.IResource">
+        </propertyTester>
+        <propertyTester
+                class="org.moe.testers.MOEProjectAndOSTester"
+                id="org.moe.testers.MOEProjectAndOSTester"
+                namespace="org.moe"
+                properties="isMOEAndMac"
+                type="org.eclipse.core.resources.IResource">
+        </propertyTester>
+    </extension>
+    <extension
+            point="org.eclipse.debug.core.launchConfigurationTypes">
+        <launchConfigurationType
+                delegate="org.moe.runconfig.LocalConfigurationDelegate"
+                id="org.moe.runconfig.LocalConfigurationDelegate"
+                modes="run,debug"
+                name="Multi-OS Engine iOS Application"
+                public="true"
+                sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+                sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer">
+        </launchConfigurationType>
+    </extension>
+    <extension
+            point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup
+                class="org.moe.runconfig.LocalLaunchConfigurationTabGroup"
+                description="Multi-OS Engine iOS Application"
+                id="org.moe.runconfig.ui.LocalLaunchConfigurationTabGroup"
+                type="org.moe.runconfig.LocalConfigurationDelegate">
+        </launchConfigurationTabGroup>
+    </extension>
+    <extension
+            point="org.eclipse.debug.ui.launchShortcuts">
+        <shortcut
+                class="org.moe.runconfig.LocalLaunchShortcut"
+                icon="icons/moe_small.png"
+                id="org.moe.runconfig.LocalLaunchShortcut"
+                label="Multi-OS Engine iOS Application"
+                modes="run,debug">
+            <contextualLaunch>
+                <enablement>
+                    <with variable="selection">
+                        <count value="1"/>
+                        <iterate>
+                            <and>
+                                <test property="org.eclipse.jdt.launching.isContainer"/>
+                                <reference definitionId="org.moe.isRelevantProjectAndMac"/>
+                            </and>
+                        </iterate>
+                    </with>
+                </enablement>
+            </contextualLaunch>
+            <configurationType
+                    id="org.moe.runconfig.LocalConfigurationDelegate">
+            </configurationType>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="run">
+            </description>
+            <description
+                    description="Multi-OS Engine build"
+                    mode="debug">
+            </description>
+        </shortcut>
+    </extension>
+    <extension
+            point="org.eclipse.ui.newWizards">
+        <category
+                id="moe.project.Category"
+                name="Multi-OS Engine">
+        </category>
+        <wizard
+                class="org.moe.wizards.SingleViewProjectWizard"
+                id="org.moe.wizards.SingleViewProjectWizard"
+                name="Single View Application"
+                category="moe.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                Create Single View Application project into the workspace.
+            </description>
+        </wizard>
+        <wizard
+                class="org.moe.wizards.SingleViewStoryboardProjectWizard"
+                id="org.moe.wizards.SingleViewStoryboardProjectWizard"
+                name="Single View Application with Storyboard"
+                category="moe.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                Create Single View Application with Storyboard project into the workspace.
+            </description>
+        </wizard>
+        <wizard
+                class="org.moe.wizards.PageBasedProjectWizard"
+                id="org.moe.wizards.PageBasedProjectWizard"
+                name="Page-Based Application"
+                category="moe.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                Create Page-Based Application project into the workspace.
+            </description>
+        </wizard>
+        <wizard
+                class="org.moe.wizards.PageBasedStoryboardProjectWizard"
+                id="org.moe.wizards.PageBasedStoryboardProjectWizard"
+                name="Page-Based Application with Storyboard"
+                category="moe.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                Create Page-Based Application with Storyboard project into the workspace.
+            </description>
+        </wizard>
+        <wizard
+                class="org.moe.wizards.GameProjectWizard"
+                id="org.moe.wizards.GameProjectWizard"
+                name="Game"
+                category="moe.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                Create Game project into the workspace.
+            </description>
+        </wizard>
+        <wizard
+                class="org.moe.wizards.MasterDetailProjectWizard"
+                id="org.moe.wizards.MasterDetailProjectWizard"
+                name="Master-Detail Application with Storyboard"
+                category="org.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                Create Master-Detail Application with Storyboard project into the workspace.
+            </description>
+        </wizard>
+        <wizard
+                class="org.moe.wizards.TabbedProjectWizard"
+                id="org.moe.wizards.TabbedProjectWizard"
+                name="Tabbed Application"
+                category="moe.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                Create Tabbed Application project into the workspace.
+            </description>
+        </wizard>
+    </extension>
+    <extension
+            point="org.eclipse.ui.commands">
+        <command
+                categoryId="org.eclipse.ui.commands"
+                defaultHandler="org.moe.popup.actions.SynchronizeToJavaHandler"
+                id="org.moe.popup.actions.SynchronizeToJavaHandler"
+                name="Synchronize to Java">
+        </command>
+        <command
+                categoryId="org.eclipse.ui.commands"
+                defaultHandler="org.moe.popup.actions.OpenXcodeActionHandler"
+                id="org.moe.popup.actions.OpenXcodeActionHandler"
+                name="Open Project in Xcode">
+        </command>
+        <command
+                categoryId="org.eclipse.ui.commands"
+                defaultHandler="org.moe.popup.actions.LinkThirdpartyFrameworkActionHandler"
+                id="org.moe.popup.actions.LinkThirdpartyFrameworkActionHandler"
+                name="Link third party framework to Xcode">
+        </command>
+    </extension>
+    <extension
+            point="org.eclipse.ui.menus">
+        <menuContribution
+                locationURI="popup:org.eclipse.ui.popup.any">
+            <menu label="Multi-OS Engine Actions">
+                <command
+                        commandId="org.moe.popup.actions.SynchronizeToJavaHandler"
+                        label="Synchronize to Java"
+                        style="push">
+                    <visibleWhen>
+                        <reference definitionId="org.moe.isRelevantProjectAndMac"/>
+                    </visibleWhen>
+                </command>
+                <command
+                        commandId="org.moe.popup.actions.OpenXcodeActionHandler"
+                        label="Open Project in Xcode"
+                        style="push">
+                    <visibleWhen>
+                        <reference definitionId="org.moe.isRelevantProjectAndMac"/>
+                    </visibleWhen>
+                </command>
+                <command
+                        commandId="org.moe.popup.actions.LinkThirdpartyFrameworkActionHandler"
+                        label="Link third party framework to Xcode"
+                        style="push">
+                    <visibleWhen>
+                        <reference definitionId="org.moe.isRelevantProjectAndMac"/>
+                    </visibleWhen>
+                </command>
+            </menu>
+        </menuContribution>
+    </extension>
+    <extension
+            point="org.eclipse.core.expressions.definitions">
+        <definition
+                id="org.moe.isRelevantProject">
+            <with variable="selection">
+                <iterate operator="and" ifEmpty="false">
+                    <adapt type="org.eclipse.core.resources.IResource">
+                        <test
+                                property="org.moe.isMOE">
+                        </test>
+                    </adapt>
+                </iterate>
+            </with>
+        </definition>
+        <definition
+                id="org.moe.isRelevantProjectAndMac">
+            <with variable="selection">
+                <iterate operator="and" ifEmpty="false">
+                    <adapt type="org.eclipse.core.resources.IResource">
+                        <test
+                                property="org.moe.isMOEAndMac">
+                        </test>
+                    </adapt>
+                </iterate>
+            </with>
+        </definition>
+    </extension>
+</plugin>

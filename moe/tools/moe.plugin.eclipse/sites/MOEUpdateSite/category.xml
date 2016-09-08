@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <feature url="features/MOEFeature_1.0.0.qualifier.jar" id="MOEFeature" version="1.0.0.qualifier"/>
+</site>
