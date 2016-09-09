@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23B29E71187EDE68001504B4 /* dalvikvm.cc in Sources */ = {isa = PBXBuildFile; fileRef = 23B29E70187EDE68001504B4 /* dalvikvm.cc */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2353A6AC17CE1B4E005CF3CC /* libdalvikvm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdalvikvm.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		23844E2919E2A2F7000DFC86 /* AndroidConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AndroidConfig.h; sourceTree = "<group>"; };
+		2395DA6E1877109700950DD5 /* MOE-Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Common.h"; sourceTree = "<group>"; };
+		23A22F70187594F00060BF79 /* MOE-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MOE-Prefix.pch"; sourceTree = "<group>"; };
+		23B29E70187EDE68001504B4 /* dalvikvm.cc */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = dalvikvm.cc; sourceTree = "<group>"; tabWidth = 2; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2353A6A917CE1B4E005CF3CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2353A5EE17CE19B5005CF3CC = {
+			isa = PBXGroup;
+			children = (
+				D9A0F132183A94F500523C62 /* Android Root */,
+				2353A83917CE26CD005CF3CC /* Common Configuration */,
+				2353A5FA17CE1AD7005CF3CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2353A5FA17CE1AD7005CF3CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2353A6AC17CE1B4E005CF3CC /* libdalvikvm.a */,
+			);
+			name = Products;
+			path = MOE;
+			sourceTree = "<group>";
+		};
+		2353A6AE17CE1B4E005CF3CC /* art */ = {
+			isa = PBXGroup;
+			children = (
+				23B29E6F187EDE4A001504B4 /* dalvikvm */,
+			);
+			path = art;
+			sourceTree = "<group>";
+		};
+		2353A83917CE26CD005CF3CC /* Common Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				23844E2919E2A2F7000DFC86 /* AndroidConfig.h */,
+				2395DA6E1877109700950DD5 /* MOE-Common.h */,
+				23A22F70187594F00060BF79 /* MOE-Prefix.pch */,
+			);
+			name = "Common Configuration";
+			path = ../moe.base/src/main/native;
+			sourceTree = "<group>";
+		};
+		23B29E6F187EDE4A001504B4 /* dalvikvm */ = {
+			isa = PBXGroup;
+			children = (
+				23B29E70187EDE68001504B4 /* dalvikvm.cc */,
+			);
+			path = dalvikvm;
+			sourceTree = "<group>";
+		};
+		D9A0F132183A94F500523C62 /* Android Root */ = {
+			isa = PBXGroup;
+			children = (
+				2353A6AE17CE1B4E005CF3CC /* art */,
+			);
+			name = "Android Root";
+			path = ../../../../../aosp;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2353A6AB17CE1B4E005CF3CC /* dalvikvm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2353A6B517CE1B4E005CF3CC /* Build configuration list for PBXNativeTarget "dalvikvm" */;
+			buildPhases = (
+				2353A6A817CE1B4E005CF3CC /* Sources */,
+				2353A6A917CE1B4E005CF3CC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dalvikvm;
+			productName = dvm;
+			productReference = 2353A6AC17CE1B4E005CF3CC /* libdalvikvm.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2353A5EF17CE19B5005CF3CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = 2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.art.dalvikvm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2353A5EE17CE19B5005CF3CC;
+			productRefGroup = 2353A5FA17CE1AD7005CF3CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2353A6AB17CE1B4E005CF3CC /* dalvikvm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2353A6A817CE1B4E005CF3CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23B29E71187EDE68001504B4 /* dalvikvm.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2353A5F317CE19B5005CF3CC /* Debug-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					"DEBUG=1",
+					DVM_NO_ASM_INTERP,
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = "Debug-ios";
+		};
+		2353A5F417CE19B5005CF3CC /* Release-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					NDEBUG,
+					DVM_NO_ASM_INTERP,
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = "Release-ios";
+		};
+		2353A6B617CE1B4E005CF3CC /* Debug-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/dvm.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../moe.base/src/main/native/MOE-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/art\"",
+					"\"$(ANDROID_ROOT)/dalvik/vm\"",
+					"\"$(ANDROID_ROOT)/libcore/include\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(ANDROID_ROOT)/bionic/libc/arch-arm/include\"";
+			};
+			name = "Debug-ios";
+		};
+		2353A6B717CE1B4E005CF3CC /* Release-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/dvm.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../moe.base/src/main/native/MOE-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/art\"",
+					"\"$(ANDROID_ROOT)/dalvik/vm\"",
+					"\"$(ANDROID_ROOT)/libcore/include\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(ANDROID_ROOT)/bionic/libc/arch-arm/include\"";
+			};
+			name = "Release-ios";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.art.dalvikvm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2353A5F317CE19B5005CF3CC /* Debug-ios */,
+				2353A5F417CE19B5005CF3CC /* Release-ios */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release-ios";
+		};
+		2353A6B517CE1B4E005CF3CC /* Build configuration list for PBXNativeTarget "dalvikvm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2353A6B617CE1B4E005CF3CC /* Debug-ios */,
+				2353A6B717CE1B4E005CF3CC /* Release-ios */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release-ios";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2353A5EF17CE19B5005CF3CC /* Project object */;
+}

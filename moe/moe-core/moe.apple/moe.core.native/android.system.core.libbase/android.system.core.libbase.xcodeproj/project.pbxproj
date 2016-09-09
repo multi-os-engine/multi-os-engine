@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		237FAED21BA9D07400720738 /* file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 237FAEBD1BA9D07400720738 /* file.cpp */; };
+		237FAED41BA9D07400720738 /* logging.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 237FAEC91BA9D07400720738 /* logging.cpp */; };
+		237FAED71BA9D07400720738 /* stringprintf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 237FAECC1BA9D07400720738 /* stringprintf.cpp */; };
+		237FAED91BA9D07400720738 /* strings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 237FAECE1BA9D07400720738 /* strings.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2350E7BE18DA17BD00285E6C /* AndroidConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AndroidConfig.h; sourceTree = "<group>"; };
+		237FAEBD1BA9D07400720738 /* file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file.cpp; sourceTree = "<group>"; };
+		237FAEC11BA9D07400720738 /* file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
+		237FAEC21BA9D07400720738 /* logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logging.h; sourceTree = "<group>"; };
+		237FAEC31BA9D07400720738 /* macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
+		237FAEC41BA9D07400720738 /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		237FAEC51BA9D07400720738 /* parseint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseint.h; sourceTree = "<group>"; };
+		237FAEC61BA9D07400720738 /* stringprintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringprintf.h; sourceTree = "<group>"; };
+		237FAEC71BA9D07400720738 /* strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strings.h; sourceTree = "<group>"; };
+		237FAEC81BA9D07400720738 /* test_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test_utils.h; sourceTree = "<group>"; };
+		237FAEC91BA9D07400720738 /* logging.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = logging.cpp; sourceTree = "<group>"; };
+		237FAECC1BA9D07400720738 /* stringprintf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stringprintf.cpp; sourceTree = "<group>"; };
+		237FAECE1BA9D07400720738 /* strings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = strings.cpp; sourceTree = "<group>"; };
+		2395DA6E1877109700950DD5 /* MOE-Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOE-Common.h"; sourceTree = "<group>"; };
+		23A22F70187594F00060BF79 /* MOE-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MOE-Prefix.pch"; sourceTree = "<group>"; };
+		23F4C1BE18CDD09300EF5181 /* liblibbase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibbase.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23F4C1BB18CDD09300EF5181 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2353A5EE17CE19B5005CF3CC = {
+			isa = PBXGroup;
+			children = (
+				D9A0F132183A94F500523C62 /* Android Root */,
+				2353A83917CE26CD005CF3CC /* Common Configuration */,
+				2353A5FA17CE1AD7005CF3CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2353A5FA17CE1AD7005CF3CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23F4C1BE18CDD09300EF5181 /* liblibbase.a */,
+			);
+			name = Products;
+			path = MOE;
+			sourceTree = "<group>";
+		};
+		2353A83917CE26CD005CF3CC /* Common Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				2350E7BE18DA17BD00285E6C /* AndroidConfig.h */,
+				2395DA6E1877109700950DD5 /* MOE-Common.h */,
+				23A22F70187594F00060BF79 /* MOE-Prefix.pch */,
+			);
+			name = "Common Configuration";
+			path = ../moe.base/src/main/native;
+			sourceTree = "<group>";
+		};
+		237FAEB91BA9D07400720738 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				237FAEBD1BA9D07400720738 /* file.cpp */,
+				237FAEBF1BA9D07400720738 /* include */,
+				237FAEC91BA9D07400720738 /* logging.cpp */,
+				237FAECC1BA9D07400720738 /* stringprintf.cpp */,
+				237FAECE1BA9D07400720738 /* strings.cpp */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		237FAEBF1BA9D07400720738 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				237FAEC01BA9D07400720738 /* base */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		237FAEC01BA9D07400720738 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				237FAEC11BA9D07400720738 /* file.h */,
+				237FAEC21BA9D07400720738 /* logging.h */,
+				237FAEC31BA9D07400720738 /* macros.h */,
+				237FAEC41BA9D07400720738 /* memory.h */,
+				237FAEC51BA9D07400720738 /* parseint.h */,
+				237FAEC61BA9D07400720738 /* stringprintf.h */,
+				237FAEC71BA9D07400720738 /* strings.h */,
+				237FAEC81BA9D07400720738 /* test_utils.h */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		23F4C1B718CDCE5000EF5181 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				23F4C1B818CDCEB000EF5181 /* core */,
+			);
+			path = system;
+			sourceTree = "<group>";
+		};
+		23F4C1B818CDCEB000EF5181 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				237FAEB91BA9D07400720738 /* base */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		D9A0F132183A94F500523C62 /* Android Root */ = {
+			isa = PBXGroup;
+			children = (
+				23F4C1B718CDCE5000EF5181 /* system */,
+			);
+			name = "Android Root";
+			path = ../../../../../aosp;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23F4C1BD18CDD09300EF5181 /* libbase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23F4C1BF18CDD09300EF5181 /* Build configuration list for PBXNativeTarget "libbase" */;
+			buildPhases = (
+				23F4C1BA18CDD09300EF5181 /* Sources */,
+				23F4C1BB18CDD09300EF5181 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libbase;
+			productName = system;
+			productReference = 23F4C1BE18CDD09300EF5181 /* liblibbase.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2353A5EF17CE19B5005CF3CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = 2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.system.core.libbase" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2353A5EE17CE19B5005CF3CC;
+			productRefGroup = 2353A5FA17CE1AD7005CF3CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23F4C1BD18CDD09300EF5181 /* libbase */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23F4C1BA18CDD09300EF5181 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				237FAED21BA9D07400720738 /* file.cpp in Sources */,
+				237FAED41BA9D07400720738 /* logging.cpp in Sources */,
+				237FAED91BA9D07400720738 /* strings.cpp in Sources */,
+				237FAED71BA9D07400720738 /* stringprintf.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2353A5F317CE19B5005CF3CC /* Debug-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					"MOE_DEBUG=1",
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = "Debug-ios";
+		};
+		2353A5F417CE19B5005CF3CC /* Release-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "";
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					NDEBUG,
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = iphoneos;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = "Release-ios";
+		};
+		23F4C1C018CDD09300EF5181 /* Debug-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../moe.base/src/main/native/MOE-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(ANDROID_ROOT)/system/core/base/include\"";
+			};
+			name = "Debug-ios";
+		};
+		23F4C1C118CDD09300EF5181 /* Release-ios */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../moe.base/src/main/native/MOE-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(ANDROID_ROOT)/system/core/base/include\"";
+			};
+			name = "Release-ios";
+		};
+		58C07DB71D815F17008A3A6C /* Debug-macos */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					"MOE_DEBUG=1",
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = macosx;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = "Debug-macos";
+		};
+		58C07DB81D815F17008A3A6C /* Debug-macos */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../moe.base/src/main/native/MOE-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(ANDROID_ROOT)/system/core/base/include\"";
+			};
+			name = "Debug-macos";
+		};
+		58C07DB91D815F19008A3A6C /* Release-macos */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ANDROID_ROOT = "$(SRCROOT)/../../../../../aosp";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)-$(PLATFORM_NAME)";
+				DEAD_CODE_STRIPPING = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"ANDROID_SMP=1",
+					ANDROID,
+					"MOE=1",
+					HAVE_LITTLE_ENDIAN,
+					NDEBUG,
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = (
+					"-fexceptions",
+					"-fstack-protector-strong",
+				);
+				SDKROOT = macosx;
+				SYMROOT = build/xcode;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wno-comment",
+					"-Wformat",
+					"-Wformat-security",
+				);
+			};
+			name = "Release-macos";
+		};
+		58C07DBA1D815F19008A3A6C /* Release-macos */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "$(SRCROOT)/../moe.base/src/main/native/MOE-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(ANDROID_ROOT)/system/core/include\"",
+					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(ANDROID_ROOT)/system/core/base/include\"";
+			};
+			name = "Release-macos";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2353A5F217CE19B5005CF3CC /* Build configuration list for PBXProject "android.system.core.libbase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2353A5F317CE19B5005CF3CC /* Debug-ios */,
+				58C07DB71D815F17008A3A6C /* Debug-macos */,
+				2353A5F417CE19B5005CF3CC /* Release-ios */,
+				58C07DB91D815F19008A3A6C /* Release-macos */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release-ios";
+		};
+		23F4C1BF18CDD09300EF5181 /* Build configuration list for PBXNativeTarget "libbase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23F4C1C018CDD09300EF5181 /* Debug-ios */,
+				58C07DB81D815F17008A3A6C /* Debug-macos */,
+				23F4C1C118CDD09300EF5181 /* Release-ios */,
+				58C07DBA1D815F19008A3A6C /* Release-macos */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release-ios";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2353A5EF17CE19B5005CF3CC /* Project object */;
+}

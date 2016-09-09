@@ -1,0 +1,107 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+import org.moe.prebuilts.Script
+
+apply plugin: 'base'
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    external = [:]
+    external.prebuilts = file('../../prebuilts').absolutePath
+}
+
+/*
+ * PROJECT: moe/natj/natj
+ */
+ext {
+    external.natj = [:]
+    external.natj.root = file('../natj/natj').absolutePath
+    external.natj.jar = file("${external.natj.root}/build/libs/natj-1.1.0.jar")
+    external.natj.jnipath = file("${external.natj.root}/natj-mac/build/xcode/Release")
+}
+for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xcode/Release-iphoneos/libnatj.a",
+                                        "${external.natj.root}/natj-ios/build/xcode/Release-iphonesimulator/libnatj.a"]],
+                [name: 'mac', outputs: ["${external.natj.root}/natj-mac/build/xcode/Release/libnatj.dylib"]],
+                [name: 'win', outputs: ["${external.natj.root}/natj-win/build/Release-Win64/natj.dll"]]]) {
+    external.natj[target.name] = target.outputs.collect { file(it) }
+
+    task("build_ext_natj_${target.name}", type: Exec) {
+        workingDir external.natj.root
+        executable './gradlew'
+        args ":natj-${target.name}:build"
+
+        def log = file("build/ext_natj_${target.name}.log")
+        mkdir log.parentFile
+        FileOutputStream ostream = new FileOutputStream(log);
+        setErrorOutput(ostream)
+        setStandardOutput(ostream)
+    }
+
+    task("ext_natj_${target.name}") {
+        if (project.hasProperty('moe.external.rebuild.natj') ||
+                target.outputs.findAll() { !file(it).exists() }.size() > 0 ||
+                !external.natj.jar.exists()) {
+            dependsOn "build_ext_natj_${target.name}"
+        }
+    }
+}
+
+def createBrewCheckExecTask(def execname) {
+    tasks.create("check_exec_${execname}", Script) {
+        workDir '.'
+        failureMessage """
+    Error: ${execname} is not installed, please run `brew install ${execname}` to install.
+"""
+        exec 'which', execname
+    }
+}
+
+def createCheckExecTask(def execname, def failmsg) {
+    tasks.create("check_exec_${execname}", Script) {
+        workDir '.'
+        failureMessage failmsg
+        exec 'which', execname
+    }
+}
+
+tasks.check {
+    dependsOn createBrewCheckExecTask('autogen')
+    dependsOn createBrewCheckExecTask('autoconf')
+    dependsOn createBrewCheckExecTask('automake')
+    dependsOn createBrewCheckExecTask('openssl')
+    dependsOn createBrewCheckExecTask('libtool')
+    dependsOn createBrewCheckExecTask('pkg-config')
+    dependsOn createBrewCheckExecTask('wget')
+    dependsOn createBrewCheckExecTask('wine')
+    dependsOn createBrewCheckExecTask('gcc')
+    dependsOn createBrewCheckExecTask('cloog')
+    dependsOn createBrewCheckExecTask('cmake')
+    dependsOn createBrewCheckExecTask('jasmin')
+    dependsOn createBrewCheckExecTask('gpg')
+    dependsOn createBrewCheckExecTask('ant')
+    dependsOn createCheckExecTask('premake5', """
+    Error: premake5 is not installed, please run the following to install:
+
+        cp ${file('dependencies/premake5.rb').absolutePath} /usr/local/Library/Formula
+        brew install premake5
+""")
+}

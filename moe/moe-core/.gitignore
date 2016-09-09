@@ -1,4 +1,6 @@
-Builder/source
-moe.iOS/moe.ios.core.native/android.art.dalvikvm/_build
-moe.iOS/moe.ios.core.native/android.art.dex2oat/_build
-*.xcscmblueprint
+buildSrc/.gradle
+build
+.gradle
+.idea
+**/xcuserdata
+**/xcshareddata

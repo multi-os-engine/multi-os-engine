@@ -1,0 +1,44 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+subprojects {
+    ext {
+        buildfilter = [:]
+        buildfilter.ios = [:]
+        buildfilter.macos = [:]
+
+        if (rootProject.hasProperty("moe.buildfilter.ios.config"))
+            buildfilter.ios.config = rootProject.property("moe.buildfilter.ios.config").toString()
+        if (rootProject.hasProperty("moe.buildfilter.ios.sdk"))
+            buildfilter.ios.sdk = rootProject.property("moe.buildfilter.ios.sdk").toString()
+        if (rootProject.hasProperty("moe.buildfilter.ios.archs"))
+            buildfilter.ios.archs = rootProject.property("moe.buildfilter.ios.archs").toString()
+        if (buildfilter.ios.archs && !buildfilter.ios.sdk) {
+            throw new GradleException("Specifying 'moe.buildfilter.ios.archs' requires 'moe.buildfilter.ios.sdk'")
+        }
+
+        if (rootProject.hasProperty("moe.buildfilter.macos.config"))
+            buildfilter.macos.config = rootProject.property("moe.buildfilter.macos.config").toString()
+    }
+
+    def subproject = it
+    afterEvaluate {
+        if (subproject.tasks.findByName('clean')) return
+        subproject.tasks.create('clean', Delete) {
+            delete subproject.file('build')
+        }
+    }
+}
