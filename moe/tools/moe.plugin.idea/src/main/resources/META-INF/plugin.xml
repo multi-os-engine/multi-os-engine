@@ -35,7 +35,7 @@
       <projectTemplatesFactory implementation="org.moe.idea.builder.MOEProjectTemplatesFactory"/>
 
       <moduleConfigurable instance="org.moe.idea.configurable.MOEModuleConfigurable"/>
-
+      <postStartupActivity implementation="org.moe.idea.Startup"></postStartupActivity>
   </extensions>
 
     <project-components>
