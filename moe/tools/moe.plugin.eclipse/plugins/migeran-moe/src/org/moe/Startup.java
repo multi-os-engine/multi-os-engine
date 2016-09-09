@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResourceChangeEvent;
@@ -42,8 +41,8 @@ import org.eclipse.m2e.core.project.IMavenProjectRegistry;
 import org.eclipse.m2e.core.project.configurator.MojoExecutionKey;
 import org.eclipse.ui.IStartup;
 import org.moe.common.utils.ProjectUtil;
+import org.moe.utils.ApplicationInfo;
 import org.moe.utils.logger.LoggerFactory;
-import org.osgi.framework.FrameworkUtil;
 
 public class Startup implements IStartup {
 
@@ -51,10 +50,12 @@ public class Startup implements IStartup {
 
 	@Override
 	public void earlyStartup() {
-		LOG.debug("Plugin version: " + FrameworkUtil.getBundle(getClass()).getVersion());
+		LOG.info("Plugin started " + ApplicationInfo.getInstance().getBuild().asString()
+                + " (" + ApplicationInfo.getInstance().getVersionName()
+                + " " + ApplicationInfo.getInstance().getFullVersion() + ")");
 		registerPostBuildListener();
 	}
-
+	
 	private void registerPostBuildListener() {
 		LOG.debug("Register postbuild listener");
 		IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
