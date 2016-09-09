@@ -46,7 +46,7 @@ public class MOECompileTask implements CompileTask {
         RunConfiguration c = context.getCompileScope().getUserData(CompileStepBeforeRun.RUN_CONFIGURATION);
 
         if (!(c instanceof MOERunConfiguration)) {
-            return false;
+            return true;
         }
         final MOERunConfiguration runConfig = (MOERunConfiguration) c;
 
