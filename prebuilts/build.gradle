@@ -209,3 +209,24 @@ task mingwPresence << {
         throw new GradleException("MinGW is not built")
     }
 }
+
+task llvm(type: Script) {
+    progress 'Checking brew dependencies'
+    def BREW_CMAKE = checkDir '/usr/local/opt/cmake'
+    def isNew = !file('llvm/macos/Makefile').exists()
+
+    progress 'Creating LLVM makefiles'
+    rawWorkDir 'llvm/macos'
+    if (isNew) {
+        exec 'cmake', '-DCMAKE_BUILD_TYPE=MinSizeRel', '-G', 'Unix Makefiles', file('../external/llvm').absolutePath
+    }
+
+    progress 'Building LLVM'
+    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+}
+
+task llvmPresence << {
+    if (!file('llvm').exists()) {
+        throw new GradleException("LLVM is not built")
+    }
+}
