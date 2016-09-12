@@ -36,7 +36,7 @@ public abstract class JUnitTest implements ITestReference, ITestIdentifier {
 	public boolean equals(Object obj) {
 		if (obj instanceof ITestIdentifier) {
 			ITestIdentifier testid = (ITestIdentifier) obj;
-			return getName().equals(testid.getName());
+			return hashCode() == testid.hashCode();
 		}
 		return false;
 	}

@@ -17,8 +17,6 @@
 
 package org.moe.runconfig.junit;
 
-import java.text.MessageFormat;
-
 import org.eclipse.jdt.internal.junit.runner.IVisitsTestTrees;
 import org.eclipse.jdt.internal.junit.runner.MessageIds;
 
@@ -47,13 +45,17 @@ public class TestMethod extends JUnitTest {
 	@Override
 	public String getName() {
 		return ignored
-				? MessageIds.IGNORED_TEST_PREFIX + MessageFormat.format(MessageIds.TEST_IDENTIFIER_MESSAGE_FORMAT,
-						new Object[] { name, className })
-				: MessageFormat.format(MessageIds.TEST_IDENTIFIER_MESSAGE_FORMAT, new Object[] { name, className });
+				? MessageIds.IGNORED_TEST_PREFIX + String.format("%s(%s)", name, className)
+				: String.format("%s(%s)", name, className);
 	}
 
 	public void setIgnored(boolean b) {
 		this.ignored = b;
+	}
+	
+	@Override
+	public int hashCode() {
+		return className.hashCode() * 31 + name.hashCode();
 	}
 
 }

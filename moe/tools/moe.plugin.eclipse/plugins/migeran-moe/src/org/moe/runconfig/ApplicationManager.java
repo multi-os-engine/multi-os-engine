@@ -84,6 +84,7 @@ public class ApplicationManager {
 	private ILaunchConfiguration launchConfiguration;
 	private IProgressMonitor progressMonitor;
 	private ILaunch launch;
+	private List<String> testArgs = null;
 
 	public ApplicationManager(IProject project, ILaunchConfiguration launchConfiguration, ILaunch launch,
 			IProgressMonitor progressMonitor) {
@@ -301,6 +302,11 @@ public class ApplicationManager {
 		if (isJUnitTest()) {
 			args.add("moeTest");
 			optionsBuilder.push("raw-test-output");
+			if (testArgs != null) {
+				for (String testArg : testArgs) {
+					optionsBuilder.push("arg:" + testArg);
+				}
+			}
 		} else {
 			args.add("moeLaunch");
 		}
@@ -535,6 +541,10 @@ public class ApplicationManager {
 
 	public Object getProject() {
 		return project;
+	}
+
+	public void setTestArguments(List<String> tests) {
+		this.testArgs = tests;
 	}
 
 }

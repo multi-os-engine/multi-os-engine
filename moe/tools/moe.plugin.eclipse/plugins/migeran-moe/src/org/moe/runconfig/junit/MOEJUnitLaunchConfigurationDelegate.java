@@ -16,6 +16,8 @@
 
 package org.moe.runconfig.junit;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -23,6 +25,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
+import org.eclipse.jdt.core.IMember;
+import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.internal.junit.launcher.ITestKind;
 import org.eclipse.jdt.internal.junit.launcher.TestKindRegistry;
 import org.eclipse.jdt.junit.launcher.JUnitLaunchConfigurationDelegate;
@@ -67,10 +71,30 @@ public class MOEJUnitLaunchConfigurationDelegate extends JUnitLaunchConfiguratio
 	public synchronized void launch(ILaunchConfiguration configuration, String mode, ILaunch launch,
 			IProgressMonitor monitor) throws CoreException {
 		setDefaultSourceLocator(launch, configuration);
+		
+		LOG.debug("Set test arguments");
+		
+		try {
+			manager.setTestArguments(getTests(configuration, monitor, launch));
+		} catch (IOException e) {
+			LOG.error("Unable set test arguments", e);
+		}
 
 		LOG.debug("Start junit");
 
 		super.launch(configuration, mode, launch, monitor);
+	}
+	
+	private List<String> getTests(ILaunchConfiguration configuration, IProgressMonitor monitor, ILaunch launch) throws CoreException, IOException {
+		List<String> testList = new ArrayList<String>();
+		IMember[] testElements = evaluateTests(configuration, null);
+		for (int i = 0; i < testElements.length; i++) {
+			if (testElements[i] instanceof IType) {
+				IType type = (IType) testElements[i];
+				testList.add(type.getFullyQualifiedName());
+			}
+		}
+		return testList;
 	}
 
 }

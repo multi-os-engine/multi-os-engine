@@ -725,12 +725,12 @@ public class JUnitEditorTab extends AbstractTab {
 				IJavaModel model = (IJavaModel) element;
 				try {
 					IJavaProject[] projects = model.getJavaProjects();
-					List<IProject> relevantProjects = new ArrayList<IProject>();
+					List<IJavaProject> relevantProjects = new ArrayList<IJavaProject>();
 					for (IJavaProject javaProject : projects) {
 						IProject p = javaProject.getProject();
 						try {
 							if (p.hasNature(MOEProjectNature.NATURE_ID)) {
-								relevantProjects.add(p);
+								relevantProjects.add(javaProject);
 							}
 						} catch (CoreException e) {
 							LOG.error("Unable check project natutre: " + p.getName());
