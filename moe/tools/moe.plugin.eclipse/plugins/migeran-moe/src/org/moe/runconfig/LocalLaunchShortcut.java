@@ -108,11 +108,11 @@ public class LocalLaunchShortcut implements ILaunchShortcut {
 		workingCopy.setAttribute(RunConfigurationEditorLocal.ATTR_RUNTIME, ProjectHelper.getMavenRuntimePath());
 		workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_ALLOW_TERMINATE, true);
 		if (!OsUtils.isMac()) {
-			workingCopy.setAttribute(AbstractLaunchConfigurationDelegate.RUN_ON_SIMULATOR_KEY, false);
+			workingCopy.setAttribute(ApplicationManager.RUN_ON_SIMULATOR_KEY, false);
 		} else {
 			for (SimCtl.Device device : SimCtl.getDevices()) {
-				workingCopy.setAttribute(AbstractLaunchConfigurationDelegate.RUN_ON_SIMULATOR_KEY, true);
-				workingCopy.setAttribute(AbstractLaunchConfigurationDelegate.SIMULATOR_UUID_KEY, device.udid);
+				workingCopy.setAttribute(ApplicationManager.RUN_ON_SIMULATOR_KEY, true);
+				workingCopy.setAttribute(ApplicationManager.SIMULATOR_UUID_KEY, device.udid);
 				break;
 			}
 		}

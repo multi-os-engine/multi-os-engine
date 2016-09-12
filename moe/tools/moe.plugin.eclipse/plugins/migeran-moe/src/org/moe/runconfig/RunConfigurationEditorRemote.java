@@ -28,8 +28,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
-import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -53,7 +51,7 @@ import org.moe.utils.InputValidationHelper;
 import org.moe.utils.ProjectHelper;
 import org.moe.utils.logger.LoggerFactory;
 
-public class RunConfigurationEditorRemote extends AbstractLaunchConfigurationTab {
+public class RunConfigurationEditorRemote extends AbstractTab {
 
 	private static final Logger LOG = LoggerFactory.getLogger(RunConfigurationEditorRemote.class);
 
@@ -282,27 +280,24 @@ public class RunConfigurationEditorRemote extends AbstractLaunchConfigurationTab
 	public void initializeFrom(ILaunchConfiguration launchConfiguration) {
 		try {
 			if (OsUtils.isMac()) {
-				setRemoteBuildEnabled(launchConfiguration
-						.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_BUILD_ENABLED_KEY, false));
+				setRemoteBuildEnabled(
+						launchConfiguration.getAttribute(ApplicationManager.REMOTE_BUILD_ENABLED_KEY, false));
 				remoteBuildEnabledButton.setSelection(isRemoteBuildEnabled());
 				remoteGroup.setEnabled(isRemoteBuildEnabled());
 			} else {
 				setRemoteBuildEnabled(true);
 				remoteGroup.setEnabled(true);
 			}
-			setRemoteHost(launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_HOST_KEY, ""));
-			setRemotePort(launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_PORT_KEY, 0));
-			setRemoteUser(launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_USER_KEY, ""));
-			setRemoteKnownhosts(
-					launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_KNOWN_HOSTS_KEY, ""));
-			setRemoteIdentity(
-					launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_IDENTITY_KEY, ""));
-			setRemoteKeychainPass(
-					launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_KEYCHAIN_PASS_KEY, ""));
-			setRemoteKeychainLocktimeout(launchConfiguration
-					.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY, 0));
-			setRemoteGradleRepositories(launchConfiguration
-					.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_GRADLE_REPOSITORIES_KEY, ""));
+			setRemoteHost(launchConfiguration.getAttribute(ApplicationManager.REMOTE_HOST_KEY, ""));
+			setRemotePort(launchConfiguration.getAttribute(ApplicationManager.REMOTE_PORT_KEY, 0));
+			setRemoteUser(launchConfiguration.getAttribute(ApplicationManager.REMOTE_USER_KEY, ""));
+			setRemoteKnownhosts(launchConfiguration.getAttribute(ApplicationManager.REMOTE_KNOWN_HOSTS_KEY, ""));
+			setRemoteIdentity(launchConfiguration.getAttribute(ApplicationManager.REMOTE_IDENTITY_KEY, ""));
+			setRemoteKeychainPass(launchConfiguration.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_PASS_KEY, ""));
+			setRemoteKeychainLocktimeout(
+					launchConfiguration.getAttribute(ApplicationManager.REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY, 0));
+			setRemoteGradleRepositories(
+					launchConfiguration.getAttribute(ApplicationManager.REMOTE_GRADLE_REPOSITORIES_KEY, ""));
 
 			updateRemoteBuildSettings(remoteHost, remotePort, remoteUser, remoteKnownhosts, remoteIdentity,
 					remoteKeychainPass, remoteKeychainLocktimeout, remoteGradleRepositories);
@@ -313,31 +308,28 @@ public class RunConfigurationEditorRemote extends AbstractLaunchConfigurationTab
 	@Override
 	public void performApply(ILaunchConfigurationWorkingCopy launchConfiguration) {
 		if (OsUtils.isMac()) {
-			launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_BUILD_ENABLED_KEY,
-					isRemoteBuildEnabled());
+			launchConfiguration.setAttribute(ApplicationManager.REMOTE_BUILD_ENABLED_KEY, isRemoteBuildEnabled());
 		} else {
-			launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_BUILD_ENABLED_KEY, true);
+			launchConfiguration.setAttribute(ApplicationManager.REMOTE_BUILD_ENABLED_KEY, true);
 		}
-		launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_HOST_KEY, getRemoteHost());
-		launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_PORT_KEY, getRemotePort());
-		launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_USER_KEY, getRemoteUser());
-		launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_KNOWN_HOSTS_KEY,
-				getRemoteKnownhosts());
-		launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_IDENTITY_KEY, getRemoteIdentity());
-		launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_KEYCHAIN_PASS_KEY,
-				getRemoteKeychainPass());
-		launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY,
+		launchConfiguration.setAttribute(ApplicationManager.REMOTE_HOST_KEY, getRemoteHost());
+		launchConfiguration.setAttribute(ApplicationManager.REMOTE_PORT_KEY, getRemotePort());
+		launchConfiguration.setAttribute(ApplicationManager.REMOTE_USER_KEY, getRemoteUser());
+		launchConfiguration.setAttribute(ApplicationManager.REMOTE_KNOWN_HOSTS_KEY, getRemoteKnownhosts());
+		launchConfiguration.setAttribute(ApplicationManager.REMOTE_IDENTITY_KEY, getRemoteIdentity());
+		launchConfiguration.setAttribute(ApplicationManager.REMOTE_KEYCHAIN_PASS_KEY, getRemoteKeychainPass());
+		launchConfiguration.setAttribute(ApplicationManager.REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY,
 				getRemoteKeychainLocktimeout());
-		launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_GRADLE_REPOSITORIES_KEY,
+		launchConfiguration.setAttribute(ApplicationManager.REMOTE_GRADLE_REPOSITORIES_KEY,
 				getRemoteGradleRepositories());
 	}
 
 	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy launchConfiguration) {
 		if (!OsUtils.isMac()) {
-			launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_BUILD_ENABLED_KEY, true);
+			launchConfiguration.setAttribute(ApplicationManager.REMOTE_BUILD_ENABLED_KEY, true);
 		} else {
-			launchConfiguration.setAttribute(AbstractLaunchConfigurationDelegate.REMOTE_BUILD_ENABLED_KEY, false);
+			launchConfiguration.setAttribute(ApplicationManager.REMOTE_BUILD_ENABLED_KEY, false);
 		}
 	}
 
@@ -480,9 +472,7 @@ public class RunConfigurationEditorRemote extends AbstractLaunchConfigurationTab
 	private void showPropertiesChoicerDialog() {
 		FileDialog fileDialog = new FileDialog(getShell());
 		fileDialog.setText("Select remote build properties file.");
-		String[] filterExtensions = new String[] {
-				"*.properties"
-		};
+		String[] filterExtensions = new String[] { "*.properties" };
 		fileDialog.setFilterExtensions(filterExtensions);
 		String selected = fileDialog.open();
 
@@ -652,14 +642,6 @@ public class RunConfigurationEditorRemote extends AbstractLaunchConfigurationTab
 
 	public void setRunConfigurationEditorLocal(RunConfigurationEditorLocal editor) {
 		this.editorLocal = editor;
-	}
-
-	private void showError(String message) {
-		MessageDialog.openError(getShell(), "Error", message);
-	}
-
-	private void showMessage(String message) {
-		MessageDialog.openInformation(getShell(), "Info", message);
 	}
 
 }

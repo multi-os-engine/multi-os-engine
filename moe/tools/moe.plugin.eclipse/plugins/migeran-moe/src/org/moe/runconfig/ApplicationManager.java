@@ -19,6 +19,7 @@ package org.moe.runconfig;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -36,6 +37,8 @@ import org.eclipse.ui.console.MessageConsoleStream;
 import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase.ExecRunnerListener;
 import org.moe.common.exec.GradleExec;
+import org.moe.junit.MOEITestRunListener;
+import org.moe.junit.MOETestResultParser;
 import org.moe.utils.MessageFactory;
 import org.moe.utils.logger.LoggerFactory;
 
@@ -57,16 +60,40 @@ public class ApplicationManager {
 	public static final String LAUNCHER_SIMULATORS = "moe.launcher.simulators=";
 	public static final String SIMULATOR_UDID = "moe.simulator.udid=";
 	public static final String DEVICE_UDID = "moe.launcher.devices=";
+	public static final String DEBUG_PORT_KEY = "debug_port";
+	public static final int DEFAULT_DEBUG_PORT = 8000;
+	public static final String DEBUG_REMOTE_PORT_KEY = "debug_remote_port";
+	public static final int DEFAULT_DEBUG_REMOTE_PORT = 8000;
+	public static final String RUN_ON_SIMULATOR_KEY = "run_on_simulator";
+	public static final String DEFAULT_CONFIGURATION = "Debug";
+	public static final String CONFIGURATION_KEY = "configuration";
+	public static final String SIMULATOR_UUID_KEY = "imulator_uuid";
+	public static final String DEVICE_UUID_KEY = "device_uuid";
+	public static final String REMOTE_BUILD_ENABLED_KEY = "remoteBuildEnabled";
+	public static final String REMOTE_HOST_KEY = "remoteHost";
+	public static final String REMOTE_PORT_KEY = "remotePort";
+	public static final String REMOTE_USER_KEY = "remoteUser";
+	public static final String REMOTE_KNOWN_HOSTS_KEY = "remoteKnownhosts";
+	public static final String REMOTE_IDENTITY_KEY = "remoteIdentity";
+	public static final String REMOTE_KEYCHAIN_PASS_KEY = "remoteKeychainPass";
+	public static final String REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY = "remoteKeychainLocktimeout";
+	public static final String REMOTE_GRADLE_REPOSITORIES_KEY = "remoteGradleRepositories";
+	public static final String RUN_JUNIT_TEST_KEY = "run_junit_test";
 
-	private List<String> args;
 	private IProject project;
-	private OptionsBuilder optionsBuilder;
+	private ILaunchConfiguration launchConfiguration;
+	private IProgressMonitor progressMonitor;
+	private ILaunch launch;
 
-	public ApplicationManager(IProject project) {
+	public ApplicationManager(IProject project, ILaunchConfiguration launchConfiguration, ILaunch launch,
+			IProgressMonitor progressMonitor) {
 		this.project = project;
+		this.launchConfiguration = launchConfiguration;
+		this.launch = launch;
+		this.progressMonitor = progressMonitor;
 	}
 
-	public void build(ILaunchConfiguration launchConfiguration, IProgressMonitor progressMonitor) throws CoreException {
+	public void build() throws CoreException {
 		LOG.debug("Build project: " + project.getName());
 
 		if (progressMonitor == null) {
@@ -75,120 +102,95 @@ public class ApplicationManager {
 
 		progressMonitor.beginTask("Build...", 4);
 
-		args = new ArrayList<String>();
+		List<String> args = new ArrayList<String>();
 
-		boolean isRemoteBuildEnabled = launchConfiguration
-				.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_BUILD_ENABLED_KEY, false);
-
-		boolean isJUnitEnabled = launchConfiguration
-				.getAttribute(AbstractLaunchConfigurationDelegate.RUN_JUNIT_TEST_KEY, false);
-
-		optionsBuilder = new OptionsBuilder();
+		OptionsBuilder optionsBuilder = new OptionsBuilder();
 
 		progressMonitor.subTask("Set Configuration...");
 
-		if (isJUnitEnabled) {
+		if (isJUnitTest()) {
 			args.add("moeTest");
 		} else {
 			args.add("moeLaunch");
 		}
 		optionsBuilder.push("no-launch");
-		optionsBuilder.push(
-				"config:" + launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.CONFIGURATION_KEY,
-						AbstractLaunchConfigurationDelegate.DEFAULT_CONFIGURATION));
+		optionsBuilder.push("config:" + getConfiguration());
 
-		if (isRemoteBuildEnabled) {
+		if (isRemoteBuildEnabled()) {
 			args.add("-P" + REMOTEBUILD_PROPERTIES_IGNORE);
-			addRemoteBuildArguments(launchConfiguration);
+			addRemoteBuildArguments(args);
 		}
 
-		addSimulatorUDIDArgument("-P", launchConfiguration, false);
+		addSimulatorUDIDArgument("-P", false, args);
 
-		launchBuild();
+		launchBuild(optionsBuilder, args);
 
 	}
 
-	private void addRemoteMavenBuildArguments(ILaunchConfiguration launchConfiguration) throws CoreException {
+	private void addRemoteMavenBuildArguments(List<String> args) throws CoreException {
 		args.add("-D" + REMOTEBUILD_ENABLED + "true");
-		addRemoteArguments("-D", launchConfiguration);
+		addRemoteArguments("-D", args);
 	}
 
-	private void addRemoteBuildArguments(ILaunchConfiguration launchConfiguration) throws CoreException {
-		addRemoteArguments("-P", launchConfiguration);
+	private void addRemoteBuildArguments(List<String> args) throws CoreException {
+		addRemoteArguments("-P", args);
 	}
 
-	private void addRemoteArguments(String prefix, ILaunchConfiguration launchConfiguration) throws CoreException {
-		String remoteHost = launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_HOST_KEY, "");
-		int remotePort = launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_PORT_KEY, 0);
-		String remoteUser = launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_USER_KEY, "");
-		String remoteKnownhosts = launchConfiguration
-				.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_KNOWN_HOSTS_KEY, "");
-		String remoteIdentity = launchConfiguration
-				.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_IDENTITY_KEY, "");
-		String remoteKeychainPass = launchConfiguration
-				.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_KEYCHAIN_PASS_KEY, "");
-		int remoteKeychainLocktimeout = launchConfiguration
-				.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY, 0);
-		String remoteGradleRepositories = launchConfiguration
-				.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_GRADLE_REPOSITORIES_KEY, "");
+	private void addRemoteArguments(String prefix, List<String> args) throws CoreException {
+		String remoteHost = getRemoteHost();
+		int remotePort = getRemotePort();
+		String remoteUser = getRemoteUser();
+		String remoteKnownhosts = getRemoteKnownHosts();
+		String remoteIdentity = getRemoteIdentity();
+		String remoteKeychainPass = getRemoteKeychainPass();
+		int remoteKeychainLocktimeout = getRemoteKeychainLockTimeout();
+		String remoteGradleRepositories = getRemoteGradleRepository();
 
-		addArgument(prefix + REMOTEBUILD_HOST + remoteHost);
-		addArgument(prefix + REMOTEBUILD_PORT + remotePort);
-		addArgument(prefix + REMOTEBUILD_USER + remoteUser);
-		addArgument(prefix + REMOTEBUILD_KNOWNHOSTS + remoteKnownhosts);
-		addArgument(prefix + REMOTEBUILD_IDENTITY + remoteIdentity);
-		addArgument(prefix + REMOTEBUILD_KEYCHAIN_PASS + remoteKeychainPass);
-		addArgument(prefix + REMOTEBUILD_KEYCHAINLOCKTIMEOUT + remoteKeychainLocktimeout);
-		addArgument(prefix + REMOTEBUILD_GRADLE_REPOSITORIES + remoteGradleRepositories);
+		args.add(prefix + REMOTEBUILD_HOST + remoteHost);
+		args.add(prefix + REMOTEBUILD_PORT + remotePort);
+		args.add(prefix + REMOTEBUILD_USER + remoteUser);
+		args.add(prefix + REMOTEBUILD_KNOWNHOSTS + remoteKnownhosts);
+		args.add(prefix + REMOTEBUILD_IDENTITY + remoteIdentity);
+		args.add(prefix + REMOTEBUILD_KEYCHAIN_PASS + remoteKeychainPass);
+		args.add(prefix + REMOTEBUILD_KEYCHAINLOCKTIMEOUT + remoteKeychainLocktimeout);
+		args.add(prefix + REMOTEBUILD_GRADLE_REPOSITORIES + remoteGradleRepositories);
 
 	}
 
-	private void addSimulatorUDIDArgument(String prefix, ILaunchConfiguration launchConfiguration, boolean isMaven)
-			throws CoreException {
-		boolean runOnSimulator = launchConfiguration
-				.getAttribute(AbstractLaunchConfigurationDelegate.RUN_ON_SIMULATOR_KEY, true);
+	private void addSimulatorUDIDArgument(String prefix, boolean isMaven, List<String> args) throws CoreException {
+		boolean runOnSimulator = isRunOnSimulator();
 
 		if (runOnSimulator) {
 			if (isMaven) {
-				addArgument(prefix + SIMULATOR_UDID
-						+ launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.SIMULATOR_UUID_KEY, ""));
+				args.add(prefix + SIMULATOR_UDID + getSimulatoreUdid());
 			} else {
-				addArgument(prefix + LAUNCHER_SIMULATORS
-						+ launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.SIMULATOR_UUID_KEY, ""));
+				args.add(prefix + LAUNCHER_SIMULATORS + getSimulatoreUdid());
 			}
 		}
 	}
 
-	private void addArgument(String arg) {
-		args.add(arg);
-	}
-
 	@SuppressWarnings("restriction")
-	public void buildMavenProject(ILaunchConfiguration launchConfiguration, ILaunch launch,
-			IProgressMonitor progressMonitor) throws CoreException {
+	public void buildMavenProject() throws CoreException {
 		if (progressMonitor == null) {
 			progressMonitor = new NullProgressMonitor();
 		}
 
-		args = new ArrayList<String>();
+		List<String> args = new ArrayList<String>();
 
-		args.add("-D" + CONFIGURATION_MAVEN
-				+ launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.CONFIGURATION_KEY,
-						AbstractLaunchConfigurationDelegate.DEFAULT_CONFIGURATION));
+		args.add("-D" + CONFIGURATION_MAVEN + getConfiguration());
 
 		progressMonitor.beginTask("Build...", 4);
 		LOG.debug("Start maven build");
 
-		boolean isRemoteBuildEnabled = launchConfiguration
-				.getAttribute(AbstractLaunchConfigurationDelegate.REMOTE_BUILD_ENABLED_KEY, false);
+		boolean isRemoteBuildEnabled = isRemoteBuildEnabled();
 
 		progressMonitor.subTask("Set Configuration...");
 
 		if (isRemoteBuildEnabled) {
-			addRemoteMavenBuildArguments(launchConfiguration);
+			addRemoteMavenBuildArguments(args);
 		}
 
-		addSimulatorUDIDArgument("-D", launchConfiguration, true);
+		addSimulatorUDIDArgument("-D", true, args);
 
 		progressMonitor.worked(1);
 
@@ -226,15 +228,7 @@ public class ApplicationManager {
 		progressMonitor.subTask("Build successful");
 	}
 
-	public void setOptionsBuilder(OptionsBuilder builder) {
-		this.optionsBuilder = builder;
-	}
-
-	public void setArguments(List<String> newArgs) {
-		this.args = newArgs;
-	}
-
-	public void launchBuild() throws CoreException {
+	public void launchBuild(OptionsBuilder optionsBuilder, List<String> args) throws CoreException {
 		MessageConsole console = MOEProjectBuildConsole.getBuildConsole();
 		console.activate();
 		console.clearConsole();
@@ -291,13 +285,54 @@ public class ApplicationManager {
 		}
 	}
 
-	public void launchApplication(ILaunch launch, Map<String, String> vmArgs, IProgressMonitor progressMonitor)
-			throws CoreException {
+	public Launcher launchApplication(MOEITestRunListener testListener) throws CoreException {
+
+		boolean isDebug = launch.getLaunchMode().equals(ILaunchManager.DEBUG_MODE);
+		boolean runOnSimulator = isRunOnSimulator();
+
+		List<String> args = new ArrayList<String>();
+		Map<String, String> vmArgs = new HashMap<String, String>();
+
+		int debugPort = 0;
+		int debugRemotePort = 0;
+
+		OptionsBuilder optionsBuilder = new OptionsBuilder();
+
+		if (isJUnitTest()) {
+			args.add("moeTest");
+			optionsBuilder.push("raw-test-output");
+		} else {
+			args.add("moeLaunch");
+		}
+
+		if (isDebug) {
+			vmArgs.put("hostname", "localhost");
+			vmArgs.put("timeout", "0");
+			debugPort = getDebugPort();
+			debugRemotePort = getDebugRemotePort();
+		}
+
+		optionsBuilder.push("no-build");
+		optionsBuilder.push("config:" + getConfiguration());
+
+		if (runOnSimulator) {
+			args.add("-P" + ApplicationManager.LAUNCHER_SIMULATORS + getSimulatoreUdid());
+			if (isDebug) {
+				optionsBuilder.push("debug:" + Integer.toString(debugPort));
+				vmArgs.put("port", Integer.toString(debugPort));
+			}
+		} else {
+			args.add("-P" + ApplicationManager.DEVICE_UDID + getDeviceUdid());
+			if (isDebug) {
+				optionsBuilder.push("debug:" + Integer.toString(debugPort) + ":" + Integer.toString(debugRemotePort));
+				vmArgs.put("port", Integer.toString(debugRemotePort));
+			}
+		}
+
 		File projectFile = project.getLocation().toFile();
 		GradleExec exec = new GradleExec(projectFile);
-		if (optionsBuilder != null) {
-			args.add(optionsBuilder.toString());
-		}
+		args.add(optionsBuilder.toString());
+
 		exec.getArguments().addAll(args);
 		ExecRunner runner = null;
 		try {
@@ -319,7 +354,11 @@ public class ApplicationManager {
 
 		if (process != null) {
 			Launcher launcher = new Launcher(launch, process, vmArgs, progressMonitor);
+			if (testListener != null) {
+				launcher.setTestResultParser(new MOETestResultParser(testListener));
+			}
 			launcher.start();
+			return launcher;
 		} else {
 			throw new CoreException(MessageFactory.getError("Gradle launch error, process is null"));
 		}
@@ -337,6 +376,165 @@ public class ApplicationManager {
 		public String toString() {
 			return builder.length() == 1 ? "" : ("-Pmoe.launcher.options=" + builder.substring(1));
 		}
+	}
+
+	protected int getDebugPort() {
+		try {
+			return launchConfiguration.getAttribute(DEBUG_PORT_KEY, DEFAULT_DEBUG_PORT);
+		} catch (CoreException ignored) {
+
+		}
+		return DEFAULT_DEBUG_PORT;
+	}
+
+	protected boolean isRunOnSimulator() {
+		try {
+			return launchConfiguration.getAttribute(RUN_ON_SIMULATOR_KEY, true);
+		} catch (CoreException ignored) {
+
+		}
+		return true;
+	}
+
+	protected String getConfiguration() {
+		try {
+			return launchConfiguration.getAttribute(CONFIGURATION_KEY, DEFAULT_CONFIGURATION);
+		} catch (CoreException ignored) {
+
+		}
+		return DEFAULT_CONFIGURATION;
+	}
+
+	protected String getArch() {
+		if (isRunOnSimulator()) {
+			return "i386";
+		}
+		return "armv7,arm64";
+	}
+
+	protected boolean isJUnitTest() {
+		try {
+			return launchConfiguration.getAttribute(RUN_JUNIT_TEST_KEY, false);
+		} catch (CoreException ignore) {
+
+		}
+		return false;
+	}
+
+	protected String getSimulatoreUdid() {
+		try {
+			return launchConfiguration.getAttribute(SIMULATOR_UUID_KEY, "");
+		} catch (CoreException ignored) {
+
+		}
+		return "";
+	}
+
+	protected String getDeviceUdid() {
+		try {
+			return launchConfiguration.getAttribute(DEVICE_UUID_KEY, "");
+		} catch (CoreException ignored) {
+
+		}
+		return "";
+	}
+
+	protected int getDebugRemotePort() {
+		try {
+			return launchConfiguration.getAttribute(DEBUG_REMOTE_PORT_KEY, DEFAULT_DEBUG_REMOTE_PORT);
+		} catch (CoreException ignored) {
+
+		}
+		return DEFAULT_DEBUG_REMOTE_PORT;
+	}
+
+	protected boolean isRemoteBuildEnabled() {
+		try {
+			return launchConfiguration.getAttribute(REMOTE_BUILD_ENABLED_KEY, false);
+		} catch (CoreException ignored) {
+
+		}
+		return false;
+	}
+
+	protected String getRemoteHost() {
+		try {
+			return launchConfiguration.getAttribute(REMOTE_HOST_KEY, "");
+		} catch (CoreException ignore) {
+
+		}
+		return "";
+	}
+
+	protected int getRemotePort() {
+		try {
+			return launchConfiguration.getAttribute(REMOTE_PORT_KEY, 0);
+		} catch (CoreException ignore) {
+
+		}
+		return 0;
+	}
+
+	protected String getRemoteUser() {
+		try {
+			return launchConfiguration.getAttribute(REMOTE_USER_KEY, "");
+		} catch (CoreException ignore) {
+
+		}
+		return "";
+	}
+
+	protected String getRemoteKnownHosts() {
+		try {
+			return launchConfiguration.getAttribute(REMOTE_KNOWN_HOSTS_KEY, "");
+		} catch (CoreException ignore) {
+
+		}
+		return "";
+	}
+
+	protected String getRemoteIdentity() {
+		try {
+			return launchConfiguration.getAttribute(REMOTE_IDENTITY_KEY, "");
+		} catch (CoreException ignore) {
+
+		}
+		return "";
+	}
+
+	protected String getRemoteKeychainPass() {
+		try {
+			return launchConfiguration.getAttribute(REMOTE_KEYCHAIN_PASS_KEY, "");
+		} catch (CoreException ignore) {
+
+		}
+		return "";
+	}
+
+	protected String getRemoteGradleRepository() {
+		try {
+			return launchConfiguration.getAttribute(REMOTE_GRADLE_REPOSITORIES_KEY, "");
+		} catch (CoreException ignore) {
+
+		}
+		return "";
+	}
+
+	protected int getRemoteKeychainLockTimeout() {
+		try {
+			return launchConfiguration.getAttribute(REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY, 0);
+		} catch (CoreException ignore) {
+
+		}
+		return 0;
+	}
+
+	public ILaunch getLaunch() {
+		return launch;
+	}
+
+	public Object getProject() {
+		return project;
 	}
 
 }

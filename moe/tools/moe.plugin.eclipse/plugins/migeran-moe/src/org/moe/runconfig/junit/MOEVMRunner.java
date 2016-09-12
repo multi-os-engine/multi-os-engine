@@ -21,14 +21,31 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.jdt.launching.IVMRunner;
 import org.eclipse.jdt.launching.VMRunnerConfiguration;
+import org.moe.runconfig.ApplicationManager;
+import org.moe.utils.MessageFactory;
 
 public class MOEVMRunner implements IVMRunner {
+
+	private ApplicationManager manager;
 
 	@Override
 	public void run(VMRunnerConfiguration configuration, ILaunch launch, IProgressMonitor monitor)
 			throws CoreException {
-		// TODO Auto-generated method stub
 
+		TestProcess runnerProcess = new TestProcess(configuration, manager);
+		launch.addProcess(runnerProcess);
+		try {
+			runnerProcess.run();
+		} catch (CoreException ex) {
+			throw ex;
+		} catch (Exception ex) {
+			throw new CoreException(MessageFactory.getError("Failed to run JUnit tests", ex));
+		}
+		launch.removeProcess(runnerProcess);
+	}
+
+	public void setApplicationManager(ApplicationManager manager) {
+		this.manager = manager;
 	}
 
 }

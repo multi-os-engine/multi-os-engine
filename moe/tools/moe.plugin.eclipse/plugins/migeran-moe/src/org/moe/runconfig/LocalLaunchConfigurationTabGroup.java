@@ -19,17 +19,18 @@ package org.moe.runconfig;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTabGroup;
 import org.eclipse.debug.ui.ILaunchConfigurationDialog;
 import org.eclipse.debug.ui.ILaunchConfigurationTab;
+import org.moe.runconfig.junit.JUnitEditorTab;
 
 public class LocalLaunchConfigurationTabGroup extends AbstractLaunchConfigurationTabGroup {
 
 	@Override
 	public void createTabs(ILaunchConfigurationDialog arg0, String arg1) {
 		RunConfigurationEditorLocal launch = new RunConfigurationEditorLocal();
+		JUnitEditorTab junit = new JUnitEditorTab();
+		junit.setRunConfigurationEditorLocal(launch);
 		RunConfigurationEditorRemote remote = new RunConfigurationEditorRemote();
 		remote.setRunConfigurationEditorLocal(launch);
-		ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] {
-				launch, remote
-		};
+		ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] { launch, junit, remote };
 		setTabs(tabs);
 	}
 

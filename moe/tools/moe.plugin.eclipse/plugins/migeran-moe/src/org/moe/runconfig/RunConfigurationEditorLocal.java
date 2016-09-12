@@ -28,7 +28,6 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
-import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -55,7 +54,7 @@ import org.moe.utils.ProjectHelper;
 import org.moe.utils.SimCtl;
 import org.moe.utils.logger.LoggerFactory;
 
-public class RunConfigurationEditorLocal extends AbstractLaunchConfigurationTab {
+public class RunConfigurationEditorLocal extends AbstractTab {
 
 	private static final Logger LOG = LoggerFactory.getLogger(RunConfigurationEditorLocal.class);
 
@@ -119,41 +118,38 @@ public class RunConfigurationEditorLocal extends AbstractLaunchConfigurationTab 
 			}
 
 			if (OsUtils.isMac()) {
-				boolean runOnSimulator = launchConfiguration
-						.getAttribute(AbstractLaunchConfigurationDelegate.RUN_ON_SIMULATOR_KEY, true);
+				boolean runOnSimulator = launchConfiguration.getAttribute(ApplicationManager.RUN_ON_SIMULATOR_KEY,
+						true);
 				updateItems(runOnSimulator);
 
-				String simulatorUUID = launchConfiguration
-						.getAttribute(AbstractLaunchConfigurationDelegate.SIMULATOR_UUID_KEY, "");
+				String simulatorUUID = launchConfiguration.getAttribute(ApplicationManager.SIMULATOR_UUID_KEY, "");
 				if (!simulatorUUID.isEmpty()) {
 					simulatorsCombo.select(simulatorIds.indexOf(simulatorUUID));
 				}
 			}
 
-			String deviceUUID = launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.DEVICE_UUID_KEY,
-					"");
+			String deviceUUID = launchConfiguration.getAttribute(ApplicationManager.DEVICE_UUID_KEY, "");
 			if (!deviceUUID.isEmpty()) {
 				devicesCombo.select(deviceIds.indexOf(deviceUUID));
 			}
 
-			int debugPort = launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.DEBUG_PORT_KEY, -1);
+			int debugPort = launchConfiguration.getAttribute(ApplicationManager.DEBUG_PORT_KEY, -1);
 
 			if (debugPort > 0) {
 				debugPortText.setText(String.valueOf(debugPort));
 			} else {
-				debugPortText.setText(String.valueOf(AbstractLaunchConfigurationDelegate.DEFAULT_DEBUG_PORT));
+				debugPortText.setText(String.valueOf(ApplicationManager.DEFAULT_DEBUG_PORT));
 			}
 
-			int remotePort = launchConfiguration.getAttribute(AbstractLaunchConfigurationDelegate.DEBUG_REMOTE_PORT_KEY,
-					-1);
+			int remotePort = launchConfiguration.getAttribute(ApplicationManager.DEBUG_REMOTE_PORT_KEY, -1);
 			if (remotePort > 0) {
 				remotePortText.setText(String.valueOf(remotePort));
 			} else {
-				remotePortText.setText(String.valueOf(AbstractLaunchConfigurationDelegate.DEFAULT_DEBUG_REMOTE_PORT));
+				remotePortText.setText(String.valueOf(ApplicationManager.DEFAULT_DEBUG_REMOTE_PORT));
 			}
 
-			configurationCombo.setText(launchConfiguration
-					.getAttribute(AbstractLaunchConfigurationDelegate.CONFIGURATION_KEY, Configuration.RELEASE_NAME));
+			configurationCombo.setText(
+					launchConfiguration.getAttribute(ApplicationManager.CONFIGURATION_KEY, Configuration.RELEASE_NAME));
 		} catch (CoreException e) {
 
 		}
@@ -164,21 +160,20 @@ public class RunConfigurationEditorLocal extends AbstractLaunchConfigurationTab 
 		launchConfigurationWorkingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME,
 				projectsCombo.getText());
 		if (OsUtils.isMac()) {
-			launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.RUN_ON_SIMULATOR_KEY,
+			launchConfigurationWorkingCopy.setAttribute(ApplicationManager.RUN_ON_SIMULATOR_KEY,
 					simulatorButton.getSelection());
-			launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.SIMULATOR_UUID_KEY,
+			launchConfigurationWorkingCopy.setAttribute(ApplicationManager.SIMULATOR_UUID_KEY,
 					simulatorIds.get(simulatorsCombo.getSelectionIndex()));
 		}
-		launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.DEVICE_UUID_KEY,
+		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.DEVICE_UUID_KEY,
 				deviceIds.get(devicesCombo.getSelectionIndex()));
-		launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.DEBUG_PORT_KEY,
+		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.DEBUG_PORT_KEY,
 				Integer.parseInt(debugPortText.getText()));
-		launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.DEBUG_REMOTE_PORT_KEY,
+		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.DEBUG_REMOTE_PORT_KEY,
 				Integer.parseInt(remotePortText.getText()));
 		launchConfigurationWorkingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_ALLOW_TERMINATE, true);
-		launchConfigurationWorkingCopy.setAttribute(ATTR_GOALS, "moe:xcodebuild");
 		launchConfigurationWorkingCopy.setAttribute(ATTR_RUNTIME, ProjectHelper.getMavenRuntimePath());
-		launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.CONFIGURATION_KEY,
+		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.CONFIGURATION_KEY,
 				configurationCombo.getItem(configurationCombo.getSelectionIndex()));
 	}
 
@@ -219,22 +214,19 @@ public class RunConfigurationEditorLocal extends AbstractLaunchConfigurationTab 
 		String projectName = project == null ? "" : project.getName();
 		launchConfigurationWorkingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROJECT_NAME, projectName);
 		if (!OsUtils.isMac()) {
-			launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.RUN_ON_SIMULATOR_KEY,
-					false);
+			launchConfigurationWorkingCopy.setAttribute(ApplicationManager.RUN_ON_SIMULATOR_KEY, false);
 		} else {
-			launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.RUN_ON_SIMULATOR_KEY, true);
+			launchConfigurationWorkingCopy.setAttribute(ApplicationManager.RUN_ON_SIMULATOR_KEY, true);
 		}
-		launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.SIMULATOR_UUID_KEY, "");
-		launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.DEVICE_UUID_KEY, "");
-		launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.DEBUG_PORT_KEY,
-				AbstractLaunchConfigurationDelegate.DEFAULT_DEBUG_PORT);
-		launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.DEBUG_REMOTE_PORT_KEY,
-				AbstractLaunchConfigurationDelegate.DEFAULT_DEBUG_REMOTE_PORT);
-		launchConfigurationWorkingCopy.setAttribute(ATTR_GOALS, "moe:xcodebuild");
+		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.SIMULATOR_UUID_KEY, "");
+		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.DEVICE_UUID_KEY, "");
+		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.DEBUG_PORT_KEY,
+				ApplicationManager.DEFAULT_DEBUG_PORT);
+		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.DEBUG_REMOTE_PORT_KEY,
+				ApplicationManager.DEFAULT_DEBUG_REMOTE_PORT);
 		launchConfigurationWorkingCopy.setAttribute(ATTR_RUNTIME, ProjectHelper.getMavenRuntimePath());
 		launchConfigurationWorkingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_ALLOW_TERMINATE, true);
-		launchConfigurationWorkingCopy.setAttribute(AbstractLaunchConfigurationDelegate.CONFIGURATION_KEY,
-				Configuration.RELEASE_NAME);
+		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.CONFIGURATION_KEY, Configuration.RELEASE_NAME);
 	}
 
 	private void initProjectSection(Composite parent) {
@@ -359,7 +351,7 @@ public class RunConfigurationEditorLocal extends AbstractLaunchConfigurationTab 
 		debugPortText = new Text(jdwpDebugGroup, SWT.SINGLE | SWT.BORDER);
 		debugPortText.addModifyListener(new MyModifyListener());
 		debugPortText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		debugPortText.setText(String.valueOf(AbstractLaunchConfigurationDelegate.DEFAULT_DEBUG_PORT));
+		debugPortText.setText(String.valueOf(ApplicationManager.DEFAULT_DEBUG_PORT));
 
 		remotePortLabel = new Label(jdwpDebugGroup, SWT.NONE);
 		remotePortLabel.setText("Remote Port:");
@@ -367,7 +359,7 @@ public class RunConfigurationEditorLocal extends AbstractLaunchConfigurationTab 
 		remotePortText = new Text(jdwpDebugGroup, SWT.SINGLE | SWT.BORDER);
 		remotePortText.addModifyListener(new MyModifyListener());
 		remotePortText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		remotePortText.setText(String.valueOf(AbstractLaunchConfigurationDelegate.DEFAULT_DEBUG_REMOTE_PORT));
+		remotePortText.setText(String.valueOf(ApplicationManager.DEFAULT_DEBUG_REMOTE_PORT));
 	}
 
 	private void updateItems(boolean runOnSimulator) {
