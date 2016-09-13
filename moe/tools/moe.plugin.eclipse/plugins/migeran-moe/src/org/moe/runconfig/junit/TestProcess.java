@@ -28,7 +28,6 @@ public class TestProcess implements IProcess {
 	private MOERemoteTestRunner testRunner;
 	private ApplicationManager manager;
 	private VMRunnerConfiguration configuration;
-	private boolean isRunning = false;
 
 	public TestProcess(VMRunnerConfiguration configuration, ApplicationManager manager) {
 		this.configuration = configuration;
@@ -42,12 +41,12 @@ public class TestProcess implements IProcess {
 
 	@Override
 	public boolean canTerminate() {
-		return isRunning;
+		return true;
 	}
 
 	@Override
 	public boolean isTerminated() {
-		return !isRunning;
+		return false;
 	}
 
 	@Override
@@ -55,7 +54,6 @@ public class TestProcess implements IProcess {
 		if (testRunner != null) {
 			testRunner.stop();
 		}
-		isRunning = false;
 	}
 
 	@Override
@@ -91,6 +89,5 @@ public class TestProcess implements IProcess {
 	public void run() throws Exception {
 		testRunner = new MOERemoteTestRunner();
 		testRunner.runTests(configuration.getProgramArguments(), manager);
-		isRunning = true;
 	}
 }
