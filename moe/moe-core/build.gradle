@@ -18,6 +18,8 @@ import org.moe.prebuilts.Script
 
 apply plugin: 'base'
 
+version '1.2.0'
+
 allprojects {
     repositories {
         jcenter()
@@ -41,13 +43,18 @@ ext {
 for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xcode/Release-iphoneos/libnatj.a",
                                         "${external.natj.root}/natj-ios/build/xcode/Release-iphonesimulator/libnatj.a"]],
                 [name: 'mac', outputs: ["${external.natj.root}/natj-mac/build/xcode/Release/libnatj.dylib"]],
-                [name: 'win', outputs: ["${external.natj.root}/natj-win/build/Release-Win64/natj.dll"]]]) {
+                [name: 'win', outputs: ["${external.natj.root}/natj-win/build/Release-Win64/natj.dll"]],
+                [name: 'api', outputs: [external.natj.jar.absolutePath], task: 'jar']]) {
     external.natj[target.name] = target.outputs.collect { file(it) }
 
     task("build_ext_natj_${target.name}", type: Exec) {
         workingDir external.natj.root
         executable './gradlew'
-        args ":natj-${target.name}:build"
+        if (target.task != null) {
+            args "${target.task}"
+        } else {
+            args ":natj-${target.name}:build"
+        }
 
         def log = file("build/ext_natj_${target.name}.log")
         mkdir log.parentFile

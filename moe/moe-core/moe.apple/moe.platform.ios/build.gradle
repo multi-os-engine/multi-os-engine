@@ -25,6 +25,7 @@ sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 tasks.classes.dependsOn ':ext_natj_ios'
+tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
     compile files(rootProject.external.natj.jar)
