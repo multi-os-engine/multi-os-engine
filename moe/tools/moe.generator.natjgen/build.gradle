@@ -4,6 +4,7 @@ targetCompatibility = "1.8"
 sourceCompatibility = "1.8"
 
 tasks.classes.dependsOn ':ext_natj_mac'
+tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
     compile fileTree(dir: 'lib', include: '*.jar')
