@@ -14,13 +14,10 @@ apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
 group 'org.multi-os-engine'
-version '1.1.0'
+version '1.2.0'
 
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
-
-tasks.classes.dependsOn ':ext_natj_mac'
-tasks.classes.dependsOn ':ext_natj_win'
 
 def PLUGIN_NAME = 'moe_intellij_plugin'
 
