@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.idea.actions;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -133,57 +134,65 @@ public class SynchronizeToXcodeAction extends AnAction {
         ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
             @Override
             public void run() {
-                try {
-                    progressIndicator = ProgressManager.getInstance().getProgressIndicator();
-                    if (progressIndicator == null) {
-                        progressIndicator = new EmptyProgressIndicator();
-                        progressIndicator.start();
-                        progressIndicator.popState();
-                    }
-                    //progressIndicator.setFraction((double) 1 / 3);
-                    List<VirtualFile> bindingList;
-                    if (files.length == 1 && files[0] instanceof VirtualDirectoryImpl) {
-                        bindingList = getAllFilesWithExt((VirtualDirectoryImpl) files[0], ".java");
-                    } else {
-                        bindingList = Arrays.asList(files);
-                    }
-                    if (bindingList != null) {
-                        MOEBindingGeneratorByJava generator = new MOEBindingGeneratorByJava();
-                        generator.generate(module, bindingList.toArray(new VirtualFile[]{}),
-                                ACTION_TITLE,
-                                new IConsole() {
-                                    @Override
-                                    public void write(String s) {
-                                        MOEToolWindow.getInstance(module.getProject()).log(s);
-                                    }
-                                }, new IMonitor() {
-                                    @Override
-                                    public void setText(String s) {
-                                        progressIndicator.setText(s);
-                                    }
 
-                                    @Override
-                                    public void addFraction(double var1) {
-                                        progressIndicator.setFraction(progressIndicator.getFraction() + var1);
-                                    }
+                ApplicationManager.getApplication().runReadAction(new Runnable() {
+                    public void run() {
 
-                                    @Override
-                                    public double getFractionsSize() {
-                                        return 1;
-                                        //return (double) 1 / 3;
-                                    }
+                        try {
+                            progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+                            if (progressIndicator == null) {
+                                progressIndicator = new EmptyProgressIndicator();
+                                progressIndicator.start();
+                                progressIndicator.popState();
+                            }
+                            //progressIndicator.setFraction((double) 1 / 3);
+                            List<VirtualFile> bindingList;
+                            if (files.length == 1 && files[0] instanceof VirtualDirectoryImpl) {
+                                bindingList = getAllFilesWithExt((VirtualDirectoryImpl) files[0], ".java");
+                            } else {
+                                bindingList = Arrays.asList(files);
+                            }
+                            if (bindingList != null) {
+                                MOEBindingGeneratorByJava generator = new MOEBindingGeneratorByJava();
+                                generator.generate(module, bindingList.toArray(new VirtualFile[]{}),
+                                        ACTION_TITLE,
+                                        new IConsole() {
+                                            @Override
+                                            public void write(String s) {
+                                                MOEToolWindow.getInstance(module.getProject()).log(s);
+                                            }
+                                        }, new IMonitor() {
+                                            @Override
+                                            public void setText(String s) {
+                                                progressIndicator.setText(s);
+                                            }
 
-                                    @Override
-                                    public boolean isCanceled() {
-                                        return progressIndicator.isCanceled();
-                                    }
-                                });
+                                            @Override
+                                            public void addFraction(double var1) {
+                                                progressIndicator.setFraction(progressIndicator.getFraction() + var1);
+                                            }
+
+                                            @Override
+                                            public double getFractionsSize() {
+                                                return 1;
+                                                //return (double) 1 / 3;
+                                            }
+
+                                            @Override
+                                            public boolean isCanceled() {
+                                                return progressIndicator.isCanceled();
+                                            }
+                                        });
+                            }
+                            //progressIndicator.setFraction(progressIndicator.getFraction() + (double) 1 / 3);
+                            progressIndicator.cancel();
+                        } catch (Exception e) {
+                            LOG.error("Unable to " + ACTION_TITLE, e);
+                        }
+
                     }
-                    //progressIndicator.setFraction(progressIndicator.getFraction() + (double) 1 / 3);
-                    progressIndicator.cancel();
-                } catch (Exception e) {
-                    LOG.error("Unable to " + ACTION_TITLE, e);
-                }
+                });
+
             }
         }, ACTION_TITLE, true, module.getProject());
 
