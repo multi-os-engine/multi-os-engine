@@ -84,7 +84,6 @@ public class Launcher implements IProcess {
 
 	@Override
 	public void terminate() throws DebugException {
-		sendEvent(new DebugEvent(this, DebugEvent.CHANGE));
 		sendEvent(new DebugEvent(this, DebugEvent.TERMINATE));
 		mLaunch.removeProcess(this);
 		outputStreamMonitor.stop();
@@ -106,7 +105,7 @@ public class Launcher implements IProcess {
 
 	@Override
 	public String getLabel() {
-		return getLaunch().getLaunchMode();
+		return getLaunch().getLaunchConfiguration().getName();
 	}
 
 	@Override

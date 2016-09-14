@@ -198,7 +198,8 @@ public class ApplicationManager {
 		MOEMavenLaunchDelegate delegate = new MOEMavenLaunchDelegate();
 		delegate.setRemoteArguments(args);
 		LOG.debug("MOEMavenLaunchDelegate set arguments");
-		delegate.launch(launchConfiguration, ILaunchManager.RUN_MODE, launch, progressMonitor);
+		MOEMavenLaunch mavenLaunch = new MOEMavenLaunch(launch);
+		delegate.launch(launchConfiguration, ILaunchManager.RUN_MODE, mavenLaunch, progressMonitor);
 
 		IProcess[] process = launch.getProcesses();
 
