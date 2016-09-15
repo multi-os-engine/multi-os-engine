@@ -22,7 +22,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 import org.moe.xosrt.binding.test.common.NativeCGPoint;
 import org.moe.xosrt.binding.test.common.NativeCGRect;
 

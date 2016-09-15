@@ -17,11 +17,11 @@ limitations under the License.
 package objc.tests.mem;
 
 import org.moe.natj.general.ptr.BoolPtr;
-import mac.NSObject;
-import mac.foundation.NSDictionary.Block_enumerateKeysAndObjectsUsingBlock;
-import mac.foundation.NSMutableArray;
-import mac.foundation.NSMutableDictionary;
-import mac.foundation.NSNumber;
+import apple.NSObject;
+import apple.foundation.NSDictionary.Block_enumerateKeysAndObjectsUsingBlock;
+import apple.foundation.NSMutableArray;
+import apple.foundation.NSMutableDictionary;
+import apple.foundation.NSNumber;
 import objc.binding.InstrumentedParent;
 import objc.binding.NSStringInstrumentor;
 import objc.util.MemUtils;

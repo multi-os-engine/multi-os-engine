@@ -23,7 +23,7 @@ import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.moe.natj.objc.ObjCException;
 import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.SEL;
-import mac.NSObject;
+import apple.NSObject;
 import org.moe.xosrt.binding.test.common.IdStub;
 import org.moe.xosrt.binding.test.common.NativeCGPoint;
 import org.moe.xosrt.binding.test.common.XrtTest;

@@ -16,7 +16,7 @@ limitations under the License.
 
 package org.moe.xosrt.binding.test.globalValueTest;
 
-import mac.NSObject;
+import apple.NSObject;
 import org.moe.xosrt.binding.test.common.XrtTest;
 import org.moe.xosrt.binding.test.globalValueTest.TestClasses.GlobalVarHandler;
 import org.junit.Test;

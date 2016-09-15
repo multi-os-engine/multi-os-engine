@@ -24,8 +24,8 @@ import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
-import mac.foundation.NSNumber;
+import apple.NSObject;
+import apple.foundation.NSNumber;
 
 @Generated
 @Runtime(ObjCRuntime.class)

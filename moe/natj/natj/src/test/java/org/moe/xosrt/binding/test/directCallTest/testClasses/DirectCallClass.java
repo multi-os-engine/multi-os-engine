@@ -29,7 +29,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 import org.moe.xosrt.binding.test.common.NativeCGPoint;
 import org.moe.xosrt.binding.test.common.NativeCGPointFloat;
 import org.moe.xosrt.binding.test.common.NativeCGRect;

@@ -97,11 +97,13 @@ limitations under the License.
 #import <TargetConditionals.h>
 #if TARGET_OS_IOS
 #define NATJ_PLATFORM "ios"
+#define NATJ_PLATFORM_ROOT_PACKAGE "apple"
 #elif TARGET_OS_TV
 #define NATJ_PLATFORM "tvos"
-#define NATJ_PLATFORM_ROOT_PACKAGE "ios"
+#define NATJ_PLATFORM_ROOT_PACKAGE "apple"
 #elif TARGET_OS_MAC
 #define NATJ_PLATFORM "mac"
+#define NATJ_PLATFORM_ROOT_PACKAGE "apple"
 #else
 #error "unsupported platform"
 #endif

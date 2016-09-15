@@ -25,9 +25,9 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
-import mac.foundation.NSError;
-import mac.foundation.NSNumber;
+import apple.NSObject;
+import apple.foundation.NSError;
+import apple.foundation.NSNumber;
 
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding

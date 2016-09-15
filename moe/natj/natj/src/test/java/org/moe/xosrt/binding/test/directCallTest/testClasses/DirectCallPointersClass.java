@@ -33,7 +33,7 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.ShortPtr;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 import org.moe.xosrt.binding.test.directCallTest.testClasses.Functions.FunctionMultipleTwoFloats;
 
 @ObjCClassName("DirectCallPointersClass")

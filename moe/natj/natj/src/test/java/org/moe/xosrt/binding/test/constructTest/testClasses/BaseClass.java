@@ -22,7 +22,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 
 @ObjCClassName("TestClassBase")
 public class BaseClass extends NSObject {

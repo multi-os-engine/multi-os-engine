@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
-import mac.NSObject;
+import apple.NSObject;
 import objc.binding.protocol.DefaultClassAttributes;
 
 @Runtime(ObjCRuntime.class)

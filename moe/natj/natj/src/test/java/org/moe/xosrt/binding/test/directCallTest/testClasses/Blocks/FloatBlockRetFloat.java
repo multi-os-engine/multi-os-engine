@@ -19,7 +19,7 @@ package org.moe.xosrt.binding.test.directCallTest.testClasses.Blocks;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
-import mac.NSObject;
+import apple.NSObject;
 
 @Runtime(ObjCRuntime.class)
 @Generated

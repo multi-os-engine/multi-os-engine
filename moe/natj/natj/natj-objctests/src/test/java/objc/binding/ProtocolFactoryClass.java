@@ -24,7 +24,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 import objc.binding.protocol.ProxiedConstPtrProtocol;
 import objc.binding.protocol.ProxiedPtrProtocol;
 import objc.binding.protocol.ProxiedValueProtocol;

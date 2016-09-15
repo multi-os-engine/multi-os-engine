@@ -20,17 +20,17 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
-import mac.NSObject;
-import mac.c.Globals.*;
-import mac.foundation.NSArray;
-import mac.foundation.NSArray.Block_enumerateObjectsUsingBlock;
-import mac.foundation.NSMutableArray;
+import apple.NSObject;
+import apple.c.Globals.*;
+import apple.foundation.NSArray;
+import apple.foundation.NSArray.Block_enumerateObjectsUsingBlock;
+import apple.foundation.NSMutableArray;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static mac.c.Globals.*;
+import static apple.c.Globals.*;
 
 public class JavaBlockTest {
 

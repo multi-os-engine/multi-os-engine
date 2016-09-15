@@ -20,7 +20,7 @@ package org.moe.xosrt.binding.test.directCallTest.testClasses;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 import org.moe.xosrt.binding.test.common._NSCopying;
 import org.moe.xosrt.binding.test.common._NSObject;
 

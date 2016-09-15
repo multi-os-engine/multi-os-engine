@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
-import mac.coregraphics.struct.CGSize;
+import apple.coregraphics.struct.CGSize;
 
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ProxiedValueProtocol")

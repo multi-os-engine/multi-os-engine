@@ -18,7 +18,7 @@ package objc.util;
 
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
-import mac.foundation.NSNumber;
+import apple.foundation.NSNumber;
 
 import java.io.DataInputStream;
 import java.io.IOException;

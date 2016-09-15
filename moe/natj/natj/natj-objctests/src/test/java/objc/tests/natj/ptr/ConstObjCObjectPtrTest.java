@@ -17,7 +17,7 @@ limitations under the License.
 package objc.tests.natj.ptr;
 
 import org.moe.natj.general.ptr.Ptr;
-import mac.foundation.NSNumber;
+import apple.foundation.NSNumber;
 import objc.binding.NativeDataSource;
 import objc.tests.NatJTest;
 import objc.util.DataSource;

@@ -16,7 +16,7 @@ limitations under the License.
 
 package objc.tests;
 
-import mac.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGRect;
 import org.junit.Assert;
 
 public abstract class NatJTest {

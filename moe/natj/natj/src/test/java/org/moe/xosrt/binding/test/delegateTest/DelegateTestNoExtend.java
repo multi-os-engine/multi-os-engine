@@ -17,7 +17,7 @@ limitations under the License.
 package org.moe.xosrt.binding.test.delegateTest;
 
 import org.moe.natj.general.NativeObject;
-import mac.NSObject;
+import apple.NSObject;
 import org.moe.xosrt.binding.test.common.XrtTest;
 import org.moe.xosrt.binding.test.common.xNSString;
 import org.moe.xosrt.binding.test.delegateTest.testClasses.BaseController;

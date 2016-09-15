@@ -16,9 +16,9 @@ limitations under the License.
 
 package objc.tests.mapping;
 
-import mac.foundation.NSMutableArray;
-import mac.foundation.NSMutableDictionary;
-import mac.foundation.NSMutableSet;
+import apple.foundation.NSMutableArray;
+import apple.foundation.NSMutableDictionary;
+import apple.foundation.NSMutableSet;
 import objc.binding.MappingClass;
 import org.junit.Assert;
 import org.junit.Test;

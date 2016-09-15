@@ -26,11 +26,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
-import mac.coregraphics.struct.CGPoint;
-import mac.coregraphics.struct.CGSize;
-import mac.foundation.NSError;
-import mac.foundation.NSMutableArray;
+import apple.NSObject;
+import apple.coregraphics.struct.CGPoint;
+import apple.coregraphics.struct.CGSize;
+import apple.foundation.NSError;
+import apple.foundation.NSMutableArray;
 
 @Generated
 @Runtime(ObjCRuntime.class)

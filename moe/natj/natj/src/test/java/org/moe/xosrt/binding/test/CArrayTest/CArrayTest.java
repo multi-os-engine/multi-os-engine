@@ -23,7 +23,7 @@ import org.moe.natj.general.ptr.LongPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
-import mac.NSObject;
+import apple.NSObject;
 import org.moe.xosrt.binding.test.CArrayTest.TestClasses.CArrayClass;
 import org.moe.xosrt.binding.test.common.XrtTest;
 import org.junit.Ignore;

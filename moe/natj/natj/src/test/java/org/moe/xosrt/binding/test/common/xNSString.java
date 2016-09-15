@@ -25,7 +25,7 @@ import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.CharPtr;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 
 @ObjCClassName("NSString")
 public class xNSString extends NSObject {

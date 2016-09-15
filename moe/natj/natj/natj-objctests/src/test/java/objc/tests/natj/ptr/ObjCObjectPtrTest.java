@@ -18,7 +18,7 @@ package objc.tests.natj.ptr;
 
 
 import org.moe.natj.general.ptr.Ptr;
-import mac.foundation.NSNumber;
+import apple.foundation.NSNumber;
 import objc.tests.NatJTest;
 import objc.util.DataSource;
 import org.junit.Assert;

@@ -21,7 +21,7 @@ import org.moe.natj.general.NativeObject;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 import org.moe.xosrt.binding.test.common.NativeCGPoint;
 import org.moe.xosrt.binding.test.common.xNSString;
 import org.moe.xosrt.binding.test.delegateTest.testClasses.protocols.UpperProtocol;

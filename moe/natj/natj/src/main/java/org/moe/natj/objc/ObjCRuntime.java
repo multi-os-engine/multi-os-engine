@@ -92,12 +92,12 @@ public class ObjCRuntime extends NativeRuntime {
 
         String platform = NatJ.getPlatformName();
         if ("ios".equals(platform)) {
-            String coreimage = "ios.coreimage";
-            String foundation = "ios.foundation";
-            String uikit = "ios.uikit";
-            String mapkit = "ios.mapkit";
-            String glkit = "ios.glkit";
-            platformRoot = "ios"; // As of iOS 7 NSObject moved to the ios package
+            String coreimage = "apple.coreimage";
+            String foundation = "apple.foundation";
+            String uikit = "apple.uikit";
+            String mapkit = "apple.mapkit";
+            String glkit = "apple.glkit";
+            platformRoot = "apple"; // As of iOS 7 NSObject moved to the apple package
 
             sdkPackages.add(coreimage);
             sdkPackages.add(foundation);
@@ -113,8 +113,8 @@ public class ObjCRuntime extends NativeRuntime {
             preferablePackagesForPrefixes.put("MK", new HashSet<String>(Arrays.asList(mapkit)));
             preferablePackagesForPrefixes.put("GLK", new HashSet<String>(Arrays.asList(glkit)));
         } else if ("mac".equals(platform)) {
-            String foundation = "mac.foundation";
-            platformRoot = "mac";
+            String foundation = "apple.foundation";
+            platformRoot = "apple";
 
             sdkPackages.add(foundation);
             sdkPackages.add(platformRoot);
@@ -122,11 +122,11 @@ public class ObjCRuntime extends NativeRuntime {
             preferablePackagesForPrefixes.put("NS",
                     new HashSet<String>(Arrays.asList(foundation, platformRoot)));
         } else if ("tvos".equals(platform)) {
-            String coreimage = "ios.coreimage";
-            String foundation = "ios.foundation";
-            String uikit = "ios.uikit";
-            String glkit = "ios.glkit";
-            platformRoot = "ios"; // As of iOS 7 NSObject moved to the ios package
+            String coreimage = "apple.coreimage";
+            String foundation = "apple.foundation";
+            String uikit = "apple.uikit";
+            String glkit = "apple.glkit";
+            platformRoot = "apple";
 
             sdkPackages.add(coreimage);
             sdkPackages.add(foundation);

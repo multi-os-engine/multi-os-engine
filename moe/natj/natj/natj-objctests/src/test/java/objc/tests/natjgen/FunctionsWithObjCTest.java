@@ -18,9 +18,9 @@ package objc.tests.natjgen;
 
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCObject;
-import mac.NSObject;
-import mac.foundation.NSNumber;
-import mac.foundation.NSString;
+import apple.NSObject;
+import apple.foundation.NSNumber;
+import apple.foundation.NSString;
 import org.junit.Assert;
 import org.junit.Test;
 

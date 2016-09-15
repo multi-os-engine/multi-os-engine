@@ -16,8 +16,8 @@ limitations under the License.
 
 package org.moe.xosrt.binding.objc.wildcard.cast;
 
-import mac.NSObject;
-import mac.foundation.NSArray;
+import apple.NSObject;
+import apple.foundation.NSArray;
 import org.moe.xosrt.binding.objc.wildcard.cast.bind.A;
 import org.moe.xosrt.binding.test.common.XrtTest;
 import org.junit.Ignore;

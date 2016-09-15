@@ -17,9 +17,8 @@ limitations under the License.
 package objc.tests.protocolproxy;
 
 import org.moe.natj.general.ptr.impl.PtrFactory;
-import org.moe.natj.objc.ObjCOpaqueObject;
 import org.moe.natj.objc.ObjCRuntime;
-import mac.coregraphics.struct.CGSize;
+import apple.coregraphics.struct.CGSize;
 import objc.binding.ProtocolFactoryClass;
 import objc.binding.protocol.ProxiedConstPtrProtocol;
 import objc.binding.protocol.ProxiedPtrProtocol;
@@ -27,8 +26,6 @@ import objc.binding.protocol.ProxiedValueProtocol;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.lang.reflect.Proxy;
 
 public class ProtocolProxyTest {
 

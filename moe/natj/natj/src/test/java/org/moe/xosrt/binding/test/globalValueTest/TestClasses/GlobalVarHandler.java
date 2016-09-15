@@ -20,7 +20,7 @@ import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NFloat;
-import mac.NSObject;
+import apple.NSObject;
 
 public class GlobalVarHandler {
 

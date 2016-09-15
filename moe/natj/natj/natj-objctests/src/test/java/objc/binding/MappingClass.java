@@ -24,10 +24,10 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
-import mac.foundation.NSArray;
-import mac.foundation.NSDictionary;
-import mac.foundation.NSSet;
+import apple.NSObject;
+import apple.foundation.NSArray;
+import apple.foundation.NSDictionary;
+import apple.foundation.NSSet;
 
 import java.util.Iterator;
 import java.util.List;

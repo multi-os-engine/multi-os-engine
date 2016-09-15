@@ -18,7 +18,7 @@ package org.moe.xosrt.binding.test.delegateTest.testClasses.delegates;
 
 import org.moe.natj.general.NativeObject;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 import org.moe.xosrt.binding.test.common.xNSString;
 import org.moe.xosrt.binding.test.delegateTest.testClasses.BaseController;
 import org.moe.xosrt.binding.test.delegateTest.testClasses.protocols.BaseProtocol;

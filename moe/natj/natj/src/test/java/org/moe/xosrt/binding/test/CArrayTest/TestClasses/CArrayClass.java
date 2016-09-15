@@ -28,7 +28,7 @@ import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.LongPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
-import mac.NSObject;
+import apple.NSObject;
 
 @Library("TestClasses")
 @Generated

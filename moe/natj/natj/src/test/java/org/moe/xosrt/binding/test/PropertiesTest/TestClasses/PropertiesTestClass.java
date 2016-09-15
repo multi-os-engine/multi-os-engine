@@ -21,7 +21,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 
 public class PropertiesTestClass extends NSObject {
 

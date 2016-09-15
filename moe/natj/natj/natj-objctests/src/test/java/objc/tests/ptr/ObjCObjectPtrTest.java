@@ -18,8 +18,8 @@ package objc.tests.ptr;
 
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
-import mac.foundation.NSError;
-import mac.foundation.NSNumber;
+import apple.foundation.NSError;
+import apple.foundation.NSNumber;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;

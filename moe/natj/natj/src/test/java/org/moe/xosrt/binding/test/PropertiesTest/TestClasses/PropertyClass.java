@@ -19,7 +19,7 @@ package org.moe.xosrt.binding.test.PropertiesTest.TestClasses;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.objc.ann.Selector;
-import mac.NSObject;
+import apple.NSObject;
 
 public class PropertyClass extends NSObject {
 
