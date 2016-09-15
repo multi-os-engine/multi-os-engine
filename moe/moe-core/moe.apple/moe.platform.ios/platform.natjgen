@@ -1,6 +1,6 @@
 {
   "platform": "iOS",
-  "package-base": "ios",
+  "package-base": "apple",
   "base-sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk",
   "header-search-paths": [
     "${PROJECT}/DefineHelpers"
@@ -116,7 +116,7 @@
       "actions": [
         {
           "action": "replace-package-base",
-          "value": "ios.opengles"
+          "value": "apple.opengles"
         }
       ]
     },
@@ -131,7 +131,7 @@
       "actions": [
         {
           "action": "replace-package-base",
-          "value": "ios.opengles1"
+          "value": "apple.opengles1"
         }
       ]
     },
@@ -146,7 +146,7 @@
       "actions": [
         {
           "action": "replace-package-base",
-          "value": "ios.opengles2"
+          "value": "apple.opengles2"
         }
       ]
     },
@@ -161,7 +161,7 @@
       "actions": [
         {
           "action": "replace-package-base",
-          "value": "ios.opengles3"
+          "value": "apple.opengles3"
         }
       ]
     }

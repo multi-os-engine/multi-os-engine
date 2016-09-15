@@ -16,56 +16,54 @@ limitations under the License.
 
 package org.moe.mdt.junit;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import apple.NSObject;
+import apple.coregraphics.struct.CGRect;
+import apple.foundation.NSArray;
+import apple.foundation.NSBundle;
+import apple.foundation.NSCharacterSet;
+import apple.foundation.NSCoder;
+import apple.foundation.NSData;
+import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
+import apple.foundation.NSString;
+import apple.foundation.NSURL;
+import apple.foundation.NSUserActivity;
+import apple.foundation.enums.Enums;
+import apple.uikit.UIAlertView;
+import apple.uikit.UIApplication;
+import apple.uikit.UILocalNotification;
+import apple.uikit.UIScreen;
+import apple.uikit.UIUserNotificationSettings;
+import apple.uikit.UIViewController;
+import apple.uikit.UIWindow;
+import apple.uikit.c.UIKit;
+import apple.uikit.protocol.UIApplicationDelegate;
 import org.junit.runner.Description;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
-
-import ios.NSObject;
-import ios.coregraphics.struct.CGRect;
-import ios.foundation.NSArray;
-import ios.foundation.NSBundle;
-import ios.foundation.NSCharacterSet;
-import ios.foundation.NSCoder;
-import ios.foundation.NSData;
-import ios.foundation.NSDictionary;
-import ios.foundation.NSError;
-import ios.foundation.NSString;
-import ios.foundation.NSURL;
-import ios.foundation.NSUserActivity;
-import ios.foundation.enums.Enums;
-import ios.uikit.UIAlertView;
-import ios.uikit.UIApplication;
-import ios.uikit.UILocalNotification;
-import ios.uikit.UIScreen;
-import ios.uikit.UIUserNotificationSettings;
-import ios.uikit.UIViewController;
-import ios.uikit.UIWindow;
-import ios.uikit.c.UIKit;
-import ios.uikit.protocol.UIApplicationDelegate;
-
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.NInt;
+import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.NotImplemented;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.Selector;
-import org.moe.natj.general.ann.NUInt;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelegate {
 
     private static void runTests(Class<?>[] testsClasses) {
 
-    	final boolean runGCAfterTest = "true".equals(System.getProperty("moe.test.postgc", "false"));
+        final boolean runGCAfterTest = "true".equals(System.getProperty("moe.test.postgc", "false"));
         JUnitCore junit = new JUnitCore();
         junit.addListener(new RunListener() {
             /**
@@ -83,8 +81,8 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
              */
             private void defineTest(Description description) {
                 if (description.isTest()) {
-                    sendMessage(MessageIds.TEST_DEFINE + ":" + description.getClassName() + "-"
-                            + description.getMethodName());
+                    sendMessage(MessageIds.TEST_DEFINE + ":" + description.getClassName() + "-" + description
+                            .getMethodName());
                     return;
                 }
                 if (description.getChildren() == null || description.getChildren().size() == 0) {
@@ -106,18 +104,17 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
              *  Called when an atomic test is about to be started.
              */
             public void testStarted(Description description) throws java.lang.Exception {
-                sendMessage(MessageIds.TEST_START + ":" + description.getClassName() + "-"
-                        + description.getMethodName());
+                sendMessage(
+                        MessageIds.TEST_START + ":" + description.getClassName() + "-" + description.getMethodName());
             }
 
             /**
              *  Called when an atomic test has finished, whether the test succeeds or fails.
              */
             public void testFinished(Description description) throws java.lang.Exception {
-                sendMessage(MessageIds.TEST_END + ":" + description.getClassName() + "-"
-                        + description.getMethodName());
+                sendMessage(MessageIds.TEST_END + ":" + description.getClassName() + "-" + description.getMethodName());
                 if (runGCAfterTest) {
-                	Runtime.getRuntime().gc();
+                    Runtime.getRuntime().gc();
                 }
             }
 
@@ -125,8 +122,7 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
              *  Called when an atomic test fails.
              */
             public void testFailure(Failure failure) throws java.lang.Exception {
-                sendMessage(MessageIds.TEST_FAILED + ":" + failure.getTestHeader() + ":"
-                        + failure.getTrace());
+                sendMessage(MessageIds.TEST_FAILED + ":" + failure.getTestHeader() + ":" + failure.getTrace());
             }
 
             /**
@@ -134,8 +130,8 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
              * annotated with Ignore.
              */
             public void testIgnored(Description description) throws java.lang.Exception {
-                sendMessage(MessageIds.TEST_IGNORED + ":" + description.getClassName() + "-"
-                        + description.getMethodName());
+                sendMessage(
+                        MessageIds.TEST_IGNORED + ":" + description.getClassName() + "-" + description.getMethodName());
             }
         });
         junit.run(testsClasses);
@@ -164,7 +160,7 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
         System.out.print("\n" + message + "\n");
         System.out.flush();
     }
-    
+
     private static String[] args;
 
     public static void main(String[] args) {
@@ -187,9 +183,9 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
     }
 
     private UIWindow window;
-    
+
     private final Runnable testRunner = new Runnable() {
-        
+
         @Override
         public void run() {
             ArrayList<Class<?>> classList = new ArrayList<Class<?>>();
@@ -212,10 +208,10 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
             }
             if (classList.size() == 0) {
                 String str = NSBundle.mainBundle().pathForResourceOfType("classlist", "txt");
-                NSString contents = NSString.stringWithContentsOfFileEncodingError(str,
-                    Enums.NSUTF8StringEncoding, null);
-                NSArray components = contents.componentsSeparatedByCharactersInSet(
-                    NSCharacterSet.newlineCharacterSet());
+                NSString contents = NSString
+                        .stringWithContentsOfFileEncodingError(str, Enums.NSUTF8StringEncoding, null);
+                NSArray components = contents
+                        .componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet());
                 for (String sub : (List<String>)components) {
                     if (sub.length() == 0) {
                         continue;
@@ -246,8 +242,7 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
 
     @Override
     @Selector("application:didFinishLaunchingWithOptions:")
-    public boolean applicationDidFinishLaunchingWithOptions(
-            UIApplication application, NSDictionary launchOptions) {
+    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions) {
         window = UIWindow.alloc().initWithFrame(UIScreen.mainScreen().bounds());
 
         UIViewController controller = UIViewController.alloc().init();
@@ -280,160 +275,136 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
     @Override
     @Selector("application:didChangeStatusBarFrame:")
     @IsOptional
-    public native void applicationDidChangeStatusBarFrame(
-            UIApplication application, @ByValue CGRect oldStatusBarFrame);
+    public native void applicationDidChangeStatusBarFrame(UIApplication application, @ByValue CGRect oldStatusBarFrame);
 
     @NotImplemented
     @Override
     @Selector("application:didChangeStatusBarOrientation:")
     @IsOptional
-    public native void applicationDidChangeStatusBarOrientation(
-            UIApplication application, @NInt long oldStatusBarOrientation);
+    public native void applicationDidChangeStatusBarOrientation(UIApplication application,
+            @NInt long oldStatusBarOrientation);
 
     @NotImplemented
     @Override
     @Selector("application:didDecodeRestorableStateWithCoder:")
     @IsOptional
-    public native void applicationDidDecodeRestorableStateWithCoder(
-            UIApplication application, NSCoder coder);
+    public native void applicationDidDecodeRestorableStateWithCoder(UIApplication application, NSCoder coder);
 
     @NotImplemented
     @Override
     @Selector("application:didFailToRegisterForRemoteNotificationsWithError:")
     @IsOptional
-    public native void applicationDidFailToRegisterForRemoteNotificationsWithError(
-            UIApplication application, NSError error);
+    public native void applicationDidFailToRegisterForRemoteNotificationsWithError(UIApplication application,
+            NSError error);
 
     @NotImplemented
     @Override
     @Selector("application:didReceiveLocalNotification:")
     @IsOptional
-    public native void applicationDidReceiveLocalNotification(
-            UIApplication application, UILocalNotification notification);
+    public native void applicationDidReceiveLocalNotification(UIApplication application,
+            UILocalNotification notification);
 
     @NotImplemented
     @Override
     @Selector("application:didReceiveRemoteNotification:")
     @IsOptional
-    public native void applicationDidReceiveRemoteNotification(
-            UIApplication application, NSDictionary userInfo);
+    public native void applicationDidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo);
 
     @NotImplemented
     @Override
     @Selector("application:didReceiveRemoteNotification:fetchCompletionHandler:")
     @IsOptional
-    public native void applicationDidReceiveRemoteNotificationFetchCompletionHandler(
-            UIApplication application,
+    public native void applicationDidReceiveRemoteNotificationFetchCompletionHandler(UIApplication application,
             NSDictionary userInfo,
-            @ObjCBlock(name = "call_applicationDidReceiveRemoteNotificationFetchCompletionHandler")
-            UIApplicationDelegate
-            .Block_applicationDidReceiveRemoteNotificationFetchCompletionHandler completionHandler);
+            @ObjCBlock(name = "call_applicationDidReceiveRemoteNotificationFetchCompletionHandler") UIApplicationDelegate.Block_applicationDidReceiveRemoteNotificationFetchCompletionHandler completionHandler);
 
     @NotImplemented
     @Override
     @Selector("application:didRegisterForRemoteNotificationsWithDeviceToken:")
     @IsOptional
-    public native void applicationDidRegisterForRemoteNotificationsWithDeviceToken(
-            UIApplication application, NSData deviceToken);
+    public native void applicationDidRegisterForRemoteNotificationsWithDeviceToken(UIApplication application,
+            NSData deviceToken);
 
     @NotImplemented
     @Override
     @Selector("application:handleEventsForBackgroundURLSession:completionHandler:")
     @IsOptional
-    public native void applicationHandleEventsForBackgroundURLSessionCompletionHandler(
-            UIApplication application,
+    public native void applicationHandleEventsForBackgroundURLSessionCompletionHandler(UIApplication application,
             String identifier,
-            @ObjCBlock(name
-                = "call_applicationHandleEventsForBackgroundURLSessionCompletionHandler")
-            UIApplicationDelegate
-            .Block_applicationHandleEventsForBackgroundURLSessionCompletionHandler
-            completionHandler);
+            @ObjCBlock(name = "call_applicationHandleEventsForBackgroundURLSessionCompletionHandler") UIApplicationDelegate.Block_applicationHandleEventsForBackgroundURLSessionCompletionHandler completionHandler);
 
     @NotImplemented
     @Override
     @Selector("application:handleOpenURL:")
     @IsOptional
-    public native boolean applicationHandleOpenURL(UIApplication application,
-            NSURL url);
+    public native boolean applicationHandleOpenURL(UIApplication application, NSURL url);
 
     @NotImplemented
     @Override
     @Selector("application:openURL:sourceApplication:annotation:")
     @IsOptional
-    public native boolean applicationOpenURLSourceApplicationAnnotation(
-            UIApplication application,
-            NSURL url,
-            String sourceApplication,
-            @Mapped(org.moe.natj.objc.map.ObjCObjectMapper.class) Object annotation);
+    public native boolean applicationOpenURLSourceApplicationAnnotation(UIApplication application, NSURL url,
+            String sourceApplication, @Mapped(org.moe.natj.objc.map.ObjCObjectMapper.class) Object annotation);
 
     @NotImplemented
     @Override
     @Selector("application:performFetchWithCompletionHandler:")
     @IsOptional
-    public native void applicationPerformFetchWithCompletionHandler(
-            UIApplication application,
-            @ObjCBlock(name = "call_applicationPerformFetchWithCompletionHandler")
-            UIApplicationDelegate
-            .Block_applicationPerformFetchWithCompletionHandler completionHandler);
+    public native void applicationPerformFetchWithCompletionHandler(UIApplication application,
+            @ObjCBlock(name = "call_applicationPerformFetchWithCompletionHandler") UIApplicationDelegate.Block_applicationPerformFetchWithCompletionHandler completionHandler);
 
     @NotImplemented
     @Override
     @Selector("application:shouldRestoreApplicationState:")
     @IsOptional
-    public native boolean applicationShouldRestoreApplicationState(
-            UIApplication application, NSCoder coder);
+    public native boolean applicationShouldRestoreApplicationState(UIApplication application, NSCoder coder);
 
     @NotImplemented
     @Override
     @Selector("application:shouldSaveApplicationState:")
     @IsOptional
-    public native boolean applicationShouldSaveApplicationState(
-            UIApplication application, NSCoder coder);
+    public native boolean applicationShouldSaveApplicationState(UIApplication application, NSCoder coder);
 
     @NotImplemented
     @Override
     @NUInt
     @Selector("application:supportedInterfaceOrientationsForWindow:")
     @IsOptional
-    public native long applicationSupportedInterfaceOrientationsForWindow(
-            UIApplication application, UIWindow window);
+    public native long applicationSupportedInterfaceOrientationsForWindow(UIApplication application, UIWindow window);
 
     @NotImplemented
     @Override
     @Selector("application:viewControllerWithRestorationIdentifierPath:coder:")
     @IsOptional
     public native UIViewController applicationViewControllerWithRestorationIdentifierPathCoder(
-            UIApplication application, NSArray identifierComponents,
-            NSCoder coder);
+            UIApplication application, NSArray identifierComponents, NSCoder coder);
 
     @NotImplemented
     @Override
     @Selector("application:willChangeStatusBarFrame:")
     @IsOptional
-    public native void applicationWillChangeStatusBarFrame(
-            UIApplication application, @ByValue CGRect newStatusBarFrame);
+    public native void applicationWillChangeStatusBarFrame(UIApplication application,
+            @ByValue CGRect newStatusBarFrame);
 
     @NotImplemented
     @Override
     @Selector("application:willChangeStatusBarOrientation:duration:")
     @IsOptional
-    public native void applicationWillChangeStatusBarOrientationDuration(
-            UIApplication application, @NInt long newStatusBarOrientation,
-            double duration);
+    public native void applicationWillChangeStatusBarOrientationDuration(UIApplication application,
+            @NInt long newStatusBarOrientation, double duration);
 
     @NotImplemented
     @Override
     @Selector("application:willEncodeRestorableStateWithCoder:")
     @IsOptional
-    public native void applicationWillEncodeRestorableStateWithCoder(
-            UIApplication application, NSCoder coder);
+    public native void applicationWillEncodeRestorableStateWithCoder(UIApplication application, NSCoder coder);
 
     @NotImplemented
     @Override
     @Selector("application:willFinishLaunchingWithOptions:")
     @IsOptional
-    public native boolean applicationWillFinishLaunchingWithOptions(
-            UIApplication application, NSDictionary launchOptions);
+    public native boolean applicationWillFinishLaunchingWithOptions(UIApplication application,
+            NSDictionary launchOptions);
 
     @NotImplemented
     @Override
@@ -457,29 +428,25 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
     @Override
     @Selector("applicationDidReceiveMemoryWarning:")
     @IsOptional
-    public native void applicationDidReceiveMemoryWarning(
-            UIApplication application);
+    public native void applicationDidReceiveMemoryWarning(UIApplication application);
 
     @NotImplemented
     @Override
     @Selector("applicationProtectedDataDidBecomeAvailable:")
     @IsOptional
-    public native void applicationProtectedDataDidBecomeAvailable(
-            UIApplication application);
+    public native void applicationProtectedDataDidBecomeAvailable(UIApplication application);
 
     @NotImplemented
     @Override
     @Selector("applicationProtectedDataWillBecomeUnavailable:")
     @IsOptional
-    public native void applicationProtectedDataWillBecomeUnavailable(
-            UIApplication application);
+    public native void applicationProtectedDataWillBecomeUnavailable(UIApplication application);
 
     @NotImplemented
     @Override
     @Selector("applicationSignificantTimeChange:")
     @IsOptional
-    public native void applicationSignificantTimeChange(
-            UIApplication application);
+    public native void applicationSignificantTimeChange(UIApplication application);
 
     @NotImplemented
     @Override
@@ -503,83 +470,64 @@ public class MoeRemoteTestRunner extends NSObject implements UIApplicationDelega
     @Override
     @Selector("application:continueUserActivity:restorationHandler:")
     @IsOptional
-    public native boolean applicationContinueUserActivityRestorationHandler(
-            UIApplication application,
+    public native boolean applicationContinueUserActivityRestorationHandler(UIApplication application,
             NSUserActivity userActivity,
-            @ObjCBlock(name = "call_applicationContinueUserActivityRestorationHandler")
-            UIApplicationDelegate
-            .Block_applicationContinueUserActivityRestorationHandler restorationHandler);
+            @ObjCBlock(name = "call_applicationContinueUserActivityRestorationHandler") UIApplicationDelegate.Block_applicationContinueUserActivityRestorationHandler restorationHandler);
 
     @NotImplemented
     @Override
     @Selector("application:didFailToContinueUserActivityWithType:error:")
     @IsOptional
-    public native void applicationDidFailToContinueUserActivityWithTypeError(
-            UIApplication application, String userActivityType, NSError error);
+    public native void applicationDidFailToContinueUserActivityWithTypeError(UIApplication application,
+            String userActivityType, NSError error);
 
     @NotImplemented
     @Override
     @Selector("application:didRegisterUserNotificationSettings:")
     @IsOptional
-    public native void applicationDidRegisterUserNotificationSettings(
-            UIApplication application,
+    public native void applicationDidRegisterUserNotificationSettings(UIApplication application,
             UIUserNotificationSettings notificationSettings);
 
     @NotImplemented
     @Override
     @Selector("application:didUpdateUserActivity:")
     @IsOptional
-    public native void applicationDidUpdateUserActivity(
-            UIApplication application, NSUserActivity userActivity);
+    public native void applicationDidUpdateUserActivity(UIApplication application, NSUserActivity userActivity);
 
     @NotImplemented
     @Override
     @Selector("application:handleActionWithIdentifier:forLocalNotification:completionHandler:")
     @IsOptional
     public native void applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler(
-            UIApplication application,
-            String identifier,
-            UILocalNotification notification,
-            @ObjCBlock(name
-                = "call_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler")
-            UIApplicationDelegate
-            .Block_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler
-            completionHandler);
+            UIApplication application, String identifier, UILocalNotification notification,
+            @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler") UIApplicationDelegate.Block_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler completionHandler);
 
     @NotImplemented
     @Override
     @Selector("application:handleActionWithIdentifier:forRemoteNotification:completionHandler:")
     @IsOptional
     public native void applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler(
-            UIApplication application,
-            String identifier,
-            NSDictionary userInfo,
-            @ObjCBlock(name
-                = "call_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler"
-                )
-            UIApplicationDelegate
-            .Block_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler
-            completionHandler);
+            UIApplication application, String identifier, NSDictionary userInfo,
+            @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler") UIApplicationDelegate.Block_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler completionHandler);
 
     @NotImplemented
     @Override
     @Selector("application:shouldAllowExtensionPointIdentifier:")
     @IsOptional
-    public native boolean applicationShouldAllowExtensionPointIdentifier(
-            UIApplication application, String extensionPointIdentifier);
+    public native boolean applicationShouldAllowExtensionPointIdentifier(UIApplication application,
+            String extensionPointIdentifier);
 
     @NotImplemented
     @Override
     @Selector("application:willContinueUserActivityWithType:")
     @IsOptional
-    public native boolean applicationWillContinueUserActivityWithType(
-            UIApplication application, String userActivityType);
+    public native boolean applicationWillContinueUserActivityWithType(UIApplication application,
+            String userActivityType);
 
     @NotImplemented
     @Override
     @Selector("application:handleWatchKitExtensionRequest:reply:")
     @IsOptional
-    public native void applicationHandleWatchKitExtensionRequestReply(
-            UIApplication application, NSDictionary userInfo,
+    public native void applicationHandleWatchKitExtensionRequestReply(UIApplication application, NSDictionary userInfo,
             Block_applicationHandleWatchKitExtensionRequestReply reply);
 }

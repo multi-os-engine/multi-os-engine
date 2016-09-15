@@ -1,0 +1,292 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+package apple.eventkit;
+
+import apple.NSObject;
+import apple.foundation.NSArray;
+import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
+import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
+import org.moe.natj.c.ann.FunctionPtr;
+import org.moe.natj.general.NatJ;
+import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NInt;
+import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.VoidPtr;
+import org.moe.natj.objc.Class;
+import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
+
+@Generated
+@Library("EventKit")
+@Runtime(ObjCRuntime.class)
+@ObjCClassBinding
+public class EKRecurrenceRule extends EKObject implements NSCopying {
+    static {
+        NatJ.register();
+    }
+
+    @Generated
+    protected EKRecurrenceRule(Pointer peer) {
+        super(peer);
+    }
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native EKRecurrenceRule alloc();
+
+    /**
+     * calendarIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/calendarIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("calendarIdentifier")
+    public native String calendarIdentifier();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * daysOfTheMonth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/daysOfTheMonth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("daysOfTheMonth")
+    public native NSArray<? extends NSNumber> daysOfTheMonth();
+
+    /**
+     * daysOfTheWeek</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/daysOfTheWeek">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("daysOfTheWeek")
+    public native NSArray<? extends EKRecurrenceDayOfWeek> daysOfTheWeek();
+
+    /**
+     * daysOfTheYear</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/daysOfTheYear">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("daysOfTheYear")
+    public native NSArray<? extends NSNumber> daysOfTheYear();
+
+    /**
+     * firstDayOfTheWeek</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/firstDayOfTheWeek">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("firstDayOfTheWeek")
+    @NInt
+    public native long firstDayOfTheWeek();
+
+    /**
+     * frequency</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/frequency">iOS Dev Center</a>
+     */
+    @NInt
+    @Generated
+    @Selector("frequency")
+    public native long frequency();
+
+    @Generated
+    @Selector("init")
+    public native EKRecurrenceRule init();
+
+    /**
+     * initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instm/EKRecurrenceRule/initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initRecurrenceWithFrequency:interval:daysOfTheWeek:daysOfTheMonth:monthsOfTheYear:weeksOfTheYear:daysOfTheYear:setPositions:end:")
+    public native EKRecurrenceRule initRecurrenceWithFrequencyIntervalDaysOfTheWeekDaysOfTheMonthMonthsOfTheYearWeeksOfTheYearDaysOfTheYearSetPositionsEnd(
+            @NInt long type, @NInt long interval, NSArray<? extends EKRecurrenceDayOfWeek> days,
+            NSArray<? extends NSNumber> monthDays, NSArray<? extends NSNumber> months,
+            NSArray<? extends NSNumber> weeksOfTheYear, NSArray<? extends NSNumber> daysOfTheYear,
+            NSArray<? extends NSNumber> setPositions, EKRecurrenceEnd end);
+
+    /**
+     * initRecurrenceWithFrequency:interval:end:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instm/EKRecurrenceRule/initRecurrenceWithFrequency:interval:end:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initRecurrenceWithFrequency:interval:end:")
+    public native EKRecurrenceRule initRecurrenceWithFrequencyIntervalEnd(@NInt long type, @NInt long interval,
+            EKRecurrenceEnd end);
+
+    /**
+     * interval</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/interval">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("interval")
+    @NInt
+    public native long interval();
+
+    /**
+     * monthsOfTheYear</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/monthsOfTheYear">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("monthsOfTheYear")
+    public native NSArray<? extends NSNumber> monthsOfTheYear();
+
+    /**
+     * recurrenceEnd</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/recurrenceEnd">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recurrenceEnd")
+    public native EKRecurrenceEnd recurrenceEnd();
+
+    /**
+     * setPositions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/setPositions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPositions")
+    public native NSArray<? extends NSNumber> setPositions();
+
+    /**
+     * recurrenceEnd</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/recurrenceEnd">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRecurrenceEnd:")
+    public native void setRecurrenceEnd(EKRecurrenceEnd value);
+
+    /**
+     * weeksOfTheYear</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceRuleClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceRule/weeksOfTheYear">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("weeksOfTheYear")
+    public native NSArray<? extends NSNumber> weeksOfTheYear();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+}
