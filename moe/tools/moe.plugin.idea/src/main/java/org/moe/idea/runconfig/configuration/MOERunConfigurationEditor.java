@@ -17,7 +17,6 @@ limitations under the License.
 package org.moe.idea.runconfig.configuration;
 
 import com.intellij.execution.ExecutionBundle;
-import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configuration.BrowseModuleValueActionListener;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.ide.util.PackageChooserDialog;
@@ -35,6 +34,7 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiPackage;
 import com.intellij.ui.EditorTextFieldWithBrowseButton;
+import com.intellij.util.ui.UIUtil;
 import org.jetbrains.annotations.NotNull;
 import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase;
@@ -57,7 +57,6 @@ import res.MOEText;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -97,6 +96,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
     private JButton testButton;
     private JButton importButton;
     private JTextField gradleRepositoriesTextField;
+    private ArgumentsPanel argumentsPanel;
     private Project myProject;
     private final JRadioButton[] myTestingType2RadioButton = new JRadioButton[3];
     private JComponent anchor;
@@ -106,6 +106,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
 
     public MOERunConfigurationEditor(Project project) {
         this.myProject = project;
+        anchor = UIUtil.mergeComponentsWithAnchor(argumentsPanel);
     }
 
 
@@ -117,6 +118,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
             deviceRadio.setSelected(true);
         }
         populateControls(configuration);
+        argumentsPanel.resetEditorFrom(configuration);
     }
 
     @Override
@@ -213,6 +215,8 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         remoteBuildTimeout = remoteBuildTimeout == null || remoteBuildTimeout.isEmpty() ? "0" : remoteBuildTimeout;
         configuration.setRemoteKeychainLocktimeout(Integer.parseInt(remoteBuildTimeout));
         configuration.setRemoteGradleRepositories(gradleRepositoriesTextField.getText());
+
+        argumentsPanel.applyEditorTo(configuration);
     }
 
     @NotNull
@@ -494,6 +498,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         this.anchor = anchor;
         myPackageComponent.setAnchor(anchor);
         myClassComponent.setAnchor(anchor);
+        argumentsPanel.setAnchor(anchor);
     }
 
     private void populateRemoteBuild(MOERunConfiguration configuration) {

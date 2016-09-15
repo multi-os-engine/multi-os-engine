@@ -76,11 +76,40 @@ public class MOEGradleRunner {
             }
         }
 
+        List<String> vmArgs = runConfig.getVMArguments();
+        if (vmArgs != null) {
+            for (String arg : vmArgs) {
+                if (arg != null && !arg.isEmpty()) {
+                    options.push("vmarg:" + arg);
+                }
+            }
+        }
+
+        List<String> environmentVariables = runConfig.getEnvironmentVariables();
+        if (environmentVariables != null) {
+            for (String arg : environmentVariables) {
+                if (arg != null && !arg.isEmpty()) {
+                    options.push("env:" + arg);
+                }
+            }
+        }
+
+        List<String> programArguments = runConfig.getProgramArguments();
+        if (programArguments != null) {
+            for (String arg : programArguments) {
+                if (arg != null && !arg.isEmpty()) {
+                    options.push("arg:" + arg);
+                }
+            }
+        }
+
         // Push test args
         if (runConfig.runJUnitTests()) {
             options.push("raw-test-output");
             for (String testArg : runConfig.getTestArgs()) {
-                options.push("arg:" + testArg);
+                if (testArg != null && !testArg.isEmpty()) {
+                    options.push("arg:" + testArg);
+                }
             }
         }
 

@@ -27,12 +27,19 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.JDOMExternalizerUtil;
 import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.openapi.util.text.StringUtil;
+import com.intellij.util.execution.ParametersListUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.moe.common.utils.OsUtils;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.utils.JDOMHelper;
 import org.moe.idea.utils.SimCtl;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MOERunConfiguration extends MOERunConfigurationBase {
     private String simulatorUdid;
@@ -43,6 +50,9 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
     private String testMethodName = "";
     private String testClassName = "";
     private String testPackageName = "";
+    private String vmArgs;
+    private String environmentVariables;
+    private String programArgs;
 
     public MOERunConfiguration(final Project project, final ConfigurationFactory factory) {
         super(project, factory);
@@ -85,6 +95,9 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         testMethodName = JDOMExternalizerUtil.readField(element, "testMethodName");
         testClassName = JDOMExternalizerUtil.readField(element, "testClassName");
         testPackageName = JDOMExternalizerUtil.readField(element, "testPackageName");
+        vmArgs = JDOMExternalizerUtil.readField(element, "vmArguments");
+        environmentVariables = JDOMExternalizerUtil.readField(element, "environmentVariables");
+        programArgs = JDOMExternalizerUtil.readField(element, "programArguments");
     }
 
     @Override
@@ -98,6 +111,9 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         JDOMExternalizerUtil.writeField(element, "testMethodName", testMethodName);
         JDOMExternalizerUtil.writeField(element, "testClassName", testClassName);
         JDOMExternalizerUtil.writeField(element, "testPackageName", testPackageName);
+        JDOMExternalizerUtil.writeField(element, "vmArguments", vmArgs);
+        JDOMExternalizerUtil.writeField(element, "environmentVariables", environmentVariables);
+        JDOMExternalizerUtil.writeField(element, "programArguments", programArgs);
     }
 
     public String simulatorUdid() {
@@ -186,4 +202,70 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         return actionType;
     }
 
+    public List<String> getVMArguments() {
+        return getArgumentList(getVMArgumentsString(), " ");
+    }
+
+    public List<String> getEnvironmentVariables() {
+        return getArgumentList(getEnvironmentVariablesString(), ";");
+    }
+
+    public List<String> getProgramArguments() {
+        return getArgumentList(getProgramArgumentsString(), " ");
+    }
+
+    public void setVMArguments(String vmargs) {
+        this.vmArgs = vmargs;
+    }
+
+    public void setEnvironmentVariables(String environmentVariables) {
+        this.environmentVariables = environmentVariables;
+    }
+
+    public void setProgramArguments(String programArgs) {
+        this.programArgs = programArgs;
+    }
+
+    public String getProgramArgumentsString() {
+        return programArgs;
+    }
+
+    public String getVMArgumentsString() {
+        return vmArgs;
+    }
+
+    public String getEnvironmentVariablesString() {
+        return environmentVariables;
+    }
+
+    private List<String> getArgumentList(String argumentString, String regex) {
+        List<String> arguments = new ArrayList<>();
+
+        String[] args = null;
+        if (regex.equals(";")) {
+            args = argumentString.split(regex);
+        } else {
+            arguments = ParametersListUtil.DEFAULT_LINE_PARSER.fun(argumentString);
+        }
+
+        if (args != null) {
+            for (String s : args) {
+                arguments.add(s);
+            }
+        }
+
+        return arguments;
+    }
+
+    public Map<String,String> getEnvironmentVariablesMap() {
+        Map<String,String> variables = new HashMap<>();
+
+        for (String envVar : getArgumentList(getEnvironmentVariablesString(), ";")) {
+            final int idx = envVar.indexOf('=');
+            if (idx > -1) {
+                variables.put(envVar.substring(0, idx), idx < envVar.length() - 1 ? envVar.substring(idx + 1) : "");
+            }
+        }
+        return variables;
+    }
 }
