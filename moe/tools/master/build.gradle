@@ -130,9 +130,19 @@ ext {
     external.moe_core.out.retrolambda_jar = file("${external.moe_core.root}/moe.apple/tools/retrolambda-2.0.2.jar")
     external.moe_core.out.dx_exec = file("${external.moe_core.root}/moe.apple/tools/prebuilts/dx")
     external.moe_core.out.dx_jar = file("${external.moe_core.root}/moe.apple/tools/prebuilts/lib/dx.jar")
-    external.moe_core.out.dex2oat_exec = file("${external.moe_core.root}/moe.apple/moe.core.native/android.art.dex2oat/build/xcode/Release-macos-macosx/dex2oat")
-    external.moe_core.out.iphoneos_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphoneos/MOE.framework")
-    external.moe_core.out.iphonesimulator_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphonesimulator/MOE.framework")
+
+    if (project.hasProperty('moe.moe_core.dex2oat.debug')) {
+        external.moe_core.out.dex2oat_exec = file("${external.moe_core.root}/moe.apple/moe.core.native/android.art.dex2oat/build/xcode/Debug-macos-macosx/dex2oat")
+    } else {
+        external.moe_core.out.dex2oat_exec = file("${external.moe_core.root}/moe.apple/moe.core.native/android.art.dex2oat/build/xcode/Release-macos-macosx/dex2oat")
+    }
+    if (project.hasProperty('moe.moe_core.sdk.debug')) {
+        external.moe_core.out.iphoneos_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphoneos/MOE.framework")
+        external.moe_core.out.iphonesimulator_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Debug-ios-iphonesimulator/MOE.framework")
+    } else {
+        external.moe_core.out.iphoneos_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphoneos/MOE.framework")
+        external.moe_core.out.iphonesimulator_MOE_framework = file("${external.moe_core.root}/moe.apple/moe.core.native/moe.sdk/build/xcode/Release-ios-iphonesimulator/MOE.framework")
+    }
 }
 
 task("build_ext_moe_core", type: Exec) {
