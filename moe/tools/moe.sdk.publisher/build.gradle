@@ -27,7 +27,12 @@ apply plugin: 'maven-publish'
 tasks.build.dependsOn ':ext_natj_mac'
 tasks.build.dependsOn ':ext_natj_win'
 
+tasks.build.dependsOn ':prebuild_libimobiledevice_macos'
+tasks.build.dependsOn ':prebuild_libimobiledevice_windows'
+
 def projectDeps = [
+        ':moe.binding.clang',
+        ':moe.binding.libimobiledevice',
         ':moe.generator.natjgen',
         ':moe.ios.device.launcher',
         ':moe.ios.simulator.launcher',
