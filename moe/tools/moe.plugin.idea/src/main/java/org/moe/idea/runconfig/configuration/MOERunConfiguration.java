@@ -239,7 +239,7 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
     }
 
     private List<String> getArgumentList(String argumentString, String regex) {
-        List<String> arguments = new ArrayList<>();
+        List<String> arguments = new ArrayList<String>();
 
         String[] args = null;
         if (regex.equals(";")) {
@@ -258,7 +258,7 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
     }
 
     public Map<String,String> getEnvironmentVariablesMap() {
-        Map<String,String> variables = new HashMap<>();
+        Map<String,String> variables = new HashMap<String,String>();
 
         for (String envVar : getArgumentList(getEnvironmentVariablesString(), ";")) {
             final int idx = envVar.indexOf('=');
