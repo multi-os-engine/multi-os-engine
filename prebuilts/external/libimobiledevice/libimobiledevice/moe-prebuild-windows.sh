@@ -29,6 +29,7 @@ __MOE_PREBUILTS_DIR="$__MOE_PREBUILTS_DIR:$MOE_PREBUILTS_DIR/external/libimobile
 --host=$__MOE_MINGW \
 --disable-shared \
 CFLAGS="-std=gnu99 -DMOE -DWIN32" \
+LDFLAGS="-lgdi32" \
 --without-cython \
 PKG_CONFIG_LIBDIR="$__MOE_PREBUILTS_DIR"
 make
