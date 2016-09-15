@@ -24,6 +24,7 @@ The plugin's associated SDK is also customizable and is evaluated as follows:
 
 - If there is a path specified via Gradle's project property `moe.sdk.localbuild`, that will be used
 - If the `MOE_SDK_LOCALBUILD` environmental variable exists, that will be used
+- If the `moe.sdk.localbuild` file in the module, the contents of that file will be used
 - Otherwise the default SDK will be downloaded on demand and used
 
 The SDK's structure must be as follows, otherwise the validation will fail:

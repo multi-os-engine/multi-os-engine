@@ -130,6 +130,15 @@ public class MoeSDK {
             return sdk;
         }
 
+        if (plugin.getProject().file("moe.sdk.localbuild").exists()) {
+            LOG.info("Using custom local MOE SDK (file)");
+            final Path path = Paths.get(FileUtils.read(plugin.getProject().file("moe.sdk.localbuild")).trim());
+            sdk.validatePartialSDK(path, true);
+            sdk.completePartialSDK(project, path, true);
+            sdk.bakeSDKPaths(path);
+            return sdk;
+        }
+
         // Use configuration
         LOG.info("Using Maven-based MOE SDK");
 
