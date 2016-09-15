@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.moe.junit;
+package org.moe.common.junit;
 
 import java.util.Map;
 
