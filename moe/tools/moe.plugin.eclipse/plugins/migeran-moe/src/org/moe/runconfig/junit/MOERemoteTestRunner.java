@@ -22,7 +22,7 @@ import java.net.URL;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
-
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jdt.internal.junit.runner.IVisitsTestTrees;
@@ -30,13 +30,12 @@ import org.eclipse.jdt.internal.junit.runner.MessageIds;
 import org.eclipse.jdt.internal.junit.runner.RemoteTestRunner;
 import org.eclipse.jdt.internal.junit.runner.TestExecution;
 import org.eclipse.jdt.internal.junit.runner.TestReferenceFailure;
-import org.moe.junit.MOEITestRunListener;
-import org.moe.junit.MOETestIdentifier;
+import org.moe.common.junit.MOEITestRunListener;
+import org.moe.common.junit.MOETestIdentifier;
 import org.moe.runconfig.ApplicationManager;
 import org.moe.runconfig.Launcher;
+import org.moe.utils.logger.LoggerFactory;
 import org.osgi.framework.Bundle;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("restriction")
 public class MOERemoteTestRunner extends RemoteTestRunner implements MOEITestRunListener {

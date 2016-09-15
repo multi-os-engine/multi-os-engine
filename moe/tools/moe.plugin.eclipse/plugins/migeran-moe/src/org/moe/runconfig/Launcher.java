@@ -36,7 +36,7 @@ import org.eclipse.debug.core.model.IStreamMonitor;
 import org.eclipse.debug.core.model.IStreamsProxy;
 import org.eclipse.jdt.launching.IVMConnector;
 import org.eclipse.jdt.launching.JavaRuntime;
-import org.moe.junit.MOETestResultParser;
+import org.moe.common.junit.MOETestResultParser;
 import org.moe.utils.logger.LoggerFactory;
 
 public class Launcher implements IProcess {

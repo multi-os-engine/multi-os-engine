@@ -37,8 +37,8 @@ import org.eclipse.ui.console.MessageConsoleStream;
 import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase.ExecRunnerListener;
 import org.moe.common.exec.GradleExec;
-import org.moe.junit.MOEITestRunListener;
-import org.moe.junit.MOETestResultParser;
+import org.moe.common.junit.MOEITestRunListener;
+import org.moe.common.junit.MOETestResultParser;
 import org.moe.utils.MessageFactory;
 import org.moe.utils.logger.LoggerFactory;
 
