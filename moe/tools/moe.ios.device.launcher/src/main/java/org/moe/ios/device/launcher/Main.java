@@ -47,9 +47,6 @@ public class Main {
         }
         else if(osName.equals(NativeUtil.OS_NAME_WINDOWS)) {
             System.load(current + "/windows/x86_64/natj.dll");
-
-            System.load(current + "/windows/x86_64/libeay32.dll");
-            System.load(current + "/windows/x86_64/ssleay32.dll");
             System.load(current + "/windows/x86_64/libimobiledevice.dll");
         }
         else {
