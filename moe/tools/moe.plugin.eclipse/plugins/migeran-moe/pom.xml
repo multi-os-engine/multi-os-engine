@@ -24,6 +24,55 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>generate-jars</id>
+                        <phase>validate</phase>
+                        <configuration>
+                            <tasks>
+                                <exec executable="/bin/bash">
+                                    <arg value="build-tools.sh" />
+                                </exec>
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-jars</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/lib</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${session.executionRootDirectory}/../moe.tools.natjgen/build/libs</directory>
+                                </resource>
+                                <resource>
+                                    <directory>${session.executionRootDirectory}/../moe.tools.common/build/libs</directory>
+                                </resource>
+                                <resource>
+                                    <directory>${session.executionRootDirectory}/../moe.generator.project/build/libs</directory>
+                                </resource>
+                            </resources>
+                            <overwrite>true</overwrite>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
