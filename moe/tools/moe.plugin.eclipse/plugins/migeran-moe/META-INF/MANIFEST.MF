@@ -19,10 +19,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.jdt.junit.runtime;bundle-version="3.4.500",
  org.eclipse.core.expressions;bundle-version="3.5.0",
  org.apache.log4j;bundle-version="1.2.15",
- com.google.gson;bundle-version="2.2.4"
+ com.google.gson;bundle-version="2.2.4",
+ org.eclipse.jdt.debug.ui;bundle-version="3.7.200"
 Bundle-Activator: org.moe.MOEPlugin
 Bundle-ClassPath: .,
  lib/moe.generator.project.jar,
- lib/moe.tools.common.jar
+ lib/moe.tools.common.jar,
  lib/moe.tools.natjgen.jar
 Bundle-ActivationPolicy: lazy

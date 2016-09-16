@@ -30,7 +30,8 @@ public class LocalLaunchConfigurationTabGroup extends AbstractLaunchConfiguratio
 		junit.setRunConfigurationEditorLocal(launch);
 		RunConfigurationEditorRemote remote = new RunConfigurationEditorRemote();
 		remote.setRunConfigurationEditorLocal(launch);
-		ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] { launch, junit, remote };
+		ArgumentsTab arguments = new  ArgumentsTab();
+		ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] { launch, junit, remote, arguments };
 		setTabs(tabs);
 	}
 

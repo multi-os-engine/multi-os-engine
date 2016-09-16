@@ -79,6 +79,9 @@ public class ApplicationManager {
 	public static final String REMOTE_KEYCHAIN_LOCK_TIMEOUT_KEY = "remoteKeychainLocktimeout";
 	public static final String REMOTE_GRADLE_REPOSITORIES_KEY = "remoteGradleRepositories";
 	public static final String RUN_JUNIT_TEST_KEY = "run_junit_test";
+	public static final String ENVIRONMENT_VARIABLES_KEY = "environment_variables";
+	public static final String VM_ARGUMENTS_KEY = "vm_arguments";
+	public static final String PROGRAM_ARGUMENTS_KEY = "program_arguments";
 
 	private IProject project;
 	private ILaunchConfiguration launchConfiguration;
@@ -299,6 +302,33 @@ public class ApplicationManager {
 		int debugRemotePort = 0;
 
 		OptionsBuilder optionsBuilder = new OptionsBuilder();
+
+		List<String> appVMArguments = getVMArguments();
+		if (appVMArguments != null) {
+			for (String arg : appVMArguments) {
+				if (arg != null && !arg.isEmpty()) {
+					optionsBuilder.push("vmarg:" + arg);
+				}
+			}
+		}
+
+		List<String> environmentVariables = getEnvironmentVariables();
+		if (environmentVariables != null) {
+			for (String arg : environmentVariables) {
+				if (arg != null && !arg.isEmpty()) {
+					optionsBuilder.push("env:" + arg);
+				}
+			}
+		}
+
+		List<String> programArguments = getProgramArguments();
+		if (programArguments != null) {
+			for (String arg : programArguments) {
+				if (arg != null && !arg.isEmpty()) {
+					optionsBuilder.push("arg:" + arg);
+				}
+			}
+		}
 
 		if (isJUnitTest()) {
 			args.add("moeTest");
@@ -546,6 +576,58 @@ public class ApplicationManager {
 
 	public void setTestArguments(List<String> tests) {
 		this.testArgs = tests;
+	}
+
+	private List<String> getVMArguments() {
+		try {
+			String arguments = launchConfiguration.getAttribute(VM_ARGUMENTS_KEY, "");
+			if (arguments != null && !arguments.isEmpty()) {
+				return getArgumentList(arguments);
+			}
+		} catch (CoreException ignore) {
+
+		}
+		return null;
+	}
+
+	private List<String> getEnvironmentVariables() {
+		try {
+			Map<String, String> arguments = launchConfiguration.getAttribute(ENVIRONMENT_VARIABLES_KEY,
+					(Map<String, String>) null);
+			if (arguments != null) {
+				List<String> vmArguments = new ArrayList<>();
+				for (String key : arguments.keySet()) {
+					String value = arguments.get(key);
+					value = value == null ? "" : value;
+					vmArguments.add(key + "=" + value);
+				}
+				return vmArguments;
+			}
+		} catch (CoreException ignore) {
+
+		}
+		return null;
+	}
+
+	private List<String> getProgramArguments() {
+		try {
+			String arguments = launchConfiguration.getAttribute(PROGRAM_ARGUMENTS_KEY, "");
+			if (arguments != null && !arguments.isEmpty()) {
+				return getArgumentList(arguments);
+			}
+		} catch (CoreException ignore) {
+
+		}
+		return null;
+	}
+
+	private List<String> getArgumentList(String content) {
+		List<String> args = new ArrayList<>();
+		String[] lines = content.split("\n");
+		for (String s : lines) {
+			args.add(s);
+		}
+		return args;
 	}
 
 }
