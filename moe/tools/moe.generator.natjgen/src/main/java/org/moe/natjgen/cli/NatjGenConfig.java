@@ -102,7 +102,7 @@ public class NatjGenConfig {
                 "      \"actions\": [\n" +
                 "        {\n" +
                 "          \"action\": \"replace-package-base\",\n" +
-                "          \"value\": \"ios\"\n" +
+                "          \"value\": \"apple\"\n" +
                 "        },\n" +
                 "        {\n" +
                 "          \"action\": \"handling-mode\",\n" +

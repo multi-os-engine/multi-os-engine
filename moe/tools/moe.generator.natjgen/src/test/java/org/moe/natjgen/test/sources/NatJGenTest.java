@@ -108,6 +108,7 @@ public class NatJGenTest {
 		conf.setCleanOutputTypeConfiguration(true);
 
 		// Paths
+		conf.setUseIncludedStandardHeaders(false);
 		conf.getHeaderSearchPaths().add(INCLUDES_DIR.getAbsolutePath());
 		conf.getUserHeaderSearchPaths().add(INCLUDES_DIR.getAbsolutePath());
 		conf.getUserHeaderSearchPaths().add(FRAMEWORKS_DIR.getAbsolutePath());
@@ -116,7 +117,7 @@ public class NatJGenTest {
 		UnitRule rule = new UnitRule();
 		rule.setFinal(true);
 		rule.getConditions().add(new Condition(Condition.PATH_PREFIX, "${SDK}"));
-		rule.getActions().add(new Action(Action.REPLACE_PACKAGE_BASE, "ios"));
+		rule.getActions().add(new Action(Action.REPLACE_PACKAGE_BASE, "apple"));
 		rule.getActions().add(new Action(Action.HANDLING_MODE, Unit.HANDLING_EXTERNAL));
 		conf.getUnitActionManager().getUnitRules().add(rule);
 

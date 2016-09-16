@@ -661,11 +661,11 @@ public class Configuration implements IConfigurationElement {
 	/**
 	 * Set flag for using included standard headers
 	 * 
-	 * @param dontUseIncludedStandardHeaders
+	 * @param useIncludedStandardHeaders
 	 *            flag value
 	 */
-	public void setUseIncludedStandardHeaders(boolean dontUseIncludedStandardHeaders) {
-		this.useIncludedStandardHeaders = dontUseIncludedStandardHeaders;
+	public void setUseIncludedStandardHeaders(boolean useIncludedStandardHeaders) {
+		this.useIncludedStandardHeaders = useIncludedStandardHeaders;
 	}
 
 	/**
