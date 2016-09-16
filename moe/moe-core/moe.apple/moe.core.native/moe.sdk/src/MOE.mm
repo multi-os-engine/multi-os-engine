@@ -17,6 +17,7 @@ limitations under the License.
 #import <UIKit/UIKit.h>
 
 #include <pthread.h>
+#include <iostream>
 
 #define IMAGE_PREFIX "-Ximage:"
 #define IMAGE_NAME "image.art"
@@ -105,7 +106,7 @@ extern "C" int moevm(const int jargc, char* const* jargv) {
     // Use framework icudt54l.dat and if that is not present then
     // use the one from the resources directory
     NSBundle* fwBundle =
-        [NSBundle bundleWithIdentifier:@"org.moe"];
+        [NSBundle bundleWithIdentifier:@"org.moe.MOE"];
 
 #ifndef USE_APLE_CF
     if (fwBundle) {
@@ -143,7 +144,15 @@ extern "C" int moevm(const int jargc, char* const* jargv) {
                                    @(ver.majorVersion), @(ver.minorVersion),
                                    @(ver.patchVersion)];
     [args addObject:verStr];
+#if TARGET_OS_MAC
+#if TARGET_OS_IOS
     [args addObject:@"-Dmoe.platform.name=iOS"];
+#else
+#error Unsupported Mac OS X variant
+#endif
+#else
+#error Unsupported OS
+#endif
     [args addObject:@"-Dmoe.version=" xstr(BUILD_VERSION)];
 
     // Create arguments for classpath
@@ -169,7 +178,8 @@ extern "C" int moevm(const int jargc, char* const* jargv) {
         if (jargi < jargc) {
           mainClass = [NSString stringWithUTF8String:jargv[jargi++]];
         } else {
-          LOG(art::FATAL) << "Missing argument after -mainClass";
+          std::cerr << "FATAL: Missing argument after -mainClass\n";
+          abort();
         }
       } else if ([opt isEqualToString:@"-args"]) {
         break;
@@ -184,12 +194,24 @@ extern "C" int moevm(const int jargc, char* const* jargv) {
           [[mainBundle infoDictionary] objectForKey:@"MOE.Main.Class"];
     }
     if (mainClass == nil) {
-      LOG(art::FATAL) << "mainClass is nil!";
+      std::cerr << "FATAL: mainClass is nil! Please specify with '-mainClass' argument or with the 'MOE.Main.Class' key in Info.plist file.\n";
+      abort();
     }
     [args addObject:mainClass];
     
-    if(mainClass == nil) {
-      LOG(art::FATAL) << "Missing MainClass! Tried from Info.plist and command line arguments.";
+    NSDictionary* plistEnvs = [[mainBundle infoDictionary] objectForKey:@"MOE.Env"];
+    if (plistEnvs != nil) {
+      if (![plistEnvs isKindOfClass:[NSDictionary class]]) {
+        std::cerr << "FATAL: MOE.Env in Info.plist is not a dictionary!\n";
+        abort();
+      }
+      [plistEnvs enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        if (![obj isKindOfClass:[NSString class]]) {
+          std::cerr << "FATAL: MOE.Env error in Info.plist: value for '" << [key UTF8String] << "' is not a string!\n";
+          abort();
+        }
+        setenv([key UTF8String], [obj UTF8String], true);
+      }];
     }
 
     // Append java arguments
