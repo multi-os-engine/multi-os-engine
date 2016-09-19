@@ -258,28 +258,30 @@ public class JUnitEditorTab extends AbstractTab {
 
 		IProject project = getProject();
 		boolean isMavenProject = false;
-		try {
-			if (project.hasNature("org.eclipse.m2e.core.maven2Nature")) {
-				isMavenProject = true;
-			}
-		} catch (CoreException e1) {
-			LOG.error("Unable check nature", e1);
-		}
-		
-		if (!isMavenProject) {
+		if (project != null) {
 			try {
-				junitEnabledButton.setEnabled(true);
-				junitEnabledButton.setSelection(config.getAttribute(ApplicationManager.RUN_JUNIT_TEST_KEY, false));
-			} catch (CoreException e) {
-				LOG.error("Configuration error", e);
-				junitEnabledButton.setSelection(false);
+				if (project.hasNature("org.eclipse.m2e.core.maven2Nature")) {
+					isMavenProject = true;
+				}
+			} catch (CoreException e1) {
+				LOG.error("Unable check nature", e1);
 			}
-		} else {
-			junitEnabledButton.setSelection(false);
-			junitEnabledButton.setEnabled(false);
-		}
+			
+			if (!isMavenProject) {
+				try {
+					junitEnabledButton.setEnabled(true);
+					junitEnabledButton.setSelection(config.getAttribute(ApplicationManager.RUN_JUNIT_TEST_KEY, false));
+				} catch (CoreException e) {
+					LOG.error("Configuration error", e);
+					junitEnabledButton.setSelection(false);
+				}
+			} else {
+				junitEnabledButton.setSelection(false);
+				junitEnabledButton.setEnabled(false);
+			}
 
-		validatePage();
+			validatePage();
+		}
 	}
 
 	private void updateTestTypeFromConfig(ILaunchConfiguration config) {
@@ -722,13 +724,11 @@ public class JUnitEditorTab extends AbstractTab {
 	private IProject getProject() {
 		String projectName = editorLocal.getProjectName();
 		if (projectName == null || projectName.isEmpty()) {
-			showError("Please select project.");
 			return null;
 		}
 
 		IProject project = ProjectHelper.getProject(projectName);
 		if (project == null) {
-			showError("Not found project: " + projectName);
 			return null;
 		}
 		return project;

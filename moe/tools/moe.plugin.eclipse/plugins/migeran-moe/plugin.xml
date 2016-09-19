@@ -8,7 +8,7 @@
         </startup>
     </extension>
     <extension
-            id="org.moe.natures.project"
+            id="org.multi-os-engine.project"
             name="MOEProjectNature"
             point="org.eclipse.core.resources.natures">
         <runtime>

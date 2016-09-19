@@ -26,7 +26,7 @@ import org.moe.utils.logger.LoggerFactory;
 
 public class MOEProjectNature implements IProjectNature {
 
-	public static final String NATURE_ID = "org.moe.natures.project";
+	public static final String NATURE_ID = "org.multi-os-engine.project";
 
 	private static final Logger LOG = LoggerFactory.getLogger(MOEProjectNature.class);
 

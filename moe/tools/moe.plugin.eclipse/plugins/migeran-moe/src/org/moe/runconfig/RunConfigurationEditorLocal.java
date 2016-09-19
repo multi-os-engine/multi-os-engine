@@ -162,11 +162,15 @@ public class RunConfigurationEditorLocal extends AbstractTab {
 		if (OsUtils.isMac()) {
 			launchConfigurationWorkingCopy.setAttribute(ApplicationManager.RUN_ON_SIMULATOR_KEY,
 					simulatorButton.getSelection());
-			launchConfigurationWorkingCopy.setAttribute(ApplicationManager.SIMULATOR_UUID_KEY,
-					simulatorIds.get(simulatorsCombo.getSelectionIndex()));
+			if (simulatorIds.size() > 0) {
+				launchConfigurationWorkingCopy.setAttribute(ApplicationManager.SIMULATOR_UUID_KEY,
+						simulatorIds.get(simulatorsCombo.getSelectionIndex()));
+			}
 		}
-		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.DEVICE_UUID_KEY,
-				deviceIds.get(devicesCombo.getSelectionIndex()));
+		if (deviceIds.size() > 1) {
+			launchConfigurationWorkingCopy.setAttribute(ApplicationManager.DEVICE_UUID_KEY,
+					deviceIds.get(devicesCombo.getSelectionIndex()));
+		}
 		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.DEBUG_PORT_KEY,
 				Integer.parseInt(debugPortText.getText()));
 		launchConfigurationWorkingCopy.setAttribute(ApplicationManager.DEBUG_REMOTE_PORT_KEY,
@@ -406,7 +410,9 @@ public class RunConfigurationEditorLocal extends AbstractTab {
 		String projectName = projectsCombo.getText();
 
 		if (projectName == null || projectName.isEmpty()) {
-			projectName = projectsCombo.getItem(0);
+			if (projectsCombo.getItemCount() > 0) {
+				projectName = projectsCombo.getItem(0);
+			}
 		}
 
 		if (projectName == null || projectName.isEmpty()) {
