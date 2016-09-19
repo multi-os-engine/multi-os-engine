@@ -398,16 +398,12 @@ public final class ContentProvider {
         b.append("		CD=\"${CD%/*}\"\n");
         b.append("	done\n\n");
 
-        b.append("	DEFAULT_PATH=$(echo $PATH)\n");
-        b.append("	source ~/.bash_profile\n");
-        b.append("	export PATH=$PATH:DEFAULT_PATH\n\n");
-
         b.append("	echo \"Checking with 'which'\"\n");
         b.append("	GRADLE_EXEC=$(which 'gradle')\n\n");
 
         b.append("	if [ \"$GRADLE_EXEC\" = \"\" ]; then\n");
-        b.append("		echo \"Falling back to '/usr/local/bin/gradle'\"\n");
-        b.append("		GRADLE_EXEC=/usr/local/bin/gradle\n");
+        b.append("		echo \"Failed to locate 'gradle' executable!\"\n");
+        b.append("		exit 1\n");
         b.append("	fi\n");
         b.append("}\n");
 
