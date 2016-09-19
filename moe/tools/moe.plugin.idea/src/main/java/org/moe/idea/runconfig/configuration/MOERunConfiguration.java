@@ -50,9 +50,9 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
     private String testMethodName = "";
     private String testClassName = "";
     private String testPackageName = "";
-    private String vmArgs;
-    private String environmentVariables;
-    private String programArgs;
+    private String vmArgs = "";
+    private String environmentVariables = "";
+    private String programArgs = "";
 
     public MOERunConfiguration(final Project project, final ConfigurationFactory factory) {
         super(project, factory);
@@ -74,7 +74,6 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
                 break;
             }
         }
-
         return settings;
     }
 
