@@ -35,12 +35,17 @@ def gcc_version = 'gcc-5.3.0'
 
 task mingw(type: Script) {
     progress 'Checking brew dependencies'
-    def BREW_GCC = checkDir '/usr/local/opt/gcc'
+
+    workDir 'mingw'
+    exec 'which', 'gcc-5'
+    exec 'which', 'g++-5'
+    exec 'which', 'cpp-5'
+
     def BREW_GMP = checkDir '/usr/local/opt/gmp'
     def BREW_MPFR = checkDir '/usr/local/opt/mpfr'
     def BREW_MPC = checkDir '/usr/local/opt/libmpc'
     def BREW_CLOOG = checkDir '/usr/local/opt/cloog'
-    def BREW_ISL = checkDir '/usr/local/opt/isl'
+    def BREW_ISL = checkDir '/usr/local/opt/isl014'
 
     progress "Downloading $binutils_version"
     workDir 'mingw'
@@ -59,7 +64,7 @@ task mingw(type: Script) {
             '--disable-werror', '--disable-multilib',
             "--prefix=${file('mingw').absolutePath}",
             "--with-sysroot=${file('mingw').absolutePath}"
-    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make'
     exec 'make', "install-strip"
 
     progress "Building 64-bit $binutils_version"
@@ -69,7 +74,7 @@ task mingw(type: Script) {
             "--prefix=${file('mingw').absolutePath}",
             "--with-sysroot=${file('mingw').absolutePath}",
             '--enable-64-bit-bfd'
-    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make'
     exec 'make', "install-strip"
 
     progress "Downloading $mingw_version"
@@ -82,7 +87,7 @@ task mingw(type: Script) {
     workDir "mingw/${mingw_version}/build-headers32"
     exec "../mingw-w64-headers/configure", "--host=i686-w64-mingw32",
             "--prefix=${file('mingw').absolutePath}/i686-w64-mingw32"
-    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make'
     exec 'make', "install-strip"
     rawWorkDir 'mingw/i686-w64-mingw32'
     exec 'ln', '-s', 'lib', 'lib32'
@@ -91,7 +96,7 @@ task mingw(type: Script) {
     workDir "mingw/${mingw_version}/build-headers64"
     exec "../mingw-w64-headers/configure", "--host=x86_64-w64-mingw32",
             "--prefix=${file('mingw').absolutePath}/x86_64-w64-mingw32"
-    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make'
     exec 'make', "install-strip"
     rawWorkDir 'mingw/x86_64-w64-mingw32'
     exec 'ln', '-s', 'lib', 'lib64'
@@ -146,8 +151,7 @@ task mingw(type: Script) {
     exec '../mingw-w64-crt/configure', '--host=i686-w64-mingw32',
             "--prefix=${file('mingw').absolutePath}/i686-w64-mingw32",
             "--with-sysroot=${file('mingw').absolutePath}"
-    // NOTE: fix for 'Too many open files in system' error
-    exec 'make', "-j${Math.min(4, Runtime.getRuntime().availableProcessors())}"
+    exec 'make'
     exec 'make', "install-strip"
 
     progress "Building 64-bit $mingw_version runtime"
@@ -158,8 +162,7 @@ task mingw(type: Script) {
     exec '../mingw-w64-crt/configure', '--host=x86_64-w64-mingw32',
             "--prefix=${file('mingw').absolutePath}/x86_64-w64-mingw32",
             "--with-sysroot=${file('mingw').absolutePath}"
-    // NOTE: fix for 'Too many open files in system' error
-    exec 'make', "-j${Math.min(4, Runtime.getRuntime().availableProcessors())}"
+    exec 'make'
     exec 'make', "install-strip"
 
     progress "Completing 32-bit $gcc_version"
@@ -167,7 +170,7 @@ task mingw(type: Script) {
     exec 'rm', 'mingw'
     exec 'ln', '-s', 'i686-w64-mingw32', 'mingw'
     workDir "mingw/${gcc_version}/build32"
-    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make'
     exec 'make', "install-strip"
 
     progress "Completing 64-bit $gcc_version"
@@ -175,7 +178,7 @@ task mingw(type: Script) {
     exec 'rm', 'mingw'
     exec 'ln', '-s', 'x86_64-w64-mingw32', 'mingw'
     workDir "mingw/${gcc_version}/build64"
-    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make'
     exec 'make', "install-strip"
 
     rawWorkDir 'mingw'
@@ -193,14 +196,14 @@ task mingw(type: Script) {
     workDir "mingw/${mingw_version}/mingw-w64-libraries/winpthreads/build64"
     exec '../configure', '--host=i686-w64-mingw32',
             "--prefix=${file('mingw').absolutePath}/i686-w64-mingw32"
-    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make'
     exec 'make', "install-strip"
 
     progress "Building 64-bit $mingw_version winpthreads"
     workDir "mingw/${mingw_version}/mingw-w64-libraries/winpthreads/build64"
     exec '../configure', '--host=x86_64-w64-mingw32',
             "--prefix=${file('mingw').absolutePath}/x86_64-w64-mingw32"
-    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
+    exec 'make'
     exec 'make', "install-strip"
 }
 
