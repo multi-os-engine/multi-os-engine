@@ -110,7 +110,7 @@ compileScala { classpath = classpath.plus(fileTree(moe.sdk.coreJarPath)) }
 eclipse {
     // Set MOE natures and build commands
     project {
-        natures 'org.moe.natures.project'
+        natures 'org.multi-os-engine.project'
     }
 }
 //>>---REGION:USE_ECLIPSE_PLUGIN
