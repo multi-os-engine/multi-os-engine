@@ -20,7 +20,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.expressions;bundle-version="3.5.0",
  org.apache.log4j;bundle-version="1.2.15",
  com.google.gson;bundle-version="2.2.4",
- org.eclipse.jdt.debug.ui;bundle-version="3.7.200"
+ org.eclipse.jdt.debug.ui;bundle-version="3.7.101"
 Bundle-Activator: org.moe.MOEPlugin
 Bundle-ClassPath: .,
  lib/moe.generator.project.jar,
