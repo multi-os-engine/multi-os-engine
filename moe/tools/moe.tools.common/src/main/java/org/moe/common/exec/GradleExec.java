@@ -61,14 +61,11 @@ public class GradleExec extends AbstractExec {
 		if (gradleWPath != null) {
 			return gradleWPath.getAbsolutePath();
 		}
-
 		String out = getGradleFromWhich();
 		if (out != null) {
 			return out;
 		}
-
-		// TODO: only good for unix
-		return "/usr/local/bin/gradle";
+		throw new RuntimeException("Failed to locate 'gradle' executable!");
 	}
 
 	private String getGradleFromWhich() {
