@@ -25,5 +25,7 @@ Bundle-Activator: org.moe.MOEPlugin
 Bundle-ClassPath: .,
  lib/moe.generator.project.jar,
  lib/moe.tools.common.jar,
- lib/moe.tools.natjgen.jar
+ lib/moe.tools.natjgen.jar,
+ lib/moe.document.pbxproj.jar,
+ lib/moe.document.xib.jar
 Bundle-ActivationPolicy: lazy
