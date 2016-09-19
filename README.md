@@ -1,22 +1,24 @@
-Multi-OS Engine
-===============
+# Multi-OS Engine
 
-Overview
---------
-[Multi-OS Engine](http://multi-os-engine.org/) provides a Java runtime and Java interfaces to iOS platform API to develop native iOS applications with native look and feel, native performance, and portability of common Java logic modules from your Android Apps. It comes fully integrated with Android* Studio hosted on Mac* OS or Windows* and contains all the development tools needed to develop an iOS* app and publish to the App store.
+## Overview
 
-Getting Started
----------------
+[Multi-OS Engine](http://multi-os-engine.org/) provides a Java runtime and Java interfaces to iOS platform API to develop native iOS applications with native look and feel, native performance, and portability of common Java logic modules from your Android Apps. It comes fully integrated with Android Studio hosted on macOS or Windows and contains all the development tools needed to develop an iOS app and publish to the App Store.
+
+## Getting Started
 
 - [Install Multi-OS Engine](https://multi-os-engine.org/start/)
 - Walk through our [Quick Start Tutorials](http://doc.multi-os-engine.org) to configure your development environment and learn how to develop applications using Multi-OS Engine.
 - Ask questions on the [Multi-OS Engine Forum](https://discuss.multi-os-engine.org/)
 - Submit issues to our [Issue Tracker](https://github.com/multi-os-engine/multi-os-engine/issues)
 
-Building from source code
--------------------------
+## Building from Source Code
 
-Install the 'repo' tool:
+### Requirements
+
+- Apple macOS 10.11
+- Minimum 8GB RAM
+
+### Install the 'repo' Tool
 
 ```
 mkdir ~/bin
@@ -31,80 +33,89 @@ You may also install the repo using brew:
 brew install repo
 ```
 
-Get the source code from mainline branch:
+### Get the Source Code
+
+Mainline branch:
 
 ```
 repo init -u https://github.com/multi-os-engine/manifest.git
 repo sync
 ```
 
-Note: if you want to get the source code from development branch with initial support of Windows and bitcode, switch to "moe-windows-bitcode" branch:
+Note: if you want to get the source code from development branch with initial support of Windows and bitcode, switch to "moedev" branch:
 
 ```
-repo init -u https://github.com/multi-os-engine/manifest.git -b moe-windows-bitcode
+repo init -u https://github.com/multi-os-engine/manifest.git -b moedev
 repo sync
 ```
 
-Install macOS MinGW build environment:
-	
-- Install brew from http://brew.sh
-- Install the following packages
+### Installing Homebrew & Dependencies
 
-```	
+Install brew from [brew.sh](http://brew.sh), then you can install MOE's dependencies:
+
+```sh
 brew tap homebrew/versions
-brew install autogen autoconf automake openssl libtool pkg-config
-brew install wget
-brew install wine
+brew install autogen autoconf automake libtool pkg-config wget gcc5 cloog cmake jasmin gpg ant
+
+cd <repo>/moe/moe-core
+brew install file://`pwd`/dependencies/premake5.rb
 ```
 
-- Install gcc
+### Building MinGW & LLVM
 
-| macOS 10.10 | macOS 10.11 |
-| --- | --- |
-| `brew install gcc48`<br> `brew install cloog` | `brew install gcc`<br> `brew install cloog` |
+Building the complete SDK and related tools requires LLVM and MinGW. To build these execute the following:
 
-Setup MinGW environment:
-- Build mingw:
-
-| macOS 10.10 | macOS 10.11 |
-| --- | --- |
-| `cd moe/moe-core/Builder`<br>`chmod +x mingw-w64-3.10-osx10.9.sh`<br> `./mingw-w64-3.10-osx10.9.sh`| `cd moe/moe-core/Builder`<br>`chmod +x mingw-w64-3.10-osx10.11.sh`<br> `./mingw-w64-3.10-osx10.11.sh`|
-
-
-- Add /usr/local/mingw/bin to $PATH in your ~/.bash_profile:
-
-```	
-export PATH=$PATH:/usr/local/mingw/bin
+```sh
+cd <repo>/prebuilts
+./gradlew mingw llvm
 ```
 
-Install premake5:
+This step only needs to be done once (or until MinGW or LLVM components/requirements are changed).
 
-```	
-cp ./premake5.rb /usr/local/Library/Formula
-brew install premake5
+### Building Multi-OS Engine Core
+
+The `moe/moe-core` repo contains the runtime (and some compile time) components of MOE. To build the frameworks and build tools, execute the following:
+
+```sh
+cd <repo>/moe/moe-core
+./gradlew build
 ```
 
-Install other dependenies
+### Building Multi-OS Engine Tools
 
-```
-brew install cmake jasmin gpg ant
-```
+The `moe/tools` repositories contain the tools required to build and run MOE applications.
 
-To build Multi-OS Engine pluign for Android Studio and IntelliJ IDEA, you should install IntelliJ IDEA 16 and set IDEA_HOME environment variable pointing to the IDEA installation folder, for example:
+[SDK Publisher](https://github.com/multi-os-engine/moe-sdk-publisher): creating a developer SDK:
 
-```
-export IDEA_HOME=/Applications/IntelliJ\ IDEA\ CE.app/Contents/
-```
-
-Build all Multi-OS Engine components:
-
-```
-cd moe/moe-core/Builder
-./build-all.sh final <build_number> <maven_repo>
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-sdk:devsdk
 ```
 
-where `<maven_repo>` is any folder to place the built binaries
+[Gradle Plugin](https://github.com/multi-os-engine/moe-plugin-gradle): building and publishing the Gradle plugin to Maven local:
 
-Built package will be placed to `$MOE_HOME` folder or to `<maven_repo>/moe_home` folder if `$MOE_HOME` variable doesn't exists.
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe-gradle:publishToMavenLocal
+```
 
-From here you may publish the SDK via the [Multi-OS Engine SDK Publisher](https://github.com/multi-os-engine/moe-sdk-publisher) project to a Maven repository, to be used by the [MOE Gradle Plugin](https://github.com/multi-os-engine/moe-plugin-gradle). See the project page for more information.
+[Maven Plugin](https://github.com/multi-os-engine/moe-plugin-maven): building and publishing the Maven plugin to Maven local:
+
+```sh
+cd <repo>/moe/tools/moe.plugin.maven
+mvn clean install
+```
+
+[IDEA Plugin](https://github.com/multi-os-engine/moe-ide-integration): building the IDEA plugin:
+
+```sh
+cd <repo>/moe/tools/master
+./gradlew :moe.plugin.idea:build
+```
+
+[Eclipse Plugin](https://github.com/multi-os-engine/moe-ide-integration-eclipse): building the Eclipse plugin:
+
+```sh
+cd <repo>/moe/tools/moe.plugin.eclipse
+mvn clean install -DBUILD_NUMBER=1
+```
