@@ -366,8 +366,14 @@ public class Server {
     public String getSDKRemotePath(@NotNull File file) throws IOException {
         Require.nonNull(file);
 
-        final Path sdk = plugin.getSDK().getRoot().toPath();
-        final Path relative = sdk.relativize(file.toPath());
+        final Path filePath = file.toPath().toAbsolutePath();
+        final Path sdk = plugin.getSDK().getRoot().toPath().toAbsolutePath();
+
+        if (!filePath.getRoot().equals(sdk.getRoot())) {
+            throw new IOException("non-sdk file");
+        }
+
+        final Path relative = sdk.relativize(filePath);
         return getRemotePath(getSdkDir(), relative);
     }
 
