@@ -1813,8 +1813,13 @@ public class Configuration implements IConfigurationElement {
 				break;
 			case CXIdxEntityKind.CXIdxEntity_Typedef: {
 				CXType ut = decl.cursor().getTypedefDeclUnderlyingType();
-				if (ut.kind() == CXTypeKind.Unexposed) {
-					CXType cut = ut.getCanonicalType();
+				if (ut.kind() == CXTypeKind.Unexposed || ut.kind() == CXTypeKind.Elaborated) {
+					CXType cut;
+					if (ut.kind() == CXTypeKind.Elaborated) {
+						cut = ut.getNamedType();
+					} else {
+						cut = ut.getCanonicalType();
+					}
 					if (cut.kind() == CXTypeKind.Record) {
 						this.originalName = this.name = decl.cursor().toString();
 						this.type = C_STRUCT_TYPE;

@@ -627,8 +627,14 @@ class ModelBuilder extends AbstractModelEditor {
 		final CXType ut = decl.cursor().getTypedefDeclUnderlyingType();
 
 		// Look for simple aliasing
-		if (ut.kind() == CXTypeKind.Unexposed) {
-			final CXType cut = ut.getCanonicalType();
+		final int utKind = ut.kind();
+		if (utKind == CXTypeKind.Unexposed || utKind == CXTypeKind.Elaborated) {
+			final CXType cut;
+			if (utKind == CXTypeKind.Elaborated) {
+				cut = ut.getNamedType();
+			} else {
+				cut = ut.getCanonicalType();
+			}
 			if (cut.kind() == CXTypeKind.Record) {
 				Unit unit = configuration.getUnit(decl);
 				if (unit.handlingDisabled()) {

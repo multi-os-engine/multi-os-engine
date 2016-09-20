@@ -533,6 +533,10 @@ public class Type {
 		typeSpelling = inType.getTypeSpelling().toString();
 		CXType type = inType;
 
+		if (type.kind() == CXTypeKind.Elaborated) {
+			type = type.getNamedType();
+		}
+
 		// Deal with nullability
 		{
 			CXType sType = clang.clang_getTypeByStrippingOuterNullability(type);
@@ -568,6 +572,9 @@ public class Type {
 			// TODO: skip names with '_' prefix?
 			typeDefType = type;
 			type = type.getTypeDeclaration().getTypedefDeclUnderlyingType();
+			if (type.kind() == CXTypeKind.Elaborated) {
+				type = type.getNamedType();
+			}
 			typeKind = type.kind();
 		}
 
