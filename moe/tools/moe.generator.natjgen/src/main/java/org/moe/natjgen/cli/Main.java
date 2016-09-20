@@ -16,22 +16,16 @@ limitations under the License.
 
 package org.moe.natjgen.cli;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Properties;
-
 import org.moe.natjgen.cli.executor.IExecutor;
 import org.moe.natjgen.cli.manager.ExecutorManager;
 import org.moe.natjgen.cli.utils.params.OptionsHandler;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.ParseException;
-import org.apache.log4j.PropertyConfigurator;
 
 public class Main {
 
 	public static final String WRAP_NATJ_GEN = "wrapnatjgen";
-	private static final String LOG4J_FILENAME = "/log4j.properties";
 
 	public static void main(String[] argc) {
 		if (System.getenv("MOE_HOME") == null) {
@@ -40,7 +34,6 @@ public class Main {
 		}
 		try {
 			System.out.println("wrapnatjgen running...");
-			configureLogger();
 
 			DefaultParser parser = new DefaultParser();
 			CommandLine cmd = parser.parse(OptionsHandler.getAvalibleOptions(), argc);
@@ -59,23 +52,6 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.exit(-1);
-		}
-	}
-
-	private static void configureLogger() {
-		// configure logger
-		File file = new File("configuration", LOG4J_FILENAME);
-		if (file.exists()) {
-			PropertyConfigurator.configure(file.getAbsolutePath());
-		} else {
-			// configure from default: local resources
-			try {
-				Properties props = new Properties();
-				props.load(Main.class.getResourceAsStream(LOG4J_FILENAME));
-				PropertyConfigurator.configure(props);
-				return;
-			} catch (IOException e) {
-			}
 		}
 	}
 }

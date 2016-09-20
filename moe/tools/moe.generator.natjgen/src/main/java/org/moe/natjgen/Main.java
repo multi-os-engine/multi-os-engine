@@ -18,9 +18,7 @@ package org.moe.natjgen;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Properties;
 
-import org.apache.log4j.PropertyConfigurator;
 import org.eclipse.core.runtime.CoreException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,7 +32,6 @@ public class Main {
 	 * Logger for this class
 	 */
 	private static final Logger LOG = LoggerFactory.getLogger(Main.class);
-	private static final String LOG4J_FILENAME = "log4j.properties";
 
 	public static void main(String[] args) {
 		System.exit(main_internal(args));
@@ -42,8 +39,6 @@ public class Main {
 
 	public static int main_internal(String[] args) {
 		try {
-			configureLogger();
-
 			// Initialize native libraries
 			NatJGenNativeLoader.initNatives();
 
@@ -70,24 +65,6 @@ public class Main {
 		} catch (Throwable t) {
 			LOG.error("Generation failed", t);
 			return 1;
-		}
-	}
-
-	private static void configureLogger() {
-		// configure logger
-		File file = new File("configuration", LOG4J_FILENAME);
-		if (file.exists()) {
-			PropertyConfigurator.configure(file.getAbsolutePath());
-		} else {
-			// configure from default: local resources
-			try {
-				Properties props = new Properties();
-				ClassLoader cl = Main.class.getClassLoader();
-				props.load(cl.getResourceAsStream(LOG4J_FILENAME));
-				PropertyConfigurator.configure(props);
-				return;
-			} catch (IOException e) {
-			}
 		}
 	}
 
