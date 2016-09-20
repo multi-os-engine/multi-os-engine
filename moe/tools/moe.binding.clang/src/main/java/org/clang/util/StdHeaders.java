@@ -42,6 +42,10 @@ public class StdHeaders {
         tmp.mkdir();
         PATH = tmp.getAbsolutePath();
 
+        copyStdHeader("__clang_cuda_cmath.h");
+        copyStdHeader("__clang_cuda_intrinsics.h");
+        copyStdHeader("__clang_cuda_math_forward_declares.h");
+        copyStdHeader("__clang_cuda_runtime_wrapper.h");
         copyStdHeader("__stddef_max_align_t.h");
         copyStdHeader("__wmmintrin_aes.h");
         copyStdHeader("__wmmintrin_pclmul.h");
@@ -49,18 +53,26 @@ public class StdHeaders {
         copyStdHeader("altivec.h");
         copyStdHeader("ammintrin.h");
         copyStdHeader("arm_acle.h");
+        copyStdHeader("arm_neon.h");
         copyStdHeader("avx2intrin.h");
         copyStdHeader("avx512bwintrin.h");
         copyStdHeader("avx512cdintrin.h");
         copyStdHeader("avx512dqintrin.h");
         copyStdHeader("avx512erintrin.h");
         copyStdHeader("avx512fintrin.h");
+        copyStdHeader("avx512ifmaintrin.h");
+        copyStdHeader("avx512ifmavlintrin.h");
+        copyStdHeader("avx512pfintrin.h");
+        copyStdHeader("avx512vbmiintrin.h");
+        copyStdHeader("avx512vbmivlintrin.h");
         copyStdHeader("avx512vlbwintrin.h");
+        copyStdHeader("avx512vlcdintrin.h");
         copyStdHeader("avx512vldqintrin.h");
         copyStdHeader("avx512vlintrin.h");
         copyStdHeader("avxintrin.h");
         copyStdHeader("bmi2intrin.h");
         copyStdHeader("bmiintrin.h");
+        copyStdHeader("clflushoptintrin.h");
         copyStdHeader("cpuid.h");
         copyStdHeader("cuda_builtin_vars.h");
         copyStdHeader("emmintrin.h");
@@ -73,7 +85,7 @@ public class StdHeaders {
         copyStdHeader("htmxlintrin.h");
         copyStdHeader("ia32intrin.h");
         copyStdHeader("immintrin.h");
-        copyStdHeader("Intrin.h");
+        copyStdHeader("intrin.h");
         copyStdHeader("inttypes.h");
         copyStdHeader("iso646.h");
         copyStdHeader("limits.h");
@@ -81,7 +93,11 @@ public class StdHeaders {
         copyStdHeader("mm_malloc.h");
         copyStdHeader("mm3dnow.h");
         copyStdHeader("mmintrin.h");
+        copyStdHeader("module.modulemap");
+        copyStdHeader("mwaitxintrin.h");
         copyStdHeader("nmmintrin.h");
+        copyStdHeader("opencl-c.h");
+        copyStdHeader("pkuintrin.h");
         copyStdHeader("pmmintrin.h");
         copyStdHeader("popcntintrin.h");
         copyStdHeader("prfchwintrin.h");
@@ -108,6 +124,10 @@ public class StdHeaders {
         copyStdHeader("x86intrin.h");
         copyStdHeader("xmmintrin.h");
         copyStdHeader("xopintrin.h");
+        copyStdHeader("xsavecintrin.h");
+        copyStdHeader("xsaveintrin.h");
+        copyStdHeader("xsaveoptintrin.h");
+        copyStdHeader("xsavesintrin.h");
         copyStdHeader("xtestintrin.h");
 
         return PATH;

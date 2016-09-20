@@ -86,6 +86,8 @@ public final class CXTypeKind {
 	@Generated
 	public static final int ObjCSel = 0x0000001D;
 	@Generated
+	public static final int Float128 = 0x0000001E;
+	@Generated
 	public static final int FirstBuiltin = 0x00000002;
 	@Generated
 	public static final int LastBuiltin = 0x0000001D;
@@ -125,4 +127,8 @@ public final class CXTypeKind {
 	public static final int DependentSizedArray = 0x00000074;
 	@Generated
 	public static final int MemberPointer = 0x00000075;
+	@Generated
+	public static final int Auto = 0x00000076;
+	@Generated
+	public static final int Elaborated = 0x00000077;
 }

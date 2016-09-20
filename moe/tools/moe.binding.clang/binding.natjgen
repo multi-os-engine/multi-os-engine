@@ -1,12 +1,12 @@
 {
   "platform": "OS X",
   "package-base": "org.undefined",
-  "base-sdk": "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk",
+  "base-sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk",
   "header-search-paths": [
-    "${PROJECT}/../../llvm/tools/clang/include"
+    "${PROJECT}/../../../external/llvm/tools/clang/include"
   ],
   "user-header-search-paths": [
-    "${PROJECT}/../../llvm/tools/clang/include"
+    "${PROJECT}/../../../external/llvm/tools/clang/include"
   ],
   "framework-search-paths": [],
   "source": "#import \"clang-c/Index.h\"\n#import \"clang-c/Documentation.h\"\n",
@@ -37,7 +37,7 @@
       "conditions": [
         {
           "condition": "path-prefix",
-          "value": "${PROJECT}/../../llvm/tools/clang/include/"
+          "value": "${PROJECT}/../../../external/llvm/tools/clang/include/"
         }
       ],
       "actions": [

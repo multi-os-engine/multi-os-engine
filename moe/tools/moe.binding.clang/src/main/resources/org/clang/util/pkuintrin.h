@@ -1,4 +1,5 @@
-/*===---- fxsrintrin.h - FXSR intrinsic ------------------------------------===
+/*===------------- pkuintrin.h - PKU intrinsics ------------------===
+ *
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,34 +21,26 @@
  *
  *===-----------------------------------------------------------------------===
  */
-
 #ifndef __IMMINTRIN_H
-#error "Never use <fxsrintrin.h> directly; include <immintrin.h> instead."
+#error "Never use <pkuintrin.h> directly; include <immintrin.h> instead."
 #endif
 
-#ifndef __FXSRINTRIN_H
-#define __FXSRINTRIN_H
+#ifndef __PKUINTRIN_H
+#define __PKUINTRIN_H
 
-#define __DEFAULT_FN_ATTRS __attribute__((__always_inline__, __nodebug__,  __target__("fxsr")))
+/* Define the default attributes for the functions in this file. */
+#define __DEFAULT_FN_ATTRS __attribute__((__always_inline__, __nodebug__, __target__("pku")))
 
-static __inline__ void __DEFAULT_FN_ATTRS
-_fxsave(void *__p) {
-  return __builtin_ia32_fxsave(__p);
+static __inline__ unsigned int __DEFAULT_FN_ATTRS
+_rdpkru_u32(void)
+{
+  return __builtin_ia32_rdpkru();
 }
 
 static __inline__ void __DEFAULT_FN_ATTRS
-_fxsave64(void *__p) {
-  return __builtin_ia32_fxsave64(__p);
-}
-
-static __inline__ void __DEFAULT_FN_ATTRS
-_fxrstor(void *__p) {
-  return __builtin_ia32_fxrstor(__p);
-}
-
-static __inline__ void __DEFAULT_FN_ATTRS
-_fxrstor64(void *__p) {
-  return __builtin_ia32_fxrstor64(__p);
+_wrpkru(unsigned int __val)
+{
+  return __builtin_ia32_wrpkru(__val);
 }
 
 #undef __DEFAULT_FN_ATTRS

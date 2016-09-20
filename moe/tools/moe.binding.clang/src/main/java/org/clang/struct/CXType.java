@@ -93,6 +93,10 @@ public final class CXType extends StructObject {
 		return clang.clang_getArraySize(this);
 	}
 
+    public CXType getNamedType() {
+        return clang.clang_Type_getNamedType(this);
+    }
+
 	public int getNumArgTypes() {
 		return clang.clang_getNumArgTypes(this);
 	}

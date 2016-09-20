@@ -1,4 +1,4 @@
-/*===---- fxsrintrin.h - FXSR intrinsic ------------------------------------===
+/*===---- xsavecintrin.h - XSAVEC intrinsic ------------------------------------===
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,33 +22,26 @@
  */
 
 #ifndef __IMMINTRIN_H
-#error "Never use <fxsrintrin.h> directly; include <immintrin.h> instead."
+#error "Never use <xsavecintrin.h> directly; include <immintrin.h> instead."
 #endif
 
-#ifndef __FXSRINTRIN_H
-#define __FXSRINTRIN_H
+#ifndef __XSAVECINTRIN_H
+#define __XSAVECINTRIN_H
 
-#define __DEFAULT_FN_ATTRS __attribute__((__always_inline__, __nodebug__,  __target__("fxsr")))
-
-static __inline__ void __DEFAULT_FN_ATTRS
-_fxsave(void *__p) {
-  return __builtin_ia32_fxsave(__p);
-}
+/* Define the default attributes for the functions in this file. */
+#define __DEFAULT_FN_ATTRS __attribute__((__always_inline__, __nodebug__,  __target__("xsavec")))
 
 static __inline__ void __DEFAULT_FN_ATTRS
-_fxsave64(void *__p) {
-  return __builtin_ia32_fxsave64(__p);
+_xsavec(void *__p, unsigned long long __m) {
+  __builtin_ia32_xsavec(__p, __m);
 }
 
+#ifdef __x86_64__
 static __inline__ void __DEFAULT_FN_ATTRS
-_fxrstor(void *__p) {
-  return __builtin_ia32_fxrstor(__p);
+_xsavec64(void *__p, unsigned long long __m) {
+  __builtin_ia32_xsavec64(__p, __m);
 }
-
-static __inline__ void __DEFAULT_FN_ATTRS
-_fxrstor64(void *__p) {
-  return __builtin_ia32_fxrstor64(__p);
-}
+#endif
 
 #undef __DEFAULT_FN_ATTRS
 

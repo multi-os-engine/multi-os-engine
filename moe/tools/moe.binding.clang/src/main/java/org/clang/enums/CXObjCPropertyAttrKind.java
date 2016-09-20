@@ -51,4 +51,6 @@ public final class CXObjCPropertyAttrKind {
 	public static final int CXObjCPropertyAttr_strong = 0x00000400;
 	@Generated
 	public static final int CXObjCPropertyAttr_unsafe_unretained = 0x00000800;
+	@Generated
+	public static final int CXObjCPropertyAttr_class = 0x00001000;
 }

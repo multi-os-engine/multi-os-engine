@@ -700,6 +700,11 @@ public final class clang {
 
 	@Generated
 	@CFunction
+	@ByValue
+	public static native CXType clang_Type_getNamedType(@ByValue CXType T);
+
+	@Generated
+	@CFunction
 	public static native long clang_Type_getAlignOf(@ByValue CXType T);
 
 	@Generated

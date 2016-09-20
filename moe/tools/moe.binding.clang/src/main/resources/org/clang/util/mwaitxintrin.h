@@ -1,4 +1,4 @@
-/*===---- fxsrintrin.h - FXSR intrinsic ------------------------------------===
+/*===---- mwaitxintrin.h - MONITORX/MWAITX intrinsics ----------------------===
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,35 +21,27 @@
  *===-----------------------------------------------------------------------===
  */
 
-#ifndef __IMMINTRIN_H
-#error "Never use <fxsrintrin.h> directly; include <immintrin.h> instead."
+#ifndef __X86INTRIN_H
+#error "Never use <mwaitxintrin.h> directly; include <x86intrin.h> instead."
 #endif
 
-#ifndef __FXSRINTRIN_H
-#define __FXSRINTRIN_H
+#ifndef _MWAITXINTRIN_H
+#define _MWAITXINTRIN_H
 
-#define __DEFAULT_FN_ATTRS __attribute__((__always_inline__, __nodebug__,  __target__("fxsr")))
-
+/* Define the default attributes for the functions in this file. */
+#define __DEFAULT_FN_ATTRS __attribute__((__always_inline__, __nodebug__,  __target__("mwaitx")))
 static __inline__ void __DEFAULT_FN_ATTRS
-_fxsave(void *__p) {
-  return __builtin_ia32_fxsave(__p);
+_mm_monitorx(void const * __p, unsigned __extensions, unsigned __hints)
+{
+  __builtin_ia32_monitorx((void *)__p, __extensions, __hints);
 }
 
 static __inline__ void __DEFAULT_FN_ATTRS
-_fxsave64(void *__p) {
-  return __builtin_ia32_fxsave64(__p);
-}
-
-static __inline__ void __DEFAULT_FN_ATTRS
-_fxrstor(void *__p) {
-  return __builtin_ia32_fxrstor(__p);
-}
-
-static __inline__ void __DEFAULT_FN_ATTRS
-_fxrstor64(void *__p) {
-  return __builtin_ia32_fxrstor64(__p);
+_mm_mwaitx(unsigned __extensions, unsigned __hints, unsigned __clock)
+{
+  __builtin_ia32_mwaitx(__extensions, __hints, __clock);
 }
 
 #undef __DEFAULT_FN_ATTRS
 
-#endif
+#endif /* _MWAITXINTRIN_H */

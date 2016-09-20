@@ -1,4 +1,4 @@
-/*===---- fxsrintrin.h - FXSR intrinsic ------------------------------------===
+/*===---- clflushoptintrin.h - CLFLUSHOPT intrinsic ------------------------------------===
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,32 +22,18 @@
  */
 
 #ifndef __IMMINTRIN_H
-#error "Never use <fxsrintrin.h> directly; include <immintrin.h> instead."
+#error "Never use <clflushoptintrin.h> directly; include <immintrin.h> instead."
 #endif
 
-#ifndef __FXSRINTRIN_H
-#define __FXSRINTRIN_H
+#ifndef __CLFLUSHOPTINTRIN_H
+#define __CLFLUSHOPTINTRIN_H
 
-#define __DEFAULT_FN_ATTRS __attribute__((__always_inline__, __nodebug__,  __target__("fxsr")))
-
-static __inline__ void __DEFAULT_FN_ATTRS
-_fxsave(void *__p) {
-  return __builtin_ia32_fxsave(__p);
-}
+/* Define the default attributes for the functions in this file. */
+#define __DEFAULT_FN_ATTRS __attribute__((__always_inline__, __nodebug__,  __target__("clflushopt")))
 
 static __inline__ void __DEFAULT_FN_ATTRS
-_fxsave64(void *__p) {
-  return __builtin_ia32_fxsave64(__p);
-}
-
-static __inline__ void __DEFAULT_FN_ATTRS
-_fxrstor(void *__p) {
-  return __builtin_ia32_fxrstor(__p);
-}
-
-static __inline__ void __DEFAULT_FN_ATTRS
-_fxrstor64(void *__p) {
-  return __builtin_ia32_fxrstor64(__p);
+_mm_clflushopt(char * __m) {
+  __builtin_ia32_clflushopt(__m);
 }
 
 #undef __DEFAULT_FN_ATTRS
