@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CFNetServicesError {
-    @Generated
-    private CFNetServicesError() {
-    }
-
     @Generated public static final int Unknown = 0xFFFEE6C0;
     @Generated public static final int Collision = 0xFFFEE6BF;
     @Generated public static final int NotFound = 0xFFFEE6BE;
@@ -32,4 +28,8 @@ public final class CFNetServicesError {
     @Generated public static final int Cancel = 0xFFFEE6BB;
     @Generated public static final int Invalid = 0xFFFEE6BA;
     @Generated public static final int Timeout = 0xFFFEE6B9;
+
+    @Generated
+    private CFNetServicesError() {
+    }
 }

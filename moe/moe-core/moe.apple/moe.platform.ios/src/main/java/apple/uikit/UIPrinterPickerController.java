@@ -64,78 +64,6 @@ public class UIPrinterPickerController extends NSObject {
     public static native UIPrinterPickerController alloc();
 
     /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instp/UIPrinterPickerController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UIPrinterPickerControllerDelegate delegate();
-
-    /**
-     * dismissAnimated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instm/UIPrinterPickerController/dismissAnimated:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dismissAnimated:")
-    public native void dismissAnimated(boolean animated);
-
-    @Generated
-    @Selector("init")
-    public native UIPrinterPickerController init();
-
-    /**
-     * presentAnimated:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instm/UIPrinterPickerController/presentAnimated:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("presentAnimated:completionHandler:")
-    public native boolean presentAnimatedCompletionHandler(boolean animated,
-            @ObjCBlock(name = "call_presentAnimatedCompletionHandler") Block_presentAnimatedCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_presentAnimatedCompletionHandler {
-        @Generated
-        void call_presentAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1, NSError arg2);
-    }
-
-    /**
-     * presentFromBarButtonItem:animated:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instm/UIPrinterPickerController/presentFromBarButtonItem:animated:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("presentFromBarButtonItem:animated:completionHandler:")
-    public native boolean presentFromBarButtonItemAnimatedCompletionHandler(UIBarButtonItem item, boolean animated,
-            @ObjCBlock(name = "call_presentFromBarButtonItemAnimatedCompletionHandler") Block_presentFromBarButtonItemAnimatedCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_presentFromBarButtonItemAnimatedCompletionHandler {
-        @Generated
-        void call_presentFromBarButtonItemAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1,
-                NSError arg2);
-    }
-
-    /**
-     * presentFromRect:inView:animated:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instm/UIPrinterPickerController/presentFromRect:inView:animated:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("presentFromRect:inView:animated:completionHandler:")
-    public native boolean presentFromRectInViewAnimatedCompletionHandler(@ByValue CGRect rect, UIView view,
-            boolean animated,
-            @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_presentFromRectInViewAnimatedCompletionHandler {
-        @Generated
-        void call_presentFromRectInViewAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1,
-                NSError arg2);
-    }
-
-    /**
      * printerPickerControllerWithInitiallySelectedPrinter:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/clm/UIPrinterPickerController/printerPickerControllerWithInitiallySelectedPrinter:">iOS Dev Center</a>
      */
@@ -143,38 +71,6 @@ public class UIPrinterPickerController extends NSObject {
     @Selector("printerPickerControllerWithInitiallySelectedPrinter:")
     public static native UIPrinterPickerController printerPickerControllerWithInitiallySelectedPrinter(
             UIPrinter printer);
-
-    /**
-     * selectedPrinter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instp/UIPrinterPickerController/selectedPrinter">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("selectedPrinter")
-    public native UIPrinter selectedPrinter();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instp/UIPrinterPickerController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPrinterPickerControllerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instp/UIPrinterPickerController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPrinterPickerControllerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -275,4 +171,108 @@ public class UIPrinterPickerController extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instp/UIPrinterPickerController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIPrinterPickerControllerDelegate delegate();
+
+    /**
+     * dismissAnimated:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instm/UIPrinterPickerController/dismissAnimated:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dismissAnimated:")
+    public native void dismissAnimated(boolean animated);
+
+    @Generated
+    @Selector("init")
+    public native UIPrinterPickerController init();
+
+    /**
+     * presentAnimated:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instm/UIPrinterPickerController/presentAnimated:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("presentAnimated:completionHandler:")
+    public native boolean presentAnimatedCompletionHandler(boolean animated,
+            @ObjCBlock(name = "call_presentAnimatedCompletionHandler") Block_presentAnimatedCompletionHandler completion);
+
+    /**
+     * presentFromBarButtonItem:animated:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instm/UIPrinterPickerController/presentFromBarButtonItem:animated:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("presentFromBarButtonItem:animated:completionHandler:")
+    public native boolean presentFromBarButtonItemAnimatedCompletionHandler(UIBarButtonItem item, boolean animated,
+            @ObjCBlock(name = "call_presentFromBarButtonItemAnimatedCompletionHandler") Block_presentFromBarButtonItemAnimatedCompletionHandler completion);
+
+    /**
+     * presentFromRect:inView:animated:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instm/UIPrinterPickerController/presentFromRect:inView:animated:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("presentFromRect:inView:animated:completionHandler:")
+    public native boolean presentFromRectInViewAnimatedCompletionHandler(@ByValue CGRect rect, UIView view,
+            boolean animated,
+            @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
+
+    /**
+     * selectedPrinter</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instp/UIPrinterPickerController/selectedPrinter">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("selectedPrinter")
+    public native UIPrinter selectedPrinter();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instp/UIPrinterPickerController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPrinterPickerControllerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrinterPickerController_class/index.html#//apple_ref/occ/instp/UIPrinterPickerController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPrinterPickerControllerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_presentAnimatedCompletionHandler {
+        @Generated
+        void call_presentAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_presentFromBarButtonItemAnimatedCompletionHandler {
+        @Generated
+        void call_presentFromBarButtonItemAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1,
+                NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_presentFromRectInViewAnimatedCompletionHandler {
+        @Generated
+        void call_presentFromRectInViewAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1,
+                NSError arg2);
+    }
 }

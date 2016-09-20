@@ -76,6 +76,111 @@ public class NSLayoutManager extends NSObject implements NSCoding {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSLayoutManager alloc();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * addTextContainer:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSLayoutManager_Class/index.html#//apple_ref/occ/instm/NSLayoutManager/addTextContainer:">iOS Dev Center</a>
@@ -83,11 +188,6 @@ public class NSLayoutManager extends NSObject implements NSCoding {
     @Generated
     @Selector("addTextContainer:")
     public native void addTextContainer(NSTextContainer container);
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSLayoutManager alloc();
 
     /**
      * allowsNonContiguousLayout</br>
@@ -260,14 +360,6 @@ public class NSLayoutManager extends NSObject implements NSCoding {
             @ByValue NSRange glyphRange, @ByValue NSRange selectedRange, NSTextContainer textContainer,
             @ObjCBlock(name = "call_enumerateEnclosingRectsForGlyphRangeWithinSelectedGlyphRangeInTextContainerUsingBlock") Block_enumerateEnclosingRectsForGlyphRangeWithinSelectedGlyphRangeInTextContainerUsingBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateEnclosingRectsForGlyphRangeWithinSelectedGlyphRangeInTextContainerUsingBlock {
-        @Generated
-        void call_enumerateEnclosingRectsForGlyphRangeWithinSelectedGlyphRangeInTextContainerUsingBlock(
-                @ByValue CGRect arg0, BoolPtr arg1);
-    }
-
     /**
      * enumerateLineFragmentsForGlyphRange:usingBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ApplicationKit/Classes/NSLayoutManager_Class/index.html#//apple_ref/occ/instm/NSLayoutManager/enumerateLineFragmentsForGlyphRange:usingBlock:">iOS Dev Center</a>
@@ -276,14 +368,6 @@ public class NSLayoutManager extends NSObject implements NSCoding {
     @Selector("enumerateLineFragmentsForGlyphRange:usingBlock:")
     public native void enumerateLineFragmentsForGlyphRangeUsingBlock(@ByValue NSRange glyphRange,
             @ObjCBlock(name = "call_enumerateLineFragmentsForGlyphRangeUsingBlock") Block_enumerateLineFragmentsForGlyphRangeUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateLineFragmentsForGlyphRangeUsingBlock {
-        @Generated
-        void call_enumerateLineFragmentsForGlyphRangeUsingBlock(@ByValue CGRect arg0, @ByValue CGRect arg1,
-                NSTextContainer arg2, @ByValue NSRange arg3, BoolPtr arg4);
-    }
 
     /**
      * extraLineFragmentRect</br>
@@ -916,103 +1000,19 @@ public class NSLayoutManager extends NSObject implements NSCoding {
     public native NSTextContainer textContainerForGlyphAtIndexEffectiveRangeWithoutAdditionalLayout(
             @NUInt long glyphIndex, NSRange effectiveGlyphRange, boolean flag);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_enumerateEnclosingRectsForGlyphRangeWithinSelectedGlyphRangeInTextContainerUsingBlock {
+        @Generated
+        void call_enumerateEnclosingRectsForGlyphRangeWithinSelectedGlyphRangeInTextContainerUsingBlock(
+                @ByValue CGRect arg0, BoolPtr arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_enumerateLineFragmentsForGlyphRangeUsingBlock {
+        @Generated
+        void call_enumerateLineFragmentsForGlyphRangeUsingBlock(@ByValue CGRect arg0, @ByValue CGRect arg1,
+                NSTextContainer arg2, @ByValue NSRange arg3, BoolPtr arg4);
+    }
 }

@@ -60,22 +60,6 @@ public class HMUser extends NSObject {
     public static native HMUser alloc();
 
     @Generated
-    @Selector("init")
-    public native HMUser init();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMUser_Class/index.html#//apple_ref/occ/instp/HMUser/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -174,4 +158,20 @@ public class HMUser extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native HMUser init();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMUser_Class/index.html#//apple_ref/occ/instp/HMUser/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
 }

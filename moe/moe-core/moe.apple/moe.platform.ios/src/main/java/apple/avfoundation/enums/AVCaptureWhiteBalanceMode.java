@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVCaptureWhiteBalanceMode {
-    @Generated
-    private AVCaptureWhiteBalanceMode() {
-    }
-
     @Generated @NInt public static final long Locked = 0x0000000000000000L;
     @Generated @NInt public static final long AutoWhiteBalance = 0x0000000000000001L;
     @Generated @NInt public static final long ContinuousAutoWhiteBalance = 0x0000000000000002L;
+
+    @Generated
+    private AVCaptureWhiteBalanceMode() {
+    }
 }

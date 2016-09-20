@@ -61,63 +61,6 @@ public class CITextFeature extends CIFeature {
     @Selector("alloc")
     public static native CITextFeature alloc();
 
-    /**
-     * bottomLeft</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/bottomLeft">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bottomLeft")
-    @ByValue
-    public native CGPoint bottomLeft();
-
-    /**
-     * bottomRight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/bottomRight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bottomRight")
-    @ByValue
-    public native CGPoint bottomRight();
-
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/bounds">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bounds")
-    @ByValue
-    public native CGRect bounds();
-
-    @Generated
-    @Selector("init")
-    public native CITextFeature init();
-
-    /**
-     * subFeatures</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/subFeatures">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subFeatures")
-    public native NSArray<?> subFeatures();
-
-    /**
-     * topLeft</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/topLeft">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("topLeft")
-    @ByValue
-    public native CGPoint topLeft();
-
-    /**
-     * topRight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/topRight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("topRight")
-    @ByValue
-    public native CGPoint topRight();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -217,4 +160,61 @@ public class CITextFeature extends CIFeature {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * bottomLeft</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/bottomLeft">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bottomLeft")
+    @ByValue
+    public native CGPoint bottomLeft();
+
+    /**
+     * bottomRight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/bottomRight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bottomRight")
+    @ByValue
+    public native CGPoint bottomRight();
+
+    /**
+     * bounds</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/bounds">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bounds")
+    @ByValue
+    public native CGRect bounds();
+
+    @Generated
+    @Selector("init")
+    public native CITextFeature init();
+
+    /**
+     * subFeatures</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/subFeatures">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subFeatures")
+    public native NSArray<?> subFeatures();
+
+    /**
+     * topLeft</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/topLeft">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("topLeft")
+    @ByValue
+    public native CGPoint topLeft();
+
+    /**
+     * topRight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CITextFeature_Class/index.html#//apple_ref/occ/instp/CITextFeature/topRight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("topRight")
+    @ByValue
+    public native CGPoint topRight();
 }

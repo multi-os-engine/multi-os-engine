@@ -59,10 +59,6 @@ public class CTSubscriberInfo extends NSObject {
     public static native CTSubscriberInfo alloc();
 
     @Generated
-    @Selector("init")
-    public native CTSubscriberInfo init();
-
-    @Generated
     @Selector("subscriber")
     public static native CTSubscriber subscriber();
 
@@ -165,4 +161,8 @@ public class CTSubscriberInfo extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CTSubscriberInfo init();
 }

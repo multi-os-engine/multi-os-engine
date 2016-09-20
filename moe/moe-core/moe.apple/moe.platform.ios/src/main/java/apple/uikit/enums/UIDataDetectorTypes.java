@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIDataDetectorTypes {
-    @Generated
-    private UIDataDetectorTypes() {
-    }
-
     @Generated @NUInt public static final long PhoneNumber = 0x0000000000000001L;
     @Generated @NUInt public static final long Link = 0x0000000000000002L;
     @Generated @NUInt public static final long Address = 0x0000000000000004L;
@@ -33,4 +29,8 @@ public final class UIDataDetectorTypes {
     @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ?
             0xFFFFFFFFFFFFFFFFL :
             0x00000000FFFFFFFFL;
+
+    @Generated
+    private UIDataDetectorTypes() {
+    }
 }

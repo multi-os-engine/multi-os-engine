@@ -20,14 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kJSClassAttributeNone = 0x00000000;
     @Generated public static final int kJSClassAttributeNoAutomaticPrototype = 0x00000002;
     @Generated public static final int kJSPropertyAttributeNone = 0x00000000;
     @Generated public static final int kJSPropertyAttributeReadOnly = 0x00000002;
     @Generated public static final int kJSPropertyAttributeDontEnum = 0x00000004;
     @Generated public static final int kJSPropertyAttributeDontDelete = 0x00000008;
+    @Generated
+    private Enums() {
+    }
 }

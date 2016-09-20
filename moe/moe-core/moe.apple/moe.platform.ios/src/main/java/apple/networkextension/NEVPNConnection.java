@@ -63,52 +63,6 @@ public class NEVPNConnection extends NSObject {
     public static native NEVPNConnection alloc();
 
     @Generated
-    @Selector("init")
-    public native NEVPNConnection init();
-
-    /**
-     * startVPNTunnelAndReturnError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNConnectionClassRef/index.html#//apple_ref/occ/instm/NEVPNConnection/startVPNTunnelAndReturnError:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startVPNTunnelAndReturnError:")
-    public native boolean startVPNTunnelAndReturnError(Ptr<NSError> error);
-
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNConnectionClassRef/index.html#//apple_ref/occ/instp/NEVPNConnection/status">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("status")
-    @NInt
-    public native long status();
-
-    /**
-     * stopVPNTunnel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNConnectionClassRef/index.html#//apple_ref/occ/instm/NEVPNConnection/stopVPNTunnel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopVPNTunnel")
-    public native void stopVPNTunnel();
-
-    /**
-     * connectedDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNConnectionClassRef/index.html#//apple_ref/occ/instp/NEVPNConnection/connectedDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connectedDate")
-    public native NSDate connectedDate();
-
-    /**
-     * startVPNTunnelWithOptions:andReturnError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNConnectionClassRef/index.html#//apple_ref/occ/instm/NEVPNConnection/startVPNTunnelWithOptions:andReturnError:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startVPNTunnelWithOptions:andReturnError:")
-    public native boolean startVPNTunnelWithOptionsAndReturnError(NSDictionary<String, ? extends NSObject> options,
-            Ptr<NSError> error);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -207,4 +161,50 @@ public class NEVPNConnection extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NEVPNConnection init();
+
+    /**
+     * startVPNTunnelAndReturnError:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNConnectionClassRef/index.html#//apple_ref/occ/instm/NEVPNConnection/startVPNTunnelAndReturnError:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startVPNTunnelAndReturnError:")
+    public native boolean startVPNTunnelAndReturnError(Ptr<NSError> error);
+
+    /**
+     * status</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNConnectionClassRef/index.html#//apple_ref/occ/instp/NEVPNConnection/status">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("status")
+    @NInt
+    public native long status();
+
+    /**
+     * stopVPNTunnel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNConnectionClassRef/index.html#//apple_ref/occ/instm/NEVPNConnection/stopVPNTunnel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopVPNTunnel")
+    public native void stopVPNTunnel();
+
+    /**
+     * connectedDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNConnectionClassRef/index.html#//apple_ref/occ/instp/NEVPNConnection/connectedDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connectedDate")
+    public native NSDate connectedDate();
+
+    /**
+     * startVPNTunnelWithOptions:andReturnError:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNConnectionClassRef/index.html#//apple_ref/occ/instm/NEVPNConnection/startVPNTunnelWithOptions:andReturnError:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startVPNTunnelWithOptions:andReturnError:")
+    public native boolean startVPNTunnelWithOptionsAndReturnError(NSDictionary<String, ? extends NSObject> options,
+            Ptr<NSError> error);
 }

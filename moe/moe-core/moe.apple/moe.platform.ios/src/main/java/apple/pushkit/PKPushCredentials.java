@@ -60,26 +60,6 @@ public class PKPushCredentials extends NSObject {
     public static native PKPushCredentials alloc();
 
     @Generated
-    @Selector("init")
-    public native PKPushCredentials init();
-
-    /**
-     * token</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushCredentials_Class/index.html#//apple_ref/occ/instp/PKPushCredentials/token">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("token")
-    public native NSData token();
-
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushCredentials_Class/index.html#//apple_ref/occ/instp/PKPushCredentials/type">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("type")
-    public native String type();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -178,4 +158,24 @@ public class PKPushCredentials extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native PKPushCredentials init();
+
+    /**
+     * token</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushCredentials_Class/index.html#//apple_ref/occ/instp/PKPushCredentials/token">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("token")
+    public native NSData token();
+
+    /**
+     * type</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushCredentials_Class/index.html#//apple_ref/occ/instp/PKPushCredentials/type">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("type")
+    public native String type();
 }

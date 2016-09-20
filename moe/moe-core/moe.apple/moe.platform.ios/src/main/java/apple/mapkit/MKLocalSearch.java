@@ -60,50 +60,6 @@ public class MKLocalSearch extends NSObject {
     @Selector("alloc")
     public static native MKLocalSearch alloc();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instm/MKLocalSearch/cancel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancel")
-    public native void cancel();
-
-    @Generated
-    @Selector("init")
-    public native MKLocalSearch init();
-
-    /**
-     * initWithRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instm/MKLocalSearch/initWithRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRequest:")
-    public native MKLocalSearch initWithRequest(MKLocalSearchRequest request);
-
-    /**
-     * searching</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instp/MKLocalSearch/searching">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isSearching")
-    public native boolean isSearching();
-
-    /**
-     * startWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instm/MKLocalSearch/startWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startWithCompletionHandler:")
-    public native void startWithCompletionHandler(
-            @ObjCBlock(name = "call_startWithCompletionHandler") Block_startWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startWithCompletionHandler {
-        @Generated
-        void call_startWithCompletionHandler(MKLocalSearchResponse arg0, NSError arg1);
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -203,4 +159,48 @@ public class MKLocalSearch extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cancel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instm/MKLocalSearch/cancel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancel")
+    public native void cancel();
+
+    @Generated
+    @Selector("init")
+    public native MKLocalSearch init();
+
+    /**
+     * initWithRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instm/MKLocalSearch/initWithRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRequest:")
+    public native MKLocalSearch initWithRequest(MKLocalSearchRequest request);
+
+    /**
+     * searching</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instp/MKLocalSearch/searching">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isSearching")
+    public native boolean isSearching();
+
+    /**
+     * startWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearch/index.html#//apple_ref/occ/instm/MKLocalSearch/startWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startWithCompletionHandler:")
+    public native void startWithCompletionHandler(
+            @ObjCBlock(name = "call_startWithCompletionHandler") Block_startWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startWithCompletionHandler {
+        @Generated
+        void call_startWithCompletionHandler(MKLocalSearchResponse arg0, NSError arg1);
+    }
 }

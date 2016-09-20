@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class EAGLRenderingAPI {
-    @Generated
-    private EAGLRenderingAPI() {
-    }
-
     @Generated @NUInt public static final long GLES1 = 0x0000000000000001L;
     @Generated @NUInt public static final long GLES2 = 0x0000000000000002L;
     @Generated @NUInt public static final long GLES3 = 0x0000000000000003L;
+
+    @Generated
+    private EAGLRenderingAPI() {
+    }
 }

@@ -59,72 +59,6 @@ public class GLKTextureInfo extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native GLKTextureInfo alloc();
 
-    /**
-     * alphaState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/alphaState">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alphaState")
-    public native int alphaState();
-
-    /**
-     * containsMipmaps</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/containsMipmaps">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containsMipmaps")
-    public native boolean containsMipmaps();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/height">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("height")
-    public native int height();
-
-    @Generated
-    @Selector("init")
-    public native GLKTextureInfo init();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native int name();
-
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/target">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("target")
-    public native int target();
-
-    /**
-     * textureOrigin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/textureOrigin">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textureOrigin")
-    public native int textureOrigin();
-
-    /**
-     * width</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/width">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("width")
-    public native int width();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -224,4 +158,70 @@ public class GLKTextureInfo extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * alphaState</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/alphaState">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alphaState")
+    public native int alphaState();
+
+    /**
+     * containsMipmaps</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/containsMipmaps">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containsMipmaps")
+    public native boolean containsMipmaps();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * height</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/height">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("height")
+    public native int height();
+
+    @Generated
+    @Selector("init")
+    public native GLKTextureInfo init();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native int name();
+
+    /**
+     * target</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/target">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("target")
+    public native int target();
+
+    /**
+     * textureOrigin</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/textureOrigin">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textureOrigin")
+    public native int textureOrigin();
+
+    /**
+     * width</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKTextureInfo_Ref/index.html#//apple_ref/occ/instp/GLKTextureInfo/width">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("width")
+    public native int width();
 }

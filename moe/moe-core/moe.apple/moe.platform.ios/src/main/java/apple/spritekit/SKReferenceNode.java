@@ -61,38 +61,6 @@ public class SKReferenceNode extends SKNode {
     @Selector("alloc")
     public static native SKReferenceNode alloc();
 
-    /**
-     * didLoadReferenceNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReferenceNode_Class_Ref/index.html#//apple_ref/occ/instm/SKReferenceNode/didLoadReferenceNode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("didLoadReferenceNode:")
-    public native void didLoadReferenceNode(SKNode node);
-
-    @Generated
-    @Selector("init")
-    public native SKReferenceNode init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKReferenceNode initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithFileNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReferenceNode_Class_Ref/index.html#//apple_ref/occ/instm/SKReferenceNode/initWithFileNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFileNamed:")
-    public native SKReferenceNode initWithFileNamed(String fileName);
-
-    /**
-     * initWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReferenceNode_Class_Ref/index.html#//apple_ref/occ/instm/SKReferenceNode/initWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:")
-    public native SKReferenceNode initWithURL(NSURL url);
-
     @Generated
     @Selector("node")
     public static native SKReferenceNode node();
@@ -116,14 +84,6 @@ public class SKReferenceNode extends SKNode {
     @Generated
     @Selector("referenceNodeWithURL:")
     public static native SKReferenceNode referenceNodeWithURL(NSURL referenceURL);
-
-    /**
-     * resolveReferenceNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReferenceNode_Class_Ref/index.html#//apple_ref/occ/instm/SKReferenceNode/resolveReferenceNode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resolveReferenceNode")
-    public native void resolveReferenceNode();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -242,4 +202,44 @@ public class SKReferenceNode extends SKNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * didLoadReferenceNode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReferenceNode_Class_Ref/index.html#//apple_ref/occ/instm/SKReferenceNode/didLoadReferenceNode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("didLoadReferenceNode:")
+    public native void didLoadReferenceNode(SKNode node);
+
+    @Generated
+    @Selector("init")
+    public native SKReferenceNode init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKReferenceNode initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithFileNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReferenceNode_Class_Ref/index.html#//apple_ref/occ/instm/SKReferenceNode/initWithFileNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFileNamed:")
+    public native SKReferenceNode initWithFileNamed(String fileName);
+
+    /**
+     * initWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReferenceNode_Class_Ref/index.html#//apple_ref/occ/instm/SKReferenceNode/initWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:")
+    public native SKReferenceNode initWithURL(NSURL url);
+
+    /**
+     * resolveReferenceNode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKReferenceNode_Class_Ref/index.html#//apple_ref/occ/instm/SKReferenceNode/resolveReferenceNode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resolveReferenceNode")
+    public native void resolveReferenceNode();
 }

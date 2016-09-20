@@ -62,57 +62,6 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     public static native NSPredicate alloc();
 
     /**
-     * allowEvaluation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/instm/NSPredicate/allowEvaluation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allowEvaluation")
-    public native void allowEvaluation();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * evaluateWithObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/instm/NSPredicate/evaluateWithObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("evaluateWithObject:")
-    public native boolean evaluateWithObject(@Mapped(ObjCObjectMapper.class) Object object);
-
-    /**
-     * evaluateWithObject:substitutionVariables:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/instm/NSPredicate/evaluateWithObject:substitutionVariables:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("evaluateWithObject:substitutionVariables:")
-    public native boolean evaluateWithObjectSubstitutionVariables(@Mapped(ObjCObjectMapper.class) Object object,
-            NSDictionary<String, ?> bindings);
-
-    @Generated
-    @Selector("init")
-    public native NSPredicate init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSPredicate initWithCoder(NSCoder aDecoder);
-
-    /**
-     * predicateFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/instp/NSPredicate/predicateFormat">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("predicateFormat")
-    public native String predicateFormat();
-
-    /**
      * predicateWithBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/clm/NSPredicate/predicateWithBlock:">iOS Dev Center</a>
      */
@@ -120,13 +69,6 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("predicateWithBlock:")
     public static native NSPredicate predicateWithBlock(
             @ObjCBlock(name = "call_predicateWithBlock") Block_predicateWithBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_predicateWithBlock {
-        @Generated
-        boolean call_predicateWithBlock(@Mapped(ObjCObjectMapper.class) Object arg0, NSDictionary<String, ?> arg1);
-    }
 
     /**
      * predicateWithFormat:</br>
@@ -154,15 +96,6 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
 
     /**
-     * predicateWithSubstitutionVariables:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/instm/NSPredicate/predicateWithSubstitutionVariables:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("predicateWithSubstitutionVariables:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object predicateWithSubstitutionVariables(NSDictionary<String, ?> variables);
-
-    /**
      * predicateWithValue:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/clm/NSPredicate/predicateWithValue:">iOS Dev Center</a>
      */
@@ -173,12 +106,6 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -279,4 +206,77 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allowEvaluation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/instm/NSPredicate/allowEvaluation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allowEvaluation")
+    public native void allowEvaluation();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * evaluateWithObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/instm/NSPredicate/evaluateWithObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("evaluateWithObject:")
+    public native boolean evaluateWithObject(@Mapped(ObjCObjectMapper.class) Object object);
+
+    /**
+     * evaluateWithObject:substitutionVariables:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/instm/NSPredicate/evaluateWithObject:substitutionVariables:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("evaluateWithObject:substitutionVariables:")
+    public native boolean evaluateWithObjectSubstitutionVariables(@Mapped(ObjCObjectMapper.class) Object object,
+            NSDictionary<String, ?> bindings);
+
+    @Generated
+    @Selector("init")
+    public native NSPredicate init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSPredicate initWithCoder(NSCoder aDecoder);
+
+    /**
+     * predicateFormat</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/instp/NSPredicate/predicateFormat">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("predicateFormat")
+    public native String predicateFormat();
+
+    /**
+     * predicateWithSubstitutionVariables:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPredicate_Class/index.html#//apple_ref/occ/instm/NSPredicate/predicateWithSubstitutionVariables:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("predicateWithSubstitutionVariables:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object predicateWithSubstitutionVariables(NSDictionary<String, ?> variables);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_predicateWithBlock {
+        @Generated
+        boolean call_predicateWithBlock(@Mapped(ObjCObjectMapper.class) Object arg0, NSDictionary<String, ?> arg1);
+    }
 }

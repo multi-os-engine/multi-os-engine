@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIReturnKeyType {
-    @Generated
-    private UIReturnKeyType() {
-    }
-
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     @Generated @NInt public static final long Go = 0x0000000000000001L;
     @Generated @NInt public static final long Google = 0x0000000000000002L;
@@ -37,4 +33,8 @@ public final class UIReturnKeyType {
     @Generated @NInt public static final long Done = 0x0000000000000009L;
     @Generated @NInt public static final long EmergencyCall = 0x000000000000000AL;
     @Generated @NInt public static final long Continue = 0x000000000000000BL;
+
+    @Generated
+    private UIReturnKeyType() {
+    }
 }

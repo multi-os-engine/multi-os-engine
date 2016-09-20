@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTFontSymbolicTraits {
-    @Generated
-    private CTFontSymbolicTraits() {
-    }
-
     @Generated public static final int TraitItalic = 0x00000001;
     @Generated public static final int TraitBold = 0x00000002;
     @Generated public static final int TraitExpanded = 0x00000020;
@@ -44,4 +40,8 @@ public final class CTFontSymbolicTraits {
     @Generated public static final int ColorGlyphsTrait = 0x00002000;
     @Generated public static final int CompositeTrait = 0x00004000;
     @Generated public static final int ClassMaskTrait = 0xF0000000;
+
+    @Generated
+    private CTFontSymbolicTraits() {
+    }
 }

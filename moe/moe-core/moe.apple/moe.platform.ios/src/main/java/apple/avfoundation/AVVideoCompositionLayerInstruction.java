@@ -71,72 +71,8 @@ public class AVVideoCompositionLayerInstruction extends NSObject
     public static native AVVideoCompositionLayerInstruction alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVVideoCompositionLayerInstruction/getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:")
-    public native boolean getCropRectangleRampForTimeStartCropRectangleEndCropRectangleTimeRange(@ByValue CMTime time,
-            CGRect startCropRectangle, CGRect endCropRectangle, CMTimeRange timeRange);
-
-    /**
-     * getOpacityRampForTime:startOpacity:endOpacity:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVVideoCompositionLayerInstruction/getOpacityRampForTime:startOpacity:endOpacity:timeRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getOpacityRampForTime:startOpacity:endOpacity:timeRange:")
-    public native boolean getOpacityRampForTimeStartOpacityEndOpacityTimeRange(@ByValue CMTime time,
-            FloatPtr startOpacity, FloatPtr endOpacity, CMTimeRange timeRange);
-
-    /**
-     * getTransformRampForTime:startTransform:endTransform:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVVideoCompositionLayerInstruction/getTransformRampForTime:startTransform:endTransform:timeRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getTransformRampForTime:startTransform:endTransform:timeRange:")
-    public native boolean getTransformRampForTimeStartTransformEndTransformTimeRange(@ByValue CMTime time,
-            CGAffineTransform startTransform, CGAffineTransform endTransform, CMTimeRange timeRange);
-
-    @Generated
-    @Selector("init")
-    public native AVVideoCompositionLayerInstruction init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVVideoCompositionLayerInstruction initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * trackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionLayerInstruction/trackID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("trackID")
-    public native int trackID();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -237,4 +173,68 @@ public class AVVideoCompositionLayerInstruction extends NSObject
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVVideoCompositionLayerInstruction/getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:")
+    public native boolean getCropRectangleRampForTimeStartCropRectangleEndCropRectangleTimeRange(@ByValue CMTime time,
+            CGRect startCropRectangle, CGRect endCropRectangle, CMTimeRange timeRange);
+
+    /**
+     * getOpacityRampForTime:startOpacity:endOpacity:timeRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVVideoCompositionLayerInstruction/getOpacityRampForTime:startOpacity:endOpacity:timeRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getOpacityRampForTime:startOpacity:endOpacity:timeRange:")
+    public native boolean getOpacityRampForTimeStartOpacityEndOpacityTimeRange(@ByValue CMTime time,
+            FloatPtr startOpacity, FloatPtr endOpacity, CMTimeRange timeRange);
+
+    /**
+     * getTransformRampForTime:startTransform:endTransform:timeRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instm/AVVideoCompositionLayerInstruction/getTransformRampForTime:startTransform:endTransform:timeRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getTransformRampForTime:startTransform:endTransform:timeRange:")
+    public native boolean getTransformRampForTimeStartTransformEndTransformTimeRange(@ByValue CMTime time,
+            CGAffineTransform startTransform, CGAffineTransform endTransform, CMTimeRange timeRange);
+
+    @Generated
+    @Selector("init")
+    public native AVVideoCompositionLayerInstruction init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVVideoCompositionLayerInstruction initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * trackID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionLayerInstruction/trackID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("trackID")
+    public native int trackID();
 }

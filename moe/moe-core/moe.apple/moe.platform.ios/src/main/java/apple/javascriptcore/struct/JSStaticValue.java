@@ -33,11 +33,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class JSStaticValue extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public JSStaticValue() {
@@ -72,25 +72,9 @@ public final class JSStaticValue extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setGetProperty(@FunctionPtr(name = "call_getProperty") Function_getProperty value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getProperty {
-        @Generated
-        VoidPtr call_getProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setSetProperty(@FunctionPtr(name = "call_setProperty") Function_setProperty value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_setProperty {
-        @Generated
-        boolean call_setProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, VoidPtr arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
-    }
 
     @Generated
     @StructureField(order = 3, isGetter = true)
@@ -109,4 +93,20 @@ public final class JSStaticValue extends StructObject {
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_setProperty")
     public native Function_setProperty setProperty();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getProperty {
+        @Generated
+        VoidPtr call_getProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_setProperty {
+        @Generated
+        boolean call_setProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, VoidPtr arg3,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
+    }
 }

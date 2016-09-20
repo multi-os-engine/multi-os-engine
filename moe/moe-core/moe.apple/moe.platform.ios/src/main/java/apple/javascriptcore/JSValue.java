@@ -62,6 +62,241 @@ public class JSValue extends NSObject {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native JSValue alloc();
+
+    /**
+     * valueWithBool:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithBool:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithBool:inContext:")
+    public static native JSValue valueWithBoolInContext(boolean value, JSContext context);
+
+    /**
+     * valueWithDouble:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithDouble:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithDouble:inContext:")
+    public static native JSValue valueWithDoubleInContext(double value, JSContext context);
+
+    /**
+     * valueWithInt32:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithInt32:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithInt32:inContext:")
+    public static native JSValue valueWithInt32InContext(int value, JSContext context);
+
+    /**
+     * valueWithJSValueRef:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithJSValueRef:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithJSValueRef:inContext:")
+    public static native JSValue valueWithJSValueRefInContext(JSValueRef value, JSContext context);
+
+    /**
+     * valueWithNewArrayInContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithNewArrayInContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithNewArrayInContext:")
+    public static native JSValue valueWithNewArrayInContext(JSContext context);
+
+    /**
+     * valueWithNewErrorFromMessage:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithNewErrorFromMessage:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithNewErrorFromMessage:inContext:")
+    public static native JSValue valueWithNewErrorFromMessageInContext(String message, JSContext context);
+
+    /**
+     * valueWithNewObjectInContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithNewObjectInContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithNewObjectInContext:")
+    public static native JSValue valueWithNewObjectInContext(JSContext context);
+
+    /**
+     * valueWithNewRegularExpressionFromPattern:flags:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithNewRegularExpressionFromPattern:flags:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithNewRegularExpressionFromPattern:flags:inContext:")
+    public static native JSValue valueWithNewRegularExpressionFromPatternFlagsInContext(String pattern, String flags,
+            JSContext context);
+
+    /**
+     * valueWithNullInContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithNullInContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithNullInContext:")
+    public static native JSValue valueWithNullInContext(JSContext context);
+
+    /**
+     * valueWithObject:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithObject:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithObject:inContext:")
+    public static native JSValue valueWithObjectInContext(@Mapped(ObjCObjectMapper.class) Object value,
+            JSContext context);
+
+    /**
+     * valueWithPoint:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithPoint:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithPoint:inContext:")
+    public static native JSValue valueWithPointInContext(@ByValue CGPoint point, JSContext context);
+
+    /**
+     * valueWithRange:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithRange:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithRange:inContext:")
+    public static native JSValue valueWithRangeInContext(@ByValue NSRange range, JSContext context);
+
+    /**
+     * valueWithRect:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithRect:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithRect:inContext:")
+    public static native JSValue valueWithRectInContext(@ByValue CGRect rect, JSContext context);
+
+    /**
+     * valueWithSize:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithSize:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithSize:inContext:")
+    public static native JSValue valueWithSizeInContext(@ByValue CGSize size, JSContext context);
+
+    /**
+     * valueWithUInt32:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithUInt32:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithUInt32:inContext:")
+    public static native JSValue valueWithUInt32InContext(int value, JSContext context);
+
+    /**
+     * valueWithUndefinedInContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithUndefinedInContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueWithUndefinedInContext:")
+    public static native JSValue valueWithUndefinedInContext(JSContext context);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * JSValueRef</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/instp/JSValue/JSValueRef">iOS Dev Center</a>
@@ -69,11 +304,6 @@ public class JSValue extends NSObject {
     @Generated
     @Selector("JSValueRef")
     public native JSValueRef JSValueRef();
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native JSValue alloc();
 
     /**
      * callWithArguments:</br>
@@ -398,136 +628,6 @@ public class JSValue extends NSObject {
     public native JSValue valueForProperty(String property);
 
     /**
-     * valueWithBool:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithBool:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithBool:inContext:")
-    public static native JSValue valueWithBoolInContext(boolean value, JSContext context);
-
-    /**
-     * valueWithDouble:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithDouble:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithDouble:inContext:")
-    public static native JSValue valueWithDoubleInContext(double value, JSContext context);
-
-    /**
-     * valueWithInt32:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithInt32:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithInt32:inContext:")
-    public static native JSValue valueWithInt32InContext(int value, JSContext context);
-
-    /**
-     * valueWithJSValueRef:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithJSValueRef:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithJSValueRef:inContext:")
-    public static native JSValue valueWithJSValueRefInContext(JSValueRef value, JSContext context);
-
-    /**
-     * valueWithNewArrayInContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithNewArrayInContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithNewArrayInContext:")
-    public static native JSValue valueWithNewArrayInContext(JSContext context);
-
-    /**
-     * valueWithNewErrorFromMessage:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithNewErrorFromMessage:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithNewErrorFromMessage:inContext:")
-    public static native JSValue valueWithNewErrorFromMessageInContext(String message, JSContext context);
-
-    /**
-     * valueWithNewObjectInContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithNewObjectInContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithNewObjectInContext:")
-    public static native JSValue valueWithNewObjectInContext(JSContext context);
-
-    /**
-     * valueWithNewRegularExpressionFromPattern:flags:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithNewRegularExpressionFromPattern:flags:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithNewRegularExpressionFromPattern:flags:inContext:")
-    public static native JSValue valueWithNewRegularExpressionFromPatternFlagsInContext(String pattern, String flags,
-            JSContext context);
-
-    /**
-     * valueWithNullInContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithNullInContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithNullInContext:")
-    public static native JSValue valueWithNullInContext(JSContext context);
-
-    /**
-     * valueWithObject:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithObject:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithObject:inContext:")
-    public static native JSValue valueWithObjectInContext(@Mapped(ObjCObjectMapper.class) Object value,
-            JSContext context);
-
-    /**
-     * valueWithPoint:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithPoint:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithPoint:inContext:")
-    public static native JSValue valueWithPointInContext(@ByValue CGPoint point, JSContext context);
-
-    /**
-     * valueWithRange:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithRange:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithRange:inContext:")
-    public static native JSValue valueWithRangeInContext(@ByValue NSRange range, JSContext context);
-
-    /**
-     * valueWithRect:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithRect:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithRect:inContext:")
-    public static native JSValue valueWithRectInContext(@ByValue CGRect rect, JSContext context);
-
-    /**
-     * valueWithSize:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithSize:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithSize:inContext:")
-    public static native JSValue valueWithSizeInContext(@ByValue CGSize size, JSContext context);
-
-    /**
-     * valueWithUInt32:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithUInt32:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithUInt32:inContext:")
-    public static native JSValue valueWithUInt32InContext(int value, JSContext context);
-
-    /**
-     * valueWithUndefinedInContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/clm/JSValue/valueWithUndefinedInContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueWithUndefinedInContext:")
-    public static native JSValue valueWithUndefinedInContext(JSContext context);
-
-    /**
      * isArray</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSValue_Ref/index.html#//apple_ref/occ/instp/JSValue/isArray">iOS Dev Center</a>
      */
@@ -542,104 +642,4 @@ public class JSValue extends NSObject {
     @Generated
     @Selector("isDate")
     public native boolean isDate();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

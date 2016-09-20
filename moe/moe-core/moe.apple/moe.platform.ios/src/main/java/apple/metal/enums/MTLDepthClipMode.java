@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLDepthClipMode {
+    @Generated @NUInt public static final long Clip = 0x0000000000000000L;
+    @Generated @NUInt public static final long Clamp = 0x0000000000000001L;
+
     @Generated
     private MTLDepthClipMode() {
     }
-
-    @Generated @NUInt public static final long Clip = 0x0000000000000000L;
-    @Generated @NUInt public static final long Clamp = 0x0000000000000001L;
 }

@@ -64,163 +64,10 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
         super(peer);
     }
 
-    /**
-     * URLForTilePath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instm/MKTileOverlay/URLForTilePath:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLForTilePath:")
-    public native NSURL URLForTilePath(@ByValue MKTileOverlayPath path);
-
-    /**
-     * URLTemplate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/URLTemplate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLTemplate")
-    public native String URLTemplate();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native MKTileOverlay alloc();
-
-    @Generated
-    @Selector("boundingMapRect")
-    @ByValue
-    public native MKMapRect boundingMapRect();
-
-    @Generated
-    @Selector("canReplaceMapContent")
-    public native boolean canReplaceMapContent();
-
-    @Generated
-    @Selector("coordinate")
-    @ByValue
-    public native CLLocationCoordinate2D coordinate();
-
-    @Generated
-    @Selector("init")
-    public native MKTileOverlay init();
-
-    /**
-     * initWithURLTemplate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instm/MKTileOverlay/initWithURLTemplate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURLTemplate:")
-    public native MKTileOverlay initWithURLTemplate(String URLTemplate);
-
-    @Generated
-    @IsOptional
-    @Selector("intersectsMapRect:")
-    public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
-
-    /**
-     * geometryFlipped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/geometryFlipped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isGeometryFlipped")
-    public native boolean isGeometryFlipped();
-
-    /**
-     * loadTileAtPath:result:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instm/MKTileOverlay/loadTileAtPath:result:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadTileAtPath:result:")
-    public native void loadTileAtPathResult(@ByValue MKTileOverlayPath path,
-            @ObjCBlock(name = "call_loadTileAtPathResult") Block_loadTileAtPathResult result);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadTileAtPathResult {
-        @Generated
-        void call_loadTileAtPathResult(NSData arg0, NSError arg1);
-    }
-
-    /**
-     * maximumZ</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/maximumZ">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumZ")
-    @NInt
-    public native long maximumZ();
-
-    /**
-     * minimumZ</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/minimumZ">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumZ")
-    @NInt
-    public native long minimumZ();
-
-    /**
-     * canReplaceMapContent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/canReplaceMapContent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCanReplaceMapContent:")
-    public native void setCanReplaceMapContent(boolean value);
-
-    @Generated
-    @IsOptional
-    @Selector("setCoordinate:")
-    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
-
-    /**
-     * geometryFlipped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/geometryFlipped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setGeometryFlipped:")
-    public native void setGeometryFlipped(boolean value);
-
-    /**
-     * maximumZ</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/maximumZ">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumZ:")
-    public native void setMaximumZ(@NInt long value);
-
-    /**
-     * minimumZ</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/minimumZ">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumZ:")
-    public native void setMinimumZ(@NInt long value);
-
-    /**
-     * tileSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/tileSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTileSize:")
-    public native void setTileSize(@ByValue CGSize value);
-
-    @Generated
-    @IsOptional
-    @Selector("subtitle")
-    public native String subtitle();
-
-    /**
-     * tileSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/tileSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tileSize")
-    @ByValue
-    public native CGSize tileSize();
-
-    @Generated
-    @IsOptional
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -321,4 +168,157 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URLForTilePath:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instm/MKTileOverlay/URLForTilePath:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLForTilePath:")
+    public native NSURL URLForTilePath(@ByValue MKTileOverlayPath path);
+
+    /**
+     * URLTemplate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/URLTemplate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLTemplate")
+    public native String URLTemplate();
+
+    @Generated
+    @Selector("boundingMapRect")
+    @ByValue
+    public native MKMapRect boundingMapRect();
+
+    @Generated
+    @Selector("canReplaceMapContent")
+    public native boolean canReplaceMapContent();
+
+    @Generated
+    @Selector("coordinate")
+    @ByValue
+    public native CLLocationCoordinate2D coordinate();
+
+    @Generated
+    @Selector("init")
+    public native MKTileOverlay init();
+
+    /**
+     * initWithURLTemplate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instm/MKTileOverlay/initWithURLTemplate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURLTemplate:")
+    public native MKTileOverlay initWithURLTemplate(String URLTemplate);
+
+    @Generated
+    @IsOptional
+    @Selector("intersectsMapRect:")
+    public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
+
+    /**
+     * geometryFlipped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/geometryFlipped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isGeometryFlipped")
+    public native boolean isGeometryFlipped();
+
+    /**
+     * geometryFlipped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/geometryFlipped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setGeometryFlipped:")
+    public native void setGeometryFlipped(boolean value);
+
+    /**
+     * loadTileAtPath:result:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instm/MKTileOverlay/loadTileAtPath:result:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadTileAtPath:result:")
+    public native void loadTileAtPathResult(@ByValue MKTileOverlayPath path,
+            @ObjCBlock(name = "call_loadTileAtPathResult") Block_loadTileAtPathResult result);
+
+    /**
+     * maximumZ</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/maximumZ">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumZ")
+    @NInt
+    public native long maximumZ();
+
+    /**
+     * minimumZ</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/minimumZ">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumZ")
+    @NInt
+    public native long minimumZ();
+
+    /**
+     * canReplaceMapContent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/canReplaceMapContent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCanReplaceMapContent:")
+    public native void setCanReplaceMapContent(boolean value);
+
+    @Generated
+    @IsOptional
+    @Selector("setCoordinate:")
+    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
+
+    /**
+     * maximumZ</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/maximumZ">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumZ:")
+    public native void setMaximumZ(@NInt long value);
+
+    /**
+     * minimumZ</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/minimumZ">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumZ:")
+    public native void setMinimumZ(@NInt long value);
+
+    /**
+     * tileSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/tileSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTileSize:")
+    public native void setTileSize(@ByValue CGSize value);
+
+    @Generated
+    @IsOptional
+    @Selector("subtitle")
+    public native String subtitle();
+
+    /**
+     * tileSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKTileOverlay_class/index.html#//apple_ref/occ/instp/MKTileOverlay/tileSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tileSize")
+    @ByValue
+    public native CGSize tileSize();
+
+    @Generated
+    @IsOptional
+    @Selector("title")
+    public native String title();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadTileAtPathResult {
+        @Generated
+        void call_loadTileAtPathResult(NSData arg0, NSError arg1);
+    }
 }

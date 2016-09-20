@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MPMovieLoadState {
-    @Generated
-    private MPMovieLoadState() {
-    }
-
     @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NUInt public static final long Playable = 0x0000000000000001L;
     @Generated @NUInt public static final long PlaythroughOK = 0x0000000000000002L;
     @Generated @NUInt public static final long Stalled = 0x0000000000000004L;
+
+    @Generated
+    private MPMovieLoadState() {
+    }
 }

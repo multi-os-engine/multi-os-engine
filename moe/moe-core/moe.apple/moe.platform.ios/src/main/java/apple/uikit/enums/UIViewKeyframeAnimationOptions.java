@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIViewKeyframeAnimationOptions {
-    @Generated
-    private UIViewKeyframeAnimationOptions() {
-    }
-
     @Generated @NUInt public static final long LayoutSubviews = 0x0000000000000001L;
     @Generated @NUInt public static final long AllowUserInteraction = 0x0000000000000002L;
     @Generated @NUInt public static final long BeginFromCurrentState = 0x0000000000000004L;
@@ -37,4 +33,8 @@ public final class UIViewKeyframeAnimationOptions {
     @Generated @NUInt public static final long CalculationModePaced = 0x0000000000000800L;
     @Generated @NUInt public static final long CalculationModeCubic = 0x0000000000000C00L;
     @Generated @NUInt public static final long CalculationModeCubicPaced = 0x0000000000001000L;
+
+    @Generated
+    private UIViewKeyframeAnimationOptions() {
+    }
 }

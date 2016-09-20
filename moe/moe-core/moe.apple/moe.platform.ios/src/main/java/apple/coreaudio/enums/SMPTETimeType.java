@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SMPTETimeType {
-    @Generated
-    private SMPTETimeType() {
-    }
-
     @Generated public static final int Type24 = 0x00000000;
     @Generated public static final int Type25 = 0x00000001;
     @Generated public static final int Type30Drop = 0x00000002;
@@ -36,4 +32,8 @@ public final class SMPTETimeType {
     @Generated public static final int Type5994Drop = 0x00000009;
     @Generated public static final int Type50 = 0x0000000A;
     @Generated public static final int Type2398 = 0x0000000B;
+
+    @Generated
+    private SMPTETimeType() {
+    }
 }

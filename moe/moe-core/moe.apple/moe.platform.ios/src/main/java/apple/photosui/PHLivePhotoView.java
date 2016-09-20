@@ -73,113 +73,12 @@ public class PHLivePhotoView extends UIView {
     public static native PHLivePhotoView alloc();
 
     /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native PHLivePhotoViewDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native PHLivePhotoView init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native PHLivePhotoView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native PHLivePhotoView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * muted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/muted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isMuted")
-    public native boolean isMuted();
-
-    /**
-     * livePhoto</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/livePhoto">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("livePhoto")
-    public native PHLivePhoto livePhoto();
-
-    /**
      * livePhotoBadgeImageWithOptions:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/clm/PHLivePhotoView/livePhotoBadgeImageWithOptions:">iOS Dev Center</a>
      */
     @Generated
     @Selector("livePhotoBadgeImageWithOptions:")
     public static native UIImage livePhotoBadgeImageWithOptions(@NUInt long badgeOptions);
-
-    /**
-     * playbackGestureRecognizer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/playbackGestureRecognizer">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("playbackGestureRecognizer")
-    public native UIGestureRecognizer playbackGestureRecognizer();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PHLivePhotoViewDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) PHLivePhotoViewDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * livePhoto</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/livePhoto">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLivePhoto:")
-    public native void setLivePhoto(PHLivePhoto value);
-
-    /**
-     * muted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/muted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMuted:")
-    public native void setMuted(boolean value);
-
-    /**
-     * startPlaybackWithStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instm/PHLivePhotoView/startPlaybackWithStyle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startPlaybackWithStyle:")
-    public native void startPlaybackWithStyle(@NInt long playbackStyle);
-
-    /**
-     * stopPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instm/PHLivePhotoView/stopPlayback">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopPlayback")
-    public native void stopPlayback();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -234,23 +133,9 @@ public class PHLivePhotoView extends UIView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -261,27 +146,10 @@ public class PHLivePhotoView extends UIView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -292,24 +160,9 @@ public class PHLivePhotoView extends UIView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -507,4 +360,151 @@ public class PHLivePhotoView extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native PHLivePhotoViewDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native PHLivePhotoView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native PHLivePhotoView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native PHLivePhotoView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * muted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/muted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isMuted")
+    public native boolean isMuted();
+
+    /**
+     * muted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/muted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMuted:")
+    public native void setMuted(boolean value);
+
+    /**
+     * livePhoto</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/livePhoto">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("livePhoto")
+    public native PHLivePhoto livePhoto();
+
+    /**
+     * playbackGestureRecognizer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/playbackGestureRecognizer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("playbackGestureRecognizer")
+    public native UIGestureRecognizer playbackGestureRecognizer();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PHLivePhotoViewDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) PHLivePhotoViewDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * livePhoto</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instp/PHLivePhotoView/livePhoto">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLivePhoto:")
+    public native void setLivePhoto(PHLivePhoto value);
+
+    /**
+     * startPlaybackWithStyle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instm/PHLivePhotoView/startPlaybackWithStyle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startPlaybackWithStyle:")
+    public native void startPlaybackWithStyle(@NInt long playbackStyle);
+
+    /**
+     * stopPlayback</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHLivePhotoView_Class/index.html#//apple_ref/occ/instm/PHLivePhotoView/stopPlayback">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopPlayback")
+    public native void stopPlayback();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

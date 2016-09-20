@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SSLClientCertificateState {
-    @Generated
-    private SSLClientCertificateState() {
-    }
-
     @Generated public static final int None = 0x00000000;
     @Generated public static final int Requested = 0x00000001;
     @Generated public static final int Sent = 0x00000002;
     @Generated public static final int Rejected = 0x00000003;
+
+    @Generated
+    private SSLClientCertificateState() {
+    }
 }

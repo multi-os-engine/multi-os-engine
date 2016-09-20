@@ -59,34 +59,6 @@ public class GLKSubmesh extends NSObject {
     public static native GLKSubmesh alloc();
 
     @Generated
-    @Selector("elementBuffer")
-    public native GLKMeshBuffer elementBuffer();
-
-    @Generated
-    @Selector("elementCount")
-    public native int elementCount();
-
-    @Generated
-    @Selector("init")
-    public native GLKSubmesh init();
-
-    @Generated
-    @Selector("mesh")
-    public native GLKMesh mesh();
-
-    @Generated
-    @Selector("mode")
-    public native int mode();
-
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
-    @Selector("type")
-    public native int type();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -185,4 +157,32 @@ public class GLKSubmesh extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("elementBuffer")
+    public native GLKMeshBuffer elementBuffer();
+
+    @Generated
+    @Selector("elementCount")
+    public native int elementCount();
+
+    @Generated
+    @Selector("init")
+    public native GLKSubmesh init();
+
+    @Generated
+    @Selector("mesh")
+    public native GLKMesh mesh();
+
+    @Generated
+    @Selector("mode")
+    public native int mode();
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("type")
+    public native int type();
 }

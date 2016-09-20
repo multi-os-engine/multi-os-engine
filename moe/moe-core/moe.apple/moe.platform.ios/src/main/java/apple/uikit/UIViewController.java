@@ -76,6 +76,131 @@ public class UIViewController extends UIResponder
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UIViewController alloc();
+
+    /**
+     * attemptRotationToDeviceOrientation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/clm/UIViewController/attemptRotationToDeviceOrientation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attemptRotationToDeviceOrientation")
+    public static native void attemptRotationToDeviceOrientation();
+
+    /**
+     * prepareInterstitialAds</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/clm/UIViewController/prepareInterstitialAds">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("prepareInterstitialAds")
+    public static native void prepareInterstitialAds();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("clearTextInputContextIdentifier:")
+    public static native void clearTextInputContextIdentifier(String identifier);
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version();
+
     /**
      * addChildViewController:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instm/UIViewController/addChildViewController:">iOS Dev Center</a>
@@ -85,21 +210,8 @@ public class UIViewController extends UIResponder
     public native void addChildViewController(UIViewController childController);
 
     @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UIViewController alloc();
-
-    @Generated
     @Selector("applicationFinishedRestoringState")
     public native void applicationFinishedRestoringState();
-
-    /**
-     * attemptRotationToDeviceOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/clm/UIViewController/attemptRotationToDeviceOrientation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attemptRotationToDeviceOrientation")
-    public static native void attemptRotationToDeviceOrientation();
 
     /**
      * automaticallyAdjustsScrollViewInsets</br>
@@ -280,13 +392,6 @@ public class UIViewController extends UIResponder
     public native void dismissViewControllerAnimatedCompletion(boolean flag,
             @ObjCBlock(name = "call_dismissViewControllerAnimatedCompletion") Block_dismissViewControllerAnimatedCompletion completion);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_dismissViewControllerAnimatedCompletion {
-        @Generated
-        void call_dismissViewControllerAnimatedCompletion();
-    }
-
     /**
      * edgesForExtendedLayout</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instp/UIViewController/edgesForExtendedLayout">iOS Dev Center</a>
@@ -412,12 +517,28 @@ public class UIViewController extends UIResponder
     public native boolean isEditing();
 
     /**
+     * editing</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instp/UIViewController/editing">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEditing:")
+    public native void setEditing(boolean value);
+
+    /**
      * modalInPopover</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instp/UIViewController/modalInPopover">iOS Dev Center</a>
      */
     @Generated
     @Selector("isModalInPopover")
     public native boolean isModalInPopover();
+
+    /**
+     * modalInPopover</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instp/UIViewController/modalInPopover">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setModalInPopover:")
+    public native void setModalInPopover(boolean value);
 
     /**
      * isMovingFromParentViewController</br>
@@ -627,14 +748,6 @@ public class UIViewController extends UIResponder
     public native void prepareForSegueSender(UIStoryboardSegue segue, @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
-     * prepareInterstitialAds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/clm/UIViewController/prepareInterstitialAds">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    /**
      * presentModalViewController:animated:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instm/UIViewController/presentModalViewController:animated:">iOS Dev Center</a>
      */
@@ -660,13 +773,6 @@ public class UIViewController extends UIResponder
     @Selector("presentViewController:animated:completion:")
     public native void presentViewControllerAnimatedCompletion(UIViewController viewControllerToPresent, boolean flag,
             @ObjCBlock(name = "call_presentViewControllerAnimatedCompletion") Block_presentViewControllerAnimatedCompletion completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_presentViewControllerAnimatedCompletion {
-        @Generated
-        void call_presentViewControllerAnimatedCompletion();
-    }
 
     /**
      * presentationController</br>
@@ -827,14 +933,6 @@ public class UIViewController extends UIResponder
     public native void setEdgesForExtendedLayout(@NUInt long value);
 
     /**
-     * editing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instp/UIViewController/editing">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEditing:")
-    public native void setEditing(boolean value);
-
-    /**
      * setEditing:animated:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instm/UIViewController/setEditing:animated:">iOS Dev Center</a>
      */
@@ -865,14 +963,6 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("setInterstitialPresentationPolicy:")
     public native void setInterstitialPresentationPolicy(@NInt long value);
-
-    /**
-     * modalInPopover</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instp/UIViewController/modalInPopover">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setModalInPopover:")
-    public native void setModalInPopover(boolean value);
 
     /**
      * modalPresentationCapturesStatusBarAppearance</br>
@@ -1216,20 +1306,6 @@ public class UIViewController extends UIResponder
             @ObjCBlock(name = "call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_4") Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_4 animations,
             @ObjCBlock(name = "call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5") Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5 completion);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_4 {
-        @Generated
-        void call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_4();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5 {
-        @Generated
-        void call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5(boolean arg0);
-    }
-
     /**
      * transitioningDelegate</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/instp/UIViewController/transitioningDelegate">iOS Dev Center</a>
@@ -1511,107 +1587,31 @@ public class UIViewController extends UIResponder
     @Selector("updateFocusIfNeeded")
     public native void updateFocusIfNeeded();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_dismissViewControllerAnimatedCompletion {
+        @Generated
+        void call_dismissViewControllerAnimatedCompletion();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_presentViewControllerAnimatedCompletion {
+        @Generated
+        void call_presentViewControllerAnimatedCompletion();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_4 {
+        @Generated
+        void call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_4();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
+    public interface Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5 {
+        @Generated
+        void call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5(boolean arg0);
+    }
 }

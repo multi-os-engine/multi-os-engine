@@ -66,147 +66,6 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     public static native PHImageRequestOptions alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * deliveryMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/deliveryMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deliveryMode")
-    @NInt
-    public native long deliveryMode();
-
-    @Generated
-    @Selector("init")
-    public native PHImageRequestOptions init();
-
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isNetworkAccessAllowed")
-    public native boolean isNetworkAccessAllowed();
-
-    /**
-     * synchronous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/synchronous">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isSynchronous")
-    public native boolean isSynchronous();
-
-    /**
-     * normalizedCropRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/normalizedCropRect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("normalizedCropRect")
-    @ByValue
-    public native CGRect normalizedCropRect();
-
-    /**
-     * resizeMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/resizeMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resizeMode")
-    @NInt
-    public native long resizeMode();
-
-    /**
-     * deliveryMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/deliveryMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDeliveryMode:")
-    public native void setDeliveryMode(@NInt long value);
-
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNetworkAccessAllowed:")
-    public native void setNetworkAccessAllowed(boolean value);
-
-    /**
-     * normalizedCropRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/normalizedCropRect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNormalizedCropRect:")
-    public native void setNormalizedCropRect(@ByValue CGRect value);
-
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/progressHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProgressHandler:")
-    public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setProgressHandler {
-        @Generated
-        void call_setProgressHandler(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
-    }
-
-    /**
-     * resizeMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/resizeMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setResizeMode:")
-    public native void setResizeMode(@NInt long value);
-
-    /**
-     * synchronous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/synchronous">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSynchronous:")
-    public native void setSynchronous(boolean value);
-
-    /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/version">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setVersion:")
-    public native void setVersion(@NInt long value);
-
-    /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/version">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("version")
-    @NInt
-    public native long version();
-
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/progressHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("progressHandler")
-    @ObjCBlock(name = "call_progressHandler_ret")
-    public native Block_progressHandler_ret progressHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_progressHandler_ret {
-        @Generated
-        void call_progressHandler_ret(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -296,4 +155,145 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * deliveryMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/deliveryMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deliveryMode")
+    @NInt
+    public native long deliveryMode();
+
+    @Generated
+    @Selector("init")
+    public native PHImageRequestOptions init();
+
+    /**
+     * networkAccessAllowed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/networkAccessAllowed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isNetworkAccessAllowed")
+    public native boolean isNetworkAccessAllowed();
+
+    /**
+     * networkAccessAllowed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/networkAccessAllowed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNetworkAccessAllowed:")
+    public native void setNetworkAccessAllowed(boolean value);
+
+    /**
+     * synchronous</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/synchronous">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isSynchronous")
+    public native boolean isSynchronous();
+
+    /**
+     * synchronous</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/synchronous">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSynchronous:")
+    public native void setSynchronous(boolean value);
+
+    /**
+     * normalizedCropRect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/normalizedCropRect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("normalizedCropRect")
+    @ByValue
+    public native CGRect normalizedCropRect();
+
+    /**
+     * resizeMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/resizeMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resizeMode")
+    @NInt
+    public native long resizeMode();
+
+    /**
+     * deliveryMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/deliveryMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDeliveryMode:")
+    public native void setDeliveryMode(@NInt long value);
+
+    /**
+     * normalizedCropRect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/normalizedCropRect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNormalizedCropRect:")
+    public native void setNormalizedCropRect(@ByValue CGRect value);
+
+    /**
+     * progressHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/progressHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProgressHandler:")
+    public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
+
+    /**
+     * resizeMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/resizeMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setResizeMode:")
+    public native void setResizeMode(@NInt long value);
+
+    /**
+     * version</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/version">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setVersion:")
+    public native void setVersion(@NInt long value);
+
+    /**
+     * version</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/version">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("version")
+    @NInt
+    public native long version();
+
+    /**
+     * progressHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageRequestOptions_Class/index.html#//apple_ref/occ/instp/PHImageRequestOptions/progressHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("progressHandler")
+    @ObjCBlock(name = "call_progressHandler_ret")
+    public native Block_progressHandler_ret progressHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setProgressHandler {
+        @Generated
+        void call_setProgressHandler(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_progressHandler_ret {
+        @Generated
+        void call_progressHandler_ret(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
+    }
 }

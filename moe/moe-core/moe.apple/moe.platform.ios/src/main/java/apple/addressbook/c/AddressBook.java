@@ -142,13 +142,6 @@ public final class AddressBook {
     public static native void ABAddressBookRequestAccessWithCompletion(ConstVoidPtr addressBook,
             @ObjCBlock(name = "call_ABAddressBookRequestAccessWithCompletion") Block_ABAddressBookRequestAccessWithCompletion completion);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_ABAddressBookRequestAccessWithCompletion {
-        @Generated
-        void call_ABAddressBookRequestAccessWithCompletion(boolean arg0, CFErrorRef arg1);
-    }
-
     /**
      * ABAddressBookSave</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBook/Reference/ABAddressBookRef_iPhoneOS/index.html#//apple_ref/c/func/ABAddressBookSave">iOS Dev Center</a>
@@ -207,13 +200,6 @@ public final class AddressBook {
             @FunctionPtr(name = "call_ABAddressBookRegisterExternalChangeCallback") Function_ABAddressBookRegisterExternalChangeCallback callback,
             VoidPtr context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_ABAddressBookRegisterExternalChangeCallback {
-        @Generated
-        void call_ABAddressBookRegisterExternalChangeCallback(ConstVoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
-    }
-
     /**
      * ABAddressBookUnregisterExternalChangeCallback</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBook/Reference/ABAddressBookRef_iPhoneOS/index.html#//apple_ref/c/func/ABAddressBookUnregisterExternalChangeCallback">iOS Dev Center</a>
@@ -224,13 +210,6 @@ public final class AddressBook {
     public static native void ABAddressBookUnregisterExternalChangeCallback(ConstVoidPtr addressBook,
             @FunctionPtr(name = "call_ABAddressBookUnregisterExternalChangeCallback") Function_ABAddressBookUnregisterExternalChangeCallback callback,
             VoidPtr context);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_ABAddressBookUnregisterExternalChangeCallback {
-        @Generated
-        void call_ABAddressBookUnregisterExternalChangeCallback(ConstVoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
-    }
 
     /**
      * ABAddressBookRevert</br>
@@ -1091,4 +1070,25 @@ public final class AddressBook {
     @Generated
     @CVariable()
     public static native int kABGroupNameProperty();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_ABAddressBookRequestAccessWithCompletion {
+        @Generated
+        void call_ABAddressBookRequestAccessWithCompletion(boolean arg0, CFErrorRef arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_ABAddressBookRegisterExternalChangeCallback {
+        @Generated
+        void call_ABAddressBookRegisterExternalChangeCallback(ConstVoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_ABAddressBookUnregisterExternalChangeCallback {
+        @Generated
+        void call_ABAddressBookUnregisterExternalChangeCallback(ConstVoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+    }
 }

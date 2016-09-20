@@ -57,63 +57,9 @@ public class AVAudioUnitComponent extends NSObject {
     }
 
     @Generated
-    @Selector("allTagNames")
-    public native NSArray<String> allTagNames();
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioUnitComponent alloc();
-
-    @Generated
-    @Selector("audioComponent")
-    public native AudioComponent audioComponent();
-
-    @Generated
-    @Selector("audioComponentDescription")
-    @ByValue
-    public native AudioComponentDescription audioComponentDescription();
-
-    @Generated
-    @Selector("hasMIDIInput")
-    public native boolean hasMIDIInput();
-
-    @Generated
-    @Selector("hasMIDIOutput")
-    public native boolean hasMIDIOutput();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioUnitComponent init();
-
-    @Generated
-    @Selector("isSandboxSafe")
-    public native boolean isSandboxSafe();
-
-    @Generated
-    @Selector("localizedTypeName")
-    public native String localizedTypeName();
-
-    @Generated
-    @Selector("manufacturerName")
-    public native String manufacturerName();
-
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
-    @Selector("typeName")
-    public native String typeName();
-
-    @Generated
-    @Selector("version")
-    @NUInt
-    public native long version();
-
-    @Generated
-    @Selector("versionString")
-    public native String versionString();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -209,4 +155,58 @@ public class AVAudioUnitComponent extends NSObject {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("allTagNames")
+    public native NSArray<String> allTagNames();
+
+    @Generated
+    @Selector("audioComponent")
+    public native AudioComponent audioComponent();
+
+    @Generated
+    @Selector("audioComponentDescription")
+    @ByValue
+    public native AudioComponentDescription audioComponentDescription();
+
+    @Generated
+    @Selector("hasMIDIInput")
+    public native boolean hasMIDIInput();
+
+    @Generated
+    @Selector("hasMIDIOutput")
+    public native boolean hasMIDIOutput();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioUnitComponent init();
+
+    @Generated
+    @Selector("isSandboxSafe")
+    public native boolean isSandboxSafe();
+
+    @Generated
+    @Selector("localizedTypeName")
+    public native String localizedTypeName();
+
+    @Generated
+    @Selector("manufacturerName")
+    public native String manufacturerName();
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("typeName")
+    public native String typeName();
+
+    @Generated
+    @Selector("version")
+    @NUInt
+    public native long version();
+
+    @Generated
+    @Selector("versionString")
+    public native String versionString();
 }

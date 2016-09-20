@@ -56,94 +56,10 @@ public class HMActionSet extends NSObject {
         super(peer);
     }
 
-    /**
-     * actions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instp/HMActionSet/actions">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("actions")
-    public native NSSet<? extends HMAction> actions();
-
-    /**
-     * addAction:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instm/HMActionSet/addAction:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addAction:completionHandler:")
-    public native void addActionCompletionHandler(HMAction action,
-            @ObjCBlock(name = "call_addActionCompletionHandler") Block_addActionCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addActionCompletionHandler {
-        @Generated
-        void call_addActionCompletionHandler(NSError arg0);
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native HMActionSet alloc();
-
-    @Generated
-    @Selector("init")
-    public native HMActionSet init();
-
-    /**
-     * executing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instp/HMActionSet/executing">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isExecuting")
-    public native boolean isExecuting();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instp/HMActionSet/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * removeAction:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instm/HMActionSet/removeAction:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeAction:completionHandler:")
-    public native void removeActionCompletionHandler(HMAction action,
-            @ObjCBlock(name = "call_removeActionCompletionHandler") Block_removeActionCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_removeActionCompletionHandler {
-        @Generated
-        void call_removeActionCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instm/HMActionSet/updateName:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updateNameCompletionHandler {
-        @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
-    }
-
-    @Generated
-    @Selector("actionSetType")
-    public native String actionSetType();
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -244,4 +160,88 @@ public class HMActionSet extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * actions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instp/HMActionSet/actions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("actions")
+    public native NSSet<? extends HMAction> actions();
+
+    /**
+     * addAction:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instm/HMActionSet/addAction:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addAction:completionHandler:")
+    public native void addActionCompletionHandler(HMAction action,
+            @ObjCBlock(name = "call_addActionCompletionHandler") Block_addActionCompletionHandler completion);
+
+    @Generated
+    @Selector("init")
+    public native HMActionSet init();
+
+    /**
+     * executing</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instp/HMActionSet/executing">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isExecuting")
+    public native boolean isExecuting();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instp/HMActionSet/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * removeAction:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instm/HMActionSet/removeAction:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeAction:completionHandler:")
+    public native void removeActionCompletionHandler(HMAction action,
+            @ObjCBlock(name = "call_removeActionCompletionHandler") Block_removeActionCompletionHandler completion);
+
+    /**
+     * updateName:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/instm/HMActionSet/updateName:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateName:completionHandler:")
+    public native void updateNameCompletionHandler(String name,
+            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+
+    @Generated
+    @Selector("actionSetType")
+    public native String actionSetType();
+
+    @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addActionCompletionHandler {
+        @Generated
+        void call_addActionCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeActionCompletionHandler {
+        @Generated
+        void call_removeActionCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateNameCompletionHandler {
+        @Generated
+        void call_updateNameCompletionHandler(NSError arg0);
+    }
 }

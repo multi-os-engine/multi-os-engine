@@ -60,42 +60,6 @@ public class MKLocalSearchCompletion extends NSObject {
     public static native MKLocalSearchCompletion alloc();
 
     @Generated
-    @Selector("init")
-    public native MKLocalSearchCompletion init();
-
-    /**
-     * subtitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompletion_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompletion/subtitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subtitle")
-    public native String subtitle();
-
-    /**
-     * subtitleHighlightRanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompletion_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompletion/subtitleHighlightRanges">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subtitleHighlightRanges")
-    public native NSArray<? extends NSValue> subtitleHighlightRanges();
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompletion_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompletion/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
-
-    /**
-     * titleHighlightRanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompletion_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompletion/titleHighlightRanges">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("titleHighlightRanges")
-    public native NSArray<? extends NSValue> titleHighlightRanges();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -194,4 +158,40 @@ public class MKLocalSearchCompletion extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MKLocalSearchCompletion init();
+
+    /**
+     * subtitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompletion_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompletion/subtitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subtitle")
+    public native String subtitle();
+
+    /**
+     * subtitleHighlightRanges</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompletion_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompletion/subtitleHighlightRanges">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subtitleHighlightRanges")
+    public native NSArray<? extends NSValue> subtitleHighlightRanges();
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompletion_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompletion/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    /**
+     * titleHighlightRanges</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchCompletion_class/index.html#//apple_ref/occ/instp/MKLocalSearchCompletion/titleHighlightRanges">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("titleHighlightRanges")
+    public native NSArray<? extends NSValue> titleHighlightRanges();
 }

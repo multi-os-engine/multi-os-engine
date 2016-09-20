@@ -76,42 +76,6 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
     public static native NSDecimalNumberHandler defaultDecimalNumberHandler();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("exceptionDuringOperation:error:leftOperand:rightOperand:")
-    public native NSDecimalNumber exceptionDuringOperationErrorLeftOperandRightOperand(SEL operation, @NUInt long error,
-            NSDecimalNumber leftOperand, NSDecimalNumber rightOperand);
-
-    @Generated
-    @Selector("init")
-    public native NSDecimalNumberHandler init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSDecimalNumberHandler initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumberHandler_Class/index.html#//apple_ref/occ/instm/NSDecimalNumberHandler/initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:")
-    public native NSDecimalNumberHandler initWithRoundingModeScaleRaiseOnExactnessRaiseOnOverflowRaiseOnUnderflowRaiseOnDivideByZero(
-            @NUInt long roundingMode, short scale, boolean exact, boolean overflow, boolean underflow,
-            boolean divideByZero);
-
-    @Generated
-    @Selector("roundingMode")
-    @NUInt
-    public native long roundingMode();
-
-    @Generated
-    @Selector("scale")
-    public native short scale();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -210,4 +174,40 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("exceptionDuringOperation:error:leftOperand:rightOperand:")
+    public native NSDecimalNumber exceptionDuringOperationErrorLeftOperandRightOperand(SEL operation, @NUInt long error,
+            NSDecimalNumber leftOperand, NSDecimalNumber rightOperand);
+
+    @Generated
+    @Selector("init")
+    public native NSDecimalNumberHandler init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSDecimalNumberHandler initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumberHandler_Class/index.html#//apple_ref/occ/instm/NSDecimalNumberHandler/initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:")
+    public native NSDecimalNumberHandler initWithRoundingModeScaleRaiseOnExactnessRaiseOnOverflowRaiseOnUnderflowRaiseOnDivideByZero(
+            @NUInt long roundingMode, short scale, boolean exact, boolean overflow, boolean underflow,
+            boolean divideByZero);
+
+    @Generated
+    @Selector("roundingMode")
+    @NUInt
+    public native long roundingMode();
+
+    @Generated
+    @Selector("scale")
+    public native short scale();
 }

@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIDocumentMenuOrder {
+    @Generated @NUInt public static final long First = 0x0000000000000000L;
+    @Generated @NUInt public static final long Last = 0x0000000000000001L;
+
     @Generated
     private UIDocumentMenuOrder() {
     }
-
-    @Generated @NUInt public static final long First = 0x0000000000000000L;
-    @Generated @NUInt public static final long Last = 0x0000000000000001L;
 }

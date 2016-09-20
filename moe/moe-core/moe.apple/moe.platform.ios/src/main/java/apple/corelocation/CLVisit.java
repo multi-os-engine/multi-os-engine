@@ -65,66 +65,9 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CLVisit alloc();
 
-    /**
-     * arrivalDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/arrivalDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("arrivalDate")
-    public native NSDate arrivalDate();
-
-    /**
-     * coordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/coordinate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("coordinate")
-    @ByValue
-    public native CLLocationCoordinate2D coordinate();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * departureDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/departureDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("departureDate")
-    public native NSDate departureDate();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * horizontalAccuracy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/horizontalAccuracy">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("horizontalAccuracy")
-    public native double horizontalAccuracy();
-
-    @Generated
-    @Selector("init")
-    public native CLVisit init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CLVisit initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -225,4 +168,61 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * arrivalDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/arrivalDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("arrivalDate")
+    public native NSDate arrivalDate();
+
+    /**
+     * coordinate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/coordinate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("coordinate")
+    @ByValue
+    public native CLLocationCoordinate2D coordinate();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * departureDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/departureDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("departureDate")
+    public native NSDate departureDate();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * horizontalAccuracy</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLVisit_class/index.html#//apple_ref/occ/instp/CLVisit/horizontalAccuracy">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("horizontalAccuracy")
+    public native double horizontalAccuracy();
+
+    @Generated
+    @Selector("init")
+    public native CLVisit init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CLVisit initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -54,38 +54,10 @@ public class WKBackForwardListItem extends NSObject {
         super(peer);
     }
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardListItem_Ref/index.html#//apple_ref/occ/instp/WKBackForwardListItem/URL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URL")
-    public native NSURL URL();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native WKBackForwardListItem alloc();
-
-    @Generated
-    @Selector("init")
-    public native WKBackForwardListItem init();
-
-    /**
-     * initialURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardListItem_Ref/index.html#//apple_ref/occ/instp/WKBackForwardListItem/initialURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initialURL")
-    public native NSURL initialURL();
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardListItem_Ref/index.html#//apple_ref/occ/instp/WKBackForwardListItem/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -186,4 +158,32 @@ public class WKBackForwardListItem extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardListItem_Ref/index.html#//apple_ref/occ/instp/WKBackForwardListItem/URL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URL")
+    public native NSURL URL();
+
+    @Generated
+    @Selector("init")
+    public native WKBackForwardListItem init();
+
+    /**
+     * initialURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardListItem_Ref/index.html#//apple_ref/occ/instp/WKBackForwardListItem/initialURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initialURL")
+    public native NSURL initialURL();
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardListItem_Ref/index.html#//apple_ref/occ/instp/WKBackForwardListItem/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
 }

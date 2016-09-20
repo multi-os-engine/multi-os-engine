@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSMassFormatterUnit {
-    @Generated
-    private NSMassFormatterUnit() {
-    }
-
     @Generated @NInt public static final long Gram = 0x000000000000000BL;
     @Generated @NInt public static final long Kilogram = 0x000000000000000EL;
     @Generated @NInt public static final long Ounce = 0x0000000000000601L;
     @Generated @NInt public static final long Pound = 0x0000000000000602L;
     @Generated @NInt public static final long Stone = 0x0000000000000603L;
+
+    @Generated
+    private NSMassFormatterUnit() {
+    }
 }

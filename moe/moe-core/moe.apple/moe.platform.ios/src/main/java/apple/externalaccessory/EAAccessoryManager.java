@@ -62,56 +62,12 @@ public class EAAccessoryManager extends NSObject {
     public static native EAAccessoryManager alloc();
 
     /**
-     * connectedAccessories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessoryManager_class/index.html#//apple_ref/occ/instp/EAAccessoryManager/connectedAccessories">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connectedAccessories")
-    public native NSArray<? extends EAAccessory> connectedAccessories();
-
-    @Generated
-    @Selector("init")
-    public native EAAccessoryManager init();
-
-    /**
-     * registerForLocalNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessoryManager_class/index.html#//apple_ref/occ/instm/EAAccessoryManager/registerForLocalNotifications">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("registerForLocalNotifications")
-    public native void registerForLocalNotifications();
-
-    /**
      * sharedAccessoryManager</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessoryManager_class/index.html#//apple_ref/occ/clm/EAAccessoryManager/sharedAccessoryManager">iOS Dev Center</a>
      */
     @Generated
     @Selector("sharedAccessoryManager")
     public static native EAAccessoryManager sharedAccessoryManager();
-
-    /**
-     * showBluetoothAccessoryPickerWithNameFilter:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessoryManager_class/index.html#//apple_ref/occ/instm/EAAccessoryManager/showBluetoothAccessoryPickerWithNameFilter:completion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("showBluetoothAccessoryPickerWithNameFilter:completion:")
-    public native void showBluetoothAccessoryPickerWithNameFilterCompletion(NSPredicate predicate,
-            @ObjCBlock(name = "call_showBluetoothAccessoryPickerWithNameFilterCompletion") Block_showBluetoothAccessoryPickerWithNameFilterCompletion completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_showBluetoothAccessoryPickerWithNameFilterCompletion {
-        @Generated
-        void call_showBluetoothAccessoryPickerWithNameFilterCompletion(NSError arg0);
-    }
-
-    /**
-     * unregisterForLocalNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessoryManager_class/index.html#//apple_ref/occ/instm/EAAccessoryManager/unregisterForLocalNotifications">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unregisterForLocalNotifications")
-    public native void unregisterForLocalNotifications();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -212,4 +168,48 @@ public class EAAccessoryManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * connectedAccessories</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessoryManager_class/index.html#//apple_ref/occ/instp/EAAccessoryManager/connectedAccessories">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connectedAccessories")
+    public native NSArray<? extends EAAccessory> connectedAccessories();
+
+    @Generated
+    @Selector("init")
+    public native EAAccessoryManager init();
+
+    /**
+     * registerForLocalNotifications</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessoryManager_class/index.html#//apple_ref/occ/instm/EAAccessoryManager/registerForLocalNotifications">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("registerForLocalNotifications")
+    public native void registerForLocalNotifications();
+
+    /**
+     * showBluetoothAccessoryPickerWithNameFilter:completion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessoryManager_class/index.html#//apple_ref/occ/instm/EAAccessoryManager/showBluetoothAccessoryPickerWithNameFilter:completion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("showBluetoothAccessoryPickerWithNameFilter:completion:")
+    public native void showBluetoothAccessoryPickerWithNameFilterCompletion(NSPredicate predicate,
+            @ObjCBlock(name = "call_showBluetoothAccessoryPickerWithNameFilterCompletion") Block_showBluetoothAccessoryPickerWithNameFilterCompletion completion);
+
+    /**
+     * unregisterForLocalNotifications</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAAccessoryManager_class/index.html#//apple_ref/occ/instm/EAAccessoryManager/unregisterForLocalNotifications">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unregisterForLocalNotifications")
+    public native void unregisterForLocalNotifications();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_showBluetoothAccessoryPickerWithNameFilterCompletion {
+        @Generated
+        void call_showBluetoothAccessoryPickerWithNameFilterCompletion(NSError arg0);
+    }
 }

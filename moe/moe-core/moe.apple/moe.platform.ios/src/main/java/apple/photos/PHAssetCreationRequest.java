@@ -58,24 +58,6 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
         super(peer);
     }
 
-    /**
-     * addResourceWithType:data:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCreationRequest_Class/index.html#//apple_ref/occ/instm/PHAssetCreationRequest/addResourceWithType:data:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addResourceWithType:data:options:")
-    public native void addResourceWithTypeDataOptions(@NInt long type, NSData data,
-            PHAssetResourceCreationOptions options);
-
-    /**
-     * addResourceWithType:fileURL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCreationRequest_Class/index.html#//apple_ref/occ/instm/PHAssetCreationRequest/addResourceWithType:fileURL:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addResourceWithType:fileURL:options:")
-    public native void addResourceWithTypeFileURLOptions(@NInt long type, NSURL fileURL,
-            PHAssetResourceCreationOptions options);
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -92,10 +74,6 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     @Generated
     @Selector("creationRequestForAsset")
     public static native PHAssetCreationRequest creationRequestForAsset();
-
-    @Generated
-    @Selector("init")
-    public native PHAssetCreationRequest init();
 
     /**
      * supportsAssetResourceTypes:</br>
@@ -223,4 +201,26 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addResourceWithType:data:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCreationRequest_Class/index.html#//apple_ref/occ/instm/PHAssetCreationRequest/addResourceWithType:data:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addResourceWithType:data:options:")
+    public native void addResourceWithTypeDataOptions(@NInt long type, NSData data,
+            PHAssetResourceCreationOptions options);
+
+    /**
+     * addResourceWithType:fileURL:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCreationRequest_Class/index.html#//apple_ref/occ/instm/PHAssetCreationRequest/addResourceWithType:fileURL:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addResourceWithType:fileURL:options:")
+    public native void addResourceWithTypeFileURLOptions(@NInt long type, NSURL fileURL,
+            PHAssetResourceCreationOptions options);
+
+    @Generated
+    @Selector("init")
+    public native PHAssetCreationRequest init();
 }

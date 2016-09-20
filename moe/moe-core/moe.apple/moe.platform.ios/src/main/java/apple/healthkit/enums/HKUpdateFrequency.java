@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKUpdateFrequency {
-    @Generated
-    private HKUpdateFrequency() {
-    }
-
     @Generated @NInt public static final long Immediate = 0x0000000000000001L;
     @Generated @NInt public static final long Hourly = 0x0000000000000002L;
     @Generated @NInt public static final long Daily = 0x0000000000000003L;
     @Generated @NInt public static final long Weekly = 0x0000000000000004L;
+
+    @Generated
+    private HKUpdateFrequency() {
+    }
 }

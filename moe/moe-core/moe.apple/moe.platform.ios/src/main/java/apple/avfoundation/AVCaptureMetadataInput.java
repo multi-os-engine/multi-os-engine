@@ -63,18 +63,6 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
     public static native AVCaptureMetadataInput alloc();
 
     @Generated
-    @Selector("appendTimedMetadataGroup:error:")
-    public native boolean appendTimedMetadataGroupError(AVTimedMetadataGroup metadata, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("init")
-    public native AVCaptureMetadataInput init();
-
-    @Generated
-    @Selector("initWithFormatDescription:clock:")
-    public native AVCaptureMetadataInput initWithFormatDescriptionClock(CMFormatDescriptionRef desc, CMClockRef clock);
-
-    @Generated
     @Selector("metadataInputWithFormatDescription:clock:")
     public static native AVCaptureMetadataInput metadataInputWithFormatDescriptionClock(CMFormatDescriptionRef desc,
             CMClockRef clock);
@@ -178,4 +166,16 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("appendTimedMetadataGroup:error:")
+    public native boolean appendTimedMetadataGroupError(AVTimedMetadataGroup metadata, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("init")
+    public native AVCaptureMetadataInput init();
+
+    @Generated
+    @Selector("initWithFormatDescription:clock:")
+    public native AVCaptureMetadataInput initWithFormatDescriptionClock(CMFormatDescriptionRef desc, CMClockRef clock);
 }

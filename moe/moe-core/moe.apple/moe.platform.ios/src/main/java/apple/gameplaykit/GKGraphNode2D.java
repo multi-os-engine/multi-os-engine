@@ -59,10 +59,6 @@ public class GKGraphNode2D extends GKGraphNode {
     public static native GKGraphNode2D alloc();
 
     @Generated
-    @Selector("init")
-    public native GKGraphNode2D init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class GKGraphNode2D extends GKGraphNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GKGraphNode2D init();
 }

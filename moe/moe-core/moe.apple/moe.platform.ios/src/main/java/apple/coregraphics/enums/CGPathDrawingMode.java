@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGPathDrawingMode {
-    @Generated
-    private CGPathDrawingMode() {
-    }
-
     @Generated public static final int Fill = 0x00000000;
     @Generated public static final int EOFill = 0x00000001;
     @Generated public static final int Stroke = 0x00000002;
     @Generated public static final int FillStroke = 0x00000003;
     @Generated public static final int EOFillStroke = 0x00000004;
+
+    @Generated
+    private CGPathDrawingMode() {
+    }
 }

@@ -78,12 +78,6 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("characteristicTypeForIdentifier:")
     public static native HKCharacteristicType characteristicTypeForIdentifier(String identifier);
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
     /**
      * correlationTypeForIdentifier:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObjectType_Class/index.html#//apple_ref/occ/clm/HKObjectType/correlationTypeForIdentifier:">iOS Dev Center</a>
@@ -91,26 +85,6 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("correlationTypeForIdentifier:")
     public static native HKCorrelationType correlationTypeForIdentifier(String identifier);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObjectType_Class/index.html#//apple_ref/occ/instp/HKObjectType/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native HKObjectType init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKObjectType initWithCoder(NSCoder aDecoder);
 
     /**
      * quantityTypeForIdentifier:</br>
@@ -123,12 +97,6 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     /**
      * workoutType</br>
@@ -245,4 +213,36 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObjectType_Class/index.html#//apple_ref/occ/instp/HKObjectType/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native HKObjectType init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKObjectType initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -54,62 +54,10 @@ public class AVQueuePlayer extends AVPlayer {
         super(peer);
     }
 
-    /**
-     * advanceToNextItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/advanceToNextItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("advanceToNextItem")
-    public native void advanceToNextItem();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native AVQueuePlayer alloc();
-
-    /**
-     * canInsertItem:afterItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/canInsertItem:afterItem:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("canInsertItem:afterItem:")
-    public native boolean canInsertItemAfterItem(AVPlayerItem item, AVPlayerItem afterItem);
-
-    @Generated
-    @Selector("init")
-    public native AVQueuePlayer init();
-
-    /**
-     * initWithItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/initWithItems:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithItems:")
-    public native AVQueuePlayer initWithItems(NSArray<? extends AVPlayerItem> items);
-
-    @Generated
-    @Selector("initWithPlayerItem:")
-    public native AVQueuePlayer initWithPlayerItem(AVPlayerItem item);
-
-    @Generated
-    @Selector("initWithURL:")
-    public native AVQueuePlayer initWithURL(NSURL URL);
-
-    /**
-     * insertItem:afterItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/insertItem:afterItem:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("insertItem:afterItem:")
-    public native void insertItemAfterItem(AVPlayerItem item, AVPlayerItem afterItem);
-
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/items">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("items")
-    public native NSArray<? extends AVPlayerItem> items();
 
     @Generated
     @Selector("playerWithPlayerItem:")
@@ -126,22 +74,6 @@ public class AVQueuePlayer extends AVPlayer {
     @Generated
     @Selector("queuePlayerWithItems:")
     public static native AVQueuePlayer queuePlayerWithItems(NSArray<? extends AVPlayerItem> items);
-
-    /**
-     * removeAllItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/removeAllItems">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeAllItems")
-    public native void removeAllItems();
-
-    /**
-     * removeItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/removeItem:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeItem:")
-    public native void removeItem(AVPlayerItem item);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -242,4 +174,72 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * advanceToNextItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/advanceToNextItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("advanceToNextItem")
+    public native void advanceToNextItem();
+
+    /**
+     * canInsertItem:afterItem:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/canInsertItem:afterItem:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("canInsertItem:afterItem:")
+    public native boolean canInsertItemAfterItem(AVPlayerItem item, AVPlayerItem afterItem);
+
+    @Generated
+    @Selector("init")
+    public native AVQueuePlayer init();
+
+    /**
+     * initWithItems:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/initWithItems:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithItems:")
+    public native AVQueuePlayer initWithItems(NSArray<? extends AVPlayerItem> items);
+
+    @Generated
+    @Selector("initWithPlayerItem:")
+    public native AVQueuePlayer initWithPlayerItem(AVPlayerItem item);
+
+    @Generated
+    @Selector("initWithURL:")
+    public native AVQueuePlayer initWithURL(NSURL URL);
+
+    /**
+     * insertItem:afterItem:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/insertItem:afterItem:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("insertItem:afterItem:")
+    public native void insertItemAfterItem(AVPlayerItem item, AVPlayerItem afterItem);
+
+    /**
+     * items</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/items">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("items")
+    public native NSArray<? extends AVPlayerItem> items();
+
+    /**
+     * removeAllItems</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/removeAllItems">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeAllItems")
+    public native void removeAllItems();
+
+    /**
+     * removeItem:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVQueuePlayer_Class/index.html#//apple_ref/occ/instm/AVQueuePlayer/removeItem:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeItem:")
+    public native void removeItem(AVPlayerItem item);
 }

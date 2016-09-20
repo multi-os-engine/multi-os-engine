@@ -27,11 +27,11 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure()
 public final class kauth_ace extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public kauth_ace() {

@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSURLSessionResponseDisposition {
-    @Generated
-    private NSURLSessionResponseDisposition() {
-    }
-
     @Generated @NInt public static final long Cancel = 0x0000000000000000L;
     @Generated @NInt public static final long Allow = 0x0000000000000001L;
     @Generated @NInt public static final long BecomeDownload = 0x0000000000000002L;
     @Generated @NInt public static final long BecomeStream = 0x0000000000000003L;
+
+    @Generated
+    private NSURLSessionResponseDisposition() {
+    }
 }

@@ -20,14 +20,14 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTLineBreakMode {
-    @Generated
-    private CTLineBreakMode() {
-    }
-
     @Generated public static final byte WordWrapping = 0;
     @Generated public static final byte CharWrapping = 1;
     @Generated public static final byte Clipping = 2;
     @Generated public static final byte TruncatingHead = 3;
     @Generated public static final byte TruncatingTail = 4;
     @Generated public static final byte TruncatingMiddle = 5;
+
+    @Generated
+    private CTLineBreakMode() {
+    }
 }

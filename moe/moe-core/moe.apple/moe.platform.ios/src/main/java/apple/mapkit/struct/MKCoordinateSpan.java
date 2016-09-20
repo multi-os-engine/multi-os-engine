@@ -26,11 +26,11 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure()
 public final class MKCoordinateSpan extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public MKCoordinateSpan() {

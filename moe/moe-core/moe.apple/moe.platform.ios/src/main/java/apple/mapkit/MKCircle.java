@@ -63,16 +63,6 @@ public class MKCircle extends MKShape implements MKOverlay {
     @Selector("alloc")
     public static native MKCircle alloc();
 
-    @Generated
-    @Selector("boundingMapRect")
-    @ByValue
-    public native MKMapRect boundingMapRect();
-
-    @Generated
-    @IsOptional
-    @Selector("canReplaceMapContent")
-    public native boolean canReplaceMapContent();
-
     /**
      * circleWithCenterCoordinate:radius:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircle_class/index.html#//apple_ref/occ/clm/MKCircle/circleWithCenterCoordinate:radius:">iOS Dev Center</a>
@@ -89,43 +79,6 @@ public class MKCircle extends MKShape implements MKOverlay {
     @Generated
     @Selector("circleWithMapRect:")
     public static native MKCircle circleWithMapRect(@ByValue MKMapRect mapRect);
-
-    @Generated
-    @Selector("coordinate")
-    @ByValue
-    public native CLLocationCoordinate2D coordinate();
-
-    @Generated
-    @Selector("init")
-    public native MKCircle init();
-
-    @Generated
-    @IsOptional
-    @Selector("intersectsMapRect:")
-    public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
-
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircle_class/index.html#//apple_ref/occ/instp/MKCircle/radius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("radius")
-    public native double radius();
-
-    @Generated
-    @IsOptional
-    @Selector("setCoordinate:")
-    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
-
-    @Generated
-    @IsOptional
-    @Selector("subtitle")
-    public native String subtitle();
-
-    @Generated
-    @IsOptional
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -226,4 +179,51 @@ public class MKCircle extends MKShape implements MKOverlay {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("boundingMapRect")
+    @ByValue
+    public native MKMapRect boundingMapRect();
+
+    @Generated
+    @IsOptional
+    @Selector("canReplaceMapContent")
+    public native boolean canReplaceMapContent();
+
+    @Generated
+    @Selector("coordinate")
+    @ByValue
+    public native CLLocationCoordinate2D coordinate();
+
+    @Generated
+    @Selector("init")
+    public native MKCircle init();
+
+    @Generated
+    @IsOptional
+    @Selector("intersectsMapRect:")
+    public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
+
+    /**
+     * radius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircle_class/index.html#//apple_ref/occ/instp/MKCircle/radius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("radius")
+    public native double radius();
+
+    @Generated
+    @IsOptional
+    @Selector("setCoordinate:")
+    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
+
+    @Generated
+    @IsOptional
+    @Selector("subtitle")
+    public native String subtitle();
+
+    @Generated
+    @IsOptional
+    @Selector("title")
+    public native String title();
 }

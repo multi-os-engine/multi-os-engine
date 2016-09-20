@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class ACAccountCredentialRenewResult {
-    @Generated
-    private ACAccountCredentialRenewResult() {
-    }
-
     @Generated @NInt public static final long Renewed = 0x0000000000000000L;
     @Generated @NInt public static final long Rejected = 0x0000000000000001L;
     @Generated @NInt public static final long Failed = 0x0000000000000002L;
+
+    @Generated
+    private ACAccountCredentialRenewResult() {
+    }
 }

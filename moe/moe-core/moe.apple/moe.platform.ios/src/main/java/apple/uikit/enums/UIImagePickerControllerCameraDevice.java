@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIImagePickerControllerCameraDevice {
+    @Generated @NInt public static final long Rear = 0x0000000000000000L;
+    @Generated @NInt public static final long Front = 0x0000000000000001L;
+
     @Generated
     private UIImagePickerControllerCameraDevice() {
     }
-
-    @Generated @NInt public static final long Rear = 0x0000000000000000L;
-    @Generated @NInt public static final long Front = 0x0000000000000001L;
 }

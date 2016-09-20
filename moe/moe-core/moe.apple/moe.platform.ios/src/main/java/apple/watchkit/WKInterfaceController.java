@@ -61,6 +61,128 @@ public class WKInterfaceController extends NSObject {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native WKInterfaceController alloc();
+
+    /**
+     * openParentApplication:reply:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("openParentApplication:reply:")
+    public static native boolean openParentApplicationReply(NSDictionary<?, ?> userInfo,
+            @ObjCBlock(name = "call_openParentApplicationReply") Block_openParentApplicationReply reply);
+
+    /**
+     * reloadRootControllersWithNames:contexts:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/reloadRootControllersWithNames:contexts:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reloadRootControllersWithNames:contexts:")
+    public static native void reloadRootControllersWithNamesContexts(NSArray<String> names, NSArray<?> contexts);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * addMenuItemWithImage:title:action:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/instm/WKInterfaceController/addMenuItemWithImage:title:action:">iOS Dev Center</a>
@@ -84,11 +206,6 @@ public class WKInterfaceController extends NSObject {
     @Generated
     @Selector("addMenuItemWithItemIcon:title:action:")
     public native void addMenuItemWithItemIconTitleAction(@NInt long itemIcon, String title, SEL action);
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native WKInterfaceController alloc();
 
     /**
      * awakeWithContext:</br>
@@ -226,22 +343,6 @@ public class WKInterfaceController extends NSObject {
     public native void invalidateUserActivity();
 
     /**
-     * openParentApplication:reply:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("openParentApplication:reply:")
-    public static native boolean openParentApplicationReply(NSDictionary<?, ?> userInfo,
-            @ObjCBlock(name = "call_openParentApplicationReply") Block_openParentApplicationReply reply);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_openParentApplicationReply {
-        @Generated
-        void call_openParentApplicationReply(NSDictionary<?, ?> arg0, NSError arg1);
-    }
-
-    /**
      * popController</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/instm/WKInterfaceController/popController">iOS Dev Center</a>
      */
@@ -283,13 +384,6 @@ public class WKInterfaceController extends NSObject {
             @NInt long inputMode,
             @ObjCBlock(name = "call_presentTextInputControllerWithSuggestionsAllowedInputModeCompletion") Block_presentTextInputControllerWithSuggestionsAllowedInputModeCompletion completion);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_presentTextInputControllerWithSuggestionsAllowedInputModeCompletion {
-        @Generated
-        void call_presentTextInputControllerWithSuggestionsAllowedInputModeCompletion(NSArray<?> arg0);
-    }
-
     /**
      * pushControllerWithName:context:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/instm/WKInterfaceController/pushControllerWithName:context:">iOS Dev Center</a>
@@ -297,14 +391,6 @@ public class WKInterfaceController extends NSObject {
     @Generated
     @Selector("pushControllerWithName:context:")
     public native void pushControllerWithNameContext(String name, @Mapped(ObjCObjectMapper.class) Object context);
-
-    /**
-     * reloadRootControllersWithNames:contexts:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/reloadRootControllersWithNames:contexts:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reloadRootControllersWithNames:contexts:")
-    public static native void reloadRootControllersWithNamesContexts(NSArray<String> names, NSArray<?> contexts);
 
     /**
      * setTitle:</br>
@@ -347,6 +433,20 @@ public class WKInterfaceController extends NSObject {
 
     @Runtime(ObjCRuntime.class)
     @Generated
+    public interface Block_openParentApplicationReply {
+        @Generated
+        void call_openParentApplicationReply(NSDictionary<?, ?> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_presentTextInputControllerWithSuggestionsAllowedInputModeCompletion {
+        @Generated
+        void call_presentTextInputControllerWithSuggestionsAllowedInputModeCompletion(NSArray<?> arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
     public interface Block_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_0 {
         @Generated
         NSArray<?> call_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_0(String arg0);
@@ -358,104 +458,4 @@ public class WKInterfaceController extends NSObject {
         @Generated
         void call_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_2(NSArray<?> arg0);
     }
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

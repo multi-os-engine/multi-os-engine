@@ -69,26 +69,6 @@ public class UIReferenceLibraryViewController extends UIViewController {
     public static native boolean dictionaryHasDefinitionForTerm(String term);
 
     @Generated
-    @Selector("init")
-    public native UIReferenceLibraryViewController init();
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native UIReferenceLibraryViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    /**
-     * initWithTerm:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIReferenceLibraryViewControllerClassRef/index.html#//apple_ref/occ/instm/UIReferenceLibraryViewController/initWithTerm:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTerm:")
-    public native UIReferenceLibraryViewController initWithTerm(String term);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIReferenceLibraryViewController initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -199,4 +179,24 @@ public class UIReferenceLibraryViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIReferenceLibraryViewController init();
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native UIReferenceLibraryViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    /**
+     * initWithTerm:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIReferenceLibraryViewControllerClassRef/index.html#//apple_ref/occ/instm/UIReferenceLibraryViewController/initWithTerm:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTerm:")
+    public native UIReferenceLibraryViewController initWithTerm(String term);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIReferenceLibraryViewController initWithCoder(NSCoder aDecoder);
 }

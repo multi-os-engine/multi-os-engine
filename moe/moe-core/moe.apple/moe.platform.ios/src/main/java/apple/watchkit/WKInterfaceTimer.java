@@ -61,42 +61,6 @@ public class WKInterfaceTimer extends WKInterfaceObject {
     public static native WKInterfaceTimer alloc();
 
     @Generated
-    @Selector("init")
-    public native WKInterfaceTimer init();
-
-    /**
-     * setDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTimer_class/index.html#//apple_ref/occ/instm/WKInterfaceTimer/setDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDate:")
-    public native void setDate(NSDate date);
-
-    /**
-     * setTextColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTimer_class/index.html#//apple_ref/occ/instm/WKInterfaceTimer/setTextColor:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTextColor:")
-    public native void setTextColor(UIColor color);
-
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTimer_class/index.html#//apple_ref/occ/instm/WKInterfaceTimer/start">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("start")
-    public native void start();
-
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTimer_class/index.html#//apple_ref/occ/instm/WKInterfaceTimer/stop">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stop")
-    public native void stop();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -195,4 +159,40 @@ public class WKInterfaceTimer extends WKInterfaceObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native WKInterfaceTimer init();
+
+    /**
+     * setDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTimer_class/index.html#//apple_ref/occ/instm/WKInterfaceTimer/setDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDate:")
+    public native void setDate(NSDate date);
+
+    /**
+     * setTextColor:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTimer_class/index.html#//apple_ref/occ/instm/WKInterfaceTimer/setTextColor:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTextColor:")
+    public native void setTextColor(UIColor color);
+
+    /**
+     * start</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTimer_class/index.html#//apple_ref/occ/instm/WKInterfaceTimer/start">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("start")
+    public native void start();
+
+    /**
+     * stop</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceTimer_class/index.html#//apple_ref/occ/instm/WKInterfaceTimer/stop">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stop")
+    public native void stop();
 }

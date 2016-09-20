@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CMAttitudeReferenceFrame {
-    @Generated
-    private CMAttitudeReferenceFrame() {
-    }
-
     @Generated @NUInt public static final long ArbitraryZVertical = 0x0000000000000001L;
     @Generated @NUInt public static final long ArbitraryCorrectedZVertical = 0x0000000000000002L;
     @Generated @NUInt public static final long MagneticNorthZVertical = 0x0000000000000004L;
     @Generated @NUInt public static final long TrueNorthZVertical = 0x0000000000000008L;
+
+    @Generated
+    private CMAttitudeReferenceFrame() {
+    }
 }

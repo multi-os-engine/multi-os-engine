@@ -42,13 +42,6 @@ public interface AVAsynchronousKeyValueLoading {
     void loadValuesAsynchronouslyForKeysCompletionHandler(NSArray<String> keys,
             @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadValuesAsynchronouslyForKeysCompletionHandler {
-        @Generated
-        void call_loadValuesAsynchronouslyForKeysCompletionHandler();
-    }
-
     /**
      * statusOfValueForKey:error:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousKeyValueLoading_Protocol/index.html#//apple_ref/occ/intfm/AVAsynchronousKeyValueLoading/statusOfValueForKey:error:">iOS Dev Center</a>
@@ -57,4 +50,11 @@ public interface AVAsynchronousKeyValueLoading {
     @Selector("statusOfValueForKey:error:")
     @NInt
     long statusOfValueForKeyError(String key, Ptr<NSError> outError);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadValuesAsynchronouslyForKeysCompletionHandler {
+        @Generated
+        void call_loadValuesAsynchronouslyForKeysCompletionHandler();
+    }
 }

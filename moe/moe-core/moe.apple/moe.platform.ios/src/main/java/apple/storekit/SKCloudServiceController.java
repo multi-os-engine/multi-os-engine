@@ -66,44 +66,9 @@ public class SKCloudServiceController extends NSObject {
     public static native long authorizationStatus();
 
     @Generated
-    @Selector("init")
-    public native SKCloudServiceController init();
-
-    @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
             @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestAuthorization {
-        @Generated
-        void call_requestAuthorization(@NInt long arg0);
-    }
-
-    @Generated
-    @Selector("requestCapabilitiesWithCompletionHandler:")
-    public native void requestCapabilitiesWithCompletionHandler(
-            @ObjCBlock(name = "call_requestCapabilitiesWithCompletionHandler") Block_requestCapabilitiesWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestCapabilitiesWithCompletionHandler {
-        @Generated
-        void call_requestCapabilitiesWithCompletionHandler(@NUInt long arg0, NSError arg1);
-    }
-
-    @Generated
-    @Selector("requestStorefrontIdentifierWithCompletionHandler:")
-    public native void requestStorefrontIdentifierWithCompletionHandler(
-            @ObjCBlock(name = "call_requestStorefrontIdentifierWithCompletionHandler") Block_requestStorefrontIdentifierWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestStorefrontIdentifierWithCompletionHandler {
-        @Generated
-        void call_requestStorefrontIdentifierWithCompletionHandler(String arg0, NSError arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -204,4 +169,39 @@ public class SKCloudServiceController extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SKCloudServiceController init();
+
+    @Generated
+    @Selector("requestCapabilitiesWithCompletionHandler:")
+    public native void requestCapabilitiesWithCompletionHandler(
+            @ObjCBlock(name = "call_requestCapabilitiesWithCompletionHandler") Block_requestCapabilitiesWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("requestStorefrontIdentifierWithCompletionHandler:")
+    public native void requestStorefrontIdentifierWithCompletionHandler(
+            @ObjCBlock(name = "call_requestStorefrontIdentifierWithCompletionHandler") Block_requestStorefrontIdentifierWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestAuthorization {
+        @Generated
+        void call_requestAuthorization(@NInt long arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestCapabilitiesWithCompletionHandler {
+        @Generated
+        void call_requestCapabilitiesWithCompletionHandler(@NUInt long arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestStorefrontIdentifierWithCompletionHandler {
+        @Generated
+        void call_requestStorefrontIdentifierWithCompletionHandler(String arg0, NSError arg1);
+    }
 }

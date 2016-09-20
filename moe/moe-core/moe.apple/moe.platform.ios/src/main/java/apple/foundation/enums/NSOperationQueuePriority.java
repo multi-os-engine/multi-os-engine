@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSOperationQueuePriority {
-    @Generated
-    private NSOperationQueuePriority() {
-    }
-
     @Generated @NInt public static final long VeryLow = 0xFFFFFFFFFFFFFFF8L;
     @Generated @NInt public static final long Low = 0xFFFFFFFFFFFFFFFCL;
     @Generated @NInt public static final long Normal = 0x0000000000000000L;
     @Generated @NInt public static final long High = 0x0000000000000004L;
     @Generated @NInt public static final long VeryHigh = 0x0000000000000008L;
+
+    @Generated
+    private NSOperationQueuePriority() {
+    }
 }

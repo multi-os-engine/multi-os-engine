@@ -32,11 +32,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CGDataConsumerCallbacks extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CGDataConsumerCallbacks() {
@@ -60,24 +60,9 @@ public final class CGDataConsumerCallbacks extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setPutBytes(@FunctionPtr(name = "call_putBytes") Function_putBytes value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_putBytes {
-        @Generated
-        @NUInt
-        long call_putBytes(VoidPtr arg0, ConstVoidPtr arg1, @NUInt long arg2);
-    }
-
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setReleaseConsumer(@FunctionPtr(name = "call_releaseConsumer") Function_releaseConsumer value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_releaseConsumer {
-        @Generated
-        void call_releaseConsumer(VoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -88,4 +73,19 @@ public final class CGDataConsumerCallbacks extends StructObject {
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_releaseConsumer")
     public native Function_releaseConsumer releaseConsumer();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_putBytes {
+        @Generated
+        @NUInt
+        long call_putBytes(VoidPtr arg0, ConstVoidPtr arg1, @NUInt long arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_releaseConsumer {
+        @Generated
+        void call_releaseConsumer(VoidPtr arg0);
+    }
 }

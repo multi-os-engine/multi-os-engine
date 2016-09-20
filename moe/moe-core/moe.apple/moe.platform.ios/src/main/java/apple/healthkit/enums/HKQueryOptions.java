@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class HKQueryOptions {
-    @Generated
-    private HKQueryOptions() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long StrictStartDate = 0x0000000000000001L;
     @Generated @NUInt public static final long StrictEndDate = 0x0000000000000002L;
+
+    @Generated
+    private HKQueryOptions() {
+    }
 }

@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class sparse_matrix_property {
-    @Generated
-    private sparse_matrix_property() {
-    }
-
     @Generated public static final int SPARSE_UPPER_TRIANGULAR = 0x00000001;
     @Generated public static final int SPARSE_LOWER_TRIANGULAR = 0x00000002;
     @Generated public static final int SPARSE_UPPER_SYMMETRIC = 0x00000004;
     @Generated public static final int SPARSE_LOWER_SYMMETRIC = 0x00000008;
+
+    @Generated
+    private sparse_matrix_property() {
+    }
 }

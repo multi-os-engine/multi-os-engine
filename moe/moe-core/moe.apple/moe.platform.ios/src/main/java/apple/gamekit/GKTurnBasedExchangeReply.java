@@ -60,42 +60,6 @@ public class GKTurnBasedExchangeReply extends NSObject {
     @Selector("alloc")
     public static native GKTurnBasedExchangeReply alloc();
 
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchangeReply_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchangeReply/data">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("data")
-    public native NSData data();
-
-    @Generated
-    @Selector("init")
-    public native GKTurnBasedExchangeReply init();
-
-    /**
-     * message</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchangeReply_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchangeReply/message">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("message")
-    public native String message();
-
-    /**
-     * recipient</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchangeReply_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchangeReply/recipient">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recipient")
-    public native GKTurnBasedParticipant recipient();
-
-    /**
-     * replyDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchangeReply_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchangeReply/replyDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("replyDate")
-    public native NSDate replyDate();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -195,4 +159,40 @@ public class GKTurnBasedExchangeReply extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * data</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchangeReply_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchangeReply/data">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("data")
+    public native NSData data();
+
+    @Generated
+    @Selector("init")
+    public native GKTurnBasedExchangeReply init();
+
+    /**
+     * message</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchangeReply_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchangeReply/message">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("message")
+    public native String message();
+
+    /**
+     * recipient</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchangeReply_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchangeReply/recipient">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recipient")
+    public native GKTurnBasedParticipant recipient();
+
+    /**
+     * replyDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedExchangeReply_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedExchangeReply/replyDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("replyDate")
+    public native NSDate replyDate();
 }

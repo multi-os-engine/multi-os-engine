@@ -46,13 +46,6 @@ public interface NSFilePresenter {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_accommodatePresentedItemDeletionWithCompletionHandler {
-        @Generated
-        void call_accommodatePresentedItemDeletionWithCompletionHandler(NSError arg0);
-    }
-
     /**
      * accommodatePresentedSubitemDeletionAtURL:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFilePresenter_protocol/index.html#//apple_ref/occ/intfm/NSFilePresenter/accommodatePresentedSubitemDeletionAtURL:completionHandler:">iOS Dev Center</a>
@@ -63,13 +56,6 @@ public interface NSFilePresenter {
     default void accommodatePresentedSubitemDeletionAtURLCompletionHandler(NSURL url,
             @ObjCBlock(name = "call_accommodatePresentedSubitemDeletionAtURLCompletionHandler") Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler {
-        @Generated
-        void call_accommodatePresentedSubitemDeletionAtURLCompletionHandler(NSError arg0);
     }
 
     /**
@@ -219,6 +205,20 @@ public interface NSFilePresenter {
     default void savePresentedItemChangesWithCompletionHandler(
             @ObjCBlock(name = "call_savePresentedItemChangesWithCompletionHandler") Block_savePresentedItemChangesWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accommodatePresentedItemDeletionWithCompletionHandler {
+        @Generated
+        void call_accommodatePresentedItemDeletionWithCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler {
+        @Generated
+        void call_accommodatePresentedSubitemDeletionAtURLCompletionHandler(NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)

@@ -62,49 +62,6 @@ public class PHAssetCollection extends PHCollection {
     public static native PHAssetCollection alloc();
 
     /**
-     * approximateLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/approximateLocation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("approximateLocation")
-    public native CLLocation approximateLocation();
-
-    /**
-     * assetCollectionSubtype</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/assetCollectionSubtype">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("assetCollectionSubtype")
-    @NInt
-    public native long assetCollectionSubtype();
-
-    /**
-     * assetCollectionType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/assetCollectionType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("assetCollectionType")
-    @NInt
-    public native long assetCollectionType();
-
-    /**
-     * endDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/endDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("endDate")
-    public native NSDate endDate();
-
-    /**
-     * estimatedAssetCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/estimatedAssetCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("estimatedAssetCount")
-    @NUInt
-    public native long estimatedAssetCount();
-
-    /**
      * fetchAssetCollectionsContainingAsset:withType:options:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/clm/PHAssetCollection/fetchAssetCollectionsContainingAsset:withType:options:">iOS Dev Center</a>
      */
@@ -156,26 +113,6 @@ public class PHAssetCollection extends PHCollection {
     @Generated
     @Selector("fetchMomentsWithOptions:")
     public static native PHFetchResult<PHAssetCollection> fetchMomentsWithOptions(PHFetchOptions options);
-
-    @Generated
-    @Selector("init")
-    public native PHAssetCollection init();
-
-    /**
-     * localizedLocationNames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/localizedLocationNames">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedLocationNames")
-    public native NSArray<String> localizedLocationNames();
-
-    /**
-     * startDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/startDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startDate")
-    public native NSDate startDate();
 
     /**
      * transientAssetCollectionWithAssetFetchResult:title:</br>
@@ -303,4 +240,67 @@ public class PHAssetCollection extends PHCollection {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * approximateLocation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/approximateLocation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("approximateLocation")
+    public native CLLocation approximateLocation();
+
+    /**
+     * assetCollectionSubtype</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/assetCollectionSubtype">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("assetCollectionSubtype")
+    @NInt
+    public native long assetCollectionSubtype();
+
+    /**
+     * assetCollectionType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/assetCollectionType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("assetCollectionType")
+    @NInt
+    public native long assetCollectionType();
+
+    /**
+     * endDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/endDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("endDate")
+    public native NSDate endDate();
+
+    /**
+     * estimatedAssetCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/estimatedAssetCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("estimatedAssetCount")
+    @NUInt
+    public native long estimatedAssetCount();
+
+    @Generated
+    @Selector("init")
+    public native PHAssetCollection init();
+
+    /**
+     * localizedLocationNames</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/localizedLocationNames">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedLocationNames")
+    public native NSArray<String> localizedLocationNames();
+
+    /**
+     * startDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetCollection_Class/index.html#//apple_ref/occ/instp/PHAssetCollection/startDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startDate")
+    public native NSDate startDate();
 }

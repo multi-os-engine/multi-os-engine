@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class vDSP_DCT_Type {
-    @Generated
-    private vDSP_DCT_Type() {
-    }
-
     @Generated public static final int II = 0x00000002;
     @Generated public static final int III = 0x00000003;
     @Generated public static final int IV = 0x00000004;
+
+    @Generated
+    private vDSP_DCT_Type() {
+    }
 }

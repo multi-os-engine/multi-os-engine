@@ -62,55 +62,6 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
     public static native AVAudioUnitDistortion alloc();
 
     @Generated
-    @Selector("init")
-    public native AVAudioUnitDistortion init();
-
-    @Generated
-    @Selector("initWithAudioComponentDescription:")
-    public native AVAudioUnitDistortion initWithAudioComponentDescription(
-            @ByValue AudioComponentDescription audioComponentDescription);
-
-    /**
-     * loadFactoryPreset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDistortion_Class/index.html#//apple_ref/occ/instm/AVAudioUnitDistortion/loadFactoryPreset:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadFactoryPreset:")
-    public native void loadFactoryPreset(@NInt long preset);
-
-    /**
-     * preGain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDistortion_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDistortion/preGain">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preGain")
-    public native float preGain();
-
-    /**
-     * preGain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDistortion_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDistortion/preGain">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPreGain:")
-    public native void setPreGain(float value);
-
-    /**
-     * wetDryMix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDistortion_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDistortion/wetDryMix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWetDryMix:")
-    public native void setWetDryMix(float value);
-
-    /**
-     * wetDryMix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDistortion_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDistortion/wetDryMix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("wetDryMix")
-    public native float wetDryMix();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -215,4 +166,53 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioUnitDistortion init();
+
+    @Generated
+    @Selector("initWithAudioComponentDescription:")
+    public native AVAudioUnitDistortion initWithAudioComponentDescription(
+            @ByValue AudioComponentDescription audioComponentDescription);
+
+    /**
+     * loadFactoryPreset:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDistortion_Class/index.html#//apple_ref/occ/instm/AVAudioUnitDistortion/loadFactoryPreset:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadFactoryPreset:")
+    public native void loadFactoryPreset(@NInt long preset);
+
+    /**
+     * preGain</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDistortion_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDistortion/preGain">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preGain")
+    public native float preGain();
+
+    /**
+     * preGain</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDistortion_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDistortion/preGain">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPreGain:")
+    public native void setPreGain(float value);
+
+    /**
+     * wetDryMix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDistortion_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDistortion/wetDryMix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWetDryMix:")
+    public native void setWetDryMix(float value);
+
+    /**
+     * wetDryMix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitDistortion_Class/index.html#//apple_ref/occ/instp/AVAudioUnitDistortion/wetDryMix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("wetDryMix")
+    public native float wetDryMix();
 }

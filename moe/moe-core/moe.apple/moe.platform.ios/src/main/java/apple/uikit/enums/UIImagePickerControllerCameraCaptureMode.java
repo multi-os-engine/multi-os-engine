@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIImagePickerControllerCameraCaptureMode {
+    @Generated @NInt public static final long Photo = 0x0000000000000000L;
+    @Generated @NInt public static final long Video = 0x0000000000000001L;
+
     @Generated
     private UIImagePickerControllerCameraCaptureMode() {
     }
-
-    @Generated @NInt public static final long Photo = 0x0000000000000000L;
-    @Generated @NInt public static final long Video = 0x0000000000000001L;
 }

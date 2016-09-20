@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MPMovieControlStyle {
-    @Generated
-    private MPMovieControlStyle() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Embedded = 0x0000000000000001L;
     @Generated @NInt public static final long Fullscreen = 0x0000000000000002L;
     @Generated @NInt public static final long Default = 0x0000000000000001L;
+
+    @Generated
+    private MPMovieControlStyle() {
+    }
 }

@@ -21,11 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFPropertyListFormat {
-    @Generated
-    private CFPropertyListFormat() {
-    }
-
     @Generated @NInt public static final long OpenStepFormat = 0x0000000000000001L;
     @Generated @NInt public static final long XMLFormat_v1_0 = 0x0000000000000064L;
     @Generated @NInt public static final long BinaryFormat_v1_0 = 0x00000000000000C8L;
+    @Generated
+    private CFPropertyListFormat() {
+    }
 }

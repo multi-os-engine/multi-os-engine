@@ -65,47 +65,6 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
     public static native CKLocationSortDescriptor alloc();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CKLocationSortDescriptor init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CKLocationSortDescriptor initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithKey:ascending:")
-    public native CKLocationSortDescriptor initWithKeyAscending(String key, boolean ascending);
-
-    @Generated
-    @Selector("initWithKey:ascending:comparator:")
-    public native CKLocationSortDescriptor initWithKeyAscendingComparator(String key, boolean ascending,
-            @ObjCBlock(name = "call_initWithKeyAscendingComparator") NSSortDescriptor.Block_initWithKeyAscendingComparator cmptr);
-
-    @Generated
-    @Selector("initWithKey:ascending:selector:")
-    public native CKLocationSortDescriptor initWithKeyAscendingSelector(String key, boolean ascending, SEL selector);
-
-    /**
-     * initWithKey:relativeLocation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKLocationSortDescriptor_class/index.html#//apple_ref/occ/instm/CKLocationSortDescriptor/initWithKey:relativeLocation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithKey:relativeLocation:")
-    public native CKLocationSortDescriptor initWithKeyRelativeLocation(String key, CLLocation relativeLocation);
-
-    /**
-     * relativeLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKLocationSortDescriptor_class/index.html#//apple_ref/occ/instp/CKLocationSortDescriptor/relativeLocation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("relativeLocation")
-    public native CLLocation relativeLocation();
-
-    @Generated
     @Selector("sortDescriptorWithKey:ascending:")
     public static native CKLocationSortDescriptor sortDescriptorWithKeyAscending(String key, boolean ascending);
 
@@ -123,12 +82,6 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -229,4 +182,51 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CKLocationSortDescriptor init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CKLocationSortDescriptor initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithKey:ascending:")
+    public native CKLocationSortDescriptor initWithKeyAscending(String key, boolean ascending);
+
+    @Generated
+    @Selector("initWithKey:ascending:comparator:")
+    public native CKLocationSortDescriptor initWithKeyAscendingComparator(String key, boolean ascending,
+            @ObjCBlock(name = "call_initWithKeyAscendingComparator") NSSortDescriptor.Block_initWithKeyAscendingComparator cmptr);
+
+    @Generated
+    @Selector("initWithKey:ascending:selector:")
+    public native CKLocationSortDescriptor initWithKeyAscendingSelector(String key, boolean ascending, SEL selector);
+
+    /**
+     * initWithKey:relativeLocation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKLocationSortDescriptor_class/index.html#//apple_ref/occ/instm/CKLocationSortDescriptor/initWithKey:relativeLocation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithKey:relativeLocation:")
+    public native CKLocationSortDescriptor initWithKeyRelativeLocation(String key, CLLocation relativeLocation);
+
+    /**
+     * relativeLocation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKLocationSortDescriptor_class/index.html#//apple_ref/occ/instp/CKLocationSortDescriptor/relativeLocation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("relativeLocation")
+    public native CLLocation relativeLocation();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

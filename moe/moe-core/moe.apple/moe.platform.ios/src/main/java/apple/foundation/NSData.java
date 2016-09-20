@@ -67,45 +67,6 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     public static native NSData alloc();
 
     /**
-     * base64EncodedDataWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html#//apple_ref/occ/instm/NSData/base64EncodedDataWithOptions:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("base64EncodedDataWithOptions:")
-    public native NSData base64EncodedDataWithOptions(@NUInt long options);
-
-    /**
-     * base64EncodedStringWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html#//apple_ref/occ/instm/NSData/base64EncodedStringWithOptions:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("base64EncodedStringWithOptions:")
-    public native String base64EncodedStringWithOptions(@NUInt long options);
-
-    /**
-     * base64Encoding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html#//apple_ref/occ/instm/NSData/base64Encoding">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("base64Encoding")
-    public native String base64Encoding();
-
-    /**
-     * bytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html#//apple_ref/occ/instp/NSData/bytes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bytes")
-    public native ConstVoidPtr bytes();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
      * data</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html#//apple_ref/occ/clm/NSData/data">iOS Dev Center</a>
      */
@@ -188,6 +149,145 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Selector("dataWithData:")
     public static native NSData dataWithData(NSData data);
 
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * base64EncodedDataWithOptions:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html#//apple_ref/occ/instm/NSData/base64EncodedDataWithOptions:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("base64EncodedDataWithOptions:")
+    public native NSData base64EncodedDataWithOptions(@NUInt long options);
+
+    /**
+     * base64EncodedStringWithOptions:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html#//apple_ref/occ/instm/NSData/base64EncodedStringWithOptions:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("base64EncodedStringWithOptions:")
+    public native String base64EncodedStringWithOptions(@NUInt long options);
+
+    /**
+     * base64Encoding</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html#//apple_ref/occ/instm/NSData/base64Encoding">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("base64Encoding")
+    public native String base64Encoding();
+
+    /**
+     * bytes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html#//apple_ref/occ/instp/NSData/bytes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bytes")
+    public native ConstVoidPtr bytes();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
     /**
      * description</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/index.html#//apple_ref/occ/instp/NSData/description">iOS Dev Center</a>
@@ -208,13 +308,6 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Selector("enumerateByteRangesUsingBlock:")
     public native void enumerateByteRangesUsingBlock(
             @ObjCBlock(name = "call_enumerateByteRangesUsingBlock") Block_enumerateByteRangesUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateByteRangesUsingBlock {
-        @Generated
-        void call_enumerateByteRangesUsingBlock(ConstVoidPtr arg0, @ByValue NSRange arg1, BoolPtr arg2);
-    }
 
     /**
      * getBytes:</br>
@@ -294,13 +387,6 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Selector("initWithBytesNoCopy:length:deallocator:")
     public native NSData initWithBytesNoCopyLengthDeallocator(VoidPtr bytes, @NUInt long length,
             @ObjCBlock(name = "call_initWithBytesNoCopyLengthDeallocator") Block_initWithBytesNoCopyLengthDeallocator deallocator);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithBytesNoCopyLengthDeallocator {
-        @Generated
-        void call_initWithBytesNoCopyLengthDeallocator(VoidPtr arg0, @NUInt long arg1);
-    }
 
     /**
      * initWithBytesNoCopy:length:freeWhenDone:</br>
@@ -405,10 +491,6 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     public native NSData subdataWithRange(@ByValue NSRange range);
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
@@ -446,99 +528,17 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Selector("writeToURL:options:error:")
     public native boolean writeToURLOptionsError(NSURL url, @NUInt long writeOptionsMask, Ptr<NSError> errorPtr);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_enumerateByteRangesUsingBlock {
+        @Generated
+        void call_enumerateByteRangesUsingBlock(ConstVoidPtr arg0, @ByValue NSRange arg1, BoolPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_initWithBytesNoCopyLengthDeallocator {
+        @Generated
+        void call_initWithBytesNoCopyLengthDeallocator(VoidPtr arg0, @NUInt long arg1);
+    }
 }

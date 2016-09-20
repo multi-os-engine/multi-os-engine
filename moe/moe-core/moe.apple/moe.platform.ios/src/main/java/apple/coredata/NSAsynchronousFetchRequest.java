@@ -60,47 +60,6 @@ public class NSAsynchronousFetchRequest extends NSPersistentStoreRequest {
     public static native NSAsynchronousFetchRequest alloc();
 
     @Generated
-    @Selector("estimatedResultCount")
-    @NInt
-    public native long estimatedResultCount();
-
-    @Generated
-    @Selector("fetchRequest")
-    public native NSFetchRequest fetchRequest();
-
-    @Generated
-    @Selector("init")
-    public native NSAsynchronousFetchRequest init();
-
-    @Generated
-    @Selector("initWithFetchRequest:completionBlock:")
-    public native NSAsynchronousFetchRequest initWithFetchRequestCompletionBlock(NSFetchRequest request,
-            @ObjCBlock(name = "call_initWithFetchRequestCompletionBlock") Block_initWithFetchRequestCompletionBlock blk);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithFetchRequestCompletionBlock {
-        @Generated
-        void call_initWithFetchRequestCompletionBlock(NSAsynchronousFetchResult arg0);
-    }
-
-    @Generated
-    @Selector("setEstimatedResultCount:")
-    public native void setEstimatedResultCount(@NInt long value);
-
-    @Generated
-    @Selector("completionBlock")
-    @ObjCBlock(name = "call_completionBlock_ret")
-    public native Block_completionBlock_ret completionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_completionBlock_ret {
-        @Generated
-        void call_completionBlock_ret(NSAsynchronousFetchResult arg0);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -199,4 +158,45 @@ public class NSAsynchronousFetchRequest extends NSPersistentStoreRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("estimatedResultCount")
+    @NInt
+    public native long estimatedResultCount();
+
+    @Generated
+    @Selector("fetchRequest")
+    public native NSFetchRequest fetchRequest();
+
+    @Generated
+    @Selector("init")
+    public native NSAsynchronousFetchRequest init();
+
+    @Generated
+    @Selector("initWithFetchRequest:completionBlock:")
+    public native NSAsynchronousFetchRequest initWithFetchRequestCompletionBlock(NSFetchRequest request,
+            @ObjCBlock(name = "call_initWithFetchRequestCompletionBlock") Block_initWithFetchRequestCompletionBlock blk);
+
+    @Generated
+    @Selector("setEstimatedResultCount:")
+    public native void setEstimatedResultCount(@NInt long value);
+
+    @Generated
+    @Selector("completionBlock")
+    @ObjCBlock(name = "call_completionBlock_ret")
+    public native Block_completionBlock_ret completionBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithFetchRequestCompletionBlock {
+        @Generated
+        void call_initWithFetchRequestCompletionBlock(NSAsynchronousFetchResult arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_completionBlock_ret {
+        @Generated
+        void call_completionBlock_ret(NSAsynchronousFetchResult arg0);
+    }
 }

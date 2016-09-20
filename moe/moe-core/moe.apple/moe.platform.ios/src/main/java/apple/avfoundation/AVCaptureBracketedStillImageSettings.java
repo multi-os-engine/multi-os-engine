@@ -59,10 +59,6 @@ public class AVCaptureBracketedStillImageSettings extends NSObject {
     public static native AVCaptureBracketedStillImageSettings alloc();
 
     @Generated
-    @Selector("init")
-    public native AVCaptureBracketedStillImageSettings init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class AVCaptureBracketedStillImageSettings extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native AVCaptureBracketedStillImageSettings init();
 }

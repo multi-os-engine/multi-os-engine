@@ -59,18 +59,6 @@ public class CNContactsUserDefaults extends NSObject {
     public static native CNContactsUserDefaults alloc();
 
     /**
-     * countryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactsUserDefaults_Class/index.html#//apple_ref/occ/instp/CNContactsUserDefaults/countryCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("countryCode")
-    public native String countryCode();
-
-    @Generated
-    @Selector("init")
-    public native CNContactsUserDefaults init();
-
-    /**
      * sharedDefaults</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactsUserDefaults_Class/index.html#//apple_ref/occ/clm/CNContactsUserDefaults/sharedDefaults">iOS Dev Center</a>
      */
@@ -78,15 +66,6 @@ public class CNContactsUserDefaults extends NSObject {
     @Selector("sharedDefaults")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object sharedDefaults();
-
-    /**
-     * sortOrder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactsUserDefaults_Class/index.html#//apple_ref/occ/instp/CNContactsUserDefaults/sortOrder">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sortOrder")
-    @NInt
-    public native long sortOrder();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -187,4 +166,25 @@ public class CNContactsUserDefaults extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * countryCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactsUserDefaults_Class/index.html#//apple_ref/occ/instp/CNContactsUserDefaults/countryCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("countryCode")
+    public native String countryCode();
+
+    @Generated
+    @Selector("init")
+    public native CNContactsUserDefaults init();
+
+    /**
+     * sortOrder</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactsUserDefaults_Class/index.html#//apple_ref/occ/instp/CNContactsUserDefaults/sortOrder">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sortOrder")
+    @NInt
+    public native long sortOrder();
 }

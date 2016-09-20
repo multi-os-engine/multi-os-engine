@@ -21,12 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NEVPNIKEv2DeadPeerDetectionRate {
-    @Generated
-    private NEVPNIKEv2DeadPeerDetectionRate() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Low = 0x0000000000000001L;
     @Generated @NInt public static final long Medium = 0x0000000000000002L;
     @Generated @NInt public static final long High = 0x0000000000000003L;
+    @Generated
+    private NEVPNIKEv2DeadPeerDetectionRate() {
+    }
 }

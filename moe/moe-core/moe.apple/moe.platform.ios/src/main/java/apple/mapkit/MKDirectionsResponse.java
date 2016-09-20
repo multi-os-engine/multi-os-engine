@@ -58,34 +58,6 @@ public class MKDirectionsResponse extends NSObject {
     @Selector("alloc")
     public static native MKDirectionsResponse alloc();
 
-    /**
-     * destination</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsResponse_class/index.html#//apple_ref/occ/instp/MKDirectionsResponse/destination">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("destination")
-    public native MKMapItem destination();
-
-    @Generated
-    @Selector("init")
-    public native MKDirectionsResponse init();
-
-    /**
-     * routes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsResponse_class/index.html#//apple_ref/occ/instp/MKDirectionsResponse/routes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("routes")
-    public native NSArray<? extends MKRoute> routes();
-
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsResponse_class/index.html#//apple_ref/occ/instp/MKDirectionsResponse/source">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("source")
-    public native MKMapItem source();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -185,4 +157,32 @@ public class MKDirectionsResponse extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * destination</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsResponse_class/index.html#//apple_ref/occ/instp/MKDirectionsResponse/destination">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("destination")
+    public native MKMapItem destination();
+
+    @Generated
+    @Selector("init")
+    public native MKDirectionsResponse init();
+
+    /**
+     * routes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsResponse_class/index.html#//apple_ref/occ/instp/MKDirectionsResponse/routes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("routes")
+    public native NSArray<? extends MKRoute> routes();
+
+    /**
+     * source</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirectionsResponse_class/index.html#//apple_ref/occ/instp/MKDirectionsResponse/source">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("source")
+    public native MKMapItem source();
 }

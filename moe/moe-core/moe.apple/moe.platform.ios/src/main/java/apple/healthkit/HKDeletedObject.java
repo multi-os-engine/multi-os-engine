@@ -57,40 +57,14 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
         super(peer);
     }
 
-    /**
-     * UUID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/instp/HKDeletedObject/UUID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("UUID")
-    public native NSUUID UUID();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native HKDeletedObject alloc();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native HKDeletedObject init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKDeletedObject initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -191,4 +165,30 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * UUID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/instp/HKDeletedObject/UUID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("UUID")
+    public native NSUUID UUID();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native HKDeletedObject init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKDeletedObject initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

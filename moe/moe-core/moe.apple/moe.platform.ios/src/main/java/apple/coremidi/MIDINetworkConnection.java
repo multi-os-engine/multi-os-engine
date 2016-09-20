@@ -66,18 +66,6 @@ public class MIDINetworkConnection extends NSObject {
     @Selector("connectionWithHost:")
     public static native MIDINetworkConnection connectionWithHost(MIDINetworkHost host);
 
-    /**
-     * host</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkConnection_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkConnection/host">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("host")
-    public native MIDINetworkHost host();
-
-    @Generated
-    @Selector("init")
-    public native MIDINetworkConnection init();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -177,4 +165,16 @@ public class MIDINetworkConnection extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * host</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkConnection_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkConnection/host">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("host")
+    public native MIDINetworkHost host();
+
+    @Generated
+    @Selector("init")
+    public native MIDINetworkConnection init();
 }

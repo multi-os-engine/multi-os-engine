@@ -66,69 +66,6 @@ public class UICollectionReusableView extends UIView {
     @Selector("alloc")
     public static native UICollectionReusableView alloc();
 
-    /**
-     * applyLayoutAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/applyLayoutAttributes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyLayoutAttributes:")
-    public native void applyLayoutAttributes(UICollectionViewLayoutAttributes layoutAttributes);
-
-    /**
-     * didTransitionFromLayout:toLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/didTransitionFromLayout:toLayout:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("didTransitionFromLayout:toLayout:")
-    public native void didTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
-            UICollectionViewLayout newLayout);
-
-    @Generated
-    @Selector("init")
-    public native UICollectionReusableView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UICollectionReusableView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * preferredLayoutAttributesFittingAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/preferredLayoutAttributesFittingAttributes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preferredLayoutAttributesFittingAttributes:")
-    public native UICollectionViewLayoutAttributes preferredLayoutAttributesFittingAttributes(
-            UICollectionViewLayoutAttributes layoutAttributes);
-
-    /**
-     * prepareForReuse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/prepareForReuse">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("prepareForReuse")
-    public native void prepareForReuse();
-
-    /**
-     * reuseIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instp/UICollectionReusableView/reuseIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reuseIdentifier")
-    public native String reuseIdentifier();
-
-    /**
-     * willTransitionFromLayout:toLayout:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/willTransitionFromLayout:toLayout:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("willTransitionFromLayout:toLayout:")
-    public native void willTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
-            UICollectionViewLayout newLayout);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UICollectionReusableView initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -182,23 +119,9 @@ public class UICollectionReusableView extends UIView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -209,27 +132,10 @@ public class UICollectionReusableView extends UIView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -240,24 +146,9 @@ public class UICollectionReusableView extends UIView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -455,4 +346,113 @@ public class UICollectionReusableView extends UIView {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * applyLayoutAttributes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/applyLayoutAttributes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyLayoutAttributes:")
+    public native void applyLayoutAttributes(UICollectionViewLayoutAttributes layoutAttributes);
+
+    /**
+     * didTransitionFromLayout:toLayout:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/didTransitionFromLayout:toLayout:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("didTransitionFromLayout:toLayout:")
+    public native void didTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
+            UICollectionViewLayout newLayout);
+
+    @Generated
+    @Selector("init")
+    public native UICollectionReusableView init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UICollectionReusableView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * preferredLayoutAttributesFittingAttributes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/preferredLayoutAttributesFittingAttributes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preferredLayoutAttributesFittingAttributes:")
+    public native UICollectionViewLayoutAttributes preferredLayoutAttributesFittingAttributes(
+            UICollectionViewLayoutAttributes layoutAttributes);
+
+    /**
+     * prepareForReuse</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/prepareForReuse">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("prepareForReuse")
+    public native void prepareForReuse();
+
+    /**
+     * reuseIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instp/UICollectionReusableView/reuseIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reuseIdentifier")
+    public native String reuseIdentifier();
+
+    /**
+     * willTransitionFromLayout:toLayout:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionReusableView_class/index.html#//apple_ref/occ/instm/UICollectionReusableView/willTransitionFromLayout:toLayout:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("willTransitionFromLayout:toLayout:")
+    public native void willTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
+            UICollectionViewLayout newLayout);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UICollectionReusableView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

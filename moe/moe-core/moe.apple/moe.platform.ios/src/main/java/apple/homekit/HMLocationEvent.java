@@ -62,30 +62,6 @@ public class HMLocationEvent extends HMEvent {
     public static native HMLocationEvent alloc();
 
     @Generated
-    @Selector("init")
-    public native HMLocationEvent init();
-
-    @Generated
-    @Selector("initWithRegion:")
-    public native HMLocationEvent initWithRegion(CLRegion region);
-
-    @Generated
-    @Selector("region")
-    public native CLRegion region();
-
-    @Generated
-    @Selector("updateRegion:completionHandler:")
-    public native void updateRegionCompletionHandler(CLRegion region,
-            @ObjCBlock(name = "call_updateRegionCompletionHandler") Block_updateRegionCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updateRegionCompletionHandler {
-        @Generated
-        void call_updateRegionCompletionHandler(NSError arg0);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -184,4 +160,28 @@ public class HMLocationEvent extends HMEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native HMLocationEvent init();
+
+    @Generated
+    @Selector("initWithRegion:")
+    public native HMLocationEvent initWithRegion(CLRegion region);
+
+    @Generated
+    @Selector("region")
+    public native CLRegion region();
+
+    @Generated
+    @Selector("updateRegion:completionHandler:")
+    public native void updateRegionCompletionHandler(CLRegion region,
+            @ObjCBlock(name = "call_updateRegionCompletionHandler") Block_updateRegionCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateRegionCompletionHandler {
+        @Generated
+        void call_updateRegionCompletionHandler(NSError arg0);
+    }
 }

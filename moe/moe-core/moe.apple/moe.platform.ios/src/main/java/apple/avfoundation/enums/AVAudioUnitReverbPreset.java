@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVAudioUnitReverbPreset {
-    @Generated
-    private AVAudioUnitReverbPreset() {
-    }
-
     @Generated @NInt public static final long SmallRoom = 0x0000000000000000L;
     @Generated @NInt public static final long MediumRoom = 0x0000000000000001L;
     @Generated @NInt public static final long LargeRoom = 0x0000000000000002L;
@@ -38,4 +34,8 @@ public final class AVAudioUnitReverbPreset {
     @Generated @NInt public static final long MediumHall2 = 0x000000000000000AL;
     @Generated @NInt public static final long MediumHall3 = 0x000000000000000BL;
     @Generated @NInt public static final long LargeHall2 = 0x000000000000000CL;
+
+    @Generated
+    private AVAudioUnitReverbPreset() {
+    }
 }

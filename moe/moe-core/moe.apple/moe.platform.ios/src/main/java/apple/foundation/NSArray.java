@@ -71,24 +71,6 @@ public class NSArray<_ObjectType> extends NSObject
         super(peer);
     }
 
-    /**
-     * addObserver:forKeyPath:options:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/addObserver:forKeyPath:options:context:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addObserver:forKeyPath:options:context:")
-    public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
-            VoidPtr context);
-
-    /**
-     * addObserver:toObjectsAtIndexes:forKeyPath:options:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/addObserver:toObjectsAtIndexes:forKeyPath:options:context:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addObserver:toObjectsAtIndexes:forKeyPath:options:context:")
-    public native void addObserverToObjectsAtIndexesForKeyPathOptionsContext(NSObject observer, NSIndexSet indexes,
-            String keyPath, @NUInt long options, VoidPtr context);
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -101,22 +83,6 @@ public class NSArray<_ObjectType> extends NSObject
     @Generated
     @Selector("array")
     public static native <_ObjectType> NSArray<?> array();
-
-    /**
-     * arrayByAddingObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/arrayByAddingObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("arrayByAddingObject:")
-    public native NSArray<_ObjectType> arrayByAddingObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
-
-    /**
-     * arrayByAddingObjectsFromArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/arrayByAddingObjectsFromArray:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("arrayByAddingObjectsFromArray:")
-    public native NSArray<_ObjectType> arrayByAddingObjectsFromArray(NSArray<_ObjectType> otherArray);
 
     /**
      * arrayWithArray:</br>
@@ -167,6 +133,140 @@ public class NSArray<_ObjectType> extends NSObject
     @Generated
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSArray<?> arrayWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native <_ObjectType> boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * addObserver:forKeyPath:options:context:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/addObserver:forKeyPath:options:context:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addObserver:forKeyPath:options:context:")
+    public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
+            VoidPtr context);
+
+    /**
+     * addObserver:toObjectsAtIndexes:forKeyPath:options:context:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/addObserver:toObjectsAtIndexes:forKeyPath:options:context:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addObserver:toObjectsAtIndexes:forKeyPath:options:context:")
+    public native void addObserverToObjectsAtIndexesForKeyPathOptionsContext(NSObject observer, NSIndexSet indexes,
+            String keyPath, @NUInt long options, VoidPtr context);
+
+    /**
+     * arrayByAddingObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/arrayByAddingObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("arrayByAddingObject:")
+    public native NSArray<_ObjectType> arrayByAddingObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+
+    /**
+     * arrayByAddingObjectsFromArray:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/arrayByAddingObjectsFromArray:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("arrayByAddingObjectsFromArray:")
+    public native NSArray<_ObjectType> arrayByAddingObjectsFromArray(NSArray<_ObjectType> otherArray);
 
     /**
      * componentsJoinedByString:</br>
@@ -241,14 +341,6 @@ public class NSArray<_ObjectType> extends NSObject
     public native void enumerateObjectsAtIndexesOptionsUsingBlock(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateObjectsAtIndexesOptionsUsingBlock {
-        @Generated
-        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
-    }
-
     /**
      * enumerateObjectsUsingBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/enumerateObjectsUsingBlock:">iOS Dev Center</a>
@@ -258,14 +350,6 @@ public class NSArray<_ObjectType> extends NSObject
     public native void enumerateObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateObjectsUsingBlock {
-        @Generated
-        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
-    }
-
     /**
      * enumerateObjectsWithOptions:usingBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/enumerateObjectsWithOptions:usingBlock:">iOS Dev Center</a>
@@ -274,14 +358,6 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateObjectsWithOptionsUsingBlock {
-        @Generated
-        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
-    }
 
     /**
      * filteredArrayUsingPredicate:</br>
@@ -355,15 +431,6 @@ public class NSArray<_ObjectType> extends NSObject
             @ByValue NSRange r, @NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectInSortedRangeOptionsUsingComparator") Block_indexOfObjectInSortedRangeOptionsUsingComparator cmp);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_indexOfObjectInSortedRangeOptionsUsingComparator {
-        @Generated
-        @NInt
-        long call_indexOfObjectInSortedRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
-
     /**
      * indexOfObjectAtIndexes:options:passingTest:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexOfObjectAtIndexes:options:passingTest:">iOS Dev Center</a>
@@ -373,14 +440,6 @@ public class NSArray<_ObjectType> extends NSObject
     @NUInt
     public native long indexOfObjectAtIndexesOptionsPassingTest(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectAtIndexesOptionsPassingTest") Block_indexOfObjectAtIndexesOptionsPassingTest predicate);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_indexOfObjectAtIndexesOptionsPassingTest {
-        @Generated
-        boolean call_indexOfObjectAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
-    }
 
     /**
      * indexOfObjectIdenticalTo:</br>
@@ -411,14 +470,6 @@ public class NSArray<_ObjectType> extends NSObject
     public native long indexOfObjectPassingTest(
             @ObjCBlock(name = "call_indexOfObjectPassingTest") Block_indexOfObjectPassingTest predicate);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_indexOfObjectPassingTest {
-        @Generated
-        boolean call_indexOfObjectPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
-    }
-
     /**
      * indexOfObjectWithOptions:passingTest:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexOfObjectWithOptions:passingTest:">iOS Dev Center</a>
@@ -429,14 +480,6 @@ public class NSArray<_ObjectType> extends NSObject
     public native long indexOfObjectWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectWithOptionsPassingTest") Block_indexOfObjectWithOptionsPassingTest predicate);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_indexOfObjectWithOptionsPassingTest {
-        @Generated
-        boolean call_indexOfObjectWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
-    }
-
     /**
      * indexesOfObjectsAtIndexes:options:passingTest:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexesOfObjectsAtIndexes:options:passingTest:">iOS Dev Center</a>
@@ -445,14 +488,6 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("indexesOfObjectsAtIndexes:options:passingTest:")
     public native NSIndexSet indexesOfObjectsAtIndexesOptionsPassingTest(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_indexesOfObjectsAtIndexesOptionsPassingTest") Block_indexesOfObjectsAtIndexesOptionsPassingTest predicate);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_indexesOfObjectsAtIndexesOptionsPassingTest {
-        @Generated
-        boolean call_indexesOfObjectsAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
-    }
 
     /**
      * indexesOfObjectsPassingTest:</br>
@@ -463,14 +498,6 @@ public class NSArray<_ObjectType> extends NSObject
     public native NSIndexSet indexesOfObjectsPassingTest(
             @ObjCBlock(name = "call_indexesOfObjectsPassingTest") Block_indexesOfObjectsPassingTest predicate);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_indexesOfObjectsPassingTest {
-        @Generated
-        boolean call_indexesOfObjectsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
-    }
-
     /**
      * indexesOfObjectsWithOptions:passingTest:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/indexesOfObjectsWithOptions:passingTest:">iOS Dev Center</a>
@@ -479,14 +506,6 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("indexesOfObjectsWithOptions:passingTest:")
     public native NSIndexSet indexesOfObjectsWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_indexesOfObjectsWithOptionsPassingTest") Block_indexesOfObjectsWithOptionsPassingTest predicate);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_indexesOfObjectsWithOptionsPassingTest {
-        @Generated
-        boolean call_indexesOfObjectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
-    }
 
     /**
      * init</br>
@@ -697,15 +716,6 @@ public class NSArray<_ObjectType> extends NSObject
     public native NSArray<_ObjectType> sortedArrayUsingComparator(
             @ObjCBlock(name = "call_sortedArrayUsingComparator") Block_sortedArrayUsingComparator cmptr);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sortedArrayUsingComparator {
-        @Generated
-        @NInt
-        long call_sortedArrayUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
-
     /**
      * sortedArrayUsingDescriptors:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/sortedArrayUsingDescriptors:">iOS Dev Center</a>
@@ -724,15 +734,6 @@ public class NSArray<_ObjectType> extends NSObject
             @FunctionPtr(name = "call_sortedArrayUsingFunctionContext") Function_sortedArrayUsingFunctionContext comparator,
             VoidPtr context);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Function_sortedArrayUsingFunctionContext {
-        @Generated
-        @NInt
-        long call_sortedArrayUsingFunctionContext(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, VoidPtr arg2);
-    }
-
     /**
      * sortedArrayUsingFunction:context:hint:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/sortedArrayUsingFunction:context:hint:">iOS Dev Center</a>
@@ -742,15 +743,6 @@ public class NSArray<_ObjectType> extends NSObject
     public native NSArray<_ObjectType> sortedArrayUsingFunctionContextHint(
             @FunctionPtr(name = "call_sortedArrayUsingFunctionContextHint") Function_sortedArrayUsingFunctionContextHint comparator,
             VoidPtr context, NSData hint);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Function_sortedArrayUsingFunctionContextHint {
-        @Generated
-        @NInt
-        long call_sortedArrayUsingFunctionContextHint(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, VoidPtr arg2);
-    }
 
     /**
      * sortedArrayUsingSelector:</br>
@@ -769,15 +761,6 @@ public class NSArray<_ObjectType> extends NSObject
     public native NSArray<_ObjectType> sortedArrayWithOptionsUsingComparator(@NUInt long opts,
             @ObjCBlock(name = "call_sortedArrayWithOptionsUsingComparator") Block_sortedArrayWithOptionsUsingComparator cmptr);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sortedArrayWithOptionsUsingComparator {
-        @Generated
-        @NInt
-        long call_sortedArrayWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
-
     /**
      * subarrayWithRange:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/index.html#//apple_ref/occ/instm/NSArray/subarrayWithRange:">iOS Dev Center</a>
@@ -785,10 +768,6 @@ public class NSArray<_ObjectType> extends NSObject
     @Generated
     @Selector("subarrayWithRange:")
     public native NSArray<_ObjectType> subarrayWithRange(@ByValue NSRange range);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native <_ObjectType> boolean supportsSecureCoding();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -899,37 +878,6 @@ public class NSArray<_ObjectType> extends NSObject
         return new NSArrayIterator<_ObjectType>(this);
     }
 
-    private final static class NSArrayIterator<_ObjectType> implements Iterator<_ObjectType> {
-
-        private long cursor = 0;
-        private final long count;
-        private final NSArray<_ObjectType> array;
-
-        public NSArrayIterator(NSArray<_ObjectType> array) {
-            this.array = array;
-            this.count = array.count();
-        }
-
-        @Override
-        public boolean hasNext() {
-            return cursor < count;
-        }
-
-        @Override
-        public _ObjectType next() {
-            if (cursor >= count) {
-                throw new NoSuchElementException();
-            }
-            return array.objectAtIndex(cursor++);
-        }
-
-        @Override
-        public void remove() {
-            throw new UnsupportedOperationException();
-        }
-
-    }
-
     @Override
     public int lastIndexOf(Object o) {
         if (o == null) {
@@ -954,71 +902,6 @@ public class NSArray<_ObjectType> extends NSObject
             throw new IndexOutOfBoundsException();
         }
         return new NSArrayListIterator<_ObjectType>(this, index);
-    }
-
-    private final static class NSArrayListIterator<_ObjectType> implements ListIterator<_ObjectType> {
-
-        private long cursor;
-        private final long count;
-        private final NSArray<_ObjectType> array;
-
-        public NSArrayListIterator(NSArray<_ObjectType> array, int idx) {
-            cursor = idx;
-            this.array = array;
-            this.count = array.count();
-        }
-
-        @Override
-        public void add(_ObjectType e) {
-            throw new UnsupportedOperationException();
-        }
-
-        @Override
-        public boolean hasNext() {
-            return cursor < count;
-        }
-
-        @Override
-        public boolean hasPrevious() {
-            return cursor - 1 >= 0;
-        }
-
-        @Override
-        public _ObjectType next() {
-            if (cursor >= count) {
-                throw new NoSuchElementException();
-            }
-            return array.objectAtIndex(cursor++);
-        }
-
-        @Override
-        public int nextIndex() {
-            return (int)cursor;
-        }
-
-        @Override
-        public _ObjectType previous() {
-            if (cursor <= 0) {
-                throw new NoSuchElementException();
-            }
-            return array.objectAtIndex(--cursor);
-        }
-
-        @Override
-        public int previousIndex() {
-            return (int)cursor - 1;
-        }
-
-        @Override
-        public void remove() {
-            throw new UnsupportedOperationException();
-        }
-
-        @Override
-        public void set(_ObjectType e) {
-            throw new UnsupportedOperationException();
-        }
-
     }
 
     @Override
@@ -1112,99 +995,216 @@ public class NSArray<_ObjectType> extends NSObject
         return !(e1.hasNext() || e2.hasNext());
     }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_enumerateObjectsAtIndexesOptionsUsingBlock {
+        @Generated
+        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @NUInt long arg1, BoolPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_enumerateObjectsUsingBlock {
+        @Generated
+        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
+                BoolPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_enumerateObjectsWithOptionsUsingBlock {
+        @Generated
+        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
+                BoolPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public interface Block_indexOfObjectInSortedRangeOptionsUsingComparator {
+        @Generated
+        @NInt
+        long call_indexOfObjectInSortedRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+    public interface Block_indexOfObjectAtIndexesOptionsPassingTest {
+        @Generated
+        boolean call_indexOfObjectAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @NUInt long arg1, BoolPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
+    public interface Block_indexOfObjectPassingTest {
+        @Generated
+        boolean call_indexOfObjectPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
+                BoolPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
+    public interface Block_indexOfObjectWithOptionsPassingTest {
+        @Generated
+        boolean call_indexOfObjectWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
+                BoolPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
+    public interface Block_indexesOfObjectsAtIndexesOptionsPassingTest {
+        @Generated
+        boolean call_indexesOfObjectsAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @NUInt long arg1, BoolPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
+    public interface Block_indexesOfObjectsPassingTest {
+        @Generated
+        boolean call_indexesOfObjectsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
+                BoolPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
+    public interface Block_indexesOfObjectsWithOptionsPassingTest {
+        @Generated
+        boolean call_indexesOfObjectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @NUInt long arg1, BoolPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+    public interface Block_sortedArrayUsingComparator {
+        @Generated
+        @NInt
+        long call_sortedArrayUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+    public interface Function_sortedArrayUsingFunctionContext {
+        @Generated
+        @NInt
+        long call_sortedArrayUsingFunctionContext(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1, VoidPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
+    public interface Function_sortedArrayUsingFunctionContextHint {
+        @Generated
+        @NInt
+        long call_sortedArrayUsingFunctionContextHint(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1, VoidPtr arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
+    public interface Block_sortedArrayWithOptionsUsingComparator {
+        @Generated
+        @NInt
+        long call_sortedArrayWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
 
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    private final static class NSArrayIterator<_ObjectType> implements Iterator<_ObjectType> {
 
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
+        private final long count;
+        private final NSArray<_ObjectType> array;
+        private long cursor = 0;
 
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+        public NSArrayIterator(NSArray<_ObjectType> array) {
+            this.array = array;
+            this.count = array.count();
+        }
 
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
+        @Override
+        public boolean hasNext() {
+            return cursor < count;
+        }
 
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
+        @Override
+        public _ObjectType next() {
+            if (cursor >= count) {
+                throw new NoSuchElementException();
+            }
+            return array.objectAtIndex(cursor++);
+        }
 
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
 
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
+    }
 
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    private final static class NSArrayListIterator<_ObjectType> implements ListIterator<_ObjectType> {
+
+        private final long count;
+        private final NSArray<_ObjectType> array;
+        private long cursor;
+
+        public NSArrayListIterator(NSArray<_ObjectType> array, int idx) {
+            cursor = idx;
+            this.array = array;
+            this.count = array.count();
+        }
+
+        @Override
+        public void add(_ObjectType e) {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override
+        public boolean hasNext() {
+            return cursor < count;
+        }
+
+        @Override
+        public boolean hasPrevious() {
+            return cursor - 1 >= 0;
+        }
+
+        @Override
+        public _ObjectType next() {
+            if (cursor >= count) {
+                throw new NoSuchElementException();
+            }
+            return array.objectAtIndex(cursor++);
+        }
+
+        @Override
+        public int nextIndex() {
+            return (int)cursor;
+        }
+
+        @Override
+        public _ObjectType previous() {
+            if (cursor <= 0) {
+                throw new NoSuchElementException();
+            }
+            return array.objectAtIndex(--cursor);
+        }
+
+        @Override
+        public int previousIndex() {
+            return (int)cursor - 1;
+        }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+
+        @Override
+        public void set(_ObjectType e) {
+            throw new UnsupportedOperationException();
+        }
+
+    }
 }

@@ -59,34 +59,6 @@ public class MDLMeshBufferMap extends NSObject {
     @Selector("alloc")
     public static native MDLMeshBufferMap alloc();
 
-    /**
-     * bytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferMap_Class/index.html#//apple_ref/occ/instp/MDLMeshBufferMap/bytes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bytes")
-    public native VoidPtr bytes();
-
-    @Generated
-    @Selector("init")
-    public native MDLMeshBufferMap init();
-
-    /**
-     * initWithBytes:deallocator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferMap_Class/index.html#//apple_ref/occ/instm/MDLMeshBufferMap/initWithBytes:deallocator:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithBytes:deallocator:")
-    public native MDLMeshBufferMap initWithBytesDeallocator(VoidPtr bytes,
-            @ObjCBlock(name = "call_initWithBytesDeallocator") Block_initWithBytesDeallocator deallocator);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithBytesDeallocator {
-        @Generated
-        void call_initWithBytesDeallocator();
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -186,4 +158,32 @@ public class MDLMeshBufferMap extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bytes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferMap_Class/index.html#//apple_ref/occ/instp/MDLMeshBufferMap/bytes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bytes")
+    public native VoidPtr bytes();
+
+    @Generated
+    @Selector("init")
+    public native MDLMeshBufferMap init();
+
+    /**
+     * initWithBytes:deallocator:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferMap_Class/index.html#//apple_ref/occ/instm/MDLMeshBufferMap/initWithBytes:deallocator:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithBytes:deallocator:")
+    public native MDLMeshBufferMap initWithBytesDeallocator(VoidPtr bytes,
+            @ObjCBlock(name = "call_initWithBytesDeallocator") Block_initWithBytesDeallocator deallocator);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithBytesDeallocator {
+        @Generated
+        void call_initWithBytesDeallocator();
+    }
 }

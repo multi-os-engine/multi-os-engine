@@ -71,59 +71,6 @@ public class PHPhotoLibrary extends NSObject {
     @NInt
     public static native long authorizationStatus();
 
-    @Generated
-    @Selector("init")
-    public native PHPhotoLibrary init();
-
-    /**
-     * performChanges:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/performChanges:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("performChanges:completionHandler:")
-    public native void performChangesCompletionHandler(
-            @ObjCBlock(name = "call_performChangesCompletionHandler_0") Block_performChangesCompletionHandler_0 changeBlock,
-            @ObjCBlock(name = "call_performChangesCompletionHandler_1") Block_performChangesCompletionHandler_1 completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performChangesCompletionHandler_0 {
-        @Generated
-        void call_performChangesCompletionHandler_0();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performChangesCompletionHandler_1 {
-        @Generated
-        void call_performChangesCompletionHandler_1(boolean arg0, NSError arg1);
-    }
-
-    /**
-     * performChangesAndWait:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/performChangesAndWait:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("performChangesAndWait:error:")
-    public native boolean performChangesAndWaitError(
-            @ObjCBlock(name = "call_performChangesAndWaitError") Block_performChangesAndWaitError changeBlock,
-            Ptr<NSError> error);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performChangesAndWaitError {
-        @Generated
-        void call_performChangesAndWaitError();
-    }
-
-    /**
-     * registerChangeObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/registerChangeObserver:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("registerChangeObserver:")
-    public native void registerChangeObserver(@Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
-
     /**
      * requestAuthorization:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/clm/PHPhotoLibrary/requestAuthorization:">iOS Dev Center</a>
@@ -133,13 +80,6 @@ public class PHPhotoLibrary extends NSObject {
     public static native void requestAuthorization(
             @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestAuthorization {
-        @Generated
-        void call_requestAuthorization(@NInt long arg0);
-    }
-
     /**
      * sharedPhotoLibrary</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/clm/PHPhotoLibrary/sharedPhotoLibrary">iOS Dev Center</a>
@@ -147,14 +87,6 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     @Selector("sharedPhotoLibrary")
     public static native PHPhotoLibrary sharedPhotoLibrary();
-
-    /**
-     * unregisterChangeObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/unregisterChangeObserver:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unregisterChangeObserver:")
-    public native void unregisterChangeObserver(@Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -255,4 +187,72 @@ public class PHPhotoLibrary extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native PHPhotoLibrary init();
+
+    /**
+     * performChanges:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/performChanges:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("performChanges:completionHandler:")
+    public native void performChangesCompletionHandler(
+            @ObjCBlock(name = "call_performChangesCompletionHandler_0") Block_performChangesCompletionHandler_0 changeBlock,
+            @ObjCBlock(name = "call_performChangesCompletionHandler_1") Block_performChangesCompletionHandler_1 completionHandler);
+
+    /**
+     * performChangesAndWait:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/performChangesAndWait:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("performChangesAndWait:error:")
+    public native boolean performChangesAndWaitError(
+            @ObjCBlock(name = "call_performChangesAndWaitError") Block_performChangesAndWaitError changeBlock,
+            Ptr<NSError> error);
+
+    /**
+     * registerChangeObserver:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/registerChangeObserver:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("registerChangeObserver:")
+    public native void registerChangeObserver(@Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
+
+    /**
+     * unregisterChangeObserver:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html#//apple_ref/occ/instm/PHPhotoLibrary/unregisterChangeObserver:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unregisterChangeObserver:")
+    public native void unregisterChangeObserver(@Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performChangesCompletionHandler_0 {
+        @Generated
+        void call_performChangesCompletionHandler_0();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performChangesCompletionHandler_1 {
+        @Generated
+        void call_performChangesCompletionHandler_1(boolean arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performChangesAndWaitError {
+        @Generated
+        void call_performChangesAndWaitError();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestAuthorization {
+        @Generated
+        void call_requestAuthorization(@NInt long arg0);
+    }
 }

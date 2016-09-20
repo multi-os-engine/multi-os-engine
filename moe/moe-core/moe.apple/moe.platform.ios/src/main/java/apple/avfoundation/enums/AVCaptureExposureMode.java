@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVCaptureExposureMode {
-    @Generated
-    private AVCaptureExposureMode() {
-    }
-
     @Generated @NInt public static final long Locked = 0x0000000000000000L;
     @Generated @NInt public static final long AutoExpose = 0x0000000000000001L;
     @Generated @NInt public static final long ContinuousAutoExposure = 0x0000000000000002L;
     @Generated @NInt public static final long Custom = 0x0000000000000003L;
+
+    @Generated
+    private AVCaptureExposureMode() {
+    }
 }

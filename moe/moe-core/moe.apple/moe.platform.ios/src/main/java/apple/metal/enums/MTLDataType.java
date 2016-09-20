@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLDataType {
-    @Generated
-    private MTLDataType() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long Struct = 0x0000000000000001L;
     @Generated @NUInt public static final long Array = 0x0000000000000002L;
@@ -82,4 +78,8 @@ public final class MTLDataType {
     @Generated @NUInt public static final long Bool2 = 0x0000000000000036L;
     @Generated @NUInt public static final long Bool3 = 0x0000000000000037L;
     @Generated @NUInt public static final long Bool4 = 0x0000000000000038L;
+
+    @Generated
+    private MTLDataType() {
+    }
 }

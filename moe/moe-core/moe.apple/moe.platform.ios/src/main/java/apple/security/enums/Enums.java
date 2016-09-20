@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int errSSLProtocol = 0xFFFFD9B8;
     @Generated public static final int errSSLNegotiation = 0xFFFFD9B7;
     @Generated public static final int errSSLFatalAlert = 0xFFFFD9B6;
@@ -265,4 +261,8 @@ public final class Enums {
     @Generated public static final int errSecAuthFailed = 0xFFFF9D33;
     @Generated public static final int errSSLWeakPeerEphemeralDHKey = 0xFFFFD986;
     @Generated public static final int errSSLClientHelloReceived = 0xFFFFD985;
+
+    @Generated
+    private Enums() {
+    }
 }

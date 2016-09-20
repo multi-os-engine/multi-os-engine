@@ -61,45 +61,6 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @Selector("alloc")
     public static native AVAudioBuffer alloc();
 
-    /**
-     * audioBufferList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioBuffer/audioBufferList">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("audioBufferList")
-    public native AudioBufferList audioBufferList();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioBuffer/format">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("format")
-    public native AVAudioFormat format();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioBuffer init();
-
-    /**
-     * mutableAudioBufferList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioBuffer/mutableAudioBufferList">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mutableAudioBufferList")
-    public native AudioBufferList mutableAudioBufferList();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -199,4 +160,43 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * audioBufferList</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioBuffer/audioBufferList">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("audioBufferList")
+    public native AudioBufferList audioBufferList();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * format</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioBuffer/format">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("format")
+    public native AVAudioFormat format();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioBuffer init();
+
+    /**
+     * mutableAudioBufferList</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioBuffer_Class/index.html#//apple_ref/occ/instp/AVAudioBuffer/mutableAudioBufferList">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mutableAudioBufferList")
+    public native AudioBufferList mutableAudioBufferList();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
 }

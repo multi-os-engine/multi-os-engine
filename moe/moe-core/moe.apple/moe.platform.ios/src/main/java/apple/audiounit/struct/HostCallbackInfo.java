@@ -34,11 +34,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class HostCallbackInfo extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public HostCallbackInfo() {
@@ -63,50 +63,20 @@ public final class HostCallbackInfo extends StructObject {
     public native void setBeatAndTempoProc(
             @FunctionPtr(name = "call_beatAndTempoProc") Function_beatAndTempoProc value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_beatAndTempoProc {
-        @Generated
-        int call_beatAndTempoProc(VoidPtr arg0, DoublePtr arg1, DoublePtr arg2);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMusicalTimeLocationProc(
             @FunctionPtr(name = "call_musicalTimeLocationProc") Function_musicalTimeLocationProc value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_musicalTimeLocationProc {
-        @Generated
-        int call_musicalTimeLocationProc(VoidPtr arg0, IntPtr arg1, FloatPtr arg2, IntPtr arg3, DoublePtr arg4);
-    }
 
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setTransportStateProc(
             @FunctionPtr(name = "call_transportStateProc") Function_transportStateProc value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_transportStateProc {
-        @Generated
-        int call_transportStateProc(VoidPtr arg0, BytePtr arg1, BytePtr arg2, DoublePtr arg3, BytePtr arg4,
-                DoublePtr arg5, DoublePtr arg6);
-    }
-
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setTransportStateProc2(
             @FunctionPtr(name = "call_transportStateProc2") Function_transportStateProc2 value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_transportStateProc2 {
-        @Generated
-        int call_transportStateProc2(VoidPtr arg0, BytePtr arg1, BytePtr arg2, BytePtr arg3, DoublePtr arg4,
-                BytePtr arg5, DoublePtr arg6, DoublePtr arg7);
-    }
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -127,4 +97,34 @@ public final class HostCallbackInfo extends StructObject {
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_transportStateProc2")
     public native Function_transportStateProc2 transportStateProc2();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_beatAndTempoProc {
+        @Generated
+        int call_beatAndTempoProc(VoidPtr arg0, DoublePtr arg1, DoublePtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_musicalTimeLocationProc {
+        @Generated
+        int call_musicalTimeLocationProc(VoidPtr arg0, IntPtr arg1, FloatPtr arg2, IntPtr arg3, DoublePtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_transportStateProc {
+        @Generated
+        int call_transportStateProc(VoidPtr arg0, BytePtr arg1, BytePtr arg2, DoublePtr arg3, BytePtr arg4,
+                DoublePtr arg5, DoublePtr arg6);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_transportStateProc2 {
+        @Generated
+        int call_transportStateProc2(VoidPtr arg0, BytePtr arg1, BytePtr arg2, BytePtr arg3, DoublePtr arg4,
+                BytePtr arg5, DoublePtr arg6, DoublePtr arg7);
+    }
 }

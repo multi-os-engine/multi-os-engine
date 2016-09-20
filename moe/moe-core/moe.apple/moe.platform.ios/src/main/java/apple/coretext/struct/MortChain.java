@@ -27,11 +27,11 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure(alignment = 2)
 public final class MortChain extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public MortChain() {

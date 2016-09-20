@@ -35,11 +35,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure(alignment = 4)
 public final class CMBufferCallbacks extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CMBufferCallbacks() {
@@ -72,61 +72,22 @@ public final class CMBufferCallbacks extends StructObject {
     public native void setGetDecodeTimeStamp(
             @FunctionPtr(name = "call_getDecodeTimeStamp") Function_getDecodeTimeStamp value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getDecodeTimeStamp {
-        @Generated
-        @ByValue
-        CMTime call_getDecodeTimeStamp(ConstVoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setGetPresentationTimeStamp(
             @FunctionPtr(name = "call_getPresentationTimeStamp") Function_getPresentationTimeStamp value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getPresentationTimeStamp {
-        @Generated
-        @ByValue
-        CMTime call_getPresentationTimeStamp(ConstVoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setGetDuration(@FunctionPtr(name = "call_getDuration") Function_getDuration value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getDuration {
-        @Generated
-        @ByValue
-        CMTime call_getDuration(ConstVoidPtr arg0, VoidPtr arg1);
-    }
 
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setIsDataReady(@FunctionPtr(name = "call_isDataReady") Function_isDataReady value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_isDataReady {
-        @Generated
-        byte call_isDataReady(ConstVoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setCompare(@FunctionPtr(name = "call_compare") Function_compare value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_compare {
-        @Generated
-        @NInt
-        long call_compare(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
-    }
 
     @Generated
     @StructureField(order = 7, isGetter = true)
@@ -139,14 +100,6 @@ public final class CMBufferCallbacks extends StructObject {
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void setGetSize(@FunctionPtr(name = "call_getSize") Function_getSize value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getSize {
-        @Generated
-        @NUInt
-        long call_getSize(ConstVoidPtr arg0, VoidPtr arg1);
-    }
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -177,4 +130,51 @@ public final class CMBufferCallbacks extends StructObject {
     @StructureField(order = 8, isGetter = true)
     @FunctionPtr(name = "call_getSize")
     public native Function_getSize getSize();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getDecodeTimeStamp {
+        @Generated
+        @ByValue
+        CMTime call_getDecodeTimeStamp(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getPresentationTimeStamp {
+        @Generated
+        @ByValue
+        CMTime call_getPresentationTimeStamp(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getDuration {
+        @Generated
+        @ByValue
+        CMTime call_getDuration(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_isDataReady {
+        @Generated
+        byte call_isDataReady(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_compare {
+        @Generated
+        @NInt
+        long call_compare(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getSize {
+        @Generated
+        @NUInt
+        long call_getSize(ConstVoidPtr arg0, VoidPtr arg1);
+    }
 }

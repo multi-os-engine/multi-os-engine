@@ -68,56 +68,6 @@ public class MPMediaItemCollection extends MPMediaEntity {
     @Selector("collectionWithItems:")
     public static native MPMediaItemCollection collectionWithItems(NSArray<? extends MPMediaItem> items);
 
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaItemCollection/count">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("count")
-    @NUInt
-    public native long count();
-
-    @Generated
-    @Selector("init")
-    public native MPMediaItemCollection init();
-
-    /**
-     * initWithItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/index.html#//apple_ref/occ/instm/MPMediaItemCollection/initWithItems:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithItems:")
-    public native MPMediaItemCollection initWithItems(NSArray<? extends MPMediaItem> items);
-
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaItemCollection/items">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("items")
-    public native NSArray<? extends MPMediaItem> items();
-
-    /**
-     * mediaTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaItemCollection/mediaTypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mediaTypes")
-    @NUInt
-    public native long mediaTypes();
-
-    /**
-     * representativeItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaItemCollection/representativeItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("representativeItem")
-    public native MPMediaItem representativeItem();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaItemCollection initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -222,13 +172,63 @@ public class MPMediaItemCollection extends MPMediaEntity {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * count</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaItemCollection/count">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("count")
+    @NUInt
+    public native long count();
+
+    @Generated
+    @Selector("init")
+    public native MPMediaItemCollection init();
+
+    /**
+     * initWithItems:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/index.html#//apple_ref/occ/instm/MPMediaItemCollection/initWithItems:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithItems:")
+    public native MPMediaItemCollection initWithItems(NSArray<? extends MPMediaItem> items);
+
+    /**
+     * items</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaItemCollection/items">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("items")
+    public native NSArray<? extends MPMediaItem> items();
+
+    /**
+     * mediaTypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaItemCollection/mediaTypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mediaTypes")
+    @NUInt
+    public native long mediaTypes();
+
+    /**
+     * representativeItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaItemCollection/representativeItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("representativeItem")
+    public native MPMediaItem representativeItem();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaItemCollection initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

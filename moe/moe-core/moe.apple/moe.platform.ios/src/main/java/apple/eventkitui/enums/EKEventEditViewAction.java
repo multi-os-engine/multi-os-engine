@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKEventEditViewAction {
-    @Generated
-    private EKEventEditViewAction() {
-    }
-
     @Generated @NInt public static final long Canceled = 0x0000000000000000L;
     @Generated @NInt public static final long Saved = 0x0000000000000001L;
     @Generated @NInt public static final long Deleted = 0x0000000000000002L;
     @Generated @NInt public static final long Cancelled = 0x0000000000000000L;
+
+    @Generated
+    private EKEventEditViewAction() {
+    }
 }

@@ -65,36 +65,6 @@ public class CSIndexExtensionRequestHandler extends NSObject
     public static native CSIndexExtensionRequestHandler alloc();
 
     @Generated
-    @Selector("beginRequestWithExtensionContext:")
-    public native void beginRequestWithExtensionContext(NSExtensionContext context);
-
-    @Generated
-    @Selector("init")
-    public native CSIndexExtensionRequestHandler init();
-
-    @Generated
-    @Selector("searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:")
-    public native void searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler(
-            CSSearchableIndex searchableIndex,
-            @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") CSSearchableIndexDelegate.Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
-
-    @Generated
-    @Selector("searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:")
-    public native void searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler(
-            CSSearchableIndex searchableIndex, NSArray<String> identifiers,
-            @ObjCBlock(name = "call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler") CSSearchableIndexDelegate.Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler acknowledgementHandler);
-
-    @Generated
-    @IsOptional
-    @Selector("searchableIndexDidFinishThrottle:")
-    public native void searchableIndexDidFinishThrottle(CSSearchableIndex searchableIndex);
-
-    @Generated
-    @IsOptional
-    @Selector("searchableIndexDidThrottle:")
-    public native void searchableIndexDidThrottle(CSSearchableIndex searchableIndex);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -193,4 +163,34 @@ public class CSIndexExtensionRequestHandler extends NSObject
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("beginRequestWithExtensionContext:")
+    public native void beginRequestWithExtensionContext(NSExtensionContext context);
+
+    @Generated
+    @Selector("init")
+    public native CSIndexExtensionRequestHandler init();
+
+    @Generated
+    @Selector("searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:")
+    public native void searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler(
+            CSSearchableIndex searchableIndex,
+            @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") CSSearchableIndexDelegate.Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
+
+    @Generated
+    @Selector("searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:")
+    public native void searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler(
+            CSSearchableIndex searchableIndex, NSArray<String> identifiers,
+            @ObjCBlock(name = "call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler") CSSearchableIndexDelegate.Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler acknowledgementHandler);
+
+    @Generated
+    @IsOptional
+    @Selector("searchableIndexDidFinishThrottle:")
+    public native void searchableIndexDidFinishThrottle(CSSearchableIndex searchableIndex);
+
+    @Generated
+    @IsOptional
+    @Selector("searchableIndexDidThrottle:")
+    public native void searchableIndexDidThrottle(CSSearchableIndex searchableIndex);
 }

@@ -79,34 +79,8 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     public static native UITextInputMode currentInputMode();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UITextInputMode init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UITextInputMode initWithCoder(NSCoder aDecoder);
-
-    /**
-     * primaryLanguage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputMode_Class/index.html#//apple_ref/occ/instp/UITextInputMode/primaryLanguage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("primaryLanguage")
-    public native String primaryLanguage();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -207,4 +181,30 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UITextInputMode init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UITextInputMode initWithCoder(NSCoder aDecoder);
+
+    /**
+     * primaryLanguage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputMode_Class/index.html#//apple_ref/occ/instp/UITextInputMode/primaryLanguage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("primaryLanguage")
+    public native String primaryLanguage();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

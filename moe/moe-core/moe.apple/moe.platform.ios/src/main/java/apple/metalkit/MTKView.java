@@ -76,346 +76,6 @@ public class MTKView extends UIView implements NSCoding {
     @Selector("alloc")
     public static native MTKView alloc();
 
-    /**
-     * autoResizeDrawable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/autoResizeDrawable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("autoResizeDrawable")
-    public native boolean autoResizeDrawable();
-
-    /**
-     * clearColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("clearColor")
-    @ByValue
-    public native MTLClearColor clearColor();
-
-    /**
-     * clearDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearDepth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("clearDepth")
-    public native double clearDepth();
-
-    /**
-     * clearStencil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearStencil">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("clearStencil")
-    public native int clearStencil();
-
-    /**
-     * colorPixelFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/colorPixelFormat">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("colorPixelFormat")
-    @NUInt
-    public native long colorPixelFormat();
-
-    /**
-     * currentDrawable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/currentDrawable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentDrawable")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native CAMetalDrawable currentDrawable();
-
-    /**
-     * currentRenderPassDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/currentRenderPassDescriptor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentRenderPassDescriptor")
-    public native MTLRenderPassDescriptor currentRenderPassDescriptor();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTKViewDelegate delegate();
-
-    /**
-     * depthStencilPixelFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/depthStencilPixelFormat">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("depthStencilPixelFormat")
-    @NUInt
-    public native long depthStencilPixelFormat();
-
-    /**
-     * depthStencilTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/depthStencilTexture">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("depthStencilTexture")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture depthStencilTexture();
-
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/device">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("device")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLDevice device();
-
-    /**
-     * draw</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instm/MTKView/draw">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("draw")
-    public native void draw();
-
-    /**
-     * drawableSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/drawableSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("drawableSize")
-    @ByValue
-    public native CGSize drawableSize();
-
-    /**
-     * enableSetNeedsDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/enableSetNeedsDisplay">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enableSetNeedsDisplay")
-    public native boolean enableSetNeedsDisplay();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * framebufferOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/framebufferOnly">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("framebufferOnly")
-    public native boolean framebufferOnly();
-
-    @Generated
-    @Selector("init")
-    public native MTKView init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MTKView initWithCoder(NSCoder coder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native MTKView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * initWithFrame:device:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instm/MTKView/initWithFrame:device:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFrame:device:")
-    public native MTKView initWithFrameDevice(@ByValue CGRect frameRect,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/paused">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPaused")
-    public native boolean isPaused();
-
-    /**
-     * multisampleColorTexture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/multisampleColorTexture">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("multisampleColorTexture")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture multisampleColorTexture();
-
-    /**
-     * preferredFramesPerSecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/preferredFramesPerSecond">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preferredFramesPerSecond")
-    @NInt
-    public native long preferredFramesPerSecond();
-
-    /**
-     * presentsWithTransaction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/presentsWithTransaction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("presentsWithTransaction")
-    public native boolean presentsWithTransaction();
-
-    /**
-     * releaseDrawables</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instm/MTKView/releaseDrawables">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("releaseDrawables")
-    public native void releaseDrawables();
-
-    /**
-     * sampleCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/sampleCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sampleCount")
-    @NUInt
-    public native long sampleCount();
-
-    /**
-     * autoResizeDrawable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/autoResizeDrawable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAutoResizeDrawable:")
-    public native void setAutoResizeDrawable(boolean value);
-
-    /**
-     * clearColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setClearColor:")
-    public native void setClearColor(@ByValue MTLClearColor value);
-
-    /**
-     * clearDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearDepth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setClearDepth:")
-    public native void setClearDepth(double value);
-
-    /**
-     * clearStencil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearStencil">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setClearStencil:")
-    public native void setClearStencil(int value);
-
-    /**
-     * colorPixelFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/colorPixelFormat">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setColorPixelFormat:")
-    public native void setColorPixelFormat(@NUInt long value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MTKViewDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MTKViewDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * depthStencilPixelFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/depthStencilPixelFormat">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDepthStencilPixelFormat:")
-    public native void setDepthStencilPixelFormat(@NUInt long value);
-
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/device">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDevice:")
-    public native void setDevice(@Mapped(ObjCObjectMapper.class) MTLDevice value);
-
-    /**
-     * drawableSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/drawableSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDrawableSize:")
-    public native void setDrawableSize(@ByValue CGSize value);
-
-    /**
-     * enableSetNeedsDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/enableSetNeedsDisplay">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnableSetNeedsDisplay:")
-    public native void setEnableSetNeedsDisplay(boolean value);
-
-    /**
-     * framebufferOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/framebufferOnly">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFramebufferOnly:")
-    public native void setFramebufferOnly(boolean value);
-
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/paused">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPaused:")
-    public native void setPaused(boolean value);
-
-    /**
-     * preferredFramesPerSecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/preferredFramesPerSecond">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPreferredFramesPerSecond:")
-    public native void setPreferredFramesPerSecond(@NInt long value);
-
-    /**
-     * presentsWithTransaction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/presentsWithTransaction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPresentsWithTransaction:")
-    public native void setPresentsWithTransaction(boolean value);
-
-    /**
-     * sampleCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/sampleCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSampleCount:")
-    public native void setSampleCount(@NUInt long value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -469,23 +129,9 @@ public class MTKView extends UIView implements NSCoding {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -496,27 +142,10 @@ public class MTKView extends UIView implements NSCoding {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -527,24 +156,9 @@ public class MTKView extends UIView implements NSCoding {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -742,4 +356,390 @@ public class MTKView extends UIView implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * autoResizeDrawable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/autoResizeDrawable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("autoResizeDrawable")
+    public native boolean autoResizeDrawable();
+
+    /**
+     * clearColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("clearColor")
+    @ByValue
+    public native MTLClearColor clearColor();
+
+    /**
+     * clearDepth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearDepth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("clearDepth")
+    public native double clearDepth();
+
+    /**
+     * clearStencil</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearStencil">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("clearStencil")
+    public native int clearStencil();
+
+    /**
+     * colorPixelFormat</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/colorPixelFormat">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("colorPixelFormat")
+    @NUInt
+    public native long colorPixelFormat();
+
+    /**
+     * currentDrawable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/currentDrawable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentDrawable")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native CAMetalDrawable currentDrawable();
+
+    /**
+     * currentRenderPassDescriptor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/currentRenderPassDescriptor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentRenderPassDescriptor")
+    public native MTLRenderPassDescriptor currentRenderPassDescriptor();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTKViewDelegate delegate();
+
+    /**
+     * depthStencilPixelFormat</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/depthStencilPixelFormat">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("depthStencilPixelFormat")
+    @NUInt
+    public native long depthStencilPixelFormat();
+
+    /**
+     * depthStencilTexture</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/depthStencilTexture">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("depthStencilTexture")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLTexture depthStencilTexture();
+
+    /**
+     * device</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/device">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("device")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLDevice device();
+
+    /**
+     * draw</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instm/MTKView/draw">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("draw")
+    public native void draw();
+
+    /**
+     * drawableSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/drawableSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("drawableSize")
+    @ByValue
+    public native CGSize drawableSize();
+
+    /**
+     * enableSetNeedsDisplay</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/enableSetNeedsDisplay">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enableSetNeedsDisplay")
+    public native boolean enableSetNeedsDisplay();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * framebufferOnly</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/framebufferOnly">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("framebufferOnly")
+    public native boolean framebufferOnly();
+
+    @Generated
+    @Selector("init")
+    public native MTKView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MTKView initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native MTKView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * initWithFrame:device:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instm/MTKView/initWithFrame:device:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFrame:device:")
+    public native MTKView initWithFrameDevice(@ByValue CGRect frameRect,
+            @Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * paused</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/paused">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPaused")
+    public native boolean isPaused();
+
+    /**
+     * paused</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/paused">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPaused:")
+    public native void setPaused(boolean value);
+
+    /**
+     * multisampleColorTexture</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/multisampleColorTexture">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("multisampleColorTexture")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLTexture multisampleColorTexture();
+
+    /**
+     * preferredFramesPerSecond</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/preferredFramesPerSecond">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preferredFramesPerSecond")
+    @NInt
+    public native long preferredFramesPerSecond();
+
+    /**
+     * presentsWithTransaction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/presentsWithTransaction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("presentsWithTransaction")
+    public native boolean presentsWithTransaction();
+
+    /**
+     * releaseDrawables</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instm/MTKView/releaseDrawables">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("releaseDrawables")
+    public native void releaseDrawables();
+
+    /**
+     * sampleCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/sampleCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sampleCount")
+    @NUInt
+    public native long sampleCount();
+
+    /**
+     * autoResizeDrawable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/autoResizeDrawable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAutoResizeDrawable:")
+    public native void setAutoResizeDrawable(boolean value);
+
+    /**
+     * clearColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setClearColor:")
+    public native void setClearColor(@ByValue MTLClearColor value);
+
+    /**
+     * clearDepth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearDepth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setClearDepth:")
+    public native void setClearDepth(double value);
+
+    /**
+     * clearStencil</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/clearStencil">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setClearStencil:")
+    public native void setClearStencil(int value);
+
+    /**
+     * colorPixelFormat</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/colorPixelFormat">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setColorPixelFormat:")
+    public native void setColorPixelFormat(@NUInt long value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MTKViewDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) MTKViewDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * depthStencilPixelFormat</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/depthStencilPixelFormat">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDepthStencilPixelFormat:")
+    public native void setDepthStencilPixelFormat(@NUInt long value);
+
+    /**
+     * device</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/device">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDevice:")
+    public native void setDevice(@Mapped(ObjCObjectMapper.class) MTLDevice value);
+
+    /**
+     * drawableSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/drawableSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDrawableSize:")
+    public native void setDrawableSize(@ByValue CGSize value);
+
+    /**
+     * enableSetNeedsDisplay</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/enableSetNeedsDisplay">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnableSetNeedsDisplay:")
+    public native void setEnableSetNeedsDisplay(boolean value);
+
+    /**
+     * framebufferOnly</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/framebufferOnly">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFramebufferOnly:")
+    public native void setFramebufferOnly(boolean value);
+
+    /**
+     * preferredFramesPerSecond</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/preferredFramesPerSecond">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPreferredFramesPerSecond:")
+    public native void setPreferredFramesPerSecond(@NInt long value);
+
+    /**
+     * presentsWithTransaction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/presentsWithTransaction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPresentsWithTransaction:")
+    public native void setPresentsWithTransaction(boolean value);
+
+    /**
+     * sampleCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKView_ClassReference/index.html#//apple_ref/occ/instp/MTKView/sampleCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSampleCount:")
+    public native void setSampleCount(@NUInt long value);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

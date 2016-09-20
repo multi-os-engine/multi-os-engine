@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLVertexFormat {
-    @Generated
-    private MTLVertexFormat() {
-    }
-
     @Generated @NUInt public static final long Invalid = 0x0000000000000000L;
     @Generated @NUInt public static final long UChar2 = 0x0000000000000001L;
     @Generated @NUInt public static final long UChar3 = 0x0000000000000002L;
@@ -67,4 +63,8 @@ public final class MTLVertexFormat {
     @Generated @NUInt public static final long UInt4 = 0x0000000000000027L;
     @Generated @NUInt public static final long Int1010102Normalized = 0x0000000000000028L;
     @Generated @NUInt public static final long UInt1010102Normalized = 0x0000000000000029L;
+
+    @Generated
+    private MTLVertexFormat() {
+    }
 }

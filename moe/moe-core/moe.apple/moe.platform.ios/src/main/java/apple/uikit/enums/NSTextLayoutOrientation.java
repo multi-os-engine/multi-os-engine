@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSTextLayoutOrientation {
+    @Generated @NInt public static final long Horizontal = 0x0000000000000000L;
+    @Generated @NInt public static final long Vertical = 0x0000000000000001L;
+
     @Generated
     private NSTextLayoutOrientation() {
     }
-
-    @Generated @NInt public static final long Horizontal = 0x0000000000000000L;
-    @Generated @NInt public static final long Vertical = 0x0000000000000001L;
 }

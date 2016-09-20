@@ -60,10 +60,6 @@ public class NEAppProxyProviderManager extends NETunnelProviderManager {
     @Selector("alloc")
     public static native NEAppProxyProviderManager alloc();
 
-    @Generated
-    @Selector("init")
-    public native NEAppProxyProviderManager init();
-
     /**
      * loadAllFromPreferencesWithCompletionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyProviderManagerClassRef/index.html#//apple_ref/occ/clm/NEAppProxyProviderManager/loadAllFromPreferencesWithCompletionHandler:">iOS Dev Center</a>
@@ -72,14 +68,6 @@ public class NEAppProxyProviderManager extends NETunnelProviderManager {
     @Selector("loadAllFromPreferencesWithCompletionHandler:")
     public static native void loadAllFromPreferencesWithCompletionHandler(
             @ObjCBlock(name = "call_loadAllFromPreferencesWithCompletionHandler") Block_loadAllFromPreferencesWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadAllFromPreferencesWithCompletionHandler {
-        @Generated
-        void call_loadAllFromPreferencesWithCompletionHandler(NSArray<? extends NEAppProxyProviderManager> arg0,
-                NSError arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -184,4 +172,16 @@ public class NEAppProxyProviderManager extends NETunnelProviderManager {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NEAppProxyProviderManager init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadAllFromPreferencesWithCompletionHandler {
+        @Generated
+        void call_loadAllFromPreferencesWithCompletionHandler(NSArray<? extends NEAppProxyProviderManager> arg0,
+                NSError arg1);
+    }
 }

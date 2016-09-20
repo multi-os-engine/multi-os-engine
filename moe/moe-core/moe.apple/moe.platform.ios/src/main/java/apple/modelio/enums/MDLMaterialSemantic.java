@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MDLMaterialSemantic {
-    @Generated
-    private MDLMaterialSemantic() {
-    }
-
     @Generated @NUInt public static final long BaseColor = 0x0000000000000000L;
     @Generated @NUInt public static final long Subsurface = 0x0000000000000001L;
     @Generated @NUInt public static final long Metallic = 0x0000000000000002L;
@@ -51,4 +47,8 @@ public final class MDLMaterialSemantic {
     @Generated @NUInt public static final long AmbientOcclusionScale = 0x0000000000000017L;
     @Generated @NUInt public static final long None = 0x0000000000008000L;
     @Generated @NUInt public static final long UserDefined = 0x0000000000008001L;
+
+    @Generated
+    private MDLMaterialSemantic() {
+    }
 }

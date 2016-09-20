@@ -61,70 +61,10 @@ public class SLRequest extends NSObject {
         super(peer);
     }
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instp/SLRequest/URL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URL")
-    public native NSURL URL();
-
-    /**
-     * account</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instp/SLRequest/account">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("account")
-    public native ACAccount account();
-
-    /**
-     * addMultipartData:withName:type:filename:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instm/SLRequest/addMultipartData:withName:type:filename:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addMultipartData:withName:type:filename:")
-    public native void addMultipartDataWithNameTypeFilename(NSData data, String name, String type, String filename);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native SLRequest alloc();
-
-    @Generated
-    @Selector("init")
-    public native SLRequest init();
-
-    /**
-     * parameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instp/SLRequest/parameters">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("parameters")
-    public native NSDictionary<?, ?> parameters();
-
-    /**
-     * performRequestWithHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instm/SLRequest/performRequestWithHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("performRequestWithHandler:")
-    public native void performRequestWithHandler(
-            @ObjCBlock(name = "call_performRequestWithHandler") Block_performRequestWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performRequestWithHandler {
-        @Generated
-        void call_performRequestWithHandler(NSData arg0, NSHTTPURLResponse arg1, NSError arg2);
-    }
-
-    /**
-     * preparedURLRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instm/SLRequest/preparedURLRequest">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preparedURLRequest")
-    public native NSURLRequest preparedURLRequest();
 
     /**
      * requestForServiceType:requestMethod:URL:parameters:</br>
@@ -134,23 +74,6 @@ public class SLRequest extends NSObject {
     @Selector("requestForServiceType:requestMethod:URL:parameters:")
     public static native SLRequest requestForServiceTypeRequestMethodURLParameters(String serviceType,
             @NInt long requestMethod, NSURL url, NSDictionary<?, ?> parameters);
-
-    /**
-     * requestMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instp/SLRequest/requestMethod">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestMethod")
-    @NInt
-    public native long requestMethod();
-
-    /**
-     * account</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instp/SLRequest/account">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccount:")
-    public native void setAccount(ACAccount value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -251,4 +174,81 @@ public class SLRequest extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instp/SLRequest/URL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URL")
+    public native NSURL URL();
+
+    /**
+     * account</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instp/SLRequest/account">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("account")
+    public native ACAccount account();
+
+    /**
+     * addMultipartData:withName:type:filename:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instm/SLRequest/addMultipartData:withName:type:filename:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addMultipartData:withName:type:filename:")
+    public native void addMultipartDataWithNameTypeFilename(NSData data, String name, String type, String filename);
+
+    @Generated
+    @Selector("init")
+    public native SLRequest init();
+
+    /**
+     * parameters</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instp/SLRequest/parameters">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("parameters")
+    public native NSDictionary<?, ?> parameters();
+
+    /**
+     * performRequestWithHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instm/SLRequest/performRequestWithHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("performRequestWithHandler:")
+    public native void performRequestWithHandler(
+            @ObjCBlock(name = "call_performRequestWithHandler") Block_performRequestWithHandler handler);
+
+    /**
+     * preparedURLRequest</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instm/SLRequest/preparedURLRequest">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preparedURLRequest")
+    public native NSURLRequest preparedURLRequest();
+
+    /**
+     * requestMethod</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instp/SLRequest/requestMethod">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestMethod")
+    @NInt
+    public native long requestMethod();
+
+    /**
+     * account</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLRequest_Class/index.html#//apple_ref/occ/instp/SLRequest/account">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccount:")
+    public native void setAccount(ACAccount value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performRequestWithHandler {
+        @Generated
+        void call_performRequestWithHandler(NSData arg0, NSHTTPURLResponse arg1, NSError arg2);
+    }
 }

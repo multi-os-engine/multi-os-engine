@@ -61,30 +61,6 @@ public class MPSImageLanczosScale extends MPSUnaryImageKernel {
     public static native MPSImageLanczosScale alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSImageLanczosScale init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageLanczosScale initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * scaleTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageLanczosScale_ClassReference/index.html#//apple_ref/occ/instp/MPSImageLanczosScale/scaleTransform">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("scaleTransform")
-    public native MPSScaleTransform scaleTransform();
-
-    /**
-     * scaleTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageLanczosScale_ClassReference/index.html#//apple_ref/occ/instp/MPSImageLanczosScale/scaleTransform">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setScaleTransform:")
-    public native void setScaleTransform(MPSScaleTransform value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -183,4 +159,28 @@ public class MPSImageLanczosScale extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageLanczosScale init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageLanczosScale initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * scaleTransform</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageLanczosScale_ClassReference/index.html#//apple_ref/occ/instp/MPSImageLanczosScale/scaleTransform">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("scaleTransform")
+    public native MPSScaleTransform scaleTransform();
+
+    /**
+     * scaleTransform</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageLanczosScale_ClassReference/index.html#//apple_ref/occ/instp/MPSImageLanczosScale/scaleTransform">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setScaleTransform:")
+    public native void setScaleTransform(MPSScaleTransform value);
 }

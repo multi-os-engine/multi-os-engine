@@ -59,12 +59,6 @@ public class GKGoal extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native GKGoal alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
     /**
      * goalToAlignWithAgents:maxDistance:maxAngle:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGoal_Class/index.html#//apple_ref/occ/clm/GKGoal/goalToAlignWithAgents:maxDistance:maxAngle:">iOS Dev Center</a>
@@ -168,10 +162,6 @@ public class GKGoal extends NSObject implements NSCopying {
     public static native GKGoal goalToWander(float speed);
 
     @Generated
-    @Selector("init")
-    public native GKGoal init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -270,4 +260,14 @@ public class GKGoal extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native GKGoal init();
 }

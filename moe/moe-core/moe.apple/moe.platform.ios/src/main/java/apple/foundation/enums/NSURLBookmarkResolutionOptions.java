@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSURLBookmarkResolutionOptions {
+    @Generated @NUInt public static final long UI = 0x0000000000000100L;
+    @Generated @NUInt public static final long Mounting = 0x0000000000000200L;
+
     @Generated
     private NSURLBookmarkResolutionOptions() {
     }
-
-    @Generated @NUInt public static final long UI = 0x0000000000000100L;
-    @Generated @NUInt public static final long Mounting = 0x0000000000000200L;
 }

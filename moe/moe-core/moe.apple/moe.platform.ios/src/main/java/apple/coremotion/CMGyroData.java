@@ -63,23 +63,6 @@ public class CMGyroData extends CMLogItem {
     public static native CMGyroData alloc();
 
     @Generated
-    @Selector("init")
-    public native CMGyroData init();
-
-    /**
-     * rotationRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMGyroData_Class/index.html#//apple_ref/occ/instp/CMGyroData/rotationRate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rotationRate")
-    @ByValue
-    public native CMRotationRate rotationRate();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMGyroData initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -179,13 +162,30 @@ public class CMGyroData extends CMLogItem {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CMGyroData init();
+
+    /**
+     * rotationRate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMGyroData_Class/index.html#//apple_ref/occ/instp/CMGyroData/rotationRate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rotationRate")
+    @ByValue
+    public native CMRotationRate rotationRate();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CMGyroData initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

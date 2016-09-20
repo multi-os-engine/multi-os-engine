@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTUnderlineStyleModifiers {
-    @Generated
-    private CTUnderlineStyleModifiers() {
-    }
-
     @Generated public static final int Solid = 0x00000000;
     @Generated public static final int Dot = 0x00000100;
     @Generated public static final int Dash = 0x00000200;
     @Generated public static final int DashDot = 0x00000300;
     @Generated public static final int DashDotDot = 0x00000400;
+
+    @Generated
+    private CTUnderlineStyleModifiers() {
+    }
 }

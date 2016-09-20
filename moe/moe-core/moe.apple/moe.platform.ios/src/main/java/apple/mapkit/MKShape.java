@@ -63,44 +63,6 @@ public class MKShape extends NSObject implements MKAnnotation {
     public static native MKShape alloc();
 
     @Generated
-    @Selector("coordinate")
-    @ByValue
-    public native CLLocationCoordinate2D coordinate();
-
-    @Generated
-    @Selector("init")
-    public native MKShape init();
-
-    @Generated
-    @IsOptional
-    @Selector("setCoordinate:")
-    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
-
-    /**
-     * subtitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKShape_class/index.html#//apple_ref/occ/instp/MKShape/subtitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKShape_class/index.html#//apple_ref/occ/instp/MKShape/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTitle:")
-    public native void setTitle(String value);
-
-    @Generated
-    @Selector("subtitle")
-    public native String subtitle();
-
-    @Generated
-    @Selector("title")
-    public native String title();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -199,4 +161,42 @@ public class MKShape extends NSObject implements MKAnnotation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("coordinate")
+    @ByValue
+    public native CLLocationCoordinate2D coordinate();
+
+    @Generated
+    @Selector("init")
+    public native MKShape init();
+
+    @Generated
+    @IsOptional
+    @Selector("setCoordinate:")
+    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
+
+    /**
+     * subtitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKShape_class/index.html#//apple_ref/occ/instp/MKShape/subtitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSubtitle:")
+    public native void setSubtitle(String value);
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKShape_class/index.html#//apple_ref/occ/instp/MKShape/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
+
+    @Generated
+    @Selector("subtitle")
+    public native String subtitle();
+
+    @Generated
+    @Selector("title")
+    public native String title();
 }

@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UISegmentedControlSegment {
-    @Generated
-    private UISegmentedControlSegment() {
-    }
-
     @Generated @NInt public static final long Any = 0x0000000000000000L;
     @Generated @NInt public static final long Left = 0x0000000000000001L;
     @Generated @NInt public static final long Center = 0x0000000000000002L;
     @Generated @NInt public static final long Right = 0x0000000000000003L;
     @Generated @NInt public static final long Alone = 0x0000000000000004L;
+
+    @Generated
+    private UISegmentedControlSegment() {
+    }
 }

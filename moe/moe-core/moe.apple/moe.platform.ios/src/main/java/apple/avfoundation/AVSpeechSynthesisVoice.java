@@ -69,26 +69,6 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("currentLanguageCode")
     public static native String currentLanguageCode();
 
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native AVSpeechSynthesisVoice init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVSpeechSynthesisVoice initWithCoder(NSCoder aDecoder);
-
-    /**
-     * language</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/instp/AVSpeechSynthesisVoice/language">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("language")
-    public native String language();
-
     /**
      * speechVoices</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/clm/AVSpeechSynthesisVoice/speechVoices">iOS Dev Center</a>
@@ -101,12 +81,6 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
     /**
      * voiceWithLanguage:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/clm/AVSpeechSynthesisVoice/voiceWithLanguage:">iOS Dev Center</a>
@@ -114,19 +88,6 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("voiceWithLanguage:")
     public static native AVSpeechSynthesisVoice voiceWithLanguage(String languageCode);
-
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
-    @Selector("quality")
-    @NInt
-    public native long quality();
 
     @Generated
     @Selector("voiceWithIdentifier:")
@@ -231,4 +192,43 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native AVSpeechSynthesisVoice init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVSpeechSynthesisVoice initWithCoder(NSCoder aDecoder);
+
+    /**
+     * language</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSpeechSynthesisVoice_Ref/index.html#//apple_ref/occ/instp/AVSpeechSynthesisVoice/language">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("language")
+    public native String language();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("quality")
+    @NInt
+    public native long quality();
 }

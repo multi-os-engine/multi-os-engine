@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSSearchPathDomainMask {
-    @Generated
-    private NSSearchPathDomainMask() {
-    }
-
     @Generated @NUInt public static final long UserDomainMask = 0x0000000000000001L;
     @Generated @NUInt public static final long LocalDomainMask = 0x0000000000000002L;
     @Generated @NUInt public static final long NetworkDomainMask = 0x0000000000000004L;
     @Generated @NUInt public static final long SystemDomainMask = 0x0000000000000008L;
     @Generated @NUInt public static final long AllDomainsMask = 0x000000000000FFFFL;
+
+    @Generated
+    private NSSearchPathDomainMask() {
+    }
 }

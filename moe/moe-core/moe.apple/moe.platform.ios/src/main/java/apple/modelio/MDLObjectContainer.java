@@ -57,30 +57,9 @@ public class MDLObjectContainer extends NSObject implements MDLObjectContainerCo
     }
 
     @Generated
-    @Selector("addObject:")
-    public native void addObject(MDLObject object);
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native MDLObjectContainer alloc();
-
-    @Generated
-    @Selector("countByEnumeratingWithState:objects:count:")
-    @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
-
-    @Generated
-    @Selector("init")
-    public native MDLObjectContainer init();
-
-    @Generated
-    @Selector("objects")
-    public native NSArray<? extends MDLObject> objects();
-
-    @Generated
-    @Selector("removeObject:")
-    public native void removeObject(MDLObject object);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -181,4 +160,25 @@ public class MDLObjectContainer extends NSObject implements MDLObjectContainerCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("addObject:")
+    public native void addObject(MDLObject object);
+
+    @Generated
+    @Selector("countByEnumeratingWithState:objects:count:")
+    @NUInt
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+
+    @Generated
+    @Selector("init")
+    public native MDLObjectContainer init();
+
+    @Generated
+    @Selector("objects")
+    public native NSArray<? extends MDLObject> objects();
+
+    @Generated
+    @Selector("removeObject:")
+    public native void removeObject(MDLObject object);
 }

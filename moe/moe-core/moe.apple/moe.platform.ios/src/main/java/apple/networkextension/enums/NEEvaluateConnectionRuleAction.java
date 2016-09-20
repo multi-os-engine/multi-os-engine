@@ -21,10 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NEEvaluateConnectionRuleAction {
+    @Generated @NInt public static final long ConnectIfNeeded = 0x0000000000000001L;
+    @Generated @NInt public static final long NeverConnect = 0x0000000000000002L;
     @Generated
     private NEEvaluateConnectionRuleAction() {
     }
-
-    @Generated @NInt public static final long ConnectIfNeeded = 0x0000000000000001L;
-    @Generated @NInt public static final long NeverConnect = 0x0000000000000002L;
 }

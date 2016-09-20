@@ -26,11 +26,11 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure(alignment = 16)
 public final class GLKVector4 extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public GLKVector4() {

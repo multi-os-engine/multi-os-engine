@@ -60,33 +60,6 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSError alloc();
 
     /**
-     * code</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/code">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("code")
-    @NInt
-    public native long code();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * domain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/domain">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("domain")
-    public native String domain();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
      * errorWithDomain:code:userInfo:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/clm/NSError/errorWithDomain:code:userInfo:">iOS Dev Center</a>
      */
@@ -94,114 +67,19 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("errorWithDomain:code:userInfo:")
     public static native NSError errorWithDomainCodeUserInfo(String domain, @NInt long code, NSDictionary<?, ?> dict);
 
-    /**
-     * helpAnchor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/helpAnchor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("helpAnchor")
-    public native String helpAnchor();
-
-    @Generated
-    @Selector("init")
-    public native NSError init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSError initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithDomain:code:userInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instm/NSError/initWithDomain:code:userInfo:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDomain:code:userInfo:")
-    public native NSError initWithDomainCodeUserInfo(String domain, @NInt long code, NSDictionary<?, ?> dict);
-
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/localizedDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedDescription")
-    public native String localizedDescription();
-
-    /**
-     * localizedFailureReason</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/localizedFailureReason">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedFailureReason")
-    public native String localizedFailureReason();
-
-    /**
-     * localizedRecoveryOptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/localizedRecoveryOptions">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedRecoveryOptions")
-    public native NSArray<String> localizedRecoveryOptions();
-
-    /**
-     * localizedRecoverySuggestion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/localizedRecoverySuggestion">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedRecoverySuggestion")
-    public native String localizedRecoverySuggestion();
-
-    /**
-     * recoveryAttempter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/recoveryAttempter">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recoveryAttempter")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object recoveryAttempter();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInfo")
-    public native NSDictionary<?, ?> userInfo();
 
     @Generated
     @Selector("setUserInfoValueProviderForDomain:provider:")
     public static native void setUserInfoValueProviderForDomainProvider(String errorDomain,
             @ObjCBlock(name = "call_setUserInfoValueProviderForDomainProvider") Block_setUserInfoValueProviderForDomainProvider provider);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setUserInfoValueProviderForDomainProvider {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        Object call_setUserInfoValueProviderForDomainProvider(NSError arg0, String arg1);
-    }
-
     @Generated
     @Selector("userInfoValueProviderForDomain:")
     @ObjCBlock(name = "call_userInfoValueProviderForDomain_ret")
     public static native Block_userInfoValueProviderForDomain_ret userInfoValueProviderForDomain(String errorDomain);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_userInfoValueProviderForDomain_ret {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        Object call_userInfoValueProviderForDomain_ret(NSError arg0, String arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -302,4 +180,126 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * code</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/code">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("code")
+    @NInt
+    public native long code();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * domain</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/domain">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("domain")
+    public native String domain();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * helpAnchor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/helpAnchor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("helpAnchor")
+    public native String helpAnchor();
+
+    @Generated
+    @Selector("init")
+    public native NSError init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSError initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithDomain:code:userInfo:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instm/NSError/initWithDomain:code:userInfo:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDomain:code:userInfo:")
+    public native NSError initWithDomainCodeUserInfo(String domain, @NInt long code, NSDictionary<?, ?> dict);
+
+    /**
+     * localizedDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/localizedDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedDescription")
+    public native String localizedDescription();
+
+    /**
+     * localizedFailureReason</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/localizedFailureReason">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedFailureReason")
+    public native String localizedFailureReason();
+
+    /**
+     * localizedRecoveryOptions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/localizedRecoveryOptions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedRecoveryOptions")
+    public native NSArray<String> localizedRecoveryOptions();
+
+    /**
+     * localizedRecoverySuggestion</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/localizedRecoverySuggestion">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedRecoverySuggestion")
+    public native String localizedRecoverySuggestion();
+
+    /**
+     * recoveryAttempter</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/recoveryAttempter">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recoveryAttempter")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object recoveryAttempter();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/index.html#//apple_ref/occ/instp/NSError/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInfo")
+    public native NSDictionary<?, ?> userInfo();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setUserInfoValueProviderForDomainProvider {
+        @Generated
+        @MappedReturn(ObjCObjectMapper.class)
+        Object call_setUserInfoValueProviderForDomainProvider(NSError arg0, String arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_userInfoValueProviderForDomain_ret {
+        @Generated
+        @MappedReturn(ObjCObjectMapper.class)
+        Object call_userInfoValueProviderForDomain_ret(NSError arg0, String arg1);
+    }
 }

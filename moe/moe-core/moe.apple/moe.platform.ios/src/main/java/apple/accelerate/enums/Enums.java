@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kvImage_PNG_FILTER_VALUE_NONE = 0x00000000;
     @Generated public static final int kvImage_PNG_FILTER_VALUE_SUB = 0x00000001;
     @Generated public static final int kvImage_PNG_FILTER_VALUE_UP = 0x00000002;
@@ -152,4 +148,8 @@ public final class Enums {
     @Generated public static final int kvImageCVImageFormat_AlphaIsOneHint = 0xFFFFAB9C;
     @Generated public static final int kvImageHDRContent = 0x00000400;
     @Generated public static final int kvImageDoNotClamp = 0x00000800;
+
+    @Generated
+    private Enums() {
+    }
 }

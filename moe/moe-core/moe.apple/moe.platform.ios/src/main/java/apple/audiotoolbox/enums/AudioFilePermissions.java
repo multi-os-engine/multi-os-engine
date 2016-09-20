@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioFilePermissions {
-    @Generated
-    private AudioFilePermissions() {
-    }
-
     @Generated public static final byte ReadPermission = 1;
     @Generated public static final byte WritePermission = 2;
     @Generated public static final byte ReadWritePermission = 3;
+
+    @Generated
+    private AudioFilePermissions() {
+    }
 }

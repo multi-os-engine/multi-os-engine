@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioFileStreamSeekFlags {
+    @Generated public static final int kAudioFileStreamSeekFlag_OffsetIsEstimated = 0x00000001;
+
     @Generated
     private AudioFileStreamSeekFlags() {
     }
-
-    @Generated public static final int kAudioFileStreamSeekFlag_OffsetIsEstimated = 0x00000001;
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HMErrorCode {
-    @Generated
-    private HMErrorCode() {
-    }
-
     @Generated @NInt public static final long AlreadyExists = 0x0000000000000001L;
     @Generated @NInt public static final long NotFound = 0x0000000000000002L;
     @Generated @NInt public static final long InvalidParameter = 0x0000000000000003L;
@@ -111,4 +107,8 @@ public final class HMErrorCode {
     @Generated @NInt public static final long LocationForHomeDisabled = 0x0000000000000054L;
     @Generated @NInt public static final long NotAuthorizedForLocationServices = 0x0000000000000055L;
     @Generated @NInt public static final long ReferToUserManual = 0x0000000000000056L;
+
+    @Generated
+    private HMErrorCode() {
+    }
 }

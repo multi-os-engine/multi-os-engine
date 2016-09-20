@@ -59,30 +59,6 @@ public class MKCircleRenderer extends MKOverlayPathRenderer {
     @Selector("alloc")
     public static native MKCircleRenderer alloc();
 
-    /**
-     * circle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircleRenderer_class/index.html#//apple_ref/occ/instp/MKCircleRenderer/circle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("circle")
-    public native MKCircle circle();
-
-    @Generated
-    @Selector("init")
-    public native MKCircleRenderer init();
-
-    /**
-     * initWithCircle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircleRenderer_class/index.html#//apple_ref/occ/instm/MKCircleRenderer/initWithCircle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithCircle:")
-    public native MKCircleRenderer initWithCircle(MKCircle circle);
-
-    @Generated
-    @Selector("initWithOverlay:")
-    public native MKCircleRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -182,4 +158,28 @@ public class MKCircleRenderer extends MKOverlayPathRenderer {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * circle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircleRenderer_class/index.html#//apple_ref/occ/instp/MKCircleRenderer/circle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("circle")
+    public native MKCircle circle();
+
+    @Generated
+    @Selector("init")
+    public native MKCircleRenderer init();
+
+    /**
+     * initWithCircle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKCircleRenderer_class/index.html#//apple_ref/occ/instm/MKCircleRenderer/initWithCircle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithCircle:")
+    public native MKCircleRenderer initWithCircle(MKCircle circle);
+
+    @Generated
+    @Selector("initWithOverlay:")
+    public native MKCircleRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSCalendarOptions {
-    @Generated
-    private NSCalendarOptions() {
-    }
-
     @Generated @NUInt public static final long WrapComponents = 0x0000000000000001L;
     @Generated @NUInt public static final long MatchStrictly = 0x0000000000000002L;
     @Generated @NUInt public static final long SearchBackwards = 0x0000000000000004L;
@@ -33,4 +29,8 @@ public final class NSCalendarOptions {
     @Generated @NUInt public static final long MatchNextTime = 0x0000000000000400L;
     @Generated @NUInt public static final long MatchFirst = 0x0000000000001000L;
     @Generated @NUInt public static final long MatchLast = 0x0000000000002000L;
+
+    @Generated
+    private NSCalendarOptions() {
+    }
 }

@@ -61,34 +61,6 @@ public class WKInterfaceLabel extends WKInterfaceObject {
     public static native WKInterfaceLabel alloc();
 
     @Generated
-    @Selector("init")
-    public native WKInterfaceLabel init();
-
-    /**
-     * setAttributedText:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceLabel_class/index.html#//apple_ref/occ/instm/WKInterfaceLabel/setAttributedText:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAttributedText:")
-    public native void setAttributedText(NSAttributedString attributedText);
-
-    /**
-     * setText:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceLabel_class/index.html#//apple_ref/occ/instm/WKInterfaceLabel/setText:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setText:")
-    public native void setText(String text);
-
-    /**
-     * setTextColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceLabel_class/index.html#//apple_ref/occ/instm/WKInterfaceLabel/setTextColor:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTextColor:")
-    public native void setTextColor(UIColor color);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -187,4 +159,32 @@ public class WKInterfaceLabel extends WKInterfaceObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native WKInterfaceLabel init();
+
+    /**
+     * setAttributedText:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceLabel_class/index.html#//apple_ref/occ/instm/WKInterfaceLabel/setAttributedText:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAttributedText:")
+    public native void setAttributedText(NSAttributedString attributedText);
+
+    /**
+     * setText:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceLabel_class/index.html#//apple_ref/occ/instm/WKInterfaceLabel/setText:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setText:")
+    public native void setText(String text);
+
+    /**
+     * setTextColor:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceLabel_class/index.html#//apple_ref/occ/instm/WKInterfaceLabel/setTextColor:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTextColor:")
+    public native void setTextColor(UIColor color);
 }

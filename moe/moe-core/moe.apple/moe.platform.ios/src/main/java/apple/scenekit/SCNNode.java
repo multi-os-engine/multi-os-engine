@@ -75,6 +75,139 @@ public class SCNNode extends NSObject
     }
 
     @Generated
+    @Owned
+    @Selector("alloc")
+    public static native SCNNode alloc();
+
+    /**
+     * node</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/clm/SCNNode/node">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("node")
+    public static native SCNNode node();
+
+    /**
+     * nodeWithGeometry:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/clm/SCNNode/nodeWithGeometry:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("nodeWithGeometry:")
+    public static native SCNNode nodeWithGeometry(SCNGeometry geometry);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    /**
+     * nodeWithMDLObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/clm/SCNNode/nodeWithMDLObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("nodeWithMDLObject:")
+    public static native SCNNode nodeWithMDLObject(MDLObject mdlObject);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
     @Selector("actionForKey:")
     public native SCNAction actionForKey(String key);
 
@@ -97,11 +230,6 @@ public class SCNNode extends NSObject
     @Generated
     @Selector("addParticleSystem:")
     public native void addParticleSystem(SCNParticleSystem system);
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native SCNNode alloc();
 
     @Generated
     @Selector("animationForKey:")
@@ -160,13 +288,6 @@ public class SCNNode extends NSObject
     @Selector("childNodesPassingTest:")
     public native NSArray<? extends SCNNode> childNodesPassingTest(
             @ObjCBlock(name = "call_childNodesPassingTest") Block_childNodesPassingTest predicate);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_childNodesPassingTest {
-        @Generated
-        boolean call_childNodesPassingTest(SCNNode arg0, BoolPtr arg1);
-    }
 
     /**
      * clone</br>
@@ -239,13 +360,6 @@ public class SCNNode extends NSObject
     @Selector("enumerateChildNodesUsingBlock:")
     public native void enumerateChildNodesUsingBlock(
             @ObjCBlock(name = "call_enumerateChildNodesUsingBlock") Block_enumerateChildNodesUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateChildNodesUsingBlock {
-        @Generated
-        void call_enumerateChildNodesUsingBlock(SCNNode arg0, BoolPtr arg1);
-    }
 
     /**
      * eulerAngles</br>
@@ -331,12 +445,28 @@ public class SCNNode extends NSObject
     public native boolean isHidden();
 
     /**
+     * hidden</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/instp/SCNNode/hidden">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHidden:")
+    public native void setHidden(boolean value);
+
+    /**
      * paused</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/instp/SCNNode/paused">iOS Dev Center</a>
      */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
+
+    /**
+     * paused</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/instp/SCNNode/paused">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPaused:")
+    public native void setPaused(boolean value);
 
     /**
      * light</br>
@@ -361,22 +491,6 @@ public class SCNNode extends NSObject
     @Generated
     @Selector("name")
     public native String name();
-
-    /**
-     * node</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/clm/SCNNode/node">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("node")
-    public static native SCNNode node();
-
-    /**
-     * nodeWithGeometry:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/clm/SCNNode/nodeWithGeometry:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("nodeWithGeometry:")
-    public static native SCNNode nodeWithGeometry(SCNGeometry geometry);
 
     /**
      * opacity</br>
@@ -625,14 +739,6 @@ public class SCNNode extends NSObject
     public native void setGeometry(SCNGeometry value);
 
     /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/instp/SCNNode/hidden">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHidden:")
-    public native void setHidden(boolean value);
-
-    /**
      * light</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/instp/SCNNode/light">iOS Dev Center</a>
      */
@@ -671,14 +777,6 @@ public class SCNNode extends NSObject
     @Generated
     @Selector("setOrientation:")
     public native void setOrientation(@ByValue SCNVector4 value);
-
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/instp/SCNNode/paused">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPaused:")
-    public native void setPaused(boolean value);
 
     /**
      * physicsBody</br>
@@ -785,10 +883,6 @@ public class SCNNode extends NSObject
     public native SCNSkinner skinner();
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
@@ -833,14 +927,6 @@ public class SCNNode extends NSObject
     public native NSArray<? extends SCNAudioPlayer> audioPlayers();
 
     /**
-     * nodeWithMDLObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/clm/SCNNode/nodeWithMDLObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("nodeWithMDLObject:")
-    public static native SCNNode nodeWithMDLObject(MDLObject mdlObject);
-
-    /**
      * removeAllAudioPlayers</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNNode_Class/index.html#//apple_ref/occ/instm/SCNNode/removeAllAudioPlayers">iOS Dev Center</a>
      */
@@ -856,103 +942,17 @@ public class SCNNode extends NSObject
     @Selector("removeAudioPlayer:")
     public native void removeAudioPlayer(SCNAudioPlayer player);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_childNodesPassingTest {
+        @Generated
+        boolean call_childNodesPassingTest(SCNNode arg0, BoolPtr arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_enumerateChildNodesUsingBlock {
+        @Generated
+        void call_enumerateChildNodesUsingBlock(SCNNode arg0, BoolPtr arg1);
+    }
 }

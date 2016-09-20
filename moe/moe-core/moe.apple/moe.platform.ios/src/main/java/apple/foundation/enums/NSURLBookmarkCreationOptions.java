@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSURLBookmarkCreationOptions {
-    @Generated
-    private NSURLBookmarkCreationOptions() {
-    }
-
     @Generated @NUInt public static final long PreferFileIDResolution = 0x0000000000000100L;
     @Generated @NUInt public static final long MinimalBookmark = 0x0000000000000200L;
     @Generated @NUInt public static final long SuitableForBookmarkFile = 0x0000000000000400L;
+
+    @Generated
+    private NSURLBookmarkCreationOptions() {
+    }
 }

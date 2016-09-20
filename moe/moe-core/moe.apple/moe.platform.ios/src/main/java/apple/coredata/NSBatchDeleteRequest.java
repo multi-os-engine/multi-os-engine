@@ -59,31 +59,6 @@ public class NSBatchDeleteRequest extends NSPersistentStoreRequest {
     public static native NSBatchDeleteRequest alloc();
 
     @Generated
-    @Selector("fetchRequest")
-    public native NSFetchRequest fetchRequest();
-
-    @Generated
-    @Selector("init")
-    public native NSBatchDeleteRequest init();
-
-    @Generated
-    @Selector("initWithFetchRequest:")
-    public native NSBatchDeleteRequest initWithFetchRequest(NSFetchRequest fetch);
-
-    @Generated
-    @Selector("initWithObjectIDs:")
-    public native NSBatchDeleteRequest initWithObjectIDs(NSArray<? extends NSManagedObjectID> objects);
-
-    @Generated
-    @Selector("resultType")
-    @NUInt
-    public native long resultType();
-
-    @Generated
-    @Selector("setResultType:")
-    public native void setResultType(@NUInt long value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -182,4 +157,29 @@ public class NSBatchDeleteRequest extends NSPersistentStoreRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("fetchRequest")
+    public native NSFetchRequest fetchRequest();
+
+    @Generated
+    @Selector("init")
+    public native NSBatchDeleteRequest init();
+
+    @Generated
+    @Selector("initWithFetchRequest:")
+    public native NSBatchDeleteRequest initWithFetchRequest(NSFetchRequest fetch);
+
+    @Generated
+    @Selector("initWithObjectIDs:")
+    public native NSBatchDeleteRequest initWithObjectIDs(NSArray<? extends NSManagedObjectID> objects);
+
+    @Generated
+    @Selector("resultType")
+    @NUInt
+    public native long resultType();
+
+    @Generated
+    @Selector("setResultType:")
+    public native void setResultType(@NUInt long value);
 }

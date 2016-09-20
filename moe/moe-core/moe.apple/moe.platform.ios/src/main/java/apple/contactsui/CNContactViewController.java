@@ -68,6 +68,151 @@ public class CNContactViewController extends UIViewController {
     public static native CNContactViewController alloc();
 
     /**
+     * descriptorForRequiredKeys</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/descriptorForRequiredKeys">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("descriptorForRequiredKeys")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native CNKeyDescriptor descriptorForRequiredKeys();
+
+    /**
+     * viewControllerForContact:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/viewControllerForContact:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("viewControllerForContact:")
+    public static native CNContactViewController viewControllerForContact(CNContact contact);
+
+    /**
+     * viewControllerForNewContact:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/viewControllerForNewContact:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("viewControllerForNewContact:")
+    public static native CNContactViewController viewControllerForNewContact(CNContact contact);
+
+    /**
+     * viewControllerForUnknownContact:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/viewControllerForUnknownContact:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("viewControllerForUnknownContact:")
+    public static native CNContactViewController viewControllerForUnknownContact(CNContact contact);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("attemptRotationToDeviceOrientation")
+    public static native void attemptRotationToDeviceOrientation();
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("clearTextInputContextIdentifier:")
+    public static native void clearTextInputContextIdentifier(String identifier);
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("prepareInterstitialAds")
+    public static native void prepareInterstitialAds();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
      * allowsActions</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/instp/CNContactViewController/allowsActions">iOS Dev Center</a>
      */
@@ -115,15 +260,6 @@ public class CNContactViewController extends UIViewController {
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native CNContactViewControllerDelegate delegate();
-
-    /**
-     * descriptorForRequiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/descriptorForRequiredKeys">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("descriptorForRequiredKeys")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native CNKeyDescriptor descriptorForRequiredKeys();
 
     /**
      * displayedPropertyKeys</br>
@@ -272,140 +408,4 @@ public class CNContactViewController extends UIViewController {
     @Generated
     @Selector("shouldShowLinkedContacts")
     public native boolean shouldShowLinkedContacts();
-
-    /**
-     * viewControllerForContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/viewControllerForContact:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("viewControllerForContact:")
-    public static native CNContactViewController viewControllerForContact(CNContact contact);
-
-    /**
-     * viewControllerForNewContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/viewControllerForNewContact:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("viewControllerForNewContact:")
-    public static native CNContactViewController viewControllerForNewContact(CNContact contact);
-
-    /**
-     * viewControllerForUnknownContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactViewController_Class/index.html#//apple_ref/occ/clm/CNContactViewController/viewControllerForUnknownContact:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("viewControllerForUnknownContact:")
-    public static native CNContactViewController viewControllerForUnknownContact(CNContact contact);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("attemptRotationToDeviceOrientation")
-    public static native void attemptRotationToDeviceOrientation();
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

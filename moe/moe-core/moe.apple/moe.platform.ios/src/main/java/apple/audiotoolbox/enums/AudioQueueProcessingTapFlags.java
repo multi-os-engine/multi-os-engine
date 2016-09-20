@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioQueueProcessingTapFlags {
-    @Generated
-    private AudioQueueProcessingTapFlags() {
-    }
-
     @Generated public static final int PreEffects = 0x00000001;
     @Generated public static final int PostEffects = 0x00000002;
     @Generated public static final int Siphon = 0x00000004;
     @Generated public static final int StartOfStream = 0x00000100;
     @Generated public static final int EndOfStream = 0x00000200;
+
+    @Generated
+    private AudioQueueProcessingTapFlags() {
+    }
 }

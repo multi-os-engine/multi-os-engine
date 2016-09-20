@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFStreamStatus {
-    @Generated
-    private CFStreamStatus() {
-    }
-
     @Generated @NInt public static final long NotOpen = 0x0000000000000000L;
     @Generated @NInt public static final long Opening = 0x0000000000000001L;
     @Generated @NInt public static final long Open = 0x0000000000000002L;
@@ -33,4 +29,7 @@ public final class CFStreamStatus {
     @Generated @NInt public static final long AtEnd = 0x0000000000000005L;
     @Generated @NInt public static final long Closed = 0x0000000000000006L;
     @Generated @NInt public static final long Error = 0x0000000000000007L;
+    @Generated
+    private CFStreamStatus() {
+    }
 }

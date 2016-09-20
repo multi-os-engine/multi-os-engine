@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIApplicationShortcutIconType {
-    @Generated
-    private UIApplicationShortcutIconType() {
-    }
-
     @Generated @NInt public static final long Compose = 0x0000000000000000L;
     @Generated @NInt public static final long Play = 0x0000000000000001L;
     @Generated @NInt public static final long Pause = 0x0000000000000002L;
@@ -54,4 +50,8 @@ public final class UIApplicationShortcutIconType {
     @Generated @NInt public static final long Shuffle = 0x000000000000001AL;
     @Generated @NInt public static final long Audio = 0x000000000000001BL;
     @Generated @NInt public static final long Update = 0x000000000000001CL;
+
+    @Generated
+    private UIApplicationShortcutIconType() {
+    }
 }

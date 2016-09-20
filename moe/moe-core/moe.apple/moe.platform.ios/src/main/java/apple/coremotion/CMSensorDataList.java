@@ -62,15 +62,6 @@ public class CMSensorDataList extends NSObject implements NSFastEnumeration {
     public static native CMSensorDataList alloc();
 
     @Generated
-    @Selector("countByEnumeratingWithState:objects:count:")
-    @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
-
-    @Generated
-    @Selector("init")
-    public native CMSensorDataList init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +160,13 @@ public class CMSensorDataList extends NSObject implements NSFastEnumeration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("countByEnumeratingWithState:objects:count:")
+    @NUInt
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+
+    @Generated
+    @Selector("init")
+    public native CMSensorDataList init();
 }

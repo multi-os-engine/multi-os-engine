@@ -66,14 +66,6 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     public static native MKMapCamera alloc();
 
     /**
-     * altitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/altitude">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("altitude")
-    public native double altitude();
-
-    /**
      * camera</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/clm/MKMapCamera/camera">iOS Dev Center</a>
      */
@@ -91,91 +83,9 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
             @ByValue CLLocationCoordinate2D centerCoordinate, @ByValue CLLocationCoordinate2D eyeCoordinate,
             double eyeAltitude);
 
-    /**
-     * centerCoordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/centerCoordinate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("centerCoordinate")
-    @ByValue
-    public native CLLocationCoordinate2D centerCoordinate();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * heading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/heading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("heading")
-    public native double heading();
-
-    @Generated
-    @Selector("init")
-    public native MKMapCamera init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKMapCamera initWithCoder(NSCoder aDecoder);
-
-    /**
-     * pitch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/pitch">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pitch")
-    @NFloat
-    public native double pitch();
-
-    /**
-     * altitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/altitude">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAltitude:")
-    public native void setAltitude(double value);
-
-    /**
-     * centerCoordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/centerCoordinate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCenterCoordinate:")
-    public native void setCenterCoordinate(@ByValue CLLocationCoordinate2D value);
-
-    /**
-     * heading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/heading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHeading:")
-    public native void setHeading(double value);
-
-    /**
-     * pitch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/pitch">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPitch:")
-    public native void setPitch(@NFloat double value);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     /**
      * cameraLookingAtCenterCoordinate:fromDistance:pitch:heading:</br>
@@ -285,4 +195,94 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * altitude</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/altitude">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("altitude")
+    public native double altitude();
+
+    /**
+     * centerCoordinate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/centerCoordinate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("centerCoordinate")
+    @ByValue
+    public native CLLocationCoordinate2D centerCoordinate();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * heading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/heading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("heading")
+    public native double heading();
+
+    @Generated
+    @Selector("init")
+    public native MKMapCamera init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MKMapCamera initWithCoder(NSCoder aDecoder);
+
+    /**
+     * pitch</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/pitch">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pitch")
+    @NFloat
+    public native double pitch();
+
+    /**
+     * altitude</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/altitude">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAltitude:")
+    public native void setAltitude(double value);
+
+    /**
+     * centerCoordinate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/centerCoordinate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCenterCoordinate:")
+    public native void setCenterCoordinate(@ByValue CLLocationCoordinate2D value);
+
+    /**
+     * heading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/heading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHeading:")
+    public native void setHeading(double value);
+
+    /**
+     * pitch</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapCamera_class/index.html#//apple_ref/occ/instp/MKMapCamera/pitch">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPitch:")
+    public native void setPitch(@NFloat double value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

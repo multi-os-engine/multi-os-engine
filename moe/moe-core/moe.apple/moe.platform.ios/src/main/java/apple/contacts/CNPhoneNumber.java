@@ -62,32 +62,6 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native CNPhoneNumber alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CNPhoneNumber init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNPhoneNumber initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithStringValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPhoneNumber_Class/index.html#//apple_ref/occ/instm/CNPhoneNumber/initWithStringValue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithStringValue:")
-    public native CNPhoneNumber initWithStringValue(String string);
-
     /**
      * phoneNumberWithStringValue:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPhoneNumber_Class/index.html#//apple_ref/occ/clm/CNPhoneNumber/phoneNumberWithStringValue:">iOS Dev Center</a>
@@ -96,23 +70,9 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
     @Selector("phoneNumberWithStringValue:")
     public static native CNPhoneNumber phoneNumberWithStringValue(String stringValue);
 
-    /**
-     * stringValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPhoneNumber_Class/index.html#//apple_ref/occ/instp/CNPhoneNumber/stringValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringValue")
-    public native String stringValue();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -213,4 +173,44 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CNPhoneNumber init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNPhoneNumber initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithStringValue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPhoneNumber_Class/index.html#//apple_ref/occ/instm/CNPhoneNumber/initWithStringValue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithStringValue:")
+    public native CNPhoneNumber initWithStringValue(String string);
+
+    /**
+     * stringValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPhoneNumber_Class/index.html#//apple_ref/occ/instp/CNPhoneNumber/stringValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringValue")
+    public native String stringValue();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

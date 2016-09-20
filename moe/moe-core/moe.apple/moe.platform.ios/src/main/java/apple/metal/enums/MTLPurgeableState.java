@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLPurgeableState {
-    @Generated
-    private MTLPurgeableState() {
-    }
-
     @Generated @NUInt public static final long KeepCurrent = 0x0000000000000001L;
     @Generated @NUInt public static final long NonVolatile = 0x0000000000000002L;
     @Generated @NUInt public static final long Volatile = 0x0000000000000003L;
     @Generated @NUInt public static final long Empty = 0x0000000000000004L;
+
+    @Generated
+    private MTLPurgeableState() {
+    }
 }

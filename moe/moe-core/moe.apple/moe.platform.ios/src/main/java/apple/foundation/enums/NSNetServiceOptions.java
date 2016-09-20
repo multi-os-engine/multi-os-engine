@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSNetServiceOptions {
+    @Generated @NUInt public static final long NoAutoRename = 0x0000000000000001L;
+    @Generated @NUInt public static final long ListenForConnections = 0x0000000000000002L;
+
     @Generated
     private NSNetServiceOptions() {
     }
-
-    @Generated @NUInt public static final long NoAutoRename = 0x0000000000000001L;
-    @Generated @NUInt public static final long ListenForConnections = 0x0000000000000002L;
 }

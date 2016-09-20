@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HMCharacteristicValueAirParticulateSize {
+    @Generated @NInt public static final long Size2_5 = 0x0000000000000000L;
+    @Generated @NInt public static final long Size10 = 0x0000000000000001L;
+
     @Generated
     private HMCharacteristicValueAirParticulateSize() {
     }
-
-    @Generated @NInt public static final long Size2_5 = 0x0000000000000000L;
-    @Generated @NInt public static final long Size10 = 0x0000000000000001L;
 }

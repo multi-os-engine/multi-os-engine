@@ -60,62 +60,6 @@ public class UIFocusGuide extends UILayoutGuide {
     public static native UIFocusGuide alloc();
 
     @Generated
-    @Selector("init")
-    public native UIFocusGuide init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIFocusGuide initWithCoder(NSCoder aDecoder);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusGuide_Class/index.html#//apple_ref/occ/instp/UIFocusGuide/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * preferredFocusedView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusGuide_Class/index.html#//apple_ref/occ/instp/UIFocusGuide/preferredFocusedView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preferredFocusedView")
-    public native UIView preferredFocusedView();
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusGuide_Class/index.html#//apple_ref/occ/instp/UIFocusGuide/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    /**
-     * preferredFocusedView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusGuide_Class/index.html#//apple_ref/occ/instp/UIFocusGuide/preferredFocusedView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPreferredFocusedView:")
-    public native void setPreferredFocusedView_unsafe(UIView value);
-
-    /**
-     * preferredFocusedView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusGuide_Class/index.html#//apple_ref/occ/instp/UIFocusGuide/preferredFocusedView">iOS Dev Center</a>
-     */
-    @Generated
-    public void setPreferredFocusedView(UIView value) {
-        Object __old = preferredFocusedView();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setPreferredFocusedView_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -214,4 +158,60 @@ public class UIFocusGuide extends UILayoutGuide {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native UIFocusGuide init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIFocusGuide initWithCoder(NSCoder aDecoder);
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusGuide_Class/index.html#//apple_ref/occ/instp/UIFocusGuide/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusGuide_Class/index.html#//apple_ref/occ/instp/UIFocusGuide/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    /**
+     * preferredFocusedView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusGuide_Class/index.html#//apple_ref/occ/instp/UIFocusGuide/preferredFocusedView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preferredFocusedView")
+    public native UIView preferredFocusedView();
+
+    /**
+     * preferredFocusedView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusGuide_Class/index.html#//apple_ref/occ/instp/UIFocusGuide/preferredFocusedView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPreferredFocusedView:")
+    public native void setPreferredFocusedView_unsafe(UIView value);
+
+    /**
+     * preferredFocusedView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusGuide_Class/index.html#//apple_ref/occ/instp/UIFocusGuide/preferredFocusedView">iOS Dev Center</a>
+     */
+    @Generated
+    public void setPreferredFocusedView(UIView value) {
+        Object __old = preferredFocusedView();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setPreferredFocusedView_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 }

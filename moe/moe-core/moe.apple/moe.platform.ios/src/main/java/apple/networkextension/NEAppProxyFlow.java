@@ -60,50 +60,6 @@ public class NEAppProxyFlow extends NSObject {
     @Selector("alloc")
     public static native NEAppProxyFlow alloc();
 
-    /**
-     * closeReadWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyFlow/closeReadWithError:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("closeReadWithError:")
-    public native void closeReadWithError(NSError error);
-
-    /**
-     * closeWriteWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyFlow/closeWriteWithError:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("closeWriteWithError:")
-    public native void closeWriteWithError(NSError error);
-
-    @Generated
-    @Selector("init")
-    public native NEAppProxyFlow init();
-
-    /**
-     * metaData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instp/NEAppProxyFlow/metaData">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("metaData")
-    public native NEFlowMetaData metaData();
-
-    /**
-     * openWithLocalEndpoint:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyFlow/openWithLocalEndpoint:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("openWithLocalEndpoint:completionHandler:")
-    public native void openWithLocalEndpointCompletionHandler(NWHostEndpoint localEndpoint,
-            @ObjCBlock(name = "call_openWithLocalEndpointCompletionHandler") Block_openWithLocalEndpointCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_openWithLocalEndpointCompletionHandler {
-        @Generated
-        void call_openWithLocalEndpointCompletionHandler(NSError arg0);
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -203,4 +159,48 @@ public class NEAppProxyFlow extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * closeReadWithError:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyFlow/closeReadWithError:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("closeReadWithError:")
+    public native void closeReadWithError(NSError error);
+
+    /**
+     * closeWriteWithError:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyFlow/closeWriteWithError:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("closeWriteWithError:")
+    public native void closeWriteWithError(NSError error);
+
+    @Generated
+    @Selector("init")
+    public native NEAppProxyFlow init();
+
+    /**
+     * metaData</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instp/NEAppProxyFlow/metaData">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("metaData")
+    public native NEFlowMetaData metaData();
+
+    /**
+     * openWithLocalEndpoint:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyFlow/openWithLocalEndpoint:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("openWithLocalEndpoint:completionHandler:")
+    public native void openWithLocalEndpointCompletionHandler(NWHostEndpoint localEndpoint,
+            @ObjCBlock(name = "call_openWithLocalEndpointCompletionHandler") Block_openWithLocalEndpointCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_openWithLocalEndpointCompletionHandler {
+        @Generated
+        void call_openWithLocalEndpointCompletionHandler(NSError arg0);
+    }
 }

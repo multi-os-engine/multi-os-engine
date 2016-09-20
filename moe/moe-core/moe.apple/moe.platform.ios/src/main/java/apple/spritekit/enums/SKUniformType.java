@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKUniformType {
-    @Generated
-    private SKUniformType() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Float = 0x0000000000000001L;
     @Generated @NInt public static final long FloatVector2 = 0x0000000000000002L;
@@ -34,4 +30,8 @@ public final class SKUniformType {
     @Generated @NInt public static final long FloatMatrix3 = 0x0000000000000006L;
     @Generated @NInt public static final long FloatMatrix4 = 0x0000000000000007L;
     @Generated @NInt public static final long Texture = 0x0000000000000008L;
+
+    @Generated
+    private SKUniformType() {
+    }
 }

@@ -62,59 +62,9 @@ public class WCSessionUserInfoTransfer extends NSObject implements NSSecureCodin
     @Selector("alloc")
     public static native WCSessionUserInfoTransfer alloc();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instm/WCSessionUserInfoTransfer/cancel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancel")
-    public native void cancel();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native WCSessionUserInfoTransfer init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native WCSessionUserInfoTransfer initWithCoder(NSCoder aDecoder);
-
-    /**
-     * currentComplicationInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instp/WCSessionUserInfoTransfer/currentComplicationInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isCurrentComplicationInfo")
-    public native boolean isCurrentComplicationInfo();
-
-    /**
-     * transferring</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instp/WCSessionUserInfoTransfer/transferring">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isTransferring")
-    public native boolean isTransferring();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instp/WCSessionUserInfoTransfer/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInfo")
-    public native NSDictionary<String, ?> userInfo();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -215,4 +165,54 @@ public class WCSessionUserInfoTransfer extends NSObject implements NSSecureCodin
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cancel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instm/WCSessionUserInfoTransfer/cancel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancel")
+    public native void cancel();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native WCSessionUserInfoTransfer init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native WCSessionUserInfoTransfer initWithCoder(NSCoder aDecoder);
+
+    /**
+     * currentComplicationInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instp/WCSessionUserInfoTransfer/currentComplicationInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isCurrentComplicationInfo")
+    public native boolean isCurrentComplicationInfo();
+
+    /**
+     * transferring</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instp/WCSessionUserInfoTransfer/transferring">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isTransferring")
+    public native boolean isTransferring();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionUserInfoTransfer_class/index.html#//apple_ref/occ/instp/WCSessionUserInfoTransfer/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInfo")
+    public native NSDictionary<String, ?> userInfo();
 }

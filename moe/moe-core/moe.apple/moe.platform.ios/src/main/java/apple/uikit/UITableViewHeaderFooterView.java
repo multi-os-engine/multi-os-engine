@@ -66,98 +66,6 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("alloc")
     public static native UITableViewHeaderFooterView alloc();
 
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/backgroundView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backgroundView")
-    public native UIView backgroundView();
-
-    /**
-     * contentView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/contentView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentView")
-    public native UIView contentView();
-
-    /**
-     * detailTextLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/detailTextLabel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("detailTextLabel")
-    public native UILabel detailTextLabel();
-
-    @Generated
-    @Selector("init")
-    public native UITableViewHeaderFooterView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UITableViewHeaderFooterView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * initWithReuseIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instm/UITableViewHeaderFooterView/initWithReuseIdentifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithReuseIdentifier:")
-    public native UITableViewHeaderFooterView initWithReuseIdentifier(String reuseIdentifier);
-
-    /**
-     * prepareForReuse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instm/UITableViewHeaderFooterView/prepareForReuse">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("prepareForReuse")
-    public native void prepareForReuse();
-
-    /**
-     * reuseIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/reuseIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reuseIdentifier")
-    public native String reuseIdentifier();
-
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/backgroundView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackgroundView:")
-    public native void setBackgroundView(UIView value);
-
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/tintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
-
-    /**
-     * textLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/textLabel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textLabel")
-    public native UILabel textLabel();
-
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/tintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tintColor")
-    public native UIColor tintColor();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UITableViewHeaderFooterView initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -211,23 +119,9 @@ public class UITableViewHeaderFooterView extends UIView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -238,27 +132,10 @@ public class UITableViewHeaderFooterView extends UIView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -269,24 +146,9 @@ public class UITableViewHeaderFooterView extends UIView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -484,4 +346,142 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * backgroundView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/backgroundView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backgroundView")
+    public native UIView backgroundView();
+
+    /**
+     * contentView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/contentView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentView")
+    public native UIView contentView();
+
+    /**
+     * detailTextLabel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/detailTextLabel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("detailTextLabel")
+    public native UILabel detailTextLabel();
+
+    @Generated
+    @Selector("init")
+    public native UITableViewHeaderFooterView init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UITableViewHeaderFooterView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * initWithReuseIdentifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instm/UITableViewHeaderFooterView/initWithReuseIdentifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithReuseIdentifier:")
+    public native UITableViewHeaderFooterView initWithReuseIdentifier(String reuseIdentifier);
+
+    /**
+     * prepareForReuse</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instm/UITableViewHeaderFooterView/prepareForReuse">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("prepareForReuse")
+    public native void prepareForReuse();
+
+    /**
+     * reuseIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/reuseIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reuseIdentifier")
+    public native String reuseIdentifier();
+
+    /**
+     * backgroundView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/backgroundView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackgroundView:")
+    public native void setBackgroundView(UIView value);
+
+    /**
+     * tintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/tintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTintColor:")
+    public native void setTintColor(UIColor value);
+
+    /**
+     * textLabel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/textLabel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textLabel")
+    public native UILabel textLabel();
+
+    /**
+     * tintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewHeaderFooterView_class/index.html#//apple_ref/occ/instp/UITableViewHeaderFooterView/tintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tintColor")
+    public native UIColor tintColor();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UITableViewHeaderFooterView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

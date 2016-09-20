@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIDynamicItemCollisionBoundsType {
-    @Generated
-    private UIDynamicItemCollisionBoundsType() {
-    }
-
     @Generated @NUInt public static final long Rectangle = 0x0000000000000000L;
     @Generated @NUInt public static final long Ellipse = 0x0000000000000001L;
     @Generated @NUInt public static final long Path = 0x0000000000000002L;
+
+    @Generated
+    private UIDynamicItemCollisionBoundsType() {
+    }
 }

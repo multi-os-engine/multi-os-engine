@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CNContainerType {
-    @Generated
-    private CNContainerType() {
-    }
-
     @Generated @NInt public static final long Unassigned = 0x0000000000000000L;
     @Generated @NInt public static final long Local = 0x0000000000000001L;
     @Generated @NInt public static final long Exchange = 0x0000000000000002L;
     @Generated @NInt public static final long CardDAV = 0x0000000000000003L;
+
+    @Generated
+    private CNContainerType() {
+    }
 }

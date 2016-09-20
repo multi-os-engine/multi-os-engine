@@ -59,67 +59,6 @@ public class MKETAResponse extends NSObject {
     @Selector("alloc")
     public static native MKETAResponse alloc();
 
-    /**
-     * destination</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/destination">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("destination")
-    public native MKMapItem destination();
-
-    /**
-     * expectedTravelTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/expectedTravelTime">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expectedTravelTime")
-    public native double expectedTravelTime();
-
-    @Generated
-    @Selector("init")
-    public native MKETAResponse init();
-
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/source">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("source")
-    public native MKMapItem source();
-
-    /**
-     * distance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/distance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("distance")
-    public native double distance();
-
-    /**
-     * expectedArrivalDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/expectedArrivalDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expectedArrivalDate")
-    public native NSDate expectedArrivalDate();
-
-    /**
-     * expectedDepartureDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/expectedDepartureDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expectedDepartureDate")
-    public native NSDate expectedDepartureDate();
-
-    /**
-     * transportType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/transportType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transportType")
-    @NUInt
-    public native long transportType();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -219,4 +158,65 @@ public class MKETAResponse extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * destination</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/destination">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("destination")
+    public native MKMapItem destination();
+
+    /**
+     * expectedTravelTime</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/expectedTravelTime">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expectedTravelTime")
+    public native double expectedTravelTime();
+
+    @Generated
+    @Selector("init")
+    public native MKETAResponse init();
+
+    /**
+     * source</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/source">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("source")
+    public native MKMapItem source();
+
+    /**
+     * distance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/distance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("distance")
+    public native double distance();
+
+    /**
+     * expectedArrivalDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/expectedArrivalDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expectedArrivalDate")
+    public native NSDate expectedArrivalDate();
+
+    /**
+     * expectedDepartureDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/expectedDepartureDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expectedDepartureDate")
+    public native NSDate expectedDepartureDate();
+
+    /**
+     * transportType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKETAResponse_class/index.html#//apple_ref/occ/instp/MKETAResponse/transportType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transportType")
+    @NUInt
+    public native long transportType();
 }

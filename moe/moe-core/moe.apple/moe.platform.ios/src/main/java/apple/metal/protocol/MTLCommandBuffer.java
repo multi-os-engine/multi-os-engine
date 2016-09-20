@@ -43,13 +43,6 @@ public interface MTLCommandBuffer {
     @Selector("addCompletedHandler:")
     void addCompletedHandler(@ObjCBlock(name = "call_addCompletedHandler") Block_addCompletedHandler block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addCompletedHandler {
-        @Generated
-        void call_addCompletedHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
-    }
-
     /**
      * addScheduledHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLCommandBuffer_Ref/index.html#//apple_ref/occ/intfm/MTLCommandBuffer/addScheduledHandler:">iOS Dev Center</a>
@@ -57,13 +50,6 @@ public interface MTLCommandBuffer {
     @Generated
     @Selector("addScheduledHandler:")
     void addScheduledHandler(@ObjCBlock(name = "call_addScheduledHandler") Block_addScheduledHandler block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addScheduledHandler {
-        @Generated
-        void call_addScheduledHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
-    }
 
     /**
      * blitCommandEncoder</br>
@@ -207,4 +193,18 @@ public interface MTLCommandBuffer {
     @Generated
     @Selector("waitUntilScheduled")
     void waitUntilScheduled();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addCompletedHandler {
+        @Generated
+        void call_addCompletedHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addScheduledHandler {
+        @Generated
+        void call_addScheduledHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+    }
 }

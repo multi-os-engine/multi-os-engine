@@ -50,6 +50,8 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Library("CoreMIDI")
 @Runtime(CRuntime.class)
 public final class CoreMIDI {
+    @Generated public static final int kMIDIObjectType_ExternalMask = 0x00000010;
+
     static {
         NatJ.register();
     }
@@ -68,15 +70,6 @@ public final class CoreMIDI {
             @FunctionPtr(name = "call_MIDIClientCreate") Function_MIDIClientCreate notifyProc, VoidPtr notifyRefCon,
             IntPtr outClient);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_MIDIClientCreate {
-        @Generated
-        void call_MIDIClientCreate(
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDINotification arg0,
-                VoidPtr arg1);
-    }
-
     /**
      * MIDIClientDispose</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDIServices_Reference/index.html#//apple_ref/c/func/MIDIClientDispose">iOS Dev Center</a>
@@ -94,15 +87,6 @@ public final class CoreMIDI {
     public static native int MIDIInputPortCreate(int client, CFStringRef portName,
             @FunctionPtr(name = "call_MIDIInputPortCreate") Function_MIDIInputPortCreate readProc, VoidPtr refCon,
             IntPtr outPort);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_MIDIInputPortCreate {
-        @Generated
-        void call_MIDIInputPortCreate(
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg0, VoidPtr arg1,
-                VoidPtr arg2);
-    }
 
     /**
      * MIDIOutputPortCreate</br>
@@ -263,15 +247,6 @@ public final class CoreMIDI {
     public static native int MIDIDestinationCreate(int client, CFStringRef name,
             @FunctionPtr(name = "call_MIDIDestinationCreate") Function_MIDIDestinationCreate readProc, VoidPtr refCon,
             IntPtr outDest);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_MIDIDestinationCreate {
-        @Generated
-        void call_MIDIDestinationCreate(
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg0, VoidPtr arg1,
-                VoidPtr arg2);
-    }
 
     /**
      * MIDISourceCreate</br>
@@ -817,36 +792,15 @@ public final class CoreMIDI {
     public static native int MIDIClientCreateWithBlock(CFStringRef name, IntPtr outClient,
             @ObjCBlock(name = "call_MIDIClientCreateWithBlock") Block_MIDIClientCreateWithBlock notifyBlock);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_MIDIClientCreateWithBlock {
-        @Generated
-        void call_MIDIClientCreateWithBlock(MIDINotification arg0);
-    }
-
     @Generated
     @CFunction
     public static native int MIDIInputPortCreateWithBlock(int client, CFStringRef portName, IntPtr outPort,
             @ObjCBlock(name = "call_MIDIInputPortCreateWithBlock") Block_MIDIInputPortCreateWithBlock readBlock);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_MIDIInputPortCreateWithBlock {
-        @Generated
-        void call_MIDIInputPortCreateWithBlock(MIDIPacketList arg0, VoidPtr arg1);
-    }
-
     @Generated
     @CFunction
     public static native int MIDIDestinationCreateWithBlock(int client, CFStringRef name, IntPtr outDest,
             @ObjCBlock(name = "call_MIDIDestinationCreateWithBlock") Block_MIDIDestinationCreateWithBlock readBlock);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_MIDIDestinationCreateWithBlock {
-        @Generated
-        void call_MIDIDestinationCreateWithBlock(MIDIPacketList arg0, VoidPtr arg1);
-    }
 
     /**
      * MIDIPacketNext</br>
@@ -866,5 +820,51 @@ public final class CoreMIDI {
     public static native long MIDIThruConnectionParamsSize(
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIThruConnectionParams ptr);
 
-    @Generated public static final int kMIDIObjectType_ExternalMask = 0x00000010;
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_MIDIClientCreate {
+        @Generated
+        void call_MIDIClientCreate(
+                @UncertainArgument("Options: reference, array Fallback: reference") MIDINotification arg0,
+                VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_MIDIInputPortCreate {
+        @Generated
+        void call_MIDIInputPortCreate(
+                @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg0, VoidPtr arg1,
+                VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_MIDIDestinationCreate {
+        @Generated
+        void call_MIDIDestinationCreate(
+                @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg0, VoidPtr arg1,
+                VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_MIDIClientCreateWithBlock {
+        @Generated
+        void call_MIDIClientCreateWithBlock(MIDINotification arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_MIDIInputPortCreateWithBlock {
+        @Generated
+        void call_MIDIInputPortCreateWithBlock(MIDIPacketList arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_MIDIDestinationCreateWithBlock {
+        @Generated
+        void call_MIDIDestinationCreateWithBlock(MIDIPacketList arg0, VoidPtr arg1);
+    }
 }

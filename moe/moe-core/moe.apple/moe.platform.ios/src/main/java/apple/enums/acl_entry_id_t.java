@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class acl_entry_id_t {
-    @Generated
-    private acl_entry_id_t() {
-    }
-
     @Generated public static final int ACL_FIRST_ENTRY = 0x00000000;
     @Generated public static final int ACL_NEXT_ENTRY = 0xFFFFFFFF;
     @Generated public static final int ACL_LAST_ENTRY = 0xFFFFFFFE;
+
+    @Generated
+    private acl_entry_id_t() {
+    }
 }

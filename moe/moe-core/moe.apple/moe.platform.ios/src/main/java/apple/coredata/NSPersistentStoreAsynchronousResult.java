@@ -61,26 +61,6 @@ public class NSPersistentStoreAsynchronousResult extends NSPersistentStoreResult
     public static native NSPersistentStoreAsynchronousResult alloc();
 
     @Generated
-    @Selector("cancel")
-    public native void cancel();
-
-    @Generated
-    @Selector("init")
-    public native NSPersistentStoreAsynchronousResult init();
-
-    @Generated
-    @Selector("managedObjectContext")
-    public native NSManagedObjectContext managedObjectContext();
-
-    @Generated
-    @Selector("operationError")
-    public native NSError operationError();
-
-    @Generated
-    @Selector("progress")
-    public native NSProgress progress();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -179,4 +159,24 @@ public class NSPersistentStoreAsynchronousResult extends NSPersistentStoreResult
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("cancel")
+    public native void cancel();
+
+    @Generated
+    @Selector("init")
+    public native NSPersistentStoreAsynchronousResult init();
+
+    @Generated
+    @Selector("managedObjectContext")
+    public native NSManagedObjectContext managedObjectContext();
+
+    @Generated
+    @Selector("operationError")
+    public native NSError operationError();
+
+    @Generated
+    @Selector("progress")
+    public native NSProgress progress();
 }

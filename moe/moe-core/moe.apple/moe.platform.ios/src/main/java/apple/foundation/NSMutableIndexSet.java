@@ -53,30 +53,6 @@ public class NSMutableIndexSet extends NSIndexSet {
         super(peer);
     }
 
-    /**
-     * addIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/addIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addIndex:")
-    public native void addIndex(@NUInt long value);
-
-    /**
-     * addIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/addIndexes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addIndexes:")
-    public native void addIndexes(NSIndexSet indexSet);
-
-    /**
-     * addIndexesInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/addIndexesInRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addIndexesInRange:")
-    public native void addIndexesInRange(@ByValue NSRange range);
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -93,66 +69,6 @@ public class NSMutableIndexSet extends NSIndexSet {
     @Generated
     @Selector("indexSetWithIndexesInRange:")
     public static native NSMutableIndexSet indexSetWithIndexesInRange(@ByValue NSRange range);
-
-    @Generated
-    @Selector("init")
-    public native NSMutableIndexSet init();
-
-    @Generated
-    @Selector("initWithIndex:")
-    public native NSMutableIndexSet initWithIndex(@NUInt long value);
-
-    @Generated
-    @Selector("initWithIndexSet:")
-    public native NSMutableIndexSet initWithIndexSet(NSIndexSet indexSet);
-
-    @Generated
-    @Selector("initWithIndexesInRange:")
-    public native NSMutableIndexSet initWithIndexesInRange(@ByValue NSRange range);
-
-    /**
-     * removeAllIndexes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/removeAllIndexes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeAllIndexes")
-    public native void removeAllIndexes();
-
-    /**
-     * removeIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/removeIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeIndex:")
-    public native void removeIndex(@NUInt long value);
-
-    /**
-     * removeIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/removeIndexes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeIndexes:")
-    public native void removeIndexes(NSIndexSet indexSet);
-
-    /**
-     * removeIndexesInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/removeIndexesInRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeIndexesInRange:")
-    public native void removeIndexesInRange(@ByValue NSRange range);
-
-    /**
-     * shiftIndexesStartingAtIndex:by:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/shiftIndexesStartingAtIndex:by:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shiftIndexesStartingAtIndex:by:")
-    public native void shiftIndexesStartingAtIndexBy(@NUInt long index, @NInt long delta);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMutableIndexSet initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -254,13 +170,97 @@ public class NSMutableIndexSet extends NSIndexSet {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * addIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/addIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addIndex:")
+    public native void addIndex(@NUInt long value);
+
+    /**
+     * addIndexes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/addIndexes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addIndexes:")
+    public native void addIndexes(NSIndexSet indexSet);
+
+    /**
+     * addIndexesInRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/addIndexesInRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addIndexesInRange:")
+    public native void addIndexesInRange(@ByValue NSRange range);
+
+    @Generated
+    @Selector("init")
+    public native NSMutableIndexSet init();
+
+    @Generated
+    @Selector("initWithIndex:")
+    public native NSMutableIndexSet initWithIndex(@NUInt long value);
+
+    @Generated
+    @Selector("initWithIndexSet:")
+    public native NSMutableIndexSet initWithIndexSet(NSIndexSet indexSet);
+
+    @Generated
+    @Selector("initWithIndexesInRange:")
+    public native NSMutableIndexSet initWithIndexesInRange(@ByValue NSRange range);
+
+    /**
+     * removeAllIndexes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/removeAllIndexes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeAllIndexes")
+    public native void removeAllIndexes();
+
+    /**
+     * removeIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/removeIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeIndex:")
+    public native void removeIndex(@NUInt long value);
+
+    /**
+     * removeIndexes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/removeIndexes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeIndexes:")
+    public native void removeIndexes(NSIndexSet indexSet);
+
+    /**
+     * removeIndexesInRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/removeIndexesInRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeIndexesInRange:")
+    public native void removeIndexesInRange(@ByValue NSRange range);
+
+    /**
+     * shiftIndexesStartingAtIndex:by:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/index.html#//apple_ref/occ/instm/NSMutableIndexSet/shiftIndexesStartingAtIndex:by:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shiftIndexesStartingAtIndex:by:")
+    public native void shiftIndexesStartingAtIndexBy(@NUInt long index, @NInt long delta);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSMutableIndexSet initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

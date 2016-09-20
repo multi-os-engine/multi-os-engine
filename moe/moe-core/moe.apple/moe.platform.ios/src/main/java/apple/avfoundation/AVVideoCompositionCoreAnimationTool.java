@@ -59,10 +59,6 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     @Selector("alloc")
     public static native AVVideoCompositionCoreAnimationTool alloc();
 
-    @Generated
-    @Selector("init")
-    public native AVVideoCompositionCoreAnimationTool init();
-
     /**
      * videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionCoreAnimationTool_Class/index.html#//apple_ref/occ/clm/AVVideoCompositionCoreAnimationTool/videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:">iOS Dev Center</a>
@@ -189,4 +185,8 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVVideoCompositionCoreAnimationTool init();
 }

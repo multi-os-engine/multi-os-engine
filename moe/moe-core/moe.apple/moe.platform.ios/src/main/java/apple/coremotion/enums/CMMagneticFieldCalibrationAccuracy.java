@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CMMagneticFieldCalibrationAccuracy {
-    @Generated
-    private CMMagneticFieldCalibrationAccuracy() {
-    }
-
     @Generated public static final int CMMagneticFieldCalibrationAccuracyUncalibrated = 0xFFFFFFFF;
     @Generated public static final int CMMagneticFieldCalibrationAccuracyLow = 0x00000000;
     @Generated public static final int CMMagneticFieldCalibrationAccuracyMedium = 0x00000001;
     @Generated public static final int CMMagneticFieldCalibrationAccuracyHigh = 0x00000002;
+
+    @Generated
+    private CMMagneticFieldCalibrationAccuracy() {
+    }
 }

@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNParticleOrientationMode {
-    @Generated
-    private SCNParticleOrientationMode() {
-    }
-
     @Generated @NInt public static final long BillboardScreenAligned = 0x0000000000000000L;
     @Generated @NInt public static final long BillboardViewAligned = 0x0000000000000001L;
     @Generated @NInt public static final long Free = 0x0000000000000002L;
     @Generated @NInt public static final long BillboardYAligned = 0x0000000000000003L;
+
+    @Generated
+    private SCNParticleOrientationMode() {
+    }
 }

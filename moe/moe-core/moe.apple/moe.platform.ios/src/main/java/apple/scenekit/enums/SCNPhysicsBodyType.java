@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNPhysicsBodyType {
-    @Generated
-    private SCNPhysicsBodyType() {
-    }
-
     @Generated @NInt public static final long Static = 0x0000000000000000L;
     @Generated @NInt public static final long Dynamic = 0x0000000000000001L;
     @Generated @NInt public static final long Kinematic = 0x0000000000000002L;
+
+    @Generated
+    private SCNPhysicsBodyType() {
+    }
 }

@@ -71,162 +71,6 @@ public class MPVolumeView extends UIView implements NSCoding {
     public static native MPVolumeView alloc();
 
     @Generated
-    @Selector("areWirelessRoutesAvailable")
-    public native boolean areWirelessRoutesAvailable();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native MPVolumeView init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPVolumeView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native MPVolumeView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("isWirelessRouteActive")
-    public native boolean isWirelessRouteActive();
-
-    /**
-     * maximumVolumeSliderImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/maximumVolumeSliderImageForState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumVolumeSliderImageForState:")
-    public native UIImage maximumVolumeSliderImageForState(@NUInt long state);
-
-    /**
-     * minimumVolumeSliderImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/minimumVolumeSliderImageForState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumVolumeSliderImageForState:")
-    public native UIImage minimumVolumeSliderImageForState(@NUInt long state);
-
-    /**
-     * routeButtonImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/routeButtonImageForState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("routeButtonImageForState:")
-    public native UIImage routeButtonImageForState(@NUInt long state);
-
-    /**
-     * routeButtonRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/routeButtonRectForBounds:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("routeButtonRectForBounds:")
-    @ByValue
-    public native CGRect routeButtonRectForBounds(@ByValue CGRect bounds);
-
-    /**
-     * setMaximumVolumeSliderImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/setMaximumVolumeSliderImage:forState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumVolumeSliderImage:forState:")
-    public native void setMaximumVolumeSliderImageForState(UIImage image, @NUInt long state);
-
-    /**
-     * setMinimumVolumeSliderImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/setMinimumVolumeSliderImage:forState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumVolumeSliderImage:forState:")
-    public native void setMinimumVolumeSliderImageForState(UIImage image, @NUInt long state);
-
-    /**
-     * setRouteButtonImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/setRouteButtonImage:forState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRouteButtonImage:forState:")
-    public native void setRouteButtonImageForState(UIImage image, @NUInt long state);
-
-    /**
-     * showsRouteButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instp/MPVolumeView/showsRouteButton">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShowsRouteButton:")
-    public native void setShowsRouteButton(boolean value);
-
-    /**
-     * showsVolumeSlider</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instp/MPVolumeView/showsVolumeSlider">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShowsVolumeSlider:")
-    public native void setShowsVolumeSlider(boolean value);
-
-    /**
-     * setVolumeThumbImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/setVolumeThumbImage:forState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setVolumeThumbImage:forState:")
-    public native void setVolumeThumbImageForState(UIImage image, @NUInt long state);
-
-    @Generated
-    @Selector("setVolumeWarningSliderImage:")
-    public native void setVolumeWarningSliderImage(UIImage value);
-
-    /**
-     * showsRouteButton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instp/MPVolumeView/showsRouteButton">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("showsRouteButton")
-    public native boolean showsRouteButton();
-
-    /**
-     * showsVolumeSlider</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instp/MPVolumeView/showsVolumeSlider">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("showsVolumeSlider")
-    public native boolean showsVolumeSlider();
-
-    /**
-     * volumeSliderRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/volumeSliderRectForBounds:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("volumeSliderRectForBounds:")
-    @ByValue
-    public native CGRect volumeSliderRectForBounds(@ByValue CGRect bounds);
-
-    /**
-     * volumeThumbImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/volumeThumbImageForState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("volumeThumbImageForState:")
-    public native UIImage volumeThumbImageForState(@NUInt long state);
-
-    /**
-     * volumeThumbRectForBounds:volumeSliderRect:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/volumeThumbRectForBounds:volumeSliderRect:value:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("volumeThumbRectForBounds:volumeSliderRect:value:")
-    @ByValue
-    public native CGRect volumeThumbRectForBoundsVolumeSliderRectValue(@ByValue CGRect bounds, @ByValue CGRect rect,
-            float value);
-
-    @Generated
-    @Selector("volumeWarningSliderImage")
-    public native UIImage volumeWarningSliderImage();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -279,23 +123,9 @@ public class MPVolumeView extends UIView implements NSCoding {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -306,27 +136,10 @@ public class MPVolumeView extends UIView implements NSCoding {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -337,24 +150,9 @@ public class MPVolumeView extends UIView implements NSCoding {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -552,4 +350,206 @@ public class MPVolumeView extends UIView implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("areWirelessRoutesAvailable")
+    public native boolean areWirelessRoutesAvailable();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native MPVolumeView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPVolumeView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native MPVolumeView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("isWirelessRouteActive")
+    public native boolean isWirelessRouteActive();
+
+    /**
+     * maximumVolumeSliderImageForState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/maximumVolumeSliderImageForState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumVolumeSliderImageForState:")
+    public native UIImage maximumVolumeSliderImageForState(@NUInt long state);
+
+    /**
+     * minimumVolumeSliderImageForState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/minimumVolumeSliderImageForState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumVolumeSliderImageForState:")
+    public native UIImage minimumVolumeSliderImageForState(@NUInt long state);
+
+    /**
+     * routeButtonImageForState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/routeButtonImageForState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("routeButtonImageForState:")
+    public native UIImage routeButtonImageForState(@NUInt long state);
+
+    /**
+     * routeButtonRectForBounds:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/routeButtonRectForBounds:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("routeButtonRectForBounds:")
+    @ByValue
+    public native CGRect routeButtonRectForBounds(@ByValue CGRect bounds);
+
+    /**
+     * setMaximumVolumeSliderImage:forState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/setMaximumVolumeSliderImage:forState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumVolumeSliderImage:forState:")
+    public native void setMaximumVolumeSliderImageForState(UIImage image, @NUInt long state);
+
+    /**
+     * setMinimumVolumeSliderImage:forState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/setMinimumVolumeSliderImage:forState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumVolumeSliderImage:forState:")
+    public native void setMinimumVolumeSliderImageForState(UIImage image, @NUInt long state);
+
+    /**
+     * setRouteButtonImage:forState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/setRouteButtonImage:forState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRouteButtonImage:forState:")
+    public native void setRouteButtonImageForState(UIImage image, @NUInt long state);
+
+    /**
+     * showsRouteButton</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instp/MPVolumeView/showsRouteButton">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShowsRouteButton:")
+    public native void setShowsRouteButton(boolean value);
+
+    /**
+     * showsVolumeSlider</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instp/MPVolumeView/showsVolumeSlider">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShowsVolumeSlider:")
+    public native void setShowsVolumeSlider(boolean value);
+
+    /**
+     * setVolumeThumbImage:forState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/setVolumeThumbImage:forState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setVolumeThumbImage:forState:")
+    public native void setVolumeThumbImageForState(UIImage image, @NUInt long state);
+
+    @Generated
+    @Selector("setVolumeWarningSliderImage:")
+    public native void setVolumeWarningSliderImage(UIImage value);
+
+    /**
+     * showsRouteButton</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instp/MPVolumeView/showsRouteButton">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("showsRouteButton")
+    public native boolean showsRouteButton();
+
+    /**
+     * showsVolumeSlider</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instp/MPVolumeView/showsVolumeSlider">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("showsVolumeSlider")
+    public native boolean showsVolumeSlider();
+
+    /**
+     * volumeSliderRectForBounds:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/volumeSliderRectForBounds:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("volumeSliderRectForBounds:")
+    @ByValue
+    public native CGRect volumeSliderRectForBounds(@ByValue CGRect bounds);
+
+    /**
+     * volumeThumbImageForState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/volumeThumbImageForState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("volumeThumbImageForState:")
+    public native UIImage volumeThumbImageForState(@NUInt long state);
+
+    /**
+     * volumeThumbRectForBounds:volumeSliderRect:value:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/index.html#//apple_ref/occ/instm/MPVolumeView/volumeThumbRectForBounds:volumeSliderRect:value:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("volumeThumbRectForBounds:volumeSliderRect:value:")
+    @ByValue
+    public native CGRect volumeThumbRectForBoundsVolumeSliderRectValue(@ByValue CGRect bounds, @ByValue CGRect rect,
+            float value);
+
+    @Generated
+    @Selector("volumeWarningSliderImage")
+    public native UIImage volumeWarningSliderImage();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CTLineBoundsOptions {
-    @Generated
-    private CTLineBoundsOptions() {
-    }
-
     @Generated @NUInt public static final long ExcludeTypographicLeading = 0x0000000000000001L;
     @Generated @NUInt public static final long ExcludeTypographicShifts = 0x0000000000000002L;
     @Generated @NUInt public static final long UseHangingPunctuation = 0x0000000000000004L;
     @Generated @NUInt public static final long UseGlyphPathBounds = 0x0000000000000008L;
     @Generated @NUInt public static final long UseOpticalBounds = 0x0000000000000010L;
     @Generated @NUInt public static final long IncludeLanguageExtents = 0x0000000000000020L;
+
+    @Generated
+    private CTLineBoundsOptions() {
+    }
 }

@@ -59,28 +59,6 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
     public static native MPNowPlayingInfoLanguageOptionGroup alloc();
 
     @Generated
-    @Selector("allowEmptySelection")
-    public native boolean allowEmptySelection();
-
-    @Generated
-    @Selector("defaultLanguageOption")
-    public native MPNowPlayingInfoLanguageOption defaultLanguageOption();
-
-    @Generated
-    @Selector("init")
-    public native MPNowPlayingInfoLanguageOptionGroup init();
-
-    @Generated
-    @Selector("initWithLanguageOptions:defaultLanguageOption:allowEmptySelection:")
-    public native MPNowPlayingInfoLanguageOptionGroup initWithLanguageOptionsDefaultLanguageOptionAllowEmptySelection(
-            NSArray<? extends MPNowPlayingInfoLanguageOption> languageOptions,
-            MPNowPlayingInfoLanguageOption defaultLanguageOption, boolean allowEmptySelection);
-
-    @Generated
-    @Selector("languageOptions")
-    public native NSArray<? extends MPNowPlayingInfoLanguageOption> languageOptions();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -179,4 +157,26 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("allowEmptySelection")
+    public native boolean allowEmptySelection();
+
+    @Generated
+    @Selector("defaultLanguageOption")
+    public native MPNowPlayingInfoLanguageOption defaultLanguageOption();
+
+    @Generated
+    @Selector("init")
+    public native MPNowPlayingInfoLanguageOptionGroup init();
+
+    @Generated
+    @Selector("initWithLanguageOptions:defaultLanguageOption:allowEmptySelection:")
+    public native MPNowPlayingInfoLanguageOptionGroup initWithLanguageOptionsDefaultLanguageOptionAllowEmptySelection(
+            NSArray<? extends MPNowPlayingInfoLanguageOption> languageOptions,
+            MPNowPlayingInfoLanguageOption defaultLanguageOption, boolean allowEmptySelection);
+
+    @Generated
+    @Selector("languageOptions")
+    public native NSArray<? extends MPNowPlayingInfoLanguageOption> languageOptions();
 }

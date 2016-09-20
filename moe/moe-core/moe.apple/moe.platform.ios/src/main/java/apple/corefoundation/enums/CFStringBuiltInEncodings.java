@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CFStringBuiltInEncodings {
-    @Generated
-    private CFStringBuiltInEncodings() {
-    }
-
     @Generated public static final int MacRoman = 0x00000000;
     @Generated public static final int WindowsLatin1 = 0x00000500;
     @Generated public static final int ISOLatin1 = 0x00000201;
@@ -38,4 +34,7 @@ public final class CFStringBuiltInEncodings {
     @Generated public static final int UTF32 = 0x0C000100;
     @Generated public static final int UTF32BE = 0x18000100;
     @Generated public static final int UTF32LE = 0x1C000100;
+    @Generated
+    private CFStringBuiltInEncodings() {
+    }
 }

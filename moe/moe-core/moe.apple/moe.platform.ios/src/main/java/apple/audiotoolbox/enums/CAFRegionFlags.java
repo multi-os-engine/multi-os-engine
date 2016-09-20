@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CAFRegionFlags {
-    @Generated
-    private CAFRegionFlags() {
-    }
-
     @Generated public static final int LoopEnable = 0x00000001;
     @Generated public static final int PlayForward = 0x00000002;
     @Generated public static final int PlayBackward = 0x00000004;
+
+    @Generated
+    private CAFRegionFlags() {
+    }
 }

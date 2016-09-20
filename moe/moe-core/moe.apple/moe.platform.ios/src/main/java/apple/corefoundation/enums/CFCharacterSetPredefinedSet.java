@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFCharacterSetPredefinedSet {
-    @Generated
-    private CFCharacterSetPredefinedSet() {
-    }
-
     @Generated @NInt public static final long Control = 0x0000000000000001L;
     @Generated @NInt public static final long Whitespace = 0x0000000000000002L;
     @Generated @NInt public static final long WhitespaceAndNewline = 0x0000000000000003L;
@@ -40,4 +36,7 @@ public final class CFCharacterSetPredefinedSet {
     @Generated @NInt public static final long Symbol = 0x000000000000000EL;
     @Generated @NInt public static final long Newline = 0x000000000000000FL;
     @Generated @NInt public static final long Illegal = 0x000000000000000CL;
+    @Generated
+    private CFCharacterSetPredefinedSet() {
+    }
 }

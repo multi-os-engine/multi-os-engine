@@ -57,103 +57,12 @@ public class NSHTTPCookieStorage extends NSObject {
     public static native NSHTTPCookieStorage alloc();
 
     /**
-     * cookieAcceptPolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instp/NSHTTPCookieStorage/cookieAcceptPolicy">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cookieAcceptPolicy")
-    @NUInt
-    public native long cookieAcceptPolicy();
-
-    /**
-     * cookies</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instp/NSHTTPCookieStorage/cookies">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cookies")
-    public native NSArray<? extends NSHTTPCookie> cookies();
-
-    /**
-     * cookiesForURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instm/NSHTTPCookieStorage/cookiesForURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cookiesForURL:")
-    public native NSArray<? extends NSHTTPCookie> cookiesForURL(NSURL URL);
-
-    /**
-     * deleteCookie:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instm/NSHTTPCookieStorage/deleteCookie:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deleteCookie:")
-    public native void deleteCookie(NSHTTPCookie cookie);
-
-    @Generated
-    @Selector("getCookiesForTask:completionHandler:")
-    public native void getCookiesForTaskCompletionHandler(NSURLSessionTask task,
-            @ObjCBlock(name = "call_getCookiesForTaskCompletionHandler") Block_getCookiesForTaskCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_getCookiesForTaskCompletionHandler {
-        @Generated
-        void call_getCookiesForTaskCompletionHandler(NSArray<? extends NSHTTPCookie> arg0);
-    }
-
-    @Generated
-    @Selector("init")
-    public native NSHTTPCookieStorage init();
-
-    @Generated
-    @Selector("removeCookiesSinceDate:")
-    public native void removeCookiesSinceDate(NSDate date);
-
-    /**
-     * setCookie:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instm/NSHTTPCookieStorage/setCookie:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCookie:")
-    public native void setCookie(NSHTTPCookie cookie);
-
-    /**
-     * cookieAcceptPolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instp/NSHTTPCookieStorage/cookieAcceptPolicy">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCookieAcceptPolicy:")
-    public native void setCookieAcceptPolicy(@NUInt long value);
-
-    /**
-     * setCookies:forURL:mainDocumentURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instm/NSHTTPCookieStorage/setCookies:forURL:mainDocumentURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCookies:forURL:mainDocumentURL:")
-    public native void setCookiesForURLMainDocumentURL(NSArray<? extends NSHTTPCookie> cookies, NSURL URL,
-            NSURL mainDocumentURL);
-
-    /**
      * sharedHTTPCookieStorage</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/clm/NSHTTPCookieStorage/sharedHTTPCookieStorage">iOS Dev Center</a>
      */
     @Generated
     @Selector("sharedHTTPCookieStorage")
     public static native NSHTTPCookieStorage sharedHTTPCookieStorage();
-
-    /**
-     * sortedCookiesUsingDescriptors:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instm/NSHTTPCookieStorage/sortedCookiesUsingDescriptors:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sortedCookiesUsingDescriptors:")
-    public native NSArray<? extends NSHTTPCookie> sortedCookiesUsingDescriptors(
-            NSArray<? extends NSSortDescriptor> sortOrder);
-
-    @Generated
-    @Selector("storeCookies:forTask:")
-    public native void storeCookiesForTask(NSArray<? extends NSHTTPCookie> cookies, NSURLSessionTask task);
 
     @Generated
     @Selector("sharedCookieStorageForGroupContainerIdentifier:")
@@ -258,4 +167,95 @@ public class NSHTTPCookieStorage extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cookieAcceptPolicy</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instp/NSHTTPCookieStorage/cookieAcceptPolicy">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cookieAcceptPolicy")
+    @NUInt
+    public native long cookieAcceptPolicy();
+
+    /**
+     * cookies</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instp/NSHTTPCookieStorage/cookies">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cookies")
+    public native NSArray<? extends NSHTTPCookie> cookies();
+
+    /**
+     * cookiesForURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instm/NSHTTPCookieStorage/cookiesForURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cookiesForURL:")
+    public native NSArray<? extends NSHTTPCookie> cookiesForURL(NSURL URL);
+
+    /**
+     * deleteCookie:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instm/NSHTTPCookieStorage/deleteCookie:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deleteCookie:")
+    public native void deleteCookie(NSHTTPCookie cookie);
+
+    @Generated
+    @Selector("getCookiesForTask:completionHandler:")
+    public native void getCookiesForTaskCompletionHandler(NSURLSessionTask task,
+            @ObjCBlock(name = "call_getCookiesForTaskCompletionHandler") Block_getCookiesForTaskCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("init")
+    public native NSHTTPCookieStorage init();
+
+    @Generated
+    @Selector("removeCookiesSinceDate:")
+    public native void removeCookiesSinceDate(NSDate date);
+
+    /**
+     * setCookie:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instm/NSHTTPCookieStorage/setCookie:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCookie:")
+    public native void setCookie(NSHTTPCookie cookie);
+
+    /**
+     * cookieAcceptPolicy</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instp/NSHTTPCookieStorage/cookieAcceptPolicy">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCookieAcceptPolicy:")
+    public native void setCookieAcceptPolicy(@NUInt long value);
+
+    /**
+     * setCookies:forURL:mainDocumentURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instm/NSHTTPCookieStorage/setCookies:forURL:mainDocumentURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCookies:forURL:mainDocumentURL:")
+    public native void setCookiesForURLMainDocumentURL(NSArray<? extends NSHTTPCookie> cookies, NSURL URL,
+            NSURL mainDocumentURL);
+
+    /**
+     * sortedCookiesUsingDescriptors:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/index.html#//apple_ref/occ/instm/NSHTTPCookieStorage/sortedCookiesUsingDescriptors:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sortedCookiesUsingDescriptors:")
+    public native NSArray<? extends NSHTTPCookie> sortedCookiesUsingDescriptors(
+            NSArray<? extends NSSortDescriptor> sortOrder);
+
+    @Generated
+    @Selector("storeCookies:forTask:")
+    public native void storeCookiesForTask(NSArray<? extends NSHTTPCookie> cookies, NSURLSessionTask task);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getCookiesForTaskCompletionHandler {
+        @Generated
+        void call_getCookiesForTaskCompletionHandler(NSArray<? extends NSHTTPCookie> arg0);
+    }
 }

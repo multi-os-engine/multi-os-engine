@@ -64,42 +64,9 @@ public class AVAudioUnitComponentManager extends NSObject {
     public static native AVAudioUnitComponentManager alloc();
 
     @Generated
-    @Selector("componentsMatchingDescription:")
-    public native NSArray<? extends AVAudioUnitComponent> componentsMatchingDescription(
-            @ByValue AudioComponentDescription desc);
-
-    @Generated
-    @Selector("componentsMatchingPredicate:")
-    public native NSArray<? extends AVAudioUnitComponent> componentsMatchingPredicate(NSPredicate predicate);
-
-    @Generated
-    @Selector("componentsPassingTest:")
-    public native NSArray<? extends AVAudioUnitComponent> componentsPassingTest(
-            @ObjCBlock(name = "call_componentsPassingTest") Block_componentsPassingTest testHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_componentsPassingTest {
-        @Generated
-        boolean call_componentsPassingTest(AVAudioUnitComponent arg0, BoolPtr arg1);
-    }
-
-    @Generated
-    @Selector("init")
-    public native AVAudioUnitComponentManager init();
-
-    @Generated
     @Selector("sharedAudioUnitComponentManager")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object sharedAudioUnitComponentManager();
-
-    @Generated
-    @Selector("standardLocalizedTagNames")
-    public native NSArray<String> standardLocalizedTagNames();
-
-    @Generated
-    @Selector("tagNames")
-    public native NSArray<String> tagNames();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -200,4 +167,37 @@ public class AVAudioUnitComponentManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("componentsMatchingDescription:")
+    public native NSArray<? extends AVAudioUnitComponent> componentsMatchingDescription(
+            @ByValue AudioComponentDescription desc);
+
+    @Generated
+    @Selector("componentsMatchingPredicate:")
+    public native NSArray<? extends AVAudioUnitComponent> componentsMatchingPredicate(NSPredicate predicate);
+
+    @Generated
+    @Selector("componentsPassingTest:")
+    public native NSArray<? extends AVAudioUnitComponent> componentsPassingTest(
+            @ObjCBlock(name = "call_componentsPassingTest") Block_componentsPassingTest testHandler);
+
+    @Generated
+    @Selector("init")
+    public native AVAudioUnitComponentManager init();
+
+    @Generated
+    @Selector("standardLocalizedTagNames")
+    public native NSArray<String> standardLocalizedTagNames();
+
+    @Generated
+    @Selector("tagNames")
+    public native NSArray<String> tagNames();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_componentsPassingTest {
+        @Generated
+        boolean call_componentsPassingTest(AVAudioUnitComponent arg0, BoolPtr arg1);
+    }
 }

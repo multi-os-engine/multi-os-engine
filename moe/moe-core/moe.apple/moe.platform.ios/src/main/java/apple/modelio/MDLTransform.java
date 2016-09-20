@@ -60,43 +60,6 @@ public class MDLTransform extends NSObject implements MDLTransformComponent {
     public static native MDLTransform alloc();
 
     @Generated
-    @Selector("init")
-    public native MDLTransform init();
-
-    /**
-     * initWithIdentity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTransform_Class/index.html#//apple_ref/occ/instm/MDLTransform/initWithIdentity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithIdentity")
-    public native MDLTransform initWithIdentity();
-
-    /**
-     * initWithTransformComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTransform_Class/index.html#//apple_ref/occ/instm/MDLTransform/initWithTransformComponent:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTransformComponent:")
-    public native MDLTransform initWithTransformComponent(
-            @Mapped(ObjCObjectMapper.class) MDLTransformComponent component);
-
-    @Generated
-    @Selector("maximumTime")
-    public native double maximumTime();
-
-    @Generated
-    @Selector("minimumTime")
-    public native double minimumTime();
-
-    /**
-     * setIdentity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTransform_Class/index.html#//apple_ref/occ/instm/MDLTransform/setIdentity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIdentity")
-    public native void setIdentity();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -195,4 +158,41 @@ public class MDLTransform extends NSObject implements MDLTransformComponent {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native MDLTransform init();
+
+    /**
+     * initWithIdentity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTransform_Class/index.html#//apple_ref/occ/instm/MDLTransform/initWithIdentity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithIdentity")
+    public native MDLTransform initWithIdentity();
+
+    /**
+     * initWithTransformComponent:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTransform_Class/index.html#//apple_ref/occ/instm/MDLTransform/initWithTransformComponent:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTransformComponent:")
+    public native MDLTransform initWithTransformComponent(
+            @Mapped(ObjCObjectMapper.class) MDLTransformComponent component);
+
+    @Generated
+    @Selector("maximumTime")
+    public native double maximumTime();
+
+    @Generated
+    @Selector("minimumTime")
+    public native double minimumTime();
+
+    /**
+     * setIdentity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTransform_Class/index.html#//apple_ref/occ/instm/MDLTransform/setIdentity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIdentity")
+    public native void setIdentity();
 }

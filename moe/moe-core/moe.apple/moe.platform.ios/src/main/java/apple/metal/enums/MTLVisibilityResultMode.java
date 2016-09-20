@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLVisibilityResultMode {
-    @Generated
-    private MTLVisibilityResultMode() {
-    }
-
     @Generated @NUInt public static final long Disabled = 0x0000000000000000L;
     @Generated @NUInt public static final long Boolean = 0x0000000000000001L;
     @Generated @NUInt public static final long Counting = 0x0000000000000002L;
+
+    @Generated
+    private MTLVisibilityResultMode() {
+    }
 }

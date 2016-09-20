@@ -60,41 +60,6 @@ public class MPSImageBox extends MPSUnaryImageKernel {
     public static native MPSImageBox alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSImageBox init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageBox initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * initWithDevice:kernelWidth:kernelHeight:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageBox_ClassReference/index.html#//apple_ref/occ/instm/MPSImageBox/initWithDevice:kernelWidth:kernelHeight:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDevice:kernelWidth:kernelHeight:")
-    public native MPSImageBox initWithDeviceKernelWidthKernelHeight(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long kernelWidth, @NUInt long kernelHeight);
-
-    /**
-     * kernelHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageBox_ClassReference/index.html#//apple_ref/occ/instp/MPSImageBox/kernelHeight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("kernelHeight")
-    @NUInt
-    public native long kernelHeight();
-
-    /**
-     * kernelWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageBox_ClassReference/index.html#//apple_ref/occ/instp/MPSImageBox/kernelWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("kernelWidth")
-    @NUInt
-    public native long kernelWidth();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -193,4 +158,39 @@ public class MPSImageBox extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageBox init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageBox initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * initWithDevice:kernelWidth:kernelHeight:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageBox_ClassReference/index.html#//apple_ref/occ/instm/MPSImageBox/initWithDevice:kernelWidth:kernelHeight:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDevice:kernelWidth:kernelHeight:")
+    public native MPSImageBox initWithDeviceKernelWidthKernelHeight(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NUInt long kernelWidth, @NUInt long kernelHeight);
+
+    /**
+     * kernelHeight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageBox_ClassReference/index.html#//apple_ref/occ/instp/MPSImageBox/kernelHeight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("kernelHeight")
+    @NUInt
+    public native long kernelHeight();
+
+    /**
+     * kernelWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageBox_ClassReference/index.html#//apple_ref/occ/instp/MPSImageBox/kernelWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("kernelWidth")
+    @NUInt
+    public native long kernelWidth();
 }

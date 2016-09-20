@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CKRecordZoneCapabilities {
+    @Generated @NUInt public static final long FetchChanges = 0x0000000000000001L;
+    @Generated @NUInt public static final long Atomic = 0x0000000000000002L;
+
     @Generated
     private CKRecordZoneCapabilities() {
     }
-
-    @Generated @NUInt public static final long FetchChanges = 0x0000000000000001L;
-    @Generated @NUInt public static final long Atomic = 0x0000000000000002L;
 }

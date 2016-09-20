@@ -53,87 +53,14 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
         super(peer);
     }
 
-    /**
-     * MIMEType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instp/NSURLResponse/MIMEType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("MIMEType")
-    public native String MIMEType();
-
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instp/NSURLResponse/URL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URL")
-    public native NSURL URL();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLResponse alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * expectedContentLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instp/NSURLResponse/expectedContentLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expectedContentLength")
-    public native long expectedContentLength();
-
-    @Generated
-    @Selector("init")
-    public native NSURLResponse init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSURLResponse initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithURL:MIMEType:expectedContentLength:textEncodingName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instm/NSURLResponse/initWithURL:MIMEType:expectedContentLength:textEncodingName:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:MIMEType:expectedContentLength:textEncodingName:")
-    public native NSURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(NSURL URL, String MIMEType,
-            @NInt long length, String name);
-
-    /**
-     * suggestedFilename</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instp/NSURLResponse/suggestedFilename">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("suggestedFilename")
-    public native String suggestedFilename();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * textEncodingName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instp/NSURLResponse/textEncodingName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textEncodingName")
-    public native String textEncodingName();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -234,4 +161,77 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * MIMEType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instp/NSURLResponse/MIMEType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("MIMEType")
+    public native String MIMEType();
+
+    /**
+     * URL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instp/NSURLResponse/URL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URL")
+    public native NSURL URL();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * expectedContentLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instp/NSURLResponse/expectedContentLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expectedContentLength")
+    public native long expectedContentLength();
+
+    @Generated
+    @Selector("init")
+    public native NSURLResponse init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSURLResponse initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithURL:MIMEType:expectedContentLength:textEncodingName:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instm/NSURLResponse/initWithURL:MIMEType:expectedContentLength:textEncodingName:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:MIMEType:expectedContentLength:textEncodingName:")
+    public native NSURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(NSURL URL, String MIMEType,
+            @NInt long length, String name);
+
+    /**
+     * suggestedFilename</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instp/NSURLResponse/suggestedFilename">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("suggestedFilename")
+    public native String suggestedFilename();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * textEncodingName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/index.html#//apple_ref/occ/instp/NSURLResponse/textEncodingName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textEncodingName")
+    public native String textEncodingName();
 }

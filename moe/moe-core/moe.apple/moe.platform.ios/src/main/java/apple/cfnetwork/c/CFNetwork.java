@@ -151,14 +151,6 @@ public final class CFNetwork {
             @FunctionPtr(name = "call_CFHostSetClient") Function_CFHostSetClient clientCB,
             @UncertainArgument("Options: reference, array Fallback: reference") CFHostClientContext clientContext);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFHostSetClient {
-        @Generated
-        void call_CFHostSetClient(VoidPtr arg0, int arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg2, VoidPtr arg3);
-    }
-
     /**
      * CFHostScheduleWithRunLoop</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFHostRef/index.html#//apple_ref/c/func/CFHostScheduleWithRunLoop">iOS Dev Center</a>
@@ -339,14 +331,6 @@ public final class CFNetwork {
             @FunctionPtr(name = "call_CFNetServiceSetClient") Function_CFNetServiceSetClient clientCB,
             @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFNetServiceSetClient {
-        @Generated
-        void call_CFNetServiceSetClient(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg1, VoidPtr arg2);
-    }
-
     /**
      * CFNetServiceScheduleWithRunLoop</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFNetServiceRef/index.html#//apple_ref/c/func/CFNetServiceScheduleWithRunLoop">iOS Dev Center</a>
@@ -375,14 +359,6 @@ public final class CFNetwork {
             CFNetServiceRef theService,
             @FunctionPtr(name = "call_CFNetServiceMonitorCreate") Function_CFNetServiceMonitorCreate clientCB,
             @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFNetServiceMonitorCreate {
-        @Generated
-        void call_CFNetServiceMonitorCreate(VoidPtr arg0, VoidPtr arg1, int arg2, VoidPtr arg3,
-                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg4, VoidPtr arg5);
-    }
 
     /**
      * CFNetServiceMonitorInvalidate</br>
@@ -437,14 +413,6 @@ public final class CFNetwork {
     public static native CFNetServiceBrowserRef CFNetServiceBrowserCreate(CFAllocatorRef alloc,
             @FunctionPtr(name = "call_CFNetServiceBrowserCreate") Function_CFNetServiceBrowserCreate clientCB,
             @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFNetServiceBrowserCreate {
-        @Generated
-        void call_CFNetServiceBrowserCreate(VoidPtr arg0, @NUInt long arg1, ConstVoidPtr arg2,
-                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg3, VoidPtr arg4);
-    }
 
     /**
      * CFNetServiceBrowserInvalidate</br>
@@ -943,13 +911,6 @@ public final class CFNetwork {
             @FunctionPtr(name = "call_CFNetworkExecuteProxyAutoConfigurationScript") Function_CFNetworkExecuteProxyAutoConfigurationScript cb,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamClientContext clientContext);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFNetworkExecuteProxyAutoConfigurationScript {
-        @Generated
-        void call_CFNetworkExecuteProxyAutoConfigurationScript(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
-    }
-
     /**
      * CFNetworkExecuteProxyAutoConfigurationURL</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFProxySupport/index.html#//apple_ref/c/func/CFNetworkExecuteProxyAutoConfigurationURL">iOS Dev Center</a>
@@ -960,13 +921,6 @@ public final class CFNetwork {
             CFURLRef targetURL,
             @FunctionPtr(name = "call_CFNetworkExecuteProxyAutoConfigurationURL") Function_CFNetworkExecuteProxyAutoConfigurationURL cb,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamClientContext clientContext);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFNetworkExecuteProxyAutoConfigurationURL {
-        @Generated
-        void call_CFNetworkExecuteProxyAutoConfigurationURL(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
-    }
 
     @Generated
     @CVariable()
@@ -1460,4 +1414,50 @@ public final class CFNetwork {
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPVersion2_0();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFHostSetClient {
+        @Generated
+        void call_CFHostSetClient(VoidPtr arg0, int arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg2, VoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFNetServiceSetClient {
+        @Generated
+        void call_CFNetServiceSetClient(VoidPtr arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFNetServiceMonitorCreate {
+        @Generated
+        void call_CFNetServiceMonitorCreate(VoidPtr arg0, VoidPtr arg1, int arg2, VoidPtr arg3,
+                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg4, VoidPtr arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFNetServiceBrowserCreate {
+        @Generated
+        void call_CFNetServiceBrowserCreate(VoidPtr arg0, @NUInt long arg1, ConstVoidPtr arg2,
+                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg3, VoidPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFNetworkExecuteProxyAutoConfigurationScript {
+        @Generated
+        void call_CFNetworkExecuteProxyAutoConfigurationScript(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFNetworkExecuteProxyAutoConfigurationURL {
+        @Generated
+        void call_CFNetworkExecuteProxyAutoConfigurationURL(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+    }
 }

@@ -62,26 +62,8 @@ public class MPMediaPredicate extends NSObject implements NSSecureCoding {
     public static native MPMediaPredicate alloc();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native MPMediaPredicate init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaPredicate initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -182,4 +164,22 @@ public class MPMediaPredicate extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native MPMediaPredicate init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaPredicate initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

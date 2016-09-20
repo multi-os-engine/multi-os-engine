@@ -66,75 +66,6 @@ public class WKInterfaceGroup extends WKInterfaceObject implements WKImageAnimat
     public static native WKInterfaceGroup alloc();
 
     @Generated
-    @Selector("init")
-    public native WKInterfaceGroup init();
-
-    /**
-     * setBackgroundColor:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundColor:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor color);
-
-    /**
-     * setBackgroundImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundImage:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackgroundImage:")
-    public native void setBackgroundImage(UIImage image);
-
-    /**
-     * setBackgroundImageData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundImageData:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackgroundImageData:")
-    public native void setBackgroundImageData(NSData imageData);
-
-    /**
-     * setBackgroundImageNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundImageNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackgroundImageNamed:")
-    public native void setBackgroundImageNamed(String imageName);
-
-    /**
-     * setCornerRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setCornerRadius:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCornerRadius:")
-    public native void setCornerRadius(@NFloat double cornerRadius);
-
-    /**
-     * startAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/startAnimating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startAnimating")
-    public native void startAnimating();
-
-    /**
-     * startAnimatingWithImagesInRange:duration:repeatCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/startAnimatingWithImagesInRange:duration:repeatCount:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startAnimatingWithImagesInRange:duration:repeatCount:")
-    public native void startAnimatingWithImagesInRangeDurationRepeatCount(@ByValue NSRange imageRange, double duration,
-            @NInt long repeatCount);
-
-    /**
-     * stopAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/stopAnimating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopAnimating")
-    public native void stopAnimating();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -233,4 +164,73 @@ public class WKInterfaceGroup extends WKInterfaceObject implements WKImageAnimat
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native WKInterfaceGroup init();
+
+    /**
+     * setBackgroundColor:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundColor:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackgroundColor:")
+    public native void setBackgroundColor(UIColor color);
+
+    /**
+     * setBackgroundImage:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundImage:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackgroundImage:")
+    public native void setBackgroundImage(UIImage image);
+
+    /**
+     * setBackgroundImageData:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundImageData:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackgroundImageData:")
+    public native void setBackgroundImageData(NSData imageData);
+
+    /**
+     * setBackgroundImageNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setBackgroundImageNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackgroundImageNamed:")
+    public native void setBackgroundImageNamed(String imageName);
+
+    /**
+     * setCornerRadius:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/setCornerRadius:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCornerRadius:")
+    public native void setCornerRadius(@NFloat double cornerRadius);
+
+    /**
+     * startAnimating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/startAnimating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startAnimating")
+    public native void startAnimating();
+
+    /**
+     * startAnimatingWithImagesInRange:duration:repeatCount:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/startAnimatingWithImagesInRange:duration:repeatCount:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startAnimatingWithImagesInRange:duration:repeatCount:")
+    public native void startAnimatingWithImagesInRangeDurationRepeatCount(@ByValue NSRange imageRange, double duration,
+            @NInt long repeatCount);
+
+    /**
+     * stopAnimating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceGroup_class/index.html#//apple_ref/occ/instm/WKInterfaceGroup/stopAnimating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopAnimating")
+    public native void stopAnimating();
 }

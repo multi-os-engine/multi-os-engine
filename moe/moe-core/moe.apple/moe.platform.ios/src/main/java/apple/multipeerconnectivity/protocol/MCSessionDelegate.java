@@ -61,13 +61,6 @@ public interface MCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sessionDidReceiveCertificateFromPeerCertificateHandler {
-        @Generated
-        void call_sessionDidReceiveCertificateFromPeerCertificateHandler(boolean arg0);
-    }
-
     /**
      * session:didReceiveData:fromPeer:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCSessionDelegateRef/index.html#//apple_ref/occ/intfm/MCSessionDelegate/session:didReceiveData:fromPeer:">iOS Dev Center</a>
@@ -101,4 +94,11 @@ public interface MCSessionDelegate {
     @Generated
     @Selector("session:peer:didChangeState:")
     void sessionPeerDidChangeState(MCSession session, MCPeerID peerID, @NInt long state);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sessionDidReceiveCertificateFromPeerCertificateHandler {
+        @Generated
+        void call_sessionDidReceiveCertificateFromPeerCertificateHandler(boolean arg0);
+    }
 }

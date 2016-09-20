@@ -59,32 +59,6 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageMedian alloc();
 
-    @Generated
-    @Selector("init")
-    public native MPSImageMedian init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageMedian initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * initWithDevice:kernelDiameter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageMedian_ClassReference/index.html#//apple_ref/occ/instm/MPSImageMedian/initWithDevice:kernelDiameter:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDevice:kernelDiameter:")
-    public native MPSImageMedian initWithDeviceKernelDiameter(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long kernelDiameter);
-
-    /**
-     * kernelDiameter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageMedian_ClassReference/index.html#//apple_ref/occ/instp/MPSImageMedian/kernelDiameter">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("kernelDiameter")
-    @NUInt
-    public native long kernelDiameter();
-
     /**
      * maxKernelDiameter</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageMedian_ClassReference/index.html#//apple_ref/occ/clm/MPSImageMedian/maxKernelDiameter">iOS Dev Center</a>
@@ -202,4 +176,30 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageMedian init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageMedian initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * initWithDevice:kernelDiameter:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageMedian_ClassReference/index.html#//apple_ref/occ/instm/MPSImageMedian/initWithDevice:kernelDiameter:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDevice:kernelDiameter:")
+    public native MPSImageMedian initWithDeviceKernelDiameter(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NUInt long kernelDiameter);
+
+    /**
+     * kernelDiameter</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageMedian_ClassReference/index.html#//apple_ref/occ/instp/MPSImageMedian/kernelDiameter">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("kernelDiameter")
+    @NUInt
+    public native long kernelDiameter();
 }

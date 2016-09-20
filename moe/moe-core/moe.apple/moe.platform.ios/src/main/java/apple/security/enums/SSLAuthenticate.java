@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SSLAuthenticate {
-    @Generated
-    private SSLAuthenticate() {
-    }
-
     @Generated public static final int NeverAuthenticate = 0x00000000;
     @Generated public static final int AlwaysAuthenticate = 0x00000001;
     @Generated public static final int TryAuthenticate = 0x00000002;
+
+    @Generated
+    private SSLAuthenticate() {
+    }
 }

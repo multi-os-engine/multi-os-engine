@@ -62,59 +62,8 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
     public static native AUAudioUnitPreset alloc();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native AUAudioUnitPreset init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AUAudioUnitPreset initWithCoder(NSCoder aDecoder);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitPreset_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitPreset/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * number</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitPreset_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitPreset/number">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("number")
-    @NInt
-    public native long number();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitPreset_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitPreset/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setName:")
-    public native void setName(String value);
-
-    /**
-     * number</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitPreset_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitPreset/number">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNumber:")
-    public native void setNumber(@NInt long value);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -215,4 +164,55 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native AUAudioUnitPreset init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AUAudioUnitPreset initWithCoder(NSCoder aDecoder);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitPreset_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitPreset/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * number</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitPreset_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitPreset/number">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("number")
+    @NInt
+    public native long number();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitPreset_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitPreset/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
+
+    /**
+     * number</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitPreset_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitPreset/number">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNumber:")
+    public native void setNumber(@NInt long value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

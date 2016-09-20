@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NEHotspotHelperCommandType {
-    @Generated
-    private NEHotspotHelperCommandType() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long FilterScanList = 0x0000000000000001L;
     @Generated @NInt public static final long Evaluate = 0x0000000000000002L;
@@ -32,4 +28,7 @@ public final class NEHotspotHelperCommandType {
     @Generated @NInt public static final long PresentUI = 0x0000000000000004L;
     @Generated @NInt public static final long Maintain = 0x0000000000000005L;
     @Generated @NInt public static final long Logoff = 0x0000000000000006L;
+    @Generated
+    private NEHotspotHelperCommandType() {
+    }
 }

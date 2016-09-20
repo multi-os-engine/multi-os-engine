@@ -59,35 +59,6 @@ public class UICollectionViewUpdateItem extends NSObject {
     @Selector("alloc")
     public static native UICollectionViewUpdateItem alloc();
 
-    /**
-     * indexPathAfterUpdate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewUpdateItem_class/index.html#//apple_ref/occ/instp/UICollectionViewUpdateItem/indexPathAfterUpdate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("indexPathAfterUpdate")
-    public native NSIndexPath indexPathAfterUpdate();
-
-    /**
-     * indexPathBeforeUpdate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewUpdateItem_class/index.html#//apple_ref/occ/instp/UICollectionViewUpdateItem/indexPathBeforeUpdate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("indexPathBeforeUpdate")
-    public native NSIndexPath indexPathBeforeUpdate();
-
-    @Generated
-    @Selector("init")
-    public native UICollectionViewUpdateItem init();
-
-    /**
-     * updateAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewUpdateItem_class/index.html#//apple_ref/occ/instp/UICollectionViewUpdateItem/updateAction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateAction")
-    @NInt
-    public native long updateAction();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -187,4 +158,33 @@ public class UICollectionViewUpdateItem extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * indexPathAfterUpdate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewUpdateItem_class/index.html#//apple_ref/occ/instp/UICollectionViewUpdateItem/indexPathAfterUpdate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("indexPathAfterUpdate")
+    public native NSIndexPath indexPathAfterUpdate();
+
+    /**
+     * indexPathBeforeUpdate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewUpdateItem_class/index.html#//apple_ref/occ/instp/UICollectionViewUpdateItem/indexPathBeforeUpdate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("indexPathBeforeUpdate")
+    public native NSIndexPath indexPathBeforeUpdate();
+
+    @Generated
+    @Selector("init")
+    public native UICollectionViewUpdateItem init();
+
+    /**
+     * updateAction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewUpdateItem_class/index.html#//apple_ref/occ/instp/UICollectionViewUpdateItem/updateAction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateAction")
+    @NInt
+    public native long updateAction();
 }

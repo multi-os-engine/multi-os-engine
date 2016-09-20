@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSNumberFormatterRoundingMode {
-    @Generated
-    private NSNumberFormatterRoundingMode() {
-    }
-
     @Generated @NUInt public static final long Ceiling = 0x0000000000000000L;
     @Generated @NUInt public static final long Floor = 0x0000000000000001L;
     @Generated @NUInt public static final long Down = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class NSNumberFormatterRoundingMode {
     @Generated @NUInt public static final long HalfEven = 0x0000000000000004L;
     @Generated @NUInt public static final long HalfDown = 0x0000000000000005L;
     @Generated @NUInt public static final long HalfUp = 0x0000000000000006L;
+
+    @Generated
+    private NSNumberFormatterRoundingMode() {
+    }
 }

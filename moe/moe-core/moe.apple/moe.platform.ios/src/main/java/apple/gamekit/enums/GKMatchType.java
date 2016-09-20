@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class GKMatchType {
-    @Generated
-    private GKMatchType() {
-    }
-
     @Generated @NUInt public static final long PeerToPeer = 0x0000000000000000L;
     @Generated @NUInt public static final long Hosted = 0x0000000000000001L;
     @Generated @NUInt public static final long TurnBased = 0x0000000000000002L;
+
+    @Generated
+    private GKMatchType() {
+    }
 }

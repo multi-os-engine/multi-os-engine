@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UISystemAnimation {
+    @Generated @NUInt public static final long UISystemAnimationDelete = 0x0000000000000000L;
+
     @Generated
     private UISystemAnimation() {
     }
-
-    @Generated @NUInt public static final long UISystemAnimationDelete = 0x0000000000000000L;
 }

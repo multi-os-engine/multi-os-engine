@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class AVAudioSessionRecordPermission {
-    @Generated
-    private AVAudioSessionRecordPermission() {
-    }
-
     @Generated @NUInt public static final long Undetermined = 0x00000000756E6474L;
     @Generated @NUInt public static final long Denied = 0x0000000064656E79L;
     @Generated @NUInt public static final long Granted = 0x0000000067726E74L;
+
+    @Generated
+    private AVAudioSessionRecordPermission() {
+    }
 }

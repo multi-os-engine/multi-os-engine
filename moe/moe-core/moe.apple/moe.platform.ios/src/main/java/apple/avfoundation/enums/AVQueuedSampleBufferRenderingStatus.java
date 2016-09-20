@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVQueuedSampleBufferRenderingStatus {
-    @Generated
-    private AVQueuedSampleBufferRenderingStatus() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Rendering = 0x0000000000000001L;
     @Generated @NInt public static final long Failed = 0x0000000000000002L;
+
+    @Generated
+    private AVQueuedSampleBufferRenderingStatus() {
+    }
 }

@@ -59,18 +59,6 @@ public class NSAsynchronousFetchResult extends NSPersistentStoreAsynchronousResu
     public static native NSAsynchronousFetchResult alloc();
 
     @Generated
-    @Selector("fetchRequest")
-    public native NSAsynchronousFetchRequest fetchRequest();
-
-    @Generated
-    @Selector("finalResult")
-    public native NSArray<?> finalResult();
-
-    @Generated
-    @Selector("init")
-    public native NSAsynchronousFetchResult init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class NSAsynchronousFetchResult extends NSPersistentStoreAsynchronousResu
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("fetchRequest")
+    public native NSAsynchronousFetchRequest fetchRequest();
+
+    @Generated
+    @Selector("finalResult")
+    public native NSArray<?> finalResult();
+
+    @Generated
+    @Selector("init")
+    public native NSAsynchronousFetchResult init();
 }

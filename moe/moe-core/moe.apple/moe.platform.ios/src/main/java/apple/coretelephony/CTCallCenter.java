@@ -59,50 +59,6 @@ public class CTCallCenter extends NSObject {
     @Selector("alloc")
     public static native CTCallCenter alloc();
 
-    /**
-     * callEventHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCallCenter/index.html#//apple_ref/occ/instp/CTCallCenter/callEventHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("callEventHandler")
-    @ObjCBlock(name = "call_callEventHandler_ret")
-    public native Block_callEventHandler_ret callEventHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_callEventHandler_ret {
-        @Generated
-        void call_callEventHandler_ret(CTCall arg0);
-    }
-
-    /**
-     * currentCalls</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCallCenter/index.html#//apple_ref/occ/instp/CTCallCenter/currentCalls">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentCalls")
-    public native NSSet<? extends CTCall> currentCalls();
-
-    @Generated
-    @Selector("init")
-    public native CTCallCenter init();
-
-    /**
-     * callEventHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCallCenter/index.html#//apple_ref/occ/instp/CTCallCenter/callEventHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCallEventHandler:")
-    public native void setCallEventHandler(
-            @ObjCBlock(name = "call_setCallEventHandler") Block_setCallEventHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setCallEventHandler {
-        @Generated
-        void call_setCallEventHandler(CTCall arg0);
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -202,4 +158,48 @@ public class CTCallCenter extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * callEventHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCallCenter/index.html#//apple_ref/occ/instp/CTCallCenter/callEventHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("callEventHandler")
+    @ObjCBlock(name = "call_callEventHandler_ret")
+    public native Block_callEventHandler_ret callEventHandler();
+
+    /**
+     * currentCalls</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCallCenter/index.html#//apple_ref/occ/instp/CTCallCenter/currentCalls">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentCalls")
+    public native NSSet<? extends CTCall> currentCalls();
+
+    @Generated
+    @Selector("init")
+    public native CTCallCenter init();
+
+    /**
+     * callEventHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCallCenter/index.html#//apple_ref/occ/instp/CTCallCenter/callEventHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCallEventHandler:")
+    public native void setCallEventHandler(
+            @ObjCBlock(name = "call_setCallEventHandler") Block_setCallEventHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_callEventHandler_ret {
+        @Generated
+        void call_callEventHandler_ret(CTCall arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setCallEventHandler {
+        @Generated
+        void call_setCallEventHandler(CTCall arg0);
+    }
 }

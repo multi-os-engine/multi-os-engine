@@ -62,35 +62,6 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageHistogramSpecification alloc();
 
-    /**
-     * encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogramSpecification_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogramSpecification/encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:")
-    public native void encodeTransformToCommandBufferSourceTextureSourceHistogramSourceHistogramOffsetDesiredHistogramDesiredHistogramOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture source,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer sourceHistogram, @NUInt long sourceHistogramOffset,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer desiredHistogram, @NUInt long desiredHistogramOffset);
-
-    @Generated
-    @Selector("init")
-    public native MPSImageHistogramSpecification init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageHistogramSpecification initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * initWithDevice:histogramInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogramSpecification_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogramSpecification/initWithDevice:histogramInfo:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDevice:histogramInfo:")
-    public native MPSImageHistogramSpecification initWithDeviceHistogramInfo(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, VoidPtr histogramInfo);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -190,4 +161,33 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogramSpecification_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogramSpecification/encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("encodeTransformToCommandBuffer:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:desiredHistogramOffset:")
+    public native void encodeTransformToCommandBufferSourceTextureSourceHistogramSourceHistogramOffsetDesiredHistogramDesiredHistogramOffset(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @Mapped(ObjCObjectMapper.class) MTLTexture source,
+            @Mapped(ObjCObjectMapper.class) MTLBuffer sourceHistogram, @NUInt long sourceHistogramOffset,
+            @Mapped(ObjCObjectMapper.class) MTLBuffer desiredHistogram, @NUInt long desiredHistogramOffset);
+
+    @Generated
+    @Selector("init")
+    public native MPSImageHistogramSpecification init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageHistogramSpecification initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * initWithDevice:histogramInfo:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogramSpecification_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogramSpecification/initWithDevice:histogramInfo:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDevice:histogramInfo:")
+    public native MPSImageHistogramSpecification initWithDeviceHistogramInfo(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, VoidPtr histogramInfo);
 }

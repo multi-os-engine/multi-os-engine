@@ -58,40 +58,6 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native NSURLQueryItem alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NSURLQueryItem init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSURLQueryItem initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithName:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/instm/NSURLQueryItem/initWithName:value:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithName:value:")
-    public native NSURLQueryItem initWithNameValue(String name, String value);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/instp/NSURLQueryItem/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
     /**
      * queryItemWithName:value:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/clm/NSURLQueryItem/queryItemWithName:value:">iOS Dev Center</a>
@@ -103,20 +69,6 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/instp/NSURLQueryItem/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    public native String value();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -217,4 +169,52 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NSURLQueryItem init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSURLQueryItem initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithName:value:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/instm/NSURLQueryItem/initWithName:value:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithName:value:")
+    public native NSURLQueryItem initWithNameValue(String name, String value);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/instp/NSURLQueryItem/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLQueryItem_Class/index.html#//apple_ref/occ/instp/NSURLQueryItem/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    public native String value();
 }

@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKEventAvailability {
-    @Generated
-    private EKEventAvailability() {
-    }
-
     @Generated @NInt public static final long NotSupported = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long Busy = 0x0000000000000000L;
     @Generated @NInt public static final long Free = 0x0000000000000001L;
     @Generated @NInt public static final long Tentative = 0x0000000000000002L;
     @Generated @NInt public static final long Unavailable = 0x0000000000000003L;
+
+    @Generated
+    private EKEventAvailability() {
+    }
 }

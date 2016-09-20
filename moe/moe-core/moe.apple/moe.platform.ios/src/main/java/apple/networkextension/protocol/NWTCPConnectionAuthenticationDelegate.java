@@ -47,13 +47,6 @@ public interface NWTCPConnectionAuthenticationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_evaluateTrustForConnectionPeerCertificateChainCompletionHandler {
-        @Generated
-        void call_evaluateTrustForConnectionPeerCertificateChainCompletionHandler(SecTrustRef arg0);
-    }
-
     /**
      * provideIdentityForConnection:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWTCPConnectionAuthenticationDelegateClassRef/index.html#//apple_ref/occ/intfm/NWTCPConnectionAuthenticationDelegate/provideIdentityForConnection:completionHandler:">iOS Dev Center</a>
@@ -64,13 +57,6 @@ public interface NWTCPConnectionAuthenticationDelegate {
     default void provideIdentityForConnectionCompletionHandler(NWTCPConnection connection,
             @ObjCBlock(name = "call_provideIdentityForConnectionCompletionHandler") Block_provideIdentityForConnectionCompletionHandler completion) {
         throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_provideIdentityForConnectionCompletionHandler {
-        @Generated
-        void call_provideIdentityForConnectionCompletionHandler(SecIdentityRef arg0, NSArray<?> arg1);
     }
 
     /**
@@ -93,5 +79,19 @@ public interface NWTCPConnectionAuthenticationDelegate {
     @Selector("shouldProvideIdentityForConnection:")
     default boolean shouldProvideIdentityForConnection(NWTCPConnection connection) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_evaluateTrustForConnectionPeerCertificateChainCompletionHandler {
+        @Generated
+        void call_evaluateTrustForConnectionPeerCertificateChainCompletionHandler(SecTrustRef arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_provideIdentityForConnectionCompletionHandler {
+        @Generated
+        void call_provideIdentityForConnectionCompletionHandler(SecIdentityRef arg0, NSArray<?> arg1);
     }
 }

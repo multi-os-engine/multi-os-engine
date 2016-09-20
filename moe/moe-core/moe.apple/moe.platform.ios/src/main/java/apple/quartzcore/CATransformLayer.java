@@ -61,20 +61,8 @@ public class CATransformLayer extends CALayer {
     public static native CATransformLayer alloc();
 
     @Generated
-    @Selector("init")
-    public native CATransformLayer init();
-
-    @Generated
-    @Selector("initWithLayer:")
-    public native CATransformLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
-
-    @Generated
     @Selector("layer")
     public static native CATransformLayer layer();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CATransformLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -189,4 +177,16 @@ public class CATransformLayer extends CALayer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CATransformLayer init();
+
+    @Generated
+    @Selector("initWithLayer:")
+    public native CATransformLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CATransformLayer initWithCoder(NSCoder aDecoder);
 }

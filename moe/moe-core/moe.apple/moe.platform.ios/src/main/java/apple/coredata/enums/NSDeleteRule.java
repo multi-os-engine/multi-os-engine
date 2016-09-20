@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDeleteRule {
-    @Generated
-    private NSDeleteRule() {
-    }
-
     @Generated @NUInt public static final long NoActionDeleteRule = 0x0000000000000000L;
     @Generated @NUInt public static final long NullifyDeleteRule = 0x0000000000000001L;
     @Generated @NUInt public static final long CascadeDeleteRule = 0x0000000000000002L;
     @Generated @NUInt public static final long DenyDeleteRule = 0x0000000000000003L;
+
+    @Generated
+    private NSDeleteRule() {
+    }
 }

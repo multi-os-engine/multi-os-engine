@@ -77,6 +77,17 @@ public interface UITextInputTraits {
     }
 
     /**
+     * secureTextEntry</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/secureTextEntry">iOS Dev Center</a>
+     */
+    @Generated
+    @IsOptional
+    @Selector("setSecureTextEntry:")
+    default void setSecureTextEntry(boolean value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
      * keyboardAppearance</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/keyboardAppearance">iOS Dev Center</a>
      */
@@ -175,17 +186,6 @@ public interface UITextInputTraits {
     @IsOptional
     @Selector("setReturnKeyType:")
     default void setReturnKeyType(@NInt long value) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    /**
-     * secureTextEntry</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/occ/intfp/UITextInputTraits/secureTextEntry">iOS Dev Center</a>
-     */
-    @Generated
-    @IsOptional
-    @Selector("setSecureTextEntry:")
-    default void setSecureTextEntry(boolean value) {
         throw new java.lang.UnsupportedOperationException();
     }
 

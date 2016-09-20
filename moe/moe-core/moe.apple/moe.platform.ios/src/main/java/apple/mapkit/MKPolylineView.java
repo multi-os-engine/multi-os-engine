@@ -70,41 +70,6 @@ public class MKPolylineView extends MKOverlayPathView {
     public static native MKPolylineView alloc();
 
     @Generated
-    @Selector("init")
-    public native MKPolylineView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native MKPolylineView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithOverlay:")
-    public native MKPolylineView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
-
-    /**
-     * initWithPolyline:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolylineView_class/index.html#//apple_ref/occ/instm/MKPolylineView/initWithPolyline:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("initWithPolyline:")
-    public native MKPolylineView initWithPolyline(MKPolyline polyline);
-
-    /**
-     * polyline</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolylineView_class/index.html#//apple_ref/occ/instp/MKPolylineView/polyline">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("polyline")
-    public native MKPolyline polyline();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKPolylineView initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -157,23 +122,9 @@ public class MKPolylineView extends MKOverlayPathView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -184,27 +135,10 @@ public class MKPolylineView extends MKOverlayPathView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -215,24 +149,9 @@ public class MKPolylineView extends MKOverlayPathView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -430,4 +349,85 @@ public class MKPolylineView extends MKOverlayPathView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MKPolylineView init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native MKPolylineView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithOverlay:")
+    public native MKPolylineView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
+
+    /**
+     * initWithPolyline:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolylineView_class/index.html#//apple_ref/occ/instm/MKPolylineView/initWithPolyline:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("initWithPolyline:")
+    public native MKPolylineView initWithPolyline(MKPolyline polyline);
+
+    /**
+     * polyline</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolylineView_class/index.html#//apple_ref/occ/instp/MKPolylineView/polyline">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("polyline")
+    public native MKPolyline polyline();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MKPolylineView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

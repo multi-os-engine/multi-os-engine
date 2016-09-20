@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDataBase64EncodingOptions {
-    @Generated
-    private NSDataBase64EncodingOptions() {
-    }
-
     @Generated @NUInt public static final long Encoding64CharacterLineLength = 0x0000000000000001L;
     @Generated @NUInt public static final long Encoding76CharacterLineLength = 0x0000000000000002L;
     @Generated @NUInt public static final long EncodingEndLineWithCarriageReturn = 0x0000000000000010L;
     @Generated @NUInt public static final long EncodingEndLineWithLineFeed = 0x0000000000000020L;
+
+    @Generated
+    private NSDataBase64EncodingOptions() {
+    }
 }

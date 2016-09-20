@@ -68,10 +68,6 @@ public class UIVibrancyEffect extends UIVisualEffect {
     @Selector("effectForBlurEffect:")
     public static native UIVibrancyEffect effectForBlurEffect(UIBlurEffect blurEffect);
 
-    @Generated
-    @Selector("init")
-    public native UIVibrancyEffect init();
-
     /**
      * notificationCenterVibrancyEffect</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVibrancyEffect/index.html#//apple_ref/occ/clm/UIVibrancyEffect/notificationCenterVibrancyEffect">iOS Dev Center</a>
@@ -79,10 +75,6 @@ public class UIVibrancyEffect extends UIVisualEffect {
     @Generated
     @Selector("notificationCenterVibrancyEffect")
     public static native UIVibrancyEffect notificationCenterVibrancyEffect();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIVibrancyEffect initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -184,13 +176,21 @@ public class UIVibrancyEffect extends UIVisualEffect {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIVibrancyEffect init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIVibrancyEffect initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

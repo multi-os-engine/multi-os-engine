@@ -60,32 +60,6 @@ public class UILexiconEntry extends NSObject implements NSCopying {
     public static native UILexiconEntry alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * documentText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILexiconEntry_Class/index.html#//apple_ref/occ/instp/UILexiconEntry/documentText">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("documentText")
-    public native String documentText();
-
-    @Generated
-    @Selector("init")
-    public native UILexiconEntry init();
-
-    /**
-     * userInput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILexiconEntry_Class/index.html#//apple_ref/occ/instp/UILexiconEntry/userInput">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInput")
-    public native String userInput();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -184,4 +158,30 @@ public class UILexiconEntry extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * documentText</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILexiconEntry_Class/index.html#//apple_ref/occ/instp/UILexiconEntry/documentText">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("documentText")
+    public native String documentText();
+
+    @Generated
+    @Selector("init")
+    public native UILexiconEntry init();
+
+    /**
+     * userInput</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILexiconEntry_Class/index.html#//apple_ref/occ/instp/UILexiconEntry/userInput">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInput")
+    public native String userInput();
 }

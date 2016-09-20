@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLPrimitiveType {
-    @Generated
-    private MTLPrimitiveType() {
-    }
-
     @Generated @NUInt public static final long Point = 0x0000000000000000L;
     @Generated @NUInt public static final long Line = 0x0000000000000001L;
     @Generated @NUInt public static final long LineStrip = 0x0000000000000002L;
     @Generated @NUInt public static final long Triangle = 0x0000000000000003L;
     @Generated @NUInt public static final long TriangleStrip = 0x0000000000000004L;
+
+    @Generated
+    private MTLPrimitiveType() {
+    }
 }

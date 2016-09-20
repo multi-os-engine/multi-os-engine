@@ -54,35 +54,10 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
         super(peer);
     }
 
-    /**
-     * addTimeInterval:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/addTimeInterval:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("addTimeInterval:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object addTimeInterval(double seconds);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSDate alloc();
-
-    /**
-     * compare:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/compare:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("compare:")
-    @NInt
-    public native long compare(NSDate other);
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
 
     /**
      * date</br>
@@ -91,15 +66,6 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Generated
     @Selector("date")
     public static native NSDate date();
-
-    /**
-     * dateByAddingTimeInterval:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/dateByAddingTimeInterval:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dateByAddingTimeInterval:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object dateByAddingTimeInterval(double ti);
 
     /**
      * dateWithTimeInterval:sinceDate:</br>
@@ -134,22 +100,6 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     public static native NSDate dateWithTimeIntervalSinceReferenceDate(double ti);
 
     /**
-     * description</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instp/NSDate/description">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("description")
-    public native String description();
-
-    /**
-     * descriptionWithLocale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/descriptionWithLocale:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("descriptionWithLocale:")
-    public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
-
-    /**
      * distantFuture</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/clm/NSDate/distantFuture">iOS Dev Center</a>
      */
@@ -165,119 +115,9 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Selector("distantPast")
     public static native NSDate distantPast();
 
-    /**
-     * earlierDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/earlierDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("earlierDate:")
-    public native NSDate earlierDate(NSDate anotherDate);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native NSDate init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSDate initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithTimeInterval:sinceDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/initWithTimeInterval:sinceDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTimeInterval:sinceDate:")
-    public native NSDate initWithTimeIntervalSinceDate(double secsToBeAdded, NSDate date);
-
-    /**
-     * initWithTimeIntervalSince1970:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/initWithTimeIntervalSince1970:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTimeIntervalSince1970:")
-    public native NSDate initWithTimeIntervalSince1970(double secs);
-
-    /**
-     * initWithTimeIntervalSinceNow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/initWithTimeIntervalSinceNow:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTimeIntervalSinceNow:")
-    public native NSDate initWithTimeIntervalSinceNow(double secs);
-
-    /**
-     * initWithTimeIntervalSinceReferenceDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/initWithTimeIntervalSinceReferenceDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTimeIntervalSinceReferenceDate:")
-    public native NSDate initWithTimeIntervalSinceReferenceDate(double ti);
-
-    /**
-     * isEqualToDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/isEqualToDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEqualToDate:")
-    public native boolean isEqualToDate(NSDate otherDate);
-
-    /**
-     * laterDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/laterDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("laterDate:")
-    public native NSDate laterDate(NSDate anotherDate);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * timeIntervalSince1970</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instp/NSDate/timeIntervalSince1970">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeIntervalSince1970")
-    public native double timeIntervalSince1970();
-
-    /**
-     * timeIntervalSinceDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/timeIntervalSinceDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeIntervalSinceDate:")
-    public native double timeIntervalSinceDate(NSDate anotherDate);
-
-    /**
-     * timeIntervalSinceNow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instp/NSDate/timeIntervalSinceNow">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeIntervalSinceNow")
-    public native double timeIntervalSinceNow();
-
-    /**
-     * timeIntervalSinceReferenceDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instp/NSDate/timeIntervalSinceReferenceDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeIntervalSinceReferenceDate")
-    public native double timeIntervalSinceReferenceDate();
 
     /**
      * timeIntervalSinceReferenceDate</br>
@@ -382,4 +222,164 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addTimeInterval:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/addTimeInterval:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("addTimeInterval:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object addTimeInterval(double seconds);
+
+    /**
+     * compare:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/compare:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("compare:")
+    @NInt
+    public native long compare(NSDate other);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * dateByAddingTimeInterval:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/dateByAddingTimeInterval:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dateByAddingTimeInterval:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object dateByAddingTimeInterval(double ti);
+
+    /**
+     * description</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instp/NSDate/description">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("description")
+    public native String description();
+
+    /**
+     * descriptionWithLocale:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/descriptionWithLocale:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("descriptionWithLocale:")
+    public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
+
+    /**
+     * earlierDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/earlierDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("earlierDate:")
+    public native NSDate earlierDate(NSDate anotherDate);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native NSDate init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSDate initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithTimeInterval:sinceDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/initWithTimeInterval:sinceDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTimeInterval:sinceDate:")
+    public native NSDate initWithTimeIntervalSinceDate(double secsToBeAdded, NSDate date);
+
+    /**
+     * initWithTimeIntervalSince1970:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/initWithTimeIntervalSince1970:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTimeIntervalSince1970:")
+    public native NSDate initWithTimeIntervalSince1970(double secs);
+
+    /**
+     * initWithTimeIntervalSinceNow:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/initWithTimeIntervalSinceNow:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTimeIntervalSinceNow:")
+    public native NSDate initWithTimeIntervalSinceNow(double secs);
+
+    /**
+     * initWithTimeIntervalSinceReferenceDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/initWithTimeIntervalSinceReferenceDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTimeIntervalSinceReferenceDate:")
+    public native NSDate initWithTimeIntervalSinceReferenceDate(double ti);
+
+    /**
+     * isEqualToDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/isEqualToDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEqualToDate:")
+    public native boolean isEqualToDate(NSDate otherDate);
+
+    /**
+     * laterDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/laterDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("laterDate:")
+    public native NSDate laterDate(NSDate anotherDate);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * timeIntervalSince1970</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instp/NSDate/timeIntervalSince1970">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeIntervalSince1970")
+    public native double timeIntervalSince1970();
+
+    /**
+     * timeIntervalSinceDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instm/NSDate/timeIntervalSinceDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeIntervalSinceDate:")
+    public native double timeIntervalSinceDate(NSDate anotherDate);
+
+    /**
+     * timeIntervalSinceNow</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instp/NSDate/timeIntervalSinceNow">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeIntervalSinceNow")
+    public native double timeIntervalSinceNow();
+
+    /**
+     * timeIntervalSinceReferenceDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/index.html#//apple_ref/occ/instp/NSDate/timeIntervalSinceReferenceDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeIntervalSinceReferenceDate")
+    public native double timeIntervalSinceReferenceDate();
 }

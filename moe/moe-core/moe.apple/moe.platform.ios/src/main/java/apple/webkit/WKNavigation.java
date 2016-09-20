@@ -59,10 +59,6 @@ public class WKNavigation extends NSObject {
     public static native WKNavigation alloc();
 
     @Generated
-    @Selector("init")
-    public native WKNavigation init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class WKNavigation extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native WKNavigation init();
 }

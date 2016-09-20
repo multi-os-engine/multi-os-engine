@@ -59,10 +59,6 @@ public class GKNotificationBanner extends NSObject {
     @Selector("alloc")
     public static native GKNotificationBanner alloc();
 
-    @Generated
-    @Selector("init")
-    public native GKNotificationBanner init();
-
     /**
      * showBannerWithTitle:message:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKNotificationBanner_Ref/index.html#//apple_ref/occ/clm/GKNotificationBanner/showBannerWithTitle:message:completionHandler:">iOS Dev Center</a>
@@ -71,13 +67,6 @@ public class GKNotificationBanner extends NSObject {
     @Selector("showBannerWithTitle:message:completionHandler:")
     public static native void showBannerWithTitleMessageCompletionHandler(String title, String message,
             @ObjCBlock(name = "call_showBannerWithTitleMessageCompletionHandler") Block_showBannerWithTitleMessageCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_showBannerWithTitleMessageCompletionHandler {
-        @Generated
-        void call_showBannerWithTitleMessageCompletionHandler();
-    }
 
     /**
      * showBannerWithTitle:message:duration:completionHandler:</br>
@@ -88,13 +77,6 @@ public class GKNotificationBanner extends NSObject {
     public static native void showBannerWithTitleMessageDurationCompletionHandler(String title, String message,
             double duration,
             @ObjCBlock(name = "call_showBannerWithTitleMessageDurationCompletionHandler") Block_showBannerWithTitleMessageDurationCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_showBannerWithTitleMessageDurationCompletionHandler {
-        @Generated
-        void call_showBannerWithTitleMessageDurationCompletionHandler();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -195,4 +177,22 @@ public class GKNotificationBanner extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GKNotificationBanner init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_showBannerWithTitleMessageCompletionHandler {
+        @Generated
+        void call_showBannerWithTitleMessageCompletionHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_showBannerWithTitleMessageDurationCompletionHandler {
+        @Generated
+        void call_showBannerWithTitleMessageDurationCompletionHandler();
+    }
 }

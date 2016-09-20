@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTParagraphStyleSpecifier {
-    @Generated
-    private CTParagraphStyleSpecifier() {
-    }
-
     @Generated public static final int Alignment = 0x00000000;
     @Generated public static final int FirstLineHeadIndent = 0x00000001;
     @Generated public static final int HeadIndent = 0x00000002;
@@ -43,4 +39,8 @@ public final class CTParagraphStyleSpecifier {
     @Generated public static final int LineSpacingAdjustment = 0x00000010;
     @Generated public static final int LineBoundsOptions = 0x00000011;
     @Generated public static final int Count = 0x00000012;
+
+    @Generated
+    private CTParagraphStyleSpecifier() {
+    }
 }

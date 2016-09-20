@@ -60,19 +60,6 @@ public class MPSImageTent extends MPSImageBox {
     public static native MPSImageTent alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSImageTent init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageTent initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    @Generated
-    @Selector("initWithDevice:kernelWidth:kernelHeight:")
-    public native MPSImageTent initWithDeviceKernelWidthKernelHeight(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long kernelWidth, @NUInt long kernelHeight);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -171,4 +158,17 @@ public class MPSImageTent extends MPSImageBox {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageTent init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageTent initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    @Generated
+    @Selector("initWithDevice:kernelWidth:kernelHeight:")
+    public native MPSImageTent initWithDeviceKernelWidthKernelHeight(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NUInt long kernelWidth, @NUInt long kernelHeight);
 }

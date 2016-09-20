@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSKeyValueObservingOptions {
-    @Generated
-    private NSKeyValueObservingOptions() {
-    }
-
     @Generated @NUInt public static final long New = 0x0000000000000001L;
     @Generated @NUInt public static final long Old = 0x0000000000000002L;
     @Generated @NUInt public static final long Initial = 0x0000000000000004L;
     @Generated @NUInt public static final long Prior = 0x0000000000000008L;
+
+    @Generated
+    private NSKeyValueObservingOptions() {
+    }
 }

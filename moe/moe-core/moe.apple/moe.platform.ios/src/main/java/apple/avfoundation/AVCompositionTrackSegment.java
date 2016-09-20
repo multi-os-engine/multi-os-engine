@@ -79,51 +79,6 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
             NSURL URL, int trackID, @ByValue CMTimeRange sourceTimeRange, @ByValue CMTimeRange targetTimeRange);
 
     @Generated
-    @Selector("init")
-    public native AVCompositionTrackSegment init();
-
-    /**
-     * initWithTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instm/AVCompositionTrackSegment/initWithTimeRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTimeRange:")
-    public native AVCompositionTrackSegment initWithTimeRange(@ByValue CMTimeRange timeRange);
-
-    /**
-     * initWithURL:trackID:sourceTimeRange:targetTimeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instm/AVCompositionTrackSegment/initWithURL:trackID:sourceTimeRange:targetTimeRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:trackID:sourceTimeRange:targetTimeRange:")
-    public native AVCompositionTrackSegment initWithURLTrackIDSourceTimeRangeTargetTimeRange(NSURL URL, int trackID,
-            @ByValue CMTimeRange sourceTimeRange, @ByValue CMTimeRange targetTimeRange);
-
-    /**
-     * empty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instp/AVCompositionTrackSegment/empty">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEmpty")
-    public native boolean isEmpty();
-
-    /**
-     * sourceTrackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instp/AVCompositionTrackSegment/sourceTrackID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceTrackID")
-    public native int sourceTrackID();
-
-    /**
-     * sourceURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instp/AVCompositionTrackSegment/sourceURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceURL")
-    public native NSURL sourceURL();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -222,4 +177,49 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native AVCompositionTrackSegment init();
+
+    /**
+     * initWithTimeRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instm/AVCompositionTrackSegment/initWithTimeRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTimeRange:")
+    public native AVCompositionTrackSegment initWithTimeRange(@ByValue CMTimeRange timeRange);
+
+    /**
+     * initWithURL:trackID:sourceTimeRange:targetTimeRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instm/AVCompositionTrackSegment/initWithURL:trackID:sourceTimeRange:targetTimeRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:trackID:sourceTimeRange:targetTimeRange:")
+    public native AVCompositionTrackSegment initWithURLTrackIDSourceTimeRangeTargetTimeRange(NSURL URL, int trackID,
+            @ByValue CMTimeRange sourceTimeRange, @ByValue CMTimeRange targetTimeRange);
+
+    /**
+     * empty</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instp/AVCompositionTrackSegment/empty">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEmpty")
+    public native boolean isEmpty();
+
+    /**
+     * sourceTrackID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instp/AVCompositionTrackSegment/sourceTrackID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceTrackID")
+    public native int sourceTrackID();
+
+    /**
+     * sourceURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrackSegment_Class/index.html#//apple_ref/occ/instp/AVCompositionTrackSegment/sourceURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceURL")
+    public native NSURL sourceURL();
 }

@@ -72,61 +72,8 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     public static native boolean canFilterByProperty(String property);
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * enumerateValuesForProperties:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaEntity_ClassReference/index.html#//apple_ref/occ/instm/MPMediaEntity/enumerateValuesForProperties:usingBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enumerateValuesForProperties:usingBlock:")
-    public native void enumerateValuesForPropertiesUsingBlock(NSSet<String> properties,
-            @ObjCBlock(name = "call_enumerateValuesForPropertiesUsingBlock") Block_enumerateValuesForPropertiesUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateValuesForPropertiesUsingBlock {
-        @Generated
-        void call_enumerateValuesForPropertiesUsingBlock(String arg0, @Mapped(ObjCObjectMapper.class) Object arg1,
-                BoolPtr arg2);
-    }
-
-    @Generated
-    @Selector("init")
-    public native MPMediaEntity init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaEntity initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("objectForKeyedSubscript:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
-
-    @Generated
-    @Selector("persistentID")
-    public native long persistentID();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * valueForProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaEntity_ClassReference/index.html#//apple_ref/occ/instm/MPMediaEntity/valueForProperty:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueForProperty:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForProperty(String property);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -227,4 +174,57 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * enumerateValuesForProperties:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaEntity_ClassReference/index.html#//apple_ref/occ/instm/MPMediaEntity/enumerateValuesForProperties:usingBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enumerateValuesForProperties:usingBlock:")
+    public native void enumerateValuesForPropertiesUsingBlock(NSSet<String> properties,
+            @ObjCBlock(name = "call_enumerateValuesForPropertiesUsingBlock") Block_enumerateValuesForPropertiesUsingBlock block);
+
+    @Generated
+    @Selector("init")
+    public native MPMediaEntity init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaEntity initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("objectForKeyedSubscript:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
+
+    @Generated
+    @Selector("persistentID")
+    public native long persistentID();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * valueForProperty:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaEntity_ClassReference/index.html#//apple_ref/occ/instm/MPMediaEntity/valueForProperty:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueForProperty:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object valueForProperty(String property);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateValuesForPropertiesUsingBlock {
+        @Generated
+        void call_enumerateValuesForPropertiesUsingBlock(String arg0, @Mapped(ObjCObjectMapper.class) Object arg1,
+                BoolPtr arg2);
+    }
 }

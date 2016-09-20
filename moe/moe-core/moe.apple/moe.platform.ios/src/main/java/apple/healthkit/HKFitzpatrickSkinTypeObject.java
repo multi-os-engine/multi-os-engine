@@ -63,41 +63,8 @@ public class HKFitzpatrickSkinTypeObject extends NSObject implements NSCopying, 
     public static native HKFitzpatrickSkinTypeObject alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native HKFitzpatrickSkinTypeObject init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKFitzpatrickSkinTypeObject initWithCoder(NSCoder aDecoder);
-
-    /**
-     * skinType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKFitzpatrickSkinTypeObject_ClassReference/index.html#//apple_ref/occ/instp/HKFitzpatrickSkinTypeObject/skinType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("skinType")
-    @NInt
-    public native long skinType();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -198,4 +165,37 @@ public class HKFitzpatrickSkinTypeObject extends NSObject implements NSCopying, 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native HKFitzpatrickSkinTypeObject init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKFitzpatrickSkinTypeObject initWithCoder(NSCoder aDecoder);
+
+    /**
+     * skinType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKFitzpatrickSkinTypeObject_ClassReference/index.html#//apple_ref/occ/instp/HKFitzpatrickSkinTypeObject/skinType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("skinType")
+    @NInt
+    public native long skinType();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

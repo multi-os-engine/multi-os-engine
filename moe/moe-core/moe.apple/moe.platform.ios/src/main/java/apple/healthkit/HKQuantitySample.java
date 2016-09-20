@@ -62,18 +62,6 @@ public class HKQuantitySample extends HKSample {
     @Selector("alloc")
     public static native HKQuantitySample alloc();
 
-    @Generated
-    @Selector("init")
-    public native HKQuantitySample init();
-
-    /**
-     * quantity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/instp/HKQuantitySample/quantity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("quantity")
-    public native HKQuantity quantity();
-
     /**
      * quantitySampleWithType:quantity:startDate:endDate:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/clm/HKQuantitySample/quantitySampleWithType:quantity:startDate:endDate:">iOS Dev Center</a>
@@ -94,14 +82,6 @@ public class HKQuantitySample extends HKSample {
             NSDictionary<String, ?> metadata);
 
     /**
-     * quantityType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/instp/HKQuantitySample/quantityType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("quantityType")
-    public native HKQuantityType quantityType();
-
-    /**
      * quantitySampleWithType:quantity:startDate:endDate:device:metadata:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/clm/HKQuantitySample/quantitySampleWithType:quantity:startDate:endDate:device:metadata:">iOS Dev Center</a>
      */
@@ -110,10 +90,6 @@ public class HKQuantitySample extends HKSample {
     public static native HKQuantitySample quantitySampleWithTypeQuantityStartDateEndDateDeviceMetadata(
             HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate, HKDevice device,
             NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKQuantitySample initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -215,13 +191,37 @@ public class HKQuantitySample extends HKSample {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native HKQuantitySample init();
+
+    /**
+     * quantity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/instp/HKQuantitySample/quantity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("quantity")
+    public native HKQuantity quantity();
+
+    /**
+     * quantityType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantitySample_Class/index.html#//apple_ref/occ/instp/HKQuantitySample/quantityType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("quantityType")
+    public native HKQuantityType quantityType();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKQuantitySample initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

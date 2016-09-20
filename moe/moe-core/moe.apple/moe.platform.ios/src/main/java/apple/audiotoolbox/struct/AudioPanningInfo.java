@@ -28,11 +28,11 @@ import org.moe.natj.general.ann.UncertainReturn;
 @Generated
 @Structure()
 public final class AudioPanningInfo extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public AudioPanningInfo() {

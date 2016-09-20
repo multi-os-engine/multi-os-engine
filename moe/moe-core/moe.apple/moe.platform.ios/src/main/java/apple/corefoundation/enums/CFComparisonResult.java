@@ -21,11 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFComparisonResult {
-    @Generated
-    private CFComparisonResult() {
-    }
-
     @Generated @NInt public static final long LessThan = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long EqualTo = 0x0000000000000000L;
     @Generated @NInt public static final long GreaterThan = 0x0000000000000001L;
+    @Generated
+    private CFComparisonResult() {
+    }
 }

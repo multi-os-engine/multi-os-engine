@@ -53,71 +53,10 @@ public class MKRoute extends NSObject {
         super(peer);
     }
 
-    /**
-     * advisoryNotices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/advisoryNotices">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("advisoryNotices")
-    public native NSArray<String> advisoryNotices();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native MKRoute alloc();
-
-    /**
-     * distance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/distance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("distance")
-    public native double distance();
-
-    /**
-     * expectedTravelTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/expectedTravelTime">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expectedTravelTime")
-    public native double expectedTravelTime();
-
-    @Generated
-    @Selector("init")
-    public native MKRoute init();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * polyline</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/polyline">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("polyline")
-    public native MKPolyline polyline();
-
-    /**
-     * steps</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/steps">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("steps")
-    public native NSArray<? extends MKRouteStep> steps();
-
-    /**
-     * transportType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/transportType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transportType")
-    @NUInt
-    public native long transportType();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -218,4 +157,65 @@ public class MKRoute extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * advisoryNotices</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/advisoryNotices">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("advisoryNotices")
+    public native NSArray<String> advisoryNotices();
+
+    /**
+     * distance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/distance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("distance")
+    public native double distance();
+
+    /**
+     * expectedTravelTime</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/expectedTravelTime">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expectedTravelTime")
+    public native double expectedTravelTime();
+
+    @Generated
+    @Selector("init")
+    public native MKRoute init();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * polyline</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/polyline">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("polyline")
+    public native MKPolyline polyline();
+
+    /**
+     * steps</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/steps">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("steps")
+    public native NSArray<? extends MKRouteStep> steps();
+
+    /**
+     * transportType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKRoute_class/index.html#//apple_ref/occ/instp/MKRoute/transportType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transportType")
+    @NUInt
+    public native long transportType();
 }

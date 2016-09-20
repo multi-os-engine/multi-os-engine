@@ -64,112 +64,6 @@ public class HKStatisticsCollectionQuery extends HKQuery {
     @Selector("alloc")
     public static native HKStatisticsCollectionQuery alloc();
 
-    /**
-     * anchorDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/anchorDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("anchorDate")
-    public native NSDate anchorDate();
-
-    @Generated
-    @Selector("init")
-    public native HKStatisticsCollectionQuery init();
-
-    /**
-     * initWithQuantityType:quantitySamplePredicate:options:anchorDate:intervalComponents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instm/HKStatisticsCollectionQuery/initWithQuantityType:quantitySamplePredicate:options:anchorDate:intervalComponents:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithQuantityType:quantitySamplePredicate:options:anchorDate:intervalComponents:")
-    public native HKStatisticsCollectionQuery initWithQuantityTypeQuantitySamplePredicateOptionsAnchorDateIntervalComponents(
-            HKQuantityType quantityType, NSPredicate quantitySamplePredicate, @NUInt long options, NSDate anchorDate,
-            NSDateComponents intervalComponents);
-
-    /**
-     * intervalComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/intervalComponents">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("intervalComponents")
-    public native NSDateComponents intervalComponents();
-
-    /**
-     * options</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/options">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("options")
-    @NUInt
-    public native long options();
-
-    /**
-     * initialResultsHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/initialResultsHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setInitialResultsHandler:")
-    public native void setInitialResultsHandler(
-            @ObjCBlock(name = "call_setInitialResultsHandler") Block_setInitialResultsHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setInitialResultsHandler {
-        @Generated
-        void call_setInitialResultsHandler(HKStatisticsCollectionQuery arg0, HKStatisticsCollection arg1, NSError arg2);
-    }
-
-    /**
-     * statisticsUpdateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/statisticsUpdateHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setStatisticsUpdateHandler:")
-    public native void setStatisticsUpdateHandler(
-            @ObjCBlock(name = "call_setStatisticsUpdateHandler") Block_setStatisticsUpdateHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setStatisticsUpdateHandler {
-        @Generated
-        void call_setStatisticsUpdateHandler(HKStatisticsCollectionQuery arg0, HKStatistics arg1,
-                HKStatisticsCollection arg2, NSError arg3);
-    }
-
-    /**
-     * initialResultsHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/initialResultsHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initialResultsHandler")
-    @ObjCBlock(name = "call_initialResultsHandler_ret")
-    public native Block_initialResultsHandler_ret initialResultsHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initialResultsHandler_ret {
-        @Generated
-        void call_initialResultsHandler_ret(HKStatisticsCollectionQuery arg0, HKStatisticsCollection arg1,
-                NSError arg2);
-    }
-
-    /**
-     * statisticsUpdateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/statisticsUpdateHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("statisticsUpdateHandler")
-    @ObjCBlock(name = "call_statisticsUpdateHandler_ret")
-    public native Block_statisticsUpdateHandler_ret statisticsUpdateHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_statisticsUpdateHandler_ret {
-        @Generated
-        void call_statisticsUpdateHandler_ret(HKStatisticsCollectionQuery arg0, HKStatistics arg1,
-                HKStatisticsCollection arg2, NSError arg3);
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -364,4 +258,110 @@ public class HKStatisticsCollectionQuery extends HKQuery {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * anchorDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/anchorDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("anchorDate")
+    public native NSDate anchorDate();
+
+    @Generated
+    @Selector("init")
+    public native HKStatisticsCollectionQuery init();
+
+    /**
+     * initWithQuantityType:quantitySamplePredicate:options:anchorDate:intervalComponents:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instm/HKStatisticsCollectionQuery/initWithQuantityType:quantitySamplePredicate:options:anchorDate:intervalComponents:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithQuantityType:quantitySamplePredicate:options:anchorDate:intervalComponents:")
+    public native HKStatisticsCollectionQuery initWithQuantityTypeQuantitySamplePredicateOptionsAnchorDateIntervalComponents(
+            HKQuantityType quantityType, NSPredicate quantitySamplePredicate, @NUInt long options, NSDate anchorDate,
+            NSDateComponents intervalComponents);
+
+    /**
+     * intervalComponents</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/intervalComponents">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("intervalComponents")
+    public native NSDateComponents intervalComponents();
+
+    /**
+     * options</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/options">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("options")
+    @NUInt
+    public native long options();
+
+    /**
+     * initialResultsHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/initialResultsHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setInitialResultsHandler:")
+    public native void setInitialResultsHandler(
+            @ObjCBlock(name = "call_setInitialResultsHandler") Block_setInitialResultsHandler value);
+
+    /**
+     * statisticsUpdateHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/statisticsUpdateHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setStatisticsUpdateHandler:")
+    public native void setStatisticsUpdateHandler(
+            @ObjCBlock(name = "call_setStatisticsUpdateHandler") Block_setStatisticsUpdateHandler value);
+
+    /**
+     * initialResultsHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/initialResultsHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initialResultsHandler")
+    @ObjCBlock(name = "call_initialResultsHandler_ret")
+    public native Block_initialResultsHandler_ret initialResultsHandler();
+
+    /**
+     * statisticsUpdateHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollectionQuery_Class/index.html#//apple_ref/occ/instp/HKStatisticsCollectionQuery/statisticsUpdateHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("statisticsUpdateHandler")
+    @ObjCBlock(name = "call_statisticsUpdateHandler_ret")
+    public native Block_statisticsUpdateHandler_ret statisticsUpdateHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setInitialResultsHandler {
+        @Generated
+        void call_setInitialResultsHandler(HKStatisticsCollectionQuery arg0, HKStatisticsCollection arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setStatisticsUpdateHandler {
+        @Generated
+        void call_setStatisticsUpdateHandler(HKStatisticsCollectionQuery arg0, HKStatistics arg1,
+                HKStatisticsCollection arg2, NSError arg3);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initialResultsHandler_ret {
+        @Generated
+        void call_initialResultsHandler_ret(HKStatisticsCollectionQuery arg0, HKStatisticsCollection arg1,
+                NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_statisticsUpdateHandler_ret {
+        @Generated
+        void call_statisticsUpdateHandler_ret(HKStatisticsCollectionQuery arg0, HKStatistics arg1,
+                HKStatisticsCollection arg2, NSError arg3);
+    }
 }

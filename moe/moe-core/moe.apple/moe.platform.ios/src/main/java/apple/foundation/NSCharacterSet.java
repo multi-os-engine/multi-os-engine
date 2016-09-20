@@ -117,28 +117,12 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     public static native NSCharacterSet alphanumericCharacterSet();
 
     /**
-     * bitmapRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instp/NSCharacterSet/bitmapRepresentation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bitmapRepresentation")
-    public native NSData bitmapRepresentation();
-
-    /**
      * capitalizedLetterCharacterSet</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/capitalizedLetterCharacterSet">iOS Dev Center</a>
      */
     @Generated
     @Selector("capitalizedLetterCharacterSet")
     public static native NSCharacterSet capitalizedLetterCharacterSet();
-
-    /**
-     * characterIsMember:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/characterIsMember:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("characterIsMember:")
-    public native boolean characterIsMember(char aCharacter);
 
     /**
      * characterSetWithBitmapRepresentation:</br>
@@ -180,12 +164,6 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("controlCharacterSet")
     public static native NSCharacterSet controlCharacterSet();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
     /**
      * decimalDigitCharacterSet</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/decimalDigitCharacterSet">iOS Dev Center</a>
@@ -202,18 +180,6 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("decomposableCharacterSet")
     public static native NSCharacterSet decomposableCharacterSet();
 
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * hasMemberInPlane:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/hasMemberInPlane:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hasMemberInPlane:")
-    public native boolean hasMemberInPlane(byte thePlane);
-
     /**
      * illegalCharacterSet</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/illegalCharacterSet">iOS Dev Center</a>
@@ -221,30 +187,6 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Generated
     @Selector("illegalCharacterSet")
     public static native NSCharacterSet illegalCharacterSet();
-
-    @Generated
-    @Selector("init")
-    public native NSCharacterSet init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSCharacterSet initWithCoder(NSCoder aDecoder);
-
-    /**
-     * invertedSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instp/NSCharacterSet/invertedSet">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("invertedSet")
-    public native NSCharacterSet invertedSet();
-
-    /**
-     * isSupersetOfSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/isSupersetOfSet:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isSupersetOfSet:")
-    public native boolean isSupersetOfSet(NSCharacterSet theOtherSet);
 
     /**
      * letterCharacterSet</br>
@@ -255,25 +197,12 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     public static native NSCharacterSet letterCharacterSet();
 
     /**
-     * longCharacterIsMember:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/longCharacterIsMember:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("longCharacterIsMember:")
-    public native boolean longCharacterIsMember(int theLongChar);
-
-    /**
      * lowercaseLetterCharacterSet</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/clm/NSCharacterSet/lowercaseLetterCharacterSet">iOS Dev Center</a>
      */
     @Generated
     @Selector("lowercaseLetterCharacterSet")
     public static native NSCharacterSet lowercaseLetterCharacterSet();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
 
     /**
      * newlineCharacterSet</br>
@@ -430,4 +359,75 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bitmapRepresentation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instp/NSCharacterSet/bitmapRepresentation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bitmapRepresentation")
+    public native NSData bitmapRepresentation();
+
+    /**
+     * characterIsMember:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/characterIsMember:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("characterIsMember:")
+    public native boolean characterIsMember(char aCharacter);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * hasMemberInPlane:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/hasMemberInPlane:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hasMemberInPlane:")
+    public native boolean hasMemberInPlane(byte thePlane);
+
+    @Generated
+    @Selector("init")
+    public native NSCharacterSet init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSCharacterSet initWithCoder(NSCoder aDecoder);
+
+    /**
+     * invertedSet</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instp/NSCharacterSet/invertedSet">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("invertedSet")
+    public native NSCharacterSet invertedSet();
+
+    /**
+     * isSupersetOfSet:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/isSupersetOfSet:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isSupersetOfSet:")
+    public native boolean isSupersetOfSet(NSCharacterSet theOtherSet);
+
+    /**
+     * longCharacterIsMember:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCharacterSet_Class/index.html#//apple_ref/occ/instm/NSCharacterSet/longCharacterIsMember:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("longCharacterIsMember:")
+    public native boolean longCharacterIsMember(int theLongChar);
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
 }

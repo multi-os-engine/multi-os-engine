@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKParticipantType {
-    @Generated
-    private EKParticipantType() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Person = 0x0000000000000001L;
     @Generated @NInt public static final long Room = 0x0000000000000002L;
     @Generated @NInt public static final long Resource = 0x0000000000000003L;
     @Generated @NInt public static final long Group = 0x0000000000000004L;
+
+    @Generated
+    private EKParticipantType() {
+    }
 }

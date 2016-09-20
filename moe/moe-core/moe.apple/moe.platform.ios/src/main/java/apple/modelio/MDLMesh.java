@@ -58,125 +58,10 @@ public class MDLMesh extends MDLObject {
         super(peer);
     }
 
-    /**
-     * addAttributeWithName:format:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/addAttributeWithName:format:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addAttributeWithName:format:")
-    public native void addAttributeWithNameFormat(String name, @NUInt long format);
-
-    /**
-     * addNormalsWithAttributeNamed:creaseThreshold:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/addNormalsWithAttributeNamed:creaseThreshold:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addNormalsWithAttributeNamed:creaseThreshold:")
-    public native void addNormalsWithAttributeNamedCreaseThreshold(String attributeName, float creaseThreshold);
-
-    /**
-     * addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:")
-    public native void addTangentBasisForTextureCoordinateAttributeNamedNormalAttributeNamedTangentAttributeNamed(
-            String textureCoordinateAttributeName, String normalAttributeName, String tangentAttributeName);
-
-    /**
-     * addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:")
-    public native void addTangentBasisForTextureCoordinateAttributeNamedTangentAttributeNamedBitangentAttributeNamed(
-            String textureCoordinateAttributeName, String tangentAttributeName, String bitangentAttributeName);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native MDLMesh alloc();
-
-    /**
-     * generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:")
-    public native boolean generateAmbientOcclusionTextureWithQualityAttenuationFactorObjectsToConsiderVertexAttributeNamedMaterialPropertyNamed(
-            float bakeQuality, float attenuationFactor, NSArray<? extends MDLObject> objectsToConsider,
-            String vertexAttributeName, String materialPropertyName);
-
-    /**
-     * generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:")
-    public native boolean generateAmbientOcclusionVertexColorsWithQualityAttenuationFactorObjectsToConsiderVertexAttributeNamed(
-            float bakeQuality, float attenuationFactor, NSArray<? extends MDLObject> objectsToConsider,
-            String vertexAttributeName);
-
-    /**
-     * generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:")
-    public native boolean generateAmbientOcclusionVertexColorsWithRaysPerSampleAttenuationFactorObjectsToConsiderVertexAttributeNamed(
-            @NInt long raysPerSample, float attenuationFactor, NSArray<? extends MDLObject> objectsToConsider,
-            String vertexAttributeName);
-
-    /**
-     * generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:")
-    public native boolean generateLightMapTextureWithQualityLightsToConsiderObjectsToConsiderVertexAttributeNamedMaterialPropertyNamed(
-            float bakeQuality, NSArray<? extends MDLLight> lightsToConsider,
-            NSArray<? extends MDLObject> objectsToConsider, String vertexAttributeName, String materialPropertyName);
-
-    /**
-     * generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:")
-    public native boolean generateLightMapVertexColorsWithLightsToConsiderObjectsToConsiderVertexAttributeNamed(
-            NSArray<? extends MDLLight> lightsToConsider, NSArray<? extends MDLObject> objectsToConsider,
-            String vertexAttributeName);
-
-    @Generated
-    @Selector("init")
-    public native MDLMesh init();
-
-    /**
-     * initWithVertexBuffer:vertexCount:descriptor:submeshes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/initWithVertexBuffer:vertexCount:descriptor:submeshes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithVertexBuffer:vertexCount:descriptor:submeshes:")
-    public native MDLMesh initWithVertexBufferVertexCountDescriptorSubmeshes(
-            @Mapped(ObjCObjectMapper.class) MDLMeshBuffer vertexBuffer, @NUInt long vertexCount,
-            MDLVertexDescriptor descriptor, NSArray<? extends MDLSubmesh> submeshes);
-
-    /**
-     * initWithVertexBuffers:vertexCount:descriptor:submeshes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/initWithVertexBuffers:vertexCount:descriptor:submeshes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithVertexBuffers:vertexCount:descriptor:submeshes:")
-    public native MDLMesh initWithVertexBuffersVertexCountDescriptorSubmeshes(NSArray<?> vertexBuffers,
-            @NUInt long vertexCount, MDLVertexDescriptor descriptor, NSArray<? extends MDLSubmesh> submeshes);
-
-    /**
-     * makeVerticesUnique</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/makeVerticesUnique">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("makeVerticesUnique")
-    public native void makeVerticesUnique();
 
     /**
      * meshWithSCNGeometry:</br>
@@ -211,55 +96,6 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Selector("objectWithSCNNode:")
     public static native MDLMesh objectWithSCNNode(SCNNode scnNode);
-
-    /**
-     * vertexDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instp/MDLMesh/vertexDescriptor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setVertexDescriptor:")
-    public native void setVertexDescriptor(MDLVertexDescriptor value);
-
-    /**
-     * submeshes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instp/MDLMesh/submeshes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("submeshes")
-    public native NSMutableArray<MDLSubmesh> submeshes();
-
-    /**
-     * vertexAttributeDataForAttributeNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/vertexAttributeDataForAttributeNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vertexAttributeDataForAttributeNamed:")
-    public native MDLVertexAttributeData vertexAttributeDataForAttributeNamed(String name);
-
-    /**
-     * vertexBuffers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instp/MDLMesh/vertexBuffers">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vertexBuffers")
-    public native NSArray<?> vertexBuffers();
-
-    /**
-     * vertexCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instp/MDLMesh/vertexCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vertexCount")
-    @NUInt
-    public native long vertexCount();
-
-    /**
-     * vertexDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instp/MDLMesh/vertexDescriptor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vertexDescriptor")
-    public native MDLVertexDescriptor vertexDescriptor();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -360,4 +196,168 @@ public class MDLMesh extends MDLObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addAttributeWithName:format:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/addAttributeWithName:format:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addAttributeWithName:format:")
+    public native void addAttributeWithNameFormat(String name, @NUInt long format);
+
+    /**
+     * addNormalsWithAttributeNamed:creaseThreshold:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/addNormalsWithAttributeNamed:creaseThreshold:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addNormalsWithAttributeNamed:creaseThreshold:")
+    public native void addNormalsWithAttributeNamedCreaseThreshold(String attributeName, float creaseThreshold);
+
+    /**
+     * addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:")
+    public native void addTangentBasisForTextureCoordinateAttributeNamedNormalAttributeNamedTangentAttributeNamed(
+            String textureCoordinateAttributeName, String normalAttributeName, String tangentAttributeName);
+
+    /**
+     * addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:")
+    public native void addTangentBasisForTextureCoordinateAttributeNamedTangentAttributeNamedBitangentAttributeNamed(
+            String textureCoordinateAttributeName, String tangentAttributeName, String bitangentAttributeName);
+
+    /**
+     * generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:")
+    public native boolean generateAmbientOcclusionTextureWithQualityAttenuationFactorObjectsToConsiderVertexAttributeNamedMaterialPropertyNamed(
+            float bakeQuality, float attenuationFactor, NSArray<? extends MDLObject> objectsToConsider,
+            String vertexAttributeName, String materialPropertyName);
+
+    /**
+     * generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:")
+    public native boolean generateAmbientOcclusionVertexColorsWithQualityAttenuationFactorObjectsToConsiderVertexAttributeNamed(
+            float bakeQuality, float attenuationFactor, NSArray<? extends MDLObject> objectsToConsider,
+            String vertexAttributeName);
+
+    /**
+     * generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:")
+    public native boolean generateAmbientOcclusionVertexColorsWithRaysPerSampleAttenuationFactorObjectsToConsiderVertexAttributeNamed(
+            @NInt long raysPerSample, float attenuationFactor, NSArray<? extends MDLObject> objectsToConsider,
+            String vertexAttributeName);
+
+    /**
+     * generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:")
+    public native boolean generateLightMapTextureWithQualityLightsToConsiderObjectsToConsiderVertexAttributeNamedMaterialPropertyNamed(
+            float bakeQuality, NSArray<? extends MDLLight> lightsToConsider,
+            NSArray<? extends MDLObject> objectsToConsider, String vertexAttributeName, String materialPropertyName);
+
+    /**
+     * generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:")
+    public native boolean generateLightMapVertexColorsWithLightsToConsiderObjectsToConsiderVertexAttributeNamed(
+            NSArray<? extends MDLLight> lightsToConsider, NSArray<? extends MDLObject> objectsToConsider,
+            String vertexAttributeName);
+
+    @Generated
+    @Selector("init")
+    public native MDLMesh init();
+
+    /**
+     * initWithVertexBuffer:vertexCount:descriptor:submeshes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/initWithVertexBuffer:vertexCount:descriptor:submeshes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithVertexBuffer:vertexCount:descriptor:submeshes:")
+    public native MDLMesh initWithVertexBufferVertexCountDescriptorSubmeshes(
+            @Mapped(ObjCObjectMapper.class) MDLMeshBuffer vertexBuffer, @NUInt long vertexCount,
+            MDLVertexDescriptor descriptor, NSArray<? extends MDLSubmesh> submeshes);
+
+    /**
+     * initWithVertexBuffers:vertexCount:descriptor:submeshes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/initWithVertexBuffers:vertexCount:descriptor:submeshes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithVertexBuffers:vertexCount:descriptor:submeshes:")
+    public native MDLMesh initWithVertexBuffersVertexCountDescriptorSubmeshes(NSArray<?> vertexBuffers,
+            @NUInt long vertexCount, MDLVertexDescriptor descriptor, NSArray<? extends MDLSubmesh> submeshes);
+
+    /**
+     * makeVerticesUnique</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/makeVerticesUnique">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("makeVerticesUnique")
+    public native void makeVerticesUnique();
+
+    /**
+     * vertexDescriptor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instp/MDLMesh/vertexDescriptor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setVertexDescriptor:")
+    public native void setVertexDescriptor(MDLVertexDescriptor value);
+
+    /**
+     * submeshes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instp/MDLMesh/submeshes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("submeshes")
+    public native NSMutableArray<MDLSubmesh> submeshes();
+
+    /**
+     * vertexAttributeDataForAttributeNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instm/MDLMesh/vertexAttributeDataForAttributeNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vertexAttributeDataForAttributeNamed:")
+    public native MDLVertexAttributeData vertexAttributeDataForAttributeNamed(String name);
+
+    /**
+     * vertexBuffers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instp/MDLMesh/vertexBuffers">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vertexBuffers")
+    public native NSArray<?> vertexBuffers();
+
+    /**
+     * vertexCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instp/MDLMesh/vertexCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vertexCount")
+    @NUInt
+    public native long vertexCount();
+
+    /**
+     * vertexDescriptor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMesh_Class/index.html#//apple_ref/occ/instp/MDLMesh/vertexDescriptor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vertexDescriptor")
+    public native MDLVertexDescriptor vertexDescriptor();
 }

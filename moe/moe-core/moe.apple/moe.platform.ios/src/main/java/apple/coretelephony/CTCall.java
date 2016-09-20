@@ -58,26 +58,6 @@ public class CTCall extends NSObject {
     @Selector("alloc")
     public static native CTCall alloc();
 
-    /**
-     * callID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCall/index.html#//apple_ref/occ/instp/CTCall/callID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("callID")
-    public native String callID();
-
-    /**
-     * callState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCall/index.html#//apple_ref/occ/instp/CTCall/callState">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("callState")
-    public native String callState();
-
-    @Generated
-    @Selector("init")
-    public native CTCall init();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -177,4 +157,24 @@ public class CTCall extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * callID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCall/index.html#//apple_ref/occ/instp/CTCall/callID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("callID")
+    public native String callID();
+
+    /**
+     * callState</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCall/index.html#//apple_ref/occ/instp/CTCall/callState">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("callState")
+    public native String callState();
+
+    @Generated
+    @Selector("init")
+    public native CTCall init();
 }

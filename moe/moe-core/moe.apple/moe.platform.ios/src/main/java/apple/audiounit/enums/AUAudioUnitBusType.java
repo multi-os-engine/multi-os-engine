@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AUAudioUnitBusType {
+    @Generated @NInt public static final long Input = 0x0000000000000001L;
+    @Generated @NInt public static final long Output = 0x0000000000000002L;
+
     @Generated
     private AUAudioUnitBusType() {
     }
-
-    @Generated @NInt public static final long Input = 0x0000000000000001L;
-    @Generated @NInt public static final long Output = 0x0000000000000002L;
 }

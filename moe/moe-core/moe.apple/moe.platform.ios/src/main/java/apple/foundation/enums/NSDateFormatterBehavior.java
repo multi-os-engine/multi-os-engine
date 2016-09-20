@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDateFormatterBehavior {
+    @Generated @NUInt public static final long BehaviorDefault = 0x0000000000000000L;
+    @Generated @NUInt public static final long Behavior10_4 = 0x0000000000000410L;
+
     @Generated
     private NSDateFormatterBehavior() {
     }
-
-    @Generated @NUInt public static final long BehaviorDefault = 0x0000000000000000L;
-    @Generated @NUInt public static final long Behavior10_4 = 0x0000000000000410L;
 }

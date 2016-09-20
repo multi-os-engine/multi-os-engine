@@ -68,26 +68,6 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
             AVAssetTrack track);
 
     @Generated
-    @Selector("init")
-    public native AVAssetReaderSampleReferenceOutput init();
-
-    /**
-     * initWithTrack:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderSampleReferenceOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderSampleReferenceOutput/initWithTrack:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTrack:")
-    public native AVAssetReaderSampleReferenceOutput initWithTrack(AVAssetTrack track);
-
-    /**
-     * track</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderSampleReferenceOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderSampleReferenceOutput/track">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("track")
-    public native AVAssetTrack track();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -186,4 +166,24 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetReaderSampleReferenceOutput init();
+
+    /**
+     * initWithTrack:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderSampleReferenceOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderSampleReferenceOutput/initWithTrack:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTrack:")
+    public native AVAssetReaderSampleReferenceOutput initWithTrack(AVAssetTrack track);
+
+    /**
+     * track</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderSampleReferenceOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderSampleReferenceOutput/track">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("track")
+    public native AVAssetTrack track();
 }

@@ -67,151 +67,6 @@ public class UIWindow extends UIView {
     @Selector("alloc")
     public static native UIWindow alloc();
 
-    /**
-     * becomeKeyWindow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/becomeKeyWindow">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("becomeKeyWindow")
-    public native void becomeKeyWindow();
-
-    /**
-     * convertPoint:fromWindow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertPoint:fromWindow:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("convertPoint:fromWindow:")
-    @ByValue
-    public native CGPoint convertPointFromWindow(@ByValue CGPoint point, UIWindow window);
-
-    /**
-     * convertPoint:toWindow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertPoint:toWindow:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("convertPoint:toWindow:")
-    @ByValue
-    public native CGPoint convertPointToWindow(@ByValue CGPoint point, UIWindow window);
-
-    /**
-     * convertRect:fromWindow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertRect:fromWindow:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("convertRect:fromWindow:")
-    @ByValue
-    public native CGRect convertRectFromWindow(@ByValue CGRect rect, UIWindow window);
-
-    /**
-     * convertRect:toWindow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertRect:toWindow:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("convertRect:toWindow:")
-    @ByValue
-    public native CGRect convertRectToWindow(@ByValue CGRect rect, UIWindow window);
-
-    @Generated
-    @Selector("init")
-    public native UIWindow init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIWindow initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * keyWindow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/keyWindow">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isKeyWindow")
-    public native boolean isKeyWindow();
-
-    /**
-     * makeKeyAndVisible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/makeKeyAndVisible">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("makeKeyAndVisible")
-    public native void makeKeyAndVisible();
-
-    /**
-     * makeKeyWindow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/makeKeyWindow">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("makeKeyWindow")
-    public native void makeKeyWindow();
-
-    /**
-     * resignKeyWindow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/resignKeyWindow">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resignKeyWindow")
-    public native void resignKeyWindow();
-
-    /**
-     * rootViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/rootViewController">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rootViewController")
-    public native UIViewController rootViewController();
-
-    /**
-     * screen</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/screen">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("screen")
-    public native UIScreen screen();
-
-    /**
-     * sendEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/sendEvent:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sendEvent:")
-    public native void sendEvent(UIEvent event);
-
-    /**
-     * rootViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/rootViewController">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRootViewController:")
-    public native void setRootViewController(UIViewController value);
-
-    /**
-     * screen</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/screen">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setScreen:")
-    public native void setScreen(UIScreen value);
-
-    /**
-     * windowLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/windowLevel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWindowLevel:")
-    public native void setWindowLevel(@NFloat double value);
-
-    /**
-     * windowLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/windowLevel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("windowLevel")
-    @NFloat
-    public native double windowLevel();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIWindow initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -265,23 +120,9 @@ public class UIWindow extends UIView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -292,27 +133,10 @@ public class UIWindow extends UIView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -323,24 +147,9 @@ public class UIWindow extends UIView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -538,4 +347,195 @@ public class UIWindow extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * becomeKeyWindow</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/becomeKeyWindow">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("becomeKeyWindow")
+    public native void becomeKeyWindow();
+
+    /**
+     * convertPoint:fromWindow:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertPoint:fromWindow:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("convertPoint:fromWindow:")
+    @ByValue
+    public native CGPoint convertPointFromWindow(@ByValue CGPoint point, UIWindow window);
+
+    /**
+     * convertPoint:toWindow:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertPoint:toWindow:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("convertPoint:toWindow:")
+    @ByValue
+    public native CGPoint convertPointToWindow(@ByValue CGPoint point, UIWindow window);
+
+    /**
+     * convertRect:fromWindow:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertRect:fromWindow:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("convertRect:fromWindow:")
+    @ByValue
+    public native CGRect convertRectFromWindow(@ByValue CGRect rect, UIWindow window);
+
+    /**
+     * convertRect:toWindow:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/convertRect:toWindow:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("convertRect:toWindow:")
+    @ByValue
+    public native CGRect convertRectToWindow(@ByValue CGRect rect, UIWindow window);
+
+    @Generated
+    @Selector("init")
+    public native UIWindow init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIWindow initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * keyWindow</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/keyWindow">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isKeyWindow")
+    public native boolean isKeyWindow();
+
+    /**
+     * makeKeyAndVisible</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/makeKeyAndVisible">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("makeKeyAndVisible")
+    public native void makeKeyAndVisible();
+
+    /**
+     * makeKeyWindow</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/makeKeyWindow">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("makeKeyWindow")
+    public native void makeKeyWindow();
+
+    /**
+     * resignKeyWindow</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/resignKeyWindow">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resignKeyWindow")
+    public native void resignKeyWindow();
+
+    /**
+     * rootViewController</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/rootViewController">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rootViewController")
+    public native UIViewController rootViewController();
+
+    /**
+     * screen</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/screen">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("screen")
+    public native UIScreen screen();
+
+    /**
+     * sendEvent:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instm/UIWindow/sendEvent:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sendEvent:")
+    public native void sendEvent(UIEvent event);
+
+    /**
+     * rootViewController</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/rootViewController">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRootViewController:")
+    public native void setRootViewController(UIViewController value);
+
+    /**
+     * screen</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/screen">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setScreen:")
+    public native void setScreen(UIScreen value);
+
+    /**
+     * windowLevel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/windowLevel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWindowLevel:")
+    public native void setWindowLevel(@NFloat double value);
+
+    /**
+     * windowLevel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/occ/instp/UIWindow/windowLevel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("windowLevel")
+    @NFloat
+    public native double windowLevel();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIWindow initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

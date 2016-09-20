@@ -57,63 +57,6 @@ public class NSMethodSignature extends NSObject {
     public static native NSMethodSignature alloc();
 
     /**
-     * frameLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instp/NSMethodSignature/frameLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("frameLength")
-    @NUInt
-    public native long frameLength();
-
-    /**
-     * getArgumentTypeAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instm/NSMethodSignature/getArgumentTypeAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getArgumentTypeAtIndex:")
-    @MappedReturn(CStringMapper.class)
-    public native String getArgumentTypeAtIndex(@NUInt long idx);
-
-    @Generated
-    @Selector("init")
-    public native NSMethodSignature init();
-
-    /**
-     * isOneway</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instm/NSMethodSignature/isOneway">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isOneway")
-    public native boolean isOneway();
-
-    /**
-     * methodReturnLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instp/NSMethodSignature/methodReturnLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("methodReturnLength")
-    @NUInt
-    public native long methodReturnLength();
-
-    /**
-     * methodReturnType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instp/NSMethodSignature/methodReturnType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("methodReturnType")
-    @MappedReturn(CStringMapper.class)
-    public native String methodReturnType();
-
-    /**
-     * numberOfArguments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instp/NSMethodSignature/numberOfArguments">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberOfArguments")
-    @NUInt
-    public native long numberOfArguments();
-
-    /**
      * signatureWithObjCTypes:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/clm/NSMethodSignature/signatureWithObjCTypes:">iOS Dev Center</a>
      */
@@ -220,4 +163,61 @@ public class NSMethodSignature extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * frameLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instp/NSMethodSignature/frameLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("frameLength")
+    @NUInt
+    public native long frameLength();
+
+    /**
+     * getArgumentTypeAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instm/NSMethodSignature/getArgumentTypeAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getArgumentTypeAtIndex:")
+    @MappedReturn(CStringMapper.class)
+    public native String getArgumentTypeAtIndex(@NUInt long idx);
+
+    @Generated
+    @Selector("init")
+    public native NSMethodSignature init();
+
+    /**
+     * isOneway</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instm/NSMethodSignature/isOneway">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isOneway")
+    public native boolean isOneway();
+
+    /**
+     * methodReturnLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instp/NSMethodSignature/methodReturnLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("methodReturnLength")
+    @NUInt
+    public native long methodReturnLength();
+
+    /**
+     * methodReturnType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instp/NSMethodSignature/methodReturnType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("methodReturnType")
+    @MappedReturn(CStringMapper.class)
+    public native String methodReturnType();
+
+    /**
+     * numberOfArguments</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMethodSignature_Class/index.html#//apple_ref/occ/instp/NSMethodSignature/numberOfArguments">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberOfArguments")
+    @NUInt
+    public native long numberOfArguments();
 }

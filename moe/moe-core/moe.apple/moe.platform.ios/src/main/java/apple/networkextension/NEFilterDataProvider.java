@@ -59,68 +59,6 @@ public class NEFilterDataProvider extends NEFilterProvider {
     @Selector("alloc")
     public static native NEFilterDataProvider alloc();
 
-    /**
-     * handleInboundDataCompleteForFlow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleInboundDataCompleteForFlow:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handleInboundDataCompleteForFlow:")
-    public native NEFilterDataVerdict handleInboundDataCompleteForFlow(NEFilterFlow flow);
-
-    /**
-     * handleInboundDataFromFlow:readBytesStartOffset:readBytes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleInboundDataFromFlow:readBytesStartOffset:readBytes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handleInboundDataFromFlow:readBytesStartOffset:readBytes:")
-    public native NEFilterDataVerdict handleInboundDataFromFlowReadBytesStartOffsetReadBytes(NEFilterFlow flow,
-            @NUInt long offset, NSData readBytes);
-
-    /**
-     * handleNewFlow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleNewFlow:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handleNewFlow:")
-    public native NEFilterNewFlowVerdict handleNewFlow(NEFilterFlow flow);
-
-    /**
-     * handleOutboundDataCompleteForFlow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleOutboundDataCompleteForFlow:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handleOutboundDataCompleteForFlow:")
-    public native NEFilterDataVerdict handleOutboundDataCompleteForFlow(NEFilterFlow flow);
-
-    /**
-     * handleOutboundDataFromFlow:readBytesStartOffset:readBytes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleOutboundDataFromFlow:readBytesStartOffset:readBytes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handleOutboundDataFromFlow:readBytesStartOffset:readBytes:")
-    public native NEFilterDataVerdict handleOutboundDataFromFlowReadBytesStartOffsetReadBytes(NEFilterFlow flow,
-            @NUInt long offset, NSData readBytes);
-
-    /**
-     * handleRemediationForFlow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleRemediationForFlow:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handleRemediationForFlow:")
-    public native NEFilterRemediationVerdict handleRemediationForFlow(NEFilterFlow flow);
-
-    /**
-     * handleRulesChanged</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleRulesChanged">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handleRulesChanged")
-    public native void handleRulesChanged();
-
-    @Generated
-    @Selector("init")
-    public native NEFilterDataProvider init();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -220,4 +158,66 @@ public class NEFilterDataProvider extends NEFilterProvider {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * handleInboundDataCompleteForFlow:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleInboundDataCompleteForFlow:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handleInboundDataCompleteForFlow:")
+    public native NEFilterDataVerdict handleInboundDataCompleteForFlow(NEFilterFlow flow);
+
+    /**
+     * handleInboundDataFromFlow:readBytesStartOffset:readBytes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleInboundDataFromFlow:readBytesStartOffset:readBytes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handleInboundDataFromFlow:readBytesStartOffset:readBytes:")
+    public native NEFilterDataVerdict handleInboundDataFromFlowReadBytesStartOffsetReadBytes(NEFilterFlow flow,
+            @NUInt long offset, NSData readBytes);
+
+    /**
+     * handleNewFlow:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleNewFlow:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handleNewFlow:")
+    public native NEFilterNewFlowVerdict handleNewFlow(NEFilterFlow flow);
+
+    /**
+     * handleOutboundDataCompleteForFlow:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleOutboundDataCompleteForFlow:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handleOutboundDataCompleteForFlow:")
+    public native NEFilterDataVerdict handleOutboundDataCompleteForFlow(NEFilterFlow flow);
+
+    /**
+     * handleOutboundDataFromFlow:readBytesStartOffset:readBytes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleOutboundDataFromFlow:readBytesStartOffset:readBytes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handleOutboundDataFromFlow:readBytesStartOffset:readBytes:")
+    public native NEFilterDataVerdict handleOutboundDataFromFlowReadBytesStartOffsetReadBytes(NEFilterFlow flow,
+            @NUInt long offset, NSData readBytes);
+
+    /**
+     * handleRemediationForFlow:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleRemediationForFlow:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handleRemediationForFlow:")
+    public native NEFilterRemediationVerdict handleRemediationForFlow(NEFilterFlow flow);
+
+    /**
+     * handleRulesChanged</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterDataProvider/handleRulesChanged">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handleRulesChanged")
+    public native void handleRulesChanged();
+
+    @Generated
+    @Selector("init")
+    public native NEFilterDataProvider init();
 }

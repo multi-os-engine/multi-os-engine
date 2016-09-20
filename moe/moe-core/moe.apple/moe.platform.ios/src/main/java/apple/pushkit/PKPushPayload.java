@@ -59,26 +59,6 @@ public class PKPushPayload extends NSObject {
     @Selector("alloc")
     public static native PKPushPayload alloc();
 
-    /**
-     * dictionaryPayload</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushPayload_Class/index.html#//apple_ref/occ/instp/PKPushPayload/dictionaryPayload">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dictionaryPayload")
-    public native NSDictionary<?, ?> dictionaryPayload();
-
-    @Generated
-    @Selector("init")
-    public native PKPushPayload init();
-
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushPayload_Class/index.html#//apple_ref/occ/instp/PKPushPayload/type">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("type")
-    public native String type();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -178,4 +158,24 @@ public class PKPushPayload extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * dictionaryPayload</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushPayload_Class/index.html#//apple_ref/occ/instp/PKPushPayload/dictionaryPayload">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dictionaryPayload")
+    public native NSDictionary<?, ?> dictionaryPayload();
+
+    @Generated
+    @Selector("init")
+    public native PKPushPayload init();
+
+    /**
+     * type</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PushKit/Reference/PKPushPayload_Class/index.html#//apple_ref/occ/instp/PKPushPayload/type">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("type")
+    public native String type();
 }

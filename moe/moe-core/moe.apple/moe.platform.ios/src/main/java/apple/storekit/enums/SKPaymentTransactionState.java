@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKPaymentTransactionState {
-    @Generated
-    private SKPaymentTransactionState() {
-    }
-
     @Generated @NInt public static final long Purchasing = 0x0000000000000000L;
     @Generated @NInt public static final long Purchased = 0x0000000000000001L;
     @Generated @NInt public static final long Failed = 0x0000000000000002L;
     @Generated @NInt public static final long Restored = 0x0000000000000003L;
     @Generated @NInt public static final long Deferred = 0x0000000000000004L;
+
+    @Generated
+    private SKPaymentTransactionState() {
+    }
 }

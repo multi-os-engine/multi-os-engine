@@ -5905,16 +5905,6 @@ public final class Accelerate {
     public static native void SetBLASParamErrorProc(
             @FunctionPtr(name = "call_SetBLASParamErrorProc") Function_SetBLASParamErrorProc __ErrorProc);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_SetBLASParamErrorProc {
-        @Generated
-        void call_SetBLASParamErrorProc(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-                ConstIntPtr arg2, ConstIntPtr arg3);
-    }
-
     @Generated
     @CFunction
     public static native int cbdsqr_(BytePtr __uplo, IntPtr __n, IntPtr __ncvt, IntPtr __nru, IntPtr __ncc,
@@ -15718,26 +15708,12 @@ public final class Accelerate {
             @FunctionPtr(name = "call_la_matrix_from_float_buffer_nocopy") Function_la_matrix_from_float_buffer_nocopy deallocator,
             @NUInt long attributes);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_la_matrix_from_float_buffer_nocopy {
-        @Generated
-        void call_la_matrix_from_float_buffer_nocopy(VoidPtr arg0);
-    }
-
     @Generated
     @CFunction
     public static native NSObject la_matrix_from_double_buffer_nocopy(DoublePtr buffer, @NUInt long matrix_rows,
             @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint,
             @FunctionPtr(name = "call_la_matrix_from_double_buffer_nocopy") Function_la_matrix_from_double_buffer_nocopy deallocator,
             @NUInt long attributes);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_la_matrix_from_double_buffer_nocopy {
-        @Generated
-        void call_la_matrix_from_double_buffer_nocopy(VoidPtr arg0);
-    }
 
     @Generated
     @CFunction
@@ -18685,14 +18661,6 @@ public final class Accelerate {
             @FunctionPtr(name = "call_vImageNewResamplingFilterForFunctionUsingBuffer") Function_vImageNewResamplingFilterForFunctionUsingBuffer kernelFunc,
             float kernelWidth, VoidPtr userData, int flags);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_vImageNewResamplingFilterForFunctionUsingBuffer {
-        @Generated
-        void call_vImageNewResamplingFilterForFunctionUsingBuffer(ConstFloatPtr arg0, FloatPtr arg1, @NUInt long arg2,
-                VoidPtr arg3);
-    }
-
     /**
      * vImageGetResamplingFilterSize</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/vImage_geometric/index.html#//apple_ref/c/func/vImageGetResamplingFilterSize">iOS Dev Center</a>
@@ -18703,13 +18671,6 @@ public final class Accelerate {
     public static native long vImageGetResamplingFilterSize(float scale,
             @FunctionPtr(name = "call_vImageGetResamplingFilterSize") Function_vImageGetResamplingFilterSize kernelFunc,
             float kernelWidth, int flags);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_vImageGetResamplingFilterSize {
-        @Generated
-        void call_vImageGetResamplingFilterSize(ConstFloatPtr arg0, FloatPtr arg1, @NUInt long arg2, VoidPtr arg3);
-    }
 
     @Generated
     @CFunction
@@ -19316,13 +19277,6 @@ public final class Accelerate {
             @FunctionPtr(name = "call_vImageCreateCGImageFromBuffer") Function_vImageCreateCGImageFromBuffer callback,
             VoidPtr userData, int flags, NIntPtr error);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_vImageCreateCGImageFromBuffer {
-        @Generated
-        void call_vImageCreateCGImageFromBuffer(VoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @CFunction
     public static native void vImageConverter_Retain(vImageConverterRef converter);
@@ -19489,13 +19443,6 @@ public final class Accelerate {
     @NInt
     public static native long vImageCVImageFormat_SetUserData(vImageCVImageFormatRef format, VoidPtr userData,
             @FunctionPtr(name = "call_vImageCVImageFormat_SetUserData") Function_vImageCVImageFormat_SetUserData userDataReleaseCallback);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_vImageCVImageFormat_SetUserData {
-        @Generated
-        void call_vImageCVImageFormat_SetUserData(VoidPtr arg0, VoidPtr arg1);
-    }
 
     @Generated
     @CFunction
@@ -19960,4 +19907,57 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImageWhitePoint whitePoint,
             @UncertainArgument("Options: reference, array Fallback: reference") vImageTransferFunction tf, int intent,
             int flags, NIntPtr error);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_SetBLASParamErrorProc {
+        @Generated
+        void call_SetBLASParamErrorProc(
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+                ConstIntPtr arg2, ConstIntPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_la_matrix_from_float_buffer_nocopy {
+        @Generated
+        void call_la_matrix_from_float_buffer_nocopy(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_la_matrix_from_double_buffer_nocopy {
+        @Generated
+        void call_la_matrix_from_double_buffer_nocopy(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_vImageNewResamplingFilterForFunctionUsingBuffer {
+        @Generated
+        void call_vImageNewResamplingFilterForFunctionUsingBuffer(ConstFloatPtr arg0, FloatPtr arg1, @NUInt long arg2,
+                VoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_vImageGetResamplingFilterSize {
+        @Generated
+        void call_vImageGetResamplingFilterSize(ConstFloatPtr arg0, FloatPtr arg1, @NUInt long arg2, VoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_vImageCreateCGImageFromBuffer {
+        @Generated
+        void call_vImageCreateCGImageFromBuffer(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_vImageCVImageFormat_SetUserData {
+        @Generated
+        void call_vImageCVImageFormat_SetUserData(VoidPtr arg0, VoidPtr arg1);
+    }
 }

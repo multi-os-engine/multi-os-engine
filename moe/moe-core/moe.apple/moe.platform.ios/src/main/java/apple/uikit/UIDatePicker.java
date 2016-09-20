@@ -70,176 +70,6 @@ public class UIDatePicker extends UIControl implements NSCoding {
     @Selector("alloc")
     public static native UIDatePicker alloc();
 
-    /**
-     * calendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/calendar">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("calendar")
-    public native NSCalendar calendar();
-
-    /**
-     * countDownDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/countDownDuration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("countDownDuration")
-    public native double countDownDuration();
-
-    /**
-     * date</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/date">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("date")
-    public native NSDate date();
-
-    /**
-     * datePickerMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/datePickerMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("datePickerMode")
-    @NInt
-    public native long datePickerMode();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UIDatePicker init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIDatePicker initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIDatePicker initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/locale">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("locale")
-    public native NSLocale locale();
-
-    /**
-     * maximumDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/maximumDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumDate")
-    public native NSDate maximumDate();
-
-    /**
-     * minimumDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/minimumDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumDate")
-    public native NSDate minimumDate();
-
-    /**
-     * minuteInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/minuteInterval">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minuteInterval")
-    @NInt
-    public native long minuteInterval();
-
-    /**
-     * calendar</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/calendar">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCalendar:")
-    public native void setCalendar(NSCalendar value);
-
-    /**
-     * countDownDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/countDownDuration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCountDownDuration:")
-    public native void setCountDownDuration(double value);
-
-    /**
-     * date</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/date">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDate:")
-    public native void setDate(NSDate value);
-
-    /**
-     * setDate:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instm/UIDatePicker/setDate:animated:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDate:animated:")
-    public native void setDateAnimated(NSDate date, boolean animated);
-
-    /**
-     * datePickerMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/datePickerMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDatePickerMode:")
-    public native void setDatePickerMode(@NInt long value);
-
-    /**
-     * locale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/locale">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLocale:")
-    public native void setLocale(NSLocale value);
-
-    /**
-     * maximumDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/maximumDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumDate:")
-    public native void setMaximumDate(NSDate value);
-
-    /**
-     * minimumDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/minimumDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumDate:")
-    public native void setMinimumDate(NSDate value);
-
-    /**
-     * minuteInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/minuteInterval">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinuteInterval:")
-    public native void setMinuteInterval(@NInt long value);
-
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/timeZone">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTimeZone:")
-    public native void setTimeZone(NSTimeZone value);
-
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/timeZone">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeZone")
-    public native NSTimeZone timeZone();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -293,23 +123,9 @@ public class UIDatePicker extends UIControl implements NSCoding {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -320,27 +136,10 @@ public class UIDatePicker extends UIControl implements NSCoding {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -351,24 +150,9 @@ public class UIDatePicker extends UIControl implements NSCoding {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -566,4 +350,220 @@ public class UIDatePicker extends UIControl implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * calendar</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/calendar">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("calendar")
+    public native NSCalendar calendar();
+
+    /**
+     * countDownDuration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/countDownDuration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("countDownDuration")
+    public native double countDownDuration();
+
+    /**
+     * date</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/date">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("date")
+    public native NSDate date();
+
+    /**
+     * datePickerMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/datePickerMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("datePickerMode")
+    @NInt
+    public native long datePickerMode();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UIDatePicker init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIDatePicker initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIDatePicker initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * locale</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/locale">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("locale")
+    public native NSLocale locale();
+
+    /**
+     * maximumDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/maximumDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumDate")
+    public native NSDate maximumDate();
+
+    /**
+     * minimumDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/minimumDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumDate")
+    public native NSDate minimumDate();
+
+    /**
+     * minuteInterval</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/minuteInterval">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minuteInterval")
+    @NInt
+    public native long minuteInterval();
+
+    /**
+     * calendar</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/calendar">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCalendar:")
+    public native void setCalendar(NSCalendar value);
+
+    /**
+     * countDownDuration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/countDownDuration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCountDownDuration:")
+    public native void setCountDownDuration(double value);
+
+    /**
+     * date</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/date">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDate:")
+    public native void setDate(NSDate value);
+
+    /**
+     * setDate:animated:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instm/UIDatePicker/setDate:animated:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDate:animated:")
+    public native void setDateAnimated(NSDate date, boolean animated);
+
+    /**
+     * datePickerMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/datePickerMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDatePickerMode:")
+    public native void setDatePickerMode(@NInt long value);
+
+    /**
+     * locale</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/locale">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLocale:")
+    public native void setLocale(NSLocale value);
+
+    /**
+     * maximumDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/maximumDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumDate:")
+    public native void setMaximumDate(NSDate value);
+
+    /**
+     * minimumDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/minimumDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumDate:")
+    public native void setMinimumDate(NSDate value);
+
+    /**
+     * minuteInterval</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/minuteInterval">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinuteInterval:")
+    public native void setMinuteInterval(@NInt long value);
+
+    /**
+     * timeZone</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/timeZone">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTimeZone:")
+    public native void setTimeZone(NSTimeZone value);
+
+    /**
+     * timeZone</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDatePicker_Class/index.html#//apple_ref/occ/instp/UIDatePicker/timeZone">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeZone")
+    public native NSTimeZone timeZone();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

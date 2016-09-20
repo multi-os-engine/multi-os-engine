@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class AVAudioPlayerNodeBufferOptions {
-    @Generated
-    private AVAudioPlayerNodeBufferOptions() {
-    }
-
     @Generated @NUInt public static final long Loops = 0x0000000000000001L;
     @Generated @NUInt public static final long Interrupts = 0x0000000000000002L;
     @Generated @NUInt public static final long InterruptsAtLoop = 0x0000000000000004L;
+
+    @Generated
+    private AVAudioPlayerNodeBufferOptions() {
+    }
 }

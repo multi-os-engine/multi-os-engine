@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MIDINetworkConnectionPolicy {
-    @Generated
-    private MIDINetworkConnectionPolicy() {
-    }
-
     @Generated @NUInt public static final long NoOne = 0x0000000000000000L;
     @Generated @NUInt public static final long HostsInContactList = 0x0000000000000001L;
     @Generated @NUInt public static final long Anyone = 0x0000000000000002L;
+
+    @Generated
+    private MIDINetworkConnectionPolicy() {
+    }
 }

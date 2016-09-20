@@ -75,96 +75,12 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public static native CIImage alloc();
 
     /**
-     * autoAdjustmentFiltersWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/autoAdjustmentFiltersWithOptions:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("autoAdjustmentFiltersWithOptions:")
-    public native NSArray<? extends CIFilter> autoAdjustmentFiltersWithOptions(NSDictionary<String, ?> options);
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
      * emptyImage</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/clm/CIImage/emptyImage">iOS Dev Center</a>
      */
     @Generated
     @Selector("emptyImage")
     public static native CIImage emptyImage();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * extent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instp/CIImage/extent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("extent")
-    @ByValue
-    public native CGRect extent();
-
-    /**
-     * imageByApplyingFilter:withInputParameters:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByApplyingFilter:withInputParameters:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageByApplyingFilter:withInputParameters:")
-    public native CIImage imageByApplyingFilterWithInputParameters(String filterName, NSDictionary<String, ?> params);
-
-    /**
-     * imageByApplyingOrientation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByApplyingOrientation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageByApplyingOrientation:")
-    public native CIImage imageByApplyingOrientation(int orientation);
-
-    /**
-     * imageByApplyingTransform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByApplyingTransform:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageByApplyingTransform:")
-    public native CIImage imageByApplyingTransform(@ByValue CGAffineTransform matrix);
-
-    /**
-     * imageByClampingToExtent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByClampingToExtent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageByClampingToExtent")
-    public native CIImage imageByClampingToExtent();
-
-    /**
-     * imageByCompositingOverImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByCompositingOverImage:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageByCompositingOverImage:")
-    public native CIImage imageByCompositingOverImage(CIImage dest);
-
-    /**
-     * imageByCroppingToRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByCroppingToRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageByCroppingToRect:")
-    public native CIImage imageByCroppingToRect(@ByValue CGRect rect);
-
-    /**
-     * imageTransformForOrientation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageTransformForOrientation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageTransformForOrientation:")
-    @ByValue
-    public native CGAffineTransform imageTransformForOrientation(int orientation);
 
     /**
      * imageWithBitmapData:bytesPerRow:size:format:colorSpace:</br>
@@ -256,6 +172,230 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("imageWithTexture:size:flipped:colorSpace:")
     public static native CIImage imageWithTextureSizeFlippedColorSpace(int name, @ByValue CGSize size, boolean flipped,
             CGColorSpaceRef colorSpace);
+
+    /**
+     * imageWithCVImageBuffer:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/clm/CIImage/imageWithCVImageBuffer:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithCVImageBuffer:")
+    public static native CIImage imageWithCVImageBuffer(CVBufferRef imageBuffer);
+
+    /**
+     * imageWithCVImageBuffer:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/clm/CIImage/imageWithCVImageBuffer:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithCVImageBuffer:options:")
+    public static native CIImage imageWithCVImageBufferOptions(CVBufferRef imageBuffer,
+            NSDictionary<String, ?> options);
+
+    /**
+     * imageWithImageProvider:size::format:colorSpace:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/clm/CIImage/imageWithImageProvider:size::format:colorSpace:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithImageProvider:size::format:colorSpace:options:")
+    public static native CIImage imageWithImageProviderSize_FormatColorSpaceOptions(
+            @Mapped(ObjCObjectMapper.class) Object p, @NUInt long width, @NUInt long height, int f, CGColorSpaceRef cs,
+            NSDictionary<String, ?> options);
+
+    /**
+     * imageWithMTLTexture:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/clm/CIImage/imageWithMTLTexture:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithMTLTexture:options:")
+    public static native CIImage imageWithMTLTextureOptions(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * autoAdjustmentFiltersWithOptions:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/autoAdjustmentFiltersWithOptions:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("autoAdjustmentFiltersWithOptions:")
+    public native NSArray<? extends CIFilter> autoAdjustmentFiltersWithOptions(NSDictionary<String, ?> options);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * extent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instp/CIImage/extent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("extent")
+    @ByValue
+    public native CGRect extent();
+
+    /**
+     * imageByApplyingFilter:withInputParameters:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByApplyingFilter:withInputParameters:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageByApplyingFilter:withInputParameters:")
+    public native CIImage imageByApplyingFilterWithInputParameters(String filterName, NSDictionary<String, ?> params);
+
+    /**
+     * imageByApplyingOrientation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByApplyingOrientation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageByApplyingOrientation:")
+    public native CIImage imageByApplyingOrientation(int orientation);
+
+    /**
+     * imageByApplyingTransform:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByApplyingTransform:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageByApplyingTransform:")
+    public native CIImage imageByApplyingTransform(@ByValue CGAffineTransform matrix);
+
+    /**
+     * imageByClampingToExtent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByClampingToExtent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageByClampingToExtent")
+    public native CIImage imageByClampingToExtent();
+
+    /**
+     * imageByCompositingOverImage:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByCompositingOverImage:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageByCompositingOverImage:")
+    public native CIImage imageByCompositingOverImage(CIImage dest);
+
+    /**
+     * imageByCroppingToRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageByCroppingToRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageByCroppingToRect:")
+    public native CIImage imageByCroppingToRect(@ByValue CGRect rect);
+
+    /**
+     * imageTransformForOrientation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/imageTransformForOrientation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageTransformForOrientation:")
+    @ByValue
+    public native CGAffineTransform imageTransformForOrientation(int orientation);
 
     @Generated
     @Selector("init")
@@ -397,42 +537,6 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native CGColorSpaceRef colorSpace();
 
     /**
-     * imageWithCVImageBuffer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/clm/CIImage/imageWithCVImageBuffer:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithCVImageBuffer:")
-    public static native CIImage imageWithCVImageBuffer(CVBufferRef imageBuffer);
-
-    /**
-     * imageWithCVImageBuffer:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/clm/CIImage/imageWithCVImageBuffer:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithCVImageBuffer:options:")
-    public static native CIImage imageWithCVImageBufferOptions(CVBufferRef imageBuffer,
-            NSDictionary<String, ?> options);
-
-    /**
-     * imageWithImageProvider:size::format:colorSpace:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/clm/CIImage/imageWithImageProvider:size::format:colorSpace:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithImageProvider:size::format:colorSpace:options:")
-    public static native CIImage imageWithImageProviderSize_FormatColorSpaceOptions(
-            @Mapped(ObjCObjectMapper.class) Object p, @NUInt long width, @NUInt long height, int f, CGColorSpaceRef cs,
-            NSDictionary<String, ?> options);
-
-    /**
-     * imageWithMTLTexture:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/clm/CIImage/imageWithMTLTexture:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithMTLTexture:options:")
-    public static native CIImage imageWithMTLTextureOptions(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
-            NSDictionary<String, ?> options);
-
-    /**
      * initWithCVImageBuffer:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/index.html#//apple_ref/occ/instm/CIImage/initWithCVImageBuffer:">iOS Dev Center</a>
      */
@@ -467,10 +571,6 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
             NSDictionary<String, ?> options);
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
@@ -483,104 +583,4 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("url")
     public native NSURL url();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

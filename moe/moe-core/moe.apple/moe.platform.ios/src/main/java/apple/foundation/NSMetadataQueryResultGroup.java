@@ -55,61 +55,6 @@ public class NSMetadataQueryResultGroup extends NSObject {
     @Selector("alloc")
     public static native NSMetadataQueryResultGroup alloc();
 
-    /**
-     * attribute</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryResultGroup/attribute">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attribute")
-    public native String attribute();
-
-    @Generated
-    @Selector("init")
-    public native NSMetadataQueryResultGroup init();
-
-    /**
-     * resultAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instm/NSMetadataQueryResultGroup/resultAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resultAtIndex:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object resultAtIndex(@NUInt long idx);
-
-    /**
-     * resultCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryResultGroup/resultCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resultCount")
-    @NUInt
-    public native long resultCount();
-
-    /**
-     * results</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryResultGroup/results">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("results")
-    public native NSArray<?> results();
-
-    /**
-     * subgroups</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryResultGroup/subgroups">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subgroups")
-    public native NSArray<? extends NSMetadataQueryResultGroup> subgroups();
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryResultGroup/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object value();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -209,4 +154,59 @@ public class NSMetadataQueryResultGroup extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * attribute</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryResultGroup/attribute">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attribute")
+    public native String attribute();
+
+    @Generated
+    @Selector("init")
+    public native NSMetadataQueryResultGroup init();
+
+    /**
+     * resultAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instm/NSMetadataQueryResultGroup/resultAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resultAtIndex:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object resultAtIndex(@NUInt long idx);
+
+    /**
+     * resultCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryResultGroup/resultCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resultCount")
+    @NUInt
+    public native long resultCount();
+
+    /**
+     * results</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryResultGroup/results">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("results")
+    public native NSArray<?> results();
+
+    /**
+     * subgroups</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryResultGroup/subgroups">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subgroups")
+    public native NSArray<? extends NSMetadataQueryResultGroup> subgroups();
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataQueryResultGroup_Class/index.html#//apple_ref/occ/instp/NSMetadataQueryResultGroup/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object value();
 }

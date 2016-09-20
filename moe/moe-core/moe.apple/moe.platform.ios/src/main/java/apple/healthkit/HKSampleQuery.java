@@ -66,45 +66,6 @@ public class HKSampleQuery extends HKQuery {
     public static native HKSampleQuery alloc();
 
     @Generated
-    @Selector("init")
-    public native HKSampleQuery init();
-
-    /**
-     * initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSampleQuery_Class/index.html#//apple_ref/occ/instm/HKSampleQuery/initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:")
-    public native HKSampleQuery initWithSampleTypePredicateLimitSortDescriptorsResultsHandler(HKSampleType sampleType,
-            NSPredicate predicate, @NUInt long limit, NSArray<? extends NSSortDescriptor> sortDescriptors,
-            @ObjCBlock(name = "call_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler") Block_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler resultsHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler {
-        @Generated
-        void call_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler(HKSampleQuery arg0,
-                NSArray<? extends HKSample> arg1, NSError arg2);
-    }
-
-    /**
-     * limit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSampleQuery_Class/index.html#//apple_ref/occ/instp/HKSampleQuery/limit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("limit")
-    @NUInt
-    public native long limit();
-
-    /**
-     * sortDescriptors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSampleQuery_Class/index.html#//apple_ref/occ/instp/HKSampleQuery/sortDescriptors">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sortDescriptors")
-    public native NSArray<? extends NSSortDescriptor> sortDescriptors();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -298,4 +259,43 @@ public class HKSampleQuery extends HKQuery {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native HKSampleQuery init();
+
+    /**
+     * initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSampleQuery_Class/index.html#//apple_ref/occ/instm/HKSampleQuery/initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:")
+    public native HKSampleQuery initWithSampleTypePredicateLimitSortDescriptorsResultsHandler(HKSampleType sampleType,
+            NSPredicate predicate, @NUInt long limit, NSArray<? extends NSSortDescriptor> sortDescriptors,
+            @ObjCBlock(name = "call_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler") Block_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler resultsHandler);
+
+    /**
+     * limit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSampleQuery_Class/index.html#//apple_ref/occ/instp/HKSampleQuery/limit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("limit")
+    @NUInt
+    public native long limit();
+
+    /**
+     * sortDescriptors</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSampleQuery_Class/index.html#//apple_ref/occ/instp/HKSampleQuery/sortDescriptors">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sortDescriptors")
+    public native NSArray<? extends NSSortDescriptor> sortDescriptors();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler {
+        @Generated
+        void call_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler(HKSampleQuery arg0,
+                NSArray<? extends HKSample> arg1, NSError arg2);
+    }
 }

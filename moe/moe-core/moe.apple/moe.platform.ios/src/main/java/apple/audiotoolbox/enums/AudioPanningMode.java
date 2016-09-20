@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioPanningMode {
+    @Generated public static final int SoundField = 0x00000003;
+    @Generated public static final int VectorBasedPanning = 0x00000004;
+
     @Generated
     private AudioPanningMode() {
     }
-
-    @Generated public static final int SoundField = 0x00000003;
-    @Generated public static final int VectorBasedPanning = 0x00000004;
 }

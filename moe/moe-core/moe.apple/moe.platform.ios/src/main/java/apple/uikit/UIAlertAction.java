@@ -64,60 +64,10 @@ public class UIAlertAction extends NSObject implements NSCopying {
     public static native UIAlertAction actionWithTitleStyleHandler(String title, @NInt long style,
             @ObjCBlock(name = "call_actionWithTitleStyleHandler") Block_actionWithTitleStyleHandler handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_actionWithTitleStyleHandler {
-        @Generated
-        void call_actionWithTitleStyleHandler(UIAlertAction arg0);
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIAlertAction alloc();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native UIAlertAction init();
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    /**
-     * style</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/style">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("style")
-    @NInt
-    public native long style();
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -218,4 +168,54 @@ public class UIAlertAction extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native UIAlertAction init();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    /**
+     * style</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/style">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("style")
+    @NInt
+    public native long style();
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAlertAction_Class/index.html#//apple_ref/occ/instp/UIAlertAction/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_actionWithTitleStyleHandler {
+        @Generated
+        void call_actionWithTitleStyleHandler(UIAlertAction arg0);
+    }
 }

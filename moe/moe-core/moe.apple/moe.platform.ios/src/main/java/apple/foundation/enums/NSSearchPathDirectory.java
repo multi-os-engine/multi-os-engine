@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSSearchPathDirectory {
-    @Generated
-    private NSSearchPathDirectory() {
-    }
-
     @Generated @NUInt public static final long ApplicationDirectory = 0x0000000000000001L;
     @Generated @NUInt public static final long DemoApplicationDirectory = 0x0000000000000002L;
     @Generated @NUInt public static final long DeveloperApplicationDirectory = 0x0000000000000003L;
@@ -50,4 +46,8 @@ public final class NSSearchPathDirectory {
     @Generated @NUInt public static final long ItemReplacementDirectory = 0x0000000000000063L;
     @Generated @NUInt public static final long AllApplicationsDirectory = 0x0000000000000064L;
     @Generated @NUInt public static final long AllLibrariesDirectory = 0x0000000000000065L;
+
+    @Generated
+    private NSSearchPathDirectory() {
+    }
 }

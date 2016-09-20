@@ -69,54 +69,6 @@ public class CASpringAnimation extends CABasicAnimation {
     public static native CASpringAnimation animationWithKeyPath(String path);
 
     @Generated
-    @Selector("damping")
-    @NFloat
-    public native double damping();
-
-    @Generated
-    @Selector("init")
-    public native CASpringAnimation init();
-
-    @Generated
-    @Selector("initialVelocity")
-    @NFloat
-    public native double initialVelocity();
-
-    @Generated
-    @Selector("mass")
-    @NFloat
-    public native double mass();
-
-    @Generated
-    @Selector("setDamping:")
-    public native void setDamping(@NFloat double value);
-
-    @Generated
-    @Selector("setInitialVelocity:")
-    public native void setInitialVelocity(@NFloat double value);
-
-    @Generated
-    @Selector("setMass:")
-    public native void setMass(@NFloat double value);
-
-    @Generated
-    @Selector("setStiffness:")
-    public native void setStiffness(@NFloat double value);
-
-    @Generated
-    @Selector("settlingDuration")
-    public native double settlingDuration();
-
-    @Generated
-    @Selector("stiffness")
-    @NFloat
-    public native double stiffness();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CASpringAnimation initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -220,4 +172,52 @@ public class CASpringAnimation extends CABasicAnimation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("damping")
+    @NFloat
+    public native double damping();
+
+    @Generated
+    @Selector("init")
+    public native CASpringAnimation init();
+
+    @Generated
+    @Selector("initialVelocity")
+    @NFloat
+    public native double initialVelocity();
+
+    @Generated
+    @Selector("mass")
+    @NFloat
+    public native double mass();
+
+    @Generated
+    @Selector("setDamping:")
+    public native void setDamping(@NFloat double value);
+
+    @Generated
+    @Selector("setInitialVelocity:")
+    public native void setInitialVelocity(@NFloat double value);
+
+    @Generated
+    @Selector("setMass:")
+    public native void setMass(@NFloat double value);
+
+    @Generated
+    @Selector("setStiffness:")
+    public native void setStiffness(@NFloat double value);
+
+    @Generated
+    @Selector("settlingDuration")
+    public native double settlingDuration();
+
+    @Generated
+    @Selector("stiffness")
+    @NFloat
+    public native double stiffness();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CASpringAnimation initWithCoder(NSCoder aDecoder);
 }

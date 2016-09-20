@@ -65,38 +65,6 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay {
     @Selector("alloc")
     public static native MKPolygon alloc();
 
-    @Generated
-    @Selector("boundingMapRect")
-    @ByValue
-    public native MKMapRect boundingMapRect();
-
-    @Generated
-    @IsOptional
-    @Selector("canReplaceMapContent")
-    public native boolean canReplaceMapContent();
-
-    @Generated
-    @Selector("coordinate")
-    @ByValue
-    public native CLLocationCoordinate2D coordinate();
-
-    @Generated
-    @Selector("init")
-    public native MKPolygon init();
-
-    /**
-     * interiorPolygons</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygon_class/index.html#//apple_ref/occ/instp/MKPolygon/interiorPolygons">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("interiorPolygons")
-    public native NSArray<? extends MKPolygon> interiorPolygons();
-
-    @Generated
-    @IsOptional
-    @Selector("intersectsMapRect:")
-    public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
-
     /**
      * polygonWithCoordinates:count:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygon_class/index.html#//apple_ref/occ/clm/MKPolygon/polygonWithCoordinates:count:">iOS Dev Center</a>
@@ -130,21 +98,6 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay {
     @Selector("polygonWithPoints:count:interiorPolygons:")
     public static native MKPolygon polygonWithPointsCountInteriorPolygons(Ptr<MKMapPoint> points, @NUInt long count,
             NSArray<? extends MKPolygon> interiorPolygons);
-
-    @Generated
-    @IsOptional
-    @Selector("setCoordinate:")
-    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
-
-    @Generated
-    @IsOptional
-    @Selector("subtitle")
-    public native String subtitle();
-
-    @Generated
-    @IsOptional
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -245,4 +198,51 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("boundingMapRect")
+    @ByValue
+    public native MKMapRect boundingMapRect();
+
+    @Generated
+    @IsOptional
+    @Selector("canReplaceMapContent")
+    public native boolean canReplaceMapContent();
+
+    @Generated
+    @Selector("coordinate")
+    @ByValue
+    public native CLLocationCoordinate2D coordinate();
+
+    @Generated
+    @Selector("init")
+    public native MKPolygon init();
+
+    /**
+     * interiorPolygons</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolygon_class/index.html#//apple_ref/occ/instp/MKPolygon/interiorPolygons">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("interiorPolygons")
+    public native NSArray<? extends MKPolygon> interiorPolygons();
+
+    @Generated
+    @IsOptional
+    @Selector("intersectsMapRect:")
+    public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
+
+    @Generated
+    @IsOptional
+    @Selector("setCoordinate:")
+    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
+
+    @Generated
+    @IsOptional
+    @Selector("subtitle")
+    public native String subtitle();
+
+    @Generated
+    @IsOptional
+    @Selector("title")
+    public native String title();
 }

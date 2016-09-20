@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKErrorCode {
-    @Generated
-    private SKErrorCode() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long ClientInvalid = 0x0000000000000001L;
     @Generated @NInt public static final long PaymentCancelled = 0x0000000000000002L;
@@ -33,4 +29,8 @@ public final class SKErrorCode {
     @Generated @NInt public static final long StoreProductNotAvailable = 0x0000000000000005L;
     @Generated @NInt public static final long CloudServicePermissionDenied = 0x0000000000000006L;
     @Generated @NInt public static final long CloudServiceNetworkConnectionFailed = 0x0000000000000007L;
+
+    @Generated
+    private SKErrorCode() {
+    }
 }

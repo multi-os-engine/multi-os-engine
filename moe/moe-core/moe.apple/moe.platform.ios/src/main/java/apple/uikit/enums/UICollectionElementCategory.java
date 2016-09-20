@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UICollectionElementCategory {
-    @Generated
-    private UICollectionElementCategory() {
-    }
-
     @Generated @NUInt public static final long Cell = 0x0000000000000000L;
     @Generated @NUInt public static final long SupplementaryView = 0x0000000000000001L;
     @Generated @NUInt public static final long DecorationView = 0x0000000000000002L;
+
+    @Generated
+    private UICollectionElementCategory() {
+    }
 }

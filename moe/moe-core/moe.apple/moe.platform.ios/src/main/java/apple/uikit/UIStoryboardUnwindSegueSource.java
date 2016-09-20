@@ -59,35 +59,6 @@ public class UIStoryboardUnwindSegueSource extends NSObject {
     public static native UIStoryboardUnwindSegueSource alloc();
 
     @Generated
-    @Selector("init")
-    public native UIStoryboardUnwindSegueSource init();
-
-    /**
-     * sender</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardUnwindSegueSource_class/index.html#//apple_ref/occ/instp/UIStoryboardUnwindSegueSource/sender">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sender")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object sender();
-
-    /**
-     * sourceViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardUnwindSegueSource_class/index.html#//apple_ref/occ/instp/UIStoryboardUnwindSegueSource/sourceViewController">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceViewController")
-    public native UIViewController sourceViewController();
-
-    /**
-     * unwindAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardUnwindSegueSource_class/index.html#//apple_ref/occ/instp/UIStoryboardUnwindSegueSource/unwindAction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unwindAction")
-    public native SEL unwindAction();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -186,4 +157,33 @@ public class UIStoryboardUnwindSegueSource extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIStoryboardUnwindSegueSource init();
+
+    /**
+     * sender</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardUnwindSegueSource_class/index.html#//apple_ref/occ/instp/UIStoryboardUnwindSegueSource/sender">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sender")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object sender();
+
+    /**
+     * sourceViewController</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardUnwindSegueSource_class/index.html#//apple_ref/occ/instp/UIStoryboardUnwindSegueSource/sourceViewController">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceViewController")
+    public native UIViewController sourceViewController();
+
+    /**
+     * unwindAction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardUnwindSegueSource_class/index.html#//apple_ref/occ/instp/UIStoryboardUnwindSegueSource/unwindAction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unwindAction")
+    public native SEL unwindAction();
 }

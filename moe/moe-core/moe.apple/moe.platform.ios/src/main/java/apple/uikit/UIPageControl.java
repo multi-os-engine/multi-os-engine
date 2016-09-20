@@ -67,133 +67,6 @@ public class UIPageControl extends UIControl {
     @Selector("alloc")
     public static native UIPageControl alloc();
 
-    /**
-     * currentPage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentPage")
-    @NInt
-    public native long currentPage();
-
-    /**
-     * currentPageIndicatorTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPageIndicatorTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentPageIndicatorTintColor")
-    public native UIColor currentPageIndicatorTintColor();
-
-    /**
-     * defersCurrentPageDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/defersCurrentPageDisplay">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defersCurrentPageDisplay")
-    public native boolean defersCurrentPageDisplay();
-
-    /**
-     * hidesForSinglePage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/hidesForSinglePage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hidesForSinglePage")
-    public native boolean hidesForSinglePage();
-
-    @Generated
-    @Selector("init")
-    public native UIPageControl init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIPageControl initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * numberOfPages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/numberOfPages">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberOfPages")
-    @NInt
-    public native long numberOfPages();
-
-    /**
-     * pageIndicatorTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/pageIndicatorTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pageIndicatorTintColor")
-    public native UIColor pageIndicatorTintColor();
-
-    /**
-     * currentPage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCurrentPage:")
-    public native void setCurrentPage(@NInt long value);
-
-    /**
-     * currentPageIndicatorTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPageIndicatorTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCurrentPageIndicatorTintColor:")
-    public native void setCurrentPageIndicatorTintColor(UIColor value);
-
-    /**
-     * defersCurrentPageDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/defersCurrentPageDisplay">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDefersCurrentPageDisplay:")
-    public native void setDefersCurrentPageDisplay(boolean value);
-
-    /**
-     * hidesForSinglePage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/hidesForSinglePage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHidesForSinglePage:")
-    public native void setHidesForSinglePage(boolean value);
-
-    /**
-     * numberOfPages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/numberOfPages">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNumberOfPages:")
-    public native void setNumberOfPages(@NInt long value);
-
-    /**
-     * pageIndicatorTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/pageIndicatorTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPageIndicatorTintColor:")
-    public native void setPageIndicatorTintColor(UIColor value);
-
-    /**
-     * sizeForNumberOfPages:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instm/UIPageControl/sizeForNumberOfPages:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sizeForNumberOfPages:")
-    @ByValue
-    public native CGSize sizeForNumberOfPages(@NInt long pageCount);
-
-    /**
-     * updateCurrentPageDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instm/UIPageControl/updateCurrentPageDisplay">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateCurrentPageDisplay")
-    public native void updateCurrentPageDisplay();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIPageControl initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -247,23 +120,9 @@ public class UIPageControl extends UIControl {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -274,27 +133,10 @@ public class UIPageControl extends UIControl {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -305,24 +147,9 @@ public class UIPageControl extends UIControl {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -520,4 +347,177 @@ public class UIPageControl extends UIControl {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * currentPage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentPage")
+    @NInt
+    public native long currentPage();
+
+    /**
+     * currentPageIndicatorTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPageIndicatorTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentPageIndicatorTintColor")
+    public native UIColor currentPageIndicatorTintColor();
+
+    /**
+     * defersCurrentPageDisplay</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/defersCurrentPageDisplay">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defersCurrentPageDisplay")
+    public native boolean defersCurrentPageDisplay();
+
+    /**
+     * hidesForSinglePage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/hidesForSinglePage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hidesForSinglePage")
+    public native boolean hidesForSinglePage();
+
+    @Generated
+    @Selector("init")
+    public native UIPageControl init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIPageControl initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * numberOfPages</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/numberOfPages">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberOfPages")
+    @NInt
+    public native long numberOfPages();
+
+    /**
+     * pageIndicatorTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/pageIndicatorTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pageIndicatorTintColor")
+    public native UIColor pageIndicatorTintColor();
+
+    /**
+     * currentPage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCurrentPage:")
+    public native void setCurrentPage(@NInt long value);
+
+    /**
+     * currentPageIndicatorTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/currentPageIndicatorTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCurrentPageIndicatorTintColor:")
+    public native void setCurrentPageIndicatorTintColor(UIColor value);
+
+    /**
+     * defersCurrentPageDisplay</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/defersCurrentPageDisplay">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDefersCurrentPageDisplay:")
+    public native void setDefersCurrentPageDisplay(boolean value);
+
+    /**
+     * hidesForSinglePage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/hidesForSinglePage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHidesForSinglePage:")
+    public native void setHidesForSinglePage(boolean value);
+
+    /**
+     * numberOfPages</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/numberOfPages">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNumberOfPages:")
+    public native void setNumberOfPages(@NInt long value);
+
+    /**
+     * pageIndicatorTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instp/UIPageControl/pageIndicatorTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPageIndicatorTintColor:")
+    public native void setPageIndicatorTintColor(UIColor value);
+
+    /**
+     * sizeForNumberOfPages:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instm/UIPageControl/sizeForNumberOfPages:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sizeForNumberOfPages:")
+    @ByValue
+    public native CGSize sizeForNumberOfPages(@NInt long pageCount);
+
+    /**
+     * updateCurrentPageDisplay</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPageControl_Class/index.html#//apple_ref/occ/instm/UIPageControl/updateCurrentPageDisplay">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateCurrentPageDisplay")
+    public native void updateCurrentPageDisplay();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIPageControl initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

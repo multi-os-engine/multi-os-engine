@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSComparisonPredicateOptions {
-    @Generated
-    private NSComparisonPredicateOptions() {
-    }
-
     @Generated @NUInt public static final long CaseInsensitivePredicateOption = 0x0000000000000001L;
     @Generated @NUInt public static final long DiacriticInsensitivePredicateOption = 0x0000000000000002L;
     @Generated @NUInt public static final long NormalizedPredicateOption = 0x0000000000000004L;
+
+    @Generated
+    private NSComparisonPredicateOptions() {
+    }
 }

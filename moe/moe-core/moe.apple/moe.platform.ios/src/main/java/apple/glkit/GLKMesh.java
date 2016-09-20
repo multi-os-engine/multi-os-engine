@@ -64,39 +64,10 @@ public class GLKMesh extends NSObject {
     public static native GLKMesh alloc();
 
     @Generated
-    @Selector("init")
-    public native GLKMesh init();
-
-    @Generated
-    @Selector("initWithMesh:error:")
-    public native GLKMesh initWithMeshError(MDLMesh mesh, Ptr<NSError> error);
-
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
     @Owned
     @Selector("newMeshesFromAsset:sourceMeshes:error:")
     public static native NSArray<? extends GLKMesh> newMeshesFromAssetSourceMeshesError(MDLAsset asset,
             Ptr<NSArray<? extends MDLMesh>> sourceMeshes, Ptr<NSError> error);
-
-    @Generated
-    @Selector("submeshes")
-    public native NSArray<? extends GLKSubmesh> submeshes();
-
-    @Generated
-    @Selector("vertexBuffers")
-    public native NSArray<? extends GLKMeshBuffer> vertexBuffers();
-
-    @Generated
-    @Selector("vertexCount")
-    @NUInt
-    public native long vertexCount();
-
-    @Generated
-    @Selector("vertexDescriptor")
-    public native MDLVertexDescriptor vertexDescriptor();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -197,4 +168,33 @@ public class GLKMesh extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GLKMesh init();
+
+    @Generated
+    @Selector("initWithMesh:error:")
+    public native GLKMesh initWithMeshError(MDLMesh mesh, Ptr<NSError> error);
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("submeshes")
+    public native NSArray<? extends GLKSubmesh> submeshes();
+
+    @Generated
+    @Selector("vertexBuffers")
+    public native NSArray<? extends GLKMeshBuffer> vertexBuffers();
+
+    @Generated
+    @Selector("vertexCount")
+    @NUInt
+    public native long vertexCount();
+
+    @Generated
+    @Selector("vertexDescriptor")
+    public native MDLVertexDescriptor vertexDescriptor();
 }

@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIApplicationState {
-    @Generated
-    private UIApplicationState() {
-    }
-
     @Generated @NInt public static final long Active = 0x0000000000000000L;
     @Generated @NInt public static final long Inactive = 0x0000000000000001L;
     @Generated @NInt public static final long Background = 0x0000000000000002L;
+
+    @Generated
+    private UIApplicationState() {
+    }
 }

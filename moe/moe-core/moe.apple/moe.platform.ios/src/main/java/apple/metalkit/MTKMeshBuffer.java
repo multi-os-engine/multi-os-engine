@@ -64,61 +64,6 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer {
     public static native MTKMeshBuffer alloc();
 
     @Generated
-    @Selector("allocator")
-    public native MTKMeshBufferAllocator allocator();
-
-    /**
-     * buffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMeshBuffer_ClassReference/index.html#//apple_ref/occ/instp/MTKMeshBuffer/buffer">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("buffer")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLBuffer buffer();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("fillData:offset:")
-    public native void fillDataOffset(NSData data, @NUInt long offset);
-
-    @Generated
-    @Selector("init")
-    public native MTKMeshBuffer init();
-
-    @Generated
-    @Selector("length")
-    @NUInt
-    public native long length();
-
-    @Generated
-    @Selector("map")
-    public native MDLMeshBufferMap map();
-
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMeshBuffer_ClassReference/index.html#//apple_ref/occ/instp/MTKMeshBuffer/offset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("offset")
-    @NUInt
-    public native long offset();
-
-    @Generated
-    @Selector("type")
-    @NUInt
-    public native long type();
-
-    @Generated
-    @Selector("zone")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MDLMeshBufferZone zone();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -217,4 +162,59 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("allocator")
+    public native MTKMeshBufferAllocator allocator();
+
+    /**
+     * buffer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMeshBuffer_ClassReference/index.html#//apple_ref/occ/instp/MTKMeshBuffer/buffer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("buffer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLBuffer buffer();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("fillData:offset:")
+    public native void fillDataOffset(NSData data, @NUInt long offset);
+
+    @Generated
+    @Selector("init")
+    public native MTKMeshBuffer init();
+
+    @Generated
+    @Selector("length")
+    @NUInt
+    public native long length();
+
+    @Generated
+    @Selector("map")
+    public native MDLMeshBufferMap map();
+
+    /**
+     * offset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKMeshBuffer_ClassReference/index.html#//apple_ref/occ/instp/MTKMeshBuffer/offset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("offset")
+    @NUInt
+    public native long offset();
+
+    @Generated
+    @Selector("type")
+    @NUInt
+    public native long type();
+
+    @Generated
+    @Selector("zone")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MDLMeshBufferZone zone();
 }

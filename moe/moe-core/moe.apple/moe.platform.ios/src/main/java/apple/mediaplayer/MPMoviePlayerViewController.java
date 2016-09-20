@@ -63,34 +63,6 @@ public class MPMoviePlayerViewController extends UIViewController {
     public static native MPMoviePlayerViewController alloc();
 
     @Generated
-    @Selector("init")
-    public native MPMoviePlayerViewController init();
-
-    /**
-     * initWithContentURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerViewController_class/index.html#//apple_ref/occ/instm/MPMoviePlayerViewController/initWithContentURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithContentURL:")
-    public native MPMoviePlayerViewController initWithContentURL(NSURL contentURL);
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native MPMoviePlayerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    /**
-     * moviePlayer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerViewController_class/index.html#//apple_ref/occ/instp/MPMoviePlayerViewController/moviePlayer">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("moviePlayer")
-    public native MPMoviePlayerController moviePlayer();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMoviePlayerViewController initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -201,4 +173,32 @@ public class MPMoviePlayerViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPMoviePlayerViewController init();
+
+    /**
+     * initWithContentURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerViewController_class/index.html#//apple_ref/occ/instm/MPMoviePlayerViewController/initWithContentURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithContentURL:")
+    public native MPMoviePlayerViewController initWithContentURL(NSURL contentURL);
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native MPMoviePlayerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    /**
+     * moviePlayer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMoviePlayerViewController_class/index.html#//apple_ref/occ/instp/MPMoviePlayerViewController/moviePlayer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("moviePlayer")
+    public native MPMoviePlayerController moviePlayer();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMoviePlayerViewController initWithCoder(NSCoder aDecoder);
 }

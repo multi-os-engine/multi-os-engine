@@ -70,61 +70,6 @@ public class PKAddPaymentPassViewController extends UIViewController {
     @Selector("canAddPaymentPass")
     public static native boolean canAddPaymentPass();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native PKAddPaymentPassViewControllerDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native PKAddPaymentPassViewController init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native PKAddPaymentPassViewController initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native PKAddPaymentPassViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    /**
-     * initWithRequestConfiguration:delegate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/occ/instm/PKAddPaymentPassViewController/initWithRequestConfiguration:delegate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRequestConfiguration:delegate:")
-    public native PKAddPaymentPassViewController initWithRequestConfigurationDelegate(
-            PKAddPaymentPassRequestConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) PKAddPaymentPassViewControllerDelegate delegate);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PKAddPaymentPassViewControllerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) PKAddPaymentPassViewControllerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -236,4 +181,59 @@ public class PKAddPaymentPassViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native PKAddPaymentPassViewControllerDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native PKAddPaymentPassViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native PKAddPaymentPassViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native PKAddPaymentPassViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    /**
+     * initWithRequestConfiguration:delegate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/occ/instm/PKAddPaymentPassViewController/initWithRequestConfiguration:delegate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRequestConfiguration:delegate:")
+    public native PKAddPaymentPassViewController initWithRequestConfigurationDelegate(
+            PKAddPaymentPassRequestConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) PKAddPaymentPassViewControllerDelegate delegate);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PKAddPaymentPassViewControllerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) PKAddPaymentPassViewControllerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 }

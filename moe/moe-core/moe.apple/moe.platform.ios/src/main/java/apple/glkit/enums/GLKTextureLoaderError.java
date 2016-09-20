@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GLKTextureLoaderError {
-    @Generated
-    private GLKTextureLoaderError() {
-    }
-
     @Generated public static final int FileOrURLNotFound = 0x00000000;
     @Generated public static final int InvalidNSData = 0x00000001;
     @Generated public static final int InvalidCGImage = 0x00000002;
@@ -43,4 +39,8 @@ public final class GLKTextureLoaderError {
     @Generated public static final int AlphaPremultiplicationFailure = 0x00000010;
     @Generated public static final int InvalidEAGLContext = 0x00000011;
     @Generated public static final int IncompatibleFormatSRGB = 0x00000012;
+
+    @Generated
+    private GLKTextureLoaderError() {
+    }
 }

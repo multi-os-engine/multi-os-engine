@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSPersonNameComponentsFormatterOptions {
+    @Generated @NUInt public static final long NSPersonNameComponentsFormatterPhonetic = 0x0000000000000002L;
+
     @Generated
     private NSPersonNameComponentsFormatterOptions() {
     }
-
-    @Generated @NUInt public static final long NSPersonNameComponentsFormatterPhonetic = 0x0000000000000002L;
 }

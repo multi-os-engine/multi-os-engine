@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSLengthFormatterUnit {
-    @Generated
-    private NSLengthFormatterUnit() {
-    }
-
     @Generated @NInt public static final long Millimeter = 0x0000000000000008L;
     @Generated @NInt public static final long Centimeter = 0x0000000000000009L;
     @Generated @NInt public static final long Meter = 0x000000000000000BL;
@@ -33,4 +29,8 @@ public final class NSLengthFormatterUnit {
     @Generated @NInt public static final long Foot = 0x0000000000000502L;
     @Generated @NInt public static final long Yard = 0x0000000000000503L;
     @Generated @NInt public static final long Mile = 0x0000000000000504L;
+
+    @Generated
+    private NSLengthFormatterUnit() {
+    }
 }

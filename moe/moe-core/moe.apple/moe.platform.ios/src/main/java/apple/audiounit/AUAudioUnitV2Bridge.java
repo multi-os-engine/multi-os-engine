@@ -64,20 +64,6 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
     public static native AUAudioUnitV2Bridge alloc();
 
     @Generated
-    @Selector("init")
-    public native AUAudioUnitV2Bridge init();
-
-    @Generated
-    @Selector("initWithComponentDescription:error:")
-    public native AUAudioUnitV2Bridge initWithComponentDescriptionError(
-            @ByValue AudioComponentDescription componentDescription, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("initWithComponentDescription:options:error:")
-    public native AUAudioUnitV2Bridge initWithComponentDescriptionOptionsError(
-            @ByValue AudioComponentDescription componentDescription, int options, Ptr<NSError> outError);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -187,4 +173,18 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AUAudioUnitV2Bridge init();
+
+    @Generated
+    @Selector("initWithComponentDescription:error:")
+    public native AUAudioUnitV2Bridge initWithComponentDescriptionError(
+            @ByValue AudioComponentDescription componentDescription, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("initWithComponentDescription:options:error:")
+    public native AUAudioUnitV2Bridge initWithComponentDescriptionOptionsError(
+            @ByValue AudioComponentDescription componentDescription, int options, Ptr<NSError> outError);
 }

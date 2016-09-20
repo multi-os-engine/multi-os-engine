@@ -53,78 +53,10 @@ public class CNSaveRequest extends NSObject {
         super(peer);
     }
 
-    /**
-     * addContact:toContainerWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/addContact:toContainerWithIdentifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addContact:toContainerWithIdentifier:")
-    public native void addContactToContainerWithIdentifier(CNMutableContact contact, String identifier);
-
-    /**
-     * addGroup:toContainerWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/addGroup:toContainerWithIdentifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addGroup:toContainerWithIdentifier:")
-    public native void addGroupToContainerWithIdentifier(CNMutableGroup group, String identifier);
-
-    /**
-     * addMember:toGroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/addMember:toGroup:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addMember:toGroup:")
-    public native void addMemberToGroup(CNContact contact, CNGroup group);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native CNSaveRequest alloc();
-
-    /**
-     * deleteContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/deleteContact:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deleteContact:")
-    public native void deleteContact(CNMutableContact contact);
-
-    /**
-     * deleteGroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/deleteGroup:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deleteGroup:")
-    public native void deleteGroup(CNMutableGroup group);
-
-    @Generated
-    @Selector("init")
-    public native CNSaveRequest init();
-
-    /**
-     * removeMember:fromGroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/removeMember:fromGroup:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeMember:fromGroup:")
-    public native void removeMemberFromGroup(CNContact contact, CNGroup group);
-
-    /**
-     * updateContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/updateContact:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateContact:")
-    public native void updateContact(CNMutableContact contact);
-
-    /**
-     * updateGroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/updateGroup:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateGroup:")
-    public native void updateGroup(CNMutableGroup group);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -225,4 +157,72 @@ public class CNSaveRequest extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addContact:toContainerWithIdentifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/addContact:toContainerWithIdentifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addContact:toContainerWithIdentifier:")
+    public native void addContactToContainerWithIdentifier(CNMutableContact contact, String identifier);
+
+    /**
+     * addGroup:toContainerWithIdentifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/addGroup:toContainerWithIdentifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addGroup:toContainerWithIdentifier:")
+    public native void addGroupToContainerWithIdentifier(CNMutableGroup group, String identifier);
+
+    /**
+     * addMember:toGroup:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/addMember:toGroup:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addMember:toGroup:")
+    public native void addMemberToGroup(CNContact contact, CNGroup group);
+
+    /**
+     * deleteContact:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/deleteContact:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deleteContact:")
+    public native void deleteContact(CNMutableContact contact);
+
+    /**
+     * deleteGroup:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/deleteGroup:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deleteGroup:")
+    public native void deleteGroup(CNMutableGroup group);
+
+    @Generated
+    @Selector("init")
+    public native CNSaveRequest init();
+
+    /**
+     * removeMember:fromGroup:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/removeMember:fromGroup:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeMember:fromGroup:")
+    public native void removeMemberFromGroup(CNContact contact, CNGroup group);
+
+    /**
+     * updateContact:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/updateContact:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateContact:")
+    public native void updateContact(CNMutableContact contact);
+
+    /**
+     * updateGroup:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSaveRequest_Class/index.html#//apple_ref/occ/instm/CNSaveRequest/updateGroup:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateGroup:")
+    public native void updateGroup(CNMutableGroup group);
 }

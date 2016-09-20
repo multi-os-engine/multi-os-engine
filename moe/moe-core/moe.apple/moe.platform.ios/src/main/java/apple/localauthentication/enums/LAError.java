@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class LAError {
-    @Generated
-    private LAError() {
-    }
-
     @Generated @NInt public static final long AuthenticationFailed = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long UserCancel = 0xFFFFFFFFFFFFFFFEL;
     @Generated @NInt public static final long UserFallback = 0xFFFFFFFFFFFFFFFDL;
@@ -35,4 +31,7 @@ public final class LAError {
     @Generated @NInt public static final long TouchIDLockout = 0xFFFFFFFFFFFFFFF8L;
     @Generated @NInt public static final long AppCancel = 0xFFFFFFFFFFFFFFF7L;
     @Generated @NInt public static final long InvalidContext = 0xFFFFFFFFFFFFFFF6L;
+    @Generated
+    private LAError() {
+    }
 }

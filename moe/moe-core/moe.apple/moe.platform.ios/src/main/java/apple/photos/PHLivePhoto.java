@@ -76,24 +76,6 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("cancelLivePhotoRequestWithRequestID:")
     public static native void cancelLivePhotoRequestWithRequestID(int requestID);
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native PHLivePhoto init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native PHLivePhoto initWithCoder(NSCoder aDecoder);
-
     /**
      * requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhoto_Class/index.html#//apple_ref/occ/clm/PHLivePhoto/requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:">iOS Dev Center</a>
@@ -104,32 +86,9 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
             NSArray<? extends NSURL> fileURLs, UIImage image, @ByValue CGSize targetSize, @NInt long contentMode,
             @ObjCBlock(name = "call_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler") Block_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler resultHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler {
-        @Generated
-        void call_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
-                PHLivePhoto arg0, NSDictionary<?, ?> arg1);
-    }
-
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhoto_Class/index.html#//apple_ref/occ/instp/PHLivePhoto/size">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("size")
-    @ByValue
-    public native CGSize size();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -230,4 +189,45 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native PHLivePhoto init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native PHLivePhoto initWithCoder(NSCoder aDecoder);
+
+    /**
+     * size</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhoto_Class/index.html#//apple_ref/occ/instp/PHLivePhoto/size">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("size")
+    @ByValue
+    public native CGSize size();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler {
+        @Generated
+        void call_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
+                PHLivePhoto arg0, NSDictionary<?, ?> arg1);
+    }
 }

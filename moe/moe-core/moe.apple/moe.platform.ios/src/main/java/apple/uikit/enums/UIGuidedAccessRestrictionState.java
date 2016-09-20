@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIGuidedAccessRestrictionState {
+    @Generated @NInt public static final long Allow = 0x0000000000000000L;
+    @Generated @NInt public static final long Deny = 0x0000000000000001L;
+
     @Generated
     private UIGuidedAccessRestrictionState() {
     }
-
-    @Generated @NInt public static final long Allow = 0x0000000000000000L;
-    @Generated @NInt public static final long Deny = 0x0000000000000001L;
 }

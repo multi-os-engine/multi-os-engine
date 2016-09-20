@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
+    @Generated public static final int GKPhotoSizeSmall = 0x00000000;
+    @Generated public static final int GKPhotoSizeNormal = 0x00000001;
+
     @Generated
     private Enums() {
     }
-
-    @Generated public static final int GKPhotoSizeSmall = 0x00000000;
-    @Generated public static final int GKPhotoSizeNormal = 0x00000001;
 }

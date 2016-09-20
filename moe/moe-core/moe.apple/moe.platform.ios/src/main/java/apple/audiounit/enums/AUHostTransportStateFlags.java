@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class AUHostTransportStateFlags {
-    @Generated
-    private AUHostTransportStateFlags() {
-    }
-
     @Generated @NUInt public static final long Changed = 0x0000000000000001L;
     @Generated @NUInt public static final long Moving = 0x0000000000000002L;
     @Generated @NUInt public static final long Recording = 0x0000000000000004L;
     @Generated @NUInt public static final long Cycling = 0x0000000000000008L;
+
+    @Generated
+    private AUHostTransportStateFlags() {
+    }
 }

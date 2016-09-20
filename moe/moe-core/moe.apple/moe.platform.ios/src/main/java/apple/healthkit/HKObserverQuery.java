@@ -63,10 +63,6 @@ public class HKObserverQuery extends HKQuery {
     public static native HKObserverQuery alloc();
 
     @Generated
-    @Selector("init")
-    public native HKObserverQuery init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -260,4 +256,8 @@ public class HKObserverQuery extends HKQuery {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native HKObserverQuery init();
 }

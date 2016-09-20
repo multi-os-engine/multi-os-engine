@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGTextEncoding {
+    @Generated public static final int FontSpecific = 0x00000000;
+    @Generated public static final int MacRoman = 0x00000001;
+
     @Generated
     private CGTextEncoding() {
     }
-
-    @Generated public static final int FontSpecific = 0x00000000;
-    @Generated public static final int MacRoman = 0x00000001;
 }

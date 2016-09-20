@@ -62,31 +62,6 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
     public static native AVAudioUnitVarispeed alloc();
 
     @Generated
-    @Selector("init")
-    public native AVAudioUnitVarispeed init();
-
-    @Generated
-    @Selector("initWithAudioComponentDescription:")
-    public native AVAudioUnitVarispeed initWithAudioComponentDescription(
-            @ByValue AudioComponentDescription audioComponentDescription);
-
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitVarispeed_Class/index.html#//apple_ref/occ/instp/AVAudioUnitVarispeed/rate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rate")
-    public native float rate();
-
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitVarispeed_Class/index.html#//apple_ref/occ/instp/AVAudioUnitVarispeed/rate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRate:")
-    public native void setRate(float value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -191,4 +166,29 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioUnitVarispeed init();
+
+    @Generated
+    @Selector("initWithAudioComponentDescription:")
+    public native AVAudioUnitVarispeed initWithAudioComponentDescription(
+            @ByValue AudioComponentDescription audioComponentDescription);
+
+    /**
+     * rate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitVarispeed_Class/index.html#//apple_ref/occ/instp/AVAudioUnitVarispeed/rate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rate")
+    public native float rate();
+
+    /**
+     * rate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitVarispeed_Class/index.html#//apple_ref/occ/instp/AVAudioUnitVarispeed/rate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRate:")
+    public native void setRate(float value);
 }

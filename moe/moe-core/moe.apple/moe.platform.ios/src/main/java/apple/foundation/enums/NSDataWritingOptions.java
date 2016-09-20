@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDataWritingOptions {
-    @Generated
-    private NSDataWritingOptions() {
-    }
-
     @Generated @NUInt public static final long DataWritingAtomic = 0x0000000000000001L;
     @Generated @NUInt public static final long DataWritingWithoutOverwriting = 0x0000000000000002L;
     @Generated @NUInt public static final long DataWritingFileProtectionNone = 0x0000000010000000L;
@@ -33,4 +29,8 @@ public final class NSDataWritingOptions {
     @Generated @NUInt public static final long DataWritingFileProtectionCompleteUntilFirstUserAuthentication = 0x0000000040000000L;
     @Generated @NUInt public static final long DataWritingFileProtectionMask = 0x00000000F0000000L;
     @Generated @NUInt public static final long AtomicWrite = 0x0000000000000001L;
+
+    @Generated
+    private NSDataWritingOptions() {
+    }
 }

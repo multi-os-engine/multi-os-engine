@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITouchProperties {
-    @Generated
-    private UITouchProperties() {
-    }
-
     @Generated @NInt public static final long Force = 0x0000000000000001L;
     @Generated @NInt public static final long Azimuth = 0x0000000000000002L;
     @Generated @NInt public static final long Altitude = 0x0000000000000004L;
     @Generated @NInt public static final long Location = 0x0000000000000008L;
+
+    @Generated
+    private UITouchProperties() {
+    }
 }

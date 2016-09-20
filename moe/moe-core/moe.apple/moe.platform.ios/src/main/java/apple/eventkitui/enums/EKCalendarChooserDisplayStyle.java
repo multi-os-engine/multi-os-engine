@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKCalendarChooserDisplayStyle {
+    @Generated @NInt public static final long AllCalendars = 0x0000000000000000L;
+    @Generated @NInt public static final long WritableCalendarsOnly = 0x0000000000000001L;
+
     @Generated
     private EKCalendarChooserDisplayStyle() {
     }
-
-    @Generated @NInt public static final long AllCalendars = 0x0000000000000000L;
-    @Generated @NInt public static final long WritableCalendarsOnly = 0x0000000000000001L;
 }

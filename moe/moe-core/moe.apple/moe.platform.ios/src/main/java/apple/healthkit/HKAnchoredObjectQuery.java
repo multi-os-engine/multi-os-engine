@@ -65,81 +65,6 @@ public class HKAnchoredObjectQuery extends HKQuery {
     public static native HKAnchoredObjectQuery alloc();
 
     @Generated
-    @Selector("init")
-    public native HKAnchoredObjectQuery init();
-
-    /**
-     * initWithType:predicate:anchor:limit:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instm/HKAnchoredObjectQuery/initWithType:predicate:anchor:limit:completionHandler:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("initWithType:predicate:anchor:limit:completionHandler:")
-    public native HKAnchoredObjectQuery initWithTypePredicateAnchorLimitCompletionHandler(HKSampleType type,
-            NSPredicate predicate, @NUInt long anchor, @NUInt long limit,
-            @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitCompletionHandler") Block_initWithTypePredicateAnchorLimitCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithTypePredicateAnchorLimitCompletionHandler {
-        @Generated
-        void call_initWithTypePredicateAnchorLimitCompletionHandler(HKAnchoredObjectQuery arg0,
-                NSArray<? extends HKSample> arg1, @NUInt long arg2, NSError arg3);
-    }
-
-    /**
-     * initWithType:predicate:anchor:limit:resultsHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instm/HKAnchoredObjectQuery/initWithType:predicate:anchor:limit:resultsHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithType:predicate:anchor:limit:resultsHandler:")
-    public native HKAnchoredObjectQuery initWithTypePredicateAnchorLimitResultsHandler(HKSampleType type,
-            NSPredicate predicate, HKQueryAnchor anchor, @NUInt long limit,
-            @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitResultsHandler") Block_initWithTypePredicateAnchorLimitResultsHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithTypePredicateAnchorLimitResultsHandler {
-        @Generated
-        void call_initWithTypePredicateAnchorLimitResultsHandler(HKAnchoredObjectQuery arg0,
-                NSArray<? extends HKSample> arg1, NSArray<? extends HKDeletedObject> arg2, HKQueryAnchor arg3,
-                NSError arg4);
-    }
-
-    /**
-     * updateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instp/HKAnchoredObjectQuery/updateHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUpdateHandler:")
-    public native void setUpdateHandler(@ObjCBlock(name = "call_setUpdateHandler") Block_setUpdateHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setUpdateHandler {
-        @Generated
-        void call_setUpdateHandler(HKAnchoredObjectQuery arg0, NSArray<? extends HKSample> arg1,
-                NSArray<? extends HKDeletedObject> arg2, HKQueryAnchor arg3, NSError arg4);
-    }
-
-    /**
-     * updateHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instp/HKAnchoredObjectQuery/updateHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateHandler")
-    @ObjCBlock(name = "call_updateHandler_ret")
-    public native Block_updateHandler_ret updateHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updateHandler_ret {
-        @Generated
-        void call_updateHandler_ret(HKAnchoredObjectQuery arg0, NSArray<? extends HKSample> arg1,
-                NSArray<? extends HKDeletedObject> arg2, HKQueryAnchor arg3, NSError arg4);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -333,4 +258,79 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native HKAnchoredObjectQuery init();
+
+    /**
+     * initWithType:predicate:anchor:limit:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instm/HKAnchoredObjectQuery/initWithType:predicate:anchor:limit:completionHandler:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("initWithType:predicate:anchor:limit:completionHandler:")
+    public native HKAnchoredObjectQuery initWithTypePredicateAnchorLimitCompletionHandler(HKSampleType type,
+            NSPredicate predicate, @NUInt long anchor, @NUInt long limit,
+            @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitCompletionHandler") Block_initWithTypePredicateAnchorLimitCompletionHandler handler);
+
+    /**
+     * initWithType:predicate:anchor:limit:resultsHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instm/HKAnchoredObjectQuery/initWithType:predicate:anchor:limit:resultsHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithType:predicate:anchor:limit:resultsHandler:")
+    public native HKAnchoredObjectQuery initWithTypePredicateAnchorLimitResultsHandler(HKSampleType type,
+            NSPredicate predicate, HKQueryAnchor anchor, @NUInt long limit,
+            @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitResultsHandler") Block_initWithTypePredicateAnchorLimitResultsHandler handler);
+
+    /**
+     * updateHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instp/HKAnchoredObjectQuery/updateHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUpdateHandler:")
+    public native void setUpdateHandler(@ObjCBlock(name = "call_setUpdateHandler") Block_setUpdateHandler value);
+
+    /**
+     * updateHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/instp/HKAnchoredObjectQuery/updateHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateHandler")
+    @ObjCBlock(name = "call_updateHandler_ret")
+    public native Block_updateHandler_ret updateHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithTypePredicateAnchorLimitCompletionHandler {
+        @Generated
+        void call_initWithTypePredicateAnchorLimitCompletionHandler(HKAnchoredObjectQuery arg0,
+                NSArray<? extends HKSample> arg1, @NUInt long arg2, NSError arg3);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithTypePredicateAnchorLimitResultsHandler {
+        @Generated
+        void call_initWithTypePredicateAnchorLimitResultsHandler(HKAnchoredObjectQuery arg0,
+                NSArray<? extends HKSample> arg1, NSArray<? extends HKDeletedObject> arg2, HKQueryAnchor arg3,
+                NSError arg4);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setUpdateHandler {
+        @Generated
+        void call_setUpdateHandler(HKAnchoredObjectQuery arg0, NSArray<? extends HKSample> arg1,
+                NSArray<? extends HKDeletedObject> arg2, HKQueryAnchor arg3, NSError arg4);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateHandler_ret {
+        @Generated
+        void call_updateHandler_ret(HKAnchoredObjectQuery arg0, NSArray<? extends HKSample> arg1,
+                NSArray<? extends HKDeletedObject> arg2, HKQueryAnchor arg3, NSError arg4);
+    }
 }

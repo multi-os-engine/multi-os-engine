@@ -57,30 +57,6 @@ public class NSProgress extends NSObject {
     public static native NSProgress alloc();
 
     /**
-     * becomeCurrentWithPendingUnitCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/becomeCurrentWithPendingUnitCount:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("becomeCurrentWithPendingUnitCount:")
-    public native void becomeCurrentWithPendingUnitCount(long unitCount);
-
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/cancel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancel")
-    public native void cancel();
-
-    /**
-     * completedUnitCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/completedUnitCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("completedUnitCount")
-    public native long completedUnitCount();
-
-    /**
      * currentProgress</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/clm/NSProgress/currentProgress">iOS Dev Center</a>
      */
@@ -89,263 +65,12 @@ public class NSProgress extends NSObject {
     public static native NSProgress currentProgress();
 
     /**
-     * fractionCompleted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/fractionCompleted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fractionCompleted")
-    public native double fractionCompleted();
-
-    @Generated
-    @Selector("init")
-    public native NSProgress init();
-
-    /**
-     * initWithParent:userInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/initWithParent:userInfo:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithParent:userInfo:")
-    public native NSProgress initWithParentUserInfo(NSProgress parentProgressOrNil, NSDictionary<?, ?> userInfoOrNil);
-
-    /**
-     * cancellable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/cancellable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isCancellable")
-    public native boolean isCancellable();
-
-    /**
-     * cancelled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/cancelled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isCancelled")
-    public native boolean isCancelled();
-
-    /**
-     * indeterminate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/indeterminate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isIndeterminate")
-    public native boolean isIndeterminate();
-
-    /**
-     * pausable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/pausable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPausable")
-    public native boolean isPausable();
-
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/paused">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPaused")
-    public native boolean isPaused();
-
-    /**
-     * kind</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/kind">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("kind")
-    public native String kind();
-
-    /**
-     * localizedAdditionalDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/localizedAdditionalDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedAdditionalDescription")
-    public native String localizedAdditionalDescription();
-
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/localizedDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedDescription")
-    public native String localizedDescription();
-
-    /**
-     * pause</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/pause">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pause")
-    public native void pause();
-
-    /**
      * progressWithTotalUnitCount:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/clm/NSProgress/progressWithTotalUnitCount:">iOS Dev Center</a>
      */
     @Generated
     @Selector("progressWithTotalUnitCount:")
     public static native NSProgress progressWithTotalUnitCount(long unitCount);
-
-    /**
-     * resignCurrent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/resignCurrent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resignCurrent")
-    public native void resignCurrent();
-
-    /**
-     * cancellable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/cancellable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCancellable:")
-    public native void setCancellable(boolean value);
-
-    /**
-     * cancellationHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/cancellationHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCancellationHandler:")
-    public native void setCancellationHandler(
-            @ObjCBlock(name = "call_setCancellationHandler") Block_setCancellationHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setCancellationHandler {
-        @Generated
-        void call_setCancellationHandler();
-    }
-
-    /**
-     * completedUnitCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/completedUnitCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCompletedUnitCount:")
-    public native void setCompletedUnitCount(long value);
-
-    /**
-     * kind</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/kind">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setKind:")
-    public native void setKind(String value);
-
-    /**
-     * localizedAdditionalDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/localizedAdditionalDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLocalizedAdditionalDescription:")
-    public native void setLocalizedAdditionalDescription(String value);
-
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/localizedDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLocalizedDescription:")
-    public native void setLocalizedDescription(String value);
-
-    /**
-     * pausable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/pausable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPausable:")
-    public native void setPausable(boolean value);
-
-    /**
-     * pausingHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/pausingHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPausingHandler:")
-    public native void setPausingHandler(@ObjCBlock(name = "call_setPausingHandler") Block_setPausingHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setPausingHandler {
-        @Generated
-        void call_setPausingHandler();
-    }
-
-    /**
-     * totalUnitCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/totalUnitCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTotalUnitCount:")
-    public native void setTotalUnitCount(long value);
-
-    /**
-     * setUserInfoObject:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/setUserInfoObject:forKey:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUserInfoObject:forKey:")
-    public native void setUserInfoObjectForKey(@Mapped(ObjCObjectMapper.class) Object objectOrNil, String key);
-
-    /**
-     * totalUnitCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/totalUnitCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("totalUnitCount")
-    public native long totalUnitCount();
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInfo")
-    public native NSDictionary<?, ?> userInfo();
-
-    /**
-     * cancellationHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/cancellationHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancellationHandler")
-    @ObjCBlock(name = "call_cancellationHandler_ret")
-    public native Block_cancellationHandler_ret cancellationHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_cancellationHandler_ret {
-        @Generated
-        void call_cancellationHandler_ret();
-    }
-
-    /**
-     * pausingHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/pausingHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pausingHandler")
-    @ObjCBlock(name = "call_pausingHandler_ret")
-    public native Block_pausingHandler_ret pausingHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_pausingHandler_ret {
-        @Generated
-        void call_pausingHandler_ret();
-    }
-
-    /**
-     * addChild:withPendingUnitCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/addChild:withPendingUnitCount:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addChild:withPendingUnitCount:")
-    public native void addChildWithPendingUnitCount(NSProgress child, long inUnitCount);
 
     /**
      * discreteProgressWithTotalUnitCount:</br>
@@ -363,45 +88,6 @@ public class NSProgress extends NSObject {
     @Selector("progressWithTotalUnitCount:parent:pendingUnitCount:")
     public static native NSProgress progressWithTotalUnitCountParentPendingUnitCount(long unitCount, NSProgress parent,
             long portionOfParentTotalUnitCount);
-
-    /**
-     * resume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/resume">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resume")
-    public native void resume();
-
-    /**
-     * resumingHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/resumingHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resumingHandler")
-    @ObjCBlock(name = "call_resumingHandler_ret")
-    public native Block_resumingHandler_ret resumingHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_resumingHandler_ret {
-        @Generated
-        void call_resumingHandler_ret();
-    }
-
-    /**
-     * resumingHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/resumingHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setResumingHandler:")
-    public native void setResumingHandler(@ObjCBlock(name = "call_setResumingHandler") Block_setResumingHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setResumingHandler {
-        @Generated
-        void call_setResumingHandler();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -502,4 +188,318 @@ public class NSProgress extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * becomeCurrentWithPendingUnitCount:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/becomeCurrentWithPendingUnitCount:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("becomeCurrentWithPendingUnitCount:")
+    public native void becomeCurrentWithPendingUnitCount(long unitCount);
+
+    /**
+     * cancel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/cancel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancel")
+    public native void cancel();
+
+    /**
+     * completedUnitCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/completedUnitCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("completedUnitCount")
+    public native long completedUnitCount();
+
+    /**
+     * fractionCompleted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/fractionCompleted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fractionCompleted")
+    public native double fractionCompleted();
+
+    @Generated
+    @Selector("init")
+    public native NSProgress init();
+
+    /**
+     * initWithParent:userInfo:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/initWithParent:userInfo:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithParent:userInfo:")
+    public native NSProgress initWithParentUserInfo(NSProgress parentProgressOrNil, NSDictionary<?, ?> userInfoOrNil);
+
+    /**
+     * cancellable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/cancellable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isCancellable")
+    public native boolean isCancellable();
+
+    /**
+     * cancellable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/cancellable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCancellable:")
+    public native void setCancellable(boolean value);
+
+    /**
+     * cancelled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/cancelled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isCancelled")
+    public native boolean isCancelled();
+
+    /**
+     * indeterminate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/indeterminate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isIndeterminate")
+    public native boolean isIndeterminate();
+
+    /**
+     * pausable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/pausable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPausable")
+    public native boolean isPausable();
+
+    /**
+     * pausable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/pausable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPausable:")
+    public native void setPausable(boolean value);
+
+    /**
+     * paused</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/paused">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPaused")
+    public native boolean isPaused();
+
+    /**
+     * kind</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/kind">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("kind")
+    public native String kind();
+
+    /**
+     * localizedAdditionalDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/localizedAdditionalDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedAdditionalDescription")
+    public native String localizedAdditionalDescription();
+
+    /**
+     * localizedDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/localizedDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedDescription")
+    public native String localizedDescription();
+
+    /**
+     * pause</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/pause">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pause")
+    public native void pause();
+
+    /**
+     * resignCurrent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/resignCurrent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resignCurrent")
+    public native void resignCurrent();
+
+    /**
+     * cancellationHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/cancellationHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCancellationHandler:")
+    public native void setCancellationHandler(
+            @ObjCBlock(name = "call_setCancellationHandler") Block_setCancellationHandler value);
+
+    /**
+     * completedUnitCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/completedUnitCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCompletedUnitCount:")
+    public native void setCompletedUnitCount(long value);
+
+    /**
+     * kind</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/kind">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setKind:")
+    public native void setKind(String value);
+
+    /**
+     * localizedAdditionalDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/localizedAdditionalDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLocalizedAdditionalDescription:")
+    public native void setLocalizedAdditionalDescription(String value);
+
+    /**
+     * localizedDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/localizedDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLocalizedDescription:")
+    public native void setLocalizedDescription(String value);
+
+    /**
+     * pausingHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/pausingHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPausingHandler:")
+    public native void setPausingHandler(@ObjCBlock(name = "call_setPausingHandler") Block_setPausingHandler value);
+
+    /**
+     * totalUnitCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/totalUnitCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTotalUnitCount:")
+    public native void setTotalUnitCount(long value);
+
+    /**
+     * setUserInfoObject:forKey:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/setUserInfoObject:forKey:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUserInfoObject:forKey:")
+    public native void setUserInfoObjectForKey(@Mapped(ObjCObjectMapper.class) Object objectOrNil, String key);
+
+    /**
+     * totalUnitCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/totalUnitCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("totalUnitCount")
+    public native long totalUnitCount();
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInfo")
+    public native NSDictionary<?, ?> userInfo();
+
+    /**
+     * cancellationHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/cancellationHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancellationHandler")
+    @ObjCBlock(name = "call_cancellationHandler_ret")
+    public native Block_cancellationHandler_ret cancellationHandler();
+
+    /**
+     * pausingHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/pausingHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pausingHandler")
+    @ObjCBlock(name = "call_pausingHandler_ret")
+    public native Block_pausingHandler_ret pausingHandler();
+
+    /**
+     * addChild:withPendingUnitCount:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/addChild:withPendingUnitCount:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addChild:withPendingUnitCount:")
+    public native void addChildWithPendingUnitCount(NSProgress child, long inUnitCount);
+
+    /**
+     * resume</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instm/NSProgress/resume">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resume")
+    public native void resume();
+
+    /**
+     * resumingHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/resumingHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resumingHandler")
+    @ObjCBlock(name = "call_resumingHandler_ret")
+    public native Block_resumingHandler_ret resumingHandler();
+
+    /**
+     * resumingHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/index.html#//apple_ref/occ/instp/NSProgress/resumingHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setResumingHandler:")
+    public native void setResumingHandler(@ObjCBlock(name = "call_setResumingHandler") Block_setResumingHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setCancellationHandler {
+        @Generated
+        void call_setCancellationHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPausingHandler {
+        @Generated
+        void call_setPausingHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_cancellationHandler_ret {
+        @Generated
+        void call_cancellationHandler_ret();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_pausingHandler_ret {
+        @Generated
+        void call_pausingHandler_ret();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resumingHandler_ret {
+        @Generated
+        void call_resumingHandler_ret();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setResumingHandler {
+        @Generated
+        void call_setResumingHandler();
+    }
 }

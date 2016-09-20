@@ -59,18 +59,6 @@ public class CBMutableDescriptor extends CBDescriptor {
     public static native CBMutableDescriptor alloc();
 
     @Generated
-    @Selector("init")
-    public native CBMutableDescriptor init();
-
-    /**
-     * initWithType:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableDescriptor_Class/index.html#//apple_ref/occ/instm/CBMutableDescriptor/initWithType:value:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithType:value:")
-    public native CBMutableDescriptor initWithTypeValue(CBUUID UUID, @Mapped(ObjCObjectMapper.class) Object value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class CBMutableDescriptor extends CBDescriptor {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CBMutableDescriptor init();
+
+    /**
+     * initWithType:value:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableDescriptor_Class/index.html#//apple_ref/occ/instm/CBMutableDescriptor/initWithType:value:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithType:value:")
+    public native CBMutableDescriptor initWithTypeValue(CBUUID UUID, @Mapped(ObjCObjectMapper.class) Object value);
 }

@@ -63,186 +63,10 @@ public class SKPhysicsWorld extends NSObject implements NSCoding {
         super(peer);
     }
 
-    /**
-     * addJoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/addJoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addJoint:")
-    public native void addJoint(SKPhysicsJoint joint);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native SKPhysicsWorld alloc();
-
-    /**
-     * bodyAlongRayStart:end:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/bodyAlongRayStart:end:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bodyAlongRayStart:end:")
-    public native SKPhysicsBody bodyAlongRayStartEnd(@ByValue CGPoint start, @ByValue CGPoint end);
-
-    /**
-     * bodyAtPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/bodyAtPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bodyAtPoint:")
-    public native SKPhysicsBody bodyAtPoint(@ByValue CGPoint point);
-
-    /**
-     * bodyInRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/bodyInRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bodyInRect:")
-    public native SKPhysicsBody bodyInRect(@ByValue CGRect rect);
-
-    /**
-     * contactDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/contactDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contactDelegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native SKPhysicsContactDelegate contactDelegate();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * enumerateBodiesAlongRayStart:end:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/enumerateBodiesAlongRayStart:end:usingBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enumerateBodiesAlongRayStart:end:usingBlock:")
-    public native void enumerateBodiesAlongRayStartEndUsingBlock(@ByValue CGPoint start, @ByValue CGPoint end,
-            @ObjCBlock(name = "call_enumerateBodiesAlongRayStartEndUsingBlock") Block_enumerateBodiesAlongRayStartEndUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateBodiesAlongRayStartEndUsingBlock {
-        @Generated
-        void call_enumerateBodiesAlongRayStartEndUsingBlock(SKPhysicsBody arg0, @ByValue CGPoint arg1,
-                @ByValue CGVector arg2, BoolPtr arg3);
-    }
-
-    /**
-     * enumerateBodiesAtPoint:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/enumerateBodiesAtPoint:usingBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enumerateBodiesAtPoint:usingBlock:")
-    public native void enumerateBodiesAtPointUsingBlock(@ByValue CGPoint point,
-            @ObjCBlock(name = "call_enumerateBodiesAtPointUsingBlock") Block_enumerateBodiesAtPointUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateBodiesAtPointUsingBlock {
-        @Generated
-        void call_enumerateBodiesAtPointUsingBlock(SKPhysicsBody arg0, BoolPtr arg1);
-    }
-
-    /**
-     * enumerateBodiesInRect:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/enumerateBodiesInRect:usingBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enumerateBodiesInRect:usingBlock:")
-    public native void enumerateBodiesInRectUsingBlock(@ByValue CGRect rect,
-            @ObjCBlock(name = "call_enumerateBodiesInRectUsingBlock") Block_enumerateBodiesInRectUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateBodiesInRectUsingBlock {
-        @Generated
-        void call_enumerateBodiesInRectUsingBlock(SKPhysicsBody arg0, BoolPtr arg1);
-    }
-
-    /**
-     * gravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/gravity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("gravity")
-    @ByValue
-    public native CGVector gravity();
-
-    @Generated
-    @Selector("init")
-    public native SKPhysicsWorld init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKPhysicsWorld initWithCoder(NSCoder aDecoder);
-
-    /**
-     * removeAllJoints</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/removeAllJoints">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeAllJoints")
-    public native void removeAllJoints();
-
-    /**
-     * removeJoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/removeJoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeJoint:")
-    public native void removeJoint(SKPhysicsJoint joint);
-
-    /**
-     * contactDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/contactDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setContactDelegate:")
-    public native void setContactDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKPhysicsContactDelegate value);
-
-    /**
-     * contactDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/contactDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setContactDelegate(@Mapped(ObjCObjectMapper.class) SKPhysicsContactDelegate value) {
-        Object __old = contactDelegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setContactDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * gravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/gravity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setGravity:")
-    public native void setGravity(@ByValue CGVector value);
-
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/speed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSpeed:")
-    public native void setSpeed(@NFloat double value);
-
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/speed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("speed")
-    @NFloat
-    public native double speed();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -343,4 +167,180 @@ public class SKPhysicsWorld extends NSObject implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addJoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/addJoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addJoint:")
+    public native void addJoint(SKPhysicsJoint joint);
+
+    /**
+     * bodyAlongRayStart:end:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/bodyAlongRayStart:end:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bodyAlongRayStart:end:")
+    public native SKPhysicsBody bodyAlongRayStartEnd(@ByValue CGPoint start, @ByValue CGPoint end);
+
+    /**
+     * bodyAtPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/bodyAtPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bodyAtPoint:")
+    public native SKPhysicsBody bodyAtPoint(@ByValue CGPoint point);
+
+    /**
+     * bodyInRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/bodyInRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bodyInRect:")
+    public native SKPhysicsBody bodyInRect(@ByValue CGRect rect);
+
+    /**
+     * contactDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/contactDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contactDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native SKPhysicsContactDelegate contactDelegate();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * enumerateBodiesAlongRayStart:end:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/enumerateBodiesAlongRayStart:end:usingBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enumerateBodiesAlongRayStart:end:usingBlock:")
+    public native void enumerateBodiesAlongRayStartEndUsingBlock(@ByValue CGPoint start, @ByValue CGPoint end,
+            @ObjCBlock(name = "call_enumerateBodiesAlongRayStartEndUsingBlock") Block_enumerateBodiesAlongRayStartEndUsingBlock block);
+
+    /**
+     * enumerateBodiesAtPoint:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/enumerateBodiesAtPoint:usingBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enumerateBodiesAtPoint:usingBlock:")
+    public native void enumerateBodiesAtPointUsingBlock(@ByValue CGPoint point,
+            @ObjCBlock(name = "call_enumerateBodiesAtPointUsingBlock") Block_enumerateBodiesAtPointUsingBlock block);
+
+    /**
+     * enumerateBodiesInRect:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/enumerateBodiesInRect:usingBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enumerateBodiesInRect:usingBlock:")
+    public native void enumerateBodiesInRectUsingBlock(@ByValue CGRect rect,
+            @ObjCBlock(name = "call_enumerateBodiesInRectUsingBlock") Block_enumerateBodiesInRectUsingBlock block);
+
+    /**
+     * gravity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/gravity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("gravity")
+    @ByValue
+    public native CGVector gravity();
+
+    @Generated
+    @Selector("init")
+    public native SKPhysicsWorld init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKPhysicsWorld initWithCoder(NSCoder aDecoder);
+
+    /**
+     * removeAllJoints</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/removeAllJoints">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeAllJoints")
+    public native void removeAllJoints();
+
+    /**
+     * removeJoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instm/SKPhysicsWorld/removeJoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeJoint:")
+    public native void removeJoint(SKPhysicsJoint joint);
+
+    /**
+     * contactDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/contactDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setContactDelegate:")
+    public native void setContactDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKPhysicsContactDelegate value);
+
+    /**
+     * contactDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/contactDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setContactDelegate(@Mapped(ObjCObjectMapper.class) SKPhysicsContactDelegate value) {
+        Object __old = contactDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setContactDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * gravity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/gravity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setGravity:")
+    public native void setGravity(@ByValue CGVector value);
+
+    /**
+     * speed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/speed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSpeed:")
+    public native void setSpeed(@NFloat double value);
+
+    /**
+     * speed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsWorld_Ref/index.html#//apple_ref/occ/instp/SKPhysicsWorld/speed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("speed")
+    @NFloat
+    public native double speed();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateBodiesAlongRayStartEndUsingBlock {
+        @Generated
+        void call_enumerateBodiesAlongRayStartEndUsingBlock(SKPhysicsBody arg0, @ByValue CGPoint arg1,
+                @ByValue CGVector arg2, BoolPtr arg3);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateBodiesAtPointUsingBlock {
+        @Generated
+        void call_enumerateBodiesAtPointUsingBlock(SKPhysicsBody arg0, BoolPtr arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateBodiesInRectUsingBlock {
+        @Generated
+        void call_enumerateBodiesInRectUsingBlock(SKPhysicsBody arg0, BoolPtr arg1);
+    }
 }

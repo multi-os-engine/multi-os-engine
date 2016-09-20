@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GKVoiceChatServiceError {
-    @Generated
-    private GKVoiceChatServiceError() {
-    }
-
     @Generated public static final int InternalError = 0x00007D00;
     @Generated public static final int NoRemotePacketsError = 0x00007D01;
     @Generated public static final int UnableToConnectError = 0x00007D02;
@@ -41,4 +37,8 @@ public final class GKVoiceChatServiceError {
     @Generated public static final int UnsupportedRemoteVersionError = 0x00007D0E;
     @Generated public static final int OutOfMemoryError = 0x00007D0F;
     @Generated public static final int InvalidParameterError = 0x00007D10;
+
+    @Generated
+    private GKVoiceChatServiceError() {
+    }
 }

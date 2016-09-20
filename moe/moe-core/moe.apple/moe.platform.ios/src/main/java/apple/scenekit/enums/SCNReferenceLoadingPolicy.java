@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNReferenceLoadingPolicy {
+    @Generated @NInt public static final long Immediate = 0x0000000000000000L;
+    @Generated @NInt public static final long OnDemand = 0x0000000000000001L;
+
     @Generated
     private SCNReferenceLoadingPolicy() {
     }
-
-    @Generated @NInt public static final long Immediate = 0x0000000000000000L;
-    @Generated @NInt public static final long OnDemand = 0x0000000000000001L;
 }

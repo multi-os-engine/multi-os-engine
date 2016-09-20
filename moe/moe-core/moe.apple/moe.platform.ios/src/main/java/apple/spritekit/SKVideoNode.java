@@ -65,49 +65,6 @@ public class SKVideoNode extends SKNode {
     @Selector("alloc")
     public static native SKVideoNode alloc();
 
-    /**
-     * anchorPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instp/SKVideoNode/anchorPoint">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("anchorPoint")
-    @ByValue
-    public native CGPoint anchorPoint();
-
-    @Generated
-    @Selector("init")
-    public native SKVideoNode init();
-
-    /**
-     * initWithAVPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/initWithAVPlayer:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAVPlayer:")
-    public native SKVideoNode initWithAVPlayer(AVPlayer player);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKVideoNode initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithVideoFileNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/initWithVideoFileNamed:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("initWithVideoFileNamed:")
-    public native SKVideoNode initWithVideoFileNamed(String videoFile);
-
-    /**
-     * initWithVideoURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/initWithVideoURL:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("initWithVideoURL:")
-    public native SKVideoNode initWithVideoURL(NSURL url);
-
     @Generated
     @Selector("node")
     public static native SKVideoNode node();
@@ -115,47 +72,6 @@ public class SKVideoNode extends SKNode {
     @Generated
     @Selector("nodeWithFileNamed:")
     public static native SKVideoNode nodeWithFileNamed(String filename);
-
-    /**
-     * pause</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/pause">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pause")
-    public native void pause();
-
-    /**
-     * play</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/play">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("play")
-    public native void play();
-
-    /**
-     * anchorPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instp/SKVideoNode/anchorPoint">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnchorPoint:")
-    public native void setAnchorPoint(@ByValue CGPoint value);
-
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instp/SKVideoNode/size">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSize:")
-    public native void setSize(@ByValue CGSize value);
-
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instp/SKVideoNode/size">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("size")
-    @ByValue
-    public native CGSize size();
 
     /**
      * videoNodeWithAVPlayer:</br>
@@ -182,22 +98,6 @@ public class SKVideoNode extends SKNode {
     @Generated
     @Selector("videoNodeWithVideoURL:")
     public static native SKVideoNode videoNodeWithVideoURL(NSURL videoURL);
-
-    /**
-     * initWithFileNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/initWithFileNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFileNamed:")
-    public native SKVideoNode initWithFileNamed(String videoFile);
-
-    /**
-     * initWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/initWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:")
-    public native SKVideoNode initWithURL(NSURL url);
 
     /**
      * videoNodeWithFileNamed:</br>
@@ -332,4 +232,104 @@ public class SKVideoNode extends SKNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * anchorPoint</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instp/SKVideoNode/anchorPoint">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("anchorPoint")
+    @ByValue
+    public native CGPoint anchorPoint();
+
+    @Generated
+    @Selector("init")
+    public native SKVideoNode init();
+
+    /**
+     * initWithAVPlayer:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/initWithAVPlayer:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAVPlayer:")
+    public native SKVideoNode initWithAVPlayer(AVPlayer player);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKVideoNode initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithVideoFileNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/initWithVideoFileNamed:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("initWithVideoFileNamed:")
+    public native SKVideoNode initWithVideoFileNamed(String videoFile);
+
+    /**
+     * initWithVideoURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/initWithVideoURL:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("initWithVideoURL:")
+    public native SKVideoNode initWithVideoURL(NSURL url);
+
+    /**
+     * pause</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/pause">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pause")
+    public native void pause();
+
+    /**
+     * play</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/play">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("play")
+    public native void play();
+
+    /**
+     * anchorPoint</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instp/SKVideoNode/anchorPoint">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnchorPoint:")
+    public native void setAnchorPoint(@ByValue CGPoint value);
+
+    /**
+     * size</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instp/SKVideoNode/size">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSize:")
+    public native void setSize(@ByValue CGSize value);
+
+    /**
+     * size</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instp/SKVideoNode/size">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("size")
+    @ByValue
+    public native CGSize size();
+
+    /**
+     * initWithFileNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/initWithFileNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFileNamed:")
+    public native SKVideoNode initWithFileNamed(String videoFile);
+
+    /**
+     * initWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKVideoNode/index.html#//apple_ref/occ/instm/SKVideoNode/initWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:")
+    public native SKVideoNode initWithURL(NSURL url);
 }

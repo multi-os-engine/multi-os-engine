@@ -58,26 +58,6 @@ public class MTLRenderPipelineReflection extends NSObject {
     @Selector("alloc")
     public static native MTLRenderPipelineReflection alloc();
 
-    /**
-     * fragmentArguments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineReflection_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineReflection/fragmentArguments">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fragmentArguments")
-    public native NSArray<? extends MTLArgument> fragmentArguments();
-
-    @Generated
-    @Selector("init")
-    public native MTLRenderPipelineReflection init();
-
-    /**
-     * vertexArguments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineReflection_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineReflection/vertexArguments">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vertexArguments")
-    public native NSArray<? extends MTLArgument> vertexArguments();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -177,4 +157,24 @@ public class MTLRenderPipelineReflection extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * fragmentArguments</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineReflection_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineReflection/fragmentArguments">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fragmentArguments")
+    public native NSArray<? extends MTLArgument> fragmentArguments();
+
+    @Generated
+    @Selector("init")
+    public native MTLRenderPipelineReflection init();
+
+    /**
+     * vertexArguments</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLRenderPipelineReflection_Ref/index.html#//apple_ref/occ/instp/MTLRenderPipelineReflection/vertexArguments">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vertexArguments")
+    public native NSArray<? extends MTLArgument> vertexArguments();
 }

@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGGlypDeprecatedEnum {
+    @Generated public static final int Min = 0x00000000;
+    @Generated public static final int Max = 0x00000001;
+
     @Generated
     private CGGlypDeprecatedEnum() {
     }
-
-    @Generated public static final int Min = 0x00000000;
-    @Generated public static final int Max = 0x00000001;
 }

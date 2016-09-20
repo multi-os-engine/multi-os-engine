@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFURLError {
-    @Generated
-    private CFURLError() {
-    }
-
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFF6L;
     @Generated @NInt public static final long UnknownSchemeError = 0xFFFFFFFFFFFFFFF5L;
     @Generated @NInt public static final long ResourceNotFoundError = 0xFFFFFFFFFFFFFFF4L;
@@ -34,4 +30,7 @@ public final class CFURLError {
     @Generated @NInt public static final long UnknownPropertyKeyError = 0xFFFFFFFFFFFFFFF0L;
     @Generated @NInt public static final long PropertyKeyUnavailableError = 0xFFFFFFFFFFFFFFEFL;
     @Generated @NInt public static final long TimeoutError = 0xFFFFFFFFFFFFFFEEL;
+    @Generated
+    private CFURLError() {
+    }
 }

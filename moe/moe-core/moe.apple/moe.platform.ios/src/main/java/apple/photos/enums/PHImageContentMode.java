@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHImageContentMode {
-    @Generated
-    private PHImageContentMode() {
-    }
-
     @Generated @NInt public static final long AspectFit = 0x0000000000000000L;
     @Generated @NInt public static final long AspectFill = 0x0000000000000001L;
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+
+    @Generated
+    private PHImageContentMode() {
+    }
 }

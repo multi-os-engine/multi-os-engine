@@ -32,11 +32,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CGDataProviderDirectCallbacks extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CGDataProviderDirectCallbacks() {
@@ -60,48 +60,19 @@ public final class CGDataProviderDirectCallbacks extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setGetBytePointer(@FunctionPtr(name = "call_getBytePointer") Function_getBytePointer value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getBytePointer {
-        @Generated
-        ConstVoidPtr call_getBytePointer(VoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setReleaseBytePointer(
             @FunctionPtr(name = "call_releaseBytePointer") Function_releaseBytePointer value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_releaseBytePointer {
-        @Generated
-        void call_releaseBytePointer(VoidPtr arg0, ConstVoidPtr arg1);
-    }
 
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setGetBytesAtPosition(
             @FunctionPtr(name = "call_getBytesAtPosition") Function_getBytesAtPosition value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getBytesAtPosition {
-        @Generated
-        @NUInt
-        long call_getBytesAtPosition(VoidPtr arg0, VoidPtr arg1, long arg2, @NUInt long arg3);
-    }
-
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_releaseInfo {
-        @Generated
-        void call_releaseInfo(VoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -122,4 +93,33 @@ public final class CGDataProviderDirectCallbacks extends StructObject {
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
     public native Function_releaseInfo releaseInfo();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getBytePointer {
+        @Generated
+        ConstVoidPtr call_getBytePointer(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_releaseBytePointer {
+        @Generated
+        void call_releaseBytePointer(VoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getBytesAtPosition {
+        @Generated
+        @NUInt
+        long call_getBytesAtPosition(VoidPtr arg0, VoidPtr arg1, long arg2, @NUInt long arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_releaseInfo {
+        @Generated
+        void call_releaseInfo(VoidPtr arg0);
+    }
 }

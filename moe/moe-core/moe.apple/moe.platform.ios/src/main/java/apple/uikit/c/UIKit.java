@@ -60,6 +60,11 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Library("UIKit")
 @Runtime(CRuntime.class)
 public final class UIKit {
+    @Generated public static final float UILayoutPriorityRequired = (float)0x447A0000;
+    @Generated public static final float UILayoutPriorityDefaultHigh = (float)0x443B8000;
+    @Generated public static final float UILayoutPriorityDefaultLow = (float)0x437A0000;
+    @Generated public static final float UILayoutPriorityFittingSizeLevel = (float)0x42480000;
+
     static {
         NatJ.register();
     }
@@ -504,13 +509,6 @@ public final class UIKit {
     @CFunction
     public static native void UIAccessibilityRequestGuidedAccessSession(boolean enable,
             @ObjCBlock(name = "call_UIAccessibilityRequestGuidedAccessSession") Block_UIAccessibilityRequestGuidedAccessSession completionHandler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_UIAccessibilityRequestGuidedAccessSession {
-        @Generated
-        void call_UIAccessibilityRequestGuidedAccessSession(boolean arg0);
-    }
 
     /**
      * UIGraphicsGetCurrentContext</br>
@@ -2255,13 +2253,15 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationLaunchOptionsShortcutItemKey();
 
-    @Generated public static final float UILayoutPriorityRequired = (float)0x447A0000;
-    @Generated public static final float UILayoutPriorityDefaultHigh = (float)0x443B8000;
-    @Generated public static final float UILayoutPriorityDefaultLow = (float)0x437A0000;
-    @Generated public static final float UILayoutPriorityFittingSizeLevel = (float)0x42480000;
-
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIImagePickerControllerLivePhoto();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_UIAccessibilityRequestGuidedAccessSession {
+        @Generated
+        void call_UIAccessibilityRequestGuidedAccessSession(boolean arg0);
+    }
 }

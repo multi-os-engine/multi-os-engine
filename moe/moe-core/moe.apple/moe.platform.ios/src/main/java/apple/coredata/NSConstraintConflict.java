@@ -60,40 +60,6 @@ public class NSConstraintConflict extends NSObject {
     public static native NSConstraintConflict alloc();
 
     @Generated
-    @Selector("conflictingObjects")
-    public native NSArray<? extends NSManagedObject> conflictingObjects();
-
-    @Generated
-    @Selector("conflictingSnapshots")
-    public native NSArray<? extends NSDictionary<?, ?>> conflictingSnapshots();
-
-    @Generated
-    @Selector("constraint")
-    public native NSArray<String> constraint();
-
-    @Generated
-    @Selector("constraintValues")
-    public native NSDictionary<String, ?> constraintValues();
-
-    @Generated
-    @Selector("databaseObject")
-    public native NSManagedObject databaseObject();
-
-    @Generated
-    @Selector("databaseSnapshot")
-    public native NSDictionary<String, ?> databaseSnapshot();
-
-    @Generated
-    @Selector("init")
-    public native NSConstraintConflict init();
-
-    @Generated
-    @Selector("initWithConstraint:databaseObject:databaseSnapshot:conflictingObjects:conflictingSnapshots:")
-    public native NSConstraintConflict initWithConstraintDatabaseObjectDatabaseSnapshotConflictingObjectsConflictingSnapshots(
-            NSArray<String> contraint, NSManagedObject databaseObject, NSDictionary<?, ?> databaseSnapshot,
-            NSArray<? extends NSManagedObject> conflictingObjects, NSArray<?> conflictingSnapshots);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -192,4 +158,38 @@ public class NSConstraintConflict extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("conflictingObjects")
+    public native NSArray<? extends NSManagedObject> conflictingObjects();
+
+    @Generated
+    @Selector("conflictingSnapshots")
+    public native NSArray<? extends NSDictionary<?, ?>> conflictingSnapshots();
+
+    @Generated
+    @Selector("constraint")
+    public native NSArray<String> constraint();
+
+    @Generated
+    @Selector("constraintValues")
+    public native NSDictionary<String, ?> constraintValues();
+
+    @Generated
+    @Selector("databaseObject")
+    public native NSManagedObject databaseObject();
+
+    @Generated
+    @Selector("databaseSnapshot")
+    public native NSDictionary<String, ?> databaseSnapshot();
+
+    @Generated
+    @Selector("init")
+    public native NSConstraintConflict init();
+
+    @Generated
+    @Selector("initWithConstraint:databaseObject:databaseSnapshot:conflictingObjects:conflictingSnapshots:")
+    public native NSConstraintConflict initWithConstraintDatabaseObjectDatabaseSnapshotConflictingObjectsConflictingSnapshots(
+            NSArray<String> contraint, NSManagedObject databaseObject, NSDictionary<?, ?> databaseSnapshot,
+            NSArray<? extends NSManagedObject> conflictingObjects, NSArray<?> conflictingSnapshots);
 }

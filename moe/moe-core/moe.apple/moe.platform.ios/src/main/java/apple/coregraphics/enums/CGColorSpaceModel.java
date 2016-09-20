@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGColorSpaceModel {
-    @Generated
-    private CGColorSpaceModel() {
-    }
-
     @Generated public static final int Unknown = 0xFFFFFFFF;
     @Generated public static final int Monochrome = 0x00000000;
     @Generated public static final int RGB = 0x00000001;
@@ -32,4 +28,8 @@ public final class CGColorSpaceModel {
     @Generated public static final int DeviceN = 0x00000004;
     @Generated public static final int Indexed = 0x00000005;
     @Generated public static final int Pattern = 0x00000006;
+
+    @Generated
+    private CGColorSpaceModel() {
+    }
 }

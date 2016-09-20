@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CAFFormatFlags {
+    @Generated public static final int Float = 0x00000001;
+    @Generated public static final int LittleEndian = 0x00000002;
+
     @Generated
     private CAFFormatFlags() {
     }
-
-    @Generated public static final int Float = 0x00000001;
-    @Generated public static final int LittleEndian = 0x00000002;
 }

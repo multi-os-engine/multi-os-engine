@@ -68,6 +68,111 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     }
 
     @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UIDocument alloc();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version();
+
+    @Generated
     @IsOptional
     @Selector("accommodatePresentedItemDeletionWithCompletionHandler:")
     public native void accommodatePresentedItemDeletionWithCompletionHandler(
@@ -79,11 +184,6 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     public native void accommodatePresentedSubitemDeletionAtURLCompletionHandler(NSURL url,
             @ObjCBlock(name = "call_accommodatePresentedSubitemDeletionAtURLCompletionHandler") NSFilePresenter.Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler completionHandler);
 
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UIDocument alloc();
-
     /**
      * autosaveWithCompletionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/autosaveWithCompletionHandler:">iOS Dev Center</a>
@@ -92,13 +192,6 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("autosaveWithCompletionHandler:")
     public native void autosaveWithCompletionHandler(
             @ObjCBlock(name = "call_autosaveWithCompletionHandler") Block_autosaveWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_autosaveWithCompletionHandler {
-        @Generated
-        void call_autosaveWithCompletionHandler(boolean arg0);
-    }
 
     /**
      * changeCountTokenForSaveOperation:</br>
@@ -117,13 +210,6 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("closeWithCompletionHandler:")
     public native void closeWithCompletionHandler(
             @ObjCBlock(name = "call_closeWithCompletionHandler") Block_closeWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_closeWithCompletionHandler {
-        @Generated
-        void call_closeWithCompletionHandler(boolean arg0);
-    }
 
     /**
      * contentsForType:error:</br>
@@ -262,13 +348,6 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     public native void openWithCompletionHandler(
             @ObjCBlock(name = "call_openWithCompletionHandler") Block_openWithCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_openWithCompletionHandler {
-        @Generated
-        void call_openWithCompletionHandler(boolean arg0);
-    }
-
     /**
      * performAsynchronousFileAccessUsingBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocument_Class/index.html#//apple_ref/occ/instm/UIDocument/performAsynchronousFileAccessUsingBlock:">iOS Dev Center</a>
@@ -277,13 +356,6 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("performAsynchronousFileAccessUsingBlock:")
     public native void performAsynchronousFileAccessUsingBlock(
             @ObjCBlock(name = "call_performAsynchronousFileAccessUsingBlock") Block_performAsynchronousFileAccessUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performAsynchronousFileAccessUsingBlock {
-        @Generated
-        void call_performAsynchronousFileAccessUsingBlock();
-    }
 
     @Generated
     @IsOptional
@@ -373,13 +445,6 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     public native void revertToContentsOfURLCompletionHandler(NSURL url,
             @ObjCBlock(name = "call_revertToContentsOfURLCompletionHandler") Block_revertToContentsOfURLCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_revertToContentsOfURLCompletionHandler {
-        @Generated
-        void call_revertToContentsOfURLCompletionHandler(boolean arg0);
-    }
-
     @Generated
     @IsOptional
     @Selector("savePresentedItemChangesWithCompletionHandler:")
@@ -394,13 +459,6 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("saveToURL:forSaveOperation:completionHandler:")
     public native void saveToURLForSaveOperationCompletionHandler(NSURL url, @NInt long saveOperation,
             @ObjCBlock(name = "call_saveToURLForSaveOperationCompletionHandler") Block_saveToURLForSaveOperationCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_saveToURLForSaveOperationCompletionHandler {
-        @Generated
-        void call_saveToURLForSaveOperationCompletionHandler(boolean arg0);
-    }
 
     /**
      * savingFileType</br>
@@ -507,103 +565,45 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("progress")
     public native NSProgress progress();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_autosaveWithCompletionHandler {
+        @Generated
+        void call_autosaveWithCompletionHandler(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_closeWithCompletionHandler {
+        @Generated
+        void call_closeWithCompletionHandler(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_openWithCompletionHandler {
+        @Generated
+        void call_openWithCompletionHandler(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public interface Block_performAsynchronousFileAccessUsingBlock {
+        @Generated
+        void call_performAsynchronousFileAccessUsingBlock();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+    public interface Block_revertToContentsOfURLCompletionHandler {
+        @Generated
+        void call_revertToContentsOfURLCompletionHandler(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
+    public interface Block_saveToURLForSaveOperationCompletionHandler {
+        @Generated
+        void call_saveToURLForSaveOperationCompletionHandler(boolean arg0);
+    }
 }

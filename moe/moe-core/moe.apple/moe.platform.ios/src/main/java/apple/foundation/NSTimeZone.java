@@ -54,14 +54,6 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     /**
-     * abbreviation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/abbreviation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("abbreviation")
-    public native String abbreviation();
-
-    /**
      * abbreviationDictionary</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/clm/NSTimeZone/abbreviationDictionary">iOS Dev Center</a>
      */
@@ -69,48 +61,10 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("abbreviationDictionary")
     public static native NSDictionary<String, String> abbreviationDictionary();
 
-    /**
-     * abbreviationForDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/abbreviationForDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("abbreviationForDate:")
-    public native String abbreviationForDate(NSDate aDate);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSTimeZone alloc();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/data">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("data")
-    public native NSData data();
-
-    /**
-     * daylightSavingTimeOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/daylightSavingTimeOffset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("daylightSavingTimeOffset")
-    public native double daylightSavingTimeOffset();
-
-    /**
-     * daylightSavingTimeOffsetForDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/daylightSavingTimeOffsetForDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("daylightSavingTimeOffsetForDate:")
-    public native double daylightSavingTimeOffsetForDate(NSDate aDate);
 
     /**
      * defaultTimeZone</br>
@@ -119,66 +73,6 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("defaultTimeZone")
     public static native NSTimeZone defaultTimeZone();
-
-    /**
-     * description</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/description">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("description")
-    public native String description();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NSTimeZone init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSTimeZone initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/initWithName:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithName:")
-    public native NSTimeZone initWithName(String tzName);
-
-    /**
-     * initWithName:data:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/initWithName:data:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithName:data:")
-    public native NSTimeZone initWithNameData(String tzName, NSData aData);
-
-    /**
-     * daylightSavingTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/daylightSavingTime">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isDaylightSavingTime")
-    public native boolean isDaylightSavingTime();
-
-    /**
-     * isDaylightSavingTimeForDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/isDaylightSavingTimeForDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isDaylightSavingTimeForDate:")
-    public native boolean isDaylightSavingTimeForDate(NSDate aDate);
-
-    /**
-     * isEqualToTimeZone:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/isEqualToTimeZone:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEqualToTimeZone:")
-    public native boolean isEqualToTimeZone(NSTimeZone aTimeZone);
 
     /**
      * knownTimeZoneNames</br>
@@ -197,62 +91,12 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSTimeZone localTimeZone();
 
     /**
-     * localizedName:locale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/localizedName:locale:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedName:locale:")
-    public native String localizedNameLocale(@NInt long style, NSLocale locale);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * nextDaylightSavingTimeTransition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/nextDaylightSavingTimeTransition">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("nextDaylightSavingTimeTransition")
-    public native NSDate nextDaylightSavingTimeTransition();
-
-    /**
-     * nextDaylightSavingTimeTransitionAfterDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/nextDaylightSavingTimeTransitionAfterDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("nextDaylightSavingTimeTransitionAfterDate:")
-    public native NSDate nextDaylightSavingTimeTransitionAfterDate(NSDate aDate);
-
-    /**
      * resetSystemTimeZone</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/clm/NSTimeZone/resetSystemTimeZone">iOS Dev Center</a>
      */
     @Generated
     @Selector("resetSystemTimeZone")
     public static native void resetSystemTimeZone();
-
-    /**
-     * secondsFromGMT</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/secondsFromGMT">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("secondsFromGMT")
-    @NInt
-    public native long secondsFromGMT();
-
-    /**
-     * secondsFromGMTForDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/secondsFromGMTForDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("secondsFromGMTForDate:")
-    @NInt
-    public native long secondsFromGMTForDate(NSDate aDate);
 
     /**
      * setAbbreviationDictionary:</br>
@@ -273,12 +117,6 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     /**
      * systemTimeZone</br>
@@ -423,4 +261,166 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * abbreviation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/abbreviation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("abbreviation")
+    public native String abbreviation();
+
+    /**
+     * abbreviationForDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/abbreviationForDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("abbreviationForDate:")
+    public native String abbreviationForDate(NSDate aDate);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * data</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/data">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("data")
+    public native NSData data();
+
+    /**
+     * daylightSavingTimeOffset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/daylightSavingTimeOffset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("daylightSavingTimeOffset")
+    public native double daylightSavingTimeOffset();
+
+    /**
+     * daylightSavingTimeOffsetForDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/daylightSavingTimeOffsetForDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("daylightSavingTimeOffsetForDate:")
+    public native double daylightSavingTimeOffsetForDate(NSDate aDate);
+
+    /**
+     * description</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/description">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("description")
+    public native String description();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NSTimeZone init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSTimeZone initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithName:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/initWithName:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithName:")
+    public native NSTimeZone initWithName(String tzName);
+
+    /**
+     * initWithName:data:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/initWithName:data:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithName:data:")
+    public native NSTimeZone initWithNameData(String tzName, NSData aData);
+
+    /**
+     * daylightSavingTime</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/daylightSavingTime">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isDaylightSavingTime")
+    public native boolean isDaylightSavingTime();
+
+    /**
+     * isDaylightSavingTimeForDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/isDaylightSavingTimeForDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isDaylightSavingTimeForDate:")
+    public native boolean isDaylightSavingTimeForDate(NSDate aDate);
+
+    /**
+     * isEqualToTimeZone:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/isEqualToTimeZone:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEqualToTimeZone:")
+    public native boolean isEqualToTimeZone(NSTimeZone aTimeZone);
+
+    /**
+     * localizedName:locale:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/localizedName:locale:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedName:locale:")
+    public native String localizedNameLocale(@NInt long style, NSLocale locale);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * nextDaylightSavingTimeTransition</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/nextDaylightSavingTimeTransition">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("nextDaylightSavingTimeTransition")
+    public native NSDate nextDaylightSavingTimeTransition();
+
+    /**
+     * nextDaylightSavingTimeTransitionAfterDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/nextDaylightSavingTimeTransitionAfterDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("nextDaylightSavingTimeTransitionAfterDate:")
+    public native NSDate nextDaylightSavingTimeTransitionAfterDate(NSDate aDate);
+
+    /**
+     * secondsFromGMT</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instp/NSTimeZone/secondsFromGMT">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("secondsFromGMT")
+    @NInt
+    public native long secondsFromGMT();
+
+    /**
+     * secondsFromGMTForDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/index.html#//apple_ref/occ/instm/NSTimeZone/secondsFromGMTForDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("secondsFromGMTForDate:")
+    @NInt
+    public native long secondsFromGMTForDate(NSDate aDate);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

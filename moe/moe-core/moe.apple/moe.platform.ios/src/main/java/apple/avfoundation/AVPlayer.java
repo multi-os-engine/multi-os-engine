@@ -61,6 +61,127 @@ public class AVPlayer extends NSObject {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native AVPlayer alloc();
+
+    /**
+     * playerWithPlayerItem:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/clm/AVPlayer/playerWithPlayerItem:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("playerWithPlayerItem:")
+    public static native AVPlayer playerWithPlayerItem(AVPlayerItem item);
+
+    /**
+     * playerWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/clm/AVPlayer/playerWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("playerWithURL:")
+    public static native AVPlayer playerWithURL(NSURL URL);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * actionAtItemEnd</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/actionAtItemEnd">iOS Dev Center</a>
@@ -81,13 +202,6 @@ public class AVPlayer extends NSObject {
             NSObject queue,
             @ObjCBlock(name = "call_addBoundaryTimeObserverForTimesQueueUsingBlock") Block_addBoundaryTimeObserverForTimesQueueUsingBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addBoundaryTimeObserverForTimesQueueUsingBlock {
-        @Generated
-        void call_addBoundaryTimeObserverForTimesQueueUsingBlock();
-    }
-
     /**
      * addPeriodicTimeObserverForInterval:queue:usingBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/addPeriodicTimeObserverForInterval:queue:usingBlock:">iOS Dev Center</a>
@@ -97,18 +211,6 @@ public class AVPlayer extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime interval, NSObject queue,
             @ObjCBlock(name = "call_addPeriodicTimeObserverForIntervalQueueUsingBlock") Block_addPeriodicTimeObserverForIntervalQueueUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addPeriodicTimeObserverForIntervalQueueUsingBlock {
-        @Generated
-        void call_addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime arg0);
-    }
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native AVPlayer alloc();
 
     /**
      * allowsAirPlayVideo</br>
@@ -214,6 +316,14 @@ public class AVPlayer extends NSObject {
     public native boolean isClosedCaptionDisplayEnabled();
 
     /**
+     * closedCaptionDisplayEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/closedCaptionDisplayEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setClosedCaptionDisplayEnabled:")
+    public native void setClosedCaptionDisplayEnabled(boolean value);
+
+    /**
      * externalPlaybackActive</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/externalPlaybackActive">iOS Dev Center</a>
      */
@@ -228,6 +338,14 @@ public class AVPlayer extends NSObject {
     @Generated
     @Selector("isMuted")
     public native boolean isMuted();
+
+    /**
+     * muted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/muted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMuted:")
+    public native void setMuted(boolean value);
 
     /**
      * masterClock</br>
@@ -271,22 +389,6 @@ public class AVPlayer extends NSObject {
     public native void play();
 
     /**
-     * playerWithPlayerItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/clm/AVPlayer/playerWithPlayerItem:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("playerWithPlayerItem:")
-    public static native AVPlayer playerWithPlayerItem(AVPlayerItem item);
-
-    /**
-     * playerWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/clm/AVPlayer/playerWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("playerWithURL:")
-    public static native AVPlayer playerWithURL(NSURL URL);
-
-    /**
      * prerollAtRate:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/prerollAtRate:completionHandler:">iOS Dev Center</a>
      */
@@ -294,13 +396,6 @@ public class AVPlayer extends NSObject {
     @Selector("prerollAtRate:completionHandler:")
     public native void prerollAtRateCompletionHandler(float rate,
             @ObjCBlock(name = "call_prerollAtRateCompletionHandler") Block_prerollAtRateCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_prerollAtRateCompletionHandler {
-        @Generated
-        void call_prerollAtRateCompletionHandler(boolean arg0);
-    }
 
     /**
      * rate</br>
@@ -343,13 +438,6 @@ public class AVPlayer extends NSObject {
     public native void seekToDateCompletionHandler(NSDate date,
             @ObjCBlock(name = "call_seekToDateCompletionHandler") Block_seekToDateCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_seekToDateCompletionHandler {
-        @Generated
-        void call_seekToDateCompletionHandler(boolean arg0);
-    }
-
     /**
      * seekToTime:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instm/AVPlayer/seekToTime:">iOS Dev Center</a>
@@ -366,13 +454,6 @@ public class AVPlayer extends NSObject {
     @Selector("seekToTime:completionHandler:")
     public native void seekToTimeCompletionHandler(@ByValue CMTime time,
             @ObjCBlock(name = "call_seekToTimeCompletionHandler") Block_seekToTimeCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_seekToTimeCompletionHandler {
-        @Generated
-        void call_seekToTimeCompletionHandler(boolean arg0);
-    }
 
     /**
      * seekToTime:toleranceBefore:toleranceAfter:</br>
@@ -392,13 +473,6 @@ public class AVPlayer extends NSObject {
     public native void seekToTimeToleranceBeforeToleranceAfterCompletionHandler(@ByValue CMTime time,
             @ByValue CMTime toleranceBefore, @ByValue CMTime toleranceAfter,
             @ObjCBlock(name = "call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler") Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler {
-        @Generated
-        void call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler(boolean arg0);
-    }
 
     /**
      * actionAtItemEnd</br>
@@ -434,14 +508,6 @@ public class AVPlayer extends NSObject {
     public native void setAppliesMediaSelectionCriteriaAutomatically(boolean value);
 
     /**
-     * closedCaptionDisplayEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/closedCaptionDisplayEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setClosedCaptionDisplayEnabled:")
-    public native void setClosedCaptionDisplayEnabled(boolean value);
-
-    /**
      * externalPlaybackVideoGravity</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/externalPlaybackVideoGravity">iOS Dev Center</a>
      */
@@ -465,14 +531,6 @@ public class AVPlayer extends NSObject {
     @Selector("setMediaSelectionCriteria:forMediaCharacteristic:")
     public native void setMediaSelectionCriteriaForMediaCharacteristic(AVPlayerMediaSelectionCriteria criteria,
             String mediaCharacteristic);
-
-    /**
-     * muted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html#//apple_ref/occ/instp/AVPlayer/muted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMuted:")
-    public native void setMuted(boolean value);
 
     /**
      * rate</br>
@@ -549,103 +607,45 @@ public class AVPlayer extends NSObject {
     @Selector("volume")
     public native float volume();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_addBoundaryTimeObserverForTimesQueueUsingBlock {
+        @Generated
+        void call_addBoundaryTimeObserverForTimesQueueUsingBlock();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_addPeriodicTimeObserverForIntervalQueueUsingBlock {
+        @Generated
+        void call_addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_prerollAtRateCompletionHandler {
+        @Generated
+        void call_prerollAtRateCompletionHandler(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public interface Block_seekToDateCompletionHandler {
+        @Generated
+        void call_seekToDateCompletionHandler(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+    public interface Block_seekToTimeCompletionHandler {
+        @Generated
+        void call_seekToTimeCompletionHandler(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler {
+        @Generated
+        void call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler(boolean arg0);
+    }
 }

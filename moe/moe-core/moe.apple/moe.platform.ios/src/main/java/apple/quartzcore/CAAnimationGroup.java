@@ -63,30 +63,6 @@ public class CAAnimationGroup extends CAAnimation {
     @Selector("animation")
     public static native CAAnimationGroup animation();
 
-    /**
-     * animations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimationGroup_class/index.html#//apple_ref/occ/instp/CAAnimationGroup/animations">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("animations")
-    public native NSArray<? extends CAAnimation> animations();
-
-    @Generated
-    @Selector("init")
-    public native CAAnimationGroup init();
-
-    /**
-     * animations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimationGroup_class/index.html#//apple_ref/occ/instp/CAAnimationGroup/animations">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimations:")
-    public native void setAnimations(NSArray<? extends CAAnimation> value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAAnimationGroup initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -191,4 +167,28 @@ public class CAAnimationGroup extends CAAnimation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * animations</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimationGroup_class/index.html#//apple_ref/occ/instp/CAAnimationGroup/animations">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("animations")
+    public native NSArray<? extends CAAnimation> animations();
+
+    @Generated
+    @Selector("init")
+    public native CAAnimationGroup init();
+
+    /**
+     * animations</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimationGroup_class/index.html#//apple_ref/occ/instp/CAAnimationGroup/animations">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimations:")
+    public native void setAnimations(NSArray<? extends CAAnimation> value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAAnimationGroup initWithCoder(NSCoder aDecoder);
 }

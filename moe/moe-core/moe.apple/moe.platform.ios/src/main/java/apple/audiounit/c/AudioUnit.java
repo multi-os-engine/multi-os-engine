@@ -138,14 +138,6 @@ public final class AudioUnit {
             CFStringRef inName, int inVersion,
             @FunctionPtr(name = "call_AudioComponentRegister") Function_AudioComponentRegister inFactory);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioComponentRegister {
-        @Generated
-        VoidPtr call_AudioComponentRegister(
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription arg0);
-    }
-
     /**
      * AudioUnitInitialize</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitInitialize">iOS Dev Center</a>
@@ -199,13 +191,6 @@ public final class AudioUnit {
             @FunctionPtr(name = "call_AudioUnitAddPropertyListener") Function_AudioUnitAddPropertyListener inProc,
             VoidPtr inProcUserData);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioUnitAddPropertyListener {
-        @Generated
-        void call_AudioUnitAddPropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, int arg4);
-    }
-
     /**
      * AudioUnitRemovePropertyListenerWithUserData</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitRemovePropertyListenerWithUserData">iOS Dev Center</a>
@@ -215,13 +200,6 @@ public final class AudioUnit {
     public static native int AudioUnitRemovePropertyListenerWithUserData(AudioComponentInstance inUnit, int inID,
             @FunctionPtr(name = "call_AudioUnitRemovePropertyListenerWithUserData") Function_AudioUnitRemovePropertyListenerWithUserData inProc,
             VoidPtr inProcUserData);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioUnitRemovePropertyListenerWithUserData {
-        @Generated
-        void call_AudioUnitRemovePropertyListenerWithUserData(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, int arg4);
-    }
 
     /**
      * AudioUnitAddRenderNotify</br>
@@ -233,15 +211,6 @@ public final class AudioUnit {
             @FunctionPtr(name = "call_AudioUnitAddRenderNotify") Function_AudioUnitAddRenderNotify inProc,
             VoidPtr inProcUserData);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioUnitAddRenderNotify {
-        @Generated
-        int call_AudioUnitAddRenderNotify(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
-    }
-
     /**
      * AudioUnitRemoveRenderNotify</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUComponentServicesReference/index.html#//apple_ref/c/func/AudioUnitRemoveRenderNotify">iOS Dev Center</a>
@@ -251,15 +220,6 @@ public final class AudioUnit {
     public static native int AudioUnitRemoveRenderNotify(AudioComponentInstance inUnit,
             @FunctionPtr(name = "call_AudioUnitRemoveRenderNotify") Function_AudioUnitRemoveRenderNotify inProc,
             VoidPtr inProcUserData);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioUnitRemoveRenderNotify {
-        @Generated
-        int call_AudioUnitRemoveRenderNotify(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
-    }
 
     /**
      * AudioUnitGetParameter</br>
@@ -386,13 +346,6 @@ public final class AudioUnit {
     public static native void AudioComponentInstantiate(AudioComponent inComponent, int inOptions,
             @ObjCBlock(name = "call_AudioComponentInstantiate") Block_AudioComponentInstantiate inCompletionHandler);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_AudioComponentInstantiate {
-        @Generated
-        void call_AudioComponentInstantiate(AudioComponentInstance arg0, int arg1);
-    }
-
     @Generated
     @Inline
     @CFunction
@@ -406,4 +359,51 @@ public final class AudioUnit {
     @Generated
     @CVariable()
     public static native CFStringRef kAudioComponentInstanceInvalidationNotification();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioComponentRegister {
+        @Generated
+        VoidPtr call_AudioComponentRegister(
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioUnitAddPropertyListener {
+        @Generated
+        void call_AudioUnitAddPropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, int arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioUnitRemovePropertyListenerWithUserData {
+        @Generated
+        void call_AudioUnitRemovePropertyListenerWithUserData(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, int arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioUnitAddRenderNotify {
+        @Generated
+        int call_AudioUnitAddRenderNotify(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
+                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioUnitRemoveRenderNotify {
+        @Generated
+        int call_AudioUnitRemoveRenderNotify(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
+                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_AudioComponentInstantiate {
+        @Generated
+        void call_AudioComponentInstantiate(AudioComponentInstance arg0, int arg1);
+    }
 }

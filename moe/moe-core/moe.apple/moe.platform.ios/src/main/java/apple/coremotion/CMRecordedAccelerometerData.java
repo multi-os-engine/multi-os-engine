@@ -61,30 +61,6 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
     @Selector("alloc")
     public static native CMRecordedAccelerometerData alloc();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMRecordedAccelerometerData_class/index.html#//apple_ref/occ/instp/CMRecordedAccelerometerData/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native long identifier();
-
-    @Generated
-    @Selector("init")
-    public native CMRecordedAccelerometerData init();
-
-    /**
-     * startDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMRecordedAccelerometerData_class/index.html#//apple_ref/occ/instp/CMRecordedAccelerometerData/startDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startDate")
-    public native NSDate startDate();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMRecordedAccelerometerData initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -185,13 +161,37 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMRecordedAccelerometerData_class/index.html#//apple_ref/occ/instp/CMRecordedAccelerometerData/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native long identifier();
+
+    @Generated
+    @Selector("init")
+    public native CMRecordedAccelerometerData init();
+
+    /**
+     * startDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMRecordedAccelerometerData_class/index.html#//apple_ref/occ/instp/CMRecordedAccelerometerData/startDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startDate")
+    public native NSDate startDate();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CMRecordedAccelerometerData initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

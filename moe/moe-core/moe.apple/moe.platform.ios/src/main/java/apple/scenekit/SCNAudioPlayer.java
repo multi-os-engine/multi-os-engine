@@ -61,14 +61,6 @@ public class SCNAudioPlayer extends NSObject {
     public static native SCNAudioPlayer alloc();
 
     /**
-     * audioNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/audioNode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("audioNode")
-    public native AVAudioNode audioNode();
-
-    /**
      * audioPlayerWithAVAudioNode:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/clm/SCNAudioPlayer/audioPlayerWithAVAudioNode:">iOS Dev Center</a>
      */
@@ -83,98 +75,6 @@ public class SCNAudioPlayer extends NSObject {
     @Generated
     @Selector("audioPlayerWithSource:")
     public static native SCNAudioPlayer audioPlayerWithSource(SCNAudioSource source);
-
-    /**
-     * audioSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/audioSource">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("audioSource")
-    public native SCNAudioSource audioSource();
-
-    /**
-     * didFinishPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/didFinishPlayback">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("didFinishPlayback")
-    @ObjCBlock(name = "call_didFinishPlayback_ret")
-    public native Block_didFinishPlayback_ret didFinishPlayback();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_didFinishPlayback_ret {
-        @Generated
-        void call_didFinishPlayback_ret();
-    }
-
-    @Generated
-    @Selector("init")
-    public native SCNAudioPlayer init();
-
-    /**
-     * initWithAVAudioNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instm/SCNAudioPlayer/initWithAVAudioNode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAVAudioNode:")
-    public native SCNAudioPlayer initWithAVAudioNode(AVAudioNode audioNode);
-
-    /**
-     * initWithSource:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instm/SCNAudioPlayer/initWithSource:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSource:")
-    public native SCNAudioPlayer initWithSource(SCNAudioSource source);
-
-    /**
-     * didFinishPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/didFinishPlayback">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDidFinishPlayback:")
-    public native void setDidFinishPlayback(
-            @ObjCBlock(name = "call_setDidFinishPlayback") Block_setDidFinishPlayback value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setDidFinishPlayback {
-        @Generated
-        void call_setDidFinishPlayback();
-    }
-
-    /**
-     * willStartPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/willStartPlayback">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWillStartPlayback:")
-    public native void setWillStartPlayback(
-            @ObjCBlock(name = "call_setWillStartPlayback") Block_setWillStartPlayback value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setWillStartPlayback {
-        @Generated
-        void call_setWillStartPlayback();
-    }
-
-    /**
-     * willStartPlayback</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/willStartPlayback">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("willStartPlayback")
-    @ObjCBlock(name = "call_willStartPlayback_ret")
-    public native Block_willStartPlayback_ret willStartPlayback();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_willStartPlayback_ret {
-        @Generated
-        void call_willStartPlayback_ret();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -275,4 +175,104 @@ public class SCNAudioPlayer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * audioNode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/audioNode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("audioNode")
+    public native AVAudioNode audioNode();
+
+    /**
+     * audioSource</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/audioSource">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("audioSource")
+    public native SCNAudioSource audioSource();
+
+    /**
+     * didFinishPlayback</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/didFinishPlayback">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("didFinishPlayback")
+    @ObjCBlock(name = "call_didFinishPlayback_ret")
+    public native Block_didFinishPlayback_ret didFinishPlayback();
+
+    @Generated
+    @Selector("init")
+    public native SCNAudioPlayer init();
+
+    /**
+     * initWithAVAudioNode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instm/SCNAudioPlayer/initWithAVAudioNode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAVAudioNode:")
+    public native SCNAudioPlayer initWithAVAudioNode(AVAudioNode audioNode);
+
+    /**
+     * initWithSource:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instm/SCNAudioPlayer/initWithSource:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSource:")
+    public native SCNAudioPlayer initWithSource(SCNAudioSource source);
+
+    /**
+     * didFinishPlayback</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/didFinishPlayback">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDidFinishPlayback:")
+    public native void setDidFinishPlayback(
+            @ObjCBlock(name = "call_setDidFinishPlayback") Block_setDidFinishPlayback value);
+
+    /**
+     * willStartPlayback</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/willStartPlayback">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWillStartPlayback:")
+    public native void setWillStartPlayback(
+            @ObjCBlock(name = "call_setWillStartPlayback") Block_setWillStartPlayback value);
+
+    /**
+     * willStartPlayback</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioPlayer_Class/index.html#//apple_ref/occ/instp/SCNAudioPlayer/willStartPlayback">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("willStartPlayback")
+    @ObjCBlock(name = "call_willStartPlayback_ret")
+    public native Block_willStartPlayback_ret willStartPlayback();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_didFinishPlayback_ret {
+        @Generated
+        void call_didFinishPlayback_ret();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setDidFinishPlayback {
+        @Generated
+        void call_setDidFinishPlayback();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setWillStartPlayback {
+        @Generated
+        void call_setWillStartPlayback();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_willStartPlayback_ret {
+        @Generated
+        void call_willStartPlayback_ret();
+    }
 }

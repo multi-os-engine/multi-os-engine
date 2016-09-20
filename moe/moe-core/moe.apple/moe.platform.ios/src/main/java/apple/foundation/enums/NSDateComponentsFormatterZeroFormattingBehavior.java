@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDateComponentsFormatterZeroFormattingBehavior {
-    @Generated
-    private NSDateComponentsFormatterZeroFormattingBehavior() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long Default = 0x0000000000000001L;
     @Generated @NUInt public static final long DropLeading = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class NSDateComponentsFormatterZeroFormattingBehavior {
     @Generated @NUInt public static final long DropTrailing = 0x0000000000000008L;
     @Generated @NUInt public static final long DropAll = 0x000000000000000EL;
     @Generated @NUInt public static final long Pad = 0x0000000000010000L;
+
+    @Generated
+    private NSDateComponentsFormatterZeroFormattingBehavior() {
+    }
 }

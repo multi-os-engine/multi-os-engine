@@ -21,10 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MPSImageEdgeMode {
+    @Generated @NUInt public static final long Zero = 0x0000000000000000L;
+    @Generated @NUInt public static final long Clamp = 0x0000000000000001L;
     @Generated
     private MPSImageEdgeMode() {
     }
-
-    @Generated @NUInt public static final long Zero = 0x0000000000000000L;
-    @Generated @NUInt public static final long Clamp = 0x0000000000000001L;
 }

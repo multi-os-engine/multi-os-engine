@@ -59,34 +59,6 @@ public class MPMediaPlaylistCreationMetadata extends NSObject {
     public static native MPMediaPlaylistCreationMetadata alloc();
 
     @Generated
-    @Selector("authorDisplayName")
-    public native String authorDisplayName();
-
-    @Generated
-    @Selector("descriptionText")
-    public native String descriptionText();
-
-    @Generated
-    @Selector("init")
-    public native MPMediaPlaylistCreationMetadata init();
-
-    @Generated
-    @Selector("initWithName:")
-    public native MPMediaPlaylistCreationMetadata initWithName(String name);
-
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
-    @Selector("setAuthorDisplayName:")
-    public native void setAuthorDisplayName(String value);
-
-    @Generated
-    @Selector("setDescriptionText:")
-    public native void setDescriptionText(String value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -185,4 +157,32 @@ public class MPMediaPlaylistCreationMetadata extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("authorDisplayName")
+    public native String authorDisplayName();
+
+    @Generated
+    @Selector("descriptionText")
+    public native String descriptionText();
+
+    @Generated
+    @Selector("init")
+    public native MPMediaPlaylistCreationMetadata init();
+
+    @Generated
+    @Selector("initWithName:")
+    public native MPMediaPlaylistCreationMetadata initWithName(String name);
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("setAuthorDisplayName:")
+    public native void setAuthorDisplayName(String value);
+
+    @Generated
+    @Selector("setDescriptionText:")
+    public native void setDescriptionText(String value);
 }

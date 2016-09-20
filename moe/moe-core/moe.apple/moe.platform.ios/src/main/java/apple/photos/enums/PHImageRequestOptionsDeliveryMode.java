@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHImageRequestOptionsDeliveryMode {
-    @Generated
-    private PHImageRequestOptionsDeliveryMode() {
-    }
-
     @Generated @NInt public static final long Opportunistic = 0x0000000000000000L;
     @Generated @NInt public static final long HighQualityFormat = 0x0000000000000001L;
     @Generated @NInt public static final long FastFormat = 0x0000000000000002L;
+
+    @Generated
+    private PHImageRequestOptionsDeliveryMode() {
+    }
 }

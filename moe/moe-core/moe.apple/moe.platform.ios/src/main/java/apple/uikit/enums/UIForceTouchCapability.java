@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIForceTouchCapability {
-    @Generated
-    private UIForceTouchCapability() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Unavailable = 0x0000000000000001L;
     @Generated @NInt public static final long Available = 0x0000000000000002L;
+
+    @Generated
+    private UIForceTouchCapability() {
+    }
 }

@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITextWritingDirection {
-    @Generated
-    private UITextWritingDirection() {
-    }
-
     @Generated @NInt public static final long Natural = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long LeftToRight = 0x0000000000000000L;
     @Generated @NInt public static final long RightToLeft = 0x0000000000000001L;
+
+    @Generated
+    private UITextWritingDirection() {
+    }
 }

@@ -103,12 +103,6 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     @Selector("colorizeWithColorBlendFactor:duration:")
     public static native SKAction colorizeWithColorBlendFactorDuration(@NFloat double colorBlendFactor, double sec);
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
     /**
      * customActionWithDuration:actionBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/clm/SKAction/customActionWithDuration:actionBlock:">iOS Dev Center</a>
@@ -117,25 +111,6 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     @Selector("customActionWithDuration:actionBlock:")
     public static native SKAction customActionWithDurationActionBlock(double seconds,
             @ObjCBlock(name = "call_customActionWithDurationActionBlock") Block_customActionWithDurationActionBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_customActionWithDurationActionBlock {
-        @Generated
-        void call_customActionWithDurationActionBlock(SKNode arg0, @NFloat double arg1);
-    }
-
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/duration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("duration")
-    public native double duration();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
 
     /**
      * fadeAlphaBy:duration:</br>
@@ -234,14 +209,6 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("hide")
     public static native SKAction hide();
-
-    @Generated
-    @Selector("init")
-    public native SKAction init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKAction initWithCoder(NSCoder aDecoder);
 
     /**
      * moveBy:duration:</br>
@@ -391,14 +358,6 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
             double duration);
 
     /**
-     * reversedAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instm/SKAction/reversedAction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reversedAction")
-    public native SKAction reversedAction();
-
-    /**
      * rotateByAngle:duration:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/clm/SKAction/rotateByAngle:duration:">iOS Dev Center</a>
      */
@@ -439,13 +398,6 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     @Selector("runBlock:")
     public static native SKAction runBlock(@ObjCBlock(name = "call_runBlock") Block_runBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_runBlock {
-        @Generated
-        void call_runBlock();
-    }
-
     /**
      * runBlock:queue:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/clm/SKAction/runBlock:queue:">iOS Dev Center</a>
@@ -454,13 +406,6 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     @Selector("runBlock:queue:")
     public static native SKAction runBlockQueue(@ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block,
             NSObject queue);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_runBlockQueue {
-        @Generated
-        void call_runBlockQueue();
-    }
 
     /**
      * scaleBy:duration:</br>
@@ -519,22 +464,6 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     public static native SKAction sequence(NSArray<? extends SKAction> actions);
 
     /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/duration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDuration:")
-    public native void setDuration(double value);
-
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/speed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSpeed:")
-    public native void setSpeed(@NFloat double value);
-
-    /**
      * setTexture:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/clm/SKAction/setTexture:">iOS Dev Center</a>
      */
@@ -549,38 +478,6 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("setTexture:resize:")
     public static native SKAction setTextureResize(SKTexture texture, boolean resize);
-
-    /**
-     * timingFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/timingFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTimingFunction:")
-    public native void setTimingFunction(@ObjCBlock(name = "call_setTimingFunction") Block_setTimingFunction value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setTimingFunction {
-        @Generated
-        float call_setTimingFunction(float arg0);
-    }
-
-    /**
-     * timingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/timingMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTimingMode:")
-    public native void setTimingMode(@NInt long value);
-
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/speed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("speed")
-    @NFloat
-    public native double speed();
 
     /**
      * speedBy:duration:</br>
@@ -615,15 +512,6 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     public static native SKAction strengthToDuration(float strength, double sec);
 
     /**
-     * timingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/timingMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timingMode")
-    @NInt
-    public native long timingMode();
-
-    /**
      * unhide</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/clm/SKAction/unhide">iOS Dev Center</a>
      */
@@ -646,22 +534,6 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("waitForDuration:withRange:")
     public static native SKAction waitForDurationWithRange(double sec, double durationRange);
-
-    /**
-     * timingFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/timingFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timingFunction")
-    @ObjCBlock(name = "call_timingFunction_ret")
-    public native Block_timingFunction_ret timingFunction();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_timingFunction_ret {
-        @Generated
-        float call_timingFunction_ret(float arg0);
-    }
 
     /**
      * actionNamed:</br>
@@ -1030,4 +902,132 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * duration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/duration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("duration")
+    public native double duration();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SKAction init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKAction initWithCoder(NSCoder aDecoder);
+
+    /**
+     * reversedAction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instm/SKAction/reversedAction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reversedAction")
+    public native SKAction reversedAction();
+
+    /**
+     * duration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/duration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDuration:")
+    public native void setDuration(double value);
+
+    /**
+     * speed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/speed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSpeed:")
+    public native void setSpeed(@NFloat double value);
+
+    /**
+     * timingFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/timingFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTimingFunction:")
+    public native void setTimingFunction(@ObjCBlock(name = "call_setTimingFunction") Block_setTimingFunction value);
+
+    /**
+     * timingMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/timingMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTimingMode:")
+    public native void setTimingMode(@NInt long value);
+
+    /**
+     * speed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/speed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("speed")
+    @NFloat
+    public native double speed();
+
+    /**
+     * timingMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/timingMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timingMode")
+    @NInt
+    public native long timingMode();
+
+    /**
+     * timingFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAction_Ref/index.html#//apple_ref/occ/instp/SKAction/timingFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timingFunction")
+    @ObjCBlock(name = "call_timingFunction_ret")
+    public native Block_timingFunction_ret timingFunction();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_customActionWithDurationActionBlock {
+        @Generated
+        void call_customActionWithDurationActionBlock(SKNode arg0, @NFloat double arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_runBlock {
+        @Generated
+        void call_runBlock();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_runBlockQueue {
+        @Generated
+        void call_runBlockQueue();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setTimingFunction {
+        @Generated
+        float call_setTimingFunction(float arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_timingFunction_ret {
+        @Generated
+        float call_timingFunction_ret(float arg0);
+    }
 }

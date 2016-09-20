@@ -59,14 +59,6 @@ public class HMHomeAccessControl extends NSObject {
     public static native HMHomeAccessControl alloc();
 
     @Generated
-    @Selector("init")
-    public native HMHomeAccessControl init();
-
-    @Generated
-    @Selector("isAdministrator")
-    public native boolean isAdministrator();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -165,4 +157,12 @@ public class HMHomeAccessControl extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native HMHomeAccessControl init();
+
+    @Generated
+    @Selector("isAdministrator")
+    public native boolean isAdministrator();
 }

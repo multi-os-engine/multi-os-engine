@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kABInvalidPropertyType = 0x00000000;
     @Generated public static final int kABStringPropertyType = 0x00000001;
     @Generated public static final int kABIntegerPropertyType = 0x00000002;
@@ -51,4 +47,8 @@ public final class Enums {
     @Generated public static final int kABSourceTypeCardDAVSearch = 0x01000004;
     @Generated public static final int kABOperationNotPermittedByStoreError = 0x00000000;
     @Generated public static final int kABOperationNotPermittedByUserError = 0x00000001;
+
+    @Generated
+    private Enums() {
+    }
 }

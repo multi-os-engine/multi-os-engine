@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kAudioUnitSampleRateConverterComplexity_Linear = 0x6C696E65;
     @Generated public static final int kAudioUnitSampleRateConverterComplexity_Normal = 0x6E6F726D;
     @Generated public static final int kAudioUnitSampleRateConverterComplexity_Mastering = 0x62617473;
@@ -421,4 +417,8 @@ public final class Enums {
     @Generated public static final int kAudioUnitProperty_ClassInfoFromDocument = 0x00000032;
     @Generated public static final int kAudioUnitProperty_RequestViewController = 0x00000038;
     @Generated public static final int kAudioUnitProperty_ParametersForOverview = 0x00000039;
+
+    @Generated
+    private Enums() {
+    }
 }

@@ -20,14 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class JSType {
-    @Generated
-    private JSType() {
-    }
-
     @Generated public static final int kJSTypeUndefined = 0x00000000;
     @Generated public static final int kJSTypeNull = 0x00000001;
     @Generated public static final int kJSTypeBoolean = 0x00000002;
     @Generated public static final int kJSTypeNumber = 0x00000003;
     @Generated public static final int kJSTypeString = 0x00000004;
     @Generated public static final int kJSTypeObject = 0x00000005;
+    @Generated
+    private JSType() {
+    }
 }

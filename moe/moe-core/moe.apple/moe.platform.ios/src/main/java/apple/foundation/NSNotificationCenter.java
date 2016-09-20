@@ -51,33 +51,6 @@ public class NSNotificationCenter extends NSObject {
         super(peer);
     }
 
-    /**
-     * addObserver:selector:name:object:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/addObserver:selector:name:object:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addObserver:selector:name:object:")
-    public native void addObserverSelectorNameObject(@Mapped(ObjCObjectMapper.class) Object observer, SEL aSelector,
-            String aName, @Mapped(ObjCObjectMapper.class) Object anObject);
-
-    /**
-     * addObserverForName:object:queue:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/addObserverForName:object:queue:usingBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addObserverForName:object:queue:usingBlock:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native apple.protocol.NSObject addObserverForNameObjectQueueUsingBlock(String name,
-            @Mapped(ObjCObjectMapper.class) Object obj, NSOperationQueue queue,
-            @ObjCBlock(name = "call_addObserverForNameObjectQueueUsingBlock") Block_addObserverForNameObjectQueueUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addObserverForNameObjectQueueUsingBlock {
-        @Generated
-        void call_addObserverForNameObjectQueueUsingBlock(NSNotification arg0);
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -90,52 +63,6 @@ public class NSNotificationCenter extends NSObject {
     @Generated
     @Selector("defaultCenter")
     public static native NSNotificationCenter defaultCenter();
-
-    @Generated
-    @Selector("init")
-    public native NSNotificationCenter init();
-
-    /**
-     * postNotification:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/postNotification:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("postNotification:")
-    public native void postNotification(NSNotification notification);
-
-    /**
-     * postNotificationName:object:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/postNotificationName:object:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("postNotificationName:object:")
-    public native void postNotificationNameObject(String aName, @Mapped(ObjCObjectMapper.class) Object anObject);
-
-    /**
-     * postNotificationName:object:userInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/postNotificationName:object:userInfo:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("postNotificationName:object:userInfo:")
-    public native void postNotificationNameObjectUserInfo(String aName, @Mapped(ObjCObjectMapper.class) Object anObject,
-            NSDictionary<?, ?> aUserInfo);
-
-    /**
-     * removeObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/removeObserver:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeObserver:")
-    public native void removeObserver(@Mapped(ObjCObjectMapper.class) Object observer);
-
-    /**
-     * removeObserver:name:object:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/removeObserver:name:object:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeObserver:name:object:")
-    public native void removeObserverNameObject(@Mapped(ObjCObjectMapper.class) Object observer, String aName,
-            @Mapped(ObjCObjectMapper.class) Object anObject);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -236,4 +163,77 @@ public class NSNotificationCenter extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addObserver:selector:name:object:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/addObserver:selector:name:object:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addObserver:selector:name:object:")
+    public native void addObserverSelectorNameObject(@Mapped(ObjCObjectMapper.class) Object observer, SEL aSelector,
+            String aName, @Mapped(ObjCObjectMapper.class) Object anObject);
+
+    /**
+     * addObserverForName:object:queue:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/addObserverForName:object:queue:usingBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addObserverForName:object:queue:usingBlock:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native apple.protocol.NSObject addObserverForNameObjectQueueUsingBlock(String name,
+            @Mapped(ObjCObjectMapper.class) Object obj, NSOperationQueue queue,
+            @ObjCBlock(name = "call_addObserverForNameObjectQueueUsingBlock") Block_addObserverForNameObjectQueueUsingBlock block);
+
+    @Generated
+    @Selector("init")
+    public native NSNotificationCenter init();
+
+    /**
+     * postNotification:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/postNotification:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("postNotification:")
+    public native void postNotification(NSNotification notification);
+
+    /**
+     * postNotificationName:object:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/postNotificationName:object:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("postNotificationName:object:")
+    public native void postNotificationNameObject(String aName, @Mapped(ObjCObjectMapper.class) Object anObject);
+
+    /**
+     * postNotificationName:object:userInfo:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/postNotificationName:object:userInfo:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("postNotificationName:object:userInfo:")
+    public native void postNotificationNameObjectUserInfo(String aName, @Mapped(ObjCObjectMapper.class) Object anObject,
+            NSDictionary<?, ?> aUserInfo);
+
+    /**
+     * removeObserver:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/removeObserver:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeObserver:")
+    public native void removeObserver(@Mapped(ObjCObjectMapper.class) Object observer);
+
+    /**
+     * removeObserver:name:object:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/index.html#//apple_ref/occ/instm/NSNotificationCenter/removeObserver:name:object:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeObserver:name:object:")
+    public native void removeObserverNameObject(@Mapped(ObjCObjectMapper.class) Object observer, String aName,
+            @Mapped(ObjCObjectMapper.class) Object anObject);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addObserverForNameObjectQueueUsingBlock {
+        @Generated
+        void call_addObserverForNameObjectQueueUsingBlock(NSNotification arg0);
+    }
 }

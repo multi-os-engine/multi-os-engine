@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFURLComponentType {
-    @Generated
-    private CFURLComponentType() {
-    }
-
     @Generated @NInt public static final long Scheme = 0x0000000000000001L;
     @Generated @NInt public static final long NetLocation = 0x0000000000000002L;
     @Generated @NInt public static final long Path = 0x0000000000000003L;
@@ -37,4 +33,7 @@ public final class CFURLComponentType {
     @Generated @NInt public static final long ParameterString = 0x000000000000000AL;
     @Generated @NInt public static final long Query = 0x000000000000000BL;
     @Generated @NInt public static final long Fragment = 0x000000000000000CL;
+    @Generated
+    private CFURLComponentType() {
+    }
 }

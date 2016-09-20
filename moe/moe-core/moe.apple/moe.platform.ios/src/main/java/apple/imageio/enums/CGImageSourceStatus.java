@@ -20,14 +20,14 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGImageSourceStatus {
-    @Generated
-    private CGImageSourceStatus() {
-    }
-
     @Generated public static final int UnexpectedEOF = 0xFFFFFFFB;
     @Generated public static final int InvalidData = 0xFFFFFFFC;
     @Generated public static final int UnknownType = 0xFFFFFFFD;
     @Generated public static final int ReadingHeader = 0xFFFFFFFE;
     @Generated public static final int Incomplete = 0xFFFFFFFF;
     @Generated public static final int Complete = 0x00000000;
+
+    @Generated
+    private CGImageSourceStatus() {
+    }
 }

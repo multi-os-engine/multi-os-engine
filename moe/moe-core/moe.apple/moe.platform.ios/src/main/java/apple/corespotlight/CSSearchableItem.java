@@ -63,106 +63,9 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     @Selector("alloc")
     public static native CSSearchableItem alloc();
 
-    /**
-     * attributeSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/attributeSet">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attributeSet")
-    public native CSSearchableItemAttributeSet attributeSet();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * domainIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/domainIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("domainIdentifier")
-    public native String domainIdentifier();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * expirationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/expirationDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expirationDate")
-    public native NSDate expirationDate();
-
-    @Generated
-    @Selector("init")
-    public native CSSearchableItem init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CSSearchableItem initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithUniqueIdentifier:domainIdentifier:attributeSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instm/CSSearchableItem/initWithUniqueIdentifier:domainIdentifier:attributeSet:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithUniqueIdentifier:domainIdentifier:attributeSet:")
-    public native CSSearchableItem initWithUniqueIdentifierDomainIdentifierAttributeSet(String uniqueIdentifier,
-            String domainIdentifier, CSSearchableItemAttributeSet attributeSet);
-
-    /**
-     * attributeSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/attributeSet">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAttributeSet:")
-    public native void setAttributeSet(CSSearchableItemAttributeSet value);
-
-    /**
-     * domainIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/domainIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDomainIdentifier:")
-    public native void setDomainIdentifier(String value);
-
-    /**
-     * expirationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/expirationDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setExpirationDate:")
-    public native void setExpirationDate(NSDate value);
-
-    /**
-     * uniqueIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/uniqueIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUniqueIdentifier:")
-    public native void setUniqueIdentifier(String value);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * uniqueIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/uniqueIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native String uniqueIdentifier();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -263,4 +166,101 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * attributeSet</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/attributeSet">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attributeSet")
+    public native CSSearchableItemAttributeSet attributeSet();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * domainIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/domainIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("domainIdentifier")
+    public native String domainIdentifier();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * expirationDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/expirationDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expirationDate")
+    public native NSDate expirationDate();
+
+    @Generated
+    @Selector("init")
+    public native CSSearchableItem init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CSSearchableItem initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithUniqueIdentifier:domainIdentifier:attributeSet:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instm/CSSearchableItem/initWithUniqueIdentifier:domainIdentifier:attributeSet:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithUniqueIdentifier:domainIdentifier:attributeSet:")
+    public native CSSearchableItem initWithUniqueIdentifierDomainIdentifierAttributeSet(String uniqueIdentifier,
+            String domainIdentifier, CSSearchableItemAttributeSet attributeSet);
+
+    /**
+     * attributeSet</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/attributeSet">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAttributeSet:")
+    public native void setAttributeSet(CSSearchableItemAttributeSet value);
+
+    /**
+     * domainIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/domainIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDomainIdentifier:")
+    public native void setDomainIdentifier(String value);
+
+    /**
+     * expirationDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/expirationDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setExpirationDate:")
+    public native void setExpirationDate(NSDate value);
+
+    /**
+     * uniqueIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/uniqueIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUniqueIdentifier:")
+    public native void setUniqueIdentifier(String value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * uniqueIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableItem_Class/index.html#//apple_ref/occ/instp/CSSearchableItem/uniqueIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniqueIdentifier")
+    public native String uniqueIdentifier();
 }

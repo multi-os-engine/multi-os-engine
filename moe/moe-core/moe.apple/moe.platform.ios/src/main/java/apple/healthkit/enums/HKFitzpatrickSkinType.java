@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKFitzpatrickSkinType {
-    @Generated
-    private HKFitzpatrickSkinType() {
-    }
-
     @Generated @NInt public static final long NotSet = 0x0000000000000000L;
     @Generated @NInt public static final long I = 0x0000000000000001L;
     @Generated @NInt public static final long II = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class HKFitzpatrickSkinType {
     @Generated @NInt public static final long IV = 0x0000000000000004L;
     @Generated @NInt public static final long V = 0x0000000000000005L;
     @Generated @NInt public static final long VI = 0x0000000000000006L;
+
+    @Generated
+    private HKFitzpatrickSkinType() {
+    }
 }

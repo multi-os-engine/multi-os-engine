@@ -54,26 +54,10 @@ public class MIDINetworkHost extends NSObject {
         super(peer);
     }
 
-    /**
-     * address</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/address">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("address")
-    public native String address();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native MIDINetworkHost alloc();
-
-    /**
-     * hasSameAddressAs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkHost/hasSameAddressAs:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hasSameAddressAs:")
-    public native boolean hasSameAddressAs(MIDINetworkHost other);
 
     /**
      * hostWithName:address:port:</br>
@@ -99,43 +83,6 @@ public class MIDINetworkHost extends NSObject {
     @Selector("hostWithName:netServiceName:netServiceDomain:")
     public static native MIDINetworkHost hostWithNameNetServiceNameNetServiceDomain(String name, String netServiceName,
             String netServiceDomain);
-
-    @Generated
-    @Selector("init")
-    public native MIDINetworkHost init();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * netServiceDomain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/netServiceDomain">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("netServiceDomain")
-    public native String netServiceDomain();
-
-    /**
-     * netServiceName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/netServiceName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("netServiceName")
-    public native String netServiceName();
-
-    /**
-     * port</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/port">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("port")
-    @NUInt
-    public native long port();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -236,4 +183,57 @@ public class MIDINetworkHost extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * address</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/address">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("address")
+    public native String address();
+
+    /**
+     * hasSameAddressAs:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkHost/hasSameAddressAs:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hasSameAddressAs:")
+    public native boolean hasSameAddressAs(MIDINetworkHost other);
+
+    @Generated
+    @Selector("init")
+    public native MIDINetworkHost init();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * netServiceDomain</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/netServiceDomain">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("netServiceDomain")
+    public native String netServiceDomain();
+
+    /**
+     * netServiceName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/netServiceName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("netServiceName")
+    public native String netServiceName();
+
+    /**
+     * port</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkHost_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkHost/port">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("port")
+    @NUInt
+    public native long port();
 }

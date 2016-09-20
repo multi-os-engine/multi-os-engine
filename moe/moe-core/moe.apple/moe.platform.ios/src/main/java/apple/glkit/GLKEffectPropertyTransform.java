@@ -62,53 +62,6 @@ public class GLKEffectPropertyTransform extends GLKEffectProperty {
     public static native GLKEffectPropertyTransform alloc();
 
     @Generated
-    @Selector("init")
-    public native GLKEffectPropertyTransform init();
-
-    /**
-     * modelviewMatrix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTransform_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTransform/modelviewMatrix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("modelviewMatrix")
-    @ByValue
-    public native GLKMatrix4 modelviewMatrix();
-
-    /**
-     * normalMatrix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTransform_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTransform/normalMatrix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("normalMatrix")
-    @ByValue
-    public native GLKMatrix3 normalMatrix();
-
-    /**
-     * projectionMatrix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTransform_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTransform/projectionMatrix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("projectionMatrix")
-    @ByValue
-    public native GLKMatrix4 projectionMatrix();
-
-    /**
-     * modelviewMatrix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTransform_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTransform/modelviewMatrix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setModelviewMatrix:")
-    public native void setModelviewMatrix(@ByValue GLKMatrix4 value);
-
-    /**
-     * projectionMatrix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTransform_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTransform/projectionMatrix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProjectionMatrix:")
-    public native void setProjectionMatrix(@ByValue GLKMatrix4 value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -207,4 +160,51 @@ public class GLKEffectPropertyTransform extends GLKEffectProperty {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GLKEffectPropertyTransform init();
+
+    /**
+     * modelviewMatrix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTransform_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTransform/modelviewMatrix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("modelviewMatrix")
+    @ByValue
+    public native GLKMatrix4 modelviewMatrix();
+
+    /**
+     * normalMatrix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTransform_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTransform/normalMatrix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("normalMatrix")
+    @ByValue
+    public native GLKMatrix3 normalMatrix();
+
+    /**
+     * projectionMatrix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTransform_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTransform/projectionMatrix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("projectionMatrix")
+    @ByValue
+    public native GLKMatrix4 projectionMatrix();
+
+    /**
+     * modelviewMatrix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTransform_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTransform/modelviewMatrix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setModelviewMatrix:")
+    public native void setModelviewMatrix(@ByValue GLKMatrix4 value);
+
+    /**
+     * projectionMatrix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyTransform_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyTransform/projectionMatrix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProjectionMatrix:")
+    public native void setProjectionMatrix(@ByValue GLKMatrix4 value);
 }

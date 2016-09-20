@@ -59,10 +59,6 @@ public class CMSensorRecorder extends NSObject {
     @Selector("alloc")
     public static native CMSensorRecorder alloc();
 
-    @Generated
-    @Selector("init")
-    public native CMSensorRecorder init();
-
     /**
      * isAccelerometerRecordingAvailable</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMSensorRecorder_class/index.html#//apple_ref/occ/clm/CMSensorRecorder/isAccelerometerRecordingAvailable">iOS Dev Center</a>
@@ -78,22 +74,6 @@ public class CMSensorRecorder extends NSObject {
     @Generated
     @Selector("isAuthorizedForRecording")
     public static native boolean isAuthorizedForRecording();
-
-    /**
-     * accelerometerDataFromDate:toDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMSensorRecorder_class/index.html#//apple_ref/occ/instm/CMSensorRecorder/accelerometerDataFromDate:toDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accelerometerDataFromDate:toDate:")
-    public native CMSensorDataList accelerometerDataFromDateToDate(NSDate fromDate, NSDate toDate);
-
-    /**
-     * recordAccelerometerForDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMSensorRecorder_class/index.html#//apple_ref/occ/instm/CMSensorRecorder/recordAccelerometerForDuration:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recordAccelerometerForDuration:")
-    public native void recordAccelerometerForDuration(double duration);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -194,4 +174,24 @@ public class CMSensorRecorder extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CMSensorRecorder init();
+
+    /**
+     * accelerometerDataFromDate:toDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMSensorRecorder_class/index.html#//apple_ref/occ/instm/CMSensorRecorder/accelerometerDataFromDate:toDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accelerometerDataFromDate:toDate:")
+    public native CMSensorDataList accelerometerDataFromDateToDate(NSDate fromDate, NSDate toDate);
+
+    /**
+     * recordAccelerometerForDuration:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMSensorRecorder_class/index.html#//apple_ref/occ/instm/CMSensorRecorder/recordAccelerometerForDuration:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recordAccelerometerForDuration:")
+    public native void recordAccelerometerForDuration(double duration);
 }

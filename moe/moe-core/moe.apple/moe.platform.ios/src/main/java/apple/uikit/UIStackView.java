@@ -61,162 +61,10 @@ public class UIStackView extends UIView {
         super(peer);
     }
 
-    /**
-     * addArrangedSubview:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/addArrangedSubview:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addArrangedSubview:")
-    public native void addArrangedSubview(UIView view);
-
-    /**
-     * alignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/alignment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alignment")
-    @NInt
-    public native long alignment();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIStackView alloc();
-
-    /**
-     * arrangedSubviews</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/arrangedSubviews">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("arrangedSubviews")
-    public native NSArray<? extends UIView> arrangedSubviews();
-
-    /**
-     * axis</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/axis">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("axis")
-    @NInt
-    public native long axis();
-
-    /**
-     * distribution</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/distribution">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("distribution")
-    @NInt
-    public native long distribution();
-
-    @Generated
-    @Selector("init")
-    public native UIStackView init();
-
-    /**
-     * initWithArrangedSubviews:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/initWithArrangedSubviews:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithArrangedSubviews:")
-    public native UIStackView initWithArrangedSubviews(NSArray<? extends UIView> views);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIStackView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIStackView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * insertArrangedSubview:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/insertArrangedSubview:atIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("insertArrangedSubview:atIndex:")
-    public native void insertArrangedSubviewAtIndex(UIView view, @NUInt long stackIndex);
-
-    /**
-     * baselineRelativeArrangement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/baselineRelativeArrangement">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isBaselineRelativeArrangement")
-    public native boolean isBaselineRelativeArrangement();
-
-    /**
-     * layoutMarginsRelativeArrangement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/layoutMarginsRelativeArrangement">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isLayoutMarginsRelativeArrangement")
-    public native boolean isLayoutMarginsRelativeArrangement();
-
-    /**
-     * removeArrangedSubview:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/removeArrangedSubview:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeArrangedSubview:")
-    public native void removeArrangedSubview(UIView view);
-
-    /**
-     * alignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/alignment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAlignment:")
-    public native void setAlignment(@NInt long value);
-
-    /**
-     * axis</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/axis">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAxis:")
-    public native void setAxis(@NInt long value);
-
-    /**
-     * baselineRelativeArrangement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/baselineRelativeArrangement">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBaselineRelativeArrangement:")
-    public native void setBaselineRelativeArrangement(boolean value);
-
-    /**
-     * distribution</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/distribution">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDistribution:")
-    public native void setDistribution(@NInt long value);
-
-    /**
-     * layoutMarginsRelativeArrangement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/layoutMarginsRelativeArrangement">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLayoutMarginsRelativeArrangement:")
-    public native void setLayoutMarginsRelativeArrangement(boolean value);
-
-    /**
-     * spacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/spacing">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSpacing:")
-    public native void setSpacing(@NFloat double value);
-
-    /**
-     * spacing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/spacing">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("spacing")
-    @NFloat
-    public native double spacing();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -271,23 +119,9 @@ public class UIStackView extends UIView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -298,27 +132,10 @@ public class UIStackView extends UIView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -329,24 +146,9 @@ public class UIStackView extends UIView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -544,4 +346,202 @@ public class UIStackView extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addArrangedSubview:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/addArrangedSubview:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addArrangedSubview:")
+    public native void addArrangedSubview(UIView view);
+
+    /**
+     * alignment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/alignment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alignment")
+    @NInt
+    public native long alignment();
+
+    /**
+     * arrangedSubviews</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/arrangedSubviews">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("arrangedSubviews")
+    public native NSArray<? extends UIView> arrangedSubviews();
+
+    /**
+     * axis</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/axis">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("axis")
+    @NInt
+    public native long axis();
+
+    /**
+     * distribution</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/distribution">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("distribution")
+    @NInt
+    public native long distribution();
+
+    @Generated
+    @Selector("init")
+    public native UIStackView init();
+
+    /**
+     * initWithArrangedSubviews:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/initWithArrangedSubviews:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithArrangedSubviews:")
+    public native UIStackView initWithArrangedSubviews(NSArray<? extends UIView> views);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIStackView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIStackView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * insertArrangedSubview:atIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/insertArrangedSubview:atIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("insertArrangedSubview:atIndex:")
+    public native void insertArrangedSubviewAtIndex(UIView view, @NUInt long stackIndex);
+
+    /**
+     * baselineRelativeArrangement</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/baselineRelativeArrangement">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isBaselineRelativeArrangement")
+    public native boolean isBaselineRelativeArrangement();
+
+    /**
+     * baselineRelativeArrangement</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/baselineRelativeArrangement">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBaselineRelativeArrangement:")
+    public native void setBaselineRelativeArrangement(boolean value);
+
+    /**
+     * layoutMarginsRelativeArrangement</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/layoutMarginsRelativeArrangement">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isLayoutMarginsRelativeArrangement")
+    public native boolean isLayoutMarginsRelativeArrangement();
+
+    /**
+     * layoutMarginsRelativeArrangement</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/layoutMarginsRelativeArrangement">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLayoutMarginsRelativeArrangement:")
+    public native void setLayoutMarginsRelativeArrangement(boolean value);
+
+    /**
+     * removeArrangedSubview:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instm/UIStackView/removeArrangedSubview:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeArrangedSubview:")
+    public native void removeArrangedSubview(UIView view);
+
+    /**
+     * alignment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/alignment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAlignment:")
+    public native void setAlignment(@NInt long value);
+
+    /**
+     * axis</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/axis">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAxis:")
+    public native void setAxis(@NInt long value);
+
+    /**
+     * distribution</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/distribution">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDistribution:")
+    public native void setDistribution(@NInt long value);
+
+    /**
+     * spacing</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/spacing">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSpacing:")
+    public native void setSpacing(@NFloat double value);
+
+    /**
+     * spacing</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/index.html#//apple_ref/occ/instp/UIStackView/spacing">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("spacing")
+    @NFloat
+    public native double spacing();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

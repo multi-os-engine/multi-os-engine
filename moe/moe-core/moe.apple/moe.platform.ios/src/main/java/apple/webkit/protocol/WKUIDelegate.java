@@ -61,13 +61,6 @@ public interface WKUIDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler {
-        @Generated
-        void call_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler();
-    }
-
     /**
      * webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUIDelegate_Ref/index.html#//apple_ref/occ/intfm/WKUIDelegate/webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:">iOS Dev Center</a>
@@ -79,13 +72,6 @@ public interface WKUIDelegate {
             String message, WKFrameInfo frame,
             @ObjCBlock(name = "call_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler {
-        @Generated
-        void call_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler(boolean arg0);
     }
 
     /**
@@ -101,13 +87,6 @@ public interface WKUIDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler {
-        @Generated
-        void call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler(String arg0);
-    }
-
     /**
      * webViewDidClose:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKUIDelegate_Ref/index.html#//apple_ref/occ/intfm/WKUIDelegate/webViewDidClose:">iOS Dev Center</a>
@@ -117,5 +96,26 @@ public interface WKUIDelegate {
     @Selector("webViewDidClose:")
     default void webViewDidClose(WKWebView webView) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler {
+        @Generated
+        void call_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler {
+        @Generated
+        void call_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler(boolean arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler {
+        @Generated
+        void call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler(String arg0);
     }
 }

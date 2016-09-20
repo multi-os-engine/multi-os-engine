@@ -60,30 +60,6 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
     @Selector("alloc")
     public static native NEOnDemandRuleEvaluateConnection alloc();
 
-    /**
-     * connectionRules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEOnDemandRuleEvaluateConnectionClassRef/index.html#//apple_ref/occ/instp/NEOnDemandRuleEvaluateConnection/connectionRules">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connectionRules")
-    public native NSArray<? extends NEEvaluateConnectionRule> connectionRules();
-
-    @Generated
-    @Selector("init")
-    public native NEOnDemandRuleEvaluateConnection init();
-
-    /**
-     * connectionRules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEOnDemandRuleEvaluateConnectionClassRef/index.html#//apple_ref/occ/instp/NEOnDemandRuleEvaluateConnection/connectionRules">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setConnectionRules:")
-    public native void setConnectionRules(NSArray<? extends NEEvaluateConnectionRule> value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEOnDemandRuleEvaluateConnection initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -184,13 +160,37 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * connectionRules</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEOnDemandRuleEvaluateConnectionClassRef/index.html#//apple_ref/occ/instp/NEOnDemandRuleEvaluateConnection/connectionRules">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connectionRules")
+    public native NSArray<? extends NEEvaluateConnectionRule> connectionRules();
+
+    @Generated
+    @Selector("init")
+    public native NEOnDemandRuleEvaluateConnection init();
+
+    /**
+     * connectionRules</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEOnDemandRuleEvaluateConnectionClassRef/index.html#//apple_ref/occ/instp/NEOnDemandRuleEvaluateConnection/connectionRules">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setConnectionRules:")
+    public native void setConnectionRules(NSArray<? extends NEEvaluateConnectionRule> value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEOnDemandRuleEvaluateConnection initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

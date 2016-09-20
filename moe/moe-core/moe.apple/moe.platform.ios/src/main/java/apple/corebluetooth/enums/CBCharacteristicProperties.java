@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CBCharacteristicProperties {
-    @Generated
-    private CBCharacteristicProperties() {
-    }
-
     @Generated @NUInt public static final long Broadcast = 0x0000000000000001L;
     @Generated @NUInt public static final long Read = 0x0000000000000002L;
     @Generated @NUInt public static final long WriteWithoutResponse = 0x0000000000000004L;
@@ -35,4 +31,7 @@ public final class CBCharacteristicProperties {
     @Generated @NUInt public static final long ExtendedProperties = 0x0000000000000080L;
     @Generated @NUInt public static final long NotifyEncryptionRequired = 0x0000000000000100L;
     @Generated @NUInt public static final long IndicateEncryptionRequired = 0x0000000000000200L;
+    @Generated
+    private CBCharacteristicProperties() {
+    }
 }

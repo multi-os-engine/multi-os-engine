@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class WKErrorCode {
-    @Generated
-    private WKErrorCode() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000001L;
     @Generated @NInt public static final long WebContentProcessTerminated = 0x0000000000000002L;
     @Generated @NInt public static final long WebViewInvalidated = 0x0000000000000003L;
     @Generated @NInt public static final long JavaScriptExceptionOccurred = 0x0000000000000004L;
     @Generated @NInt public static final long JavaScriptResultTypeIsUnsupported = 0x0000000000000005L;
+
+    @Generated
+    private WKErrorCode() {
+    }
 }

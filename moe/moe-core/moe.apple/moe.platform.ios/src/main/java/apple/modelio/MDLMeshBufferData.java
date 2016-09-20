@@ -61,68 +61,6 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     public static native MDLMeshBufferData alloc();
 
     @Generated
-    @Selector("allocator")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object allocator();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferData_Class/index.html#//apple_ref/occ/instp/MDLMeshBufferData/data">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("data")
-    public native NSData data();
-
-    @Generated
-    @Selector("fillData:offset:")
-    public native void fillDataOffset(NSData data, @NUInt long offset);
-
-    @Generated
-    @Selector("init")
-    public native MDLMeshBufferData init();
-
-    /**
-     * initWithType:data:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferData_Class/index.html#//apple_ref/occ/instm/MDLMeshBufferData/initWithType:data:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithType:data:")
-    public native MDLMeshBufferData initWithTypeData(@NUInt long type, NSData data);
-
-    /**
-     * initWithType:length:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferData_Class/index.html#//apple_ref/occ/instm/MDLMeshBufferData/initWithType:length:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithType:length:")
-    public native MDLMeshBufferData initWithTypeLength(@NUInt long type, @NUInt long length);
-
-    @Generated
-    @Selector("length")
-    @NUInt
-    public native long length();
-
-    @Generated
-    @Selector("map")
-    public native MDLMeshBufferMap map();
-
-    @Generated
-    @Selector("type")
-    @NUInt
-    public native long type();
-
-    @Generated
-    @Selector("zone")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object zone();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -221,4 +159,66 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("allocator")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object allocator();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * data</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferData_Class/index.html#//apple_ref/occ/instp/MDLMeshBufferData/data">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("data")
+    public native NSData data();
+
+    @Generated
+    @Selector("fillData:offset:")
+    public native void fillDataOffset(NSData data, @NUInt long offset);
+
+    @Generated
+    @Selector("init")
+    public native MDLMeshBufferData init();
+
+    /**
+     * initWithType:data:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferData_Class/index.html#//apple_ref/occ/instm/MDLMeshBufferData/initWithType:data:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithType:data:")
+    public native MDLMeshBufferData initWithTypeData(@NUInt long type, NSData data);
+
+    /**
+     * initWithType:length:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLMeshBufferData_Class/index.html#//apple_ref/occ/instm/MDLMeshBufferData/initWithType:length:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithType:length:")
+    public native MDLMeshBufferData initWithTypeLength(@NUInt long type, @NUInt long length);
+
+    @Generated
+    @Selector("length")
+    @NUInt
+    public native long length();
+
+    @Generated
+    @Selector("map")
+    public native MDLMeshBufferMap map();
+
+    @Generated
+    @Selector("type")
+    @NUInt
+    public native long type();
+
+    @Generated
+    @Selector("zone")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object zone();
 }

@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioBalanceFadeType {
+    @Generated public static final int MaxUnityGain = 0x00000000;
+    @Generated public static final int EqualPower = 0x00000001;
+
     @Generated
     private AudioBalanceFadeType() {
     }
-
-    @Generated public static final int MaxUnityGain = 0x00000000;
-    @Generated public static final int EqualPower = 0x00000001;
 }

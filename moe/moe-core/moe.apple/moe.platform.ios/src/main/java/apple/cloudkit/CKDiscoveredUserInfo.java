@@ -59,44 +59,6 @@ public class CKDiscoveredUserInfo extends NSObject {
     @Selector("alloc")
     public static native CKDiscoveredUserInfo alloc();
 
-    /**
-     * firstName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoveredUserInfo_class/index.html#//apple_ref/occ/instp/CKDiscoveredUserInfo/firstName">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("firstName")
-    public native String firstName();
-
-    @Generated
-    @Selector("init")
-    public native CKDiscoveredUserInfo init();
-
-    /**
-     * lastName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoveredUserInfo_class/index.html#//apple_ref/occ/instp/CKDiscoveredUserInfo/lastName">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("lastName")
-    public native String lastName();
-
-    /**
-     * userRecordID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoveredUserInfo_class/index.html#//apple_ref/occ/instp/CKDiscoveredUserInfo/userRecordID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userRecordID")
-    public native CKRecordID userRecordID();
-
-    /**
-     * displayContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoveredUserInfo_class/index.html#//apple_ref/occ/instp/CKDiscoveredUserInfo/displayContact">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("displayContact")
-    public native CNContact displayContact();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -196,4 +158,42 @@ public class CKDiscoveredUserInfo extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * firstName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoveredUserInfo_class/index.html#//apple_ref/occ/instp/CKDiscoveredUserInfo/firstName">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("firstName")
+    public native String firstName();
+
+    @Generated
+    @Selector("init")
+    public native CKDiscoveredUserInfo init();
+
+    /**
+     * lastName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoveredUserInfo_class/index.html#//apple_ref/occ/instp/CKDiscoveredUserInfo/lastName">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("lastName")
+    public native String lastName();
+
+    /**
+     * userRecordID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoveredUserInfo_class/index.html#//apple_ref/occ/instp/CKDiscoveredUserInfo/userRecordID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userRecordID")
+    public native CKRecordID userRecordID();
+
+    /**
+     * displayContact</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoveredUserInfo_class/index.html#//apple_ref/occ/instp/CKDiscoveredUserInfo/displayContact">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("displayContact")
+    public native CNContact displayContact();
 }

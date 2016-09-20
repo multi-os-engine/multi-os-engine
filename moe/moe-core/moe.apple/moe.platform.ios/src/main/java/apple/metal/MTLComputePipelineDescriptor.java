@@ -60,73 +60,6 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     @Selector("alloc")
     public static native MTLComputePipelineDescriptor alloc();
 
-    /**
-     * computeFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/computeFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("computeFunction")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLFunction computeFunction();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native MTLComputePipelineDescriptor init();
-
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/label">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("label")
-    public native String label();
-
-    /**
-     * reset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instm/MTLComputePipelineDescriptor/reset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reset")
-    public native void reset();
-
-    /**
-     * computeFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/computeFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setComputeFunction:")
-    public native void setComputeFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
-
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/label">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLabel:")
-    public native void setLabel(String value);
-
-    /**
-     * threadGroupSizeIsMultipleOfThreadExecutionWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/threadGroupSizeIsMultipleOfThreadExecutionWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setThreadGroupSizeIsMultipleOfThreadExecutionWidth:")
-    public native void setThreadGroupSizeIsMultipleOfThreadExecutionWidth(boolean value);
-
-    /**
-     * threadGroupSizeIsMultipleOfThreadExecutionWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/threadGroupSizeIsMultipleOfThreadExecutionWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("threadGroupSizeIsMultipleOfThreadExecutionWidth")
-    public native boolean threadGroupSizeIsMultipleOfThreadExecutionWidth();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -226,4 +159,71 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * computeFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/computeFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("computeFunction")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLFunction computeFunction();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native MTLComputePipelineDescriptor init();
+
+    /**
+     * label</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/label">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("label")
+    public native String label();
+
+    /**
+     * reset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instm/MTLComputePipelineDescriptor/reset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reset")
+    public native void reset();
+
+    /**
+     * computeFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/computeFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setComputeFunction:")
+    public native void setComputeFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
+
+    /**
+     * label</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/label">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLabel:")
+    public native void setLabel(String value);
+
+    /**
+     * threadGroupSizeIsMultipleOfThreadExecutionWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/threadGroupSizeIsMultipleOfThreadExecutionWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setThreadGroupSizeIsMultipleOfThreadExecutionWidth:")
+    public native void setThreadGroupSizeIsMultipleOfThreadExecutionWidth(boolean value);
+
+    /**
+     * threadGroupSizeIsMultipleOfThreadExecutionWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineDescriptor_ClassReference/index.html#//apple_ref/occ/instp/MTLComputePipelineDescriptor/threadGroupSizeIsMultipleOfThreadExecutionWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("threadGroupSizeIsMultipleOfThreadExecutionWidth")
+    public native boolean threadGroupSizeIsMultipleOfThreadExecutionWidth();
 }

@@ -59,13 +59,6 @@ public interface NSURLSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_URLSessionDidReceiveChallengeCompletionHandler {
-        @Generated
-        void call_URLSessionDidReceiveChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
-    }
-
     /**
      * URLSessionDidFinishEventsForBackgroundURLSession:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDelegate/URLSessionDidFinishEventsForBackgroundURLSession:">iOS Dev Center</a>
@@ -75,5 +68,12 @@ public interface NSURLSessionDelegate {
     @Selector("URLSessionDidFinishEventsForBackgroundURLSession:")
     default void URLSessionDidFinishEventsForBackgroundURLSession(NSURLSession session) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_URLSessionDidReceiveChallengeCompletionHandler {
+        @Generated
+        void call_URLSessionDidReceiveChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
     }
 }

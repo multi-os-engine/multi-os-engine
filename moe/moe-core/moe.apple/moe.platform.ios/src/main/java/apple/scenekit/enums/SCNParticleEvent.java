@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNParticleEvent {
-    @Generated
-    private SCNParticleEvent() {
-    }
-
     @Generated @NInt public static final long Birth = 0x0000000000000000L;
     @Generated @NInt public static final long Death = 0x0000000000000001L;
     @Generated @NInt public static final long Collision = 0x0000000000000002L;
+
+    @Generated
+    private SCNParticleEvent() {
+    }
 }

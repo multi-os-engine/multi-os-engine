@@ -64,177 +64,12 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     public static native AVCaptureStillImageOutput alloc();
 
     /**
-     * automaticallyEnablesStillImageStabilizationWhenAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/automaticallyEnablesStillImageStabilizationWhenAvailable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("automaticallyEnablesStillImageStabilizationWhenAvailable")
-    public native boolean automaticallyEnablesStillImageStabilizationWhenAvailable();
-
-    /**
-     * availableImageDataCVPixelFormatTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/availableImageDataCVPixelFormatTypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("availableImageDataCVPixelFormatTypes")
-    public native NSArray<?> availableImageDataCVPixelFormatTypes();
-
-    /**
-     * availableImageDataCodecTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/availableImageDataCodecTypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("availableImageDataCodecTypes")
-    public native NSArray<?> availableImageDataCodecTypes();
-
-    /**
-     * captureStillImageAsynchronouslyFromConnection:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureStillImageOutput/captureStillImageAsynchronouslyFromConnection:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("captureStillImageAsynchronouslyFromConnection:completionHandler:")
-    public native void captureStillImageAsynchronouslyFromConnectionCompletionHandler(AVCaptureConnection connection,
-            @ObjCBlock(name = "call_captureStillImageAsynchronouslyFromConnectionCompletionHandler") Block_captureStillImageAsynchronouslyFromConnectionCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_captureStillImageAsynchronouslyFromConnectionCompletionHandler {
-        @Generated
-        void call_captureStillImageAsynchronouslyFromConnectionCompletionHandler(CMSampleBufferRef arg0, NSError arg1);
-    }
-
-    /**
-     * captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureStillImageOutput/captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:")
-    public native void captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler(
-            AVCaptureConnection connection, NSArray<?> settings,
-            @ObjCBlock(name = "call_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler") Block_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler {
-        @Generated
-        void call_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler(
-                CMSampleBufferRef arg0, AVCaptureBracketedStillImageSettings arg1, NSError arg2);
-    }
-
-    @Generated
-    @Selector("init")
-    public native AVCaptureStillImageOutput init();
-
-    /**
-     * capturingStillImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/capturingStillImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isCapturingStillImage")
-    public native boolean isCapturingStillImage();
-
-    /**
-     * highResolutionStillImageOutputEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/highResolutionStillImageOutputEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isHighResolutionStillImageOutputEnabled")
-    public native boolean isHighResolutionStillImageOutputEnabled();
-
-    /**
-     * stillImageStabilizationActive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/stillImageStabilizationActive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isStillImageStabilizationActive")
-    public native boolean isStillImageStabilizationActive();
-
-    /**
-     * stillImageStabilizationSupported</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/stillImageStabilizationSupported">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isStillImageStabilizationSupported")
-    public native boolean isStillImageStabilizationSupported();
-
-    /**
      * jpegStillImageNSDataRepresentation:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/clm/AVCaptureStillImageOutput/jpegStillImageNSDataRepresentation:">iOS Dev Center</a>
      */
     @Generated
     @Selector("jpegStillImageNSDataRepresentation:")
     public static native NSData jpegStillImageNSDataRepresentation(CMSampleBufferRef jpegSampleBuffer);
-
-    /**
-     * maxBracketedCaptureStillImageCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/maxBracketedCaptureStillImageCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maxBracketedCaptureStillImageCount")
-    @NUInt
-    public native long maxBracketedCaptureStillImageCount();
-
-    /**
-     * outputSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/outputSettings">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("outputSettings")
-    public native NSDictionary<?, ?> outputSettings();
-
-    /**
-     * prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureStillImageOutput/prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:")
-    public native void prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler(
-            AVCaptureConnection connection, NSArray<?> settings,
-            @ObjCBlock(name = "call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler") Block_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler {
-        @Generated
-        void call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler(boolean arg0,
-                NSError arg1);
-    }
-
-    /**
-     * automaticallyEnablesStillImageStabilizationWhenAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/automaticallyEnablesStillImageStabilizationWhenAvailable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAutomaticallyEnablesStillImageStabilizationWhenAvailable:")
-    public native void setAutomaticallyEnablesStillImageStabilizationWhenAvailable(boolean value);
-
-    /**
-     * highResolutionStillImageOutputEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/highResolutionStillImageOutputEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHighResolutionStillImageOutputEnabled:")
-    public native void setHighResolutionStillImageOutputEnabled(boolean value);
-
-    /**
-     * outputSettings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/outputSettings">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOutputSettings:")
-    public native void setOutputSettings(NSDictionary<?, ?> value);
-
-    @Generated
-    @Selector("isLensStabilizationDuringBracketedCaptureEnabled")
-    public native boolean isLensStabilizationDuringBracketedCaptureEnabled();
-
-    @Generated
-    @Selector("isLensStabilizationDuringBracketedCaptureSupported")
-    public native boolean isLensStabilizationDuringBracketedCaptureSupported();
-
-    @Generated
-    @Selector("setLensStabilizationDuringBracketedCaptureEnabled:")
-    public native void setLensStabilizationDuringBracketedCaptureEnabled(boolean value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -335,4 +170,169 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * automaticallyEnablesStillImageStabilizationWhenAvailable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/automaticallyEnablesStillImageStabilizationWhenAvailable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("automaticallyEnablesStillImageStabilizationWhenAvailable")
+    public native boolean automaticallyEnablesStillImageStabilizationWhenAvailable();
+
+    /**
+     * availableImageDataCVPixelFormatTypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/availableImageDataCVPixelFormatTypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("availableImageDataCVPixelFormatTypes")
+    public native NSArray<?> availableImageDataCVPixelFormatTypes();
+
+    /**
+     * availableImageDataCodecTypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/availableImageDataCodecTypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("availableImageDataCodecTypes")
+    public native NSArray<?> availableImageDataCodecTypes();
+
+    /**
+     * captureStillImageAsynchronouslyFromConnection:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureStillImageOutput/captureStillImageAsynchronouslyFromConnection:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("captureStillImageAsynchronouslyFromConnection:completionHandler:")
+    public native void captureStillImageAsynchronouslyFromConnectionCompletionHandler(AVCaptureConnection connection,
+            @ObjCBlock(name = "call_captureStillImageAsynchronouslyFromConnectionCompletionHandler") Block_captureStillImageAsynchronouslyFromConnectionCompletionHandler handler);
+
+    /**
+     * captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureStillImageOutput/captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:")
+    public native void captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler(
+            AVCaptureConnection connection, NSArray<?> settings,
+            @ObjCBlock(name = "call_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler") Block_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler handler);
+
+    @Generated
+    @Selector("init")
+    public native AVCaptureStillImageOutput init();
+
+    /**
+     * capturingStillImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/capturingStillImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isCapturingStillImage")
+    public native boolean isCapturingStillImage();
+
+    /**
+     * highResolutionStillImageOutputEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/highResolutionStillImageOutputEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isHighResolutionStillImageOutputEnabled")
+    public native boolean isHighResolutionStillImageOutputEnabled();
+
+    /**
+     * highResolutionStillImageOutputEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/highResolutionStillImageOutputEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHighResolutionStillImageOutputEnabled:")
+    public native void setHighResolutionStillImageOutputEnabled(boolean value);
+
+    /**
+     * stillImageStabilizationActive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/stillImageStabilizationActive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isStillImageStabilizationActive")
+    public native boolean isStillImageStabilizationActive();
+
+    /**
+     * stillImageStabilizationSupported</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/stillImageStabilizationSupported">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isStillImageStabilizationSupported")
+    public native boolean isStillImageStabilizationSupported();
+
+    /**
+     * maxBracketedCaptureStillImageCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/maxBracketedCaptureStillImageCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maxBracketedCaptureStillImageCount")
+    @NUInt
+    public native long maxBracketedCaptureStillImageCount();
+
+    /**
+     * outputSettings</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/outputSettings">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("outputSettings")
+    public native NSDictionary<?, ?> outputSettings();
+
+    /**
+     * prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureStillImageOutput/prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:")
+    public native void prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler(
+            AVCaptureConnection connection, NSArray<?> settings,
+            @ObjCBlock(name = "call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler") Block_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler handler);
+
+    /**
+     * automaticallyEnablesStillImageStabilizationWhenAvailable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/automaticallyEnablesStillImageStabilizationWhenAvailable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAutomaticallyEnablesStillImageStabilizationWhenAvailable:")
+    public native void setAutomaticallyEnablesStillImageStabilizationWhenAvailable(boolean value);
+
+    /**
+     * outputSettings</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureStillImageOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureStillImageOutput/outputSettings">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOutputSettings:")
+    public native void setOutputSettings(NSDictionary<?, ?> value);
+
+    @Generated
+    @Selector("isLensStabilizationDuringBracketedCaptureEnabled")
+    public native boolean isLensStabilizationDuringBracketedCaptureEnabled();
+
+    @Generated
+    @Selector("setLensStabilizationDuringBracketedCaptureEnabled:")
+    public native void setLensStabilizationDuringBracketedCaptureEnabled(boolean value);
+
+    @Generated
+    @Selector("isLensStabilizationDuringBracketedCaptureSupported")
+    public native boolean isLensStabilizationDuringBracketedCaptureSupported();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_captureStillImageAsynchronouslyFromConnectionCompletionHandler {
+        @Generated
+        void call_captureStillImageAsynchronouslyFromConnectionCompletionHandler(CMSampleBufferRef arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler {
+        @Generated
+        void call_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler(
+                CMSampleBufferRef arg0, AVCaptureBracketedStillImageSettings arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler {
+        @Generated
+        void call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler(boolean arg0,
+                NSError arg1);
+    }
 }

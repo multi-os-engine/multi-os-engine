@@ -78,6 +78,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 @Library("CoreFoundation")
 @Runtime(CRuntime.class)
 public final class CoreFoundation {
+    @Generated @NInt public static final long kCFNotFound = 0xFFFFFFFFFFFFFFFFL;
+
     static {
         NatJ.register();
     }
@@ -393,13 +395,6 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFDictionaryApplyFunction") Function_CFDictionaryApplyFunction applier,
             VoidPtr context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFDictionaryApplyFunction {
-        @Generated
-        void call_CFDictionaryApplyFunction(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
-    }
-
     /**
      * CFDictionaryAddValue</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMutableDictionaryRef/index.html#//apple_ref/c/func/CFDictionaryAddValue">iOS Dev Center</a>
@@ -681,13 +676,6 @@ public final class CoreFoundation {
     public static native void CFArrayApplyFunction(CFArrayRef theArray, @ByValue CFRange range,
             @FunctionPtr(name = "call_CFArrayApplyFunction") Function_CFArrayApplyFunction applier, VoidPtr context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFArrayApplyFunction {
-        @Generated
-        void call_CFArrayApplyFunction(ConstVoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CFArrayGetFirstIndexOfValue</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFArrayRef/index.html#//apple_ref/c/func/CFArrayGetFirstIndexOfValue">iOS Dev Center</a>
@@ -717,14 +705,6 @@ public final class CoreFoundation {
     @NInt
     public static native long CFArrayBSearchValues(CFArrayRef theArray, @ByValue CFRange range, ConstVoidPtr value,
             @FunctionPtr(name = "call_CFArrayBSearchValues") Function_CFArrayBSearchValues comparator, VoidPtr context);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFArrayBSearchValues {
-        @Generated
-        @NInt
-        long call_CFArrayBSearchValues(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
-    }
 
     /**
      * CFArrayAppendValue</br>
@@ -792,14 +772,6 @@ public final class CoreFoundation {
     @CFunction
     public static native void CFArraySortValues(CFMutableArrayRef theArray, @ByValue CFRange range,
             @FunctionPtr(name = "call_CFArraySortValues") Function_CFArraySortValues comparator, VoidPtr context);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFArraySortValues {
-        @Generated
-        @NInt
-        long call_CFArraySortValues(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
-    }
 
     /**
      * CFArrayAppendArray</br>
@@ -2829,13 +2801,6 @@ public final class CoreFoundation {
     public static native void CFBagApplyFunction(CFBagRef theBag,
             @FunctionPtr(name = "call_CFBagApplyFunction") Function_CFBagApplyFunction applier, VoidPtr context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFBagApplyFunction {
-        @Generated
-        void call_CFBagApplyFunction(ConstVoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CFBagAddValue</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMutableBagRef/index.html#//apple_ref/c/func/CFBagAddValue">iOS Dev Center</a>
@@ -2963,13 +2928,6 @@ public final class CoreFoundation {
     public static native void CFBinaryHeapApplyFunction(CFBinaryHeapRef heap,
             @FunctionPtr(name = "call_CFBinaryHeapApplyFunction") Function_CFBinaryHeapApplyFunction applier,
             VoidPtr context);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFBinaryHeapApplyFunction {
-        @Generated
-        void call_CFBinaryHeapApplyFunction(ConstVoidPtr arg0, VoidPtr arg1);
-    }
 
     /**
      * CFBinaryHeapAddValue</br>
@@ -4267,13 +4225,6 @@ public final class CoreFoundation {
     public static native void CFRunLoopPerformBlock(CFRunLoopRef rl, ConstVoidPtr mode,
             @ObjCBlock(name = "call_CFRunLoopPerformBlock") Block_CFRunLoopPerformBlock block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_CFRunLoopPerformBlock {
-        @Generated
-        void call_CFRunLoopPerformBlock();
-    }
-
     /**
      * CFRunLoopContainsSource</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFRunLoopRef/index.html#//apple_ref/c/func/CFRunLoopContainsSource">iOS Dev Center</a>
@@ -4427,13 +4378,6 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFRunLoopObserverCreate") Function_CFRunLoopObserverCreate callout,
             @UncertainArgument("Options: reference, array Fallback: reference") CFRunLoopObserverContext context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFRunLoopObserverCreate {
-        @Generated
-        void call_CFRunLoopObserverCreate(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
-    }
-
     /**
      * CFRunLoopObserverCreateWithHandler</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFRunLoopObserverRef/index.html#//apple_ref/c/func/CFRunLoopObserverCreateWithHandler">iOS Dev Center</a>
@@ -4443,13 +4387,6 @@ public final class CoreFoundation {
     public static native CFRunLoopObserverRef CFRunLoopObserverCreateWithHandler(CFAllocatorRef allocator,
             @NUInt long activities, byte repeats, @NInt long order,
             @ObjCBlock(name = "call_CFRunLoopObserverCreateWithHandler") Block_CFRunLoopObserverCreateWithHandler block);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_CFRunLoopObserverCreateWithHandler {
-        @Generated
-        void call_CFRunLoopObserverCreateWithHandler(CFRunLoopObserverRef arg0, @NUInt long arg1);
-    }
 
     /**
      * CFRunLoopObserverGetActivities</br>
@@ -4522,13 +4459,6 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFRunLoopTimerCreate") Function_CFRunLoopTimerCreate callout,
             @UncertainArgument("Options: reference, array Fallback: reference") CFRunLoopTimerContext context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFRunLoopTimerCreate {
-        @Generated
-        void call_CFRunLoopTimerCreate(VoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CFRunLoopTimerCreateWithHandler</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFRunLoopTimerRef/index.html#//apple_ref/c/func/CFRunLoopTimerCreateWithHandler">iOS Dev Center</a>
@@ -4538,13 +4468,6 @@ public final class CoreFoundation {
     public static native CFRunLoopTimerRef CFRunLoopTimerCreateWithHandler(CFAllocatorRef allocator, double fireDate,
             double interval, @NUInt long flags, @NInt long order,
             @ObjCBlock(name = "call_CFRunLoopTimerCreateWithHandler") Block_CFRunLoopTimerCreateWithHandler block);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_CFRunLoopTimerCreateWithHandler {
-        @Generated
-        void call_CFRunLoopTimerCreateWithHandler(CFRunLoopTimerRef arg0);
-    }
 
     /**
      * CFRunLoopTimerGetNextFireDate</br>
@@ -4640,13 +4563,6 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFSocketCreate") Function_CFSocketCreate callout,
             @UncertainArgument("Options: reference, array Fallback: reference") CFSocketContext context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFSocketCreate {
-        @Generated
-        void call_CFSocketCreate(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2, ConstVoidPtr arg3, VoidPtr arg4);
-    }
-
     /**
      * CFSocketCreateWithNative</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFSocketRef/index.html#//apple_ref/c/func/CFSocketCreateWithNative">iOS Dev Center</a>
@@ -4657,14 +4573,6 @@ public final class CoreFoundation {
             @NUInt long callBackTypes,
             @FunctionPtr(name = "call_CFSocketCreateWithNative") Function_CFSocketCreateWithNative callout,
             @UncertainArgument("Options: reference, array Fallback: reference") CFSocketContext context);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFSocketCreateWithNative {
-        @Generated
-        void call_CFSocketCreateWithNative(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2, ConstVoidPtr arg3,
-                VoidPtr arg4);
-    }
 
     /**
      * CFSocketCreateWithSocketSignature</br>
@@ -4678,14 +4586,6 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFSocketCreateWithSocketSignature") Function_CFSocketCreateWithSocketSignature callout,
             @UncertainArgument("Options: reference, array Fallback: reference") CFSocketContext context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFSocketCreateWithSocketSignature {
-        @Generated
-        void call_CFSocketCreateWithSocketSignature(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2, ConstVoidPtr arg3,
-                VoidPtr arg4);
-    }
-
     /**
      * CFSocketCreateConnectedToSocketSignature</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFSocketRef/index.html#//apple_ref/c/func/CFSocketCreateConnectedToSocketSignature">iOS Dev Center</a>
@@ -4698,14 +4598,6 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFSocketCreateConnectedToSocketSignature") Function_CFSocketCreateConnectedToSocketSignature callout,
             @UncertainArgument("Options: reference, array Fallback: reference") CFSocketContext context,
             double timeout);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFSocketCreateConnectedToSocketSignature {
-        @Generated
-        void call_CFSocketCreateConnectedToSocketSignature(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2,
-                ConstVoidPtr arg3, VoidPtr arg4);
-    }
 
     /**
      * CFSocketSetAddress</br>
@@ -5154,13 +5046,6 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFReadStreamSetClient") Function_CFReadStreamSetClient clientCB,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamClientContext clientContext);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFReadStreamSetClient {
-        @Generated
-        void call_CFReadStreamSetClient(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
-    }
-
     /**
      * CFWriteStreamSetClient</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFWriteStreamRef/index.html#//apple_ref/c/func/CFWriteStreamSetClient">iOS Dev Center</a>
@@ -5170,13 +5055,6 @@ public final class CoreFoundation {
     public static native byte CFWriteStreamSetClient(CFWriteStreamRef stream, @NUInt long streamEvents,
             @FunctionPtr(name = "call_CFWriteStreamSetClient") Function_CFWriteStreamSetClient clientCB,
             @UncertainArgument("Options: reference, array Fallback: reference") CFStreamClientContext clientContext);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFWriteStreamSetClient {
-        @Generated
-        void call_CFWriteStreamSetClient(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
-    }
 
     /**
      * CFReadStreamScheduleWithRunLoop</br>
@@ -5445,13 +5323,6 @@ public final class CoreFoundation {
     public static native void CFSetApplyFunction(CFSetRef theSet,
             @FunctionPtr(name = "call_CFSetApplyFunction") Function_CFSetApplyFunction applier, VoidPtr context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFSetApplyFunction {
-        @Generated
-        void call_CFSetApplyFunction(ConstVoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CFSetAddValue</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMutableSetRef/index.html#//apple_ref/c/func/CFSetAddValue">iOS Dev Center</a>
@@ -5578,13 +5449,6 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFTreeApplyFunctionToChildren") Function_CFTreeApplyFunctionToChildren applier,
             VoidPtr context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFTreeApplyFunctionToChildren {
-        @Generated
-        void call_CFTreeApplyFunctionToChildren(ConstVoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CFTreeFindRoot</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFTreeRef/index.html#//apple_ref/c/func/CFTreeFindRoot">iOS Dev Center</a>
@@ -5650,14 +5514,6 @@ public final class CoreFoundation {
     @CFunction
     public static native void CFTreeSortChildren(CFTreeRef tree,
             @FunctionPtr(name = "call_CFTreeSortChildren") Function_CFTreeSortChildren comparator, VoidPtr context);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFTreeSortChildren {
-        @Generated
-        @NInt
-        long call_CFTreeSortChildren(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
-    }
 
     /**
      * CFURLCreateDataAndPropertiesFromResource</br>
@@ -6213,13 +6069,6 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFMessagePortContext context,
             BytePtr shouldFreeInfo);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFMessagePortCreateLocal {
-        @Generated
-        VoidPtr call_CFMessagePortCreateLocal(VoidPtr arg0, int arg1, VoidPtr arg2, VoidPtr arg3);
-    }
-
     /**
      * CFMessagePortCreateRemote</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMessagePortRef/index.html#//apple_ref/c/func/CFMessagePortCreateRemote">iOS Dev Center</a>
@@ -6285,13 +6134,6 @@ public final class CoreFoundation {
     @CFunction
     public static native void CFMessagePortSetInvalidationCallBack(CFMessagePortRef ms,
             @FunctionPtr(name = "call_CFMessagePortSetInvalidationCallBack") Function_CFMessagePortSetInvalidationCallBack callout);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFMessagePortSetInvalidationCallBack {
-        @Generated
-        void call_CFMessagePortSetInvalidationCallBack(VoidPtr arg0, VoidPtr arg1);
-    }
 
     /**
      * CFMessagePortSendRequest</br>
@@ -6394,13 +6236,6 @@ public final class CoreFoundation {
     public static native byte CFPlugInRegisterFactoryFunction(CFUUIDRef factoryUUID,
             @FunctionPtr(name = "call_CFPlugInRegisterFactoryFunction") Function_CFPlugInRegisterFactoryFunction func);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFPlugInRegisterFactoryFunction {
-        @Generated
-        VoidPtr call_CFPlugInRegisterFactoryFunction(VoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CFPlugInRegisterFactoryFunctionByName</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFPlugInRef/index.html#//apple_ref/c/func/CFPlugInRegisterFactoryFunctionByName">iOS Dev Center</a>
@@ -6495,21 +6330,6 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFPlugInInstanceCreateWithInstanceDataSize_2") Function_CFPlugInInstanceCreateWithInstanceDataSize_2 deallocateInstanceFunction,
             CFStringRef factoryName,
             @FunctionPtr(name = "call_CFPlugInInstanceCreateWithInstanceDataSize_4") Function_CFPlugInInstanceCreateWithInstanceDataSize_4 getInterfaceFunction);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFPlugInInstanceCreateWithInstanceDataSize_2 {
-        @Generated
-        void call_CFPlugInInstanceCreateWithInstanceDataSize_2(VoidPtr arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFPlugInInstanceCreateWithInstanceDataSize_4 {
-        @Generated
-        byte call_CFPlugInInstanceCreateWithInstanceDataSize_4(VoidPtr arg0, VoidPtr arg1,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
-    }
 
     /**
      * CFAttributedStringGetTypeID</br>
@@ -6724,14 +6544,6 @@ public final class CoreFoundation {
     public static native void CFNotificationCenterAddObserver(CFNotificationCenterRef center, ConstVoidPtr observer,
             @FunctionPtr(name = "call_CFNotificationCenterAddObserver") Function_CFNotificationCenterAddObserver callBack,
             CFStringRef name, ConstVoidPtr object, @NInt long suspensionBehavior);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFNotificationCenterAddObserver {
-        @Generated
-        void call_CFNotificationCenterAddObserver(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, ConstVoidPtr arg3,
-                VoidPtr arg4);
-    }
 
     /**
      * CFNotificationCenterRemoveObserver</br>
@@ -6955,13 +6767,6 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFMachPortContext context,
             BytePtr shouldFreeInfo);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFMachPortCreate {
-        @Generated
-        void call_CFMachPortCreate(VoidPtr arg0, VoidPtr arg1, @NInt long arg2, VoidPtr arg3);
-    }
-
     /**
      * CFMachPortCreateWithPort</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMachPortRef/index.html#//apple_ref/c/func/CFMachPortCreateWithPort">iOS Dev Center</a>
@@ -6972,13 +6777,6 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFMachPortCreateWithPort") Function_CFMachPortCreateWithPort callout,
             @UncertainArgument("Options: reference, array Fallback: reference") CFMachPortContext context,
             BytePtr shouldFreeInfo);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFMachPortCreateWithPort {
-        @Generated
-        void call_CFMachPortCreateWithPort(VoidPtr arg0, VoidPtr arg1, @NInt long arg2, VoidPtr arg3);
-    }
 
     /**
      * CFMachPortGetPort</br>
@@ -7021,13 +6819,6 @@ public final class CoreFoundation {
     @CFunction
     public static native void CFMachPortSetInvalidationCallBack(CFMachPortRef port,
             @FunctionPtr(name = "call_CFMachPortSetInvalidationCallBack") Function_CFMachPortSetInvalidationCallBack callout);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFMachPortSetInvalidationCallBack {
-        @Generated
-        void call_CFMachPortSetInvalidationCallBack(VoidPtr arg0, VoidPtr arg1);
-    }
 
     /**
      * CFMachPortCreateRunLoopSource</br>
@@ -7140,13 +6931,6 @@ public final class CoreFoundation {
             byte closeOnInvalidate,
             @FunctionPtr(name = "call_CFFileDescriptorCreate") Function_CFFileDescriptorCreate callout,
             @UncertainArgument("Options: reference, array Fallback: reference") CFFileDescriptorContext context);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFFileDescriptorCreate {
-        @Generated
-        void call_CFFileDescriptorCreate(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
-    }
 
     /**
      * CFFileDescriptorGetNativeDescriptor</br>
@@ -8393,13 +8177,6 @@ public final class CoreFoundation {
     public static native Function_CFMessagePortGetInvalidationCallBack_ret CFMessagePortGetInvalidationCallBack(
             CFMessagePortRef ms);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFMessagePortGetInvalidationCallBack_ret {
-        @Generated
-        void call_CFMessagePortGetInvalidationCallBack_ret(VoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CFMachPortGetInvalidationCallBack</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreFoundation/Reference/CFMachPortRef/index.html#//apple_ref/c/func/CFMachPortGetInvalidationCallBack">iOS Dev Center</a>
@@ -8409,13 +8186,6 @@ public final class CoreFoundation {
     @FunctionPtr(name = "call_CFMachPortGetInvalidationCallBack_ret")
     public static native Function_CFMachPortGetInvalidationCallBack_ret CFMachPortGetInvalidationCallBack(
             CFMachPortRef port);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CFMachPortGetInvalidationCallBack_ret {
-        @Generated
-        void call_CFMachPortGetInvalidationCallBack_ret(VoidPtr arg0, VoidPtr arg1);
-    }
 
     @Generated
     @CVariable()
@@ -8441,5 +8211,235 @@ public final class CoreFoundation {
     @CVariable()
     public static native CFStringRef kCFURLFileProtectionCompleteUntilFirstUserAuthentication();
 
-    @Generated @NInt public static final long kCFNotFound = 0xFFFFFFFFFFFFFFFFL;
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFDictionaryApplyFunction {
+        @Generated
+        void call_CFDictionaryApplyFunction(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFArrayApplyFunction {
+        @Generated
+        void call_CFArrayApplyFunction(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFArrayBSearchValues {
+        @Generated
+        @NInt
+        long call_CFArrayBSearchValues(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFArraySortValues {
+        @Generated
+        @NInt
+        long call_CFArraySortValues(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFBagApplyFunction {
+        @Generated
+        void call_CFBagApplyFunction(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFBinaryHeapApplyFunction {
+        @Generated
+        void call_CFBinaryHeapApplyFunction(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CFRunLoopPerformBlock {
+        @Generated
+        void call_CFRunLoopPerformBlock();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFRunLoopObserverCreate {
+        @Generated
+        void call_CFRunLoopObserverCreate(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CFRunLoopObserverCreateWithHandler {
+        @Generated
+        void call_CFRunLoopObserverCreateWithHandler(CFRunLoopObserverRef arg0, @NUInt long arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFRunLoopTimerCreate {
+        @Generated
+        void call_CFRunLoopTimerCreate(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CFRunLoopTimerCreateWithHandler {
+        @Generated
+        void call_CFRunLoopTimerCreateWithHandler(CFRunLoopTimerRef arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFSocketCreate {
+        @Generated
+        void call_CFSocketCreate(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2, ConstVoidPtr arg3, VoidPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFSocketCreateWithNative {
+        @Generated
+        void call_CFSocketCreateWithNative(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2, ConstVoidPtr arg3,
+                VoidPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFSocketCreateWithSocketSignature {
+        @Generated
+        void call_CFSocketCreateWithSocketSignature(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2, ConstVoidPtr arg3,
+                VoidPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFSocketCreateConnectedToSocketSignature {
+        @Generated
+        void call_CFSocketCreateConnectedToSocketSignature(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2,
+                ConstVoidPtr arg3, VoidPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFReadStreamSetClient {
+        @Generated
+        void call_CFReadStreamSetClient(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFWriteStreamSetClient {
+        @Generated
+        void call_CFWriteStreamSetClient(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFSetApplyFunction {
+        @Generated
+        void call_CFSetApplyFunction(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFTreeApplyFunctionToChildren {
+        @Generated
+        void call_CFTreeApplyFunctionToChildren(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFTreeSortChildren {
+        @Generated
+        @NInt
+        long call_CFTreeSortChildren(ConstVoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFMessagePortCreateLocal {
+        @Generated
+        VoidPtr call_CFMessagePortCreateLocal(VoidPtr arg0, int arg1, VoidPtr arg2, VoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFMessagePortSetInvalidationCallBack {
+        @Generated
+        void call_CFMessagePortSetInvalidationCallBack(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFPlugInRegisterFactoryFunction {
+        @Generated
+        VoidPtr call_CFPlugInRegisterFactoryFunction(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFPlugInInstanceCreateWithInstanceDataSize_2 {
+        @Generated
+        void call_CFPlugInInstanceCreateWithInstanceDataSize_2(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFPlugInInstanceCreateWithInstanceDataSize_4 {
+        @Generated
+        byte call_CFPlugInInstanceCreateWithInstanceDataSize_4(VoidPtr arg0, VoidPtr arg1,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFNotificationCenterAddObserver {
+        @Generated
+        void call_CFNotificationCenterAddObserver(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, ConstVoidPtr arg3,
+                VoidPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFMachPortCreate {
+        @Generated
+        void call_CFMachPortCreate(VoidPtr arg0, VoidPtr arg1, @NInt long arg2, VoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFMachPortCreateWithPort {
+        @Generated
+        void call_CFMachPortCreateWithPort(VoidPtr arg0, VoidPtr arg1, @NInt long arg2, VoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFMachPortSetInvalidationCallBack {
+        @Generated
+        void call_CFMachPortSetInvalidationCallBack(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFFileDescriptorCreate {
+        @Generated
+        void call_CFFileDescriptorCreate(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFMessagePortGetInvalidationCallBack_ret {
+        @Generated
+        void call_CFMessagePortGetInvalidationCallBack_ret(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CFMachPortGetInvalidationCallBack_ret {
+        @Generated
+        void call_CFMachPortGetInvalidationCallBack_ret(VoidPtr arg0, VoidPtr arg1);
+    }
 }

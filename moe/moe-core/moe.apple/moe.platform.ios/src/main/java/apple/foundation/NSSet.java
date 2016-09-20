@@ -62,6 +62,161 @@ public class NSSet<_ObjectType> extends NSObject
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSSet<?> alloc();
+
+    /**
+     * set</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/set">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("set")
+    public static native <_ObjectType> NSSet<?> set();
+
+    /**
+     * setWithArray:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/setWithArray:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWithArray:")
+    public static native <_ObjectType> NSSet<?> setWithArray(NSArray<_ObjectType> array);
+
+    /**
+     * setWithObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/setWithObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWithObject:")
+    public static native <_ObjectType> NSSet<?> setWithObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+
+    /**
+     * setWithObjects:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/setWithObjects:">iOS Dev Center</a>
+     */
+    @Generated
+    @Variadic()
+    @Selector("setWithObjects:")
+    public static native <_ObjectType> NSSet<?> setWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
+            Object... varargs);
+
+    /**
+     * setWithObjects:count:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/setWithObjects:count:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWithObjects:count:")
+    public static native <_ObjectType> NSSet<?> setWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+
+    /**
+     * setWithSet:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/setWithSet:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWithSet:")
+    public static native <_ObjectType> NSSet<?> setWithSet(NSSet<_ObjectType> set);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native <_ObjectType> boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * addObserver:forKeyPath:options:context:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/instm/NSSet/addObserver:forKeyPath:options:context:">iOS Dev Center</a>
@@ -78,11 +233,6 @@ public class NSSet<_ObjectType> extends NSObject
     @Generated
     @Selector("allObjects")
     public native NSArray<_ObjectType> allObjects();
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSSet<?> alloc();
 
     /**
      * anyObject</br>
@@ -150,13 +300,6 @@ public class NSSet<_ObjectType> extends NSObject
     public native void enumerateObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateObjectsUsingBlock {
-        @Generated
-        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, BoolPtr arg1);
-    }
-
     /**
      * enumerateObjectsWithOptions:usingBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/instm/NSSet/enumerateObjectsWithOptions:usingBlock:">iOS Dev Center</a>
@@ -165,13 +308,6 @@ public class NSSet<_ObjectType> extends NSObject
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateObjectsWithOptionsUsingBlock {
-        @Generated
-        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, BoolPtr arg1);
-    }
 
     /**
      * filteredSetUsingPredicate:</br>
@@ -306,13 +442,6 @@ public class NSSet<_ObjectType> extends NSObject
     public native NSSet<_ObjectType> objectsPassingTest(
             @ObjCBlock(name = "call_objectsPassingTest") Block_objectsPassingTest predicate);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_objectsPassingTest {
-        @Generated
-        boolean call_objectsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, BoolPtr arg1);
-    }
-
     /**
      * objectsWithOptions:passingTest:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/instm/NSSet/objectsWithOptions:passingTest:">iOS Dev Center</a>
@@ -321,13 +450,6 @@ public class NSSet<_ObjectType> extends NSObject
     @Selector("objectsWithOptions:passingTest:")
     public native NSSet<_ObjectType> objectsWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_objectsWithOptionsPassingTest") Block_objectsWithOptionsPassingTest predicate);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_objectsWithOptionsPassingTest {
-        @Generated
-        boolean call_objectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, BoolPtr arg1);
-    }
 
     /**
      * removeObserver:forKeyPath:</br>
@@ -344,14 +466,6 @@ public class NSSet<_ObjectType> extends NSObject
     @Generated
     @Selector("removeObserver:forKeyPath:context:")
     public native void removeObserverForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
-
-    /**
-     * set</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/set">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("set")
-    public static native <_ObjectType> NSSet<?> set();
 
     /**
      * setByAddingObject:</br>
@@ -386,58 +500,12 @@ public class NSSet<_ObjectType> extends NSObject
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
     /**
-     * setWithArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/setWithArray:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWithArray:")
-    public static native <_ObjectType> NSSet<?> setWithArray(NSArray<_ObjectType> array);
-
-    /**
-     * setWithObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/setWithObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWithObject:")
-    public static native <_ObjectType> NSSet<?> setWithObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
-
-    /**
-     * setWithObjects:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/setWithObjects:">iOS Dev Center</a>
-     */
-    @Generated
-    @Variadic()
-    @Selector("setWithObjects:")
-    public static native <_ObjectType> NSSet<?> setWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
-            Object... varargs);
-
-    /**
-     * setWithObjects:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/setWithObjects:count:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWithObjects:count:")
-    public static native <_ObjectType> NSSet<?> setWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
-
-    /**
-     * setWithSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/clm/NSSet/setWithSet:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWithSet:")
-    public static native <_ObjectType> NSSet<?> setWithSet(NSSet<_ObjectType> set);
-
-    /**
      * sortedArrayUsingDescriptors:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/index.html#//apple_ref/occ/instm/NSSet/sortedArrayUsingDescriptors:">iOS Dev Center</a>
      */
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
     public native NSArray<_ObjectType> sortedArrayUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native <_ObjectType> boolean supportsSecureCoding();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -454,99 +522,31 @@ public class NSSet<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForKey(String key);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_enumerateObjectsUsingBlock {
+        @Generated
+        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, BoolPtr arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_enumerateObjectsWithOptionsUsingBlock {
+        @Generated
+        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, BoolPtr arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_objectsPassingTest {
+        @Generated
+        boolean call_objectsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, BoolPtr arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_objectsWithOptionsPassingTest {
+        @Generated
+        boolean call_objectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, BoolPtr arg1);
+    }
 }

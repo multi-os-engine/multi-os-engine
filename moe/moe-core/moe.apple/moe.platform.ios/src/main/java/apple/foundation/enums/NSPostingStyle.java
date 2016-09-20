@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSPostingStyle {
-    @Generated
-    private NSPostingStyle() {
-    }
-
     @Generated @NUInt public static final long WhenIdle = 0x0000000000000001L;
     @Generated @NUInt public static final long ASAP = 0x0000000000000002L;
     @Generated @NUInt public static final long Now = 0x0000000000000003L;
+
+    @Generated
+    private NSPostingStyle() {
+    }
 }

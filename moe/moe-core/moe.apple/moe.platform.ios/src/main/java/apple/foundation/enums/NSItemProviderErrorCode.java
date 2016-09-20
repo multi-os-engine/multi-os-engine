@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSItemProviderErrorCode {
-    @Generated
-    private NSItemProviderErrorCode() {
-    }
-
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long ItemUnavailableError = 0xFFFFFFFFFFFFFC18L;
     @Generated @NInt public static final long UnexpectedValueClassError = 0xFFFFFFFFFFFFFBB4L;
     @Generated @NInt public static final long UnavailableCoercionError = 0xFFFFFFFFFFFFFB50L;
+
+    @Generated
+    private NSItemProviderErrorCode() {
+    }
 }

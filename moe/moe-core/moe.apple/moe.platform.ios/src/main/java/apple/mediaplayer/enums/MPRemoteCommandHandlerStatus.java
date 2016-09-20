@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MPRemoteCommandHandlerStatus {
-    @Generated
-    private MPRemoteCommandHandlerStatus() {
-    }
-
     @Generated @NInt public static final long Success = 0x0000000000000000L;
     @Generated @NInt public static final long NoSuchContent = 0x0000000000000064L;
     @Generated @NInt public static final long CommandFailed = 0x00000000000000C8L;
     @Generated @NInt public static final long NoActionableNowPlayingItem = 0x000000000000006EL;
+
+    @Generated
+    private MPRemoteCommandHandlerStatus() {
+    }
 }

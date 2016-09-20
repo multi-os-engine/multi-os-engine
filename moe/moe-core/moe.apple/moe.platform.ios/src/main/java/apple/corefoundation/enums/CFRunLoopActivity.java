@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFRunLoopActivity {
-    @Generated
-    private CFRunLoopActivity() {
-    }
-
     @Generated @NUInt public static final long Entry = 0x0000000000000001L;
     @Generated @NUInt public static final long BeforeTimers = 0x0000000000000002L;
     @Generated @NUInt public static final long BeforeSources = 0x0000000000000004L;
@@ -32,4 +28,7 @@ public final class CFRunLoopActivity {
     @Generated @NUInt public static final long AfterWaiting = 0x0000000000000040L;
     @Generated @NUInt public static final long Exit = 0x0000000000000080L;
     @Generated @NUInt public static final long AllActivities = 0x000000000FFFFFFFL;
+    @Generated
+    private CFRunLoopActivity() {
+    }
 }

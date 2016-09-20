@@ -62,121 +62,12 @@ public class RPScreenRecorder extends NSObject {
     public static native RPScreenRecorder alloc();
 
     /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native RPScreenRecorderDelegate delegate();
-
-    /**
-     * discardRecordingWithHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instm/RPScreenRecorder/discardRecordingWithHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("discardRecordingWithHandler:")
-    public native void discardRecordingWithHandler(
-            @ObjCBlock(name = "call_discardRecordingWithHandler") Block_discardRecordingWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_discardRecordingWithHandler {
-        @Generated
-        void call_discardRecordingWithHandler();
-    }
-
-    @Generated
-    @Selector("init")
-    public native RPScreenRecorder init();
-
-    /**
-     * available</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/available">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isAvailable")
-    public native boolean isAvailable();
-
-    /**
-     * microphoneEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/microphoneEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isMicrophoneEnabled")
-    public native boolean isMicrophoneEnabled();
-
-    /**
-     * recording</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/recording">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isRecording")
-    public native boolean isRecording();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) RPScreenRecorderDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) RPScreenRecorderDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
      * sharedRecorder</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/clm/RPScreenRecorder/sharedRecorder">iOS Dev Center</a>
      */
     @Generated
     @Selector("sharedRecorder")
     public static native RPScreenRecorder sharedRecorder();
-
-    /**
-     * startRecordingWithMicrophoneEnabled:handler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instm/RPScreenRecorder/startRecordingWithMicrophoneEnabled:handler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startRecordingWithMicrophoneEnabled:handler:")
-    public native void startRecordingWithMicrophoneEnabledHandler(boolean microphoneEnabled,
-            @ObjCBlock(name = "call_startRecordingWithMicrophoneEnabledHandler") Block_startRecordingWithMicrophoneEnabledHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startRecordingWithMicrophoneEnabledHandler {
-        @Generated
-        void call_startRecordingWithMicrophoneEnabledHandler(NSError arg0);
-    }
-
-    /**
-     * stopRecordingWithHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instm/RPScreenRecorder/stopRecordingWithHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopRecordingWithHandler:")
-    public native void stopRecordingWithHandler(
-            @ObjCBlock(name = "call_stopRecordingWithHandler") Block_stopRecordingWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_stopRecordingWithHandler {
-        @Generated
-        void call_stopRecordingWithHandler(RPPreviewViewController arg0, NSError arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -277,4 +168,113 @@ public class RPScreenRecorder extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native RPScreenRecorderDelegate delegate();
+
+    /**
+     * discardRecordingWithHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instm/RPScreenRecorder/discardRecordingWithHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("discardRecordingWithHandler:")
+    public native void discardRecordingWithHandler(
+            @ObjCBlock(name = "call_discardRecordingWithHandler") Block_discardRecordingWithHandler handler);
+
+    @Generated
+    @Selector("init")
+    public native RPScreenRecorder init();
+
+    /**
+     * available</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/available">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isAvailable")
+    public native boolean isAvailable();
+
+    /**
+     * microphoneEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/microphoneEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isMicrophoneEnabled")
+    public native boolean isMicrophoneEnabled();
+
+    /**
+     * recording</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/recording">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isRecording")
+    public native boolean isRecording();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) RPScreenRecorderDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instp/RPScreenRecorder/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) RPScreenRecorderDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * startRecordingWithMicrophoneEnabled:handler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instm/RPScreenRecorder/startRecordingWithMicrophoneEnabled:handler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startRecordingWithMicrophoneEnabled:handler:")
+    public native void startRecordingWithMicrophoneEnabledHandler(boolean microphoneEnabled,
+            @ObjCBlock(name = "call_startRecordingWithMicrophoneEnabledHandler") Block_startRecordingWithMicrophoneEnabledHandler handler);
+
+    /**
+     * stopRecordingWithHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ReplayKit/Reference/RPScreenRecorder_Ref/index.html#//apple_ref/occ/instm/RPScreenRecorder/stopRecordingWithHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopRecordingWithHandler:")
+    public native void stopRecordingWithHandler(
+            @ObjCBlock(name = "call_stopRecordingWithHandler") Block_stopRecordingWithHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_discardRecordingWithHandler {
+        @Generated
+        void call_discardRecordingWithHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startRecordingWithMicrophoneEnabledHandler {
+        @Generated
+        void call_startRecordingWithMicrophoneEnabledHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_stopRecordingWithHandler {
+        @Generated
+        void call_stopRecordingWithHandler(RPPreviewViewController arg0, NSError arg1);
+    }
 }

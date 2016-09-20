@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioBytePacketTranslationFlags {
+    @Generated public static final int kBytePacketTranslationFlag_IsEstimate = 0x00000001;
+
     @Generated
     private AudioBytePacketTranslationFlags() {
     }
-
-    @Generated public static final int kBytePacketTranslationFlag_IsEstimate = 0x00000001;
 }

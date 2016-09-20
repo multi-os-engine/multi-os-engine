@@ -59,19 +59,6 @@ public class GKPolygonObstacle extends GKObstacle {
     public static native GKPolygonObstacle alloc();
 
     @Generated
-    @Selector("init")
-    public native GKPolygonObstacle init();
-
-    /**
-     * vertexCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPolygonObstacle_Class/index.html#//apple_ref/occ/instp/GKPolygonObstacle/vertexCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vertexCount")
-    @NUInt
-    public native long vertexCount();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -170,4 +157,17 @@ public class GKPolygonObstacle extends GKObstacle {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GKPolygonObstacle init();
+
+    /**
+     * vertexCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPolygonObstacle_Class/index.html#//apple_ref/occ/instp/GKPolygonObstacle/vertexCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vertexCount")
+    @NUInt
+    public native long vertexCount();
 }

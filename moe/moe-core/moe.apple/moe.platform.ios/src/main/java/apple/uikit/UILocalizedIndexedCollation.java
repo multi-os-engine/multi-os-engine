@@ -68,53 +68,6 @@ public class UILocalizedIndexedCollation extends NSObject {
     public static native Object currentCollation();
 
     @Generated
-    @Selector("init")
-    public native UILocalizedIndexedCollation init();
-
-    /**
-     * sectionForObject:collationStringSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalizedIndexedCollation_Class/index.html#//apple_ref/occ/instm/UILocalizedIndexedCollation/sectionForObject:collationStringSelector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sectionForObject:collationStringSelector:")
-    @NInt
-    public native long sectionForObjectCollationStringSelector(@Mapped(ObjCObjectMapper.class) Object object,
-            SEL selector);
-
-    /**
-     * sectionForSectionIndexTitleAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalizedIndexedCollation_Class/index.html#//apple_ref/occ/instm/UILocalizedIndexedCollation/sectionForSectionIndexTitleAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sectionForSectionIndexTitleAtIndex:")
-    @NInt
-    public native long sectionForSectionIndexTitleAtIndex(@NInt long indexTitleIndex);
-
-    /**
-     * sectionIndexTitles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalizedIndexedCollation_Class/index.html#//apple_ref/occ/instp/UILocalizedIndexedCollation/sectionIndexTitles">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sectionIndexTitles")
-    public native NSArray<String> sectionIndexTitles();
-
-    /**
-     * sectionTitles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalizedIndexedCollation_Class/index.html#//apple_ref/occ/instp/UILocalizedIndexedCollation/sectionTitles">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sectionTitles")
-    public native NSArray<String> sectionTitles();
-
-    /**
-     * sortedArrayFromArray:collationStringSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalizedIndexedCollation_Class/index.html#//apple_ref/occ/instm/UILocalizedIndexedCollation/sortedArrayFromArray:collationStringSelector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sortedArrayFromArray:collationStringSelector:")
-    public native NSArray<?> sortedArrayFromArrayCollationStringSelector(NSArray<?> array, SEL selector);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -213,4 +166,51 @@ public class UILocalizedIndexedCollation extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UILocalizedIndexedCollation init();
+
+    /**
+     * sectionForObject:collationStringSelector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalizedIndexedCollation_Class/index.html#//apple_ref/occ/instm/UILocalizedIndexedCollation/sectionForObject:collationStringSelector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sectionForObject:collationStringSelector:")
+    @NInt
+    public native long sectionForObjectCollationStringSelector(@Mapped(ObjCObjectMapper.class) Object object,
+            SEL selector);
+
+    /**
+     * sectionForSectionIndexTitleAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalizedIndexedCollation_Class/index.html#//apple_ref/occ/instm/UILocalizedIndexedCollation/sectionForSectionIndexTitleAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sectionForSectionIndexTitleAtIndex:")
+    @NInt
+    public native long sectionForSectionIndexTitleAtIndex(@NInt long indexTitleIndex);
+
+    /**
+     * sectionIndexTitles</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalizedIndexedCollation_Class/index.html#//apple_ref/occ/instp/UILocalizedIndexedCollation/sectionIndexTitles">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sectionIndexTitles")
+    public native NSArray<String> sectionIndexTitles();
+
+    /**
+     * sectionTitles</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalizedIndexedCollation_Class/index.html#//apple_ref/occ/instp/UILocalizedIndexedCollation/sectionTitles">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sectionTitles")
+    public native NSArray<String> sectionTitles();
+
+    /**
+     * sortedArrayFromArray:collationStringSelector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UILocalizedIndexedCollation_Class/index.html#//apple_ref/occ/instm/UILocalizedIndexedCollation/sortedArrayFromArray:collationStringSelector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sortedArrayFromArray:collationStringSelector:")
+    public native NSArray<?> sortedArrayFromArrayCollationStringSelector(NSArray<?> array, SEL selector);
 }

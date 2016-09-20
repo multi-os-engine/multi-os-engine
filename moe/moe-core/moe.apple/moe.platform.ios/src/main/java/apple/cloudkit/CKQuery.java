@@ -65,72 +65,8 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
     public static native CKQuery alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CKQuery init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CKQuery initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithRecordType:predicate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/occ/instm/CKQuery/initWithRecordType:predicate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRecordType:predicate:")
-    public native CKQuery initWithRecordTypePredicate(String recordType, NSPredicate predicate);
-
-    /**
-     * predicate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/occ/instp/CKQuery/predicate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("predicate")
-    public native NSPredicate predicate();
-
-    /**
-     * recordType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/occ/instp/CKQuery/recordType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recordType")
-    public native String recordType();
-
-    /**
-     * sortDescriptors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/occ/instp/CKQuery/sortDescriptors">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSortDescriptors:")
-    public native void setSortDescriptors(NSArray<? extends NSSortDescriptor> value);
-
-    /**
-     * sortDescriptors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/occ/instp/CKQuery/sortDescriptors">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sortDescriptors")
-    public native NSArray<? extends NSSortDescriptor> sortDescriptors();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -231,4 +167,68 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CKQuery init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CKQuery initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithRecordType:predicate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/occ/instm/CKQuery/initWithRecordType:predicate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRecordType:predicate:")
+    public native CKQuery initWithRecordTypePredicate(String recordType, NSPredicate predicate);
+
+    /**
+     * predicate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/occ/instp/CKQuery/predicate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("predicate")
+    public native NSPredicate predicate();
+
+    /**
+     * recordType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/occ/instp/CKQuery/recordType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recordType")
+    public native String recordType();
+
+    /**
+     * sortDescriptors</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/occ/instp/CKQuery/sortDescriptors">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSortDescriptors:")
+    public native void setSortDescriptors(NSArray<? extends NSSortDescriptor> value);
+
+    /**
+     * sortDescriptors</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQuery_class/index.html#//apple_ref/occ/instp/CKQuery/sortDescriptors">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sortDescriptors")
+    public native NSArray<? extends NSSortDescriptor> sortDescriptors();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

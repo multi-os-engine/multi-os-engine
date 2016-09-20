@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class RPRecordingErrorCode {
-    @Generated
-    private RPRecordingErrorCode() {
-    }
-
     @Generated @NInt public static final long Unknown = 0xFFFFFFFFFFFFE958L;
     @Generated @NInt public static final long UserDeclined = 0xFFFFFFFFFFFFE957L;
     @Generated @NInt public static final long Disabled = 0xFFFFFFFFFFFFE956L;
@@ -33,4 +29,8 @@ public final class RPRecordingErrorCode {
     @Generated @NInt public static final long InsufficientStorage = 0xFFFFFFFFFFFFE953L;
     @Generated @NInt public static final long Interrupted = 0xFFFFFFFFFFFFE952L;
     @Generated @NInt public static final long ContentResize = 0xFFFFFFFFFFFFE951L;
+
+    @Generated
+    private RPRecordingErrorCode() {
+    }
 }

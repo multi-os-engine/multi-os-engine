@@ -63,66 +63,6 @@ public class SKAudioNode extends SKNode implements NSCoding {
     @Selector("alloc")
     public static native SKAudioNode alloc();
 
-    /**
-     * autoplayLooped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/autoplayLooped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("autoplayLooped")
-    public native boolean autoplayLooped();
-
-    /**
-     * avAudioNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/avAudioNode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("avAudioNode")
-    public native AVAudioNode avAudioNode();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native SKAudioNode init();
-
-    /**
-     * initWithAVAudioNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instm/SKAudioNode/initWithAVAudioNode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAVAudioNode:")
-    public native SKAudioNode initWithAVAudioNode(AVAudioNode node);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKAudioNode initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithFileNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instm/SKAudioNode/initWithFileNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFileNamed:")
-    public native SKAudioNode initWithFileNamed(String name);
-
-    /**
-     * initWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instm/SKAudioNode/initWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:")
-    public native SKAudioNode initWithURL(NSURL url);
-
-    /**
-     * positional</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/positional">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPositional")
-    public native boolean isPositional();
-
     @Generated
     @Selector("node")
     public static native SKAudioNode node();
@@ -130,30 +70,6 @@ public class SKAudioNode extends SKNode implements NSCoding {
     @Generated
     @Selector("nodeWithFileNamed:")
     public static native SKAudioNode nodeWithFileNamed(String filename);
-
-    /**
-     * autoplayLooped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/autoplayLooped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAutoplayLooped:")
-    public native void setAutoplayLooped(boolean value);
-
-    /**
-     * avAudioNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/avAudioNode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAvAudioNode:")
-    public native void setAvAudioNode(AVAudioNode value);
-
-    /**
-     * positional</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/positional">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPositional:")
-    public native void setPositional(boolean value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -272,4 +188,88 @@ public class SKAudioNode extends SKNode implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * autoplayLooped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/autoplayLooped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("autoplayLooped")
+    public native boolean autoplayLooped();
+
+    /**
+     * avAudioNode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/avAudioNode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("avAudioNode")
+    public native AVAudioNode avAudioNode();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SKAudioNode init();
+
+    /**
+     * initWithAVAudioNode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instm/SKAudioNode/initWithAVAudioNode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAVAudioNode:")
+    public native SKAudioNode initWithAVAudioNode(AVAudioNode node);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKAudioNode initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithFileNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instm/SKAudioNode/initWithFileNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFileNamed:")
+    public native SKAudioNode initWithFileNamed(String name);
+
+    /**
+     * initWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instm/SKAudioNode/initWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:")
+    public native SKAudioNode initWithURL(NSURL url);
+
+    /**
+     * positional</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/positional">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPositional")
+    public native boolean isPositional();
+
+    /**
+     * positional</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/positional">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPositional:")
+    public native void setPositional(boolean value);
+
+    /**
+     * autoplayLooped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/autoplayLooped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAutoplayLooped:")
+    public native void setAutoplayLooped(boolean value);
+
+    /**
+     * avAudioNode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKAudioNode/index.html#//apple_ref/occ/instp/SKAudioNode/avAudioNode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAvAudioNode:")
+    public native void setAvAudioNode(AVAudioNode value);
 }

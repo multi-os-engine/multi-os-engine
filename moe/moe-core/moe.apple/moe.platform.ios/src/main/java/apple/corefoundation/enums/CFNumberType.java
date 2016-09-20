@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFNumberType {
-    @Generated
-    private CFNumberType() {
-    }
-
     @Generated @NInt public static final long SInt8Type = 0x0000000000000001L;
     @Generated @NInt public static final long SInt16Type = 0x0000000000000002L;
     @Generated @NInt public static final long SInt32Type = 0x0000000000000003L;
@@ -42,4 +38,7 @@ public final class CFNumberType {
     @Generated @NInt public static final long NSIntegerType = 0x000000000000000FL;
     @Generated @NInt public static final long CGFloatType = 0x0000000000000010L;
     @Generated @NInt public static final long MaxType = 0x0000000000000010L;
+    @Generated
+    private CFNumberType() {
+    }
 }

@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIEventType {
-    @Generated
-    private UIEventType() {
-    }
-
     @Generated @NInt public static final long Touches = 0x0000000000000000L;
     @Generated @NInt public static final long Motion = 0x0000000000000001L;
     @Generated @NInt public static final long RemoteControl = 0x0000000000000002L;
     @Generated @NInt public static final long Presses = 0x0000000000000003L;
+
+    @Generated
+    private UIEventType() {
+    }
 }

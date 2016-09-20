@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MPNowPlayingInfoLanguageOptionType {
+    @Generated @NUInt public static final long Audible = 0x0000000000000000L;
+    @Generated @NUInt public static final long Legible = 0x0000000000000001L;
+
     @Generated
     private MPNowPlayingInfoLanguageOptionType() {
     }
-
-    @Generated @NUInt public static final long Audible = 0x0000000000000000L;
-    @Generated @NUInt public static final long Legible = 0x0000000000000001L;
 }

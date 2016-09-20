@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKRecurrenceFrequency {
-    @Generated
-    private EKRecurrenceFrequency() {
-    }
-
     @Generated @NInt public static final long Daily = 0x0000000000000000L;
     @Generated @NInt public static final long Weekly = 0x0000000000000001L;
     @Generated @NInt public static final long Monthly = 0x0000000000000002L;
     @Generated @NInt public static final long Yearly = 0x0000000000000003L;
+
+    @Generated
+    private EKRecurrenceFrequency() {
+    }
 }

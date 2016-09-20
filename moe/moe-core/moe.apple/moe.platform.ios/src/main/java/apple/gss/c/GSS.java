@@ -259,24 +259,10 @@ public final class GSS {
     public static native int gss_iter_creds(IntPtr min_stat, int flags, VoidPtr mech,
             @ObjCBlock(name = "call_gss_iter_creds") Block_gss_iter_creds useriter);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_gss_iter_creds {
-        @Generated
-        void call_gss_iter_creds(VoidPtr arg0, gss_cred_id_t arg1);
-    }
-
     @Generated
     @CFunction
     public static native int gss_iter_creds_f(IntPtr min_stat, int flags, VoidPtr mech, VoidPtr userctx,
             @FunctionPtr(name = "call_gss_iter_creds_f") Function_gss_iter_creds_f useriter);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_gss_iter_creds_f {
-        @Generated
-        void call_gss_iter_creds_f(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
-    }
 
     @Generated
     @CFunction
@@ -461,4 +447,18 @@ public final class GSS {
     @CFunction
     public static native int gss_aapl_initial_cred(gss_name_t desired_name, VoidPtr desired_mech,
             CFDictionaryRef attributes, Ptr<gss_cred_id_t> output_cred_handle, Ptr<CFErrorRef> error);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_gss_iter_creds {
+        @Generated
+        void call_gss_iter_creds(VoidPtr arg0, gss_cred_id_t arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_gss_iter_creds_f {
+        @Generated
+        void call_gss_iter_creds_f(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+    }
 }

@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CBLAS_SIDE {
+    @Generated public static final int Left = 0x0000008D;
+    @Generated public static final int Right = 0x0000008E;
+
     @Generated
     private CBLAS_SIDE() {
     }
-
-    @Generated public static final int Left = 0x0000008D;
-    @Generated public static final int Right = 0x0000008E;
 }

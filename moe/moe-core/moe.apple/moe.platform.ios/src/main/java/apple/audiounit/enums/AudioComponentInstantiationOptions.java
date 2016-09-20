@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioComponentInstantiationOptions {
+    @Generated public static final int kAudioComponentInstantiation_LoadOutOfProcess = 0x00000001;
+
     @Generated
     private AudioComponentInstantiationOptions() {
     }
-
-    @Generated public static final int kAudioComponentInstantiation_LoadOutOfProcess = 0x00000001;
 }

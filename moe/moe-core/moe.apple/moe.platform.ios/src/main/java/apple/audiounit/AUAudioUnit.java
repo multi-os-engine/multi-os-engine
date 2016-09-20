@@ -69,6 +69,130 @@ public class AUAudioUnit extends NSObject {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native AUAudioUnit alloc();
+
+    /**
+     * instantiateWithComponentDescription:options:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/clm/AUAudioUnit/instantiateWithComponentDescription:options:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("instantiateWithComponentDescription:options:completionHandler:")
+    public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
+            @ByValue AudioComponentDescription componentDescription, int options,
+            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+
+    /**
+     * registerSubclass:asComponentDescription:name:version:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/clm/AUAudioUnit/registerSubclass:asComponentDescription:name:version:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("registerSubclass:asComponentDescription:name:version:")
+    public static native void registerSubclassAsComponentDescriptionNameVersion(Class cls,
+            @ByValue AudioComponentDescription componentDescription, String name, int version);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * allParameterValues</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/allParameterValues">iOS Dev Center</a>
@@ -76,11 +200,6 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("allParameterValues")
     public native boolean allParameterValues();
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native AUAudioUnit alloc();
 
     /**
      * allocateRenderResourcesAndReturnError:</br>
@@ -250,30 +369,6 @@ public class AUAudioUnit extends NSObject {
     @ObjCBlock(name = "call_inputHandler_ret")
     public native Block_inputHandler_ret inputHandler();
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_inputHandler_ret {
-        @Generated
-        void call_inputHandler_ret(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3);
-    }
-
-    /**
-     * instantiateWithComponentDescription:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/clm/AUAudioUnit/instantiateWithComponentDescription:options:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("instantiateWithComponentDescription:options:completionHandler:")
-    public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
-            @ByValue AudioComponentDescription componentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_instantiateWithComponentDescriptionOptionsCompletionHandler {
-        @Generated
-        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(AUAudioUnit arg0, NSError arg1);
-    }
-
     /**
      * inputEnabled</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/inputEnabled">iOS Dev Center</a>
@@ -281,6 +376,14 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("isInputEnabled")
     public native boolean isInputEnabled();
+
+    /**
+     * inputEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/inputEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setInputEnabled:")
+    public native void setInputEnabled(boolean value);
 
     /**
      * musicDeviceOrEffect</br>
@@ -299,12 +402,28 @@ public class AUAudioUnit extends NSObject {
     public native boolean isOutputEnabled();
 
     /**
+     * outputEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/outputEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOutputEnabled:")
+    public native void setOutputEnabled(boolean value);
+
+    /**
      * renderingOffline</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/renderingOffline">iOS Dev Center</a>
      */
     @Generated
     @Selector("isRenderingOffline")
     public native boolean isRenderingOffline();
+
+    /**
+     * renderingOffline</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/renderingOffline">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRenderingOffline:")
+    public native void setRenderingOffline(boolean value);
 
     /**
      * latency</br>
@@ -339,14 +458,6 @@ public class AUAudioUnit extends NSObject {
     @ObjCBlock(name = "call_musicalContextBlock_ret")
     public native Block_musicalContextBlock_ret musicalContextBlock();
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_musicalContextBlock_ret {
-        @Generated
-        boolean call_musicalContextBlock_ret(DoublePtr arg0, DoublePtr arg1, NIntPtr arg2, DoublePtr arg3, NIntPtr arg4,
-                DoublePtr arg5);
-    }
-
     /**
      * outputBusses</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/outputBusses">iOS Dev Center</a>
@@ -364,13 +475,6 @@ public class AUAudioUnit extends NSObject {
     @ObjCBlock(name = "call_outputProvider_ret")
     public native Block_outputProvider_ret outputProvider();
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_outputProvider_ret {
-        @Generated
-        int call_outputProvider_ret(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3, AudioBufferList arg4);
-    }
-
     /**
      * parameterTree</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/parameterTree">iOS Dev Center</a>
@@ -386,15 +490,6 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("parametersForOverviewWithCount:")
     public native NSArray<? extends NSNumber> parametersForOverviewWithCount(@NInt long count);
-
-    /**
-     * registerSubclass:asComponentDescription:name:version:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/clm/AUAudioUnit/registerSubclass:asComponentDescription:name:version:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("registerSubclass:asComponentDescription:name:version:")
-    public static native void registerSubclassAsComponentDescriptionNameVersion(Class cls,
-            @ByValue AudioComponentDescription componentDescription, String name, int version);
 
     /**
      * removeRenderObserver:</br>
@@ -438,13 +533,6 @@ public class AUAudioUnit extends NSObject {
     @ObjCBlock(name = "call_scheduleMIDIEventBlock_ret")
     public native Block_scheduleMIDIEventBlock_ret scheduleMIDIEventBlock();
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_scheduleMIDIEventBlock_ret {
-        @Generated
-        void call_scheduleMIDIEventBlock_ret(long arg0, byte arg1, @NInt long arg2, ConstBytePtr arg3);
-    }
-
     /**
      * scheduleParameterBlock</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/scheduleParameterBlock">iOS Dev Center</a>
@@ -453,13 +541,6 @@ public class AUAudioUnit extends NSObject {
     @Selector("scheduleParameterBlock")
     @ObjCBlock(name = "call_scheduleParameterBlock_ret")
     public native Block_scheduleParameterBlock_ret scheduleParameterBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_scheduleParameterBlock_ret {
-        @Generated
-        void call_scheduleParameterBlock_ret(long arg0, int arg1, long arg2, float arg3);
-    }
 
     /**
      * contextName</br>
@@ -494,27 +575,12 @@ public class AUAudioUnit extends NSObject {
     public native void setFullStateForDocument(NSDictionary<String, ?> value);
 
     /**
-     * inputEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/inputEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setInputEnabled:")
-    public native void setInputEnabled(boolean value);
-
-    /**
      * inputHandler</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/inputHandler">iOS Dev Center</a>
      */
     @Generated
     @Selector("setInputHandler:")
     public native void setInputHandler(@ObjCBlock(name = "call_setInputHandler") Block_setInputHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setInputHandler {
-        @Generated
-        void call_setInputHandler(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3);
-    }
 
     /**
      * maximumFramesToRender</br>
@@ -533,22 +599,6 @@ public class AUAudioUnit extends NSObject {
     public native void setMusicalContextBlock(
             @ObjCBlock(name = "call_setMusicalContextBlock") Block_setMusicalContextBlock value);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setMusicalContextBlock {
-        @Generated
-        boolean call_setMusicalContextBlock(DoublePtr arg0, DoublePtr arg1, NIntPtr arg2, DoublePtr arg3, NIntPtr arg4,
-                DoublePtr arg5);
-    }
-
-    /**
-     * outputEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/outputEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOutputEnabled:")
-    public native void setOutputEnabled(boolean value);
-
     /**
      * outputProvider</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/outputProvider">iOS Dev Center</a>
@@ -556,13 +606,6 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("setOutputProvider:")
     public native void setOutputProvider(@ObjCBlock(name = "call_setOutputProvider") Block_setOutputProvider value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setOutputProvider {
-        @Generated
-        int call_setOutputProvider(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3, AudioBufferList arg4);
-    }
 
     /**
      * renderQuality</br>
@@ -581,14 +624,6 @@ public class AUAudioUnit extends NSObject {
     public native void setRenderResourcesAllocated(boolean flag);
 
     /**
-     * renderingOffline</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/renderingOffline">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRenderingOffline:")
-    public native void setRenderingOffline(boolean value);
-
-    /**
      * shouldBypassEffect</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/shouldBypassEffect">iOS Dev Center</a>
      */
@@ -604,13 +639,6 @@ public class AUAudioUnit extends NSObject {
     @Selector("setTransportStateBlock:")
     public native void setTransportStateBlock(
             @ObjCBlock(name = "call_setTransportStateBlock") Block_setTransportStateBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setTransportStateBlock {
-        @Generated
-        boolean call_setTransportStateBlock(NUIntPtr arg0, DoublePtr arg1, DoublePtr arg2, DoublePtr arg3);
-    }
 
     /**
      * shouldBypassEffect</br>
@@ -662,13 +690,6 @@ public class AUAudioUnit extends NSObject {
     public native long tokenByAddingRenderObserver(
             @ObjCBlock(name = "call_tokenByAddingRenderObserver") Block_tokenByAddingRenderObserver observer);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_tokenByAddingRenderObserver {
-        @Generated
-        void call_tokenByAddingRenderObserver(int arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3);
-    }
-
     /**
      * transportStateBlock</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnit_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnit/transportStateBlock">iOS Dev Center</a>
@@ -677,13 +698,6 @@ public class AUAudioUnit extends NSObject {
     @Selector("transportStateBlock")
     @ObjCBlock(name = "call_transportStateBlock_ret")
     public native Block_transportStateBlock_ret transportStateBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_transportStateBlock_ret {
-        @Generated
-        boolean call_transportStateBlock_ret(NUIntPtr arg0, DoublePtr arg1, DoublePtr arg2, DoublePtr arg3);
-    }
 
     /**
      * virtualMIDICableCount</br>
@@ -694,103 +708,89 @@ public class AUAudioUnit extends NSObject {
     @NInt
     public native long virtualMIDICableCount();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_inputHandler_ret {
+        @Generated
+        void call_inputHandler_ret(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_instantiateWithComponentDescriptionOptionsCompletionHandler {
+        @Generated
+        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(AUAudioUnit arg0, NSError arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_musicalContextBlock_ret {
+        @Generated
+        boolean call_musicalContextBlock_ret(DoublePtr arg0, DoublePtr arg1, NIntPtr arg2, DoublePtr arg3, NIntPtr arg4,
+                DoublePtr arg5);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public interface Block_outputProvider_ret {
+        @Generated
+        int call_outputProvider_ret(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3, AudioBufferList arg4);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+    public interface Block_scheduleMIDIEventBlock_ret {
+        @Generated
+        void call_scheduleMIDIEventBlock_ret(long arg0, byte arg1, @NInt long arg2, ConstBytePtr arg3);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
+    public interface Block_scheduleParameterBlock_ret {
+        @Generated
+        void call_scheduleParameterBlock_ret(long arg0, int arg1, long arg2, float arg3);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
+    public interface Block_setInputHandler {
+        @Generated
+        void call_setInputHandler(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
+    public interface Block_setMusicalContextBlock {
+        @Generated
+        boolean call_setMusicalContextBlock(DoublePtr arg0, DoublePtr arg1, NIntPtr arg2, DoublePtr arg3, NIntPtr arg4,
+                DoublePtr arg5);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("description")
-    public static native String description_static();
+    public interface Block_setOutputProvider {
+        @Generated
+        int call_setOutputProvider(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3, AudioBufferList arg4);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
+    public interface Block_setTransportStateBlock {
+        @Generated
+        boolean call_setTransportStateBlock(NUIntPtr arg0, DoublePtr arg1, DoublePtr arg2, DoublePtr arg3);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
+    public interface Block_tokenByAddingRenderObserver {
+        @Generated
+        void call_tokenByAddingRenderObserver(int arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_transportStateBlock_ret {
+        @Generated
+        boolean call_transportStateBlock_ret(NUIntPtr arg0, DoublePtr arg1, DoublePtr arg2, DoublePtr arg3);
+    }
 }

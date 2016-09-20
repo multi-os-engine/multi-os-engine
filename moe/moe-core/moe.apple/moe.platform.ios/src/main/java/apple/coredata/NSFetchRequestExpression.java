@@ -65,14 +65,6 @@ public class NSFetchRequestExpression extends NSExpression {
     @Selector("alloc")
     public static native NSFetchRequestExpression alloc();
 
-    /**
-     * contextExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFetchRequestExpression_class/index.html#//apple_ref/occ/instp/NSFetchRequestExpression/contextExpression">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contextExpression")
-    public native NSExpression contextExpression();
-
     @Generated
     @Selector("expressionForAggregate:")
     public static native NSExpression expressionForAggregate(NSArray<?> subexpressions);
@@ -152,37 +144,9 @@ public class NSFetchRequestExpression extends NSExpression {
     public static native NSExpression expressionWithFormatArguments(String expressionFormat, BytePtr argList);
 
     @Generated
-    @Selector("init")
-    public native NSFetchRequestExpression init();
-
-    @Generated
-    @Selector("initWithExpressionType:")
-    public native NSFetchRequestExpression initWithExpressionType(@NUInt long type);
-
-    /**
-     * countOnlyRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFetchRequestExpression_class/index.html#//apple_ref/occ/instp/NSFetchRequestExpression/countOnlyRequest">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isCountOnlyRequest")
-    public native boolean isCountOnlyRequest();
-
-    /**
-     * requestExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFetchRequestExpression_class/index.html#//apple_ref/occ/instp/NSFetchRequestExpression/requestExpression">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestExpression")
-    public native NSExpression requestExpression();
-
-    @Generated
     @Selector("expressionForConditional:trueExpression:falseExpression:")
     public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(NSPredicate predicate,
             NSExpression trueExpression, NSExpression falseExpression);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSFetchRequestExpression initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -284,13 +248,49 @@ public class NSFetchRequestExpression extends NSExpression {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * contextExpression</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFetchRequestExpression_class/index.html#//apple_ref/occ/instp/NSFetchRequestExpression/contextExpression">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contextExpression")
+    public native NSExpression contextExpression();
+
+    @Generated
+    @Selector("init")
+    public native NSFetchRequestExpression init();
+
+    @Generated
+    @Selector("initWithExpressionType:")
+    public native NSFetchRequestExpression initWithExpressionType(@NUInt long type);
+
+    /**
+     * countOnlyRequest</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFetchRequestExpression_class/index.html#//apple_ref/occ/instp/NSFetchRequestExpression/countOnlyRequest">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isCountOnlyRequest")
+    public native boolean isCountOnlyRequest();
+
+    /**
+     * requestExpression</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSFetchRequestExpression_class/index.html#//apple_ref/occ/instp/NSFetchRequestExpression/requestExpression">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestExpression")
+    public native NSExpression requestExpression();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSFetchRequestExpression initWithCoder(NSCoder coder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

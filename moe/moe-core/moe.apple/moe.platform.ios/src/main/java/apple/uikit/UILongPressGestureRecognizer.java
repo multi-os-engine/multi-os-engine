@@ -59,82 +59,6 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     @Selector("alloc")
     public static native UILongPressGestureRecognizer alloc();
 
-    /**
-     * allowableMovement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/allowableMovement">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allowableMovement")
-    @NFloat
-    public native double allowableMovement();
-
-    @Generated
-    @Selector("init")
-    public native UILongPressGestureRecognizer init();
-
-    @Generated
-    @Selector("initWithTarget:action:")
-    public native UILongPressGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
-            SEL action);
-
-    /**
-     * minimumPressDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/minimumPressDuration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumPressDuration")
-    public native double minimumPressDuration();
-
-    /**
-     * numberOfTapsRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/numberOfTapsRequired">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberOfTapsRequired")
-    @NUInt
-    public native long numberOfTapsRequired();
-
-    /**
-     * numberOfTouchesRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/numberOfTouchesRequired">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberOfTouchesRequired")
-    @NUInt
-    public native long numberOfTouchesRequired();
-
-    /**
-     * allowableMovement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/allowableMovement">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAllowableMovement:")
-    public native void setAllowableMovement(@NFloat double value);
-
-    /**
-     * minimumPressDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/minimumPressDuration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumPressDuration:")
-    public native void setMinimumPressDuration(double value);
-
-    /**
-     * numberOfTapsRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/numberOfTapsRequired">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNumberOfTapsRequired:")
-    public native void setNumberOfTapsRequired(@NUInt long value);
-
-    /**
-     * numberOfTouchesRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/numberOfTouchesRequired">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNumberOfTouchesRequired:")
-    public native void setNumberOfTouchesRequired(@NUInt long value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -234,4 +158,80 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allowableMovement</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/allowableMovement">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allowableMovement")
+    @NFloat
+    public native double allowableMovement();
+
+    @Generated
+    @Selector("init")
+    public native UILongPressGestureRecognizer init();
+
+    @Generated
+    @Selector("initWithTarget:action:")
+    public native UILongPressGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
+            SEL action);
+
+    /**
+     * minimumPressDuration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/minimumPressDuration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumPressDuration")
+    public native double minimumPressDuration();
+
+    /**
+     * numberOfTapsRequired</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/numberOfTapsRequired">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberOfTapsRequired")
+    @NUInt
+    public native long numberOfTapsRequired();
+
+    /**
+     * numberOfTouchesRequired</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/numberOfTouchesRequired">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberOfTouchesRequired")
+    @NUInt
+    public native long numberOfTouchesRequired();
+
+    /**
+     * allowableMovement</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/allowableMovement">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAllowableMovement:")
+    public native void setAllowableMovement(@NFloat double value);
+
+    /**
+     * minimumPressDuration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/minimumPressDuration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumPressDuration:")
+    public native void setMinimumPressDuration(double value);
+
+    /**
+     * numberOfTapsRequired</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/numberOfTapsRequired">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNumberOfTapsRequired:")
+    public native void setNumberOfTapsRequired(@NUInt long value);
+
+    /**
+     * numberOfTouchesRequired</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILongPressGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UILongPressGestureRecognizer/numberOfTouchesRequired">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNumberOfTouchesRequired:")
+    public native void setNumberOfTouchesRequired(@NUInt long value);
 }

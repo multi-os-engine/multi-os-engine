@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class MIDINotificationMessageID {
-    @Generated
-    private MIDINotificationMessageID() {
-    }
-
     @Generated public static final int SetupChanged = 0x00000001;
     @Generated public static final int ObjectAdded = 0x00000002;
     @Generated public static final int ObjectRemoved = 0x00000003;
@@ -31,4 +27,8 @@ public final class MIDINotificationMessageID {
     @Generated public static final int ThruConnectionsChanged = 0x00000005;
     @Generated public static final int SerialPortOwnerChanged = 0x00000006;
     @Generated public static final int IOError = 0x00000007;
+
+    @Generated
+    private MIDINotificationMessageID() {
+    }
 }

@@ -62,51 +62,6 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     public static native SCNPhysicsVehicle alloc();
 
     /**
-     * applyBrakingForce:forWheelAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instm/SCNPhysicsVehicle/applyBrakingForce:forWheelAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyBrakingForce:forWheelAtIndex:")
-    public native void applyBrakingForceForWheelAtIndex(@NFloat double value, @NInt long index);
-
-    /**
-     * applyEngineForce:forWheelAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instm/SCNPhysicsVehicle/applyEngineForce:forWheelAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyEngineForce:forWheelAtIndex:")
-    public native void applyEngineForceForWheelAtIndex(@NFloat double value, @NInt long index);
-
-    /**
-     * chassisBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicle/chassisBody">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("chassisBody")
-    public native SCNPhysicsBody chassisBody();
-
-    @Generated
-    @Selector("init")
-    public native SCNPhysicsVehicle init();
-
-    /**
-     * setSteeringAngle:forWheelAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instm/SCNPhysicsVehicle/setSteeringAngle:forWheelAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSteeringAngle:forWheelAtIndex:")
-    public native void setSteeringAngleForWheelAtIndex(@NFloat double value, @NInt long index);
-
-    /**
-     * speedInKilometersPerHour</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicle/speedInKilometersPerHour">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("speedInKilometersPerHour")
-    @NFloat
-    public native double speedInKilometersPerHour();
-
-    /**
      * vehicleWithChassisBody:wheels:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/clm/SCNPhysicsVehicle/vehicleWithChassisBody:wheels:">iOS Dev Center</a>
      */
@@ -114,18 +69,6 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     @Selector("vehicleWithChassisBody:wheels:")
     public static native SCNPhysicsVehicle vehicleWithChassisBodyWheels(SCNPhysicsBody chassisBody,
             NSArray<? extends SCNPhysicsVehicleWheel> wheels);
-
-    /**
-     * wheels</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicle/wheels">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("wheels")
-    public native NSArray<? extends SCNPhysicsVehicleWheel> wheels();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPhysicsVehicle initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -227,13 +170,70 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * applyBrakingForce:forWheelAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instm/SCNPhysicsVehicle/applyBrakingForce:forWheelAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyBrakingForce:forWheelAtIndex:")
+    public native void applyBrakingForceForWheelAtIndex(@NFloat double value, @NInt long index);
+
+    /**
+     * applyEngineForce:forWheelAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instm/SCNPhysicsVehicle/applyEngineForce:forWheelAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyEngineForce:forWheelAtIndex:")
+    public native void applyEngineForceForWheelAtIndex(@NFloat double value, @NInt long index);
+
+    /**
+     * chassisBody</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicle/chassisBody">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("chassisBody")
+    public native SCNPhysicsBody chassisBody();
+
+    @Generated
+    @Selector("init")
+    public native SCNPhysicsVehicle init();
+
+    /**
+     * setSteeringAngle:forWheelAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instm/SCNPhysicsVehicle/setSteeringAngle:forWheelAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSteeringAngle:forWheelAtIndex:")
+    public native void setSteeringAngleForWheelAtIndex(@NFloat double value, @NInt long index);
+
+    /**
+     * speedInKilometersPerHour</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicle/speedInKilometersPerHour">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("speedInKilometersPerHour")
+    @NFloat
+    public native double speedInKilometersPerHour();
+
+    /**
+     * wheels</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsVehicle_Class/index.html#//apple_ref/occ/instp/SCNPhysicsVehicle/wheels">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("wheels")
+    public native NSArray<? extends SCNPhysicsVehicleWheel> wheels();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNPhysicsVehicle initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

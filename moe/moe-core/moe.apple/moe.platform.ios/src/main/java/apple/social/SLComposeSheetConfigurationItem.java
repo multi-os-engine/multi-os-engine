@@ -59,93 +59,6 @@ public class SLComposeSheetConfigurationItem extends NSObject {
     @Selector("alloc")
     public static native SLComposeSheetConfigurationItem alloc();
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instm/SLComposeSheetConfigurationItem/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native SLComposeSheetConfigurationItem init();
-
-    /**
-     * tapHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/tapHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTapHandler:")
-    public native void setTapHandler(@ObjCBlock(name = "call_setTapHandler") Block_setTapHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setTapHandler {
-        @Generated
-        void call_setTapHandler();
-    }
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTitle:")
-    public native void setTitle(String value);
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setValue:")
-    public native void setValue(String value);
-
-    /**
-     * valuePending</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/valuePending">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setValuePending:")
-    public native void setValuePending(boolean value);
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    public native String value();
-
-    /**
-     * valuePending</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/valuePending">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valuePending")
-    public native boolean valuePending();
-
-    /**
-     * tapHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/tapHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tapHandler")
-    @ObjCBlock(name = "call_tapHandler_ret")
-    public native Block_tapHandler_ret tapHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_tapHandler_ret {
-        @Generated
-        void call_tapHandler_ret();
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -245,4 +158,91 @@ public class SLComposeSheetConfigurationItem extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instm/SLComposeSheetConfigurationItem/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native SLComposeSheetConfigurationItem init();
+
+    /**
+     * tapHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/tapHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTapHandler:")
+    public native void setTapHandler(@ObjCBlock(name = "call_setTapHandler") Block_setTapHandler value);
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setValue:")
+    public native void setValue(String value);
+
+    /**
+     * valuePending</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/valuePending">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setValuePending:")
+    public native void setValuePending(boolean value);
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    public native String value();
+
+    /**
+     * valuePending</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/valuePending">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valuePending")
+    public native boolean valuePending();
+
+    /**
+     * tapHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Social/Reference/SLComposeSheetConfigurationItem_Class/index.html#//apple_ref/occ/instp/SLComposeSheetConfigurationItem/tapHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tapHandler")
+    @ObjCBlock(name = "call_tapHandler_ret")
+    public native Block_tapHandler_ret tapHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setTapHandler {
+        @Generated
+        void call_setTapHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_tapHandler_ret {
+        @Generated
+        void call_tapHandler_ret();
+    }
 }

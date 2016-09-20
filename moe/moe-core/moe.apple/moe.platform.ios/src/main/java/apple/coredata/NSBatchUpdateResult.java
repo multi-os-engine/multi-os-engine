@@ -59,20 +59,6 @@ public class NSBatchUpdateResult extends NSPersistentStoreResult {
     public static native NSBatchUpdateResult alloc();
 
     @Generated
-    @Selector("init")
-    public native NSBatchUpdateResult init();
-
-    @Generated
-    @Selector("result")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object result();
-
-    @Generated
-    @Selector("resultType")
-    @NUInt
-    public native long resultType();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -171,4 +157,18 @@ public class NSBatchUpdateResult extends NSPersistentStoreResult {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSBatchUpdateResult init();
+
+    @Generated
+    @Selector("result")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object result();
+
+    @Generated
+    @Selector("resultType")
+    @NUInt
+    public native long resultType();
 }

@@ -76,10 +76,6 @@ public class NSPropertyListSerialization extends NSObject {
     public static native NSData dataWithPropertyListFormatOptionsError(@Mapped(ObjCObjectMapper.class) Object plist,
             @NUInt long format, @NUInt long opt, Ptr<NSError> error);
 
-    @Generated
-    @Selector("init")
-    public native NSPropertyListSerialization init();
-
     /**
      * propertyList:isValidForFormat:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/index.html#//apple_ref/occ/clm/NSPropertyListSerialization/propertyList:isValidForFormat:">iOS Dev Center</a>
@@ -229,4 +225,8 @@ public class NSPropertyListSerialization extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSPropertyListSerialization init();
 }

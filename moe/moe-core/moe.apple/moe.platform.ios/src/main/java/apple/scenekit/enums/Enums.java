@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int SCNConsistencyInvalidURIError = 0x000003E8;
     @Generated public static final int SCNConsistencyInvalidCountError = 0x000003E9;
     @Generated public static final int SCNConsistencyInvalidArgumentError = 0x000003EA;
@@ -31,4 +27,8 @@ public final class Enums {
     @Generated public static final int SCNConsistencyMissingAttributeError = 0x000003EC;
     @Generated public static final int SCNConsistencyXMLSchemaValidationError = 0x000003ED;
     @Generated public static final int SCNProgramCompilationError = 0x00000001;
+
+    @Generated
+    private Enums() {
+    }
 }

@@ -59,21 +59,6 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native EKRecurrenceDayOfWeek alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * dayOfTheWeek</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceDayOfWeekClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceDayOfWeek/dayOfTheWeek">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dayOfTheWeek")
-    @NInt
-    public native long dayOfTheWeek();
-
     /**
      * dayOfWeek:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceDayOfWeekClassRef/index.html#//apple_ref/occ/clm/EKRecurrenceDayOfWeek/dayOfWeek:">iOS Dev Center</a>
@@ -89,27 +74,6 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying {
     @Generated
     @Selector("dayOfWeek:weekNumber:")
     public static native EKRecurrenceDayOfWeek dayOfWeekWeekNumber(@NInt long dayOfTheWeek, @NInt long weekNumber);
-
-    @Generated
-    @Selector("init")
-    public native EKRecurrenceDayOfWeek init();
-
-    /**
-     * initWithDayOfTheWeek:weekNumber:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceDayOfWeekClassRef/index.html#//apple_ref/occ/instm/EKRecurrenceDayOfWeek/initWithDayOfTheWeek:weekNumber:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDayOfTheWeek:weekNumber:")
-    public native EKRecurrenceDayOfWeek initWithDayOfTheWeekWeekNumber(@NInt long dayOfTheWeek, @NInt long weekNumber);
-
-    /**
-     * weekNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceDayOfWeekClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceDayOfWeek/weekNumber">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("weekNumber")
-    @NInt
-    public native long weekNumber();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -210,4 +174,40 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * dayOfTheWeek</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceDayOfWeekClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceDayOfWeek/dayOfTheWeek">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dayOfTheWeek")
+    @NInt
+    public native long dayOfTheWeek();
+
+    @Generated
+    @Selector("init")
+    public native EKRecurrenceDayOfWeek init();
+
+    /**
+     * initWithDayOfTheWeek:weekNumber:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceDayOfWeekClassRef/index.html#//apple_ref/occ/instm/EKRecurrenceDayOfWeek/initWithDayOfTheWeek:weekNumber:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDayOfTheWeek:weekNumber:")
+    public native EKRecurrenceDayOfWeek initWithDayOfTheWeekWeekNumber(@NInt long dayOfTheWeek, @NInt long weekNumber);
+
+    /**
+     * weekNumber</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceDayOfWeekClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceDayOfWeek/weekNumber">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("weekNumber")
+    @NInt
+    public native long weekNumber();
 }

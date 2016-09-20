@@ -60,30 +60,6 @@ public class MKPolylineRenderer extends MKOverlayPathRenderer {
     public static native MKPolylineRenderer alloc();
 
     @Generated
-    @Selector("init")
-    public native MKPolylineRenderer init();
-
-    @Generated
-    @Selector("initWithOverlay:")
-    public native MKPolylineRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
-
-    /**
-     * initWithPolyline:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolylineRenderer_class/index.html#//apple_ref/occ/instm/MKPolylineRenderer/initWithPolyline:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithPolyline:")
-    public native MKPolylineRenderer initWithPolyline(MKPolyline polyline);
-
-    /**
-     * polyline</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolylineRenderer_class/index.html#//apple_ref/occ/instp/MKPolylineRenderer/polyline">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("polyline")
-    public native MKPolyline polyline();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -182,4 +158,28 @@ public class MKPolylineRenderer extends MKOverlayPathRenderer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MKPolylineRenderer init();
+
+    @Generated
+    @Selector("initWithOverlay:")
+    public native MKPolylineRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
+
+    /**
+     * initWithPolyline:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolylineRenderer_class/index.html#//apple_ref/occ/instm/MKPolylineRenderer/initWithPolyline:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithPolyline:")
+    public native MKPolylineRenderer initWithPolyline(MKPolyline polyline);
+
+    /**
+     * polyline</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolylineRenderer_class/index.html#//apple_ref/occ/instp/MKPolylineRenderer/polyline">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("polyline")
+    public native MKPolyline polyline();
 }

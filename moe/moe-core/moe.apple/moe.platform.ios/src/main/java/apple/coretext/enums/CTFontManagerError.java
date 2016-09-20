@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CTFontManagerError {
-    @Generated
-    private CTFontManagerError() {
-    }
-
     @Generated @NInt public static final long FileNotFound = 0x0000000000000065L;
     @Generated @NInt public static final long InsufficientPermissions = 0x0000000000000066L;
     @Generated @NInt public static final long UnrecognizedFormat = 0x0000000000000067L;
@@ -33,4 +29,8 @@ public final class CTFontManagerError {
     @Generated @NInt public static final long NotRegistered = 0x00000000000000C9L;
     @Generated @NInt public static final long InUse = 0x00000000000000CAL;
     @Generated @NInt public static final long SystemRequired = 0x00000000000000CBL;
+
+    @Generated
+    private CTFontManagerError() {
+    }
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSCalendarUnit {
-    @Generated
-    private NSCalendarUnit() {
-    }
-
     @Generated @NUInt public static final long CalendarUnitEra = 0x0000000000000002L;
     @Generated @NUInt public static final long CalendarUnitYear = 0x0000000000000004L;
     @Generated @NUInt public static final long CalendarUnitMonth = 0x0000000000000008L;
@@ -57,4 +53,8 @@ public final class NSCalendarUnit {
     @Generated @NUInt public static final long YearForWeekOfYearCalendarUnit = 0x0000000000004000L;
     @Generated @NUInt public static final long CalendarCalendarUnit = 0x0000000000100000L;
     @Generated @NUInt public static final long TimeZoneCalendarUnit = 0x0000000000200000L;
+
+    @Generated
+    private NSCalendarUnit() {
+    }
 }

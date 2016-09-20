@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kVariableLengthArray = 0x00000001;
     @Generated public static final int kNilOptions = 0x00000000;
     @Generated public static final int noErr = 0x00000000;
@@ -43,4 +39,8 @@ public final class Enums {
     @Generated public static final int condense = 0x00000020;
     @Generated public static final int extend = 0x00000040;
     @Generated public static final int kUnknownType = 0x3F3F3F3F;
+
+    @Generated
+    private Enums() {
+    }
 }

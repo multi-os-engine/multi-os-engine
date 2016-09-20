@@ -62,50 +62,6 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
     public static native NEAppProxyTCPFlow alloc();
 
     @Generated
-    @Selector("init")
-    public native NEAppProxyTCPFlow init();
-
-    /**
-     * readDataWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyTCPFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyTCPFlow/readDataWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("readDataWithCompletionHandler:")
-    public native void readDataWithCompletionHandler(
-            @ObjCBlock(name = "call_readDataWithCompletionHandler") Block_readDataWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_readDataWithCompletionHandler {
-        @Generated
-        void call_readDataWithCompletionHandler(NSData arg0, NSError arg1);
-    }
-
-    /**
-     * remoteEndpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyTCPFlowClassRef/index.html#//apple_ref/occ/instp/NEAppProxyTCPFlow/remoteEndpoint">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("remoteEndpoint")
-    public native NWEndpoint remoteEndpoint();
-
-    /**
-     * writeData:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyTCPFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyTCPFlow/writeData:withCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("writeData:withCompletionHandler:")
-    public native void writeDataWithCompletionHandler(NSData data,
-            @ObjCBlock(name = "call_writeDataWithCompletionHandler") Block_writeDataWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_writeDataWithCompletionHandler {
-        @Generated
-        void call_writeDataWithCompletionHandler(NSError arg0);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -204,4 +160,48 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NEAppProxyTCPFlow init();
+
+    /**
+     * readDataWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyTCPFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyTCPFlow/readDataWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("readDataWithCompletionHandler:")
+    public native void readDataWithCompletionHandler(
+            @ObjCBlock(name = "call_readDataWithCompletionHandler") Block_readDataWithCompletionHandler completionHandler);
+
+    /**
+     * remoteEndpoint</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyTCPFlowClassRef/index.html#//apple_ref/occ/instp/NEAppProxyTCPFlow/remoteEndpoint">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("remoteEndpoint")
+    public native NWEndpoint remoteEndpoint();
+
+    /**
+     * writeData:withCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppProxyTCPFlowClassRef/index.html#//apple_ref/occ/instm/NEAppProxyTCPFlow/writeData:withCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("writeData:withCompletionHandler:")
+    public native void writeDataWithCompletionHandler(NSData data,
+            @ObjCBlock(name = "call_writeDataWithCompletionHandler") Block_writeDataWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readDataWithCompletionHandler {
+        @Generated
+        void call_readDataWithCompletionHandler(NSData arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeDataWithCompletionHandler {
+        @Generated
+        void call_writeDataWithCompletionHandler(NSError arg0);
+    }
 }

@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class AVAudioSessionCategoryOptions {
-    @Generated
-    private AVAudioSessionCategoryOptions() {
-    }
-
     @Generated @NUInt public static final long MixWithOthers = 0x0000000000000001L;
     @Generated @NUInt public static final long DuckOthers = 0x0000000000000002L;
     @Generated @NUInt public static final long AllowBluetooth = 0x0000000000000004L;
     @Generated @NUInt public static final long DefaultToSpeaker = 0x0000000000000008L;
     @Generated @NUInt public static final long InterruptSpokenAudioAndMixWithOthers = 0x0000000000000011L;
+
+    @Generated
+    private AVAudioSessionCategoryOptions() {
+    }
 }

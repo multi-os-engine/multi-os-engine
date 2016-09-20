@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSURLSessionAuthChallengeDisposition {
-    @Generated
-    private NSURLSessionAuthChallengeDisposition() {
-    }
-
     @Generated @NInt public static final long UseCredential = 0x0000000000000000L;
     @Generated @NInt public static final long PerformDefaultHandling = 0x0000000000000001L;
     @Generated @NInt public static final long CancelAuthenticationChallenge = 0x0000000000000002L;
     @Generated @NInt public static final long RejectProtectionSpace = 0x0000000000000003L;
+
+    @Generated
+    private NSURLSessionAuthChallengeDisposition() {
+    }
 }

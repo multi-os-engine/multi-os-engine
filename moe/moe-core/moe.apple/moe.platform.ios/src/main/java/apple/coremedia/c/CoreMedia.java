@@ -946,13 +946,6 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTimingArray,
             @NInt long numSampleSizeEntries, ConstNUIntPtr sampleSizeArray, Ptr<CMSampleBufferRef> sBufOut);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CMSampleBufferCreate {
-        @Generated
-        int call_CMSampleBufferCreate(VoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @CFunction
     public static native int CMSampleBufferCreateReady(CFAllocatorRef allocator, CMBlockBufferRef dataBuffer,
@@ -974,13 +967,6 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription packetDescriptions,
             Ptr<CMSampleBufferRef> sBufOut);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CMAudioSampleBufferCreateWithPacketDescriptions {
-        @Generated
-        int call_CMAudioSampleBufferCreateWithPacketDescriptions(VoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @CFunction
     public static native int CMAudioSampleBufferCreateReadyWithPacketDescriptions(CFAllocatorRef allocator,
@@ -1001,13 +987,6 @@ public final class CoreMedia {
             VoidPtr makeDataReadyRefcon, CMFormatDescriptionRef formatDescription,
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTiming,
             Ptr<CMSampleBufferRef> sBufOut);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CMSampleBufferCreateForImageBuffer {
-        @Generated
-        int call_CMSampleBufferCreateForImageBuffer(VoidPtr arg0, VoidPtr arg1);
-    }
 
     @Generated
     @CFunction
@@ -1184,24 +1163,10 @@ public final class CoreMedia {
             @FunctionPtr(name = "call_CMSampleBufferSetInvalidateCallback") Function_CMSampleBufferSetInvalidateCallback invalidateCallback,
             long invalidateRefCon);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CMSampleBufferSetInvalidateCallback {
-        @Generated
-        void call_CMSampleBufferSetInvalidateCallback(VoidPtr arg0, long arg1);
-    }
-
     @Generated
     @CFunction
     public static native int CMSampleBufferSetInvalidateHandler(CMSampleBufferRef sbuf,
             @ObjCBlock(name = "call_CMSampleBufferSetInvalidateHandler") Block_CMSampleBufferSetInvalidateHandler invalidateHandler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_CMSampleBufferSetInvalidateHandler {
-        @Generated
-        void call_CMSampleBufferSetInvalidateHandler(CMSampleBufferRef arg0);
-    }
 
     /**
      * CMSampleBufferIsValid</br>
@@ -1368,24 +1333,10 @@ public final class CoreMedia {
             @FunctionPtr(name = "call_CMSampleBufferCallForEachSample") Function_CMSampleBufferCallForEachSample callback,
             VoidPtr refcon);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CMSampleBufferCallForEachSample {
-        @Generated
-        int call_CMSampleBufferCallForEachSample(VoidPtr arg0, @NInt long arg1, VoidPtr arg2);
-    }
-
     @Generated
     @CFunction
     public static native int CMSampleBufferCallBlockForEachSample(CMSampleBufferRef sbuf,
             @ObjCBlock(name = "call_CMSampleBufferCallBlockForEachSample") Block_CMSampleBufferCallBlockForEachSample handler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_CMSampleBufferCallBlockForEachSample {
-        @Generated
-        int call_CMSampleBufferCallBlockForEachSample(CMSampleBufferRef arg0, @NInt long arg1);
-    }
 
     /**
      * CMClockGetTypeID</br>
@@ -2015,13 +1966,6 @@ public final class CoreMedia {
             @FunctionPtr(name = "call_CMBufferQueueResetWithCallback") Function_CMBufferQueueResetWithCallback callback,
             VoidPtr refcon);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CMBufferQueueResetWithCallback {
-        @Generated
-        void call_CMBufferQueueResetWithCallback(ConstVoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CMBufferQueueGetBufferCount</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueGetBufferCount">iOS Dev Center</a>
@@ -2110,13 +2054,6 @@ public final class CoreMedia {
             VoidPtr triggerRefcon, int triggerCondition, @ByValue CMTime triggerTime,
             Ptr<CMBufferQueueTriggerToken> triggerTokenOut);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CMBufferQueueInstallTrigger {
-        @Generated
-        void call_CMBufferQueueInstallTrigger(VoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CMBufferQueueInstallTriggerWithIntegerThreshold</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueInstallTriggerWithIntegerThreshold">iOS Dev Center</a>
@@ -2127,13 +2064,6 @@ public final class CoreMedia {
             @FunctionPtr(name = "call_CMBufferQueueInstallTriggerWithIntegerThreshold") Function_CMBufferQueueInstallTriggerWithIntegerThreshold triggerCallback,
             VoidPtr triggerRefcon, int triggerCondition, @NInt long triggerThreshold,
             Ptr<CMBufferQueueTriggerToken> triggerTokenOut);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CMBufferQueueInstallTriggerWithIntegerThreshold {
-        @Generated
-        void call_CMBufferQueueInstallTriggerWithIntegerThreshold(VoidPtr arg0, VoidPtr arg1);
-    }
 
     /**
      * CMBufferQueueRemoveTrigger</br>
@@ -2161,13 +2091,6 @@ public final class CoreMedia {
             @FunctionPtr(name = "call_CMBufferQueueCallForEachBuffer") Function_CMBufferQueueCallForEachBuffer callback,
             VoidPtr refcon);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CMBufferQueueCallForEachBuffer {
-        @Generated
-        int call_CMBufferQueueCallForEachBuffer(ConstVoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CMBufferQueueSetValidationCallback</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMedia/Reference/CMBufferQueue/index.html#//apple_ref/c/func/CMBufferQueueSetValidationCallback">iOS Dev Center</a>
@@ -2177,13 +2100,6 @@ public final class CoreMedia {
     public static native int CMBufferQueueSetValidationCallback(CMBufferQueueRef queue,
             @FunctionPtr(name = "call_CMBufferQueueSetValidationCallback") Function_CMBufferQueueSetValidationCallback validationCallback,
             VoidPtr validationRefCon);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CMBufferQueueSetValidationCallback {
-        @Generated
-        int call_CMBufferQueueSetValidationCallback(VoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
-    }
 
     /**
      * CMSimpleQueueGetTypeID</br>
@@ -3484,4 +3400,88 @@ public final class CoreMedia {
     @Generated
     @CVariable()
     public static native CFStringRef kCMMetadataKeySpace_HLSDateRange();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMSampleBufferCreate {
+        @Generated
+        int call_CMSampleBufferCreate(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMAudioSampleBufferCreateWithPacketDescriptions {
+        @Generated
+        int call_CMAudioSampleBufferCreateWithPacketDescriptions(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMSampleBufferCreateForImageBuffer {
+        @Generated
+        int call_CMSampleBufferCreateForImageBuffer(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMSampleBufferSetInvalidateCallback {
+        @Generated
+        void call_CMSampleBufferSetInvalidateCallback(VoidPtr arg0, long arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CMSampleBufferSetInvalidateHandler {
+        @Generated
+        void call_CMSampleBufferSetInvalidateHandler(CMSampleBufferRef arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMSampleBufferCallForEachSample {
+        @Generated
+        int call_CMSampleBufferCallForEachSample(VoidPtr arg0, @NInt long arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CMSampleBufferCallBlockForEachSample {
+        @Generated
+        int call_CMSampleBufferCallBlockForEachSample(CMSampleBufferRef arg0, @NInt long arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMBufferQueueResetWithCallback {
+        @Generated
+        void call_CMBufferQueueResetWithCallback(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMBufferQueueInstallTrigger {
+        @Generated
+        void call_CMBufferQueueInstallTrigger(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMBufferQueueInstallTriggerWithIntegerThreshold {
+        @Generated
+        void call_CMBufferQueueInstallTriggerWithIntegerThreshold(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMBufferQueueCallForEachBuffer {
+        @Generated
+        int call_CMBufferQueueCallForEachBuffer(ConstVoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMBufferQueueSetValidationCallback {
+        @Generated
+        int call_CMBufferQueueSetValidationCallback(VoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
+    }
 }

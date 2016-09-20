@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGError {
-    @Generated
-    private CGError() {
-    }
-
     @Generated public static final int Success = 0x00000000;
     @Generated public static final int Failure = 0x000003E8;
     @Generated public static final int IllegalArgument = 0x000003E9;
@@ -35,4 +31,8 @@ public final class CGError {
     @Generated public static final int TypeCheck = 0x000003F0;
     @Generated public static final int InvalidOperation = 0x000003F2;
     @Generated public static final int NoneAvailable = 0x000003F3;
+
+    @Generated
+    private CGError() {
+    }
 }

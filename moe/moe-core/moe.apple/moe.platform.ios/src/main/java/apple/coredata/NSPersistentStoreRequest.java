@@ -54,45 +54,10 @@ public class NSPersistentStoreRequest extends NSObject implements NSCopying {
         super(peer);
     }
 
-    /**
-     * affectedStores</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSPersistentStoreRequest_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreRequest/affectedStores">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("affectedStores")
-    public native NSArray<? extends NSPersistentStore> affectedStores();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSPersistentStoreRequest alloc();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native NSPersistentStoreRequest init();
-
-    /**
-     * requestType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSPersistentStoreRequest_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreRequest/requestType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestType")
-    @NUInt
-    public native long requestType();
-
-    /**
-     * affectedStores</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSPersistentStoreRequest_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreRequest/affectedStores">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAffectedStores:")
-    public native void setAffectedStores(NSArray<? extends NSPersistentStore> value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -193,4 +158,39 @@ public class NSPersistentStoreRequest extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * affectedStores</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSPersistentStoreRequest_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreRequest/affectedStores">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("affectedStores")
+    public native NSArray<? extends NSPersistentStore> affectedStores();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native NSPersistentStoreRequest init();
+
+    /**
+     * requestType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSPersistentStoreRequest_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreRequest/requestType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestType")
+    @NUInt
+    public native long requestType();
+
+    /**
+     * affectedStores</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSPersistentStoreRequest_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreRequest/affectedStores">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAffectedStores:")
+    public native void setAffectedStores(NSArray<? extends NSPersistentStore> value);
 }

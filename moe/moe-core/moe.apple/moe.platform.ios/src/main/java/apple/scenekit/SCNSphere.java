@@ -71,60 +71,6 @@ public class SCNSphere extends SCNGeometry {
     public static native SCNSphere geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
             NSArray<? extends SCNGeometryElement> elements);
 
-    @Generated
-    @Selector("init")
-    public native SCNSphere init();
-
-    /**
-     * geodesic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/geodesic">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isGeodesic")
-    public native boolean isGeodesic();
-
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/radius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("radius")
-    @NFloat
-    public native double radius();
-
-    /**
-     * segmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/segmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("segmentCount")
-    @NInt
-    public native long segmentCount();
-
-    /**
-     * geodesic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/geodesic">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setGeodesic:")
-    public native void setGeodesic(boolean value);
-
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/radius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRadius:")
-    public native void setRadius(@NFloat double value);
-
-    /**
-     * segmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/segmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSegmentCount:")
-    public native void setSegmentCount(@NInt long value);
-
     /**
      * sphereWithRadius:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/clm/SCNSphere/sphereWithRadius:">iOS Dev Center</a>
@@ -136,10 +82,6 @@ public class SCNSphere extends SCNGeometry {
     @Generated
     @Selector("geometryWithMDLMesh:")
     public static native SCNSphere geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNSphere initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -241,13 +183,71 @@ public class SCNSphere extends SCNGeometry {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SCNSphere init();
+
+    /**
+     * geodesic</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/geodesic">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isGeodesic")
+    public native boolean isGeodesic();
+
+    /**
+     * geodesic</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/geodesic">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setGeodesic:")
+    public native void setGeodesic(boolean value);
+
+    /**
+     * radius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/radius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("radius")
+    @NFloat
+    public native double radius();
+
+    /**
+     * segmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/segmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("segmentCount")
+    @NInt
+    public native long segmentCount();
+
+    /**
+     * radius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/radius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRadius:")
+    public native void setRadius(@NFloat double value);
+
+    /**
+     * segmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSphere_Class/index.html#//apple_ref/occ/instp/SCNSphere/segmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSegmentCount:")
+    public native void setSegmentCount(@NInt long value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNSphere initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

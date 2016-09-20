@@ -61,20 +61,6 @@ public class MPSImageErode extends MPSImageDilate {
     public static native MPSImageErode alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSImageErode init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageErode initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    @Generated
-    @Selector("initWithDevice:kernelWidth:kernelHeight:values:")
-    public native MPSImageErode initWithDeviceKernelWidthKernelHeightValues(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            ConstFloatPtr values);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -173,4 +159,18 @@ public class MPSImageErode extends MPSImageDilate {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageErode init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageErode initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    @Generated
+    @Selector("initWithDevice:kernelWidth:kernelHeight:values:")
+    public native MPSImageErode initWithDeviceKernelWidthKernelHeightValues(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
+            ConstFloatPtr values);
 }

@@ -62,34 +62,6 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageHistogramEqualization alloc();
 
-    /**
-     * encodeTransformToCommandBuffer:sourceTexture:histogram:histogramOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogramEqualization_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogramEqualization/encodeTransformToCommandBuffer:sourceTexture:histogram:histogramOffset:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("encodeTransformToCommandBuffer:sourceTexture:histogram:histogramOffset:")
-    public native void encodeTransformToCommandBufferSourceTextureHistogramHistogramOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture source, @Mapped(ObjCObjectMapper.class) MTLBuffer histogram,
-            @NUInt long histogramOffset);
-
-    @Generated
-    @Selector("init")
-    public native MPSImageHistogramEqualization init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageHistogramEqualization initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * initWithDevice:histogramInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogramEqualization_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogramEqualization/initWithDevice:histogramInfo:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDevice:histogramInfo:")
-    public native MPSImageHistogramEqualization initWithDeviceHistogramInfo(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, VoidPtr histogramInfo);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -189,4 +161,32 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * encodeTransformToCommandBuffer:sourceTexture:histogram:histogramOffset:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogramEqualization_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogramEqualization/encodeTransformToCommandBuffer:sourceTexture:histogram:histogramOffset:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("encodeTransformToCommandBuffer:sourceTexture:histogram:histogramOffset:")
+    public native void encodeTransformToCommandBufferSourceTextureHistogramHistogramOffset(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @Mapped(ObjCObjectMapper.class) MTLTexture source, @Mapped(ObjCObjectMapper.class) MTLBuffer histogram,
+            @NUInt long histogramOffset);
+
+    @Generated
+    @Selector("init")
+    public native MPSImageHistogramEqualization init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageHistogramEqualization initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * initWithDevice:histogramInfo:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageHistogramEqualization_ClassReference/index.html#//apple_ref/occ/instm/MPSImageHistogramEqualization/initWithDevice:histogramInfo:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDevice:histogramInfo:")
+    public native MPSImageHistogramEqualization initWithDeviceHistogramInfo(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, VoidPtr histogramInfo);
 }

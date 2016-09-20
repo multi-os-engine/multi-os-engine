@@ -68,86 +68,10 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
         super(peer);
     }
 
-    /**
-     * allKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/allKeys">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allKeys")
-    public native NSArray<_KeyType> allKeys();
-
-    /**
-     * allKeysForObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/allKeysForObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allKeysForObject:")
-    public native NSArray<_KeyType> allKeysForObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
-
-    /**
-     * allValues</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/allValues">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allValues")
-    public native NSArray<_ObjectType> allValues();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSDictionary<?, ?> alloc();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/count">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("count")
-    @NUInt
-    public native long count();
-
-    @Generated
-    @Selector("countByEnumeratingWithState:objects:count:")
-    @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
-
-    /**
-     * description</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/description">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("description")
-    public native String description();
-
-    /**
-     * descriptionInStringsFileFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/descriptionInStringsFileFormat">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("descriptionInStringsFileFormat")
-    public native String descriptionInStringsFileFormat();
-
-    /**
-     * descriptionWithLocale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/descriptionWithLocale:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("descriptionWithLocale:")
-    public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
-
-    /**
-     * descriptionWithLocale:indent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/descriptionWithLocale:indent:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("descriptionWithLocale:indent:")
-    public native String descriptionWithLocaleIndent(@Mapped(ObjCObjectMapper.class) Object locale, @NUInt long level);
 
     /**
      * dictionary</br>
@@ -221,6 +145,191 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsAndKeys(
             @Mapped(ObjCObjectMapper.class) Object firstObject, Object... varargs);
 
+    /**
+     * sharedKeySetForKeys:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/sharedKeySetForKeys:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sharedKeySetForKeys:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(NSArray<?> keys);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native <_KeyType, _ObjectType> boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * allKeys</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/allKeys">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allKeys")
+    public native NSArray<_KeyType> allKeys();
+
+    /**
+     * allKeysForObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/allKeysForObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allKeysForObject:")
+    public native NSArray<_KeyType> allKeysForObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+
+    /**
+     * allValues</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/allValues">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allValues")
+    public native NSArray<_ObjectType> allValues();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * count</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/count">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("count")
+    @NUInt
+    public native long count();
+
+    @Generated
+    @Selector("countByEnumeratingWithState:objects:count:")
+    @NUInt
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+
+    /**
+     * description</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/description">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("description")
+    public native String description();
+
+    /**
+     * descriptionInStringsFileFormat</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instp/NSDictionary/descriptionInStringsFileFormat">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("descriptionInStringsFileFormat")
+    public native String descriptionInStringsFileFormat();
+
+    /**
+     * descriptionWithLocale:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/descriptionWithLocale:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("descriptionWithLocale:")
+    public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
+
+    /**
+     * descriptionWithLocale:indent:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/descriptionWithLocale:indent:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("descriptionWithLocale:indent:")
+    public native String descriptionWithLocaleIndent(@Mapped(ObjCObjectMapper.class) Object locale, @NUInt long level);
+
     @Generated
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder aCoder);
@@ -234,14 +343,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public native void enumerateKeysAndObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateKeysAndObjectsUsingBlock") Block_enumerateKeysAndObjectsUsingBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateKeysAndObjectsUsingBlock {
-        @Generated
-        void call_enumerateKeysAndObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
-    }
-
     /**
      * enumerateKeysAndObjectsWithOptions:usingBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/enumerateKeysAndObjectsWithOptions:usingBlock:">iOS Dev Center</a>
@@ -250,14 +351,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("enumerateKeysAndObjectsWithOptions:usingBlock:")
     public native void enumerateKeysAndObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateKeysAndObjectsWithOptionsUsingBlock") Block_enumerateKeysAndObjectsWithOptionsUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateKeysAndObjectsWithOptionsUsingBlock {
-        @Generated
-        void call_enumerateKeysAndObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
-    }
 
     /**
      * fileCreationDate</br>
@@ -495,14 +588,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public native NSSet<_KeyType> keysOfEntriesPassingTest(
             @ObjCBlock(name = "call_keysOfEntriesPassingTest") Block_keysOfEntriesPassingTest predicate);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_keysOfEntriesPassingTest {
-        @Generated
-        boolean call_keysOfEntriesPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
-    }
-
     /**
      * keysOfEntriesWithOptions:passingTest:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/keysOfEntriesWithOptions:passingTest:">iOS Dev Center</a>
@@ -512,14 +597,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public native NSSet<_KeyType> keysOfEntriesWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_keysOfEntriesWithOptionsPassingTest") Block_keysOfEntriesWithOptionsPassingTest predicate);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_keysOfEntriesWithOptionsPassingTest {
-        @Generated
-        boolean call_keysOfEntriesWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
-    }
-
     /**
      * keysSortedByValueUsingComparator:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/instm/NSDictionary/keysSortedByValueUsingComparator:">iOS Dev Center</a>
@@ -528,15 +605,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("keysSortedByValueUsingComparator:")
     public native NSArray<_KeyType> keysSortedByValueUsingComparator(
             @ObjCBlock(name = "call_keysSortedByValueUsingComparator") Block_keysSortedByValueUsingComparator cmptr);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_keysSortedByValueUsingComparator {
-        @Generated
-        @NInt
-        long call_keysSortedByValueUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
 
     /**
      * keysSortedByValueUsingSelector:</br>
@@ -554,15 +622,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("keysSortedByValueWithOptions:usingComparator:")
     public native NSArray<_KeyType> keysSortedByValueWithOptionsUsingComparator(@NUInt long opts,
             @ObjCBlock(name = "call_keysSortedByValueWithOptionsUsingComparator") Block_keysSortedByValueWithOptionsUsingComparator cmptr);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_keysSortedByValueWithOptionsUsingComparator {
-        @Generated
-        @NInt
-        long call_keysSortedByValueWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
 
     @Generated
     @Selector("mutableCopyWithZone:")
@@ -603,19 +662,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("objectsForKeys:notFoundMarker:")
     public native NSArray<_ObjectType> objectsForKeysNotFoundMarker(NSArray<_KeyType> keys,
             @Mapped(ObjCObjectMapper.class) _ObjectType marker);
-
-    /**
-     * sharedKeySetForKeys:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/index.html#//apple_ref/occ/clm/NSDictionary/sharedKeySetForKeys:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sharedKeySetForKeys:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(NSArray<?> keys);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native <_KeyType, _ObjectType> boolean supportsSecureCoding();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -672,6 +718,143 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Override
     public Set<Entry<_KeyType, _ObjectType>> entrySet() {
         return new NSDictionaryEntrySet<_KeyType, _ObjectType>(this);
+    }
+
+    @Override
+    public _ObjectType get(Object key) {
+        if (key == null) {
+            throw new NullPointerException();
+        }
+        return objectForKey((_KeyType)key);
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return count() == 0;
+    }
+
+    @Override
+    public Set<_KeyType> keySet() {
+        return new NSDictionaryKeySet<_KeyType>(this);
+    }
+
+    @Override
+    public _ObjectType put(_KeyType key, _ObjectType value) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void putAll(Map<? extends _KeyType, ? extends _ObjectType> arg0) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public _ObjectType remove(Object key) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public int size() {
+        return (int)count();
+    }
+
+    @Override
+    public Collection<_ObjectType> values() {
+        return new NSDictionaryValues<_ObjectType>(this);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object instanceof Map) {
+            Map<?, ?> map = (Map<?, ?>)object;
+            if (size() != map.size()) {
+                return false;
+            }
+
+            try {
+                for (Entry entry : entrySet()) {
+                    Object key = entry.getKey();
+                    Object mine = entry.getValue();
+                    Object theirs = map.get(key);
+                    if (mine == null) {
+                        if (theirs != null || !map.containsKey(key)) {
+                            return false;
+                        }
+                    } else if (!mine.equals(theirs)) {
+                        return false;
+                    }
+                }
+            } catch (NullPointerException ignored) {
+                return false;
+            } catch (ClassCastException ignored) {
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 0;
+        Iterator<Map.Entry<_KeyType, _ObjectType>> it = entrySet().iterator();
+        while (it.hasNext()) {
+            result += it.next().hashCode();
+        }
+        return result;
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateKeysAndObjectsUsingBlock {
+        @Generated
+        void call_enumerateKeysAndObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateKeysAndObjectsWithOptionsUsingBlock {
+        @Generated
+        void call_enumerateKeysAndObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_keysOfEntriesPassingTest {
+        @Generated
+        boolean call_keysOfEntriesPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_keysOfEntriesWithOptionsPassingTest {
+        @Generated
+        boolean call_keysOfEntriesWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_keysSortedByValueUsingComparator {
+        @Generated
+        @NInt
+        long call_keysSortedByValueUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_keysSortedByValueWithOptionsUsingComparator {
+        @Generated
+        @NInt
+        long call_keysSortedByValueWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
     }
 
     private static final class NSDictionaryEntrySet<_KeyType, _ObjectType>
@@ -738,73 +921,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
         @Override
         public Iterator<Entry<_KeyType, _ObjectType>> iterator() {
             return new NSDictionaryEntrySetIterator<_KeyType, _ObjectType>(dict);
-        }
-
-        private final static class NSDictionaryEntrySetIterator<_KeyType, _ObjectType>
-                implements Iterator<Entry<_KeyType, _ObjectType>> {
-
-            private final NSDictionary<_KeyType, _ObjectType> dict;
-            private final NSArray<_KeyType> keys;
-            private int cursor = 0;
-
-            public NSDictionaryEntrySetIterator(NSDictionary<_KeyType, _ObjectType> dict) {
-                this.dict = dict;
-                this.keys = dict.allKeys();
-            }
-
-            @Override
-            public boolean hasNext() {
-                return cursor < keys.size();
-            }
-
-            @Override
-            public Entry<_KeyType, _ObjectType> next() {
-                if (cursor >= keys.size()) {
-                    throw new NoSuchElementException();
-                }
-                final _KeyType key = keys.get(cursor++);
-                final _ObjectType value = dict.objectForKey(key);
-                return new Entry<_KeyType, _ObjectType>() {
-
-                    @Override
-                    public _KeyType getKey() {
-                        return key;
-                    }
-
-                    @Override
-                    public _ObjectType getValue() {
-                        return value;
-                    }
-
-                    @Override
-                    public _ObjectType setValue(_ObjectType value) {
-                        throw new UnsupportedOperationException();
-                    }
-
-                    @Override
-                    public boolean equals(Object o) {
-                        if (o instanceof Entry) {
-                            Entry e2 = (Entry)o;
-                            return (getKey() == null ? e2.getKey() == null : getKey().equals(e2.getKey())) && (
-                                    getValue() == null ? e2.getValue() == null : getValue().equals(e2.getValue()));
-                        }
-                        return false;
-                    }
-
-                    @Override
-                    public int hashCode() {
-                        return (getKey() == null ? 0 : getKey().hashCode()) ^ (getValue() == null ?
-                                0 :
-                                getValue().hashCode());
-                    }
-                };
-            }
-
-            @Override
-            public void remove() {
-                throw new UnsupportedOperationException();
-            }
-
         }
 
         @Override
@@ -890,24 +1006,73 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
             }
             return result;
         }
-    }
 
-    @Override
-    public _ObjectType get(Object key) {
-        if (key == null) {
-            throw new NullPointerException();
+        private final static class NSDictionaryEntrySetIterator<_KeyType, _ObjectType>
+                implements Iterator<Entry<_KeyType, _ObjectType>> {
+
+            private final NSDictionary<_KeyType, _ObjectType> dict;
+            private final NSArray<_KeyType> keys;
+            private int cursor = 0;
+
+            public NSDictionaryEntrySetIterator(NSDictionary<_KeyType, _ObjectType> dict) {
+                this.dict = dict;
+                this.keys = dict.allKeys();
+            }
+
+            @Override
+            public boolean hasNext() {
+                return cursor < keys.size();
+            }
+
+            @Override
+            public Entry<_KeyType, _ObjectType> next() {
+                if (cursor >= keys.size()) {
+                    throw new NoSuchElementException();
+                }
+                final _KeyType key = keys.get(cursor++);
+                final _ObjectType value = dict.objectForKey(key);
+                return new Entry<_KeyType, _ObjectType>() {
+
+                    @Override
+                    public _KeyType getKey() {
+                        return key;
+                    }
+
+                    @Override
+                    public _ObjectType getValue() {
+                        return value;
+                    }
+
+                    @Override
+                    public _ObjectType setValue(_ObjectType value) {
+                        throw new UnsupportedOperationException();
+                    }
+
+                    @Override
+                    public boolean equals(Object o) {
+                        if (o instanceof Entry) {
+                            Entry e2 = (Entry)o;
+                            return (getKey() == null ? e2.getKey() == null : getKey().equals(e2.getKey())) && (
+                                    getValue() == null ? e2.getValue() == null : getValue().equals(e2.getValue()));
+                        }
+                        return false;
+                    }
+
+                    @Override
+                    public int hashCode() {
+                        return (getKey() == null ? 0 : getKey().hashCode()) ^ (getValue() == null ?
+                                0 :
+                                getValue().hashCode());
+                    }
+                };
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+
         }
-        return objectForKey((_KeyType)key);
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return count() == 0;
-    }
-
-    @Override
-    public Set<_KeyType> keySet() {
-        return new NSDictionaryKeySet<_KeyType>(this);
     }
 
     private static final class NSDictionaryKeySet<_KeyType> implements Set<_KeyType> {
@@ -969,37 +1134,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
             return new NSDictionaryKeySetIterator<_KeyType>(dict);
         }
 
-        private static final class NSDictionaryKeySetIterator<_KeyType> implements Iterator<_KeyType> {
-
-            @SuppressWarnings("unused") private final NSDictionary<_KeyType, ?> dict;
-            private final NSArray<_KeyType> keys;
-            private int cursor = 0;
-
-            public NSDictionaryKeySetIterator(NSDictionary<_KeyType, ?> dict) {
-                this.dict = dict;
-                this.keys = dict.allKeys();
-            }
-
-            @Override
-            public boolean hasNext() {
-                return cursor < keys.size();
-            }
-
-            @Override
-            public _KeyType next() {
-                if (cursor >= keys.size()) {
-                    throw new NoSuchElementException();
-                }
-                return keys.get(cursor++);
-            }
-
-            @Override
-            public void remove() {
-                throw new UnsupportedOperationException();
-            }
-
-        }
-
         @Override
         public boolean remove(Object o) {
             throw new UnsupportedOperationException();
@@ -1039,31 +1173,37 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
             return hash;
         }
 
-    }
+        private static final class NSDictionaryKeySetIterator<_KeyType> implements Iterator<_KeyType> {
 
-    @Override
-    public _ObjectType put(_KeyType key, _ObjectType value) {
-        throw new UnsupportedOperationException();
-    }
+            @SuppressWarnings("unused") private final NSDictionary<_KeyType, ?> dict;
+            private final NSArray<_KeyType> keys;
+            private int cursor = 0;
 
-    @Override
-    public void putAll(Map<? extends _KeyType, ? extends _ObjectType> arg0) {
-        throw new UnsupportedOperationException();
-    }
+            public NSDictionaryKeySetIterator(NSDictionary<_KeyType, ?> dict) {
+                this.dict = dict;
+                this.keys = dict.allKeys();
+            }
 
-    @Override
-    public _ObjectType remove(Object key) {
-        throw new UnsupportedOperationException();
-    }
+            @Override
+            public boolean hasNext() {
+                return cursor < keys.size();
+            }
 
-    @Override
-    public int size() {
-        return (int)count();
-    }
+            @Override
+            public _KeyType next() {
+                if (cursor >= keys.size()) {
+                    throw new NoSuchElementException();
+                }
+                return keys.get(cursor++);
+            }
 
-    @Override
-    public Collection<_ObjectType> values() {
-        return new NSDictionaryValues<_ObjectType>(this);
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+
+        }
+
     }
 
     private static final class NSDictionaryValues<_ObjectType> implements Collection<_ObjectType> {
@@ -1126,33 +1266,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
             return new NSDictionaryValuesIterator<_ObjectType>(dict);
         }
 
-        private static final class NSDictionaryValuesIterator<_ObjectType> implements Iterator<_ObjectType> {
-
-            @SuppressWarnings("unused") private final NSDictionary<?, _ObjectType> dict;
-            private final Iterator<Entry<?, _ObjectType>> iterator;
-
-            public NSDictionaryValuesIterator(NSDictionary dict) {
-                this.dict = dict;
-                this.iterator = dict.entrySet().iterator();
-            }
-
-            @Override
-            public boolean hasNext() {
-                return iterator.hasNext();
-            }
-
-            @Override
-            public _ObjectType next() {
-                return iterator.next().getValue();
-            }
-
-            @Override
-            public void remove() {
-                throw new UnsupportedOperationException();
-            }
-
-        }
-
         @Override
         public boolean remove(final Object o) {
             throw new UnsupportedOperationException();
@@ -1182,145 +1295,32 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
         public <T> T[] toArray(T[] a) {
             return (T[])dict.allValues().toArray(a);
         }
-    }
 
-    @Override
-    public boolean equals(Object object) {
-        if (this == object) {
-            return true;
-        }
-        if (object instanceof Map) {
-            Map<?, ?> map = (Map<?, ?>)object;
-            if (size() != map.size()) {
-                return false;
+        private static final class NSDictionaryValuesIterator<_ObjectType> implements Iterator<_ObjectType> {
+
+            @SuppressWarnings("unused") private final NSDictionary<?, _ObjectType> dict;
+            private final Iterator<Entry<?, _ObjectType>> iterator;
+
+            public NSDictionaryValuesIterator(NSDictionary dict) {
+                this.dict = dict;
+                this.iterator = dict.entrySet().iterator();
             }
 
-            try {
-                for (Entry entry : entrySet()) {
-                    Object key = entry.getKey();
-                    Object mine = entry.getValue();
-                    Object theirs = map.get(key);
-                    if (mine == null) {
-                        if (theirs != null || !map.containsKey(key)) {
-                            return false;
-                        }
-                    } else if (!mine.equals(theirs)) {
-                        return false;
-                    }
-                }
-            } catch (NullPointerException ignored) {
-                return false;
-            } catch (ClassCastException ignored) {
-                return false;
+            @Override
+            public boolean hasNext() {
+                return iterator.hasNext();
             }
-            return true;
+
+            @Override
+            public _ObjectType next() {
+                return iterator.next().getValue();
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException();
+            }
+
         }
-        return false;
     }
-
-    @Override
-    public int hashCode() {
-        int result = 0;
-        Iterator<Map.Entry<_KeyType, _ObjectType>> it = entrySet().iterator();
-        while (it.hasNext()) {
-            result += it.next().hashCode();
-        }
-        return result;
-    }
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

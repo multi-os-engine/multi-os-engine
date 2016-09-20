@@ -59,26 +59,6 @@ public class MTLVertexBufferLayoutDescriptorArray extends NSObject {
     public static native MTLVertexBufferLayoutDescriptorArray alloc();
 
     @Generated
-    @Selector("init")
-    public native MTLVertexBufferLayoutDescriptorArray init();
-
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexBufferLayoutDescriptorArray_Ref/index.html#//apple_ref/occ/instm/MTLVertexBufferLayoutDescriptorArray/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objectAtIndexedSubscript:")
-    public native MTLVertexBufferLayoutDescriptor objectAtIndexedSubscript(@NUInt long index);
-
-    /**
-     * setObject:atIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexBufferLayoutDescriptorArray_Ref/index.html#//apple_ref/occ/instm/MTLVertexBufferLayoutDescriptorArray/setObject:atIndexedSubscript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setObject:atIndexedSubscript:")
-    public native void setObjectAtIndexedSubscript(MTLVertexBufferLayoutDescriptor bufferDesc, @NUInt long index);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -177,4 +157,24 @@ public class MTLVertexBufferLayoutDescriptorArray extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MTLVertexBufferLayoutDescriptorArray init();
+
+    /**
+     * objectAtIndexedSubscript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexBufferLayoutDescriptorArray_Ref/index.html#//apple_ref/occ/instm/MTLVertexBufferLayoutDescriptorArray/objectAtIndexedSubscript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objectAtIndexedSubscript:")
+    public native MTLVertexBufferLayoutDescriptor objectAtIndexedSubscript(@NUInt long index);
+
+    /**
+     * setObject:atIndexedSubscript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLVertexBufferLayoutDescriptorArray_Ref/index.html#//apple_ref/occ/instm/MTLVertexBufferLayoutDescriptorArray/setObject:atIndexedSubscript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setObject:atIndexedSubscript:")
+    public native void setObjectAtIndexedSubscript(MTLVertexBufferLayoutDescriptor bufferDesc, @NUInt long index);
 }

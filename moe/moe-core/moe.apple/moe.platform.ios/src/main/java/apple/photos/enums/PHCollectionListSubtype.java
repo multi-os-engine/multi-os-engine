@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHCollectionListSubtype {
-    @Generated
-    private PHCollectionListSubtype() {
-    }
-
     @Generated @NInt public static final long MomentListCluster = 0x0000000000000001L;
     @Generated @NInt public static final long MomentListYear = 0x0000000000000002L;
     @Generated @NInt public static final long RegularFolder = 0x0000000000000064L;
@@ -33,4 +29,8 @@ public final class PHCollectionListSubtype {
     @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
             0x7FFFFFFFFFFFFFFFL :
             0x000000007FFFFFFFL;
+
+    @Generated
+    private PHCollectionListSubtype() {
+    }
 }

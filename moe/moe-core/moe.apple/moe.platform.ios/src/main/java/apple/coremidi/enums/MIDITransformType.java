@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class MIDITransformType {
-    @Generated
-    private MIDITransformType() {
-    }
-
     @Generated public static final char None = 0x0000;
     @Generated public static final char FilterOut = 0x0001;
     @Generated public static final char MapControl = 0x0002;
@@ -32,4 +28,8 @@ public final class MIDITransformType {
     @Generated public static final char MinValue = 0x000A;
     @Generated public static final char MaxValue = 0x000B;
     @Generated public static final char MapValue = 0x000C;
+
+    @Generated
+    private MIDITransformType() {
+    }
 }

@@ -26,11 +26,11 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure()
 public final class proc_rlimit_control_wakeupmon extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public proc_rlimit_control_wakeupmon() {

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MACaptionAppearanceFontStyle {
-    @Generated
-    private MACaptionAppearanceFontStyle() {
-    }
-
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     @Generated @NInt public static final long MonospacedWithSerif = 0x0000000000000001L;
     @Generated @NInt public static final long ProportionalWithSerif = 0x0000000000000002L;
@@ -33,4 +29,7 @@ public final class MACaptionAppearanceFontStyle {
     @Generated @NInt public static final long Casual = 0x0000000000000005L;
     @Generated @NInt public static final long Cursive = 0x0000000000000006L;
     @Generated @NInt public static final long SmallCapital = 0x0000000000000007L;
+    @Generated
+    private MACaptionAppearanceFontStyle() {
+    }
 }

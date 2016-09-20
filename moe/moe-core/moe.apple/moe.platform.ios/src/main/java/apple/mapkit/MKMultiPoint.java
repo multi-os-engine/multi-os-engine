@@ -64,36 +64,6 @@ public class MKMultiPoint extends MKShape {
     @Selector("alloc")
     public static native MKMultiPoint alloc();
 
-    /**
-     * getCoordinates:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMultiPoint_class/index.html#//apple_ref/occ/instm/MKMultiPoint/getCoordinates:range:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getCoordinates:range:")
-    public native void getCoordinatesRange(Ptr<CLLocationCoordinate2D> coords, @ByValue NSRange range);
-
-    @Generated
-    @Selector("init")
-    public native MKMultiPoint init();
-
-    /**
-     * pointCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMultiPoint_class/index.html#//apple_ref/occ/instp/MKMultiPoint/pointCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pointCount")
-    @NUInt
-    public native long pointCount();
-
-    /**
-     * points</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMultiPoint_class/index.html#//apple_ref/occ/instm/MKMultiPoint/points">iOS Dev Center</a>
-     */
-    @ReferenceInfo(type = MKMapPoint.class)
-    @Generated
-    @Selector("points")
-    public native Ptr<MKMapPoint> points();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -193,4 +163,34 @@ public class MKMultiPoint extends MKShape {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * getCoordinates:range:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMultiPoint_class/index.html#//apple_ref/occ/instm/MKMultiPoint/getCoordinates:range:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getCoordinates:range:")
+    public native void getCoordinatesRange(Ptr<CLLocationCoordinate2D> coords, @ByValue NSRange range);
+
+    @Generated
+    @Selector("init")
+    public native MKMultiPoint init();
+
+    /**
+     * pointCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMultiPoint_class/index.html#//apple_ref/occ/instp/MKMultiPoint/pointCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pointCount")
+    @NUInt
+    public native long pointCount();
+
+    /**
+     * points</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMultiPoint_class/index.html#//apple_ref/occ/instm/MKMultiPoint/points">iOS Dev Center</a>
+     */
+    @ReferenceInfo(type = MKMapPoint.class)
+    @Generated
+    @Selector("points")
+    public native Ptr<MKMapPoint> points();
 }

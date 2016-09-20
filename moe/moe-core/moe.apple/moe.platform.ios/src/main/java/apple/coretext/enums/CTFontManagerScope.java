@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTFontManagerScope {
-    @Generated
-    private CTFontManagerScope() {
-    }
-
     @Generated public static final int None = 0x00000000;
     @Generated public static final int Process = 0x00000001;
     @Generated public static final int User = 0x00000002;
     @Generated public static final int Session = 0x00000003;
+
+    @Generated
+    private CTFontManagerScope() {
+    }
 }

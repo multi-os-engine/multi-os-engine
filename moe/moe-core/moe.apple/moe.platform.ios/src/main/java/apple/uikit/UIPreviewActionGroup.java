@@ -70,20 +70,6 @@ public class UIPreviewActionGroup extends NSObject implements NSCopying, UIPrevi
     public static native UIPreviewActionGroup alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native UIPreviewActionGroup init();
-
-    @Generated
-    @Selector("title")
-    public native String title();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -182,4 +168,18 @@ public class UIPreviewActionGroup extends NSObject implements NSCopying, UIPrevi
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native UIPreviewActionGroup init();
+
+    @Generated
+    @Selector("title")
+    public native String title();
 }

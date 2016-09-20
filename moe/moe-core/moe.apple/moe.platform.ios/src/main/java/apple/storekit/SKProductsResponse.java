@@ -59,26 +59,6 @@ public class SKProductsResponse extends NSObject {
     public static native SKProductsResponse alloc();
 
     @Generated
-    @Selector("init")
-    public native SKProductsResponse init();
-
-    /**
-     * invalidProductIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsResponse/index.html#//apple_ref/occ/instp/SKProductsResponse/invalidProductIdentifiers">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("invalidProductIdentifiers")
-    public native NSArray<String> invalidProductIdentifiers();
-
-    /**
-     * products</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsResponse/index.html#//apple_ref/occ/instp/SKProductsResponse/products">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("products")
-    public native NSArray<? extends SKProduct> products();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -177,4 +157,24 @@ public class SKProductsResponse extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SKProductsResponse init();
+
+    /**
+     * invalidProductIdentifiers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsResponse/index.html#//apple_ref/occ/instp/SKProductsResponse/invalidProductIdentifiers">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("invalidProductIdentifiers")
+    public native NSArray<String> invalidProductIdentifiers();
+
+    /**
+     * products</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsResponse/index.html#//apple_ref/occ/instp/SKProductsResponse/products">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("products")
+    public native NSArray<? extends SKProduct> products();
 }

@@ -21,10 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MACaptionAppearanceBehavior {
+    @Generated @NInt public static final long Value = 0x0000000000000000L;
+    @Generated @NInt public static final long ContentIfAvailable = 0x0000000000000001L;
     @Generated
     private MACaptionAppearanceBehavior() {
     }
-
-    @Generated @NInt public static final long Value = 0x0000000000000000L;
-    @Generated @NInt public static final long ContentIfAvailable = 0x0000000000000001L;
 }

@@ -56,14 +56,6 @@ public class EKAlarm extends EKObject implements NSCopying {
     }
 
     /**
-     * absoluteDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/absoluteDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("absoluteDate")
-    public native NSDate absoluteDate();
-
-    /**
      * alarmWithAbsoluteDate:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/clm/EKAlarm/alarmWithAbsoluteDate:">iOS Dev Center</a>
      */
@@ -83,73 +75,6 @@ public class EKAlarm extends EKObject implements NSCopying {
     @Owned
     @Selector("alloc")
     public static native EKAlarm alloc();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native EKAlarm init();
-
-    /**
-     * proximity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/proximity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("proximity")
-    @NInt
-    public native long proximity();
-
-    /**
-     * relativeOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/relativeOffset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("relativeOffset")
-    public native double relativeOffset();
-
-    /**
-     * absoluteDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/absoluteDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAbsoluteDate:")
-    public native void setAbsoluteDate(NSDate value);
-
-    /**
-     * proximity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/proximity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProximity:")
-    public native void setProximity(@NInt long value);
-
-    /**
-     * relativeOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/relativeOffset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRelativeOffset:")
-    public native void setRelativeOffset(double value);
-
-    /**
-     * structuredLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/structuredLocation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setStructuredLocation:")
-    public native void setStructuredLocation(EKStructuredLocation value);
-
-    /**
-     * structuredLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/structuredLocation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("structuredLocation")
-    public native EKStructuredLocation structuredLocation();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -250,4 +175,79 @@ public class EKAlarm extends EKObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * absoluteDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/absoluteDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("absoluteDate")
+    public native NSDate absoluteDate();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native EKAlarm init();
+
+    /**
+     * proximity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/proximity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("proximity")
+    @NInt
+    public native long proximity();
+
+    /**
+     * relativeOffset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/relativeOffset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("relativeOffset")
+    public native double relativeOffset();
+
+    /**
+     * absoluteDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/absoluteDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAbsoluteDate:")
+    public native void setAbsoluteDate(NSDate value);
+
+    /**
+     * proximity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/proximity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProximity:")
+    public native void setProximity(@NInt long value);
+
+    /**
+     * relativeOffset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/relativeOffset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRelativeOffset:")
+    public native void setRelativeOffset(double value);
+
+    /**
+     * structuredLocation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/structuredLocation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setStructuredLocation:")
+    public native void setStructuredLocation(EKStructuredLocation value);
+
+    /**
+     * structuredLocation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKAlarmClassRef/index.html#//apple_ref/occ/instp/EKAlarm/structuredLocation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("structuredLocation")
+    public native EKStructuredLocation structuredLocation();
 }

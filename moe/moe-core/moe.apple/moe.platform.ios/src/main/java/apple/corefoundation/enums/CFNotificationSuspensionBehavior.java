@@ -21,12 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFNotificationSuspensionBehavior {
-    @Generated
-    private CFNotificationSuspensionBehavior() {
-    }
-
     @Generated @NInt public static final long Drop = 0x0000000000000001L;
     @Generated @NInt public static final long Coalesce = 0x0000000000000002L;
     @Generated @NInt public static final long Hold = 0x0000000000000003L;
     @Generated @NInt public static final long DeliverImmediately = 0x0000000000000004L;
+    @Generated
+    private CFNotificationSuspensionBehavior() {
+    }
 }

@@ -69,15 +69,6 @@ public class GKShuffledDistribution extends GKRandomDistribution {
             @NInt long highestInclusive);
 
     @Generated
-    @Selector("init")
-    public native GKShuffledDistribution init();
-
-    @Generated
-    @Selector("initWithRandomSource:lowestValue:highestValue:")
-    public native GKShuffledDistribution initWithRandomSourceLowestValueHighestValue(
-            @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive, @NInt long highestInclusive);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -186,4 +177,13 @@ public class GKShuffledDistribution extends GKRandomDistribution {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GKShuffledDistribution init();
+
+    @Generated
+    @Selector("initWithRandomSource:lowestValue:highestValue:")
+    public native GKShuffledDistribution initWithRandomSourceLowestValueHighestValue(
+            @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive, @NInt long highestInclusive);
 }

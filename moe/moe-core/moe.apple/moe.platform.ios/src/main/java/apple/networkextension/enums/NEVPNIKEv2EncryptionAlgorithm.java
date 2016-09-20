@@ -21,14 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NEVPNIKEv2EncryptionAlgorithm {
-    @Generated
-    private NEVPNIKEv2EncryptionAlgorithm() {
-    }
-
     @Generated @NInt public static final long AlgorithmDES = 0x0000000000000001L;
     @Generated @NInt public static final long Algorithm3DES = 0x0000000000000002L;
     @Generated @NInt public static final long AlgorithmAES128 = 0x0000000000000003L;
     @Generated @NInt public static final long AlgorithmAES256 = 0x0000000000000004L;
     @Generated @NInt public static final long AlgorithmAES128GCM = 0x0000000000000005L;
     @Generated @NInt public static final long AlgorithmAES256GCM = 0x0000000000000006L;
+    @Generated
+    private NEVPNIKEv2EncryptionAlgorithm() {
+    }
 }

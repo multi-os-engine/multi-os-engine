@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKWeekday {
-    @Generated
-    private EKWeekday() {
-    }
-
     @Generated @NInt public static final long WeekdaySunday = 0x0000000000000001L;
     @Generated @NInt public static final long WeekdayMonday = 0x0000000000000002L;
     @Generated @NInt public static final long WeekdayTuesday = 0x0000000000000003L;
@@ -39,4 +35,8 @@ public final class EKWeekday {
     @Generated @NInt public static final long Thursday = 0x0000000000000005L;
     @Generated @NInt public static final long Friday = 0x0000000000000006L;
     @Generated @NInt public static final long Saturday = 0x0000000000000007L;
+
+    @Generated
+    private EKWeekday() {
+    }
 }

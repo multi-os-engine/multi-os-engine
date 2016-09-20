@@ -27,11 +27,11 @@ import org.moe.natj.general.ann.NFloat;
 @Generated
 @Structure()
 public final class CGAffineTransform extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CGAffineTransform() {

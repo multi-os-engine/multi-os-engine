@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CBATTError {
-    @Generated
-    private CBATTError() {
-    }
-
     @Generated @NInt public static final long Success = 0x0000000000000000L;
     @Generated @NInt public static final long InvalidHandle = 0x0000000000000001L;
     @Generated @NInt public static final long ReadNotPermitted = 0x0000000000000002L;
@@ -43,4 +39,8 @@ public final class CBATTError {
     @Generated @NInt public static final long InsufficientEncryption = 0x000000000000000FL;
     @Generated @NInt public static final long UnsupportedGroupType = 0x0000000000000010L;
     @Generated @NInt public static final long InsufficientResources = 0x0000000000000011L;
+
+    @Generated
+    private CBATTError() {
+    }
 }

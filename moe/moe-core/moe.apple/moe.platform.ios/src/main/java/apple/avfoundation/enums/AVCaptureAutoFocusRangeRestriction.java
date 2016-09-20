@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVCaptureAutoFocusRangeRestriction {
-    @Generated
-    private AVCaptureAutoFocusRangeRestriction() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Near = 0x0000000000000001L;
     @Generated @NInt public static final long Far = 0x0000000000000002L;
+
+    @Generated
+    private AVCaptureAutoFocusRangeRestriction() {
+    }
 }

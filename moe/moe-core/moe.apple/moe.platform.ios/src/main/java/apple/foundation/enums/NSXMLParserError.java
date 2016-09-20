@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSXMLParserError {
-    @Generated
-    private NSXMLParserError() {
-    }
-
     @Generated @NInt public static final long InternalError = 0x0000000000000001L;
     @Generated @NInt public static final long OutOfMemoryError = 0x0000000000000002L;
     @Generated @NInt public static final long DocumentStartError = 0x0000000000000003L;
@@ -118,4 +114,8 @@ public final class NSXMLParserError {
     @Generated @NInt public static final long URIFragmentError = 0x000000000000005CL;
     @Generated @NInt public static final long NoDTDError = 0x000000000000005EL;
     @Generated @NInt public static final long DelegateAbortedParseError = 0x0000000000000200L;
+
+    @Generated
+    private NSXMLParserError() {
+    }
 }

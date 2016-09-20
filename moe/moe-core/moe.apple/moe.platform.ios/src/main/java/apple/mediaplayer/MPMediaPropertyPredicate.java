@@ -61,19 +61,6 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     public static native MPMediaPropertyPredicate alloc();
 
     /**
-     * comparisonType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPropertyPredicate/comparisonType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("comparisonType")
-    @NInt
-    public native long comparisonType();
-
-    @Generated
-    @Selector("init")
-    public native MPMediaPropertyPredicate init();
-
-    /**
      * predicateWithValue:forProperty:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/clm/MPMediaPropertyPredicate/predicateWithValue:forProperty:">iOS Dev Center</a>
      */
@@ -90,27 +77,6 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     @Selector("predicateWithValue:forProperty:comparisonType:")
     public static native MPMediaPropertyPredicate predicateWithValueForPropertyComparisonType(
             @Mapped(ObjCObjectMapper.class) Object value, String property, @NInt long comparisonType);
-
-    /**
-     * property</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPropertyPredicate/property">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("property")
-    public native String property();
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPropertyPredicate/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object value();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaPropertyPredicate initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -212,13 +178,47 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * comparisonType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPropertyPredicate/comparisonType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("comparisonType")
+    @NInt
+    public native long comparisonType();
+
+    @Generated
+    @Selector("init")
+    public native MPMediaPropertyPredicate init();
+
+    /**
+     * property</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPropertyPredicate/property">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("property")
+    public native String property();
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaPropertyPredicate_ClassReference/index.html#//apple_ref/occ/instp/MPMediaPropertyPredicate/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object value();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaPropertyPredicate initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

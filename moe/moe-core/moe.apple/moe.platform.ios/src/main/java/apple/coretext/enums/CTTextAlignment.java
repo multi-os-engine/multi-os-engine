@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTTextAlignment {
-    @Generated
-    private CTTextAlignment() {
-    }
-
     @Generated public static final byte TextAlignmentLeft = 0;
     @Generated public static final byte TextAlignmentRight = 1;
     @Generated public static final byte TextAlignmentCenter = 2;
@@ -34,4 +30,8 @@ public final class CTTextAlignment {
     @Generated public static final byte CenterTextAlignment = 2;
     @Generated public static final byte JustifiedTextAlignment = 3;
     @Generated public static final byte NaturalTextAlignment = 4;
+
+    @Generated
+    private CTTextAlignment() {
+    }
 }

@@ -62,13 +62,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationContinueUserActivityRestorationHandler {
-        @Generated
-        void call_applicationContinueUserActivityRestorationHandler(NSArray<?> arg0);
-    }
-
     /**
      * application:didChangeStatusBarFrame:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didChangeStatusBarFrame:">iOS Dev Center</a>
@@ -173,13 +166,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationDidReceiveRemoteNotificationFetchCompletionHandler {
-        @Generated
-        void call_applicationDidReceiveRemoteNotificationFetchCompletionHandler(@NUInt long arg0);
-    }
-
     /**
      * application:didRegisterForRemoteNotificationsWithDeviceToken:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didRegisterForRemoteNotificationsWithDeviceToken:">iOS Dev Center</a>
@@ -228,13 +214,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler {
-        @Generated
-        void call_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler();
-    }
-
     /**
      * application:handleActionWithIdentifier:forRemoteNotification:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleActionWithIdentifier:forRemoteNotification:completionHandler:">iOS Dev Center</a>
@@ -248,13 +227,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler {
-        @Generated
-        void call_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler();
-    }
-
     /**
      * application:handleEventsForBackgroundURLSession:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleEventsForBackgroundURLSession:completionHandler:">iOS Dev Center</a>
@@ -266,13 +238,6 @@ public interface UIApplicationDelegate {
             String identifier,
             @ObjCBlock(name = "call_applicationHandleEventsForBackgroundURLSessionCompletionHandler") Block_applicationHandleEventsForBackgroundURLSessionCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationHandleEventsForBackgroundURLSessionCompletionHandler {
-        @Generated
-        void call_applicationHandleEventsForBackgroundURLSessionCompletionHandler();
     }
 
     /**
@@ -299,13 +264,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationHandleWatchKitExtensionRequestReply {
-        @Generated
-        void call_applicationHandleWatchKitExtensionRequestReply(NSDictionary<?, ?> arg0);
-    }
-
     /**
      * application:openURL:sourceApplication:annotation:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:openURL:sourceApplication:annotation:">iOS Dev Center</a>
@@ -329,13 +287,6 @@ public interface UIApplicationDelegate {
     default void applicationPerformFetchWithCompletionHandler(UIApplication application,
             @ObjCBlock(name = "call_applicationPerformFetchWithCompletionHandler") Block_applicationPerformFetchWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationPerformFetchWithCompletionHandler {
-        @Generated
-        void call_applicationPerformFetchWithCompletionHandler(@NUInt long arg0);
     }
 
     /**
@@ -599,13 +550,6 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler {
-        @Generated
-        void call_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler();
-    }
-
     /**
      * application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/index.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:">iOS Dev Center</a>
@@ -617,13 +561,6 @@ public interface UIApplicationDelegate {
             UIApplication application, String identifier, NSDictionary<?, ?> userInfo, NSDictionary<?, ?> responseInfo,
             @ObjCBlock(name = "call_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler") Block_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler {
-        @Generated
-        void call_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler();
     }
 
     /**
@@ -659,6 +596,69 @@ public interface UIApplicationDelegate {
             UIApplicationShortcutItem shortcutItem,
             @ObjCBlock(name = "call_applicationPerformActionForShortcutItemCompletionHandler") Block_applicationPerformActionForShortcutItemCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationContinueUserActivityRestorationHandler {
+        @Generated
+        void call_applicationContinueUserActivityRestorationHandler(NSArray<?> arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationDidReceiveRemoteNotificationFetchCompletionHandler {
+        @Generated
+        void call_applicationDidReceiveRemoteNotificationFetchCompletionHandler(@NUInt long arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler {
+        @Generated
+        void call_applicationHandleActionWithIdentifierForLocalNotificationCompletionHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler {
+        @Generated
+        void call_applicationHandleActionWithIdentifierForRemoteNotificationCompletionHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationHandleEventsForBackgroundURLSessionCompletionHandler {
+        @Generated
+        void call_applicationHandleEventsForBackgroundURLSessionCompletionHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationHandleWatchKitExtensionRequestReply {
+        @Generated
+        void call_applicationHandleWatchKitExtensionRequestReply(NSDictionary<?, ?> arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationPerformFetchWithCompletionHandler {
+        @Generated
+        void call_applicationPerformFetchWithCompletionHandler(@NUInt long arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler {
+        @Generated
+        void call_applicationHandleActionWithIdentifierForLocalNotificationWithResponseInfoCompletionHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler {
+        @Generated
+        void call_applicationHandleActionWithIdentifierForRemoteNotificationWithResponseInfoCompletionHandler();
     }
 
     @Runtime(ObjCRuntime.class)

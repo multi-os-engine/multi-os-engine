@@ -28,11 +28,11 @@ import org.moe.natj.general.ptr.ConstFloatPtr;
 @Generated
 @Structure()
 public final class AudioUnitParameterStringFromValue extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public AudioUnitParameterStringFromValue() {

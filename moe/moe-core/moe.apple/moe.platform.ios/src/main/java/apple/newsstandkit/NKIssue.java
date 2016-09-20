@@ -56,63 +56,10 @@ public class NKIssue extends NSObject {
         super(peer);
     }
 
-    /**
-     * addAssetWithRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instm/NKIssue/addAssetWithRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addAssetWithRequest:")
-    public native NKAssetDownload addAssetWithRequest(NSURLRequest request);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NKIssue alloc();
-
-    /**
-     * contentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instp/NKIssue/contentURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentURL")
-    public native NSURL contentURL();
-
-    /**
-     * date</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instp/NKIssue/date">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("date")
-    public native NSDate date();
-
-    /**
-     * downloadingAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instp/NKIssue/downloadingAssets">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadingAssets")
-    public native NSArray<? extends NKAssetDownload> downloadingAssets();
-
-    @Generated
-    @Selector("init")
-    public native NKIssue init();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instp/NKIssue/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instp/NKIssue/status">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("status")
-    @NInt
-    public native long status();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -213,4 +160,57 @@ public class NKIssue extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addAssetWithRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instm/NKIssue/addAssetWithRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addAssetWithRequest:")
+    public native NKAssetDownload addAssetWithRequest(NSURLRequest request);
+
+    /**
+     * contentURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instp/NKIssue/contentURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentURL")
+    public native NSURL contentURL();
+
+    /**
+     * date</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instp/NKIssue/date">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("date")
+    public native NSDate date();
+
+    /**
+     * downloadingAssets</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instp/NKIssue/downloadingAssets">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadingAssets")
+    public native NSArray<? extends NKAssetDownload> downloadingAssets();
+
+    @Generated
+    @Selector("init")
+    public native NKIssue init();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instp/NKIssue/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * status</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKIssue_Class/index.html#//apple_ref/occ/instp/NKIssue/status">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("status")
+    @NInt
+    public native long status();
 }

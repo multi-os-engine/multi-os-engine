@@ -63,44 +63,6 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     public static native SCNPhysicsBallSocketJoint alloc();
 
     /**
-     * anchorA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorA">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("anchorA")
-    @ByValue
-    public native SCNVector3 anchorA();
-
-    /**
-     * anchorB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorB">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("anchorB")
-    @ByValue
-    public native SCNVector3 anchorB();
-
-    /**
-     * bodyA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/bodyA">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bodyA")
-    public native SCNPhysicsBody bodyA();
-
-    /**
-     * bodyB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/bodyB">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bodyB")
-    public native SCNPhysicsBody bodyB();
-
-    @Generated
-    @Selector("init")
-    public native SCNPhysicsBallSocketJoint init();
-
-    /**
      * jointWithBody:anchor:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/clm/SCNPhysicsBallSocketJoint/jointWithBody:anchor:">iOS Dev Center</a>
      */
@@ -116,26 +78,6 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     @Selector("jointWithBodyA:anchorA:bodyB:anchorB:")
     public static native SCNPhysicsBallSocketJoint jointWithBodyAAnchorABodyBAnchorB(SCNPhysicsBody bodyA,
             @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 anchorB);
-
-    /**
-     * anchorA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorA">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnchorA:")
-    public native void setAnchorA(@ByValue SCNVector3 value);
-
-    /**
-     * anchorB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorB">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnchorB:")
-    public native void setAnchorB(@ByValue SCNVector3 value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPhysicsBallSocketJoint initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -237,13 +179,71 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * anchorA</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorA">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("anchorA")
+    @ByValue
+    public native SCNVector3 anchorA();
+
+    /**
+     * anchorB</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorB">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("anchorB")
+    @ByValue
+    public native SCNVector3 anchorB();
+
+    /**
+     * bodyA</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/bodyA">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bodyA")
+    public native SCNPhysicsBody bodyA();
+
+    /**
+     * bodyB</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/bodyB">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bodyB")
+    public native SCNPhysicsBody bodyB();
+
+    @Generated
+    @Selector("init")
+    public native SCNPhysicsBallSocketJoint init();
+
+    /**
+     * anchorA</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorA">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnchorA:")
+    public native void setAnchorA(@ByValue SCNVector3 value);
+
+    /**
+     * anchorB</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsBallSocketJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsBallSocketJoint/anchorB">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnchorB:")
+    public native void setAnchorB(@ByValue SCNVector3 value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNPhysicsBallSocketJoint initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

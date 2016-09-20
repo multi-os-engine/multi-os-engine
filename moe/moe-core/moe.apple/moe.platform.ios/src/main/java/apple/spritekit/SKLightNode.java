@@ -62,55 +62,6 @@ public class SKLightNode extends SKNode {
     @Selector("alloc")
     public static native SKLightNode alloc();
 
-    /**
-     * ambientColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/ambientColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ambientColor")
-    public native UIColor ambientColor();
-
-    /**
-     * categoryBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/categoryBitMask">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("categoryBitMask")
-    public native int categoryBitMask();
-
-    /**
-     * falloff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/falloff">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("falloff")
-    @NFloat
-    public native double falloff();
-
-    @Generated
-    @Selector("init")
-    public native SKLightNode init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKLightNode initWithCoder(NSCoder aDecoder);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * lightColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/lightColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lightColor")
-    public native UIColor lightColor();
-
     @Generated
     @Selector("node")
     public static native SKLightNode node();
@@ -118,62 +69,6 @@ public class SKLightNode extends SKNode {
     @Generated
     @Selector("nodeWithFileNamed:")
     public static native SKLightNode nodeWithFileNamed(String filename);
-
-    /**
-     * ambientColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/ambientColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAmbientColor:")
-    public native void setAmbientColor(UIColor value);
-
-    /**
-     * categoryBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/categoryBitMask">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCategoryBitMask:")
-    public native void setCategoryBitMask(int value);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    /**
-     * falloff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/falloff">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFalloff:")
-    public native void setFalloff(@NFloat double value);
-
-    /**
-     * lightColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/lightColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLightColor:")
-    public native void setLightColor(UIColor value);
-
-    /**
-     * shadowColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/shadowColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShadowColor:")
-    public native void setShadowColor(UIColor value);
-
-    /**
-     * shadowColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/shadowColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shadowColor")
-    public native UIColor shadowColor();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -292,4 +187,109 @@ public class SKLightNode extends SKNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * ambientColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/ambientColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ambientColor")
+    public native UIColor ambientColor();
+
+    /**
+     * categoryBitMask</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/categoryBitMask">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("categoryBitMask")
+    public native int categoryBitMask();
+
+    /**
+     * falloff</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/falloff">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("falloff")
+    @NFloat
+    public native double falloff();
+
+    @Generated
+    @Selector("init")
+    public native SKLightNode init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKLightNode initWithCoder(NSCoder aDecoder);
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    /**
+     * lightColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/lightColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lightColor")
+    public native UIColor lightColor();
+
+    /**
+     * ambientColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/ambientColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAmbientColor:")
+    public native void setAmbientColor(UIColor value);
+
+    /**
+     * categoryBitMask</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/categoryBitMask">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCategoryBitMask:")
+    public native void setCategoryBitMask(int value);
+
+    /**
+     * falloff</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/falloff">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFalloff:")
+    public native void setFalloff(@NFloat double value);
+
+    /**
+     * lightColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/lightColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLightColor:")
+    public native void setLightColor(UIColor value);
+
+    /**
+     * shadowColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/shadowColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShadowColor:")
+    public native void setShadowColor(UIColor value);
+
+    /**
+     * shadowColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLightNode_Ref/index.html#//apple_ref/occ/instp/SKLightNode/shadowColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shadowColor")
+    public native UIColor shadowColor();
 }

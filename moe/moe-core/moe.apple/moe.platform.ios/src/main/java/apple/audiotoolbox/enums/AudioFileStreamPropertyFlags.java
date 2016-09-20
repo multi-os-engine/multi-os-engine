@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioFileStreamPropertyFlags {
+    @Generated public static final int PropertyIsCached = 0x00000001;
+    @Generated public static final int CacheProperty = 0x00000002;
+
     @Generated
     private AudioFileStreamPropertyFlags() {
     }
-
-    @Generated public static final int PropertyIsCached = 0x00000001;
-    @Generated public static final int CacheProperty = 0x00000002;
 }

@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTFrameProgression {
-    @Generated
-    private CTFrameProgression() {
-    }
-
     @Generated public static final int TopToBottom = 0x00000000;
     @Generated public static final int RightToLeft = 0x00000001;
     @Generated public static final int LeftToRight = 0x00000002;
+
+    @Generated
+    private CTFrameProgression() {
+    }
 }

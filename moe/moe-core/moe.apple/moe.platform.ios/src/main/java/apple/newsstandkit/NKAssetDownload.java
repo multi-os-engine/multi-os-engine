@@ -57,63 +57,10 @@ public class NKAssetDownload extends NSObject {
         super(peer);
     }
 
-    /**
-     * URLRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instp/NKAssetDownload/URLRequest">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLRequest")
-    public native NSURLRequest URLRequest();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NKAssetDownload alloc();
-
-    /**
-     * downloadWithDelegate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instm/NKAssetDownload/downloadWithDelegate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadWithDelegate:")
-    public native NSURLConnection downloadWithDelegate(
-            @Mapped(ObjCObjectMapper.class) NSURLConnectionDownloadDelegate delegate);
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instp/NKAssetDownload/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native NKAssetDownload init();
-
-    /**
-     * issue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instp/NKAssetDownload/issue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("issue")
-    public native NKIssue issue();
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instp/NKAssetDownload/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instp/NKAssetDownload/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInfo")
-    public native NSDictionary<?, ?> userInfo();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -214,4 +161,57 @@ public class NKAssetDownload extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URLRequest</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instp/NKAssetDownload/URLRequest">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLRequest")
+    public native NSURLRequest URLRequest();
+
+    /**
+     * downloadWithDelegate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instm/NKAssetDownload/downloadWithDelegate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadWithDelegate:")
+    public native NSURLConnection downloadWithDelegate(
+            @Mapped(ObjCObjectMapper.class) NSURLConnectionDownloadDelegate delegate);
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instp/NKAssetDownload/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native NKAssetDownload init();
+
+    /**
+     * issue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instp/NKAssetDownload/issue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("issue")
+    public native NKIssue issue();
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instp/NKAssetDownload/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUserInfo:")
+    public native void setUserInfo(NSDictionary<?, ?> value);
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKAssetDownload_Class/index.html#//apple_ref/occ/instp/NKAssetDownload/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInfo")
+    public native NSDictionary<?, ?> userInfo();
 }

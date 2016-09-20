@@ -78,6 +78,314 @@ public class NSNumber extends NSValue implements CKRecordValue {
     public static native NSNumber alloc();
 
     /**
+     * numberWithBool:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithBool:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithBool:")
+    public static native NSNumber numberWithBool(boolean value);
+
+    /**
+     * numberWithChar:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithChar:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithChar:")
+    public static native NSNumber numberWithChar(byte value);
+
+    /**
+     * numberWithDouble:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithDouble:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithDouble:")
+    public static native NSNumber numberWithDouble(double value);
+
+    /**
+     * numberWithFloat:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithFloat:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithFloat:")
+    public static native NSNumber numberWithFloat(float value);
+
+    /**
+     * numberWithInt:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithInt:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithInt:")
+    public static native NSNumber numberWithInt(int value);
+
+    /**
+     * numberWithInteger:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithInteger:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithInteger:")
+    public static native NSNumber numberWithInteger(@NInt long value);
+
+    /**
+     * numberWithLong:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithLong:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithLong:")
+    public static native NSNumber numberWithLong(@NInt long value);
+
+    /**
+     * numberWithLongLong:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithLongLong:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithLongLong:")
+    public static native NSNumber numberWithLongLong(long value);
+
+    /**
+     * numberWithShort:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithShort:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithShort:")
+    public static native NSNumber numberWithShort(short value);
+
+    /**
+     * numberWithUnsignedChar:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedChar:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithUnsignedChar:")
+    public static native NSNumber numberWithUnsignedChar(byte value);
+
+    /**
+     * numberWithUnsignedInt:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedInt:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithUnsignedInt:")
+    public static native NSNumber numberWithUnsignedInt(int value);
+
+    /**
+     * numberWithUnsignedInteger:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedInteger:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithUnsignedInteger:")
+    public static native NSNumber numberWithUnsignedInteger(@NUInt long value);
+
+    /**
+     * numberWithUnsignedLong:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedLong:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithUnsignedLong:")
+    public static native NSNumber numberWithUnsignedLong(@NUInt long value);
+
+    /**
+     * numberWithUnsignedLongLong:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedLongLong:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithUnsignedLongLong:")
+    public static native NSNumber numberWithUnsignedLongLong(long value);
+
+    /**
+     * numberWithUnsignedShort:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedShort:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberWithUnsignedShort:")
+    public static native NSNumber numberWithUnsignedShort(char value);
+
+    @Generated
+    @Selector("value:withObjCType:")
+    public static native NSValue valueWithObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
+
+    @Generated
+    @Selector("valueWithBytes:objCType:")
+    public static native NSValue valueWithBytesObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
+
+    @Generated
+    @Selector("valueWithCATransform3D:")
+    public static native NSValue valueWithCATransform3D(@ByValue CATransform3D t);
+
+    @Generated
+    @Selector("valueWithCGAffineTransform:")
+    public static native NSValue valueWithCGAffineTransform(@ByValue CGAffineTransform transform);
+
+    @Generated
+    @Selector("valueWithCGPoint:")
+    public static native NSValue valueWithCGPoint(@ByValue CGPoint point);
+
+    @Generated
+    @Selector("valueWithCGRect:")
+    public static native NSValue valueWithCGRect(@ByValue CGRect rect);
+
+    @Generated
+    @Selector("valueWithCGSize:")
+    public static native NSValue valueWithCGSize(@ByValue CGSize size);
+
+    @Generated
+    @Selector("valueWithCGVector:")
+    public static native NSValue valueWithCGVector(@ByValue CGVector vector);
+
+    @Generated
+    @Selector("valueWithCMTime:")
+    public static native NSValue valueWithCMTime(@ByValue CMTime time);
+
+    @Generated
+    @Selector("valueWithCMTimeMapping:")
+    public static native NSValue valueWithCMTimeMapping(@ByValue CMTimeMapping timeMapping);
+
+    @Generated
+    @Selector("valueWithCMTimeRange:")
+    public static native NSValue valueWithCMTimeRange(@ByValue CMTimeRange timeRange);
+
+    @Generated
+    @Selector("valueWithMKCoordinate:")
+    public static native NSValue valueWithMKCoordinate(@ByValue CLLocationCoordinate2D coordinate);
+
+    @Generated
+    @Selector("valueWithMKCoordinateSpan:")
+    public static native NSValue valueWithMKCoordinateSpan(@ByValue MKCoordinateSpan span);
+
+    @Generated
+    @Selector("valueWithNonretainedObject:")
+    public static native NSValue valueWithNonretainedObject(@Mapped(ObjCObjectMapper.class) Object anObject);
+
+    @Generated
+    @Selector("valueWithPointer:")
+    public static native NSValue valueWithPointer(ConstVoidPtr pointer);
+
+    @Generated
+    @Selector("valueWithRange:")
+    public static native NSValue valueWithRange(@ByValue NSRange range);
+
+    @Generated
+    @Selector("valueWithSCNMatrix4:")
+    public static native NSValue valueWithSCNMatrix4(@ByValue SCNMatrix4 v);
+
+    @Generated
+    @Selector("valueWithSCNVector3:")
+    public static native NSValue valueWithSCNVector3(@ByValue SCNVector3 v);
+
+    @Generated
+    @Selector("valueWithSCNVector4:")
+    public static native NSValue valueWithSCNVector4(@ByValue SCNVector4 v);
+
+    @Generated
+    @Selector("valueWithUIEdgeInsets:")
+    public static native NSValue valueWithUIEdgeInsets(@ByValue UIEdgeInsets insets);
+
+    @Generated
+    @Selector("valueWithUIOffset:")
+    public static native NSValue valueWithUIOffset(@ByValue UIOffset insets);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
      * boolValue</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/boolValue">iOS Dev Center</a>
      */
@@ -301,126 +609,6 @@ public class NSNumber extends NSValue implements CKRecordValue {
     public native long longValue();
 
     /**
-     * numberWithBool:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithBool:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithBool:")
-    public static native NSNumber numberWithBool(boolean value);
-
-    /**
-     * numberWithChar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithChar:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithChar:")
-    public static native NSNumber numberWithChar(byte value);
-
-    /**
-     * numberWithDouble:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithDouble:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithDouble:")
-    public static native NSNumber numberWithDouble(double value);
-
-    /**
-     * numberWithFloat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithFloat:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithFloat:")
-    public static native NSNumber numberWithFloat(float value);
-
-    /**
-     * numberWithInt:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithInt:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithInt:")
-    public static native NSNumber numberWithInt(int value);
-
-    /**
-     * numberWithInteger:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithInteger:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithInteger:")
-    public static native NSNumber numberWithInteger(@NInt long value);
-
-    /**
-     * numberWithLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithLong:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithLong:")
-    public static native NSNumber numberWithLong(@NInt long value);
-
-    /**
-     * numberWithLongLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithLongLong:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithLongLong:")
-    public static native NSNumber numberWithLongLong(long value);
-
-    /**
-     * numberWithShort:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithShort:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithShort:")
-    public static native NSNumber numberWithShort(short value);
-
-    /**
-     * numberWithUnsignedChar:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedChar:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithUnsignedChar:")
-    public static native NSNumber numberWithUnsignedChar(byte value);
-
-    /**
-     * numberWithUnsignedInt:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedInt:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithUnsignedInt:")
-    public static native NSNumber numberWithUnsignedInt(int value);
-
-    /**
-     * numberWithUnsignedInteger:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedInteger:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithUnsignedInteger:")
-    public static native NSNumber numberWithUnsignedInteger(@NUInt long value);
-
-    /**
-     * numberWithUnsignedLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedLong:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithUnsignedLong:")
-    public static native NSNumber numberWithUnsignedLong(@NUInt long value);
-
-    /**
-     * numberWithUnsignedLongLong:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedLongLong:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithUnsignedLongLong:")
-    public static native NSNumber numberWithUnsignedLongLong(long value);
-
-    /**
-     * numberWithUnsignedShort:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/clm/NSNumber/numberWithUnsignedShort:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberWithUnsignedShort:")
-    public static native NSNumber numberWithUnsignedShort(char value);
-
-    /**
      * shortValue</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/index.html#//apple_ref/occ/instp/NSNumber/shortValue">iOS Dev Center</a>
      */
@@ -487,196 +675,8 @@ public class NSNumber extends NSValue implements CKRecordValue {
     public native char unsignedShortValue();
 
     @Generated
-    @Selector("value:withObjCType:")
-    public static native NSValue valueWithObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
-
-    @Generated
-    @Selector("valueWithBytes:objCType:")
-    public static native NSValue valueWithBytesObjCType(ConstVoidPtr value, @Mapped(CStringMapper.class) String type);
-
-    @Generated
-    @Selector("valueWithCATransform3D:")
-    public static native NSValue valueWithCATransform3D(@ByValue CATransform3D t);
-
-    @Generated
-    @Selector("valueWithCGAffineTransform:")
-    public static native NSValue valueWithCGAffineTransform(@ByValue CGAffineTransform transform);
-
-    @Generated
-    @Selector("valueWithCGPoint:")
-    public static native NSValue valueWithCGPoint(@ByValue CGPoint point);
-
-    @Generated
-    @Selector("valueWithCGRect:")
-    public static native NSValue valueWithCGRect(@ByValue CGRect rect);
-
-    @Generated
-    @Selector("valueWithCGSize:")
-    public static native NSValue valueWithCGSize(@ByValue CGSize size);
-
-    @Generated
-    @Selector("valueWithCGVector:")
-    public static native NSValue valueWithCGVector(@ByValue CGVector vector);
-
-    @Generated
-    @Selector("valueWithCMTime:")
-    public static native NSValue valueWithCMTime(@ByValue CMTime time);
-
-    @Generated
-    @Selector("valueWithCMTimeMapping:")
-    public static native NSValue valueWithCMTimeMapping(@ByValue CMTimeMapping timeMapping);
-
-    @Generated
-    @Selector("valueWithCMTimeRange:")
-    public static native NSValue valueWithCMTimeRange(@ByValue CMTimeRange timeRange);
-
-    @Generated
-    @Selector("valueWithMKCoordinate:")
-    public static native NSValue valueWithMKCoordinate(@ByValue CLLocationCoordinate2D coordinate);
-
-    @Generated
-    @Selector("valueWithMKCoordinateSpan:")
-    public static native NSValue valueWithMKCoordinateSpan(@ByValue MKCoordinateSpan span);
-
-    @Generated
-    @Selector("valueWithNonretainedObject:")
-    public static native NSValue valueWithNonretainedObject(@Mapped(ObjCObjectMapper.class) Object anObject);
-
-    @Generated
-    @Selector("valueWithPointer:")
-    public static native NSValue valueWithPointer(ConstVoidPtr pointer);
-
-    @Generated
-    @Selector("valueWithRange:")
-    public static native NSValue valueWithRange(@ByValue NSRange range);
-
-    @Generated
-    @Selector("valueWithSCNMatrix4:")
-    public static native NSValue valueWithSCNMatrix4(@ByValue SCNMatrix4 v);
-
-    @Generated
-    @Selector("valueWithSCNVector3:")
-    public static native NSValue valueWithSCNVector3(@ByValue SCNVector3 v);
-
-    @Generated
-    @Selector("valueWithSCNVector4:")
-    public static native NSValue valueWithSCNVector4(@ByValue SCNVector4 v);
-
-    @Generated
-    @Selector("valueWithUIEdgeInsets:")
-    public static native NSValue valueWithUIEdgeInsets(@ByValue UIEdgeInsets insets);
-
-    @Generated
-    @Selector("valueWithUIOffset:")
-    public static native NSValue valueWithUIOffset(@ByValue UIOffset insets);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

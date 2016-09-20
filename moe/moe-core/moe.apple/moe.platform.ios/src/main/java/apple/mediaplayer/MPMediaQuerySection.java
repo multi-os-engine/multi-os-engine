@@ -65,49 +65,8 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
     public static native MPMediaQuerySection alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native MPMediaQuerySection init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaQuerySection initWithCoder(NSCoder aDecoder);
-
-    /**
-     * range</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuerySection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuerySection/range">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("range")
-    @ByValue
-    public native NSRange range();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuerySection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuerySection/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -208,4 +167,45 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native MPMediaQuerySection init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaQuerySection initWithCoder(NSCoder aDecoder);
+
+    /**
+     * range</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuerySection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuerySection/range">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("range")
+    @ByValue
+    public native NSRange range();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaQuerySection_ClassReference/index.html#//apple_ref/occ/instp/MPMediaQuerySection/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
 }

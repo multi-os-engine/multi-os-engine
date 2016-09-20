@@ -61,170 +61,12 @@ public class NEVPNManager extends NSObject {
     public static native NEVPNManager alloc();
 
     /**
-     * connection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/connection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connection")
-    public native NEVPNConnection connection();
-
-    @Generated
-    @Selector("init")
-    public native NEVPNManager init();
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * onDemandEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/onDemandEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isOnDemandEnabled")
-    public native boolean isOnDemandEnabled();
-
-    /**
-     * loadFromPreferencesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instm/NEVPNManager/loadFromPreferencesWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadFromPreferencesWithCompletionHandler:")
-    public native void loadFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadFromPreferencesWithCompletionHandler {
-        @Generated
-        void call_loadFromPreferencesWithCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/localizedDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedDescription")
-    public native String localizedDescription();
-
-    /**
-     * onDemandRules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/onDemandRules">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("onDemandRules")
-    public native NSArray<? extends NEOnDemandRule> onDemandRules();
-
-    /**
-     * protocol</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/protocol">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("protocol")
-    public native NEVPNProtocol protocol();
-
-    /**
-     * removeFromPreferencesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instm/NEVPNManager/removeFromPreferencesWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeFromPreferencesWithCompletionHandler:")
-    public native void removeFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_removeFromPreferencesWithCompletionHandler {
-        @Generated
-        void call_removeFromPreferencesWithCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * saveToPreferencesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instm/NEVPNManager/saveToPreferencesWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("saveToPreferencesWithCompletionHandler:")
-    public native void saveToPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_saveToPreferencesWithCompletionHandler {
-        @Generated
-        void call_saveToPreferencesWithCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/localizedDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLocalizedDescription:")
-    public native void setLocalizedDescription(String value);
-
-    /**
-     * onDemandEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/onDemandEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOnDemandEnabled:")
-    public native void setOnDemandEnabled(boolean value);
-
-    /**
-     * onDemandRules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/onDemandRules">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOnDemandRules:")
-    public native void setOnDemandRules(NSArray<? extends NEOnDemandRule> value);
-
-    /**
-     * protocol</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/protocol">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("setProtocol:")
-    public native void setProtocol(NEVPNProtocol value);
-
-    /**
      * sharedManager</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/clm/NEVPNManager/sharedManager">iOS Dev Center</a>
      */
     @Generated
     @Selector("sharedManager")
     public static native NEVPNManager sharedManager();
-
-    /**
-     * protocolConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/protocolConfiguration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("protocolConfiguration")
-    public native NEVPNProtocol protocolConfiguration();
-
-    /**
-     * protocolConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/protocolConfiguration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProtocolConfiguration:")
-    public native void setProtocolConfiguration(NEVPNProtocol value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -325,4 +167,162 @@ public class NEVPNManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * connection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/connection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connection")
+    public native NEVPNConnection connection();
+
+    @Generated
+    @Selector("init")
+    public native NEVPNManager init();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    /**
+     * onDemandEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/onDemandEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isOnDemandEnabled")
+    public native boolean isOnDemandEnabled();
+
+    /**
+     * onDemandEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/onDemandEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOnDemandEnabled:")
+    public native void setOnDemandEnabled(boolean value);
+
+    /**
+     * loadFromPreferencesWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instm/NEVPNManager/loadFromPreferencesWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadFromPreferencesWithCompletionHandler:")
+    public native void loadFromPreferencesWithCompletionHandler(
+            @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
+
+    /**
+     * localizedDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/localizedDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedDescription")
+    public native String localizedDescription();
+
+    /**
+     * onDemandRules</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/onDemandRules">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("onDemandRules")
+    public native NSArray<? extends NEOnDemandRule> onDemandRules();
+
+    /**
+     * protocol</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/protocol">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("protocol")
+    public native NEVPNProtocol protocol();
+
+    /**
+     * removeFromPreferencesWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instm/NEVPNManager/removeFromPreferencesWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeFromPreferencesWithCompletionHandler:")
+    public native void removeFromPreferencesWithCompletionHandler(
+            @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
+
+    /**
+     * saveToPreferencesWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instm/NEVPNManager/saveToPreferencesWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("saveToPreferencesWithCompletionHandler:")
+    public native void saveToPreferencesWithCompletionHandler(
+            @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
+
+    /**
+     * localizedDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/localizedDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLocalizedDescription:")
+    public native void setLocalizedDescription(String value);
+
+    /**
+     * onDemandRules</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/onDemandRules">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOnDemandRules:")
+    public native void setOnDemandRules(NSArray<? extends NEOnDemandRule> value);
+
+    /**
+     * protocol</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/protocol">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("setProtocol:")
+    public native void setProtocol(NEVPNProtocol value);
+
+    /**
+     * protocolConfiguration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/protocolConfiguration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("protocolConfiguration")
+    public native NEVPNProtocol protocolConfiguration();
+
+    /**
+     * protocolConfiguration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEVPNManagerClassRef/index.html#//apple_ref/occ/instp/NEVPNManager/protocolConfiguration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProtocolConfiguration:")
+    public native void setProtocolConfiguration(NEVPNProtocol value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadFromPreferencesWithCompletionHandler {
+        @Generated
+        void call_loadFromPreferencesWithCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeFromPreferencesWithCompletionHandler {
+        @Generated
+        void call_removeFromPreferencesWithCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_saveToPreferencesWithCompletionHandler {
+        @Generated
+        void call_saveToPreferencesWithCompletionHandler(NSError arg0);
+    }
 }

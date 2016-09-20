@@ -69,14 +69,6 @@ public class UIBlurEffect extends UIVisualEffect {
     public static native UIBlurEffect effectWithStyle(@NInt long style);
 
     @Generated
-    @Selector("init")
-    public native UIBlurEffect init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIBlurEffect initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -176,13 +168,21 @@ public class UIBlurEffect extends UIVisualEffect {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIBlurEffect init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIBlurEffect initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

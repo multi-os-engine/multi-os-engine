@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HMCharacteristicValueAirQuality {
-    @Generated
-    private HMCharacteristicValueAirQuality() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Excellent = 0x0000000000000001L;
     @Generated @NInt public static final long Good = 0x0000000000000002L;
     @Generated @NInt public static final long Fair = 0x0000000000000003L;
     @Generated @NInt public static final long Inferior = 0x0000000000000004L;
     @Generated @NInt public static final long Poor = 0x0000000000000005L;
+
+    @Generated
+    private HMCharacteristicValueAirQuality() {
+    }
 }

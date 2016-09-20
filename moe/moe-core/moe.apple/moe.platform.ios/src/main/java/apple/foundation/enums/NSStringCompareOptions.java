@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSStringCompareOptions {
-    @Generated
-    private NSStringCompareOptions() {
-    }
-
     @Generated @NUInt public static final long CaseInsensitiveSearch = 0x0000000000000001L;
     @Generated @NUInt public static final long LiteralSearch = 0x0000000000000002L;
     @Generated @NUInt public static final long BackwardsSearch = 0x0000000000000004L;
@@ -34,4 +30,8 @@ public final class NSStringCompareOptions {
     @Generated @NUInt public static final long WidthInsensitiveSearch = 0x0000000000000100L;
     @Generated @NUInt public static final long ForcedOrderingSearch = 0x0000000000000200L;
     @Generated @NUInt public static final long RegularExpressionSearch = 0x0000000000000400L;
+
+    @Generated
+    private NSStringCompareOptions() {
+    }
 }

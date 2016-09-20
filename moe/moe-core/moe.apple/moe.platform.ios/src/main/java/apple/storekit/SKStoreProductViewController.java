@@ -65,67 +65,6 @@ public class SKStoreProductViewController extends UIViewController {
     @Selector("alloc")
     public static native SKStoreProductViewController alloc();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instp/SKStoreProductViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native SKStoreProductViewControllerDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native SKStoreProductViewController init();
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native SKStoreProductViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    /**
-     * loadProductWithParameters:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instm/SKStoreProductViewController/loadProductWithParameters:completionBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadProductWithParameters:completionBlock:")
-    public native void loadProductWithParametersCompletionBlock(NSDictionary<String, ?> parameters,
-            @ObjCBlock(name = "call_loadProductWithParametersCompletionBlock") Block_loadProductWithParametersCompletionBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadProductWithParametersCompletionBlock {
-        @Generated
-        void call_loadProductWithParametersCompletionBlock(boolean arg0, NSError arg1);
-    }
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instp/SKStoreProductViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instp/SKStoreProductViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKStoreProductViewController initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -237,4 +176,65 @@ public class SKStoreProductViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instp/SKStoreProductViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native SKStoreProductViewControllerDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native SKStoreProductViewController init();
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native SKStoreProductViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    /**
+     * loadProductWithParameters:completionBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instm/SKStoreProductViewController/loadProductWithParameters:completionBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadProductWithParameters:completionBlock:")
+    public native void loadProductWithParametersCompletionBlock(NSDictionary<String, ?> parameters,
+            @ObjCBlock(name = "call_loadProductWithParametersCompletionBlock") Block_loadProductWithParametersCompletionBlock block);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instp/SKStoreProductViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/occ/instp/SKStoreProductViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKStoreProductViewController initWithCoder(NSCoder aDecoder);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadProductWithParametersCompletionBlock {
+        @Generated
+        void call_loadProductWithParametersCompletionBlock(boolean arg0, NSError arg1);
+    }
 }

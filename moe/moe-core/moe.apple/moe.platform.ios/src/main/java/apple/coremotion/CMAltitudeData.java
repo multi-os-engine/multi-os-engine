@@ -62,30 +62,6 @@ public class CMAltitudeData extends CMLogItem {
     public static native CMAltitudeData alloc();
 
     @Generated
-    @Selector("init")
-    public native CMAltitudeData init();
-
-    /**
-     * pressure</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltitudeData_class/index.html#//apple_ref/occ/instp/CMAltitudeData/pressure">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pressure")
-    public native NSNumber pressure();
-
-    /**
-     * relativeAltitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltitudeData_class/index.html#//apple_ref/occ/instp/CMAltitudeData/relativeAltitude">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("relativeAltitude")
-    public native NSNumber relativeAltitude();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMAltitudeData initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -185,13 +161,37 @@ public class CMAltitudeData extends CMLogItem {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CMAltitudeData init();
+
+    /**
+     * pressure</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltitudeData_class/index.html#//apple_ref/occ/instp/CMAltitudeData/pressure">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pressure")
+    public native NSNumber pressure();
+
+    /**
+     * relativeAltitude</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltitudeData_class/index.html#//apple_ref/occ/instp/CMAltitudeData/relativeAltitude">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("relativeAltitude")
+    public native NSNumber relativeAltitude();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CMAltitudeData initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSComparisonResult {
-    @Generated
-    private NSComparisonResult() {
-    }
-
     @Generated @NInt public static final long Ascending = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long Same = 0x0000000000000000L;
     @Generated @NInt public static final long Descending = 0x0000000000000001L;
+
+    @Generated
+    private NSComparisonResult() {
+    }
 }

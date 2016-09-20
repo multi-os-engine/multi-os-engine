@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioComponentFlags {
-    @Generated
-    private AudioComponentFlags() {
-    }
-
     @Generated public static final int Unsearchable = 0x00000001;
     @Generated public static final int SandboxSafe = 0x00000002;
     @Generated public static final int IsV3AudioUnit = 0x00000004;
     @Generated public static final int RequiresAsyncInstantiation = 0x00000008;
     @Generated public static final int CanLoadInProcess = 0x00000010;
+
+    @Generated
+    private AudioComponentFlags() {
+    }
 }

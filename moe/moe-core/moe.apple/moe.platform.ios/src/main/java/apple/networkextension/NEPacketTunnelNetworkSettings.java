@@ -56,86 +56,10 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
         super(peer);
     }
 
-    /**
-     * IPv4Settings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/IPv4Settings">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("IPv4Settings")
-    public native NEIPv4Settings IPv4Settings();
-
-    /**
-     * IPv6Settings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/IPv6Settings">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("IPv6Settings")
-    public native NEIPv6Settings IPv6Settings();
-
-    /**
-     * MTU</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/MTU">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("MTU")
-    public native NSNumber MTU();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NEPacketTunnelNetworkSettings alloc();
-
-    @Generated
-    @Selector("init")
-    public native NEPacketTunnelNetworkSettings init();
-
-    @Generated
-    @Selector("initWithTunnelRemoteAddress:")
-    public native NEPacketTunnelNetworkSettings initWithTunnelRemoteAddress(String address);
-
-    /**
-     * IPv4Settings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/IPv4Settings">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIPv4Settings:")
-    public native void setIPv4Settings(NEIPv4Settings value);
-
-    /**
-     * IPv6Settings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/IPv6Settings">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIPv6Settings:")
-    public native void setIPv6Settings(NEIPv6Settings value);
-
-    /**
-     * MTU</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/MTU">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMTU:")
-    public native void setMTU(NSNumber value);
-
-    /**
-     * tunnelOverheadBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/tunnelOverheadBytes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTunnelOverheadBytes:")
-    public native void setTunnelOverheadBytes(NSNumber value);
-
-    /**
-     * tunnelOverheadBytes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/tunnelOverheadBytes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tunnelOverheadBytes")
-    public native NSNumber tunnelOverheadBytes();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEPacketTunnelNetworkSettings initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -237,13 +161,89 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * IPv4Settings</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/IPv4Settings">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("IPv4Settings")
+    public native NEIPv4Settings IPv4Settings();
+
+    /**
+     * IPv6Settings</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/IPv6Settings">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("IPv6Settings")
+    public native NEIPv6Settings IPv6Settings();
+
+    /**
+     * MTU</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/MTU">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("MTU")
+    public native NSNumber MTU();
+
+    @Generated
+    @Selector("init")
+    public native NEPacketTunnelNetworkSettings init();
+
+    @Generated
+    @Selector("initWithTunnelRemoteAddress:")
+    public native NEPacketTunnelNetworkSettings initWithTunnelRemoteAddress(String address);
+
+    /**
+     * IPv4Settings</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/IPv4Settings">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIPv4Settings:")
+    public native void setIPv4Settings(NEIPv4Settings value);
+
+    /**
+     * IPv6Settings</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/IPv6Settings">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIPv6Settings:")
+    public native void setIPv6Settings(NEIPv6Settings value);
+
+    /**
+     * MTU</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/MTU">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMTU:")
+    public native void setMTU(NSNumber value);
+
+    /**
+     * tunnelOverheadBytes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/tunnelOverheadBytes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTunnelOverheadBytes:")
+    public native void setTunnelOverheadBytes(NSNumber value);
+
+    /**
+     * tunnelOverheadBytes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelNetworkSettingsClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelNetworkSettings/tunnelOverheadBytes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tunnelOverheadBytes")
+    public native NSNumber tunnelOverheadBytes();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEPacketTunnelNetworkSettings initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

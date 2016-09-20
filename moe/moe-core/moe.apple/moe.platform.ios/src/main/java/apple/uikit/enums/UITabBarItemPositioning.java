@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITabBarItemPositioning {
-    @Generated
-    private UITabBarItemPositioning() {
-    }
-
     @Generated @NInt public static final long Automatic = 0x0000000000000000L;
     @Generated @NInt public static final long Fill = 0x0000000000000001L;
     @Generated @NInt public static final long Centered = 0x0000000000000002L;
+
+    @Generated
+    private UITabBarItemPositioning() {
+    }
 }

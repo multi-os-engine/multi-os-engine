@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKCategoryValueOvulationTestResult {
-    @Generated
-    private HKCategoryValueOvulationTestResult() {
-    }
-
     @Generated @NInt public static final long Negative = 0x0000000000000001L;
     @Generated @NInt public static final long Positive = 0x0000000000000002L;
     @Generated @NInt public static final long Indeterminate = 0x0000000000000003L;
+
+    @Generated
+    private HKCategoryValueOvulationTestResult() {
+    }
 }

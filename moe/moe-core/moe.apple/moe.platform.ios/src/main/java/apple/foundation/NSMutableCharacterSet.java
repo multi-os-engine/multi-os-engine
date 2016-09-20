@@ -54,22 +54,6 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
         super(peer);
     }
 
-    /**
-     * addCharactersInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/addCharactersInRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addCharactersInRange:")
-    public native void addCharactersInRange(@ByValue NSRange aRange);
-
-    /**
-     * addCharactersInString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/addCharactersInString:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addCharactersInString:")
-    public native void addCharactersInString(String aString);
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -104,12 +88,6 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
     public static native NSMutableCharacterSet controlCharacterSet();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
     @Selector("decimalDigitCharacterSet")
     public static native NSMutableCharacterSet decimalDigitCharacterSet();
 
@@ -117,41 +95,9 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
     @Selector("decomposableCharacterSet")
     public static native NSMutableCharacterSet decomposableCharacterSet();
 
-    /**
-     * formIntersectionWithCharacterSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/formIntersectionWithCharacterSet:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("formIntersectionWithCharacterSet:")
-    public native void formIntersectionWithCharacterSet(NSCharacterSet otherSet);
-
-    /**
-     * formUnionWithCharacterSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/formUnionWithCharacterSet:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("formUnionWithCharacterSet:")
-    public native void formUnionWithCharacterSet(NSCharacterSet otherSet);
-
     @Generated
     @Selector("illegalCharacterSet")
     public static native NSMutableCharacterSet illegalCharacterSet();
-
-    @Generated
-    @Selector("init")
-    public native NSMutableCharacterSet init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMutableCharacterSet initWithCoder(NSCoder aDecoder);
-
-    /**
-     * invert</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/invert">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("invert")
-    public native void invert();
 
     @Generated
     @Selector("letterCharacterSet")
@@ -160,11 +106,6 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
     @Generated
     @Selector("lowercaseLetterCharacterSet")
     public static native NSMutableCharacterSet lowercaseLetterCharacterSet();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
 
     @Generated
     @Selector("newlineCharacterSet")
@@ -177,22 +118,6 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
     @Generated
     @Selector("punctuationCharacterSet")
     public static native NSMutableCharacterSet punctuationCharacterSet();
-
-    /**
-     * removeCharactersInRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/removeCharactersInRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeCharactersInRange:")
-    public native void removeCharactersInRange(@ByValue NSRange aRange);
-
-    /**
-     * removeCharactersInString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/removeCharactersInString:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeCharactersInString:")
-    public native void removeCharactersInString(String aString);
 
     @Generated
     @Selector("symbolCharacterSet")
@@ -333,4 +258,79 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addCharactersInRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/addCharactersInRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addCharactersInRange:")
+    public native void addCharactersInRange(@ByValue NSRange aRange);
+
+    /**
+     * addCharactersInString:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/addCharactersInString:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addCharactersInString:")
+    public native void addCharactersInString(String aString);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * formIntersectionWithCharacterSet:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/formIntersectionWithCharacterSet:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("formIntersectionWithCharacterSet:")
+    public native void formIntersectionWithCharacterSet(NSCharacterSet otherSet);
+
+    /**
+     * formUnionWithCharacterSet:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/formUnionWithCharacterSet:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("formUnionWithCharacterSet:")
+    public native void formUnionWithCharacterSet(NSCharacterSet otherSet);
+
+    @Generated
+    @Selector("init")
+    public native NSMutableCharacterSet init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSMutableCharacterSet initWithCoder(NSCoder aDecoder);
+
+    /**
+     * invert</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/invert">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("invert")
+    public native void invert();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    /**
+     * removeCharactersInRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/removeCharactersInRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeCharactersInRange:")
+    public native void removeCharactersInRange(@ByValue NSRange aRange);
+
+    /**
+     * removeCharactersInString:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableCharacterSet_Class/index.html#//apple_ref/occ/instm/NSMutableCharacterSet/removeCharactersInString:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeCharactersInString:")
+    public native void removeCharactersInString(String aString);
 }

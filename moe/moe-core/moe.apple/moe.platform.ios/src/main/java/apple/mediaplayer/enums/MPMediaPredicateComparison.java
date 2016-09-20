@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MPMediaPredicateComparison {
+    @Generated @NInt public static final long EqualTo = 0x0000000000000000L;
+    @Generated @NInt public static final long Contains = 0x0000000000000001L;
+
     @Generated
     private MPMediaPredicateComparison() {
     }
-
-    @Generated @NInt public static final long EqualTo = 0x0000000000000000L;
-    @Generated @NInt public static final long Contains = 0x0000000000000001L;
 }

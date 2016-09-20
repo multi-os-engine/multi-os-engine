@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class MusicSequenceLoadFlags {
+    @Generated public static final int PreserveTracks = 0x00000000;
+    @Generated public static final int ChannelsToTracks = 0x00000001;
+
     @Generated
     private MusicSequenceLoadFlags() {
     }
-
-    @Generated public static final int PreserveTracks = 0x00000000;
-    @Generated public static final int ChannelsToTracks = 0x00000001;
 }

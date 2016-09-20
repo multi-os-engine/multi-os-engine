@@ -89,12 +89,6 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object centimeterOfWaterUnit();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
     /**
      * countUnit</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/clm/HKUnit/countUnit">iOS Dev Center</a>
@@ -130,10 +124,6 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("degreeFahrenheitUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object degreeFahrenheitUnit();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
 
     /**
      * energyFormatterUnitFromUnit:</br>
@@ -206,22 +196,6 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("inchUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object inchUnit();
-
-    @Generated
-    @Selector("init")
-    public native HKUnit init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKUnit initWithCoder(NSCoder aDecoder);
-
-    /**
-     * isNull</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instm/HKUnit/isNull">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isNull")
-    public native boolean isNull();
 
     /**
      * jouleUnit</br>
@@ -422,14 +396,6 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     public static native Object poundUnit();
 
     /**
-     * reciprocalUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instm/HKUnit/reciprocalUnit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reciprocalUnit")
-    public native HKUnit reciprocalUnit();
-
-    /**
      * secondUnit</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/clm/HKUnit/secondUnit">iOS Dev Center</a>
      */
@@ -478,20 +444,6 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * unitDividedByUnit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instm/HKUnit/unitDividedByUnit:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unitDividedByUnit:")
-    public native HKUnit unitDividedByUnit(HKUnit unit);
-
     /**
      * unitFromEnergyFormatterUnit:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/clm/HKUnit/unitFromEnergyFormatterUnit:">iOS Dev Center</a>
@@ -523,30 +475,6 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("unitFromString:")
     public static native HKUnit unitFromString(String string);
-
-    /**
-     * unitMultipliedByUnit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instm/HKUnit/unitMultipliedByUnit:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unitMultipliedByUnit:")
-    public native HKUnit unitMultipliedByUnit(HKUnit unit);
-
-    /**
-     * unitRaisedToPower:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instm/HKUnit/unitRaisedToPower:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unitRaisedToPower:")
-    public native HKUnit unitRaisedToPower(@NInt long power);
-
-    /**
-     * unitString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instp/HKUnit/unitString">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unitString")
-    public native String unitString();
 
     /**
      * cupImperialUnit</br>
@@ -674,4 +602,76 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native HKUnit init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKUnit initWithCoder(NSCoder aDecoder);
+
+    /**
+     * isNull</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instm/HKUnit/isNull">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isNull")
+    public native boolean isNull();
+
+    /**
+     * reciprocalUnit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instm/HKUnit/reciprocalUnit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reciprocalUnit")
+    public native HKUnit reciprocalUnit();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * unitDividedByUnit:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instm/HKUnit/unitDividedByUnit:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unitDividedByUnit:")
+    public native HKUnit unitDividedByUnit(HKUnit unit);
+
+    /**
+     * unitMultipliedByUnit:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instm/HKUnit/unitMultipliedByUnit:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unitMultipliedByUnit:")
+    public native HKUnit unitMultipliedByUnit(HKUnit unit);
+
+    /**
+     * unitRaisedToPower:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instm/HKUnit/unitRaisedToPower:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unitRaisedToPower:")
+    public native HKUnit unitRaisedToPower(@NInt long power);
+
+    /**
+     * unitString</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKUnit_Class/index.html#//apple_ref/occ/instp/HKUnit/unitString">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unitString")
+    public native String unitString();
 }

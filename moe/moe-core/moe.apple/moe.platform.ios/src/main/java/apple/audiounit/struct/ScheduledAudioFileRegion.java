@@ -33,11 +33,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class ScheduledAudioFileRegion extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public ScheduledAudioFileRegion() {
@@ -61,15 +61,6 @@ public final class ScheduledAudioFileRegion extends StructObject {
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMCompletionProc(@FunctionPtr(name = "call_mCompletionProc") Function_mCompletionProc value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_mCompletionProc {
-        @Generated
-        void call_mCompletionProc(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") ScheduledAudioFileRegion arg1,
-                int arg2);
-    }
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -115,4 +106,13 @@ public final class ScheduledAudioFileRegion extends StructObject {
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_mCompletionProc")
     public native Function_mCompletionProc mCompletionProc();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_mCompletionProc {
+        @Generated
+        void call_mCompletionProc(VoidPtr arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") ScheduledAudioFileRegion arg1,
+                int arg2);
+    }
 }

@@ -67,42 +67,6 @@ public class SKMutableTexture extends SKTexture {
     @Selector("alloc")
     public static native SKMutableTexture alloc();
 
-    @Generated
-    @Selector("init")
-    public native SKMutableTexture init();
-
-    /**
-     * initWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/instm/SKMutableTexture/initWithSize:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSize:")
-    public native SKMutableTexture initWithSize(@ByValue CGSize size);
-
-    /**
-     * initWithSize:pixelFormat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/instm/SKMutableTexture/initWithSize:pixelFormat:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSize:pixelFormat:")
-    public native SKMutableTexture initWithSizePixelFormat(@ByValue CGSize size, int format);
-
-    /**
-     * modifyPixelDataWithBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/instm/SKMutableTexture/modifyPixelDataWithBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("modifyPixelDataWithBlock:")
-    public native void modifyPixelDataWithBlock(
-            @ObjCBlock(name = "call_modifyPixelDataWithBlock") Block_modifyPixelDataWithBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_modifyPixelDataWithBlock {
-        @Generated
-        void call_modifyPixelDataWithBlock(VoidPtr arg0, @NUInt long arg1);
-    }
-
     /**
      * mutableTextureWithSize:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/clm/SKMutableTexture/mutableTextureWithSize:">iOS Dev Center</a>
@@ -150,10 +114,6 @@ public class SKMutableTexture extends SKTexture {
     @Generated
     @Selector("textureWithRect:inTexture:")
     public static native SKMutableTexture textureWithRectInTexture(@ByValue CGRect rect, SKTexture texture);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKMutableTexture initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -259,4 +219,44 @@ public class SKMutableTexture extends SKTexture {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SKMutableTexture init();
+
+    /**
+     * initWithSize:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/instm/SKMutableTexture/initWithSize:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSize:")
+    public native SKMutableTexture initWithSize(@ByValue CGSize size);
+
+    /**
+     * initWithSize:pixelFormat:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/instm/SKMutableTexture/initWithSize:pixelFormat:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSize:pixelFormat:")
+    public native SKMutableTexture initWithSizePixelFormat(@ByValue CGSize size, int format);
+
+    /**
+     * modifyPixelDataWithBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKMutableTexture_Ref/index.html#//apple_ref/occ/instm/SKMutableTexture/modifyPixelDataWithBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("modifyPixelDataWithBlock:")
+    public native void modifyPixelDataWithBlock(
+            @ObjCBlock(name = "call_modifyPixelDataWithBlock") Block_modifyPixelDataWithBlock block);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKMutableTexture initWithCoder(NSCoder aDecoder);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_modifyPixelDataWithBlock {
+        @Generated
+        void call_modifyPixelDataWithBlock(VoidPtr arg0, @NUInt long arg1);
+    }
 }

@@ -63,62 +63,6 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     public static native SCNPhysicsHingeJoint alloc();
 
     /**
-     * anchorA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/anchorA">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("anchorA")
-    @ByValue
-    public native SCNVector3 anchorA();
-
-    /**
-     * anchorB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/anchorB">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("anchorB")
-    @ByValue
-    public native SCNVector3 anchorB();
-
-    /**
-     * axisA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/axisA">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("axisA")
-    @ByValue
-    public native SCNVector3 axisA();
-
-    /**
-     * axisB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/axisB">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("axisB")
-    @ByValue
-    public native SCNVector3 axisB();
-
-    /**
-     * bodyA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/bodyA">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bodyA")
-    public native SCNPhysicsBody bodyA();
-
-    /**
-     * bodyB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/bodyB">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bodyB")
-    public native SCNPhysicsBody bodyB();
-
-    @Generated
-    @Selector("init")
-    public native SCNPhysicsHingeJoint init();
-
-    /**
      * jointWithBody:axis:anchor:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/clm/SCNPhysicsHingeJoint/jointWithBody:axis:anchor:">iOS Dev Center</a>
      */
@@ -136,42 +80,6 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     public static native SCNPhysicsHingeJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(SCNPhysicsBody bodyA,
             @ByValue SCNVector3 axisA, @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 axisB,
             @ByValue SCNVector3 anchorB);
-
-    /**
-     * anchorA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/anchorA">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnchorA:")
-    public native void setAnchorA(@ByValue SCNVector3 value);
-
-    /**
-     * anchorB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/anchorB">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnchorB:")
-    public native void setAnchorB(@ByValue SCNVector3 value);
-
-    /**
-     * axisA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/axisA">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAxisA:")
-    public native void setAxisA(@ByValue SCNVector3 value);
-
-    /**
-     * axisB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/axisB">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAxisB:")
-    public native void setAxisB(@ByValue SCNVector3 value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPhysicsHingeJoint initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -273,13 +181,105 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * anchorA</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/anchorA">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("anchorA")
+    @ByValue
+    public native SCNVector3 anchorA();
+
+    /**
+     * anchorB</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/anchorB">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("anchorB")
+    @ByValue
+    public native SCNVector3 anchorB();
+
+    /**
+     * axisA</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/axisA">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("axisA")
+    @ByValue
+    public native SCNVector3 axisA();
+
+    /**
+     * axisB</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/axisB">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("axisB")
+    @ByValue
+    public native SCNVector3 axisB();
+
+    /**
+     * bodyA</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/bodyA">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bodyA")
+    public native SCNPhysicsBody bodyA();
+
+    /**
+     * bodyB</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/bodyB">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bodyB")
+    public native SCNPhysicsBody bodyB();
+
+    @Generated
+    @Selector("init")
+    public native SCNPhysicsHingeJoint init();
+
+    /**
+     * anchorA</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/anchorA">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnchorA:")
+    public native void setAnchorA(@ByValue SCNVector3 value);
+
+    /**
+     * anchorB</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/anchorB">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnchorB:")
+    public native void setAnchorB(@ByValue SCNVector3 value);
+
+    /**
+     * axisA</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/axisA">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAxisA:")
+    public native void setAxisA(@ByValue SCNVector3 value);
+
+    /**
+     * axisB</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsHingeJoint_Class/index.html#//apple_ref/occ/instp/SCNPhysicsHingeJoint/axisB">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAxisB:")
+    public native void setAxisB(@ByValue SCNVector3 value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNPhysicsHingeJoint initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

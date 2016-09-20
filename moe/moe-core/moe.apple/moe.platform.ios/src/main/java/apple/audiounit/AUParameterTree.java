@@ -107,42 +107,8 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
     public static native AUParameterTree createTreeWithChildren(NSArray<? extends AUParameterNode> children);
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native AUParameterTree init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AUParameterTree initWithCoder(NSCoder aDecoder);
-
-    /**
-     * parameterWithAddress:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/instm/AUParameterTree/parameterWithAddress:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("parameterWithAddress:")
-    public native AUParameter parameterWithAddress(long address);
-
-    /**
-     * parameterWithID:scope:element:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/instm/AUParameterTree/parameterWithID:scope:element:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("parameterWithID:scope:element:")
-    public native AUParameter parameterWithIDScopeElement(int paramID, int scope, int element);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -243,4 +209,38 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native AUParameterTree init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AUParameterTree initWithCoder(NSCoder aDecoder);
+
+    /**
+     * parameterWithAddress:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/instm/AUParameterTree/parameterWithAddress:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("parameterWithAddress:")
+    public native AUParameter parameterWithAddress(long address);
+
+    /**
+     * parameterWithID:scope:element:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterTree_ClassReference/index.html#//apple_ref/occ/instm/AUParameterTree/parameterWithID:scope:element:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("parameterWithID:scope:element:")
+    public native AUParameter parameterWithIDScopeElement(int paramID, int scope, int element);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

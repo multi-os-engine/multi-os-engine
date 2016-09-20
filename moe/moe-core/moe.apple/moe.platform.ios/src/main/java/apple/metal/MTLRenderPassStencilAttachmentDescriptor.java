@@ -58,26 +58,6 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
     @Selector("alloc")
     public static native MTLRenderPassStencilAttachmentDescriptor alloc();
 
-    /**
-     * clearStencil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/help/MTLRenderPassStencilAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassStencilAttachmentDescriptor/clearStencil">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("clearStencil")
-    public native int clearStencil();
-
-    @Generated
-    @Selector("init")
-    public native MTLRenderPassStencilAttachmentDescriptor init();
-
-    /**
-     * clearStencil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/help/MTLRenderPassStencilAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassStencilAttachmentDescriptor/clearStencil">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setClearStencil:")
-    public native void setClearStencil(int value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -177,4 +157,24 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * clearStencil</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/help/MTLRenderPassStencilAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassStencilAttachmentDescriptor/clearStencil">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("clearStencil")
+    public native int clearStencil();
+
+    @Generated
+    @Selector("init")
+    public native MTLRenderPassStencilAttachmentDescriptor init();
+
+    /**
+     * clearStencil</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/help/MTLRenderPassStencilAttachmentDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLRenderPassStencilAttachmentDescriptor/clearStencil">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setClearStencil:")
+    public native void setClearStencil(int value);
 }

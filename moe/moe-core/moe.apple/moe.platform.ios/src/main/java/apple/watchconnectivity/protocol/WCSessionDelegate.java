@@ -107,13 +107,6 @@ public interface WCSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sessionDidReceiveMessageReplyHandler {
-        @Generated
-        void call_sessionDidReceiveMessageReplyHandler(NSDictionary<String, ?> arg0);
-    }
-
     /**
      * session:didReceiveMessageData:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionDelegate_protocol/index.html#//apple_ref/occ/intfm/WCSessionDelegate/session:didReceiveMessageData:">iOS Dev Center</a>
@@ -135,13 +128,6 @@ public interface WCSessionDelegate {
     default void sessionDidReceiveMessageDataReplyHandler(WCSession session, NSData messageData,
             @ObjCBlock(name = "call_sessionDidReceiveMessageDataReplyHandler") Block_sessionDidReceiveMessageDataReplyHandler replyHandler) {
         throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sessionDidReceiveMessageDataReplyHandler {
-        @Generated
-        void call_sessionDidReceiveMessageDataReplyHandler(NSData arg0);
     }
 
     /**
@@ -209,5 +195,19 @@ public interface WCSessionDelegate {
     @Selector("sessionDidDeactivate:")
     default void sessionDidDeactivate(WCSession session) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sessionDidReceiveMessageReplyHandler {
+        @Generated
+        void call_sessionDidReceiveMessageReplyHandler(NSDictionary<String, ?> arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sessionDidReceiveMessageDataReplyHandler {
+        @Generated
+        void call_sessionDidReceiveMessageDataReplyHandler(NSData arg0);
     }
 }

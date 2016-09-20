@@ -79,57 +79,6 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     public static native boolean canMakePaymentsUsingNetworks(NSArray<String> supportedNetworks);
 
     /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/index.html#//apple_ref/occ/instp/PKPaymentAuthorizationViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native PKPaymentAuthorizationViewControllerDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native PKPaymentAuthorizationViewController init();
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native PKPaymentAuthorizationViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
-
-    /**
-     * initWithPaymentRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/index.html#//apple_ref/occ/instm/PKPaymentAuthorizationViewController/initWithPaymentRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithPaymentRequest:")
-    public native PKPaymentAuthorizationViewController initWithPaymentRequest(PKPaymentRequest request);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/index.html#//apple_ref/occ/instp/PKPaymentAuthorizationViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationViewControllerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/index.html#//apple_ref/occ/instp/PKPaymentAuthorizationViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationViewControllerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
      * canMakePaymentsUsingNetworks:capabilities:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/index.html#//apple_ref/occ/clm/PKPaymentAuthorizationViewController/canMakePaymentsUsingNetworks:capabilities:">iOS Dev Center</a>
      */
@@ -137,10 +86,6 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     @Selector("canMakePaymentsUsingNetworks:capabilities:")
     public static native boolean canMakePaymentsUsingNetworksCapabilities(NSArray<String> supportedNetworks,
             @NUInt long capabilties);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native PKPaymentAuthorizationViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -253,4 +198,59 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/index.html#//apple_ref/occ/instp/PKPaymentAuthorizationViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native PKPaymentAuthorizationViewControllerDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native PKPaymentAuthorizationViewController init();
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native PKPaymentAuthorizationViewController initWithNibNameBundle(String nibNameOrNil,
+            NSBundle nibBundleOrNil);
+
+    /**
+     * initWithPaymentRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/index.html#//apple_ref/occ/instm/PKPaymentAuthorizationViewController/initWithPaymentRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithPaymentRequest:")
+    public native PKPaymentAuthorizationViewController initWithPaymentRequest(PKPaymentRequest request);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/index.html#//apple_ref/occ/instp/PKPaymentAuthorizationViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(
+            @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationViewControllerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/index.html#//apple_ref/occ/instp/PKPaymentAuthorizationViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationViewControllerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native PKPaymentAuthorizationViewController initWithCoder(NSCoder aDecoder);
 }

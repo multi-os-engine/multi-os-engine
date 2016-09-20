@@ -54,30 +54,10 @@ public class ASIdentifierManager extends NSObject {
         super(peer);
     }
 
-    /**
-     * advertisingIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/index.html#//apple_ref/occ/instp/ASIdentifierManager/advertisingIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("advertisingIdentifier")
-    public native NSUUID advertisingIdentifier();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native ASIdentifierManager alloc();
-
-    @Generated
-    @Selector("init")
-    public native ASIdentifierManager init();
-
-    /**
-     * advertisingTrackingEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/index.html#//apple_ref/occ/instp/ASIdentifierManager/advertisingTrackingEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isAdvertisingTrackingEnabled")
-    public native boolean isAdvertisingTrackingEnabled();
 
     /**
      * sharedManager</br>
@@ -186,4 +166,24 @@ public class ASIdentifierManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * advertisingIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/index.html#//apple_ref/occ/instp/ASIdentifierManager/advertisingIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("advertisingIdentifier")
+    public native NSUUID advertisingIdentifier();
+
+    @Generated
+    @Selector("init")
+    public native ASIdentifierManager init();
+
+    /**
+     * advertisingTrackingEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/index.html#//apple_ref/occ/instp/ASIdentifierManager/advertisingTrackingEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isAdvertisingTrackingEnabled")
+    public native boolean isAdvertisingTrackingEnabled();
 }

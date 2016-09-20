@@ -60,27 +60,6 @@ public class MKLocalSearchResponse extends NSObject {
     @Selector("alloc")
     public static native MKLocalSearchResponse alloc();
 
-    /**
-     * boundingRegion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchResponse_class/index.html#//apple_ref/occ/instp/MKLocalSearchResponse/boundingRegion">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("boundingRegion")
-    @ByValue
-    public native MKCoordinateRegion boundingRegion();
-
-    @Generated
-    @Selector("init")
-    public native MKLocalSearchResponse init();
-
-    /**
-     * mapItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchResponse_class/index.html#//apple_ref/occ/instp/MKLocalSearchResponse/mapItems">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mapItems")
-    public native NSArray<? extends MKMapItem> mapItems();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -180,4 +159,25 @@ public class MKLocalSearchResponse extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * boundingRegion</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchResponse_class/index.html#//apple_ref/occ/instp/MKLocalSearchResponse/boundingRegion">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("boundingRegion")
+    @ByValue
+    public native MKCoordinateRegion boundingRegion();
+
+    @Generated
+    @Selector("init")
+    public native MKLocalSearchResponse init();
+
+    /**
+     * mapItems</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKLocalSearchResponse_class/index.html#//apple_ref/occ/instp/MKLocalSearchResponse/mapItems">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mapItems")
+    public native NSArray<? extends MKMapItem> mapItems();
 }

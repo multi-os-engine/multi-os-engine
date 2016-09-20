@@ -60,35 +60,6 @@ public class MPSImageSobel extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageSobel alloc();
 
-    /**
-     * colorTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageSobel_ClassReference/index.html#//apple_ref/occ/instp/MPSImageSobel/colorTransform">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("colorTransform")
-    public native ConstFloatPtr colorTransform();
-
-    @Generated
-    @Selector("init")
-    public native MPSImageSobel init();
-
-    /**
-     * initWithDevice:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageSobel_ClassReference/index.html#//apple_ref/occ/instm/MPSImageSobel/initWithDevice:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageSobel initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * initWithDevice:linearGrayColorTransform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageSobel_ClassReference/index.html#//apple_ref/occ/instm/MPSImageSobel/initWithDevice:linearGrayColorTransform:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDevice:linearGrayColorTransform:")
-    public native MPSImageSobel initWithDeviceLinearGrayColorTransform(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            ConstFloatPtr transform);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -188,4 +159,33 @@ public class MPSImageSobel extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * colorTransform</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageSobel_ClassReference/index.html#//apple_ref/occ/instp/MPSImageSobel/colorTransform">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("colorTransform")
+    public native ConstFloatPtr colorTransform();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageSobel init();
+
+    /**
+     * initWithDevice:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageSobel_ClassReference/index.html#//apple_ref/occ/instm/MPSImageSobel/initWithDevice:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageSobel initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * initWithDevice:linearGrayColorTransform:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageSobel_ClassReference/index.html#//apple_ref/occ/instm/MPSImageSobel/initWithDevice:linearGrayColorTransform:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDevice:linearGrayColorTransform:")
+    public native MPSImageSobel initWithDeviceLinearGrayColorTransform(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            ConstFloatPtr transform);
 }

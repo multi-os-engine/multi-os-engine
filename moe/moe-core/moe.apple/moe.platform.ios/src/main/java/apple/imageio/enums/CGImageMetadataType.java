@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGImageMetadataType {
-    @Generated
-    private CGImageMetadataType() {
-    }
-
     @Generated public static final int Invalid = 0xFFFFFFFF;
     @Generated public static final int Default = 0x00000000;
     @Generated public static final int String = 0x00000001;
@@ -32,4 +28,8 @@ public final class CGImageMetadataType {
     @Generated public static final int AlternateArray = 0x00000004;
     @Generated public static final int AlternateText = 0x00000005;
     @Generated public static final int Structure = 0x00000006;
+
+    @Generated
+    private CGImageMetadataType() {
+    }
 }

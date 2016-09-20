@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class EKEntityMask {
+    @Generated @NUInt public static final long Event = 0x0000000000000001L;
+    @Generated @NUInt public static final long Reminder = 0x0000000000000002L;
+
     @Generated
     private EKEntityMask() {
     }
-
-    @Generated @NUInt public static final long Event = 0x0000000000000001L;
-    @Generated @NUInt public static final long Reminder = 0x0000000000000002L;
 }

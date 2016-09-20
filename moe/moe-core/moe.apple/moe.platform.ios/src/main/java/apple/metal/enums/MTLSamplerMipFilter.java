@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLSamplerMipFilter {
-    @Generated
-    private MTLSamplerMipFilter() {
-    }
-
     @Generated @NUInt public static final long NotMipmapped = 0x0000000000000000L;
     @Generated @NUInt public static final long Nearest = 0x0000000000000001L;
     @Generated @NUInt public static final long Linear = 0x0000000000000002L;
+
+    @Generated
+    private MTLSamplerMipFilter() {
+    }
 }

@@ -65,99 +65,6 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     public static native SCNSkinner alloc();
 
     /**
-     * baseGeometry</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/baseGeometry">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("baseGeometry")
-    public native SCNGeometry baseGeometry();
-
-    /**
-     * baseGeometryBindTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/baseGeometryBindTransform">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("baseGeometryBindTransform")
-    @ByValue
-    public native SCNMatrix4 baseGeometryBindTransform();
-
-    /**
-     * boneIndices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/boneIndices">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("boneIndices")
-    public native SCNGeometrySource boneIndices();
-
-    /**
-     * boneInverseBindTransforms</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/boneInverseBindTransforms">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("boneInverseBindTransforms")
-    public native NSArray<? extends NSValue> boneInverseBindTransforms();
-
-    /**
-     * boneWeights</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/boneWeights">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("boneWeights")
-    public native SCNGeometrySource boneWeights();
-
-    /**
-     * bones</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/bones">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bones")
-    public native NSArray<? extends SCNNode> bones();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native SCNSkinner init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNSkinner initWithCoder(NSCoder aDecoder);
-
-    /**
-     * baseGeometry</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/baseGeometry">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBaseGeometry:")
-    public native void setBaseGeometry(SCNGeometry value);
-
-    /**
-     * baseGeometryBindTransform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/baseGeometryBindTransform">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBaseGeometryBindTransform:")
-    public native void setBaseGeometryBindTransform(@ByValue SCNMatrix4 value);
-
-    /**
-     * skeleton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/skeleton">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSkeleton:")
-    public native void setSkeleton(SCNNode value);
-
-    /**
-     * skeleton</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/skeleton">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("skeleton")
-    public native SCNNode skeleton();
-
-    /**
      * skinnerWithBaseGeometry:bones:boneInverseBindTransforms:boneWeights:boneIndices:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/clm/SCNSkinner/skinnerWithBaseGeometry:bones:boneInverseBindTransforms:boneWeights:boneIndices:">iOS Dev Center</a>
      */
@@ -171,12 +78,6 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -277,4 +178,103 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * baseGeometry</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/baseGeometry">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("baseGeometry")
+    public native SCNGeometry baseGeometry();
+
+    /**
+     * baseGeometryBindTransform</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/baseGeometryBindTransform">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("baseGeometryBindTransform")
+    @ByValue
+    public native SCNMatrix4 baseGeometryBindTransform();
+
+    /**
+     * boneIndices</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/boneIndices">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("boneIndices")
+    public native SCNGeometrySource boneIndices();
+
+    /**
+     * boneInverseBindTransforms</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/boneInverseBindTransforms">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("boneInverseBindTransforms")
+    public native NSArray<? extends NSValue> boneInverseBindTransforms();
+
+    /**
+     * boneWeights</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/boneWeights">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("boneWeights")
+    public native SCNGeometrySource boneWeights();
+
+    /**
+     * bones</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/bones">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bones")
+    public native NSArray<? extends SCNNode> bones();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SCNSkinner init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNSkinner initWithCoder(NSCoder aDecoder);
+
+    /**
+     * baseGeometry</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/baseGeometry">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBaseGeometry:")
+    public native void setBaseGeometry(SCNGeometry value);
+
+    /**
+     * baseGeometryBindTransform</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/baseGeometryBindTransform">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBaseGeometryBindTransform:")
+    public native void setBaseGeometryBindTransform(@ByValue SCNMatrix4 value);
+
+    /**
+     * skeleton</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/skeleton">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSkeleton:")
+    public native void setSkeleton(SCNNode value);
+
+    /**
+     * skeleton</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSkinner_Class/index.html#//apple_ref/occ/instp/SCNSkinner/skeleton">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("skeleton")
+    public native SCNNode skeleton();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

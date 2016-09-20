@@ -59,50 +59,6 @@ public class NSOutputStream extends NSStream {
     public static native NSOutputStream alloc();
 
     /**
-     * hasSpaceAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instp/NSOutputStream/hasSpaceAvailable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hasSpaceAvailable")
-    public native boolean hasSpaceAvailable();
-
-    @Generated
-    @Selector("init")
-    public native NSOutputStream init();
-
-    /**
-     * initToBuffer:capacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instm/NSOutputStream/initToBuffer:capacity:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initToBuffer:capacity:")
-    public native NSOutputStream initToBufferCapacity(BytePtr buffer, @NUInt long capacity);
-
-    /**
-     * initToFileAtPath:append:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instm/NSOutputStream/initToFileAtPath:append:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initToFileAtPath:append:")
-    public native NSOutputStream initToFileAtPathAppend(String path, boolean shouldAppend);
-
-    /**
-     * initToMemory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instm/NSOutputStream/initToMemory">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initToMemory")
-    public native NSOutputStream initToMemory();
-
-    /**
-     * initWithURL:append:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instm/NSOutputStream/initWithURL:append:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:append:")
-    public native NSOutputStream initWithURLAppend(NSURL url, boolean shouldAppend);
-
-    /**
      * outputStreamToBuffer:capacity:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/clm/NSOutputStream/outputStreamToBuffer:capacity:">iOS Dev Center</a>
      */
@@ -133,15 +89,6 @@ public class NSOutputStream extends NSStream {
     @Generated
     @Selector("outputStreamWithURL:append:")
     public static native NSOutputStream outputStreamWithURLAppend(NSURL url, boolean shouldAppend);
-
-    /**
-     * write:maxLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instm/NSOutputStream/write:maxLength:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("write:maxLength:")
-    @NInt
-    public native long writeMaxLength(ConstBytePtr buffer, @NUInt long len);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -252,4 +199,57 @@ public class NSOutputStream extends NSStream {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * hasSpaceAvailable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instp/NSOutputStream/hasSpaceAvailable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hasSpaceAvailable")
+    public native boolean hasSpaceAvailable();
+
+    @Generated
+    @Selector("init")
+    public native NSOutputStream init();
+
+    /**
+     * initToBuffer:capacity:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instm/NSOutputStream/initToBuffer:capacity:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initToBuffer:capacity:")
+    public native NSOutputStream initToBufferCapacity(BytePtr buffer, @NUInt long capacity);
+
+    /**
+     * initToFileAtPath:append:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instm/NSOutputStream/initToFileAtPath:append:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initToFileAtPath:append:")
+    public native NSOutputStream initToFileAtPathAppend(String path, boolean shouldAppend);
+
+    /**
+     * initToMemory</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instm/NSOutputStream/initToMemory">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initToMemory")
+    public native NSOutputStream initToMemory();
+
+    /**
+     * initWithURL:append:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instm/NSOutputStream/initWithURL:append:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:append:")
+    public native NSOutputStream initWithURLAppend(NSURL url, boolean shouldAppend);
+
+    /**
+     * write:maxLength:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSOutputStream_Class/index.html#//apple_ref/occ/instm/NSOutputStream/write:maxLength:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("write:maxLength:")
+    @NInt
+    public native long writeMaxLength(ConstBytePtr buffer, @NUInt long len);
 }

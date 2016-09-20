@@ -58,18 +58,6 @@ public class MTLComputePipelineReflection extends NSObject {
     @Selector("alloc")
     public static native MTLComputePipelineReflection alloc();
 
-    /**
-     * arguments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineReflection_Ref/index.html#//apple_ref/occ/instp/MTLComputePipelineReflection/arguments">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("arguments")
-    public native NSArray<? extends MTLArgument> arguments();
-
-    @Generated
-    @Selector("init")
-    public native MTLComputePipelineReflection init();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -169,4 +157,16 @@ public class MTLComputePipelineReflection extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * arguments</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLComputePipelineReflection_Ref/index.html#//apple_ref/occ/instp/MTLComputePipelineReflection/arguments">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("arguments")
+    public native NSArray<? extends MTLArgument> arguments();
+
+    @Generated
+    @Selector("init")
+    public native MTLComputePipelineReflection init();
 }

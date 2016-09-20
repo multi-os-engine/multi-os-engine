@@ -57,121 +57,10 @@ public class ALAssetsGroup extends NSObject {
         super(peer);
     }
 
-    /**
-     * addAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/addAsset:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("addAsset:")
-    public native boolean addAsset(ALAsset asset);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native ALAssetsGroup alloc();
-
-    /**
-     * enumerateAssetsAtIndexes:options:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/enumerateAssetsAtIndexes:options:usingBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("enumerateAssetsAtIndexes:options:usingBlock:")
-    public native void enumerateAssetsAtIndexesOptionsUsingBlock(NSIndexSet indexSet, @NUInt long options,
-            @ObjCBlock(name = "call_enumerateAssetsAtIndexesOptionsUsingBlock") Block_enumerateAssetsAtIndexesOptionsUsingBlock enumerationBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateAssetsAtIndexesOptionsUsingBlock {
-        @Generated
-        void call_enumerateAssetsAtIndexesOptionsUsingBlock(ALAsset arg0, @NUInt long arg1, BoolPtr arg2);
-    }
-
-    /**
-     * enumerateAssetsUsingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/enumerateAssetsUsingBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("enumerateAssetsUsingBlock:")
-    public native void enumerateAssetsUsingBlock(
-            @ObjCBlock(name = "call_enumerateAssetsUsingBlock") Block_enumerateAssetsUsingBlock enumerationBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateAssetsUsingBlock {
-        @Generated
-        void call_enumerateAssetsUsingBlock(ALAsset arg0, @NUInt long arg1, BoolPtr arg2);
-    }
-
-    /**
-     * enumerateAssetsWithOptions:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/enumerateAssetsWithOptions:usingBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("enumerateAssetsWithOptions:usingBlock:")
-    public native void enumerateAssetsWithOptionsUsingBlock(@NUInt long options,
-            @ObjCBlock(name = "call_enumerateAssetsWithOptionsUsingBlock") Block_enumerateAssetsWithOptionsUsingBlock enumerationBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateAssetsWithOptionsUsingBlock {
-        @Generated
-        void call_enumerateAssetsWithOptionsUsingBlock(ALAsset arg0, @NUInt long arg1, BoolPtr arg2);
-    }
-
-    @Generated
-    @Selector("init")
-    public native ALAssetsGroup init();
-
-    /**
-     * editable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instp/ALAssetsGroup/editable">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("isEditable")
-    public native boolean isEditable();
-
-    /**
-     * numberOfAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/numberOfAssets">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("numberOfAssets")
-    @NInt
-    public native long numberOfAssets();
-
-    /**
-     * posterImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/posterImage">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("posterImage")
-    public native CGImageRef posterImage();
-
-    /**
-     * setAssetsFilter:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/setAssetsFilter:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("setAssetsFilter:")
-    public native void setAssetsFilter(ALAssetsFilter filter);
-
-    /**
-     * valueForProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/valueForProperty:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("valueForProperty:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForProperty(String property);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -272,4 +161,115 @@ public class ALAssetsGroup extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addAsset:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/addAsset:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("addAsset:")
+    public native boolean addAsset(ALAsset asset);
+
+    /**
+     * enumerateAssetsAtIndexes:options:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/enumerateAssetsAtIndexes:options:usingBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("enumerateAssetsAtIndexes:options:usingBlock:")
+    public native void enumerateAssetsAtIndexesOptionsUsingBlock(NSIndexSet indexSet, @NUInt long options,
+            @ObjCBlock(name = "call_enumerateAssetsAtIndexesOptionsUsingBlock") Block_enumerateAssetsAtIndexesOptionsUsingBlock enumerationBlock);
+
+    /**
+     * enumerateAssetsUsingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/enumerateAssetsUsingBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("enumerateAssetsUsingBlock:")
+    public native void enumerateAssetsUsingBlock(
+            @ObjCBlock(name = "call_enumerateAssetsUsingBlock") Block_enumerateAssetsUsingBlock enumerationBlock);
+
+    /**
+     * enumerateAssetsWithOptions:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/enumerateAssetsWithOptions:usingBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("enumerateAssetsWithOptions:usingBlock:")
+    public native void enumerateAssetsWithOptionsUsingBlock(@NUInt long options,
+            @ObjCBlock(name = "call_enumerateAssetsWithOptionsUsingBlock") Block_enumerateAssetsWithOptionsUsingBlock enumerationBlock);
+
+    @Generated
+    @Selector("init")
+    public native ALAssetsGroup init();
+
+    /**
+     * editable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instp/ALAssetsGroup/editable">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("isEditable")
+    public native boolean isEditable();
+
+    /**
+     * numberOfAssets</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/numberOfAssets">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("numberOfAssets")
+    @NInt
+    public native long numberOfAssets();
+
+    /**
+     * posterImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/posterImage">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("posterImage")
+    public native CGImageRef posterImage();
+
+    /**
+     * setAssetsFilter:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/setAssetsFilter:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("setAssetsFilter:")
+    public native void setAssetsFilter(ALAssetsFilter filter);
+
+    /**
+     * valueForProperty:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsGroup_Class/index.html#//apple_ref/occ/instm/ALAssetsGroup/valueForProperty:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("valueForProperty:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object valueForProperty(String property);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateAssetsAtIndexesOptionsUsingBlock {
+        @Generated
+        void call_enumerateAssetsAtIndexesOptionsUsingBlock(ALAsset arg0, @NUInt long arg1, BoolPtr arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateAssetsUsingBlock {
+        @Generated
+        void call_enumerateAssetsUsingBlock(ALAsset arg0, @NUInt long arg1, BoolPtr arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateAssetsWithOptionsUsingBlock {
+        @Generated
+        void call_enumerateAssetsWithOptionsUsingBlock(ALAsset arg0, @NUInt long arg1, BoolPtr arg2);
+    }
 }

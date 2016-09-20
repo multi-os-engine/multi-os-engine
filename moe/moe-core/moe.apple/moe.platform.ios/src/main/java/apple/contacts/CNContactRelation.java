@@ -71,48 +71,8 @@ public class CNContactRelation extends NSObject implements NSCopying, NSSecureCo
     public static native CNContactRelation contactRelationWithName(String name);
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CNContactRelation init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNContactRelation initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactRelation_Class/index.html#//apple_ref/occ/instm/CNContactRelation/initWithName:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithName:")
-    public native CNContactRelation initWithName(String name);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactRelation_Class/index.html#//apple_ref/occ/instp/CNContactRelation/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -213,4 +173,44 @@ public class CNContactRelation extends NSObject implements NSCopying, NSSecureCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CNContactRelation init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNContactRelation initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithName:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactRelation_Class/index.html#//apple_ref/occ/instm/CNContactRelation/initWithName:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithName:")
+    public native CNContactRelation initWithName(String name);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactRelation_Class/index.html#//apple_ref/occ/instp/CNContactRelation/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

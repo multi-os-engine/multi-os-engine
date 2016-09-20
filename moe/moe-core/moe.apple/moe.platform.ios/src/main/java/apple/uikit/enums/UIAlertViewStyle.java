@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIAlertViewStyle {
-    @Generated
-    private UIAlertViewStyle() {
-    }
-
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     @Generated @NInt public static final long SecureTextInput = 0x0000000000000001L;
     @Generated @NInt public static final long PlainTextInput = 0x0000000000000002L;
     @Generated @NInt public static final long LoginAndPasswordInput = 0x0000000000000003L;
+
+    @Generated
+    private UIAlertViewStyle() {
+    }
 }

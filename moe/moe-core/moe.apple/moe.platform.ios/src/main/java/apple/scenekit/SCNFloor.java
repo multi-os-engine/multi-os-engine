@@ -80,84 +80,8 @@ public class SCNFloor extends SCNGeometry {
             NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
-    @Selector("init")
-    public native SCNFloor init();
-
-    /**
-     * reflectionFalloffEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionFalloffEnd">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reflectionFalloffEnd")
-    @NFloat
-    public native double reflectionFalloffEnd();
-
-    /**
-     * reflectionFalloffStart</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionFalloffStart">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reflectionFalloffStart")
-    @NFloat
-    public native double reflectionFalloffStart();
-
-    /**
-     * reflectionResolutionScaleFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionResolutionScaleFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reflectionResolutionScaleFactor")
-    @NFloat
-    public native double reflectionResolutionScaleFactor();
-
-    /**
-     * reflectivity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectivity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reflectivity")
-    @NFloat
-    public native double reflectivity();
-
-    /**
-     * reflectionFalloffEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionFalloffEnd">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setReflectionFalloffEnd:")
-    public native void setReflectionFalloffEnd(@NFloat double value);
-
-    /**
-     * reflectionFalloffStart</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionFalloffStart">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setReflectionFalloffStart:")
-    public native void setReflectionFalloffStart(@NFloat double value);
-
-    /**
-     * reflectionResolutionScaleFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionResolutionScaleFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setReflectionResolutionScaleFactor:")
-    public native void setReflectionResolutionScaleFactor(@NFloat double value);
-
-    /**
-     * reflectivity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectivity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setReflectivity:")
-    public native void setReflectivity(@NFloat double value);
-
-    @Generated
     @Selector("geometryWithMDLMesh:")
     public static native SCNFloor geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNFloor initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -259,13 +183,89 @@ public class SCNFloor extends SCNGeometry {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SCNFloor init();
+
+    /**
+     * reflectionFalloffEnd</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionFalloffEnd">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reflectionFalloffEnd")
+    @NFloat
+    public native double reflectionFalloffEnd();
+
+    /**
+     * reflectionFalloffStart</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionFalloffStart">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reflectionFalloffStart")
+    @NFloat
+    public native double reflectionFalloffStart();
+
+    /**
+     * reflectionResolutionScaleFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionResolutionScaleFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reflectionResolutionScaleFactor")
+    @NFloat
+    public native double reflectionResolutionScaleFactor();
+
+    /**
+     * reflectivity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectivity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reflectivity")
+    @NFloat
+    public native double reflectivity();
+
+    /**
+     * reflectionFalloffEnd</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionFalloffEnd">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setReflectionFalloffEnd:")
+    public native void setReflectionFalloffEnd(@NFloat double value);
+
+    /**
+     * reflectionFalloffStart</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionFalloffStart">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setReflectionFalloffStart:")
+    public native void setReflectionFalloffStart(@NFloat double value);
+
+    /**
+     * reflectionResolutionScaleFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectionResolutionScaleFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setReflectionResolutionScaleFactor:")
+    public native void setReflectionResolutionScaleFactor(@NFloat double value);
+
+    /**
+     * reflectivity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNFloor_Class/index.html#//apple_ref/occ/instp/SCNFloor/reflectivity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setReflectivity:")
+    public native void setReflectivity(@NFloat double value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNFloor initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

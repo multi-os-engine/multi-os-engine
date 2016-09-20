@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CFStreamErrorHTTP {
-    @Generated
-    private CFStreamErrorHTTP() {
-    }
-
     @Generated public static final int ParseFailure = 0xFFFFFFFF;
     @Generated public static final int RedirectionLoop = 0xFFFFFFFE;
     @Generated public static final int BadURL = 0xFFFFFFFD;
+
+    @Generated
+    private CFStreamErrorHTTP() {
+    }
 }

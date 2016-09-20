@@ -64,22 +64,6 @@ public class AUViewController extends UIViewController implements NSExtensionReq
     public static native AUViewController alloc();
 
     @Generated
-    @Selector("beginRequestWithExtensionContext:")
-    public native void beginRequestWithExtensionContext(NSExtensionContext context);
-
-    @Generated
-    @Selector("init")
-    public native AUViewController init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AUViewController initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native AUViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -190,4 +174,20 @@ public class AUViewController extends UIViewController implements NSExtensionReq
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("beginRequestWithExtensionContext:")
+    public native void beginRequestWithExtensionContext(NSExtensionContext context);
+
+    @Generated
+    @Selector("init")
+    public native AUViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AUViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native AUViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 }

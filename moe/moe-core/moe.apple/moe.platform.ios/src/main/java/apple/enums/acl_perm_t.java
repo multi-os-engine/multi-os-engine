@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class acl_perm_t {
-    @Generated
-    private acl_perm_t() {
-    }
-
     @Generated public static final int ACL_READ_DATA = 0x00000002;
     @Generated public static final int ACL_LIST_DIRECTORY = 0x00000002;
     @Generated public static final int ACL_WRITE_DATA = 0x00000004;
@@ -42,4 +38,8 @@ public final class acl_perm_t {
     @Generated public static final int ACL_WRITE_SECURITY = 0x00001000;
     @Generated public static final int ACL_CHANGE_OWNER = 0x00002000;
     @Generated public static final int ACL_SYNCHRONIZE = 0x00100000;
+
+    @Generated
+    private acl_perm_t() {
+    }
 }

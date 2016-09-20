@@ -32,11 +32,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CTRunDelegateCallbacks extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CTRunDelegateCallbacks() {
@@ -61,48 +61,17 @@ public final class CTRunDelegateCallbacks extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setDealloc(@FunctionPtr(name = "call_dealloc") Function_dealloc value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dealloc {
-        @Generated
-        void call_dealloc(VoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setGetAscent(@FunctionPtr(name = "call_getAscent") Function_getAscent value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getAscent {
-        @Generated
-        @NFloat
-        double call_getAscent(VoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setGetDescent(@FunctionPtr(name = "call_getDescent") Function_getDescent value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getDescent {
-        @Generated
-        @NFloat
-        double call_getDescent(VoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setGetWidth(@FunctionPtr(name = "call_getWidth") Function_getWidth value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getWidth {
-        @Generated
-        @NFloat
-        double call_getWidth(VoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -123,4 +92,35 @@ public final class CTRunDelegateCallbacks extends StructObject {
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_getWidth")
     public native Function_getWidth getWidth();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dealloc {
+        @Generated
+        void call_dealloc(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getAscent {
+        @Generated
+        @NFloat
+        double call_getAscent(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getDescent {
+        @Generated
+        @NFloat
+        double call_getDescent(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getWidth {
+        @Generated
+        @NFloat
+        double call_getWidth(VoidPtr arg0);
+    }
 }

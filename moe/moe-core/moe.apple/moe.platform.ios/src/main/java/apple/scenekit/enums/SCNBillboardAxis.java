@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class SCNBillboardAxis {
-    @Generated
-    private SCNBillboardAxis() {
-    }
-
     @Generated @NUInt public static final long X = 0x0000000000000001L;
     @Generated @NUInt public static final long Y = 0x0000000000000002L;
     @Generated @NUInt public static final long Z = 0x0000000000000004L;
     @Generated @NUInt public static final long All = 0x0000000000000007L;
+
+    @Generated
+    private SCNBillboardAxis() {
+    }
 }

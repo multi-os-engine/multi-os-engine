@@ -60,66 +60,6 @@ public class MKDirections extends NSObject {
     @Selector("alloc")
     public static native MKDirections alloc();
 
-    /**
-     * calculateDirectionsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirections_class/index.html#//apple_ref/occ/instm/MKDirections/calculateDirectionsWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("calculateDirectionsWithCompletionHandler:")
-    public native void calculateDirectionsWithCompletionHandler(
-            @ObjCBlock(name = "call_calculateDirectionsWithCompletionHandler") Block_calculateDirectionsWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_calculateDirectionsWithCompletionHandler {
-        @Generated
-        void call_calculateDirectionsWithCompletionHandler(MKDirectionsResponse arg0, NSError arg1);
-    }
-
-    /**
-     * calculateETAWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirections_class/index.html#//apple_ref/occ/instm/MKDirections/calculateETAWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("calculateETAWithCompletionHandler:")
-    public native void calculateETAWithCompletionHandler(
-            @ObjCBlock(name = "call_calculateETAWithCompletionHandler") Block_calculateETAWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_calculateETAWithCompletionHandler {
-        @Generated
-        void call_calculateETAWithCompletionHandler(MKETAResponse arg0, NSError arg1);
-    }
-
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirections_class/index.html#//apple_ref/occ/instm/MKDirections/cancel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancel")
-    public native void cancel();
-
-    @Generated
-    @Selector("init")
-    public native MKDirections init();
-
-    /**
-     * initWithRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirections_class/index.html#//apple_ref/occ/instm/MKDirections/initWithRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRequest:")
-    public native MKDirections initWithRequest(MKDirectionsRequest request);
-
-    /**
-     * calculating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirections_class/index.html#//apple_ref/occ/instp/MKDirections/calculating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isCalculating")
-    public native boolean isCalculating();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -219,4 +159,64 @@ public class MKDirections extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * calculateDirectionsWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirections_class/index.html#//apple_ref/occ/instm/MKDirections/calculateDirectionsWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("calculateDirectionsWithCompletionHandler:")
+    public native void calculateDirectionsWithCompletionHandler(
+            @ObjCBlock(name = "call_calculateDirectionsWithCompletionHandler") Block_calculateDirectionsWithCompletionHandler completionHandler);
+
+    /**
+     * calculateETAWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirections_class/index.html#//apple_ref/occ/instm/MKDirections/calculateETAWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("calculateETAWithCompletionHandler:")
+    public native void calculateETAWithCompletionHandler(
+            @ObjCBlock(name = "call_calculateETAWithCompletionHandler") Block_calculateETAWithCompletionHandler completionHandler);
+
+    /**
+     * cancel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirections_class/index.html#//apple_ref/occ/instm/MKDirections/cancel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancel")
+    public native void cancel();
+
+    @Generated
+    @Selector("init")
+    public native MKDirections init();
+
+    /**
+     * initWithRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirections_class/index.html#//apple_ref/occ/instm/MKDirections/initWithRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRequest:")
+    public native MKDirections initWithRequest(MKDirectionsRequest request);
+
+    /**
+     * calculating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKDirections_class/index.html#//apple_ref/occ/instp/MKDirections/calculating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isCalculating")
+    public native boolean isCalculating();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_calculateDirectionsWithCompletionHandler {
+        @Generated
+        void call_calculateDirectionsWithCompletionHandler(MKDirectionsResponse arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_calculateETAWithCompletionHandler {
+        @Generated
+        void call_calculateETAWithCompletionHandler(MKETAResponse arg0, NSError arg1);
+    }
 }

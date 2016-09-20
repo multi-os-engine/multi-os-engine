@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIUserNotificationActionBehavior {
+    @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    @Generated @NUInt public static final long TextInput = 0x0000000000000001L;
+
     @Generated
     private UIUserNotificationActionBehavior() {
     }
-
-    @Generated @NUInt public static final long Default = 0x0000000000000000L;
-    @Generated @NUInt public static final long TextInput = 0x0000000000000001L;
 }

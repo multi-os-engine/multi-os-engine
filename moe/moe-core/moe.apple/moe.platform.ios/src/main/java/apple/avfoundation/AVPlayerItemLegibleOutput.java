@@ -55,85 +55,10 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
         super(peer);
     }
 
-    /**
-     * advanceIntervalForDelegateInvocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/advanceIntervalForDelegateInvocation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("advanceIntervalForDelegateInvocation")
-    public native double advanceIntervalForDelegateInvocation();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native AVPlayerItemLegibleOutput alloc();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native AVPlayerItemLegibleOutputPushDelegate delegate();
-
-    /**
-     * delegateQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/delegateQueue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegateQueue")
-    public native NSObject delegateQueue();
-
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemLegibleOutput/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native AVPlayerItemLegibleOutput init();
-
-    /**
-     * initWithMediaSubtypesForNativeRepresentation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemLegibleOutput/initWithMediaSubtypesForNativeRepresentation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithMediaSubtypesForNativeRepresentation:")
-    public native AVPlayerItemLegibleOutput initWithMediaSubtypesForNativeRepresentation(
-            NSArray<? extends NSNumber> subtypes);
-
-    /**
-     * advanceIntervalForDelegateInvocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/advanceIntervalForDelegateInvocation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAdvanceIntervalForDelegateInvocation:")
-    public native void setAdvanceIntervalForDelegateInvocation(double value);
-
-    /**
-     * setDelegate:queue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemLegibleOutput/setDelegate:queue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:queue:")
-    public native void setDelegateQueue(@Mapped(ObjCObjectMapper.class) AVPlayerItemLegibleOutputPushDelegate delegate,
-            NSObject delegateQueue);
-
-    /**
-     * textStylingResolution</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/textStylingResolution">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTextStylingResolution:")
-    public native void setTextStylingResolution(String value);
-
-    /**
-     * textStylingResolution</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/textStylingResolution">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textStylingResolution")
-    public native String textStylingResolution();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -234,4 +159,79 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * advanceIntervalForDelegateInvocation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/advanceIntervalForDelegateInvocation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("advanceIntervalForDelegateInvocation")
+    public native double advanceIntervalForDelegateInvocation();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native AVPlayerItemLegibleOutputPushDelegate delegate();
+
+    /**
+     * delegateQueue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/delegateQueue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegateQueue")
+    public native NSObject delegateQueue();
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemLegibleOutput/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native AVPlayerItemLegibleOutput init();
+
+    /**
+     * initWithMediaSubtypesForNativeRepresentation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemLegibleOutput/initWithMediaSubtypesForNativeRepresentation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithMediaSubtypesForNativeRepresentation:")
+    public native AVPlayerItemLegibleOutput initWithMediaSubtypesForNativeRepresentation(
+            NSArray<? extends NSNumber> subtypes);
+
+    /**
+     * advanceIntervalForDelegateInvocation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/advanceIntervalForDelegateInvocation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAdvanceIntervalForDelegateInvocation:")
+    public native void setAdvanceIntervalForDelegateInvocation(double value);
+
+    /**
+     * setDelegate:queue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instm/AVPlayerItemLegibleOutput/setDelegate:queue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:queue:")
+    public native void setDelegateQueue(@Mapped(ObjCObjectMapper.class) AVPlayerItemLegibleOutputPushDelegate delegate,
+            NSObject delegateQueue);
+
+    /**
+     * textStylingResolution</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/textStylingResolution">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTextStylingResolution:")
+    public native void setTextStylingResolution(String value);
+
+    /**
+     * textStylingResolution</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemLegibleOutput_Class/index.html#//apple_ref/occ/instp/AVPlayerItemLegibleOutput/textStylingResolution">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textStylingResolution")
+    public native String textStylingResolution();
 }

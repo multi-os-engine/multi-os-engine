@@ -58,13 +58,6 @@ public interface PHContentEditingController {
     void finishContentEditingWithCompletionHandler(
             @ObjCBlock(name = "call_finishContentEditingWithCompletionHandler") Block_finishContentEditingWithCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_finishContentEditingWithCompletionHandler {
-        @Generated
-        void call_finishContentEditingWithCompletionHandler(PHContentEditingOutput arg0);
-    }
-
     /**
      * shouldShowCancelConfirmation</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PhotosUI/Reference/PHContentEditingController_Protocol/index.html#//apple_ref/occ/intfp/PHContentEditingController/shouldShowCancelConfirmation">iOS Dev Center</a>
@@ -81,4 +74,11 @@ public interface PHContentEditingController {
     @Selector("startContentEditingWithInput:placeholderImage:")
     void startContentEditingWithInputPlaceholderImage(PHContentEditingInput contentEditingInput,
             UIImage placeholderImage);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_finishContentEditingWithCompletionHandler {
+        @Generated
+        void call_finishContentEditingWithCompletionHandler(PHContentEditingOutput arg0);
+    }
 }

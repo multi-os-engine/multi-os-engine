@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKWorkoutEventType {
+    @Generated @NInt public static final long Pause = 0x0000000000000001L;
+    @Generated @NInt public static final long Resume = 0x0000000000000002L;
+
     @Generated
     private HKWorkoutEventType() {
     }
-
-    @Generated @NInt public static final long Pause = 0x0000000000000001L;
-    @Generated @NInt public static final long Resume = 0x0000000000000002L;
 }

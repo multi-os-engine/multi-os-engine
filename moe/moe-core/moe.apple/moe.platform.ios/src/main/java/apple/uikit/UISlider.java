@@ -67,282 +67,6 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("alloc")
     public static native UISlider alloc();
 
-    /**
-     * currentMaximumTrackImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/currentMaximumTrackImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentMaximumTrackImage")
-    public native UIImage currentMaximumTrackImage();
-
-    /**
-     * currentMinimumTrackImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/currentMinimumTrackImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentMinimumTrackImage")
-    public native UIImage currentMinimumTrackImage();
-
-    /**
-     * currentThumbImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/currentThumbImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentThumbImage")
-    public native UIImage currentThumbImage();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UISlider init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UISlider initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UISlider initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * continuous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/continuous">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isContinuous")
-    public native boolean isContinuous();
-
-    /**
-     * maximumTrackImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/maximumTrackImageForState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumTrackImageForState:")
-    public native UIImage maximumTrackImageForState(@NUInt long state);
-
-    /**
-     * maximumTrackTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumTrackTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumTrackTintColor")
-    public native UIColor maximumTrackTintColor();
-
-    /**
-     * maximumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumValue")
-    public native float maximumValue();
-
-    /**
-     * maximumValueImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumValueImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumValueImage")
-    public native UIImage maximumValueImage();
-
-    /**
-     * maximumValueImageRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/maximumValueImageRectForBounds:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumValueImageRectForBounds:")
-    @ByValue
-    public native CGRect maximumValueImageRectForBounds(@ByValue CGRect bounds);
-
-    /**
-     * minimumTrackImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/minimumTrackImageForState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumTrackImageForState:")
-    public native UIImage minimumTrackImageForState(@NUInt long state);
-
-    /**
-     * minimumTrackTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumTrackTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumTrackTintColor")
-    public native UIColor minimumTrackTintColor();
-
-    /**
-     * minimumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumValue")
-    public native float minimumValue();
-
-    /**
-     * minimumValueImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumValueImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumValueImage")
-    public native UIImage minimumValueImage();
-
-    /**
-     * minimumValueImageRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/minimumValueImageRectForBounds:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumValueImageRectForBounds:")
-    @ByValue
-    public native CGRect minimumValueImageRectForBounds(@ByValue CGRect bounds);
-
-    /**
-     * continuous</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/continuous">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setContinuous:")
-    public native void setContinuous(boolean value);
-
-    /**
-     * setMaximumTrackImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/setMaximumTrackImage:forState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumTrackImage:forState:")
-    public native void setMaximumTrackImageForState(UIImage image, @NUInt long state);
-
-    /**
-     * maximumTrackTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumTrackTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumTrackTintColor:")
-    public native void setMaximumTrackTintColor(UIColor value);
-
-    /**
-     * maximumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumValue:")
-    public native void setMaximumValue(float value);
-
-    /**
-     * maximumValueImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumValueImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumValueImage:")
-    public native void setMaximumValueImage(UIImage value);
-
-    /**
-     * setMinimumTrackImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/setMinimumTrackImage:forState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumTrackImage:forState:")
-    public native void setMinimumTrackImageForState(UIImage image, @NUInt long state);
-
-    /**
-     * minimumTrackTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumTrackTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumTrackTintColor:")
-    public native void setMinimumTrackTintColor(UIColor value);
-
-    /**
-     * minimumValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumValue:")
-    public native void setMinimumValue(float value);
-
-    /**
-     * minimumValueImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumValueImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumValueImage:")
-    public native void setMinimumValueImage(UIImage value);
-
-    /**
-     * setThumbImage:forState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/setThumbImage:forState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setThumbImage:forState:")
-    public native void setThumbImageForState(UIImage image, @NUInt long state);
-
-    /**
-     * thumbTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/thumbTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setThumbTintColor:")
-    public native void setThumbTintColor(UIColor value);
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setValue:")
-    public native void setValue(float value);
-
-    /**
-     * setValue:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/setValue:animated:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setValue:animated:")
-    public native void setValueAnimated(float value, boolean animated);
-
-    /**
-     * thumbImageForState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/thumbImageForState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("thumbImageForState:")
-    public native UIImage thumbImageForState(@NUInt long state);
-
-    /**
-     * thumbRectForBounds:trackRect:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/thumbRectForBounds:trackRect:value:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("thumbRectForBounds:trackRect:value:")
-    @ByValue
-    public native CGRect thumbRectForBoundsTrackRectValue(@ByValue CGRect bounds, @ByValue CGRect rect, float value);
-
-    /**
-     * thumbTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/thumbTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("thumbTintColor")
-    public native UIColor thumbTintColor();
-
-    /**
-     * trackRectForBounds:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/trackRectForBounds:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("trackRectForBounds:")
-    @ByValue
-    public native CGRect trackRectForBounds(@ByValue CGRect bounds);
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    public native float value();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -396,23 +120,9 @@ public class UISlider extends UIControl implements NSCoding {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -423,27 +133,10 @@ public class UISlider extends UIControl implements NSCoding {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -454,24 +147,9 @@ public class UISlider extends UIControl implements NSCoding {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -669,4 +347,326 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * currentMaximumTrackImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/currentMaximumTrackImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentMaximumTrackImage")
+    public native UIImage currentMaximumTrackImage();
+
+    /**
+     * currentMinimumTrackImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/currentMinimumTrackImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentMinimumTrackImage")
+    public native UIImage currentMinimumTrackImage();
+
+    /**
+     * currentThumbImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/currentThumbImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentThumbImage")
+    public native UIImage currentThumbImage();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UISlider init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UISlider initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UISlider initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * continuous</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/continuous">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isContinuous")
+    public native boolean isContinuous();
+
+    /**
+     * continuous</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/continuous">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setContinuous:")
+    public native void setContinuous(boolean value);
+
+    /**
+     * maximumTrackImageForState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/maximumTrackImageForState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumTrackImageForState:")
+    public native UIImage maximumTrackImageForState(@NUInt long state);
+
+    /**
+     * maximumTrackTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumTrackTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumTrackTintColor")
+    public native UIColor maximumTrackTintColor();
+
+    /**
+     * maximumValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumValue")
+    public native float maximumValue();
+
+    /**
+     * maximumValueImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumValueImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumValueImage")
+    public native UIImage maximumValueImage();
+
+    /**
+     * maximumValueImageRectForBounds:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/maximumValueImageRectForBounds:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumValueImageRectForBounds:")
+    @ByValue
+    public native CGRect maximumValueImageRectForBounds(@ByValue CGRect bounds);
+
+    /**
+     * minimumTrackImageForState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/minimumTrackImageForState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumTrackImageForState:")
+    public native UIImage minimumTrackImageForState(@NUInt long state);
+
+    /**
+     * minimumTrackTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumTrackTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumTrackTintColor")
+    public native UIColor minimumTrackTintColor();
+
+    /**
+     * minimumValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumValue")
+    public native float minimumValue();
+
+    /**
+     * minimumValueImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumValueImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumValueImage")
+    public native UIImage minimumValueImage();
+
+    /**
+     * minimumValueImageRectForBounds:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/minimumValueImageRectForBounds:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumValueImageRectForBounds:")
+    @ByValue
+    public native CGRect minimumValueImageRectForBounds(@ByValue CGRect bounds);
+
+    /**
+     * setMaximumTrackImage:forState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/setMaximumTrackImage:forState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumTrackImage:forState:")
+    public native void setMaximumTrackImageForState(UIImage image, @NUInt long state);
+
+    /**
+     * maximumTrackTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumTrackTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumTrackTintColor:")
+    public native void setMaximumTrackTintColor(UIColor value);
+
+    /**
+     * maximumValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumValue:")
+    public native void setMaximumValue(float value);
+
+    /**
+     * maximumValueImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/maximumValueImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumValueImage:")
+    public native void setMaximumValueImage(UIImage value);
+
+    /**
+     * setMinimumTrackImage:forState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/setMinimumTrackImage:forState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumTrackImage:forState:")
+    public native void setMinimumTrackImageForState(UIImage image, @NUInt long state);
+
+    /**
+     * minimumTrackTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumTrackTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumTrackTintColor:")
+    public native void setMinimumTrackTintColor(UIColor value);
+
+    /**
+     * minimumValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumValue:")
+    public native void setMinimumValue(float value);
+
+    /**
+     * minimumValueImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/minimumValueImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumValueImage:")
+    public native void setMinimumValueImage(UIImage value);
+
+    /**
+     * setThumbImage:forState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/setThumbImage:forState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setThumbImage:forState:")
+    public native void setThumbImageForState(UIImage image, @NUInt long state);
+
+    /**
+     * thumbTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/thumbTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setThumbTintColor:")
+    public native void setThumbTintColor(UIColor value);
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setValue:")
+    public native void setValue(float value);
+
+    /**
+     * setValue:animated:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/setValue:animated:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setValue:animated:")
+    public native void setValueAnimated(float value, boolean animated);
+
+    /**
+     * thumbImageForState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/thumbImageForState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("thumbImageForState:")
+    public native UIImage thumbImageForState(@NUInt long state);
+
+    /**
+     * thumbRectForBounds:trackRect:value:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/thumbRectForBounds:trackRect:value:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("thumbRectForBounds:trackRect:value:")
+    @ByValue
+    public native CGRect thumbRectForBoundsTrackRectValue(@ByValue CGRect bounds, @ByValue CGRect rect, float value);
+
+    /**
+     * thumbTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/thumbTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("thumbTintColor")
+    public native UIColor thumbTintColor();
+
+    /**
+     * trackRectForBounds:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instm/UISlider/trackRectForBounds:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("trackRectForBounds:")
+    @ByValue
+    public native CGRect trackRectForBounds(@ByValue CGRect bounds);
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISlider_Class/index.html#//apple_ref/occ/instp/UISlider/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    public native float value();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

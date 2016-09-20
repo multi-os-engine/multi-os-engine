@@ -64,23 +64,6 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     public static native AVAssetWriterInputPixelBufferAdaptor alloc();
 
     /**
-     * appendPixelBuffer:withPresentationTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetWriterInputPixelBufferAdaptor/appendPixelBuffer:withPresentationTime:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("appendPixelBuffer:withPresentationTime:")
-    public native boolean appendPixelBufferWithPresentationTime(CVBufferRef pixelBuffer,
-            @ByValue CMTime presentationTime);
-
-    /**
-     * assetWriterInput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputPixelBufferAdaptor/assetWriterInput">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("assetWriterInput")
-    public native AVAssetWriterInput assetWriterInput();
-
-    /**
      * assetWriterInputPixelBufferAdaptorWithAssetWriterInput:sourcePixelBufferAttributes:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/clm/AVAssetWriterInputPixelBufferAdaptor/assetWriterInputPixelBufferAdaptorWithAssetWriterInput:sourcePixelBufferAttributes:">iOS Dev Center</a>
      */
@@ -88,35 +71,6 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     @Selector("assetWriterInputPixelBufferAdaptorWithAssetWriterInput:sourcePixelBufferAttributes:")
     public static native AVAssetWriterInputPixelBufferAdaptor assetWriterInputPixelBufferAdaptorWithAssetWriterInputSourcePixelBufferAttributes(
             AVAssetWriterInput input, NSDictionary<String, ?> sourcePixelBufferAttributes);
-
-    @Generated
-    @Selector("init")
-    public native AVAssetWriterInputPixelBufferAdaptor init();
-
-    /**
-     * initWithAssetWriterInput:sourcePixelBufferAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetWriterInputPixelBufferAdaptor/initWithAssetWriterInput:sourcePixelBufferAttributes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAssetWriterInput:sourcePixelBufferAttributes:")
-    public native AVAssetWriterInputPixelBufferAdaptor initWithAssetWriterInputSourcePixelBufferAttributes(
-            AVAssetWriterInput input, NSDictionary<String, ?> sourcePixelBufferAttributes);
-
-    /**
-     * pixelBufferPool</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputPixelBufferAdaptor/pixelBufferPool">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pixelBufferPool")
-    public native CVPixelBufferPoolRef pixelBufferPool();
-
-    /**
-     * sourcePixelBufferAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputPixelBufferAdaptor/sourcePixelBufferAttributes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourcePixelBufferAttributes")
-    public native NSDictionary<String, ?> sourcePixelBufferAttributes();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -217,4 +171,50 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * appendPixelBuffer:withPresentationTime:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetWriterInputPixelBufferAdaptor/appendPixelBuffer:withPresentationTime:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("appendPixelBuffer:withPresentationTime:")
+    public native boolean appendPixelBufferWithPresentationTime(CVBufferRef pixelBuffer,
+            @ByValue CMTime presentationTime);
+
+    /**
+     * assetWriterInput</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputPixelBufferAdaptor/assetWriterInput">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("assetWriterInput")
+    public native AVAssetWriterInput assetWriterInput();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetWriterInputPixelBufferAdaptor init();
+
+    /**
+     * initWithAssetWriterInput:sourcePixelBufferAttributes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetWriterInputPixelBufferAdaptor/initWithAssetWriterInput:sourcePixelBufferAttributes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAssetWriterInput:sourcePixelBufferAttributes:")
+    public native AVAssetWriterInputPixelBufferAdaptor initWithAssetWriterInputSourcePixelBufferAttributes(
+            AVAssetWriterInput input, NSDictionary<String, ?> sourcePixelBufferAttributes);
+
+    /**
+     * pixelBufferPool</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputPixelBufferAdaptor/pixelBufferPool">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pixelBufferPool")
+    public native CVPixelBufferPoolRef pixelBufferPool();
+
+    /**
+     * sourcePixelBufferAttributes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputPixelBufferAdaptor/sourcePixelBufferAttributes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourcePixelBufferAttributes")
+    public native NSDictionary<String, ?> sourcePixelBufferAttributes();
 }

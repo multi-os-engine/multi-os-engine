@@ -59,34 +59,6 @@ public class UIMarkupTextPrintFormatter extends UIPrintFormatter {
     public static native UIMarkupTextPrintFormatter alloc();
 
     @Generated
-    @Selector("init")
-    public native UIMarkupTextPrintFormatter init();
-
-    /**
-     * initWithMarkupText:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMarkupTextPrintFormatter_Class/index.html#//apple_ref/occ/instm/UIMarkupTextPrintFormatter/initWithMarkupText:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithMarkupText:")
-    public native UIMarkupTextPrintFormatter initWithMarkupText(String markupText);
-
-    /**
-     * markupText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMarkupTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIMarkupTextPrintFormatter/markupText">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("markupText")
-    public native String markupText();
-
-    /**
-     * markupText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMarkupTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIMarkupTextPrintFormatter/markupText">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMarkupText:")
-    public native void setMarkupText(String value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -185,4 +157,32 @@ public class UIMarkupTextPrintFormatter extends UIPrintFormatter {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIMarkupTextPrintFormatter init();
+
+    /**
+     * initWithMarkupText:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMarkupTextPrintFormatter_Class/index.html#//apple_ref/occ/instm/UIMarkupTextPrintFormatter/initWithMarkupText:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithMarkupText:")
+    public native UIMarkupTextPrintFormatter initWithMarkupText(String markupText);
+
+    /**
+     * markupText</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMarkupTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIMarkupTextPrintFormatter/markupText">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("markupText")
+    public native String markupText();
+
+    /**
+     * markupText</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMarkupTextPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIMarkupTextPrintFormatter/markupText">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMarkupText:")
+    public native void setMarkupText(String value);
 }

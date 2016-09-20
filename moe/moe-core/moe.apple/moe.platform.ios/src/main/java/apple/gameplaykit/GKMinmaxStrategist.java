@@ -61,85 +61,6 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @Selector("alloc")
     public static native GKMinmaxStrategist alloc();
 
-    /**
-     * bestMoveForPlayer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instm/GKMinmaxStrategist/bestMoveForPlayer:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bestMoveForPlayer:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native GKGameModelUpdate bestMoveForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player);
-
-    /**
-     * gameModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/gameModel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("gameModel")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object gameModel();
-
-    @Generated
-    @Selector("init")
-    public native GKMinmaxStrategist init();
-
-    /**
-     * maxLookAheadDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/maxLookAheadDepth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maxLookAheadDepth")
-    @NInt
-    public native long maxLookAheadDepth();
-
-    /**
-     * randomMoveForPlayer:fromNumberOfBestMoves:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instm/GKMinmaxStrategist/randomMoveForPlayer:fromNumberOfBestMoves:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("randomMoveForPlayer:fromNumberOfBestMoves:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native GKGameModelUpdate randomMoveForPlayerFromNumberOfBestMoves(
-            @Mapped(ObjCObjectMapper.class) GKGameModelPlayer player, @NInt long numMovesToConsider);
-
-    /**
-     * randomSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/randomSource">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("randomSource")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object randomSource();
-
-    /**
-     * gameModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/gameModel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setGameModel:")
-    public native void setGameModel(@Mapped(ObjCObjectMapper.class) Object value);
-
-    /**
-     * maxLookAheadDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/maxLookAheadDepth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaxLookAheadDepth:")
-    public native void setMaxLookAheadDepth(@NInt long value);
-
-    /**
-     * randomSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/randomSource">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRandomSource:")
-    public native void setRandomSource(@Mapped(ObjCObjectMapper.class) Object value);
-
-    @Generated
-    @Selector("bestMoveForActivePlayer")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object bestMoveForActivePlayer();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -239,4 +160,83 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bestMoveForPlayer:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instm/GKMinmaxStrategist/bestMoveForPlayer:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bestMoveForPlayer:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native GKGameModelUpdate bestMoveForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player);
+
+    /**
+     * gameModel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/gameModel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("gameModel")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object gameModel();
+
+    @Generated
+    @Selector("init")
+    public native GKMinmaxStrategist init();
+
+    /**
+     * maxLookAheadDepth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/maxLookAheadDepth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maxLookAheadDepth")
+    @NInt
+    public native long maxLookAheadDepth();
+
+    /**
+     * randomMoveForPlayer:fromNumberOfBestMoves:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instm/GKMinmaxStrategist/randomMoveForPlayer:fromNumberOfBestMoves:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("randomMoveForPlayer:fromNumberOfBestMoves:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native GKGameModelUpdate randomMoveForPlayerFromNumberOfBestMoves(
+            @Mapped(ObjCObjectMapper.class) GKGameModelPlayer player, @NInt long numMovesToConsider);
+
+    /**
+     * randomSource</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/randomSource">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("randomSource")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object randomSource();
+
+    /**
+     * gameModel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/gameModel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setGameModel:")
+    public native void setGameModel(@Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * maxLookAheadDepth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/maxLookAheadDepth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaxLookAheadDepth:")
+    public native void setMaxLookAheadDepth(@NInt long value);
+
+    /**
+     * randomSource</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKMinmaxStrategist_Class/index.html#//apple_ref/occ/instp/GKMinmaxStrategist/randomSource">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRandomSource:")
+    public native void setRandomSource(@Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    @Selector("bestMoveForActivePlayer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object bestMoveForActivePlayer();
 }

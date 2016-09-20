@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class NSActivityOptions {
-    @Generated
-    private NSActivityOptions() {
-    }
-
     @Generated public static final long IdleDisplaySleepDisabled = 0x0000010000000000L;
     @Generated public static final long IdleSystemSleepDisabled = 0x0000000000100000L;
     @Generated public static final long SuddenTerminationDisabled = 0x0000000000004000L;
@@ -32,4 +28,8 @@ public final class NSActivityOptions {
     @Generated public static final long UserInitiatedAllowingIdleSystemSleep = 0x0000000000EFFFFFL;
     @Generated public static final long Background = 0x00000000000000FFL;
     @Generated public static final long LatencyCritical = 0x000000FF00000000L;
+
+    @Generated
+    private NSActivityOptions() {
+    }
 }

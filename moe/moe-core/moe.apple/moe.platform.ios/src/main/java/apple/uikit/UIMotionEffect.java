@@ -65,32 +65,6 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
     public static native UIMotionEffect alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UIMotionEffect init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIMotionEffect initWithCoder(NSCoder aDecoder);
-
-    /**
-     * keyPathsAndRelativeValuesForViewerOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMotionEffect_class/index.html#//apple_ref/occ/instm/UIMotionEffect/keyPathsAndRelativeValuesForViewerOffset:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("keyPathsAndRelativeValuesForViewerOffset:")
-    public native NSDictionary<String, ?> keyPathsAndRelativeValuesForViewerOffset(@ByValue UIOffset viewerOffset);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -189,4 +163,30 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UIMotionEffect init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIMotionEffect initWithCoder(NSCoder aDecoder);
+
+    /**
+     * keyPathsAndRelativeValuesForViewerOffset:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMotionEffect_class/index.html#//apple_ref/occ/instm/UIMotionEffect/keyPathsAndRelativeValuesForViewerOffset:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("keyPathsAndRelativeValuesForViewerOffset:")
+    public native NSDictionary<String, ?> keyPathsAndRelativeValuesForViewerOffset(@ByValue UIOffset viewerOffset);
 }

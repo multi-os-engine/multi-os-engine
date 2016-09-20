@@ -60,43 +60,6 @@ public class ACAccountCredential extends NSObject {
     public static native ACAccountCredential alloc();
 
     @Generated
-    @Selector("init")
-    public native ACAccountCredential init();
-
-    /**
-     * initWithOAuth2Token:refreshToken:expiryDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountCredentialClassRef/index.html#//apple_ref/occ/instm/ACAccountCredential/initWithOAuth2Token:refreshToken:expiryDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithOAuth2Token:refreshToken:expiryDate:")
-    public native ACAccountCredential initWithOAuth2TokenRefreshTokenExpiryDate(String token, String refreshToken,
-            NSDate expiryDate);
-
-    /**
-     * initWithOAuthToken:tokenSecret:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountCredentialClassRef/index.html#//apple_ref/occ/instm/ACAccountCredential/initWithOAuthToken:tokenSecret:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithOAuthToken:tokenSecret:")
-    public native ACAccountCredential initWithOAuthTokenTokenSecret(String token, String secret);
-
-    /**
-     * oauthToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountCredentialClassRef/index.html#//apple_ref/occ/instp/ACAccountCredential/oauthToken">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("oauthToken")
-    public native String oauthToken();
-
-    /**
-     * oauthToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountCredentialClassRef/index.html#//apple_ref/occ/instp/ACAccountCredential/oauthToken">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOauthToken:")
-    public native void setOauthToken(String value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -195,4 +158,41 @@ public class ACAccountCredential extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native ACAccountCredential init();
+
+    /**
+     * initWithOAuth2Token:refreshToken:expiryDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountCredentialClassRef/index.html#//apple_ref/occ/instm/ACAccountCredential/initWithOAuth2Token:refreshToken:expiryDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithOAuth2Token:refreshToken:expiryDate:")
+    public native ACAccountCredential initWithOAuth2TokenRefreshTokenExpiryDate(String token, String refreshToken,
+            NSDate expiryDate);
+
+    /**
+     * initWithOAuthToken:tokenSecret:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountCredentialClassRef/index.html#//apple_ref/occ/instm/ACAccountCredential/initWithOAuthToken:tokenSecret:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithOAuthToken:tokenSecret:")
+    public native ACAccountCredential initWithOAuthTokenTokenSecret(String token, String secret);
+
+    /**
+     * oauthToken</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountCredentialClassRef/index.html#//apple_ref/occ/instp/ACAccountCredential/oauthToken">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("oauthToken")
+    public native String oauthToken();
+
+    /**
+     * oauthToken</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountCredentialClassRef/index.html#//apple_ref/occ/instp/ACAccountCredential/oauthToken">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOauthToken:")
+    public native void setOauthToken(String value);
 }

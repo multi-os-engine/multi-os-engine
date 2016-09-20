@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MKSearchCompletionFilterType {
+    @Generated @NInt public static final long AndQueries = 0x0000000000000000L;
+    @Generated @NInt public static final long Only = 0x0000000000000001L;
+
     @Generated
     private MKSearchCompletionFilterType() {
     }
-
-    @Generated @NInt public static final long AndQueries = 0x0000000000000000L;
-    @Generated @NInt public static final long Only = 0x0000000000000001L;
 }

@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class SCNPhysicsCollisionCategory {
-    @Generated
-    private SCNPhysicsCollisionCategory() {
-    }
-
     @Generated @NUInt public static final long Default = 0x0000000000000001L;
     @Generated @NUInt public static final long Static = 0x0000000000000002L;
     @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ?
             0xFFFFFFFFFFFFFFFFL :
             0x00000000FFFFFFFFL;
+
+    @Generated
+    private SCNPhysicsCollisionCategory() {
+    }
 }

@@ -51,21 +51,6 @@ public class NSBlockOperation extends NSOperation {
         super(peer);
     }
 
-    /**
-     * addExecutionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSBlockOperation_class/index.html#//apple_ref/occ/instm/NSBlockOperation/addExecutionBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addExecutionBlock:")
-    public native void addExecutionBlock(@ObjCBlock(name = "call_addExecutionBlock") Block_addExecutionBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addExecutionBlock {
-        @Generated
-        void call_addExecutionBlock();
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -79,25 +64,6 @@ public class NSBlockOperation extends NSOperation {
     @Selector("blockOperationWithBlock:")
     public static native NSBlockOperation blockOperationWithBlock(
             @ObjCBlock(name = "call_blockOperationWithBlock") Block_blockOperationWithBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_blockOperationWithBlock {
-        @Generated
-        void call_blockOperationWithBlock();
-    }
-
-    /**
-     * executionBlocks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSBlockOperation_class/index.html#//apple_ref/occ/instp/NSBlockOperation/executionBlocks">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("executionBlocks")
-    public native NSArray<?> executionBlocks();
-
-    @Generated
-    @Selector("init")
-    public native NSBlockOperation init();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -198,4 +164,38 @@ public class NSBlockOperation extends NSOperation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addExecutionBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSBlockOperation_class/index.html#//apple_ref/occ/instm/NSBlockOperation/addExecutionBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addExecutionBlock:")
+    public native void addExecutionBlock(@ObjCBlock(name = "call_addExecutionBlock") Block_addExecutionBlock block);
+
+    /**
+     * executionBlocks</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSBlockOperation_class/index.html#//apple_ref/occ/instp/NSBlockOperation/executionBlocks">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("executionBlocks")
+    public native NSArray<?> executionBlocks();
+
+    @Generated
+    @Selector("init")
+    public native NSBlockOperation init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addExecutionBlock {
+        @Generated
+        void call_addExecutionBlock();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_blockOperationWithBlock {
+        @Generated
+        void call_blockOperationWithBlock();
+    }
 }

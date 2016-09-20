@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSKeyValueChange {
-    @Generated
-    private NSKeyValueChange() {
-    }
-
     @Generated @NUInt public static final long Setting = 0x0000000000000001L;
     @Generated @NUInt public static final long Insertion = 0x0000000000000002L;
     @Generated @NUInt public static final long Removal = 0x0000000000000003L;
     @Generated @NUInt public static final long Replacement = 0x0000000000000004L;
+
+    @Generated
+    private NSKeyValueChange() {
+    }
 }

@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIDatePickerMode {
-    @Generated
-    private UIDatePickerMode() {
-    }
-
     @Generated @NInt public static final long Time = 0x0000000000000000L;
     @Generated @NInt public static final long Date = 0x0000000000000001L;
     @Generated @NInt public static final long DateAndTime = 0x0000000000000002L;
     @Generated @NInt public static final long CountDownTimer = 0x0000000000000003L;
+
+    @Generated
+    private UIDatePickerMode() {
+    }
 }

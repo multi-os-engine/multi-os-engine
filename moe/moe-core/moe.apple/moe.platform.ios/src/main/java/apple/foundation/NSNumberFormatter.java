@@ -59,6 +59,131 @@ public class NSNumberFormatter extends NSFormatter {
     public static native NSNumberFormatter alloc();
 
     /**
+     * defaultFormatterBehavior</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/clm/NSNumberFormatter/defaultFormatterBehavior">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultFormatterBehavior")
+    @NUInt
+    public static native long defaultFormatterBehavior();
+
+    /**
+     * localizedStringFromNumber:numberStyle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/clm/NSNumberFormatter/localizedStringFromNumber:numberStyle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedStringFromNumber:numberStyle:")
+    public static native String localizedStringFromNumberNumberStyle(NSNumber num, @NUInt long nstyle);
+
+    /**
+     * setDefaultFormatterBehavior:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/clm/NSNumberFormatter/setDefaultFormatterBehavior:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDefaultFormatterBehavior:")
+    public static native void setDefaultFormatterBehavior(@NUInt long behavior);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
      * allowsFloats</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/instp/NSNumberFormatter/allowsFloats">iOS Dev Center</a>
      */
@@ -113,15 +238,6 @@ public class NSNumberFormatter extends NSFormatter {
     @Generated
     @Selector("decimalSeparator")
     public native String decimalSeparator();
-
-    /**
-     * defaultFormatterBehavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/clm/NSNumberFormatter/defaultFormatterBehavior">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultFormatterBehavior")
-    @NUInt
-    public static native long defaultFormatterBehavior();
 
     /**
      * exponentSymbol</br>
@@ -213,6 +329,14 @@ public class NSNumberFormatter extends NSFormatter {
     public native boolean isLenient();
 
     /**
+     * lenient</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/instp/NSNumberFormatter/lenient">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLenient:")
+    public native void setLenient(boolean value);
+
+    /**
      * partialStringValidationEnabled</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/instp/NSNumberFormatter/partialStringValidationEnabled">iOS Dev Center</a>
      */
@@ -221,20 +345,20 @@ public class NSNumberFormatter extends NSFormatter {
     public native boolean isPartialStringValidationEnabled();
 
     /**
+     * partialStringValidationEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/instp/NSNumberFormatter/partialStringValidationEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPartialStringValidationEnabled:")
+    public native void setPartialStringValidationEnabled(boolean value);
+
+    /**
      * locale</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/instp/NSNumberFormatter/locale">iOS Dev Center</a>
      */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
-
-    /**
-     * localizedStringFromNumber:numberStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/clm/NSNumberFormatter/localizedStringFromNumber:numberStyle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedStringFromNumber:numberStyle:")
-    public static native String localizedStringFromNumberNumberStyle(NSNumber num, @NUInt long nstyle);
 
     /**
      * maximum</br>
@@ -543,14 +667,6 @@ public class NSNumberFormatter extends NSFormatter {
     public native void setDecimalSeparator(String value);
 
     /**
-     * setDefaultFormatterBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/clm/NSNumberFormatter/setDefaultFormatterBehavior:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDefaultFormatterBehavior:")
-    public static native void setDefaultFormatterBehavior(@NUInt long behavior);
-
-    /**
      * exponentSymbol</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/instp/NSNumberFormatter/exponentSymbol">iOS Dev Center</a>
      */
@@ -613,14 +729,6 @@ public class NSNumberFormatter extends NSFormatter {
     @Generated
     @Selector("setInternationalCurrencySymbol:")
     public native void setInternationalCurrencySymbol(String value);
-
-    /**
-     * lenient</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/instp/NSNumberFormatter/lenient">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLenient:")
-    public native void setLenient(boolean value);
 
     /**
      * locale</br>
@@ -781,14 +889,6 @@ public class NSNumberFormatter extends NSFormatter {
     @Generated
     @Selector("setPaddingPosition:")
     public native void setPaddingPosition(@NUInt long value);
-
-    /**
-     * partialStringValidationEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNumberFormatter_Class/index.html#//apple_ref/occ/instp/NSNumberFormatter/partialStringValidationEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPartialStringValidationEnabled:")
-    public native void setPartialStringValidationEnabled(boolean value);
 
     /**
      * perMillSymbol</br>
@@ -1041,104 +1141,4 @@ public class NSNumberFormatter extends NSFormatter {
     @Generated
     @Selector("initWithCoder:")
     public native NSNumberFormatter initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

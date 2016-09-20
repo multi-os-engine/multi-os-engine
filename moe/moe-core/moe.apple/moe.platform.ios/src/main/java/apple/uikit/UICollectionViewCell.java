@@ -66,90 +66,6 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Selector("alloc")
     public static native UICollectionViewCell alloc();
 
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/backgroundView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backgroundView")
-    public native UIView backgroundView();
-
-    /**
-     * contentView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/contentView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentView")
-    public native UIView contentView();
-
-    @Generated
-    @Selector("init")
-    public native UICollectionViewCell init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UICollectionViewCell initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/highlighted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isHighlighted")
-    public native boolean isHighlighted();
-
-    /**
-     * selected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/selected">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isSelected")
-    public native boolean isSelected();
-
-    /**
-     * selectedBackgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/selectedBackgroundView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("selectedBackgroundView")
-    public native UIView selectedBackgroundView();
-
-    /**
-     * backgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/backgroundView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackgroundView:")
-    public native void setBackgroundView(UIView value);
-
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/highlighted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHighlighted:")
-    public native void setHighlighted(boolean value);
-
-    /**
-     * selected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/selected">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSelected:")
-    public native void setSelected(boolean value);
-
-    /**
-     * selectedBackgroundView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/selectedBackgroundView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSelectedBackgroundView:")
-    public native void setSelectedBackgroundView(UIView value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UICollectionViewCell initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -203,23 +119,9 @@ public class UICollectionViewCell extends UICollectionReusableView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -230,27 +132,10 @@ public class UICollectionViewCell extends UICollectionReusableView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -261,24 +146,9 @@ public class UICollectionViewCell extends UICollectionReusableView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -476,4 +346,134 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * backgroundView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/backgroundView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backgroundView")
+    public native UIView backgroundView();
+
+    /**
+     * contentView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/contentView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentView")
+    public native UIView contentView();
+
+    @Generated
+    @Selector("init")
+    public native UICollectionViewCell init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UICollectionViewCell initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * highlighted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/highlighted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isHighlighted")
+    public native boolean isHighlighted();
+
+    /**
+     * highlighted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/highlighted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHighlighted:")
+    public native void setHighlighted(boolean value);
+
+    /**
+     * selected</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/selected">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isSelected")
+    public native boolean isSelected();
+
+    /**
+     * selected</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/selected">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSelected:")
+    public native void setSelected(boolean value);
+
+    /**
+     * selectedBackgroundView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/selectedBackgroundView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("selectedBackgroundView")
+    public native UIView selectedBackgroundView();
+
+    /**
+     * backgroundView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/backgroundView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackgroundView:")
+    public native void setBackgroundView(UIView value);
+
+    /**
+     * selectedBackgroundView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewCell_class/index.html#//apple_ref/occ/instp/UICollectionViewCell/selectedBackgroundView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSelectedBackgroundView:")
+    public native void setSelectedBackgroundView(UIView value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UICollectionViewCell initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

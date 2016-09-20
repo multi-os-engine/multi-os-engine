@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLLanguageVersion {
+    @Generated @NUInt public static final long _0 = 0x0000000000010000L;
+    @Generated @NUInt public static final long _1 = 0x0000000000010001L;
+
     @Generated
     private MTLLanguageVersion() {
     }
-
-    @Generated @NUInt public static final long _0 = 0x0000000000010000L;
-    @Generated @NUInt public static final long _1 = 0x0000000000010001L;
 }

@@ -69,126 +69,12 @@ public class PHImageManager extends NSObject {
     public static native PHImageManager alloc();
 
     /**
-     * cancelImageRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/cancelImageRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelImageRequest:")
-    public native void cancelImageRequest(int requestID);
-
-    /**
      * defaultManager</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/clm/PHImageManager/defaultManager">iOS Dev Center</a>
      */
     @Generated
     @Selector("defaultManager")
     public static native PHImageManager defaultManager();
-
-    @Generated
-    @Selector("init")
-    public native PHImageManager init();
-
-    /**
-     * requestAVAssetForVideo:options:resultHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestAVAssetForVideo:options:resultHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestAVAssetForVideo:options:resultHandler:")
-    public native int requestAVAssetForVideoOptionsResultHandler(PHAsset asset, PHVideoRequestOptions options,
-            @ObjCBlock(name = "call_requestAVAssetForVideoOptionsResultHandler") Block_requestAVAssetForVideoOptionsResultHandler resultHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestAVAssetForVideoOptionsResultHandler {
-        @Generated
-        void call_requestAVAssetForVideoOptionsResultHandler(AVAsset arg0, AVAudioMix arg1, NSDictionary<?, ?> arg2);
-    }
-
-    /**
-     * requestExportSessionForVideo:options:exportPreset:resultHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestExportSessionForVideo:options:exportPreset:resultHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestExportSessionForVideo:options:exportPreset:resultHandler:")
-    public native int requestExportSessionForVideoOptionsExportPresetResultHandler(PHAsset asset,
-            PHVideoRequestOptions options, String exportPreset,
-            @ObjCBlock(name = "call_requestExportSessionForVideoOptionsExportPresetResultHandler") Block_requestExportSessionForVideoOptionsExportPresetResultHandler resultHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestExportSessionForVideoOptionsExportPresetResultHandler {
-        @Generated
-        void call_requestExportSessionForVideoOptionsExportPresetResultHandler(AVAssetExportSession arg0,
-                NSDictionary<?, ?> arg1);
-    }
-
-    /**
-     * requestImageDataForAsset:options:resultHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestImageDataForAsset:options:resultHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestImageDataForAsset:options:resultHandler:")
-    public native int requestImageDataForAssetOptionsResultHandler(PHAsset asset, PHImageRequestOptions options,
-            @ObjCBlock(name = "call_requestImageDataForAssetOptionsResultHandler") Block_requestImageDataForAssetOptionsResultHandler resultHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestImageDataForAssetOptionsResultHandler {
-        @Generated
-        void call_requestImageDataForAssetOptionsResultHandler(NSData arg0, String arg1, @NInt long arg2,
-                NSDictionary<?, ?> arg3);
-    }
-
-    /**
-     * requestImageForAsset:targetSize:contentMode:options:resultHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestImageForAsset:targetSize:contentMode:options:resultHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestImageForAsset:targetSize:contentMode:options:resultHandler:")
-    public native int requestImageForAssetTargetSizeContentModeOptionsResultHandler(PHAsset asset,
-            @ByValue CGSize targetSize, @NInt long contentMode, PHImageRequestOptions options,
-            @ObjCBlock(name = "call_requestImageForAssetTargetSizeContentModeOptionsResultHandler") Block_requestImageForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestImageForAssetTargetSizeContentModeOptionsResultHandler {
-        @Generated
-        void call_requestImageForAssetTargetSizeContentModeOptionsResultHandler(UIImage arg0, NSDictionary<?, ?> arg1);
-    }
-
-    /**
-     * requestPlayerItemForVideo:options:resultHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestPlayerItemForVideo:options:resultHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestPlayerItemForVideo:options:resultHandler:")
-    public native int requestPlayerItemForVideoOptionsResultHandler(PHAsset asset, PHVideoRequestOptions options,
-            @ObjCBlock(name = "call_requestPlayerItemForVideoOptionsResultHandler") Block_requestPlayerItemForVideoOptionsResultHandler resultHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestPlayerItemForVideoOptionsResultHandler {
-        @Generated
-        void call_requestPlayerItemForVideoOptionsResultHandler(AVPlayerItem arg0, NSDictionary<?, ?> arg1);
-    }
-
-    /**
-     * requestLivePhotoForAsset:targetSize:contentMode:options:resultHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestLivePhotoForAsset:targetSize:contentMode:options:resultHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestLivePhotoForAsset:targetSize:contentMode:options:resultHandler:")
-    public native int requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(PHAsset asset,
-            @ByValue CGSize targetSize, @NInt long contentMode, PHLivePhotoRequestOptions options,
-            @ObjCBlock(name = "call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler") Block_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler {
-        @Generated
-        void call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(PHLivePhoto arg0,
-                NSDictionary<?, ?> arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -289,4 +175,118 @@ public class PHImageManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cancelImageRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/cancelImageRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelImageRequest:")
+    public native void cancelImageRequest(int requestID);
+
+    @Generated
+    @Selector("init")
+    public native PHImageManager init();
+
+    /**
+     * requestAVAssetForVideo:options:resultHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestAVAssetForVideo:options:resultHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestAVAssetForVideo:options:resultHandler:")
+    public native int requestAVAssetForVideoOptionsResultHandler(PHAsset asset, PHVideoRequestOptions options,
+            @ObjCBlock(name = "call_requestAVAssetForVideoOptionsResultHandler") Block_requestAVAssetForVideoOptionsResultHandler resultHandler);
+
+    /**
+     * requestExportSessionForVideo:options:exportPreset:resultHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestExportSessionForVideo:options:exportPreset:resultHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestExportSessionForVideo:options:exportPreset:resultHandler:")
+    public native int requestExportSessionForVideoOptionsExportPresetResultHandler(PHAsset asset,
+            PHVideoRequestOptions options, String exportPreset,
+            @ObjCBlock(name = "call_requestExportSessionForVideoOptionsExportPresetResultHandler") Block_requestExportSessionForVideoOptionsExportPresetResultHandler resultHandler);
+
+    /**
+     * requestImageDataForAsset:options:resultHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestImageDataForAsset:options:resultHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestImageDataForAsset:options:resultHandler:")
+    public native int requestImageDataForAssetOptionsResultHandler(PHAsset asset, PHImageRequestOptions options,
+            @ObjCBlock(name = "call_requestImageDataForAssetOptionsResultHandler") Block_requestImageDataForAssetOptionsResultHandler resultHandler);
+
+    /**
+     * requestImageForAsset:targetSize:contentMode:options:resultHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestImageForAsset:targetSize:contentMode:options:resultHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestImageForAsset:targetSize:contentMode:options:resultHandler:")
+    public native int requestImageForAssetTargetSizeContentModeOptionsResultHandler(PHAsset asset,
+            @ByValue CGSize targetSize, @NInt long contentMode, PHImageRequestOptions options,
+            @ObjCBlock(name = "call_requestImageForAssetTargetSizeContentModeOptionsResultHandler") Block_requestImageForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
+
+    /**
+     * requestPlayerItemForVideo:options:resultHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestPlayerItemForVideo:options:resultHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestPlayerItemForVideo:options:resultHandler:")
+    public native int requestPlayerItemForVideoOptionsResultHandler(PHAsset asset, PHVideoRequestOptions options,
+            @ObjCBlock(name = "call_requestPlayerItemForVideoOptionsResultHandler") Block_requestPlayerItemForVideoOptionsResultHandler resultHandler);
+
+    /**
+     * requestLivePhotoForAsset:targetSize:contentMode:options:resultHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHImageManager_Class/index.html#//apple_ref/occ/instm/PHImageManager/requestLivePhotoForAsset:targetSize:contentMode:options:resultHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestLivePhotoForAsset:targetSize:contentMode:options:resultHandler:")
+    public native int requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(PHAsset asset,
+            @ByValue CGSize targetSize, @NInt long contentMode, PHLivePhotoRequestOptions options,
+            @ObjCBlock(name = "call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler") Block_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestAVAssetForVideoOptionsResultHandler {
+        @Generated
+        void call_requestAVAssetForVideoOptionsResultHandler(AVAsset arg0, AVAudioMix arg1, NSDictionary<?, ?> arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestExportSessionForVideoOptionsExportPresetResultHandler {
+        @Generated
+        void call_requestExportSessionForVideoOptionsExportPresetResultHandler(AVAssetExportSession arg0,
+                NSDictionary<?, ?> arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestImageDataForAssetOptionsResultHandler {
+        @Generated
+        void call_requestImageDataForAssetOptionsResultHandler(NSData arg0, String arg1, @NInt long arg2,
+                NSDictionary<?, ?> arg3);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestImageForAssetTargetSizeContentModeOptionsResultHandler {
+        @Generated
+        void call_requestImageForAssetTargetSizeContentModeOptionsResultHandler(UIImage arg0, NSDictionary<?, ?> arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestPlayerItemForVideoOptionsResultHandler {
+        @Generated
+        void call_requestPlayerItemForVideoOptionsResultHandler(AVPlayerItem arg0, NSDictionary<?, ?> arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler {
+        @Generated
+        void call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(PHLivePhoto arg0,
+                NSDictionary<?, ?> arg1);
+    }
 }

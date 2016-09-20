@@ -47,13 +47,6 @@ public interface MPPlayableContentDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler {
-        @Generated
-        void call_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler(NSError arg0);
-    }
-
     /**
      * playableContentManager:didUpdateContext:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentDelegate_Ref/index.html#//apple_ref/occ/intfm/MPPlayableContentDelegate/playableContentManager:didUpdateContext:">iOS Dev Center</a>
@@ -77,6 +70,13 @@ public interface MPPlayableContentDelegate {
             MPPlayableContentManager contentManager,
             @ObjCBlock(name = "call_playableContentManagerInitializePlaybackQueueWithCompletionHandler") Block_playableContentManagerInitializePlaybackQueueWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler {
+        @Generated
+        void call_playableContentManagerInitiatePlaybackOfContentItemAtIndexPathCompletionHandler(NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)

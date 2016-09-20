@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kCVTimeIsIndefinite = 0x00000001;
     @Generated public static final int kCVAttachmentMode_ShouldNotPropagate = 0x00000000;
     @Generated public static final int kCVAttachmentMode_ShouldPropagate = 0x00000001;
@@ -115,4 +111,8 @@ public final class Enums {
     @Generated public static final int kCVReturnPoolAllocationFailed = 0xFFFFE5DE;
     @Generated public static final int kCVReturnInvalidPoolAttributes = 0xFFFFE5DD;
     @Generated public static final int kCVReturnLast = 0xFFFFE5D5;
+
+    @Generated
+    private Enums() {
+    }
 }

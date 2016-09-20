@@ -63,14 +63,6 @@ public class HKCorrelation extends HKSample {
     public static native HKCorrelation alloc();
 
     /**
-     * correlationType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelation_Class/index.html#//apple_ref/occ/instp/HKCorrelation/correlationType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("correlationType")
-    public native HKCorrelationType correlationType();
-
-    /**
      * correlationWithType:startDate:endDate:objects:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelation_Class/index.html#//apple_ref/occ/clm/HKCorrelation/correlationWithType:startDate:endDate:objects:">iOS Dev Center</a>
      */
@@ -89,26 +81,6 @@ public class HKCorrelation extends HKSample {
             HKCorrelationType correlationType, NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects,
             NSDictionary<String, ?> metadata);
 
-    @Generated
-    @Selector("init")
-    public native HKCorrelation init();
-
-    /**
-     * objects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelation_Class/index.html#//apple_ref/occ/instp/HKCorrelation/objects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objects")
-    public native NSSet<? extends HKSample> objects();
-
-    /**
-     * objectsForType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelation_Class/index.html#//apple_ref/occ/instm/HKCorrelation/objectsForType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objectsForType:")
-    public native NSSet<? extends HKSample> objectsForType(HKObjectType objectType);
-
     /**
      * correlationWithType:startDate:endDate:objects:device:metadata:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelation_Class/index.html#//apple_ref/occ/clm/HKCorrelation/correlationWithType:startDate:endDate:objects:device:metadata:">iOS Dev Center</a>
@@ -118,10 +90,6 @@ public class HKCorrelation extends HKSample {
     public static native HKCorrelation correlationWithTypeStartDateEndDateObjectsDeviceMetadata(
             HKCorrelationType correlationType, NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects,
             HKDevice device, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKCorrelation initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -223,13 +191,45 @@ public class HKCorrelation extends HKSample {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * correlationType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelation_Class/index.html#//apple_ref/occ/instp/HKCorrelation/correlationType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("correlationType")
+    public native HKCorrelationType correlationType();
+
+    @Generated
+    @Selector("init")
+    public native HKCorrelation init();
+
+    /**
+     * objects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelation_Class/index.html#//apple_ref/occ/instp/HKCorrelation/objects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objects")
+    public native NSSet<? extends HKSample> objects();
+
+    /**
+     * objectsForType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelation_Class/index.html#//apple_ref/occ/instm/HKCorrelation/objectsForType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objectsForType:")
+    public native NSSet<? extends HKSample> objectsForType(HKObjectType objectType);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKCorrelation initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

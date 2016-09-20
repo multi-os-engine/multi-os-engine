@@ -58,75 +58,6 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     @Selector("alloc")
     public static native AVAudioEnvironmentDistanceAttenuationParameters alloc();
 
-    /**
-     * distanceAttenuationModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/distanceAttenuationModel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("distanceAttenuationModel")
-    @NInt
-    public native long distanceAttenuationModel();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioEnvironmentDistanceAttenuationParameters init();
-
-    /**
-     * maximumDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/maximumDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumDistance")
-    public native float maximumDistance();
-
-    /**
-     * referenceDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/referenceDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("referenceDistance")
-    public native float referenceDistance();
-
-    /**
-     * rolloffFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/rolloffFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rolloffFactor")
-    public native float rolloffFactor();
-
-    /**
-     * distanceAttenuationModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/distanceAttenuationModel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDistanceAttenuationModel:")
-    public native void setDistanceAttenuationModel(@NInt long value);
-
-    /**
-     * maximumDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/maximumDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumDistance:")
-    public native void setMaximumDistance(float value);
-
-    /**
-     * referenceDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/referenceDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setReferenceDistance:")
-    public native void setReferenceDistance(float value);
-
-    /**
-     * rolloffFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/rolloffFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRolloffFactor:")
-    public native void setRolloffFactor(float value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -226,4 +157,73 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * distanceAttenuationModel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/distanceAttenuationModel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("distanceAttenuationModel")
+    @NInt
+    public native long distanceAttenuationModel();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioEnvironmentDistanceAttenuationParameters init();
+
+    /**
+     * maximumDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/maximumDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumDistance")
+    public native float maximumDistance();
+
+    /**
+     * referenceDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/referenceDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("referenceDistance")
+    public native float referenceDistance();
+
+    /**
+     * rolloffFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/rolloffFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rolloffFactor")
+    public native float rolloffFactor();
+
+    /**
+     * distanceAttenuationModel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/distanceAttenuationModel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDistanceAttenuationModel:")
+    public native void setDistanceAttenuationModel(@NInt long value);
+
+    /**
+     * maximumDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/maximumDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumDistance:")
+    public native void setMaximumDistance(float value);
+
+    /**
+     * referenceDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/referenceDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setReferenceDistance:")
+    public native void setReferenceDistance(float value);
+
+    /**
+     * rolloffFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentDistanceAttenuationParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentDistanceAttenuationParameters/rolloffFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRolloffFactor:")
+    public native void setRolloffFactor(float value);
 }

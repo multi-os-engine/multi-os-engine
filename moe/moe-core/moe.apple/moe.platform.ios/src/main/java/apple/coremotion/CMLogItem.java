@@ -63,40 +63,8 @@ public class CMLogItem extends NSObject implements NSSecureCoding, NSCopying {
     public static native CMLogItem alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CMLogItem init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMLogItem initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMLogItem_Class/index.html#//apple_ref/occ/instp/CMLogItem/timestamp">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timestamp")
-    public native double timestamp();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -197,4 +165,36 @@ public class CMLogItem extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CMLogItem init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CMLogItem initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * timestamp</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMLogItem_Class/index.html#//apple_ref/occ/instp/CMLogItem/timestamp">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timestamp")
+    public native double timestamp();
 }

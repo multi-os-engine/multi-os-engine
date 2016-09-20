@@ -62,24 +62,6 @@ public class SCNPlane extends SCNGeometry {
     @Selector("alloc")
     public static native SCNPlane alloc();
 
-    /**
-     * cornerRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/cornerRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cornerRadius")
-    @NFloat
-    public native double cornerRadius();
-
-    /**
-     * cornerSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/cornerSegmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cornerSegmentCount")
-    @NInt
-    public native long cornerSegmentCount();
-
     @Generated
     @Selector("geometry")
     public static native SCNPlane geometry();
@@ -90,28 +72,6 @@ public class SCNPlane extends SCNGeometry {
             NSArray<? extends SCNGeometryElement> elements);
 
     /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/height">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("height")
-    @NFloat
-    public native double height();
-
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/heightSegmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("heightSegmentCount")
-    @NInt
-    public native long heightSegmentCount();
-
-    @Generated
-    @Selector("init")
-    public native SCNPlane init();
-
-    /**
      * planeWithWidth:height:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/clm/SCNPlane/planeWithWidth:height:">iOS Dev Center</a>
      */
@@ -119,79 +79,9 @@ public class SCNPlane extends SCNGeometry {
     @Selector("planeWithWidth:height:")
     public static native SCNPlane planeWithWidthHeight(@NFloat double width, @NFloat double height);
 
-    /**
-     * cornerRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/cornerRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCornerRadius:")
-    public native void setCornerRadius(@NFloat double value);
-
-    /**
-     * cornerSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/cornerSegmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCornerSegmentCount:")
-    public native void setCornerSegmentCount(@NInt long value);
-
-    /**
-     * height</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/height">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHeight:")
-    public native void setHeight(@NFloat double value);
-
-    /**
-     * heightSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/heightSegmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHeightSegmentCount:")
-    public native void setHeightSegmentCount(@NInt long value);
-
-    /**
-     * width</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/width">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWidth:")
-    public native void setWidth(@NFloat double value);
-
-    /**
-     * widthSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/widthSegmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWidthSegmentCount:")
-    public native void setWidthSegmentCount(@NInt long value);
-
-    /**
-     * width</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/width">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("width")
-    @NFloat
-    public native double width();
-
-    /**
-     * widthSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/widthSegmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("widthSegmentCount")
-    @NInt
-    public native long widthSegmentCount();
-
     @Generated
     @Selector("geometryWithMDLMesh:")
     public static native SCNPlane geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPlane initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -293,13 +183,123 @@ public class SCNPlane extends SCNGeometry {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * cornerRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/cornerRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cornerRadius")
+    @NFloat
+    public native double cornerRadius();
+
+    /**
+     * cornerSegmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/cornerSegmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cornerSegmentCount")
+    @NInt
+    public native long cornerSegmentCount();
+
+    /**
+     * height</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/height">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("height")
+    @NFloat
+    public native double height();
+
+    /**
+     * heightSegmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/heightSegmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("heightSegmentCount")
+    @NInt
+    public native long heightSegmentCount();
+
+    @Generated
+    @Selector("init")
+    public native SCNPlane init();
+
+    /**
+     * cornerRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/cornerRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCornerRadius:")
+    public native void setCornerRadius(@NFloat double value);
+
+    /**
+     * cornerSegmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/cornerSegmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCornerSegmentCount:")
+    public native void setCornerSegmentCount(@NInt long value);
+
+    /**
+     * height</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/height">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHeight:")
+    public native void setHeight(@NFloat double value);
+
+    /**
+     * heightSegmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/heightSegmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHeightSegmentCount:")
+    public native void setHeightSegmentCount(@NInt long value);
+
+    /**
+     * width</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/width">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWidth:")
+    public native void setWidth(@NFloat double value);
+
+    /**
+     * widthSegmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/widthSegmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWidthSegmentCount:")
+    public native void setWidthSegmentCount(@NInt long value);
+
+    /**
+     * width</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/width">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("width")
+    @NFloat
+    public native double width();
+
+    /**
+     * widthSegmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPlane_Class/index.html#//apple_ref/occ/instp/SCNPlane/widthSegmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("widthSegmentCount")
+    @NInt
+    public native long widthSegmentCount();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNPlane initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

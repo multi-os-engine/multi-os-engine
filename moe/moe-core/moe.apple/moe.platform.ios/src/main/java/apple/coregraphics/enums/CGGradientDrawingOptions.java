@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGGradientDrawingOptions {
+    @Generated public static final int BeforeStartLocation = 0x00000001;
+    @Generated public static final int AfterEndLocation = 0x00000002;
+
     @Generated
     private CGGradientDrawingOptions() {
     }
-
-    @Generated public static final int BeforeStartLocation = 0x00000001;
-    @Generated public static final int AfterEndLocation = 0x00000002;
 }

@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLIndexType {
+    @Generated @NUInt public static final long Int16 = 0x0000000000000000L;
+    @Generated @NUInt public static final long Int32 = 0x0000000000000001L;
+
     @Generated
     private MTLIndexType() {
     }
-
-    @Generated @NUInt public static final long Int16 = 0x0000000000000000L;
-    @Generated @NUInt public static final long Int32 = 0x0000000000000001L;
 }

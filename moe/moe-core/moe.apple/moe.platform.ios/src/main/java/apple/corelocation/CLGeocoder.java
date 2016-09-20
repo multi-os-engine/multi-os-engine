@@ -61,90 +61,6 @@ public class CLGeocoder extends NSObject {
     @Selector("alloc")
     public static native CLGeocoder alloc();
 
-    /**
-     * cancelGeocode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instm/CLGeocoder/cancelGeocode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelGeocode")
-    public native void cancelGeocode();
-
-    /**
-     * geocodeAddressDictionary:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instm/CLGeocoder/geocodeAddressDictionary:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("geocodeAddressDictionary:completionHandler:")
-    public native void geocodeAddressDictionaryCompletionHandler(NSDictionary<?, ?> addressDictionary,
-            @ObjCBlock(name = "call_geocodeAddressDictionaryCompletionHandler") Block_geocodeAddressDictionaryCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_geocodeAddressDictionaryCompletionHandler {
-        @Generated
-        void call_geocodeAddressDictionaryCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
-    }
-
-    /**
-     * geocodeAddressString:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instm/CLGeocoder/geocodeAddressString:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("geocodeAddressString:completionHandler:")
-    public native void geocodeAddressStringCompletionHandler(String addressString,
-            @ObjCBlock(name = "call_geocodeAddressStringCompletionHandler") Block_geocodeAddressStringCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_geocodeAddressStringCompletionHandler {
-        @Generated
-        void call_geocodeAddressStringCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
-    }
-
-    /**
-     * geocodeAddressString:inRegion:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instm/CLGeocoder/geocodeAddressString:inRegion:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("geocodeAddressString:inRegion:completionHandler:")
-    public native void geocodeAddressStringInRegionCompletionHandler(String addressString, CLRegion region,
-            @ObjCBlock(name = "call_geocodeAddressStringInRegionCompletionHandler") Block_geocodeAddressStringInRegionCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_geocodeAddressStringInRegionCompletionHandler {
-        @Generated
-        void call_geocodeAddressStringInRegionCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
-    }
-
-    @Generated
-    @Selector("init")
-    public native CLGeocoder init();
-
-    /**
-     * geocoding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instp/CLGeocoder/geocoding">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isGeocoding")
-    public native boolean isGeocoding();
-
-    /**
-     * reverseGeocodeLocation:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instm/CLGeocoder/reverseGeocodeLocation:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reverseGeocodeLocation:completionHandler:")
-    public native void reverseGeocodeLocationCompletionHandler(CLLocation location,
-            @ObjCBlock(name = "call_reverseGeocodeLocationCompletionHandler") Block_reverseGeocodeLocationCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_reverseGeocodeLocationCompletionHandler {
-        @Generated
-        void call_reverseGeocodeLocationCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -244,4 +160,88 @@ public class CLGeocoder extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cancelGeocode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instm/CLGeocoder/cancelGeocode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelGeocode")
+    public native void cancelGeocode();
+
+    /**
+     * geocodeAddressDictionary:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instm/CLGeocoder/geocodeAddressDictionary:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("geocodeAddressDictionary:completionHandler:")
+    public native void geocodeAddressDictionaryCompletionHandler(NSDictionary<?, ?> addressDictionary,
+            @ObjCBlock(name = "call_geocodeAddressDictionaryCompletionHandler") Block_geocodeAddressDictionaryCompletionHandler completionHandler);
+
+    /**
+     * geocodeAddressString:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instm/CLGeocoder/geocodeAddressString:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("geocodeAddressString:completionHandler:")
+    public native void geocodeAddressStringCompletionHandler(String addressString,
+            @ObjCBlock(name = "call_geocodeAddressStringCompletionHandler") Block_geocodeAddressStringCompletionHandler completionHandler);
+
+    /**
+     * geocodeAddressString:inRegion:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instm/CLGeocoder/geocodeAddressString:inRegion:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("geocodeAddressString:inRegion:completionHandler:")
+    public native void geocodeAddressStringInRegionCompletionHandler(String addressString, CLRegion region,
+            @ObjCBlock(name = "call_geocodeAddressStringInRegionCompletionHandler") Block_geocodeAddressStringInRegionCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("init")
+    public native CLGeocoder init();
+
+    /**
+     * geocoding</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instp/CLGeocoder/geocoding">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isGeocoding")
+    public native boolean isGeocoding();
+
+    /**
+     * reverseGeocodeLocation:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/instm/CLGeocoder/reverseGeocodeLocation:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reverseGeocodeLocation:completionHandler:")
+    public native void reverseGeocodeLocationCompletionHandler(CLLocation location,
+            @ObjCBlock(name = "call_reverseGeocodeLocationCompletionHandler") Block_reverseGeocodeLocationCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_geocodeAddressDictionaryCompletionHandler {
+        @Generated
+        void call_geocodeAddressDictionaryCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_geocodeAddressStringCompletionHandler {
+        @Generated
+        void call_geocodeAddressStringCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_geocodeAddressStringInRegionCompletionHandler {
+        @Generated
+        void call_geocodeAddressStringInRegionCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_reverseGeocodeLocationCompletionHandler {
+        @Generated
+        void call_reverseGeocodeLocationCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+    }
 }

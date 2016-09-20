@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSStringEnumerationOptions {
-    @Generated
-    private NSStringEnumerationOptions() {
-    }
-
     @Generated @NUInt public static final long ByLines = 0x0000000000000000L;
     @Generated @NUInt public static final long ByParagraphs = 0x0000000000000001L;
     @Generated @NUInt public static final long ByComposedCharacterSequences = 0x0000000000000002L;
@@ -33,4 +29,8 @@ public final class NSStringEnumerationOptions {
     @Generated @NUInt public static final long Reverse = 0x0000000000000100L;
     @Generated @NUInt public static final long SubstringNotRequired = 0x0000000000000200L;
     @Generated @NUInt public static final long Localized = 0x0000000000000400L;
+
+    @Generated
+    private NSStringEnumerationOptions() {
+    }
 }

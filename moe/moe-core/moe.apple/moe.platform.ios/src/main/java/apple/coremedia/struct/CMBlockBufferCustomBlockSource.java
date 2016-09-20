@@ -31,11 +31,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure(alignment = 4)
 public final class CMBlockBufferCustomBlockSource extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CMBlockBufferCustomBlockSource() {
@@ -70,23 +70,9 @@ public final class CMBlockBufferCustomBlockSource extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setAllocateBlock(@FunctionPtr(name = "call_AllocateBlock") Function_AllocateBlock value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AllocateBlock {
-        @Generated
-        VoidPtr call_AllocateBlock(VoidPtr arg0, @NUInt long arg1);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFreeBlock(@FunctionPtr(name = "call_FreeBlock") Function_FreeBlock value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_FreeBlock {
-        @Generated
-        void call_FreeBlock(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2);
-    }
 
     @Generated
     @StructureField(order = 3, isGetter = true)
@@ -105,4 +91,18 @@ public final class CMBlockBufferCustomBlockSource extends StructObject {
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_FreeBlock")
     public native Function_FreeBlock FreeBlock();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AllocateBlock {
+        @Generated
+        VoidPtr call_AllocateBlock(VoidPtr arg0, @NUInt long arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_FreeBlock {
+        @Generated
+        void call_FreeBlock(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2);
+    }
 }

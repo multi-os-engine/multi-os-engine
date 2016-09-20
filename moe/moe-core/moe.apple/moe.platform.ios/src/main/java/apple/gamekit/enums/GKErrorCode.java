@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class GKErrorCode {
-    @Generated
-    private GKErrorCode() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000001L;
     @Generated @NInt public static final long Cancelled = 0x0000000000000002L;
     @Generated @NInt public static final long CommunicationsFailure = 0x0000000000000003L;
@@ -52,4 +48,8 @@ public final class GKErrorCode {
     @Generated @NInt public static final long InvitationsDisabled = 0x0000000000000019L;
     @Generated @NInt public static final long PlayerPhotoFailure = 0x000000000000001AL;
     @Generated @NInt public static final long UbiquityContainerUnavailable = 0x000000000000001BL;
+
+    @Generated
+    private GKErrorCode() {
+    }
 }

@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kSCBondStatusOK = 0x00000000;
     @Generated public static final int kSCBondStatusLinkInvalid = 0x00000001;
     @Generated public static final int kSCBondStatusNoPartner = 0x00000002;
@@ -56,4 +52,7 @@ public final class Enums {
     @Generated public static final int kSCStatusReachabilityUnknown = 0x00000FA1;
     @Generated public static final int kSCStatusConnectionNoService = 0x00001389;
     @Generated public static final int kSCStatusConnectionIgnore = 0x0000138A;
+    @Generated
+    private Enums() {
+    }
 }

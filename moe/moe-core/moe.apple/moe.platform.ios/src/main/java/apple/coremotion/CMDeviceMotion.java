@@ -64,58 +64,6 @@ public class CMDeviceMotion extends CMLogItem {
     @Selector("alloc")
     public static native CMDeviceMotion alloc();
 
-    /**
-     * attitude</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/attitude">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attitude")
-    public native CMAttitude attitude();
-
-    /**
-     * gravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/gravity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("gravity")
-    @ByValue
-    public native CMAcceleration gravity();
-
-    @Generated
-    @Selector("init")
-    public native CMDeviceMotion init();
-
-    /**
-     * magneticField</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/magneticField">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("magneticField")
-    @ByValue
-    public native CMCalibratedMagneticField magneticField();
-
-    /**
-     * rotationRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/rotationRate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rotationRate")
-    @ByValue
-    public native CMRotationRate rotationRate();
-
-    /**
-     * userAcceleration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/userAcceleration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userAcceleration")
-    @ByValue
-    public native CMAcceleration userAcceleration();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMDeviceMotion initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -216,13 +164,65 @@ public class CMDeviceMotion extends CMLogItem {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * attitude</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/attitude">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attitude")
+    public native CMAttitude attitude();
+
+    /**
+     * gravity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/gravity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("gravity")
+    @ByValue
+    public native CMAcceleration gravity();
+
+    @Generated
+    @Selector("init")
+    public native CMDeviceMotion init();
+
+    /**
+     * magneticField</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/magneticField">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("magneticField")
+    @ByValue
+    public native CMCalibratedMagneticField magneticField();
+
+    /**
+     * rotationRate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/rotationRate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rotationRate")
+    @ByValue
+    public native CMRotationRate rotationRate();
+
+    /**
+     * userAcceleration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMDeviceMotion_Class/index.html#//apple_ref/occ/instp/CMDeviceMotion/userAcceleration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userAcceleration")
+    @ByValue
+    public native CMAcceleration userAcceleration();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CMDeviceMotion initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

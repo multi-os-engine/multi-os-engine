@@ -70,12 +70,6 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @Selector("allowVerdict")
     public static native NEFilterDataVerdict allowVerdict();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
     /**
      * dataVerdictWithPassBytes:peekBytes:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterDataVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterDataVerdict/dataVerdictWithPassBytes:peekBytes:">iOS Dev Center</a>
@@ -92,18 +86,6 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterDataVerdict dropVerdict();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NEFilterDataVerdict init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEFilterDataVerdict initWithCoder(NSCoder aDecoder);
 
     /**
      * needRulesVerdict</br>
@@ -125,12 +107,6 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -231,4 +207,28 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NEFilterDataVerdict init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEFilterDataVerdict initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

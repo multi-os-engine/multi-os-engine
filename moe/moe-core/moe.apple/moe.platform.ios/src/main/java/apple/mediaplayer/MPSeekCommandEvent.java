@@ -59,19 +59,6 @@ public class MPSeekCommandEvent extends MPRemoteCommandEvent {
     public static native MPSeekCommandEvent alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSeekCommandEvent init();
-
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPSeekCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPSeekCommandEvent/type">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("type")
-    @NUInt
-    public native long type();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -170,4 +157,17 @@ public class MPSeekCommandEvent extends MPRemoteCommandEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSeekCommandEvent init();
+
+    /**
+     * type</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPSeekCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPSeekCommandEvent/type">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("type")
+    @NUInt
+    public native long type();
 }

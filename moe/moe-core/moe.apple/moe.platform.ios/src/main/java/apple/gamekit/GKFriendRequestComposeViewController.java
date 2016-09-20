@@ -58,62 +58,10 @@ public class GKFriendRequestComposeViewController extends UINavigationController
         super(peer);
     }
 
-    /**
-     * addRecipientPlayers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instm/GKFriendRequestComposeViewController/addRecipientPlayers:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addRecipientPlayers:")
-    public native void addRecipientPlayers(NSArray<? extends GKPlayer> players);
-
-    /**
-     * addRecipientsWithEmailAddresses:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instm/GKFriendRequestComposeViewController/addRecipientsWithEmailAddresses:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addRecipientsWithEmailAddresses:")
-    public native void addRecipientsWithEmailAddresses(NSArray<String> emailAddresses);
-
-    /**
-     * addRecipientsWithPlayerIDs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instm/GKFriendRequestComposeViewController/addRecipientsWithPlayerIDs:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("addRecipientsWithPlayerIDs:")
-    public native void addRecipientsWithPlayerIDs(NSArray<String> playerIDs);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native GKFriendRequestComposeViewController alloc();
-
-    /**
-     * composeViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instp/GKFriendRequestComposeViewController/composeViewDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("composeViewDelegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native GKFriendRequestComposeViewControllerDelegate composeViewDelegate();
-
-    @Generated
-    @Selector("init")
-    public native GKFriendRequestComposeViewController init();
-
-    @Generated
-    @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native GKFriendRequestComposeViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native GKFriendRequestComposeViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
-
-    @Generated
-    @Selector("initWithRootViewController:")
-    public native GKFriendRequestComposeViewController initWithRootViewController(UIViewController rootViewController);
 
     /**
      * maxNumberOfRecipients</br>
@@ -123,44 +71,6 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Selector("maxNumberOfRecipients")
     @NUInt
     public static native long maxNumberOfRecipients();
-
-    /**
-     * composeViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instp/GKFriendRequestComposeViewController/composeViewDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setComposeViewDelegate:")
-    public native void setComposeViewDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) GKFriendRequestComposeViewControllerDelegate value);
-
-    /**
-     * composeViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instp/GKFriendRequestComposeViewController/composeViewDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setComposeViewDelegate(
-            @Mapped(ObjCObjectMapper.class) GKFriendRequestComposeViewControllerDelegate value) {
-        Object __old = composeViewDelegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setComposeViewDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * setMessage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instm/GKFriendRequestComposeViewController/setMessage:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMessage:")
-    public native void setMessage(String message);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKFriendRequestComposeViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -273,4 +183,94 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addRecipientPlayers:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instm/GKFriendRequestComposeViewController/addRecipientPlayers:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addRecipientPlayers:")
+    public native void addRecipientPlayers(NSArray<? extends GKPlayer> players);
+
+    /**
+     * addRecipientsWithEmailAddresses:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instm/GKFriendRequestComposeViewController/addRecipientsWithEmailAddresses:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addRecipientsWithEmailAddresses:")
+    public native void addRecipientsWithEmailAddresses(NSArray<String> emailAddresses);
+
+    /**
+     * addRecipientsWithPlayerIDs:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instm/GKFriendRequestComposeViewController/addRecipientsWithPlayerIDs:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("addRecipientsWithPlayerIDs:")
+    public native void addRecipientsWithPlayerIDs(NSArray<String> playerIDs);
+
+    /**
+     * composeViewDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instp/GKFriendRequestComposeViewController/composeViewDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("composeViewDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native GKFriendRequestComposeViewControllerDelegate composeViewDelegate();
+
+    @Generated
+    @Selector("init")
+    public native GKFriendRequestComposeViewController init();
+
+    @Generated
+    @Selector("initWithNavigationBarClass:toolbarClass:")
+    public native GKFriendRequestComposeViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
+            Class toolbarClass);
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native GKFriendRequestComposeViewController initWithNibNameBundle(String nibNameOrNil,
+            NSBundle nibBundleOrNil);
+
+    @Generated
+    @Selector("initWithRootViewController:")
+    public native GKFriendRequestComposeViewController initWithRootViewController(UIViewController rootViewController);
+
+    /**
+     * composeViewDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instp/GKFriendRequestComposeViewController/composeViewDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setComposeViewDelegate:")
+    public native void setComposeViewDelegate_unsafe(
+            @Mapped(ObjCObjectMapper.class) GKFriendRequestComposeViewControllerDelegate value);
+
+    /**
+     * composeViewDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instp/GKFriendRequestComposeViewController/composeViewDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setComposeViewDelegate(
+            @Mapped(ObjCObjectMapper.class) GKFriendRequestComposeViewControllerDelegate value) {
+        Object __old = composeViewDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setComposeViewDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * setMessage:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKFriendRequestComposeViewController_Ref/index.html#//apple_ref/occ/instm/GKFriendRequestComposeViewController/setMessage:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMessage:")
+    public native void setMessage(String message);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKFriendRequestComposeViewController initWithCoder(NSCoder aDecoder);
 }

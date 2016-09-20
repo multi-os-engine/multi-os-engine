@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGPDFDataFormat {
-    @Generated
-    private CGPDFDataFormat() {
-    }
-
     @Generated public static final int Raw = 0x00000000;
     @Generated public static final int JPEGEncoded = 0x00000001;
     @Generated public static final int JPEG2000 = 0x00000002;
+
+    @Generated
+    private CGPDFDataFormat() {
+    }
 }

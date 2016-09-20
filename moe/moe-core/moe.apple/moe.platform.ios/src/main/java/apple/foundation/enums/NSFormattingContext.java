@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSFormattingContext {
-    @Generated
-    private NSFormattingContext() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Dynamic = 0x0000000000000001L;
     @Generated @NInt public static final long Standalone = 0x0000000000000002L;
     @Generated @NInt public static final long ListItem = 0x0000000000000003L;
     @Generated @NInt public static final long BeginningOfSentence = 0x0000000000000004L;
     @Generated @NInt public static final long MiddleOfSentence = 0x0000000000000005L;
+
+    @Generated
+    private NSFormattingContext() {
+    }
 }

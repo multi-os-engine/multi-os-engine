@@ -58,100 +58,10 @@ public class ABNewPersonViewController extends UIViewController {
         super(peer);
     }
 
-    /**
-     * addressBook</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/addressBook">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addressBook")
-    public native ConstVoidPtr addressBook();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native ABNewPersonViewController alloc();
-
-    /**
-     * displayedPerson</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/displayedPerson">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("displayedPerson")
-    public native ConstVoidPtr displayedPerson();
-
-    @Generated
-    @Selector("init")
-    public native ABNewPersonViewController init();
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native ABNewPersonViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    @Generated
-    @Selector("newPersonViewDelegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native ABNewPersonViewControllerDelegate newPersonViewDelegate();
-
-    /**
-     * parentGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/parentGroup">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("parentGroup")
-    public native ConstVoidPtr parentGroup();
-
-    /**
-     * addressBook</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/addressBook">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAddressBook:")
-    public native void setAddressBook(ConstVoidPtr value);
-
-    /**
-     * displayedPerson</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/displayedPerson">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDisplayedPerson:")
-    public native void setDisplayedPerson(ConstVoidPtr value);
-
-    /**
-     * newPersonViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/newPersonViewDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNewPersonViewDelegate:")
-    public native void setNewPersonViewDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value);
-
-    /**
-     * newPersonViewDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/newPersonViewDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setNewPersonViewDelegate(@Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value) {
-        Object __old = newPersonViewDelegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setNewPersonViewDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * parentGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/parentGroup">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setParentGroup:")
-    public native void setParentGroup(ConstVoidPtr value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native ABNewPersonViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -264,4 +174,94 @@ public class ABNewPersonViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addressBook</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/addressBook">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addressBook")
+    public native ConstVoidPtr addressBook();
+
+    /**
+     * displayedPerson</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/displayedPerson">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("displayedPerson")
+    public native ConstVoidPtr displayedPerson();
+
+    @Generated
+    @Selector("init")
+    public native ABNewPersonViewController init();
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native ABNewPersonViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    @Generated
+    @Selector("newPersonViewDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native ABNewPersonViewControllerDelegate newPersonViewDelegate();
+
+    /**
+     * parentGroup</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/parentGroup">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("parentGroup")
+    public native ConstVoidPtr parentGroup();
+
+    /**
+     * addressBook</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/addressBook">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAddressBook:")
+    public native void setAddressBook(ConstVoidPtr value);
+
+    /**
+     * displayedPerson</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/displayedPerson">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDisplayedPerson:")
+    public native void setDisplayedPerson(ConstVoidPtr value);
+
+    /**
+     * newPersonViewDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/newPersonViewDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNewPersonViewDelegate:")
+    public native void setNewPersonViewDelegate_unsafe(
+            @Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value);
+
+    /**
+     * newPersonViewDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/newPersonViewDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setNewPersonViewDelegate(@Mapped(ObjCObjectMapper.class) ABNewPersonViewControllerDelegate value) {
+        Object __old = newPersonViewDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setNewPersonViewDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * parentGroup</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AddressBookUI/Reference/ABNewPersonViewController_Class/index.html#//apple_ref/occ/instp/ABNewPersonViewController/parentGroup">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setParentGroup:")
+    public native void setParentGroup(ConstVoidPtr value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ABNewPersonViewController initWithCoder(NSCoder aDecoder);
 }

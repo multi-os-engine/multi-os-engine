@@ -64,143 +64,6 @@ public class ALAsset extends NSObject {
     @Selector("alloc")
     public static native ALAsset alloc();
 
-    /**
-     * aspectRatioThumbnail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/aspectRatioThumbnail">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("aspectRatioThumbnail")
-    public native CGImageRef aspectRatioThumbnail();
-
-    /**
-     * defaultRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/defaultRepresentation">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("defaultRepresentation")
-    public native ALAssetRepresentation defaultRepresentation();
-
-    @Generated
-    @Selector("init")
-    public native ALAsset init();
-
-    /**
-     * editable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instp/ALAsset/editable">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("isEditable")
-    public native boolean isEditable();
-
-    /**
-     * originalAsset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instp/ALAsset/originalAsset">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("originalAsset")
-    public native ALAsset originalAsset();
-
-    /**
-     * representationForUTI:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/representationForUTI:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("representationForUTI:")
-    public native ALAssetRepresentation representationForUTI(String representationUTI);
-
-    /**
-     * setImageData:metadata:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/setImageData:metadata:completionBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("setImageData:metadata:completionBlock:")
-    public native void setImageDataMetadataCompletionBlock(NSData imageData, NSDictionary<?, ?> metadata,
-            @ObjCBlock(name = "call_setImageDataMetadataCompletionBlock") Block_setImageDataMetadataCompletionBlock completionBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setImageDataMetadataCompletionBlock {
-        @Generated
-        void call_setImageDataMetadataCompletionBlock(NSURL arg0, NSError arg1);
-    }
-
-    /**
-     * setVideoAtPath:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/setVideoAtPath:completionBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("setVideoAtPath:completionBlock:")
-    public native void setVideoAtPathCompletionBlock(NSURL videoPathURL,
-            @ObjCBlock(name = "call_setVideoAtPathCompletionBlock") Block_setVideoAtPathCompletionBlock completionBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setVideoAtPathCompletionBlock {
-        @Generated
-        void call_setVideoAtPathCompletionBlock(NSURL arg0, NSError arg1);
-    }
-
-    /**
-     * thumbnail</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/thumbnail">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("thumbnail")
-    public native CGImageRef thumbnail();
-
-    /**
-     * valueForProperty:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/valueForProperty:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("valueForProperty:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForProperty(String property);
-
-    /**
-     * writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:")
-    public native void writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSData imageData,
-            NSDictionary<?, ?> metadata,
-            @ObjCBlock(name = "call_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock") Block_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock {
-        @Generated
-        void call_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
-    }
-
-    /**
-     * writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:")
-    public native void writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL videoPathURL,
-            @ObjCBlock(name = "call_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock") Block_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock completionBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock {
-        @Generated
-        void call_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL arg0, NSError arg1);
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -300,4 +163,141 @@ public class ALAsset extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * aspectRatioThumbnail</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/aspectRatioThumbnail">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("aspectRatioThumbnail")
+    public native CGImageRef aspectRatioThumbnail();
+
+    /**
+     * defaultRepresentation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/defaultRepresentation">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("defaultRepresentation")
+    public native ALAssetRepresentation defaultRepresentation();
+
+    @Generated
+    @Selector("init")
+    public native ALAsset init();
+
+    /**
+     * editable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instp/ALAsset/editable">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("isEditable")
+    public native boolean isEditable();
+
+    /**
+     * originalAsset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instp/ALAsset/originalAsset">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("originalAsset")
+    public native ALAsset originalAsset();
+
+    /**
+     * representationForUTI:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/representationForUTI:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("representationForUTI:")
+    public native ALAssetRepresentation representationForUTI(String representationUTI);
+
+    /**
+     * setImageData:metadata:completionBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/setImageData:metadata:completionBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("setImageData:metadata:completionBlock:")
+    public native void setImageDataMetadataCompletionBlock(NSData imageData, NSDictionary<?, ?> metadata,
+            @ObjCBlock(name = "call_setImageDataMetadataCompletionBlock") Block_setImageDataMetadataCompletionBlock completionBlock);
+
+    /**
+     * setVideoAtPath:completionBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/setVideoAtPath:completionBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("setVideoAtPath:completionBlock:")
+    public native void setVideoAtPathCompletionBlock(NSURL videoPathURL,
+            @ObjCBlock(name = "call_setVideoAtPathCompletionBlock") Block_setVideoAtPathCompletionBlock completionBlock);
+
+    /**
+     * thumbnail</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/thumbnail">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("thumbnail")
+    public native CGImageRef thumbnail();
+
+    /**
+     * valueForProperty:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/valueForProperty:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("valueForProperty:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object valueForProperty(String property);
+
+    /**
+     * writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("writeModifiedImageDataToSavedPhotosAlbum:metadata:completionBlock:")
+    public native void writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSData imageData,
+            NSDictionary<?, ?> metadata,
+            @ObjCBlock(name = "call_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock") Block_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
+
+    /**
+     * writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAsset_Class/index.html#//apple_ref/occ/instm/ALAsset/writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("writeModifiedVideoAtPathToSavedPhotosAlbum:completionBlock:")
+    public native void writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL videoPathURL,
+            @ObjCBlock(name = "call_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock") Block_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock completionBlock);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setImageDataMetadataCompletionBlock {
+        @Generated
+        void call_setImageDataMetadataCompletionBlock(NSURL arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setVideoAtPathCompletionBlock {
+        @Generated
+        void call_setVideoAtPathCompletionBlock(NSURL arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock {
+        @Generated
+        void call_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock {
+        @Generated
+        void call_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL arg0, NSError arg1);
+    }
 }

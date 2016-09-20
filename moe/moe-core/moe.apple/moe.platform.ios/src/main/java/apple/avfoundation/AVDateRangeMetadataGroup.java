@@ -62,38 +62,6 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
     public static native AVDateRangeMetadataGroup alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("endDate")
-    public native NSDate endDate();
-
-    @Generated
-    @Selector("init")
-    public native AVDateRangeMetadataGroup init();
-
-    @Generated
-    @Selector("initWithItems:startDate:endDate:")
-    public native AVDateRangeMetadataGroup initWithItemsStartDateEndDate(NSArray<? extends AVMetadataItem> items,
-            NSDate startDate, NSDate endDate);
-
-    @Generated
-    @Selector("items")
-    public native NSArray<? extends AVMetadataItem> items();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("startDate")
-    public native NSDate startDate();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -192,4 +160,36 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("endDate")
+    public native NSDate endDate();
+
+    @Generated
+    @Selector("init")
+    public native AVDateRangeMetadataGroup init();
+
+    @Generated
+    @Selector("initWithItems:startDate:endDate:")
+    public native AVDateRangeMetadataGroup initWithItemsStartDateEndDate(NSArray<? extends AVMetadataItem> items,
+            NSDate startDate, NSDate endDate);
+
+    @Generated
+    @Selector("items")
+    public native NSArray<? extends AVMetadataItem> items();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("startDate")
+    public native NSDate startDate();
 }

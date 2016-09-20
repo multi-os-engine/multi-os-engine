@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIControlEvents {
-    @Generated
-    private UIControlEvents() {
-    }
-
     @Generated @NUInt public static final long TouchDown = 0x0000000000000001L;
     @Generated @NUInt public static final long TouchDownRepeat = 0x0000000000000002L;
     @Generated @NUInt public static final long TouchDragInside = 0x0000000000000004L;
@@ -45,4 +41,8 @@ public final class UIControlEvents {
     @Generated @NUInt public static final long SystemReserved = 0x00000000F0000000L;
     @Generated @NUInt public static final long AllEvents = 0x00000000FFFFFFFFL;
     @Generated @NUInt public static final long PrimaryActionTriggered = 0x0000000000002000L;
+
+    @Generated
+    private UIControlEvents() {
+    }
 }

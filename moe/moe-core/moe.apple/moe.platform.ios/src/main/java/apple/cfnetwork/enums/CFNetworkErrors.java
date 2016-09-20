@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CFNetworkErrors {
-    @Generated
-    private CFNetworkErrors() {
-    }
-
     @Generated public static final int CFHostErrorHostNotFound = 0x00000001;
     @Generated public static final int CFHostErrorUnknown = 0x00000002;
     @Generated public static final int CFSOCKSErrorUnknownClientVersion = 0x00000064;
@@ -107,4 +103,8 @@ public final class CFNetworkErrors {
     @Generated public static final int CFNetServiceErrorInvalid = 0xFFFEE6BA;
     @Generated public static final int CFNetServiceErrorTimeout = 0xFFFEE6B9;
     @Generated public static final int CFNetServiceErrorDNSServiceFailure = 0xFFFEE2D8;
+
+    @Generated
+    private CFNetworkErrors() {
+    }
 }

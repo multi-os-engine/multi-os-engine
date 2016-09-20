@@ -60,43 +60,6 @@ public class UIStoryboardSegue extends NSObject {
     public static native UIStoryboardSegue alloc();
 
     /**
-     * destinationViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/instp/UIStoryboardSegue/destinationViewController">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("destinationViewController")
-    public native UIViewController destinationViewController();
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/instp/UIStoryboardSegue/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native UIStoryboardSegue init();
-
-    /**
-     * initWithIdentifier:source:destination:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/instm/UIStoryboardSegue/initWithIdentifier:source:destination:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithIdentifier:source:destination:")
-    public native UIStoryboardSegue initWithIdentifierSourceDestination(String identifier, UIViewController source,
-            UIViewController destination);
-
-    /**
-     * perform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/instm/UIStoryboardSegue/perform">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("perform")
-    public native void perform();
-
-    /**
      * segueWithIdentifier:source:destination:performHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/clm/UIStoryboardSegue/segueWithIdentifier:source:destination:performHandler:">iOS Dev Center</a>
      */
@@ -105,21 +68,6 @@ public class UIStoryboardSegue extends NSObject {
     public static native UIStoryboardSegue segueWithIdentifierSourceDestinationPerformHandler(String identifier,
             UIViewController source, UIViewController destination,
             @ObjCBlock(name = "call_segueWithIdentifierSourceDestinationPerformHandler") Block_segueWithIdentifierSourceDestinationPerformHandler performHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_segueWithIdentifierSourceDestinationPerformHandler {
-        @Generated
-        void call_segueWithIdentifierSourceDestinationPerformHandler();
-    }
-
-    /**
-     * sourceViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/instp/UIStoryboardSegue/sourceViewController">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceViewController")
-    public native UIViewController sourceViewController();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -220,4 +168,56 @@ public class UIStoryboardSegue extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * destinationViewController</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/instp/UIStoryboardSegue/destinationViewController">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("destinationViewController")
+    public native UIViewController destinationViewController();
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/instp/UIStoryboardSegue/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native UIStoryboardSegue init();
+
+    /**
+     * initWithIdentifier:source:destination:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/instm/UIStoryboardSegue/initWithIdentifier:source:destination:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithIdentifier:source:destination:")
+    public native UIStoryboardSegue initWithIdentifierSourceDestination(String identifier, UIViewController source,
+            UIViewController destination);
+
+    /**
+     * perform</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/instm/UIStoryboardSegue/perform">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("perform")
+    public native void perform();
+
+    /**
+     * sourceViewController</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardSegue_Class/index.html#//apple_ref/occ/instp/UIStoryboardSegue/sourceViewController">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceViewController")
+    public native UIViewController sourceViewController();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_segueWithIdentifierSourceDestinationPerformHandler {
+        @Generated
+        void call_segueWithIdentifierSourceDestinationPerformHandler();
+    }
 }

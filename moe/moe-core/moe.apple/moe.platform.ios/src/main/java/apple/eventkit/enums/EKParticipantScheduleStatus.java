@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKParticipantScheduleStatus {
-    @Generated
-    private EKParticipantScheduleStatus() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Pending = 0x0000000000000001L;
     @Generated @NInt public static final long Sent = 0x0000000000000002L;
@@ -34,4 +30,8 @@ public final class EKParticipantScheduleStatus {
     @Generated @NInt public static final long DeliveryFailed = 0x0000000000000006L;
     @Generated @NInt public static final long CannotDeliver = 0x0000000000000007L;
     @Generated @NInt public static final long RecipientNotAllowed = 0x0000000000000008L;
+
+    @Generated
+    private EKParticipantScheduleStatus() {
+    }
 }

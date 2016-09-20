@@ -63,36 +63,8 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     public static native CAEAGLLayer alloc();
 
     @Generated
-    @Selector("drawableProperties")
-    public native NSDictionary<?, ?> drawableProperties();
-
-    @Generated
-    @Selector("init")
-    public native CAEAGLLayer init();
-
-    @Generated
-    @Selector("initWithLayer:")
-    public native CAEAGLLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
-
-    @Generated
     @Selector("layer")
     public static native CAEAGLLayer layer();
-
-    @Generated
-    @Selector("setDrawableProperties:")
-    public native void setDrawableProperties(NSDictionary<?, ?> value);
-
-    @Generated
-    @Selector("presentsWithTransaction")
-    public native boolean presentsWithTransaction();
-
-    @Generated
-    @Selector("setPresentsWithTransaction:")
-    public native void setPresentsWithTransaction(boolean value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAEAGLLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -207,4 +179,32 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("drawableProperties")
+    public native NSDictionary<?, ?> drawableProperties();
+
+    @Generated
+    @Selector("init")
+    public native CAEAGLLayer init();
+
+    @Generated
+    @Selector("initWithLayer:")
+    public native CAEAGLLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+
+    @Generated
+    @Selector("setDrawableProperties:")
+    public native void setDrawableProperties(NSDictionary<?, ?> value);
+
+    @Generated
+    @Selector("presentsWithTransaction")
+    public native boolean presentsWithTransaction();
+
+    @Generated
+    @Selector("setPresentsWithTransaction:")
+    public native void setPresentsWithTransaction(boolean value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAEAGLLayer initWithCoder(NSCoder aDecoder);
 }

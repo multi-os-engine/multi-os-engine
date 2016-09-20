@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class EKReminderPriority {
-    @Generated
-    private EKReminderPriority() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long High = 0x0000000000000001L;
     @Generated @NUInt public static final long Medium = 0x0000000000000005L;
     @Generated @NUInt public static final long Low = 0x0000000000000009L;
+
+    @Generated
+    private EKReminderPriority() {
+    }
 }

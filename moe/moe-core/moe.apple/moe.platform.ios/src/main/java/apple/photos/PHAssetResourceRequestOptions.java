@@ -61,63 +61,6 @@ public class PHAssetResourceRequestOptions extends NSObject implements NSCopying
     public static native PHAssetResourceRequestOptions alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native PHAssetResourceRequestOptions init();
-
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceRequestOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isNetworkAccessAllowed")
-    public native boolean isNetworkAccessAllowed();
-
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceRequestOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceRequestOptions/progressHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("progressHandler")
-    @ObjCBlock(name = "call_progressHandler_ret")
-    public native Block_progressHandler_ret progressHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_progressHandler_ret {
-        @Generated
-        void call_progressHandler_ret(double arg0);
-    }
-
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceRequestOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNetworkAccessAllowed:")
-    public native void setNetworkAccessAllowed(boolean value);
-
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceRequestOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceRequestOptions/progressHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProgressHandler:")
-    public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setProgressHandler {
-        @Generated
-        void call_setProgressHandler(double arg0);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -216,4 +159,61 @@ public class PHAssetResourceRequestOptions extends NSObject implements NSCopying
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native PHAssetResourceRequestOptions init();
+
+    /**
+     * networkAccessAllowed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceRequestOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceRequestOptions/networkAccessAllowed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isNetworkAccessAllowed")
+    public native boolean isNetworkAccessAllowed();
+
+    /**
+     * networkAccessAllowed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceRequestOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceRequestOptions/networkAccessAllowed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNetworkAccessAllowed:")
+    public native void setNetworkAccessAllowed(boolean value);
+
+    /**
+     * progressHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceRequestOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceRequestOptions/progressHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("progressHandler")
+    @ObjCBlock(name = "call_progressHandler_ret")
+    public native Block_progressHandler_ret progressHandler();
+
+    /**
+     * progressHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceRequestOptions_Class/index.html#//apple_ref/occ/instp/PHAssetResourceRequestOptions/progressHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProgressHandler:")
+    public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_progressHandler_ret {
+        @Generated
+        void call_progressHandler_ret(double arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setProgressHandler {
+        @Generated
+        void call_setProgressHandler(double arg0);
+    }
 }

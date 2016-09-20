@@ -65,47 +65,10 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     public static native UIPreviewAction actionWithTitleStyleHandler(String title, @NInt long style,
             @ObjCBlock(name = "call_actionWithTitleStyleHandler") Block_actionWithTitleStyleHandler handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_actionWithTitleStyleHandler {
-        @Generated
-        void call_actionWithTitleStyleHandler(UIPreviewAction arg0, UIViewController arg1);
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIPreviewAction alloc();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * handler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPreviewAction_Class/index.html#//apple_ref/occ/instp/UIPreviewAction/handler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handler")
-    @ObjCBlock(name = "call_handler_ret")
-    public native Block_handler_ret handler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_handler_ret {
-        @Generated
-        void call_handler_ret(@Mapped(ObjCObjectMapper.class) Object arg0, UIViewController arg1);
-    }
-
-    @Generated
-    @Selector("init")
-    public native UIPreviewAction init();
-
-    @Generated
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -206,4 +169,41 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * handler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPreviewAction_Class/index.html#//apple_ref/occ/instp/UIPreviewAction/handler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handler")
+    @ObjCBlock(name = "call_handler_ret")
+    public native Block_handler_ret handler();
+
+    @Generated
+    @Selector("init")
+    public native UIPreviewAction init();
+
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_actionWithTitleStyleHandler {
+        @Generated
+        void call_actionWithTitleStyleHandler(UIPreviewAction arg0, UIViewController arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_handler_ret {
+        @Generated
+        void call_handler_ret(@Mapped(ObjCObjectMapper.class) Object arg0, UIViewController arg1);
+    }
 }

@@ -61,98 +61,12 @@ public class UIMenuController extends NSObject {
     public static native UIMenuController alloc();
 
     /**
-     * arrowDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/arrowDirection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("arrowDirection")
-    @NInt
-    public native long arrowDirection();
-
-    @Generated
-    @Selector("init")
-    public native UIMenuController init();
-
-    /**
-     * menuVisible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/menuVisible">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isMenuVisible")
-    public native boolean isMenuVisible();
-
-    /**
-     * menuFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/menuFrame">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("menuFrame")
-    @ByValue
-    public native CGRect menuFrame();
-
-    /**
-     * menuItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/menuItems">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("menuItems")
-    public native NSArray<? extends UIMenuItem> menuItems();
-
-    /**
-     * arrowDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/arrowDirection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setArrowDirection:")
-    public native void setArrowDirection(@NInt long value);
-
-    /**
-     * menuItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/menuItems">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMenuItems:")
-    public native void setMenuItems(NSArray<? extends UIMenuItem> value);
-
-    /**
-     * menuVisible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/menuVisible">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMenuVisible:")
-    public native void setMenuVisible(boolean value);
-
-    /**
-     * setMenuVisible:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instm/UIMenuController/setMenuVisible:animated:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMenuVisible:animated:")
-    public native void setMenuVisibleAnimated(boolean menuVisible, boolean animated);
-
-    /**
-     * setTargetRect:inView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instm/UIMenuController/setTargetRect:inView:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTargetRect:inView:")
-    public native void setTargetRectInView(@ByValue CGRect targetRect, UIView targetView);
-
-    /**
      * sharedMenuController</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/clm/UIMenuController/sharedMenuController">iOS Dev Center</a>
      */
     @Generated
     @Selector("sharedMenuController")
     public static native UIMenuController sharedMenuController();
-
-    /**
-     * update</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instm/UIMenuController/update">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("update")
-    public native void update();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -253,4 +167,90 @@ public class UIMenuController extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * arrowDirection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/arrowDirection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("arrowDirection")
+    @NInt
+    public native long arrowDirection();
+
+    @Generated
+    @Selector("init")
+    public native UIMenuController init();
+
+    /**
+     * menuVisible</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/menuVisible">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isMenuVisible")
+    public native boolean isMenuVisible();
+
+    /**
+     * menuVisible</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/menuVisible">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMenuVisible:")
+    public native void setMenuVisible(boolean value);
+
+    /**
+     * menuFrame</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/menuFrame">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("menuFrame")
+    @ByValue
+    public native CGRect menuFrame();
+
+    /**
+     * menuItems</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/menuItems">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("menuItems")
+    public native NSArray<? extends UIMenuItem> menuItems();
+
+    /**
+     * arrowDirection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/arrowDirection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setArrowDirection:")
+    public native void setArrowDirection(@NInt long value);
+
+    /**
+     * menuItems</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instp/UIMenuController/menuItems">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMenuItems:")
+    public native void setMenuItems(NSArray<? extends UIMenuItem> value);
+
+    /**
+     * setMenuVisible:animated:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instm/UIMenuController/setMenuVisible:animated:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMenuVisible:animated:")
+    public native void setMenuVisibleAnimated(boolean menuVisible, boolean animated);
+
+    /**
+     * setTargetRect:inView:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instm/UIMenuController/setTargetRect:inView:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTargetRect:inView:")
+    public native void setTargetRectInView(@ByValue CGRect targetRect, UIView targetView);
+
+    /**
+     * update</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iPhone/Reference/UIMenuController_Class/index.html#//apple_ref/occ/instm/UIMenuController/update">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("update")
+    public native void update();
 }

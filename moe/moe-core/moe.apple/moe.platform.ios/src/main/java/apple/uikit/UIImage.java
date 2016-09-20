@@ -67,35 +67,6 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
         super(peer);
     }
 
-    /**
-     * CGImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/instm/UIImage/CGImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("CGImage")
-    public native CGImageRef CGImage();
-
-    /**
-     * CIImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/instp/UIImage/CIImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("CIImage")
-    public native CIImage CIImage();
-
-    @Generated
-    @Selector("accessibilityIdentifier")
-    public native String accessibilityIdentifier();
-
-    /**
-     * alignmentRectInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/instp/UIImage/alignmentRectInsets">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alignmentRectInsets")
-    @ByValue
-    public native UIEdgeInsets alignmentRectInsets();
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -134,6 +105,214 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
     @Selector("animatedResizableImageNamed:capInsets:resizingMode:duration:")
     public static native UIImage animatedResizableImageNamedCapInsetsResizingModeDuration(String name,
             @ByValue UIEdgeInsets capInsets, @NInt long resizingMode, double duration);
+
+    /**
+     * imageNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageNamed:")
+    public static native UIImage imageNamed(String name);
+
+    /**
+     * imageNamed:inBundle:compatibleWithTraitCollection:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageNamed:inBundle:compatibleWithTraitCollection:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageNamed:inBundle:compatibleWithTraitCollection:")
+    public static native UIImage imageNamedInBundleCompatibleWithTraitCollection(String name, NSBundle bundle,
+            UITraitCollection traitCollection);
+
+    /**
+     * imageWithCGImage:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithCGImage:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithCGImage:")
+    public static native UIImage imageWithCGImage(CGImageRef cgImage);
+
+    /**
+     * imageWithCGImage:scale:orientation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithCGImage:scale:orientation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithCGImage:scale:orientation:")
+    public static native UIImage imageWithCGImageScaleOrientation(CGImageRef cgImage, @NFloat double scale,
+            @NInt long orientation);
+
+    /**
+     * imageWithCIImage:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithCIImage:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithCIImage:")
+    public static native UIImage imageWithCIImage(CIImage ciImage);
+
+    /**
+     * imageWithCIImage:scale:orientation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithCIImage:scale:orientation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithCIImage:scale:orientation:")
+    public static native UIImage imageWithCIImageScaleOrientation(CIImage ciImage, @NFloat double scale,
+            @NInt long orientation);
+
+    /**
+     * imageWithContentsOfFile:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithContentsOfFile:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithContentsOfFile:")
+    public static native UIImage imageWithContentsOfFile(String path);
+
+    /**
+     * imageWithData:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithData:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithData:")
+    public static native UIImage imageWithData(NSData data);
+
+    /**
+     * imageWithData:scale:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithData:scale:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("imageWithData:scale:")
+    public static native UIImage imageWithDataScale(NSData data, @NFloat double scale);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * CGImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/instm/UIImage/CGImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("CGImage")
+    public native CGImageRef CGImage();
+
+    /**
+     * CIImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/instp/UIImage/CIImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("CIImage")
+    public native CIImage CIImage();
+
+    @Generated
+    @Selector("accessibilityIdentifier")
+    public native String accessibilityIdentifier();
+
+    /**
+     * alignmentRectInsets</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/instp/UIImage/alignmentRectInsets">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alignmentRectInsets")
+    @ByValue
+    public native UIEdgeInsets alignmentRectInsets();
 
     /**
      * capInsets</br>
@@ -205,23 +384,6 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
     public native UIImageAsset imageAsset();
 
     /**
-     * imageNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageNamed:")
-    public static native UIImage imageNamed(String name);
-
-    /**
-     * imageNamed:inBundle:compatibleWithTraitCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageNamed:inBundle:compatibleWithTraitCollection:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageNamed:inBundle:compatibleWithTraitCollection:")
-    public static native UIImage imageNamedInBundleCompatibleWithTraitCollection(String name, NSBundle bundle,
-            UITraitCollection traitCollection);
-
-    /**
      * imageOrientation</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/instp/UIImage/imageOrientation">iOS Dev Center</a>
      */
@@ -237,64 +399,6 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
     @Generated
     @Selector("imageWithAlignmentRectInsets:")
     public native UIImage imageWithAlignmentRectInsets(@ByValue UIEdgeInsets alignmentInsets);
-
-    /**
-     * imageWithCGImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithCGImage:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithCGImage:")
-    public static native UIImage imageWithCGImage(CGImageRef cgImage);
-
-    /**
-     * imageWithCGImage:scale:orientation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithCGImage:scale:orientation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithCGImage:scale:orientation:")
-    public static native UIImage imageWithCGImageScaleOrientation(CGImageRef cgImage, @NFloat double scale,
-            @NInt long orientation);
-
-    /**
-     * imageWithCIImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithCIImage:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithCIImage:")
-    public static native UIImage imageWithCIImage(CIImage ciImage);
-
-    /**
-     * imageWithCIImage:scale:orientation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithCIImage:scale:orientation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithCIImage:scale:orientation:")
-    public static native UIImage imageWithCIImageScaleOrientation(CIImage ciImage, @NFloat double scale,
-            @NInt long orientation);
-
-    /**
-     * imageWithContentsOfFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithContentsOfFile:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithContentsOfFile:")
-    public static native UIImage imageWithContentsOfFile(String path);
-
-    /**
-     * imageWithData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithData:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithData:")
-    public static native UIImage imageWithData(NSData data);
-
-    /**
-     * imageWithData:scale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImage_Class/index.html#//apple_ref/occ/clm/UIImage/imageWithData:scale:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("imageWithData:scale:")
-    public static native UIImage imageWithDataScale(NSData data, @NFloat double scale);
 
     /**
      * imageWithRenderingMode:</br>
@@ -454,10 +558,6 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
             @NInt long topCapHeight);
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
@@ -495,104 +595,4 @@ public class UIImage extends NSObject implements NSSecureCoding, UIAccessibility
     @Generated
     @Selector("imageFlippedForRightToLeftLayoutDirection")
     public native UIImage imageFlippedForRightToLeftLayoutDirection();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

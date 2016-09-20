@@ -61,10 +61,6 @@ public class CMAltimeter extends NSObject {
     @Selector("alloc")
     public static native CMAltimeter alloc();
 
-    @Generated
-    @Selector("init")
-    public native CMAltimeter init();
-
     /**
      * isRelativeAltitudeAvailable</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltimeter_class/index.html#//apple_ref/occ/clm/CMAltimeter/isRelativeAltitudeAvailable">iOS Dev Center</a>
@@ -72,30 +68,6 @@ public class CMAltimeter extends NSObject {
     @Generated
     @Selector("isRelativeAltitudeAvailable")
     public static native boolean isRelativeAltitudeAvailable();
-
-    /**
-     * startRelativeAltitudeUpdatesToQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltimeter_class/index.html#//apple_ref/occ/instm/CMAltimeter/startRelativeAltitudeUpdatesToQueue:withHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startRelativeAltitudeUpdatesToQueue:withHandler:")
-    public native void startRelativeAltitudeUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startRelativeAltitudeUpdatesToQueueWithHandler") Block_startRelativeAltitudeUpdatesToQueueWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startRelativeAltitudeUpdatesToQueueWithHandler {
-        @Generated
-        void call_startRelativeAltitudeUpdatesToQueueWithHandler(CMAltitudeData arg0, NSError arg1);
-    }
-
-    /**
-     * stopRelativeAltitudeUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltimeter_class/index.html#//apple_ref/occ/instm/CMAltimeter/stopRelativeAltitudeUpdates">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopRelativeAltitudeUpdates")
-    public native void stopRelativeAltitudeUpdates();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -196,4 +168,32 @@ public class CMAltimeter extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CMAltimeter init();
+
+    /**
+     * startRelativeAltitudeUpdatesToQueue:withHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltimeter_class/index.html#//apple_ref/occ/instm/CMAltimeter/startRelativeAltitudeUpdatesToQueue:withHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startRelativeAltitudeUpdatesToQueue:withHandler:")
+    public native void startRelativeAltitudeUpdatesToQueueWithHandler(NSOperationQueue queue,
+            @ObjCBlock(name = "call_startRelativeAltitudeUpdatesToQueueWithHandler") Block_startRelativeAltitudeUpdatesToQueueWithHandler handler);
+
+    /**
+     * stopRelativeAltitudeUpdates</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAltimeter_class/index.html#//apple_ref/occ/instm/CMAltimeter/stopRelativeAltitudeUpdates">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopRelativeAltitudeUpdates")
+    public native void stopRelativeAltitudeUpdates();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startRelativeAltitudeUpdatesToQueueWithHandler {
+        @Generated
+        void call_startRelativeAltitudeUpdatesToQueueWithHandler(CMAltitudeData arg0, NSError arg1);
+    }
 }

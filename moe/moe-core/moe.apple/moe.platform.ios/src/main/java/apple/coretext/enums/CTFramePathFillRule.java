@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTFramePathFillRule {
+    @Generated public static final int EvenOdd = 0x00000000;
+    @Generated public static final int WindingNumber = 0x00000001;
+
     @Generated
     private CTFramePathFillRule() {
     }
-
-    @Generated public static final int EvenOdd = 0x00000000;
-    @Generated public static final int WindingNumber = 0x00000001;
 }

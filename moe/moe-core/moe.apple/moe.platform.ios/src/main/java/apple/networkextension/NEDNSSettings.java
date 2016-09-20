@@ -63,112 +63,8 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     public static native NEDNSSettings alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * domainName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/domainName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("domainName")
-    public native String domainName();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NEDNSSettings init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEDNSSettings initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithServers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instm/NEDNSSettings/initWithServers:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithServers:")
-    public native NEDNSSettings initWithServers(NSArray<String> servers);
-
-    /**
-     * matchDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/matchDomains">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("matchDomains")
-    public native NSArray<String> matchDomains();
-
-    /**
-     * matchDomainsNoSearch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/matchDomainsNoSearch">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("matchDomainsNoSearch")
-    public native boolean matchDomainsNoSearch();
-
-    /**
-     * searchDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/searchDomains">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("searchDomains")
-    public native NSArray<String> searchDomains();
-
-    /**
-     * servers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/servers">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("servers")
-    public native NSArray<String> servers();
-
-    /**
-     * domainName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/domainName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDomainName:")
-    public native void setDomainName(String value);
-
-    /**
-     * matchDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/matchDomains">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMatchDomains:")
-    public native void setMatchDomains(NSArray<String> value);
-
-    /**
-     * matchDomainsNoSearch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/matchDomainsNoSearch">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMatchDomainsNoSearch:")
-    public native void setMatchDomainsNoSearch(boolean value);
-
-    /**
-     * searchDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/searchDomains">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSearchDomains:")
-    public native void setSearchDomains(NSArray<String> value);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -269,4 +165,108 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * domainName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/domainName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("domainName")
+    public native String domainName();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NEDNSSettings init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEDNSSettings initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithServers:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instm/NEDNSSettings/initWithServers:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithServers:")
+    public native NEDNSSettings initWithServers(NSArray<String> servers);
+
+    /**
+     * matchDomains</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/matchDomains">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("matchDomains")
+    public native NSArray<String> matchDomains();
+
+    /**
+     * matchDomainsNoSearch</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/matchDomainsNoSearch">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("matchDomainsNoSearch")
+    public native boolean matchDomainsNoSearch();
+
+    /**
+     * searchDomains</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/searchDomains">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("searchDomains")
+    public native NSArray<String> searchDomains();
+
+    /**
+     * servers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/servers">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("servers")
+    public native NSArray<String> servers();
+
+    /**
+     * domainName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/domainName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDomainName:")
+    public native void setDomainName(String value);
+
+    /**
+     * matchDomains</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/matchDomains">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMatchDomains:")
+    public native void setMatchDomains(NSArray<String> value);
+
+    /**
+     * matchDomainsNoSearch</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/matchDomainsNoSearch">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMatchDomainsNoSearch:")
+    public native void setMatchDomainsNoSearch(boolean value);
+
+    /**
+     * searchDomains</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEDNSSettingsClassRef/index.html#//apple_ref/occ/instp/NEDNSSettings/searchDomains">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSearchDomains:")
+    public native void setSearchDomains(NSArray<String> value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

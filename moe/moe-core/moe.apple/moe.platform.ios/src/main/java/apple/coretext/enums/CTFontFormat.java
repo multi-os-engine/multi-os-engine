@@ -20,14 +20,14 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTFontFormat {
-    @Generated
-    private CTFontFormat() {
-    }
-
     @Generated public static final int Unrecognized = 0x00000000;
     @Generated public static final int OpenTypePostScript = 0x00000001;
     @Generated public static final int OpenTypeTrueType = 0x00000002;
     @Generated public static final int TrueType = 0x00000003;
     @Generated public static final int PostScript = 0x00000004;
     @Generated public static final int Bitmap = 0x00000005;
+
+    @Generated
+    private CTFontFormat() {
+    }
 }

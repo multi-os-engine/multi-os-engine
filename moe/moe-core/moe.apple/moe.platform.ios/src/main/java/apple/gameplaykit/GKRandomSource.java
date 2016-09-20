@@ -64,54 +64,6 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
     public static native GKRandomSource alloc();
 
     /**
-     * arrayByShufflingObjectsInArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomSource_Class/index.html#//apple_ref/occ/instm/GKRandomSource/arrayByShufflingObjectsInArray:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("arrayByShufflingObjectsInArray:")
-    public native NSArray<?> arrayByShufflingObjectsInArray(NSArray<?> array);
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomSource_Class/index.html#//apple_ref/occ/instm/GKRandomSource/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native GKRandomSource init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKRandomSource initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("nextBool")
-    public native boolean nextBool();
-
-    @Generated
-    @Selector("nextInt")
-    @NInt
-    public native long nextInt();
-
-    @Generated
-    @Selector("nextIntWithUpperBound:")
-    @NUInt
-    public native long nextIntWithUpperBound(@NUInt long upperBound);
-
-    @Generated
-    @Selector("nextUniform")
-    public native float nextUniform();
-
-    /**
      * sharedRandom</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomSource_Class/index.html#//apple_ref/occ/clm/GKRandomSource/sharedRandom">iOS Dev Center</a>
      */
@@ -122,12 +74,6 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -228,4 +174,58 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * arrayByShufflingObjectsInArray:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomSource_Class/index.html#//apple_ref/occ/instm/GKRandomSource/arrayByShufflingObjectsInArray:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("arrayByShufflingObjectsInArray:")
+    public native NSArray<?> arrayByShufflingObjectsInArray(NSArray<?> array);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRandomSource_Class/index.html#//apple_ref/occ/instm/GKRandomSource/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native GKRandomSource init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKRandomSource initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("nextBool")
+    public native boolean nextBool();
+
+    @Generated
+    @Selector("nextInt")
+    @NInt
+    public native long nextInt();
+
+    @Generated
+    @Selector("nextIntWithUpperBound:")
+    @NUInt
+    public native long nextIntWithUpperBound(@NUInt long upperBound);
+
+    @Generated
+    @Selector("nextUniform")
+    public native float nextUniform();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

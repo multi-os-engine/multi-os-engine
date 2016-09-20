@@ -61,47 +61,6 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
     @Selector("alloc")
     public static native AVAudioUnitEQ alloc();
 
-    /**
-     * bands</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQ_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQ/bands">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bands")
-    public native NSArray<? extends AVAudioUnitEQFilterParameters> bands();
-
-    /**
-     * globalGain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQ_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQ/globalGain">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("globalGain")
-    public native float globalGain();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioUnitEQ init();
-
-    @Generated
-    @Selector("initWithAudioComponentDescription:")
-    public native AVAudioUnitEQ initWithAudioComponentDescription(
-            @ByValue AudioComponentDescription audioComponentDescription);
-
-    /**
-     * initWithNumberOfBands:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQ_Class/index.html#//apple_ref/occ/instm/AVAudioUnitEQ/initWithNumberOfBands:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithNumberOfBands:")
-    public native AVAudioUnitEQ initWithNumberOfBands(@NUInt long numberOfBands);
-
-    /**
-     * globalGain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQ_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQ/globalGain">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setGlobalGain:")
-    public native void setGlobalGain(float value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -207,4 +166,45 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bands</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQ_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQ/bands">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bands")
+    public native NSArray<? extends AVAudioUnitEQFilterParameters> bands();
+
+    /**
+     * globalGain</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQ_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQ/globalGain">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("globalGain")
+    public native float globalGain();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioUnitEQ init();
+
+    @Generated
+    @Selector("initWithAudioComponentDescription:")
+    public native AVAudioUnitEQ initWithAudioComponentDescription(
+            @ByValue AudioComponentDescription audioComponentDescription);
+
+    /**
+     * initWithNumberOfBands:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQ_Class/index.html#//apple_ref/occ/instm/AVAudioUnitEQ/initWithNumberOfBands:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithNumberOfBands:")
+    public native AVAudioUnitEQ initWithNumberOfBands(@NUInt long numberOfBands);
+
+    /**
+     * globalGain</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEQ_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEQ/globalGain">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setGlobalGain:")
+    public native void setGlobalGain(float value);
 }

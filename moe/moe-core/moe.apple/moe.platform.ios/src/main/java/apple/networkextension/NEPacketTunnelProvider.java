@@ -61,77 +61,6 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
     @Selector("alloc")
     public static native NEPacketTunnelProvider alloc();
 
-    /**
-     * cancelTunnelWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelProvider/cancelTunnelWithError:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelTunnelWithError:")
-    public native void cancelTunnelWithError(NSError error);
-
-    /**
-     * createTCPConnectionThroughTunnelToEndpoint:enableTLS:TLSParameters:delegate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelProvider/createTCPConnectionThroughTunnelToEndpoint:enableTLS:TLSParameters:delegate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("createTCPConnectionThroughTunnelToEndpoint:enableTLS:TLSParameters:delegate:")
-    public native NWTCPConnection createTCPConnectionThroughTunnelToEndpointEnableTLSTLSParametersDelegate(
-            NWEndpoint remoteEndpoint, boolean enableTLS, NWTLSParameters TLSParameters,
-            @Mapped(ObjCObjectMapper.class) Object delegate);
-
-    /**
-     * createUDPSessionThroughTunnelToEndpoint:fromEndpoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelProvider/createUDPSessionThroughTunnelToEndpoint:fromEndpoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("createUDPSessionThroughTunnelToEndpoint:fromEndpoint:")
-    public native NWUDPSession createUDPSessionThroughTunnelToEndpointFromEndpoint(NWEndpoint remoteEndpoint,
-            NWHostEndpoint localEndpoint);
-
-    @Generated
-    @Selector("init")
-    public native NEPacketTunnelProvider init();
-
-    /**
-     * packetFlow</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelProvider/packetFlow">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("packetFlow")
-    public native NEPacketTunnelFlow packetFlow();
-
-    /**
-     * startTunnelWithOptions:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelProvider/startTunnelWithOptions:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startTunnelWithOptions:completionHandler:")
-    public native void startTunnelWithOptionsCompletionHandler(NSDictionary<String, ? extends NSObject> options,
-            @ObjCBlock(name = "call_startTunnelWithOptionsCompletionHandler") Block_startTunnelWithOptionsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startTunnelWithOptionsCompletionHandler {
-        @Generated
-        void call_startTunnelWithOptionsCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * stopTunnelWithReason:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelProvider/stopTunnelWithReason:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopTunnelWithReason:completionHandler:")
-    public native void stopTunnelWithReasonCompletionHandler(@NInt long reason,
-            @ObjCBlock(name = "call_stopTunnelWithReasonCompletionHandler") Block_stopTunnelWithReasonCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_stopTunnelWithReasonCompletionHandler {
-        @Generated
-        void call_stopTunnelWithReasonCompletionHandler();
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -231,4 +160,75 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cancelTunnelWithError:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelProvider/cancelTunnelWithError:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelTunnelWithError:")
+    public native void cancelTunnelWithError(NSError error);
+
+    /**
+     * createTCPConnectionThroughTunnelToEndpoint:enableTLS:TLSParameters:delegate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelProvider/createTCPConnectionThroughTunnelToEndpoint:enableTLS:TLSParameters:delegate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("createTCPConnectionThroughTunnelToEndpoint:enableTLS:TLSParameters:delegate:")
+    public native NWTCPConnection createTCPConnectionThroughTunnelToEndpointEnableTLSTLSParametersDelegate(
+            NWEndpoint remoteEndpoint, boolean enableTLS, NWTLSParameters TLSParameters,
+            @Mapped(ObjCObjectMapper.class) Object delegate);
+
+    /**
+     * createUDPSessionThroughTunnelToEndpoint:fromEndpoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelProvider/createUDPSessionThroughTunnelToEndpoint:fromEndpoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("createUDPSessionThroughTunnelToEndpoint:fromEndpoint:")
+    public native NWUDPSession createUDPSessionThroughTunnelToEndpointFromEndpoint(NWEndpoint remoteEndpoint,
+            NWHostEndpoint localEndpoint);
+
+    @Generated
+    @Selector("init")
+    public native NEPacketTunnelProvider init();
+
+    /**
+     * packetFlow</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instp/NEPacketTunnelProvider/packetFlow">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("packetFlow")
+    public native NEPacketTunnelFlow packetFlow();
+
+    /**
+     * startTunnelWithOptions:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelProvider/startTunnelWithOptions:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startTunnelWithOptions:completionHandler:")
+    public native void startTunnelWithOptionsCompletionHandler(NSDictionary<String, ? extends NSObject> options,
+            @ObjCBlock(name = "call_startTunnelWithOptionsCompletionHandler") Block_startTunnelWithOptionsCompletionHandler completionHandler);
+
+    /**
+     * stopTunnelWithReason:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEPacketTunnelProviderClassRef/index.html#//apple_ref/occ/instm/NEPacketTunnelProvider/stopTunnelWithReason:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopTunnelWithReason:completionHandler:")
+    public native void stopTunnelWithReasonCompletionHandler(@NInt long reason,
+            @ObjCBlock(name = "call_stopTunnelWithReasonCompletionHandler") Block_stopTunnelWithReasonCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startTunnelWithOptionsCompletionHandler {
+        @Generated
+        void call_startTunnelWithOptionsCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_stopTunnelWithReasonCompletionHandler {
+        @Generated
+        void call_stopTunnelWithReasonCompletionHandler();
+    }
 }

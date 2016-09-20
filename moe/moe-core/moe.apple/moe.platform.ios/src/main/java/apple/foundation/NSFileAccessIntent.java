@@ -50,22 +50,10 @@ public class NSFileAccessIntent extends NSObject {
         super(peer);
     }
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileAccessIntent_Class/index.html#//apple_ref/occ/instp/NSFileAccessIntent/URL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URL")
-    public native NSURL URL();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSFileAccessIntent alloc();
-
-    @Generated
-    @Selector("init")
-    public native NSFileAccessIntent init();
 
     /**
      * readingIntentWithURL:options:</br>
@@ -184,4 +172,16 @@ public class NSFileAccessIntent extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSFileAccessIntent_Class/index.html#//apple_ref/occ/instp/NSFileAccessIntent/URL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URL")
+    public native NSURL URL();
+
+    @Generated
+    @Selector("init")
+    public native NSFileAccessIntent init();
 }

@@ -58,18 +58,6 @@ public class JSManagedValue extends NSObject {
     @Selector("alloc")
     public static native JSManagedValue alloc();
 
-    @Generated
-    @Selector("init")
-    public native JSManagedValue init();
-
-    /**
-     * initWithValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSManagedValue_Ref/index.html#//apple_ref/occ/instm/JSManagedValue/initWithValue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithValue:")
-    public native JSManagedValue initWithValue(JSValue value);
-
     /**
      * managedValueWithValue:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSManagedValue_Ref/index.html#//apple_ref/occ/clm/JSManagedValue/managedValueWithValue:">iOS Dev Center</a>
@@ -86,14 +74,6 @@ public class JSManagedValue extends NSObject {
     @Selector("managedValueWithValue:andOwner:")
     public static native JSManagedValue managedValueWithValueAndOwner(JSValue value,
             @Mapped(ObjCObjectMapper.class) Object owner);
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSManagedValue_Ref/index.html#//apple_ref/occ/instp/JSManagedValue/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    public native JSValue value();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -194,4 +174,24 @@ public class JSManagedValue extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native JSManagedValue init();
+
+    /**
+     * initWithValue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSManagedValue_Ref/index.html#//apple_ref/occ/instm/JSManagedValue/initWithValue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithValue:")
+    public native JSManagedValue initWithValue(JSValue value);
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSManagedValue_Ref/index.html#//apple_ref/occ/instp/JSManagedValue/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    public native JSValue value();
 }

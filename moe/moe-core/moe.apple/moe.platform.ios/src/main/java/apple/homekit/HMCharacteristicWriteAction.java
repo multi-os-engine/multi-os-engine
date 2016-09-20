@@ -60,52 +60,6 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     @Selector("alloc")
     public static native HMCharacteristicWriteAction<?> alloc();
 
-    /**
-     * characteristic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicWriteAction_Class/index.html#//apple_ref/occ/instp/HMCharacteristicWriteAction/characteristic">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("characteristic")
-    public native HMCharacteristic characteristic();
-
-    @Generated
-    @Selector("init")
-    public native HMCharacteristicWriteAction<?> init();
-
-    /**
-     * initWithCharacteristic:targetValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicWriteAction_Class/index.html#//apple_ref/occ/instm/HMCharacteristicWriteAction/initWithCharacteristic:targetValue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithCharacteristic:targetValue:")
-    public native HMCharacteristicWriteAction<?> initWithCharacteristicTargetValue(HMCharacteristic characteristic,
-            @Mapped(ObjCObjectMapper.class) Object targetValue);
-
-    /**
-     * targetValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicWriteAction_Class/index.html#//apple_ref/occ/instp/HMCharacteristicWriteAction/targetValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("targetValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object targetValue();
-
-    /**
-     * updateTargetValue:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicWriteAction_Class/index.html#//apple_ref/occ/instm/HMCharacteristicWriteAction/updateTargetValue:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateTargetValue:completionHandler:")
-    public native void updateTargetValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object targetValue,
-            @ObjCBlock(name = "call_updateTargetValueCompletionHandler") Block_updateTargetValueCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updateTargetValueCompletionHandler {
-        @Generated
-        void call_updateTargetValueCompletionHandler(NSError arg0);
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -205,4 +159,50 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * characteristic</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicWriteAction_Class/index.html#//apple_ref/occ/instp/HMCharacteristicWriteAction/characteristic">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("characteristic")
+    public native HMCharacteristic characteristic();
+
+    @Generated
+    @Selector("init")
+    public native HMCharacteristicWriteAction<?> init();
+
+    /**
+     * initWithCharacteristic:targetValue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicWriteAction_Class/index.html#//apple_ref/occ/instm/HMCharacteristicWriteAction/initWithCharacteristic:targetValue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithCharacteristic:targetValue:")
+    public native HMCharacteristicWriteAction<?> initWithCharacteristicTargetValue(HMCharacteristic characteristic,
+            @Mapped(ObjCObjectMapper.class) Object targetValue);
+
+    /**
+     * targetValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicWriteAction_Class/index.html#//apple_ref/occ/instp/HMCharacteristicWriteAction/targetValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("targetValue")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object targetValue();
+
+    /**
+     * updateTargetValue:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMCharacteristicWriteAction_Class/index.html#//apple_ref/occ/instm/HMCharacteristicWriteAction/updateTargetValue:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateTargetValue:completionHandler:")
+    public native void updateTargetValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object targetValue,
+            @ObjCBlock(name = "call_updateTargetValueCompletionHandler") Block_updateTargetValueCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateTargetValueCompletionHandler {
+        @Generated
+        void call_updateTargetValueCompletionHandler(NSError arg0);
+    }
 }

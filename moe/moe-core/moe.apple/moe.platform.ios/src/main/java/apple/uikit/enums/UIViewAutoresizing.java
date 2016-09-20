@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIViewAutoresizing {
-    @Generated
-    private UIViewAutoresizing() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long FlexibleLeftMargin = 0x0000000000000001L;
     @Generated @NUInt public static final long FlexibleWidth = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class UIViewAutoresizing {
     @Generated @NUInt public static final long FlexibleTopMargin = 0x0000000000000008L;
     @Generated @NUInt public static final long FlexibleHeight = 0x0000000000000010L;
     @Generated @NUInt public static final long FlexibleBottomMargin = 0x0000000000000020L;
+
+    @Generated
+    private UIViewAutoresizing() {
+    }
 }

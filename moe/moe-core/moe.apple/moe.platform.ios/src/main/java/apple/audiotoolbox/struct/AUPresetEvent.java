@@ -27,11 +27,11 @@ import org.moe.natj.general.ptr.ConstVoidPtr;
 @Generated
 @Structure()
 public final class AUPresetEvent extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public AUPresetEvent() {

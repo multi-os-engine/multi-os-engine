@@ -56,14 +56,6 @@ public class AVURLAsset extends AVAsset {
     }
 
     /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instp/AVURLAsset/URL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URL")
-    public native NSURL URL();
-
-    /**
      * URLAssetWithURL:options:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/clm/AVURLAsset/URLAssetWithURL:options:">iOS Dev Center</a>
      */
@@ -97,40 +89,12 @@ public class AVURLAsset extends AVAsset {
     public static native NSArray<String> audiovisualTypes();
 
     /**
-     * compatibleTrackForCompositionTrack:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instm/AVURLAsset/compatibleTrackForCompositionTrack:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("compatibleTrackForCompositionTrack:")
-    public native AVAssetTrack compatibleTrackForCompositionTrack(AVCompositionTrack compositionTrack);
-
-    @Generated
-    @Selector("init")
-    public native AVURLAsset init();
-
-    /**
-     * initWithURL:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instm/AVURLAsset/initWithURL:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:options:")
-    public native AVURLAsset initWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
-
-    /**
      * isPlayableExtendedMIMEType:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/clm/AVURLAsset/isPlayableExtendedMIMEType:">iOS Dev Center</a>
      */
     @Generated
     @Selector("isPlayableExtendedMIMEType:")
     public static native boolean isPlayableExtendedMIMEType(String extendedMIMEType);
-
-    /**
-     * resourceLoader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instp/AVURLAsset/resourceLoader">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resourceLoader")
-    public native AVAssetResourceLoader resourceLoader();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -231,4 +195,40 @@ public class AVURLAsset extends AVAsset {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instp/AVURLAsset/URL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URL")
+    public native NSURL URL();
+
+    /**
+     * compatibleTrackForCompositionTrack:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instm/AVURLAsset/compatibleTrackForCompositionTrack:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("compatibleTrackForCompositionTrack:")
+    public native AVAssetTrack compatibleTrackForCompositionTrack(AVCompositionTrack compositionTrack);
+
+    @Generated
+    @Selector("init")
+    public native AVURLAsset init();
+
+    /**
+     * initWithURL:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instm/AVURLAsset/initWithURL:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:options:")
+    public native AVURLAsset initWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
+
+    /**
+     * resourceLoader</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVURLAsset_Class/index.html#//apple_ref/occ/instp/AVURLAsset/resourceLoader">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resourceLoader")
+    public native AVAssetResourceLoader resourceLoader();
 }

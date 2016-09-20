@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTLineTruncationType {
-    @Generated
-    private CTLineTruncationType() {
-    }
-
     @Generated public static final int Start = 0x00000000;
     @Generated public static final int End = 0x00000001;
     @Generated public static final int Middle = 0x00000002;
+
+    @Generated
+    private CTLineTruncationType() {
+    }
 }

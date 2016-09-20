@@ -58,26 +58,6 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     @Selector("alloc")
     public static native AVMetadataMachineReadableCodeObject alloc();
 
-    /**
-     * corners</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataMachineReadableCodeObject_Class/index.html#//apple_ref/occ/instp/AVMetadataMachineReadableCodeObject/corners">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("corners")
-    public native NSArray<?> corners();
-
-    @Generated
-    @Selector("init")
-    public native AVMetadataMachineReadableCodeObject init();
-
-    /**
-     * stringValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataMachineReadableCodeObject_Class/index.html#//apple_ref/occ/instp/AVMetadataMachineReadableCodeObject/stringValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringValue")
-    public native String stringValue();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -177,4 +157,24 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * corners</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataMachineReadableCodeObject_Class/index.html#//apple_ref/occ/instp/AVMetadataMachineReadableCodeObject/corners">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("corners")
+    public native NSArray<?> corners();
+
+    @Generated
+    @Selector("init")
+    public native AVMetadataMachineReadableCodeObject init();
+
+    /**
+     * stringValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataMachineReadableCodeObject_Class/index.html#//apple_ref/occ/instp/AVMetadataMachineReadableCodeObject/stringValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringValue")
+    public native String stringValue();
 }

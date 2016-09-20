@@ -57,111 +57,10 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
         super(peer);
     }
 
-    /**
-     * addObserverToAllBusses:forKeyPath:options:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/addObserverToAllBusses:forKeyPath:options:context:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addObserverToAllBusses:forKeyPath:options:context:")
-    public native void addObserverToAllBussesForKeyPathOptionsContext(NSObject observer, String keyPath,
-            @NUInt long options, VoidPtr context);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native AUAudioUnitBusArray alloc();
-
-    /**
-     * busType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBusArray/busType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("busType")
-    @NInt
-    public native long busType();
-
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBusArray/count">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("count")
-    @NUInt
-    public native long count();
-
-    @Generated
-    @Selector("countByEnumeratingWithState:objects:count:")
-    @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
-
-    @Generated
-    @Selector("init")
-    public native AUAudioUnitBusArray init();
-
-    /**
-     * initWithAudioUnit:busType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/initWithAudioUnit:busType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAudioUnit:busType:")
-    public native AUAudioUnitBusArray initWithAudioUnitBusType(AUAudioUnit owner, @NInt long busType);
-
-    /**
-     * initWithAudioUnit:busType:busses:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/initWithAudioUnit:busType:busses:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAudioUnit:busType:busses:")
-    public native AUAudioUnitBusArray initWithAudioUnitBusTypeBusses(AUAudioUnit owner, @NInt long busType,
-            NSArray<? extends AUAudioUnitBus> busArray);
-
-    /**
-     * countChangeable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBusArray/countChangeable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isCountChangeable")
-    public native boolean isCountChangeable();
-
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objectAtIndexedSubscript:")
-    public native AUAudioUnitBus objectAtIndexedSubscript(@NUInt long index);
-
-    /**
-     * ownerAudioUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBusArray/ownerAudioUnit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ownerAudioUnit")
-    public native AUAudioUnit ownerAudioUnit();
-
-    /**
-     * removeObserverFromAllBusses:forKeyPath:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/removeObserverFromAllBusses:forKeyPath:context:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeObserverFromAllBusses:forKeyPath:context:")
-    public native void removeObserverFromAllBussesForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
-
-    /**
-     * replaceBusses:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/replaceBusses:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("replaceBusses:")
-    public native void replaceBusses(NSArray<? extends AUAudioUnitBus> busArray);
-
-    /**
-     * setBusCount:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/setBusCount:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBusCount:error:")
-    public native boolean setBusCountError(@NUInt long count, Ptr<NSError> outError);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -262,4 +161,105 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addObserverToAllBusses:forKeyPath:options:context:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/addObserverToAllBusses:forKeyPath:options:context:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addObserverToAllBusses:forKeyPath:options:context:")
+    public native void addObserverToAllBussesForKeyPathOptionsContext(NSObject observer, String keyPath,
+            @NUInt long options, VoidPtr context);
+
+    /**
+     * busType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBusArray/busType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("busType")
+    @NInt
+    public native long busType();
+
+    /**
+     * count</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBusArray/count">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("count")
+    @NUInt
+    public native long count();
+
+    @Generated
+    @Selector("countByEnumeratingWithState:objects:count:")
+    @NUInt
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+
+    @Generated
+    @Selector("init")
+    public native AUAudioUnitBusArray init();
+
+    /**
+     * initWithAudioUnit:busType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/initWithAudioUnit:busType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAudioUnit:busType:")
+    public native AUAudioUnitBusArray initWithAudioUnitBusType(AUAudioUnit owner, @NInt long busType);
+
+    /**
+     * initWithAudioUnit:busType:busses:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/initWithAudioUnit:busType:busses:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAudioUnit:busType:busses:")
+    public native AUAudioUnitBusArray initWithAudioUnitBusTypeBusses(AUAudioUnit owner, @NInt long busType,
+            NSArray<? extends AUAudioUnitBus> busArray);
+
+    /**
+     * countChangeable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBusArray/countChangeable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isCountChangeable")
+    public native boolean isCountChangeable();
+
+    /**
+     * objectAtIndexedSubscript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/objectAtIndexedSubscript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objectAtIndexedSubscript:")
+    public native AUAudioUnitBus objectAtIndexedSubscript(@NUInt long index);
+
+    /**
+     * ownerAudioUnit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBusArray/ownerAudioUnit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ownerAudioUnit")
+    public native AUAudioUnit ownerAudioUnit();
+
+    /**
+     * removeObserverFromAllBusses:forKeyPath:context:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/removeObserverFromAllBusses:forKeyPath:context:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeObserverFromAllBusses:forKeyPath:context:")
+    public native void removeObserverFromAllBussesForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
+
+    /**
+     * replaceBusses:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/replaceBusses:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("replaceBusses:")
+    public native void replaceBusses(NSArray<? extends AUAudioUnitBus> busArray);
+
+    /**
+     * setBusCount:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBusArray_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBusArray/setBusCount:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBusCount:error:")
+    public native boolean setBusCountError(@NUInt long count, Ptr<NSError> outError);
 }

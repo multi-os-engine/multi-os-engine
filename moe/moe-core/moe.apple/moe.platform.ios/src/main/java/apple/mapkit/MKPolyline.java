@@ -65,30 +65,6 @@ public class MKPolyline extends MKMultiPoint implements MKOverlay {
     @Selector("alloc")
     public static native MKPolyline alloc();
 
-    @Generated
-    @Selector("boundingMapRect")
-    @ByValue
-    public native MKMapRect boundingMapRect();
-
-    @Generated
-    @IsOptional
-    @Selector("canReplaceMapContent")
-    public native boolean canReplaceMapContent();
-
-    @Generated
-    @Selector("coordinate")
-    @ByValue
-    public native CLLocationCoordinate2D coordinate();
-
-    @Generated
-    @Selector("init")
-    public native MKPolyline init();
-
-    @Generated
-    @IsOptional
-    @Selector("intersectsMapRect:")
-    public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
-
     /**
      * polylineWithCoordinates:count:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPolyline_class/index.html#//apple_ref/occ/clm/MKPolyline/polylineWithCoordinates:count:">iOS Dev Center</a>
@@ -104,21 +80,6 @@ public class MKPolyline extends MKMultiPoint implements MKOverlay {
     @Generated
     @Selector("polylineWithPoints:count:")
     public static native MKPolyline polylineWithPointsCount(Ptr<MKMapPoint> points, @NUInt long count);
-
-    @Generated
-    @IsOptional
-    @Selector("setCoordinate:")
-    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
-
-    @Generated
-    @IsOptional
-    @Selector("subtitle")
-    public native String subtitle();
-
-    @Generated
-    @IsOptional
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -219,4 +180,43 @@ public class MKPolyline extends MKMultiPoint implements MKOverlay {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("boundingMapRect")
+    @ByValue
+    public native MKMapRect boundingMapRect();
+
+    @Generated
+    @IsOptional
+    @Selector("canReplaceMapContent")
+    public native boolean canReplaceMapContent();
+
+    @Generated
+    @Selector("coordinate")
+    @ByValue
+    public native CLLocationCoordinate2D coordinate();
+
+    @Generated
+    @Selector("init")
+    public native MKPolyline init();
+
+    @Generated
+    @IsOptional
+    @Selector("intersectsMapRect:")
+    public native boolean intersectsMapRect(@ByValue MKMapRect mapRect);
+
+    @Generated
+    @IsOptional
+    @Selector("setCoordinate:")
+    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
+
+    @Generated
+    @IsOptional
+    @Selector("subtitle")
+    public native String subtitle();
+
+    @Generated
+    @IsOptional
+    @Selector("title")
+    public native String title();
 }

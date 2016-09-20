@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIDocumentChangeKind {
-    @Generated
-    private UIDocumentChangeKind() {
-    }
-
     @Generated @NInt public static final long Done = 0x0000000000000000L;
     @Generated @NInt public static final long Undone = 0x0000000000000001L;
     @Generated @NInt public static final long Redone = 0x0000000000000002L;
     @Generated @NInt public static final long Cleared = 0x0000000000000003L;
+
+    @Generated
+    private UIDocumentChangeKind() {
+    }
 }

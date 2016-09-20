@@ -22,10 +22,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @NUInt @Generated public static final long NSASCIIStringEncoding = 0x0000000000000001L;
     @NUInt @Generated public static final long NSNEXTSTEPStringEncoding = 0x0000000000000002L;
     @NUInt @Generated public static final long NSJapaneseEUCStringEncoding = 0x0000000000000003L;
@@ -198,4 +194,8 @@ public final class Enums {
     @Generated @NInt public static final long NSBundleOnDemandResourceOutOfSpaceError = 0x0000000000001380L;
     @Generated @NInt public static final long NSBundleOnDemandResourceExceededMaximumSizeError = 0x0000000000001381L;
     @Generated @NInt public static final long NSBundleOnDemandResourceInvalidTagError = 0x0000000000001382L;
+
+    @Generated
+    private Enums() {
+    }
 }

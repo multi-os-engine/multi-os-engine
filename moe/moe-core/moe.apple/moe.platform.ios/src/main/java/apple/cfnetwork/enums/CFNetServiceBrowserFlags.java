@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFNetServiceBrowserFlags {
-    @Generated
-    private CFNetServiceBrowserFlags() {
-    }
-
     @Generated @NUInt public static final long MoreComing = 0x0000000000000001L;
     @Generated @NUInt public static final long IsDomain = 0x0000000000000002L;
     @Generated @NUInt public static final long IsDefault = 0x0000000000000004L;
     @Generated @NUInt public static final long IsRegistrationDomain = 0x0000000000000004L;
     @Generated @NUInt public static final long Remove = 0x0000000000000008L;
+
+    @Generated
+    private CFNetServiceBrowserFlags() {
+    }
 }

@@ -65,6 +65,138 @@ public class MDLTexture extends NSObject implements MDLNamed {
     public static native MDLTexture alloc();
 
     /**
+     * textureCubeWithImagesNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTexture_Class/index.html#//apple_ref/occ/clm/MDLTexture/textureCubeWithImagesNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textureCubeWithImagesNamed:")
+    public static native MDLTexture textureCubeWithImagesNamed(NSArray<String> names);
+
+    /**
+     * textureCubeWithImagesNamed:bundle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTexture_Class/index.html#//apple_ref/occ/clm/MDLTexture/textureCubeWithImagesNamed:bundle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textureCubeWithImagesNamed:bundle:")
+    public static native MDLTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
+
+    /**
+     * textureNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTexture_Class/index.html#//apple_ref/occ/clm/MDLTexture/textureNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textureNamed:")
+    public static native MDLTexture textureNamed(String name);
+
+    /**
+     * textureNamed:bundle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTexture_Class/index.html#//apple_ref/occ/clm/MDLTexture/textureNamed:bundle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textureNamed:bundle:")
+    public static native MDLTexture textureNamedBundle(String name, NSBundle bundleOrNil);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version();
+
+    /**
      * channelCount</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTexture_Class/index.html#//apple_ref/occ/instp/MDLTexture/channelCount">iOS Dev Center</a>
      */
@@ -169,38 +301,6 @@ public class MDLTexture extends NSObject implements MDLNamed {
     public native NSData texelDataWithTopLeftOriginAtMipLevelCreate(@NInt long level, boolean create);
 
     /**
-     * textureCubeWithImagesNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTexture_Class/index.html#//apple_ref/occ/clm/MDLTexture/textureCubeWithImagesNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textureCubeWithImagesNamed:")
-    public static native MDLTexture textureCubeWithImagesNamed(NSArray<String> names);
-
-    /**
-     * textureCubeWithImagesNamed:bundle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTexture_Class/index.html#//apple_ref/occ/clm/MDLTexture/textureCubeWithImagesNamed:bundle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textureCubeWithImagesNamed:bundle:")
-    public static native MDLTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
-
-    /**
-     * textureNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTexture_Class/index.html#//apple_ref/occ/clm/MDLTexture/textureNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textureNamed:")
-    public static native MDLTexture textureNamed(String name);
-
-    /**
-     * textureNamed:bundle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTexture_Class/index.html#//apple_ref/occ/clm/MDLTexture/textureNamed:bundle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textureNamed:bundle:")
-    public static native MDLTexture textureNamedBundle(String name, NSBundle bundleOrNil);
-
-    /**
      * writeToURL:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTexture_Class/index.html#//apple_ref/occ/instm/MDLTexture/writeToURL:">iOS Dev Center</a>
      */
@@ -215,104 +315,4 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Generated
     @Selector("writeToURL:type:")
     public native boolean writeToURLType(NSURL nsurl, CFStringRef type);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
 }

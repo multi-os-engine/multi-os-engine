@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class NSTextCheckingType {
-    @Generated
-    private NSTextCheckingType() {
-    }
-
     @Generated public static final long Orthography = 0x0000000000000001L;
     @Generated public static final long Spelling = 0x0000000000000002L;
     @Generated public static final long Grammar = 0x0000000000000004L;
@@ -37,4 +33,8 @@ public final class NSTextCheckingType {
     @Generated public static final long RegularExpression = 0x0000000000000400L;
     @Generated public static final long PhoneNumber = 0x0000000000000800L;
     @Generated public static final long TransitInformation = 0x0000000000001000L;
+
+    @Generated
+    private NSTextCheckingType() {
+    }
 }

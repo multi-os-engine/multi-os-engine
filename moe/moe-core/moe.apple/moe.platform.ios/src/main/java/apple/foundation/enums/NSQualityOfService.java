@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSQualityOfService {
-    @Generated
-    private NSQualityOfService() {
-    }
-
     @Generated @NInt public static final long UserInteractive = 0x0000000000000021L;
     @Generated @NInt public static final long UserInitiated = 0x0000000000000019L;
     @Generated @NInt public static final long Utility = 0x0000000000000011L;
     @Generated @NInt public static final long Background = 0x0000000000000009L;
     @Generated @NInt public static final long Default = 0xFFFFFFFFFFFFFFFFL;
+
+    @Generated
+    private NSQualityOfService() {
+    }
 }

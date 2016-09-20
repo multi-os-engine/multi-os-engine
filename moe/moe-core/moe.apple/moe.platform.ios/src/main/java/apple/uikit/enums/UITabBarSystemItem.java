@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITabBarSystemItem {
-    @Generated
-    private UITabBarSystemItem() {
-    }
-
     @Generated @NInt public static final long More = 0x0000000000000000L;
     @Generated @NInt public static final long Favorites = 0x0000000000000001L;
     @Generated @NInt public static final long Featured = 0x0000000000000002L;
@@ -37,4 +33,8 @@ public final class UITabBarSystemItem {
     @Generated @NInt public static final long Downloads = 0x0000000000000009L;
     @Generated @NInt public static final long MostRecent = 0x000000000000000AL;
     @Generated @NInt public static final long MostViewed = 0x000000000000000BL;
+
+    @Generated
+    private UITabBarSystemItem() {
+    }
 }

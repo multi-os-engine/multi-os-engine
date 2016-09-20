@@ -63,19 +63,6 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     public static native SKPhysicsJointPin alloc();
 
     /**
-     * frictionTorque</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/frictionTorque">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("frictionTorque")
-    @NFloat
-    public native double frictionTorque();
-
-    @Generated
-    @Selector("init")
-    public native SKPhysicsJointPin init();
-
-    /**
      * jointWithBodyA:bodyB:anchor:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/clm/SKPhysicsJointPin/jointWithBodyA:bodyB:anchor:">iOS Dev Center</a>
      */
@@ -83,85 +70,6 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     @Selector("jointWithBodyA:bodyB:anchor:")
     public static native SKPhysicsJointPin jointWithBodyABodyBAnchor(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
             @ByValue CGPoint anchor);
-
-    /**
-     * lowerAngleLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/lowerAngleLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lowerAngleLimit")
-    @NFloat
-    public native double lowerAngleLimit();
-
-    /**
-     * rotationSpeed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/rotationSpeed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rotationSpeed")
-    @NFloat
-    public native double rotationSpeed();
-
-    /**
-     * frictionTorque</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/frictionTorque">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFrictionTorque:")
-    public native void setFrictionTorque(@NFloat double value);
-
-    /**
-     * lowerAngleLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/lowerAngleLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLowerAngleLimit:")
-    public native void setLowerAngleLimit(@NFloat double value);
-
-    /**
-     * rotationSpeed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/rotationSpeed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRotationSpeed:")
-    public native void setRotationSpeed(@NFloat double value);
-
-    /**
-     * shouldEnableLimits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/shouldEnableLimits">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShouldEnableLimits:")
-    public native void setShouldEnableLimits(boolean value);
-
-    /**
-     * upperAngleLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/upperAngleLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUpperAngleLimit:")
-    public native void setUpperAngleLimit(@NFloat double value);
-
-    /**
-     * shouldEnableLimits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/shouldEnableLimits">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shouldEnableLimits")
-    public native boolean shouldEnableLimits();
-
-    /**
-     * upperAngleLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/upperAngleLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("upperAngleLimit")
-    @NFloat
-    public native double upperAngleLimit();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKPhysicsJointPin initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -262,4 +170,96 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * frictionTorque</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/frictionTorque">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("frictionTorque")
+    @NFloat
+    public native double frictionTorque();
+
+    @Generated
+    @Selector("init")
+    public native SKPhysicsJointPin init();
+
+    /**
+     * lowerAngleLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/lowerAngleLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lowerAngleLimit")
+    @NFloat
+    public native double lowerAngleLimit();
+
+    /**
+     * rotationSpeed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/rotationSpeed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rotationSpeed")
+    @NFloat
+    public native double rotationSpeed();
+
+    /**
+     * frictionTorque</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/frictionTorque">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFrictionTorque:")
+    public native void setFrictionTorque(@NFloat double value);
+
+    /**
+     * lowerAngleLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/lowerAngleLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLowerAngleLimit:")
+    public native void setLowerAngleLimit(@NFloat double value);
+
+    /**
+     * rotationSpeed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/rotationSpeed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRotationSpeed:")
+    public native void setRotationSpeed(@NFloat double value);
+
+    /**
+     * shouldEnableLimits</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/shouldEnableLimits">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShouldEnableLimits:")
+    public native void setShouldEnableLimits(boolean value);
+
+    /**
+     * upperAngleLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/upperAngleLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUpperAngleLimit:")
+    public native void setUpperAngleLimit(@NFloat double value);
+
+    /**
+     * shouldEnableLimits</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/shouldEnableLimits">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shouldEnableLimits")
+    public native boolean shouldEnableLimits();
+
+    /**
+     * upperAngleLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointPin_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointPin/upperAngleLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("upperAngleLimit")
+    @NFloat
+    public native double upperAngleLimit();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKPhysicsJointPin initWithCoder(NSCoder aDecoder);
 }

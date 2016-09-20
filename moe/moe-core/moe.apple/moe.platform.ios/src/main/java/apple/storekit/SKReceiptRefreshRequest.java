@@ -60,26 +60,6 @@ public class SKReceiptRefreshRequest extends SKRequest {
     public static native SKReceiptRefreshRequest alloc();
 
     @Generated
-    @Selector("init")
-    public native SKReceiptRefreshRequest init();
-
-    /**
-     * initWithReceiptProperties:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKReceiptRefreshRequest_ClassRef/index.html#//apple_ref/occ/instm/SKReceiptRefreshRequest/initWithReceiptProperties:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithReceiptProperties:")
-    public native SKReceiptRefreshRequest initWithReceiptProperties(NSDictionary<String, ?> properties);
-
-    /**
-     * receiptProperties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKReceiptRefreshRequest_ClassRef/index.html#//apple_ref/occ/instp/SKReceiptRefreshRequest/receiptProperties">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("receiptProperties")
-    public native NSDictionary<String, ?> receiptProperties();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -178,4 +158,24 @@ public class SKReceiptRefreshRequest extends SKRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SKReceiptRefreshRequest init();
+
+    /**
+     * initWithReceiptProperties:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKReceiptRefreshRequest_ClassRef/index.html#//apple_ref/occ/instm/SKReceiptRefreshRequest/initWithReceiptProperties:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithReceiptProperties:")
+    public native SKReceiptRefreshRequest initWithReceiptProperties(NSDictionary<String, ?> properties);
+
+    /**
+     * receiptProperties</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKReceiptRefreshRequest_ClassRef/index.html#//apple_ref/occ/instp/SKReceiptRefreshRequest/receiptProperties">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("receiptProperties")
+    public native NSDictionary<String, ?> receiptProperties();
 }

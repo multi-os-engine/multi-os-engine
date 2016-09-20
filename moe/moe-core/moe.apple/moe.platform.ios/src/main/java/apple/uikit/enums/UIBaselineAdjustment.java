@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIBaselineAdjustment {
-    @Generated
-    private UIBaselineAdjustment() {
-    }
-
     @Generated @NInt public static final long AlignBaselines = 0x0000000000000000L;
     @Generated @NInt public static final long AlignCenters = 0x0000000000000001L;
     @Generated @NInt public static final long None = 0x0000000000000002L;
+
+    @Generated
+    private UIBaselineAdjustment() {
+    }
 }

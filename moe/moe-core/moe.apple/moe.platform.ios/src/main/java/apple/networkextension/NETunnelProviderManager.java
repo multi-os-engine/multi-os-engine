@@ -61,19 +61,6 @@ public class NETunnelProviderManager extends NEVPNManager {
     public static native NETunnelProviderManager alloc();
 
     /**
-     * copyAppRules</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderManagerClassRef/index.html#//apple_ref/occ/instm/NETunnelProviderManager/copyAppRules">iOS Dev Center</a>
-     */
-    @Generated
-    @Owned
-    @Selector("copyAppRules")
-    public native NSArray<? extends NEAppRule> copyAppRules();
-
-    @Generated
-    @Selector("init")
-    public native NETunnelProviderManager init();
-
-    /**
      * loadAllFromPreferencesWithCompletionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderManagerClassRef/index.html#//apple_ref/occ/clm/NETunnelProviderManager/loadAllFromPreferencesWithCompletionHandler:">iOS Dev Center</a>
      */
@@ -81,23 +68,6 @@ public class NETunnelProviderManager extends NEVPNManager {
     @Selector("loadAllFromPreferencesWithCompletionHandler:")
     public static native void loadAllFromPreferencesWithCompletionHandler(
             @ObjCBlock(name = "call_loadAllFromPreferencesWithCompletionHandler") Block_loadAllFromPreferencesWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadAllFromPreferencesWithCompletionHandler {
-        @Generated
-        void call_loadAllFromPreferencesWithCompletionHandler(NSArray<? extends NETunnelProviderManager> arg0,
-                NSError arg1);
-    }
-
-    /**
-     * routingMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderManagerClassRef/index.html#//apple_ref/occ/instp/NETunnelProviderManager/routingMethod">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("routingMethod")
-    @NInt
-    public native long routingMethod();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -202,4 +172,34 @@ public class NETunnelProviderManager extends NEVPNManager {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * copyAppRules</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderManagerClassRef/index.html#//apple_ref/occ/instm/NETunnelProviderManager/copyAppRules">iOS Dev Center</a>
+     */
+    @Generated
+    @Owned
+    @Selector("copyAppRules")
+    public native NSArray<? extends NEAppRule> copyAppRules();
+
+    @Generated
+    @Selector("init")
+    public native NETunnelProviderManager init();
+
+    /**
+     * routingMethod</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderManagerClassRef/index.html#//apple_ref/occ/instp/NETunnelProviderManager/routingMethod">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("routingMethod")
+    @NInt
+    public native long routingMethod();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadAllFromPreferencesWithCompletionHandler {
+        @Generated
+        void call_loadAllFromPreferencesWithCompletionHandler(NSArray<? extends NETunnelProviderManager> arg0,
+                NSError arg1);
+    }
 }

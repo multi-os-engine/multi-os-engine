@@ -64,45 +64,6 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     @Selector("alloc")
     public static native CNGroup alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNGroup_Class/index.html#//apple_ref/occ/instp/CNGroup/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native CNGroup init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNGroup initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNGroup_Class/index.html#//apple_ref/occ/instp/CNGroup/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
     /**
      * predicateForGroupsInContainerWithIdentifier:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNGroup_Class/index.html#//apple_ref/occ/clm/CNGroup/predicateForGroupsInContainerWithIdentifier:">iOS Dev Center</a>
@@ -122,12 +83,6 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -228,4 +183,49 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNGroup_Class/index.html#//apple_ref/occ/instp/CNGroup/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native CNGroup init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNGroup initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNGroup_Class/index.html#//apple_ref/occ/instp/CNGroup/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

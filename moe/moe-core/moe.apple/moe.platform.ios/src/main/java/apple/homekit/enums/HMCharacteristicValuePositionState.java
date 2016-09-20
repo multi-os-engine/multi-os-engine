@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HMCharacteristicValuePositionState {
-    @Generated
-    private HMCharacteristicValuePositionState() {
-    }
-
     @Generated @NInt public static final long Closing = 0x0000000000000000L;
     @Generated @NInt public static final long Opening = 0x0000000000000001L;
     @Generated @NInt public static final long Stopped = 0x0000000000000002L;
+
+    @Generated
+    private HMCharacteristicValuePositionState() {
+    }
 }

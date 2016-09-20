@@ -53,89 +53,10 @@ public class NSCountedSet<_ObjectType> extends NSMutableSet<_ObjectType> {
         super(peer);
     }
 
-    /**
-     * addObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/addObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addObject:")
-    public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSCountedSet<?> alloc();
-
-    /**
-     * countForObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/countForObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("countForObject:")
-    @NUInt
-    public native long countForObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
-
-    @Generated
-    @Selector("init")
-    public native NSCountedSet<?> init();
-
-    /**
-     * initWithArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/initWithArray:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithArray:")
-    public native NSCountedSet<?> initWithArray(NSArray<_ObjectType> array);
-
-    /**
-     * initWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/initWithCapacity:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithCapacity:")
-    public native NSCountedSet<?> initWithCapacity(@NUInt long numItems);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSCountedSet<?> initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Variadic()
-    @Selector("initWithObjects:")
-    public native NSCountedSet<?> initWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
-            Object... varargs);
-
-    @Generated
-    @Selector("initWithObjects:count:")
-    public native NSCountedSet<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
-
-    /**
-     * initWithSet:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/initWithSet:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSet:")
-    public native NSCountedSet<?> initWithSet(NSSet<_ObjectType> set);
-
-    @Generated
-    @Selector("initWithSet:copyItems:")
-    public native NSCountedSet<?> initWithSetCopyItems(NSSet<_ObjectType> set, boolean flag);
-
-    /**
-     * objectEnumerator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/objectEnumerator">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objectEnumerator")
-    public native NSEnumerator<_ObjectType> objectEnumerator();
-
-    /**
-     * removeObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/removeObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeObject:")
-    public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Selector("set")
@@ -269,13 +190,92 @@ public class NSCountedSet<_ObjectType> extends NSMutableSet<_ObjectType> {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * addObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/addObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addObject:")
+    public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+
+    /**
+     * countForObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/countForObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("countForObject:")
+    @NUInt
+    public native long countForObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+
+    @Generated
+    @Selector("init")
+    public native NSCountedSet<?> init();
+
+    /**
+     * initWithArray:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/initWithArray:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithArray:")
+    public native NSCountedSet<?> initWithArray(NSArray<_ObjectType> array);
+
+    /**
+     * initWithCapacity:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/initWithCapacity:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithCapacity:")
+    public native NSCountedSet<?> initWithCapacity(@NUInt long numItems);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSCountedSet<?> initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Variadic()
+    @Selector("initWithObjects:")
+    public native NSCountedSet<?> initWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
+            Object... varargs);
+
+    @Generated
+    @Selector("initWithObjects:count:")
+    public native NSCountedSet<?> initWithObjectsCount(ConstPtr<_ObjectType> objects, @NUInt long cnt);
+
+    /**
+     * initWithSet:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/initWithSet:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSet:")
+    public native NSCountedSet<?> initWithSet(NSSet<_ObjectType> set);
+
+    @Generated
+    @Selector("initWithSet:copyItems:")
+    public native NSCountedSet<?> initWithSetCopyItems(NSSet<_ObjectType> set, boolean flag);
+
+    /**
+     * objectEnumerator</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/objectEnumerator">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objectEnumerator")
+    public native NSEnumerator<_ObjectType> objectEnumerator();
+
+    /**
+     * removeObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCountedSet_Class/index.html#//apple_ref/occ/instm/NSCountedSet/removeObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeObject:")
+    public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

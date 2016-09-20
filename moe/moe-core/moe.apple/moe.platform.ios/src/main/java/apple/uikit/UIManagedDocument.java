@@ -59,60 +59,10 @@ public class UIManagedDocument extends UIDocument {
         super(peer);
     }
 
-    /**
-     * additionalContentForURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instm/UIManagedDocument/additionalContentForURL:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("additionalContentForURL:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object additionalContentForURLError(NSURL absoluteURL, Ptr<NSError> error);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIManagedDocument alloc();
-
-    /**
-     * configurePersistentStoreCoordinatorForURL:ofType:modelConfiguration:storeOptions:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instm/UIManagedDocument/configurePersistentStoreCoordinatorForURL:ofType:modelConfiguration:storeOptions:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("configurePersistentStoreCoordinatorForURL:ofType:modelConfiguration:storeOptions:error:")
-    public native boolean configurePersistentStoreCoordinatorForURLOfTypeModelConfigurationStoreOptionsError(
-            NSURL storeURL, String fileType, String configuration, NSDictionary<?, ?> storeOptions, Ptr<NSError> error);
-
-    @Generated
-    @Selector("init")
-    public native UIManagedDocument init();
-
-    @Generated
-    @Selector("initWithFileURL:")
-    public native UIManagedDocument initWithFileURL(NSURL url);
-
-    /**
-     * managedObjectContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/managedObjectContext">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("managedObjectContext")
-    public native NSManagedObjectContext managedObjectContext();
-
-    /**
-     * managedObjectModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/managedObjectModel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("managedObjectModel")
-    public native NSManagedObjectModel managedObjectModel();
-
-    /**
-     * modelConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/modelConfiguration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("modelConfiguration")
-    public native String modelConfiguration();
 
     /**
      * persistentStoreName</br>
@@ -121,56 +71,6 @@ public class UIManagedDocument extends UIDocument {
     @Generated
     @Selector("persistentStoreName")
     public static native String persistentStoreName();
-
-    /**
-     * persistentStoreOptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/persistentStoreOptions">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("persistentStoreOptions")
-    public native NSDictionary<?, ?> persistentStoreOptions();
-
-    /**
-     * persistentStoreTypeForFileType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instm/UIManagedDocument/persistentStoreTypeForFileType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("persistentStoreTypeForFileType:")
-    public native String persistentStoreTypeForFileType(String fileType);
-
-    /**
-     * readAdditionalContentFromURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instm/UIManagedDocument/readAdditionalContentFromURL:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("readAdditionalContentFromURL:error:")
-    public native boolean readAdditionalContentFromURLError(NSURL absoluteURL, Ptr<NSError> error);
-
-    /**
-     * modelConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/modelConfiguration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setModelConfiguration:")
-    public native void setModelConfiguration(String value);
-
-    /**
-     * persistentStoreOptions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/persistentStoreOptions">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPersistentStoreOptions:")
-    public native void setPersistentStoreOptions(NSDictionary<?, ?> value);
-
-    /**
-     * writeAdditionalContent:toURL:originalContentsURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instm/UIManagedDocument/writeAdditionalContent:toURL:originalContentsURL:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("writeAdditionalContent:toURL:originalContentsURL:error:")
-    public native boolean writeAdditionalContentToURLOriginalContentsURLError(
-            @Mapped(ObjCObjectMapper.class) Object content, NSURL absoluteURL, NSURL absoluteOriginalContentsURL,
-            Ptr<NSError> error);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -271,4 +171,104 @@ public class UIManagedDocument extends UIDocument {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * additionalContentForURL:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instm/UIManagedDocument/additionalContentForURL:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("additionalContentForURL:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object additionalContentForURLError(NSURL absoluteURL, Ptr<NSError> error);
+
+    /**
+     * configurePersistentStoreCoordinatorForURL:ofType:modelConfiguration:storeOptions:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instm/UIManagedDocument/configurePersistentStoreCoordinatorForURL:ofType:modelConfiguration:storeOptions:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("configurePersistentStoreCoordinatorForURL:ofType:modelConfiguration:storeOptions:error:")
+    public native boolean configurePersistentStoreCoordinatorForURLOfTypeModelConfigurationStoreOptionsError(
+            NSURL storeURL, String fileType, String configuration, NSDictionary<?, ?> storeOptions, Ptr<NSError> error);
+
+    @Generated
+    @Selector("init")
+    public native UIManagedDocument init();
+
+    @Generated
+    @Selector("initWithFileURL:")
+    public native UIManagedDocument initWithFileURL(NSURL url);
+
+    /**
+     * managedObjectContext</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/managedObjectContext">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("managedObjectContext")
+    public native NSManagedObjectContext managedObjectContext();
+
+    /**
+     * managedObjectModel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/managedObjectModel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("managedObjectModel")
+    public native NSManagedObjectModel managedObjectModel();
+
+    /**
+     * modelConfiguration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/modelConfiguration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("modelConfiguration")
+    public native String modelConfiguration();
+
+    /**
+     * persistentStoreOptions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/persistentStoreOptions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("persistentStoreOptions")
+    public native NSDictionary<?, ?> persistentStoreOptions();
+
+    /**
+     * persistentStoreTypeForFileType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instm/UIManagedDocument/persistentStoreTypeForFileType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("persistentStoreTypeForFileType:")
+    public native String persistentStoreTypeForFileType(String fileType);
+
+    /**
+     * readAdditionalContentFromURL:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instm/UIManagedDocument/readAdditionalContentFromURL:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("readAdditionalContentFromURL:error:")
+    public native boolean readAdditionalContentFromURLError(NSURL absoluteURL, Ptr<NSError> error);
+
+    /**
+     * modelConfiguration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/modelConfiguration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setModelConfiguration:")
+    public native void setModelConfiguration(String value);
+
+    /**
+     * persistentStoreOptions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instp/UIManagedDocument/persistentStoreOptions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPersistentStoreOptions:")
+    public native void setPersistentStoreOptions(NSDictionary<?, ?> value);
+
+    /**
+     * writeAdditionalContent:toURL:originalContentsURL:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIManagedDocument_Class/index.html#//apple_ref/occ/instm/UIManagedDocument/writeAdditionalContent:toURL:originalContentsURL:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("writeAdditionalContent:toURL:originalContentsURL:error:")
+    public native boolean writeAdditionalContentToURLOriginalContentsURLError(
+            @Mapped(ObjCObjectMapper.class) Object content, NSURL absoluteURL, NSURL absoluteOriginalContentsURL,
+            Ptr<NSError> error);
 }

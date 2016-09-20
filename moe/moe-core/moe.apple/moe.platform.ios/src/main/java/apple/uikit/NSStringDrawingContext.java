@@ -56,78 +56,10 @@ public class NSStringDrawingContext extends NSObject {
         super(peer);
     }
 
-    /**
-     * actualScaleFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/actualScaleFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("actualScaleFactor")
-    @NFloat
-    public native double actualScaleFactor();
-
-    /**
-     * actualTrackingAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/actualTrackingAdjustment">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("actualTrackingAdjustment")
-    @NFloat
-    public native double actualTrackingAdjustment();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSStringDrawingContext alloc();
-
-    @Generated
-    @Selector("init")
-    public native NSStringDrawingContext init();
-
-    /**
-     * minimumScaleFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/minimumScaleFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumScaleFactor")
-    @NFloat
-    public native double minimumScaleFactor();
-
-    /**
-     * minimumTrackingAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/minimumTrackingAdjustment">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("minimumTrackingAdjustment")
-    @NFloat
-    public native double minimumTrackingAdjustment();
-
-    /**
-     * minimumScaleFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/minimumScaleFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumScaleFactor:")
-    public native void setMinimumScaleFactor(@NFloat double value);
-
-    /**
-     * minimumTrackingAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/minimumTrackingAdjustment">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setMinimumTrackingAdjustment:")
-    public native void setMinimumTrackingAdjustment(@NFloat double value);
-
-    /**
-     * totalBounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/totalBounds">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("totalBounds")
-    @ByValue
-    public native CGRect totalBounds();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -228,4 +160,72 @@ public class NSStringDrawingContext extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * actualScaleFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/actualScaleFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("actualScaleFactor")
+    @NFloat
+    public native double actualScaleFactor();
+
+    /**
+     * actualTrackingAdjustment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/actualTrackingAdjustment">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("actualTrackingAdjustment")
+    @NFloat
+    public native double actualTrackingAdjustment();
+
+    @Generated
+    @Selector("init")
+    public native NSStringDrawingContext init();
+
+    /**
+     * minimumScaleFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/minimumScaleFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumScaleFactor")
+    @NFloat
+    public native double minimumScaleFactor();
+
+    /**
+     * minimumTrackingAdjustment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/minimumTrackingAdjustment">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("minimumTrackingAdjustment")
+    @NFloat
+    public native double minimumTrackingAdjustment();
+
+    /**
+     * minimumScaleFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/minimumScaleFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumScaleFactor:")
+    public native void setMinimumScaleFactor(@NFloat double value);
+
+    /**
+     * minimumTrackingAdjustment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/minimumTrackingAdjustment">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setMinimumTrackingAdjustment:")
+    public native void setMinimumTrackingAdjustment(@NFloat double value);
+
+    /**
+     * totalBounds</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSStringDrawingContext_class/index.html#//apple_ref/occ/instp/NSStringDrawingContext/totalBounds">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("totalBounds")
+    @ByValue
+    public native CGRect totalBounds();
 }

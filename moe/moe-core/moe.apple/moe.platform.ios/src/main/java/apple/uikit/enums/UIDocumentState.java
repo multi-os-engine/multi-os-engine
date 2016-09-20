@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIDocumentState {
-    @Generated
-    private UIDocumentState() {
-    }
-
     @Generated @NUInt public static final long Normal = 0x0000000000000000L;
     @Generated @NUInt public static final long Closed = 0x0000000000000001L;
     @Generated @NUInt public static final long InConflict = 0x0000000000000002L;
     @Generated @NUInt public static final long SavingError = 0x0000000000000004L;
     @Generated @NUInt public static final long EditingDisabled = 0x0000000000000008L;
     @Generated @NUInt public static final long ProgressAvailable = 0x0000000000000010L;
+
+    @Generated
+    private UIDocumentState() {
+    }
 }

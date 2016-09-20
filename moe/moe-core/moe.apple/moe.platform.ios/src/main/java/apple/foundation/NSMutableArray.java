@@ -62,22 +62,6 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
         super(peer);
     }
 
-    /**
-     * addObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/addObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addObject:")
-    public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
-
-    /**
-     * addObjectsFromArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/addObjectsFromArray:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addObjectsFromArray:")
-    public native void addObjectsFromArray(NSArray<_ObjectType> otherArray);
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -130,6 +114,126 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSMutableArray<?> arrayWithObjectsCount(ConstPtr<_ObjectType> objects,
             @NUInt long cnt);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * addObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/addObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addObject:")
+    public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+
+    /**
+     * addObjectsFromArray:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/addObjectsFromArray:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addObjectsFromArray:")
+    public native void addObjectsFromArray(NSArray<_ObjectType> otherArray);
 
     /**
      * exchangeObjectAtIndex:withObjectAtIndex:</br>
@@ -368,15 +472,6 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public native void sortUsingComparator(
             @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sortUsingComparator {
-        @Generated
-        @NInt
-        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
-
     /**
      * sortUsingDescriptors:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/sortUsingDescriptors:">iOS Dev Center</a>
@@ -395,15 +490,6 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
             @FunctionPtr(name = "call_sortUsingFunctionContext") Function_sortUsingFunctionContext compare,
             VoidPtr context);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Function_sortUsingFunctionContext {
-        @Generated
-        @NInt
-        long call_sortUsingFunctionContext(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, VoidPtr arg2);
-    }
-
     /**
      * sortUsingSelector:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/index.html#//apple_ref/occ/instm/NSMutableArray/sortUsingSelector:">iOS Dev Center</a>
@@ -420,15 +506,6 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("sortWithOptions:usingComparator:")
     public native void sortWithOptionsUsingComparator(@NUInt long opts,
             @ObjCBlock(name = "call_sortWithOptionsUsingComparator") Block_sortWithOptionsUsingComparator cmptr);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sortWithOptionsUsingComparator {
-        @Generated
-        @NInt
-        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
 
     @Override
     public boolean add(_ObjectType e) {
@@ -498,42 +575,6 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
         return new NSMutableArrayIterator<_ObjectType>(this);
     }
 
-    private final static class NSMutableArrayIterator<_ObjectType> implements Iterator<_ObjectType> {
-
-        private int editCursor = -1;
-        private int cursor = 0;
-        private final NSMutableArray<_ObjectType> array;
-
-        public NSMutableArrayIterator(NSMutableArray<_ObjectType> array) {
-            this.array = array;
-        }
-
-        @Override
-        public boolean hasNext() {
-            return cursor < array.count();
-        }
-
-        @Override
-        public _ObjectType next() {
-            if (cursor >= array.count()) {
-                throw new NoSuchElementException();
-            }
-            editCursor = cursor;
-            return array.objectAtIndex(cursor++);
-        }
-
-        @Override
-        public void remove() {
-            if (editCursor == -1) {
-                throw new IllegalStateException();
-            }
-            array.removeObjectAtIndex(editCursor);
-            editCursor = -1;
-            --cursor;
-        }
-
-    }
-
     @Override
     public int lastIndexOf(Object o) {
         if (o == null) {
@@ -558,87 +599,6 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
             throw new IndexOutOfBoundsException();
         }
         return new NSMutableArrayListIterator<_ObjectType>(this, index);
-    }
-
-    private final static class NSMutableArrayListIterator<_ObjectType> implements ListIterator<_ObjectType> {
-
-        private int editCursor = -1;
-        private int cursor;
-        private final NSMutableArray<_ObjectType> array;
-
-        public NSMutableArrayListIterator(NSMutableArray<_ObjectType> array, int idx) {
-            cursor = idx;
-            this.array = array;
-        }
-
-        @Override
-        public void add(_ObjectType e) {
-            if (e == null) {
-                throw new NullPointerException();
-            }
-            editCursor = -1;
-            array.insertObjectAtIndex(e, cursor);
-        }
-
-        @Override
-        public boolean hasNext() {
-            return cursor < array.count();
-        }
-
-        @Override
-        public boolean hasPrevious() {
-            return cursor - 1 >= 0;
-        }
-
-        @Override
-        public _ObjectType next() {
-            if (cursor >= array.count()) {
-                throw new NoSuchElementException();
-            }
-            editCursor = cursor;
-            return array.objectAtIndex(cursor++);
-        }
-
-        @Override
-        public int nextIndex() {
-            return cursor;
-        }
-
-        @Override
-        public _ObjectType previous() {
-            if (cursor <= 0) {
-                throw new NoSuchElementException();
-            }
-            editCursor = cursor - 1;
-            return array.objectAtIndex(--cursor);
-        }
-
-        @Override
-        public int previousIndex() {
-            return cursor - 1;
-        }
-
-        @Override
-        public void remove() {
-            if (editCursor == -1) {
-                throw new IllegalStateException();
-            }
-            array.removeObjectAtIndex(editCursor);
-            editCursor = -1;
-            --cursor;
-        }
-
-        @Override
-        public void set(_ObjectType e) {
-            if (editCursor == -1) {
-                throw new IllegalStateException();
-            }
-            if (e == null) {
-                throw new NullPointerException();
-            }
-            array.replaceObjectAtIndexWithObject(editCursor, e);
-        }
-
     }
 
     @SuppressWarnings("unchecked")
@@ -719,112 +679,152 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     }
 
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_sortUsingComparator {
+        @Generated
+        @NInt
+        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_sortUsingFunctionContext {
+        @Generated
+        @NInt
+        long call_sortUsingFunctionContext(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1, VoidPtr arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sortWithOptionsUsingComparator {
+        @Generated
+        @NInt
+        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
+
+    private final static class NSMutableArrayIterator<_ObjectType> implements Iterator<_ObjectType> {
+
+        private final NSMutableArray<_ObjectType> array;
+        private int editCursor = -1;
+        private int cursor = 0;
+
+        public NSMutableArrayIterator(NSMutableArray<_ObjectType> array) {
+            this.array = array;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return cursor < array.count();
+        }
+
+        @Override
+        public _ObjectType next() {
+            if (cursor >= array.count()) {
+                throw new NoSuchElementException();
+            }
+            editCursor = cursor;
+            return array.objectAtIndex(cursor++);
+        }
+
+        @Override
+        public void remove() {
+            if (editCursor == -1) {
+                throw new IllegalStateException();
+            }
+            array.removeObjectAtIndex(editCursor);
+            editCursor = -1;
+            --cursor;
+        }
+
+    }
+
+    private final static class NSMutableArrayListIterator<_ObjectType> implements ListIterator<_ObjectType> {
+
+        private final NSMutableArray<_ObjectType> array;
+        private int editCursor = -1;
+        private int cursor;
+
+        public NSMutableArrayListIterator(NSMutableArray<_ObjectType> array, int idx) {
+            cursor = idx;
+            this.array = array;
+        }
+
+        @Override
+        public void add(_ObjectType e) {
+            if (e == null) {
+                throw new NullPointerException();
+            }
+            editCursor = -1;
+            array.insertObjectAtIndex(e, cursor);
+        }
+
+        @Override
+        public boolean hasNext() {
+            return cursor < array.count();
+        }
+
+        @Override
+        public boolean hasPrevious() {
+            return cursor - 1 >= 0;
+        }
+
+        @Override
+        public _ObjectType next() {
+            if (cursor >= array.count()) {
+                throw new NoSuchElementException();
+            }
+            editCursor = cursor;
+            return array.objectAtIndex(cursor++);
+        }
+
+        @Override
+        public int nextIndex() {
+            return cursor;
+        }
+
+        @Override
+        public _ObjectType previous() {
+            if (cursor <= 0) {
+                throw new NoSuchElementException();
+            }
+            editCursor = cursor - 1;
+            return array.objectAtIndex(--cursor);
+        }
+
+        @Override
+        public int previousIndex() {
+            return cursor - 1;
+        }
+
+        @Override
+        public void remove() {
+            if (editCursor == -1) {
+                throw new IllegalStateException();
+            }
+            array.removeObjectAtIndex(editCursor);
+            editCursor = -1;
+            --cursor;
+        }
+
+        @Override
+        public void set(_ObjectType e) {
+            if (editCursor == -1) {
+                throw new IllegalStateException();
+            }
+            if (e == null) {
+                throw new NullPointerException();
+            }
+            array.replaceObjectAtIndexWithObject(editCursor, e);
+        }
+
+    }
 }

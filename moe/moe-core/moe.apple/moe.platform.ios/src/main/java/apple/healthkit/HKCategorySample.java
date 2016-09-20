@@ -81,27 +81,6 @@ public class HKCategorySample extends HKSample {
             @NInt long value, NSDate startDate, NSDate endDate, NSDictionary<String, ?> metadata);
 
     /**
-     * categoryType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html#//apple_ref/occ/instp/HKCategorySample/categoryType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("categoryType")
-    public native HKCategoryType categoryType();
-
-    @Generated
-    @Selector("init")
-    public native HKCategorySample init();
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html#//apple_ref/occ/instp/HKCategorySample/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    @NInt
-    public native long value();
-
-    /**
      * categorySampleWithType:value:startDate:endDate:device:metadata:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html#//apple_ref/occ/clm/HKCategorySample/categorySampleWithType:value:startDate:endDate:device:metadata:">iOS Dev Center</a>
      */
@@ -109,10 +88,6 @@ public class HKCategorySample extends HKSample {
     @Selector("categorySampleWithType:value:startDate:endDate:device:metadata:")
     public static native HKCategorySample categorySampleWithTypeValueStartDateEndDateDeviceMetadata(HKCategoryType type,
             @NInt long value, NSDate startDate, NSDate endDate, HKDevice device, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKCategorySample initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -214,13 +189,38 @@ public class HKCategorySample extends HKSample {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * categoryType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html#//apple_ref/occ/instp/HKCategorySample/categoryType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("categoryType")
+    public native HKCategoryType categoryType();
+
+    @Generated
+    @Selector("init")
+    public native HKCategorySample init();
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html#//apple_ref/occ/instp/HKCategorySample/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    @NInt
+    public native long value();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKCategorySample initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

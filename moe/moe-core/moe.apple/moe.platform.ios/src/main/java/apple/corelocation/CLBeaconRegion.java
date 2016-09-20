@@ -66,94 +66,6 @@ public class CLBeaconRegion extends CLRegion {
     public static native CLBeaconRegion alloc();
 
     @Generated
-    @Selector("init")
-    public native CLBeaconRegion init();
-
-    @Generated
-    @Deprecated
-    @Selector("initCircularRegionWithCenter:radius:identifier:")
-    public native CLBeaconRegion initCircularRegionWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center,
-            double radius, String identifier);
-
-    /**
-     * initWithProximityUUID:identifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instm/CLBeaconRegion/initWithProximityUUID:identifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithProximityUUID:identifier:")
-    public native CLBeaconRegion initWithProximityUUIDIdentifier(NSUUID proximityUUID, String identifier);
-
-    /**
-     * initWithProximityUUID:major:identifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instm/CLBeaconRegion/initWithProximityUUID:major:identifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithProximityUUID:major:identifier:")
-    public native CLBeaconRegion initWithProximityUUIDMajorIdentifier(NSUUID proximityUUID, char major,
-            String identifier);
-
-    /**
-     * initWithProximityUUID:major:minor:identifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instm/CLBeaconRegion/initWithProximityUUID:major:minor:identifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithProximityUUID:major:minor:identifier:")
-    public native CLBeaconRegion initWithProximityUUIDMajorMinorIdentifier(NSUUID proximityUUID, char major, char minor,
-            String identifier);
-
-    /**
-     * major</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instp/CLBeaconRegion/major">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("major")
-    public native NSNumber major();
-
-    /**
-     * minor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instp/CLBeaconRegion/minor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minor")
-    public native NSNumber minor();
-
-    /**
-     * notifyEntryStateOnDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instp/CLBeaconRegion/notifyEntryStateOnDisplay">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("notifyEntryStateOnDisplay")
-    public native boolean notifyEntryStateOnDisplay();
-
-    /**
-     * peripheralDataWithMeasuredPower:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instm/CLBeaconRegion/peripheralDataWithMeasuredPower:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("peripheralDataWithMeasuredPower:")
-    public native NSMutableDictionary<String, Object> peripheralDataWithMeasuredPower(NSNumber measuredPower);
-
-    /**
-     * proximityUUID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instp/CLBeaconRegion/proximityUUID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("proximityUUID")
-    public native NSUUID proximityUUID();
-
-    /**
-     * notifyEntryStateOnDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instp/CLBeaconRegion/notifyEntryStateOnDisplay">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNotifyEntryStateOnDisplay:")
-    public native void setNotifyEntryStateOnDisplay(boolean value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CLBeaconRegion initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -253,13 +165,101 @@ public class CLBeaconRegion extends CLRegion {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CLBeaconRegion init();
+
+    @Generated
+    @Deprecated
+    @Selector("initCircularRegionWithCenter:radius:identifier:")
+    public native CLBeaconRegion initCircularRegionWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center,
+            double radius, String identifier);
+
+    /**
+     * initWithProximityUUID:identifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instm/CLBeaconRegion/initWithProximityUUID:identifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithProximityUUID:identifier:")
+    public native CLBeaconRegion initWithProximityUUIDIdentifier(NSUUID proximityUUID, String identifier);
+
+    /**
+     * initWithProximityUUID:major:identifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instm/CLBeaconRegion/initWithProximityUUID:major:identifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithProximityUUID:major:identifier:")
+    public native CLBeaconRegion initWithProximityUUIDMajorIdentifier(NSUUID proximityUUID, char major,
+            String identifier);
+
+    /**
+     * initWithProximityUUID:major:minor:identifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instm/CLBeaconRegion/initWithProximityUUID:major:minor:identifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithProximityUUID:major:minor:identifier:")
+    public native CLBeaconRegion initWithProximityUUIDMajorMinorIdentifier(NSUUID proximityUUID, char major, char minor,
+            String identifier);
+
+    /**
+     * major</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instp/CLBeaconRegion/major">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("major")
+    public native NSNumber major();
+
+    /**
+     * minor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instp/CLBeaconRegion/minor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minor")
+    public native NSNumber minor();
+
+    /**
+     * notifyEntryStateOnDisplay</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instp/CLBeaconRegion/notifyEntryStateOnDisplay">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("notifyEntryStateOnDisplay")
+    public native boolean notifyEntryStateOnDisplay();
+
+    /**
+     * peripheralDataWithMeasuredPower:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instm/CLBeaconRegion/peripheralDataWithMeasuredPower:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("peripheralDataWithMeasuredPower:")
+    public native NSMutableDictionary<String, Object> peripheralDataWithMeasuredPower(NSNumber measuredPower);
+
+    /**
+     * proximityUUID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instp/CLBeaconRegion/proximityUUID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("proximityUUID")
+    public native NSUUID proximityUUID();
+
+    /**
+     * notifyEntryStateOnDisplay</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeaconRegion_class/index.html#//apple_ref/occ/instp/CLBeaconRegion/notifyEntryStateOnDisplay">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNotifyEntryStateOnDisplay:")
+    public native void setNotifyEntryStateOnDisplay(boolean value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CLBeaconRegion initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

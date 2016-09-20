@@ -57,94 +57,14 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
         super(peer);
     }
 
-    /**
-     * addresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/addresses">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addresses")
-    public native NSArray<String> addresses();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NEIPv4Settings alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * excludedRoutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/excludedRoutes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("excludedRoutes")
-    public native NSArray<? extends NEIPv4Route> excludedRoutes();
-
-    /**
-     * includedRoutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/includedRoutes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("includedRoutes")
-    public native NSArray<? extends NEIPv4Route> includedRoutes();
-
-    @Generated
-    @Selector("init")
-    public native NEIPv4Settings init();
-
-    /**
-     * initWithAddresses:subnetMasks:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instm/NEIPv4Settings/initWithAddresses:subnetMasks:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAddresses:subnetMasks:")
-    public native NEIPv4Settings initWithAddressesSubnetMasks(NSArray<String> addresses, NSArray<String> subnetMasks);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEIPv4Settings initWithCoder(NSCoder aDecoder);
-
-    /**
-     * excludedRoutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/excludedRoutes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setExcludedRoutes:")
-    public native void setExcludedRoutes(NSArray<? extends NEIPv4Route> value);
-
-    /**
-     * includedRoutes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/includedRoutes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIncludedRoutes:")
-    public native void setIncludedRoutes(NSArray<? extends NEIPv4Route> value);
-
-    /**
-     * subnetMasks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/subnetMasks">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subnetMasks")
-    public native NSArray<String> subnetMasks();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -245,4 +165,84 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addresses</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/addresses">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addresses")
+    public native NSArray<String> addresses();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * excludedRoutes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/excludedRoutes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("excludedRoutes")
+    public native NSArray<? extends NEIPv4Route> excludedRoutes();
+
+    /**
+     * includedRoutes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/includedRoutes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("includedRoutes")
+    public native NSArray<? extends NEIPv4Route> includedRoutes();
+
+    @Generated
+    @Selector("init")
+    public native NEIPv4Settings init();
+
+    /**
+     * initWithAddresses:subnetMasks:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instm/NEIPv4Settings/initWithAddresses:subnetMasks:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAddresses:subnetMasks:")
+    public native NEIPv4Settings initWithAddressesSubnetMasks(NSArray<String> addresses, NSArray<String> subnetMasks);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEIPv4Settings initWithCoder(NSCoder aDecoder);
+
+    /**
+     * excludedRoutes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/excludedRoutes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setExcludedRoutes:")
+    public native void setExcludedRoutes(NSArray<? extends NEIPv4Route> value);
+
+    /**
+     * includedRoutes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/includedRoutes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIncludedRoutes:")
+    public native void setIncludedRoutes(NSArray<? extends NEIPv4Route> value);
+
+    /**
+     * subnetMasks</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEIPv4SettingsClassRef/index.html#//apple_ref/occ/instp/NEIPv4Settings/subnetMasks">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subnetMasks")
+    public native NSArray<String> subnetMasks();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

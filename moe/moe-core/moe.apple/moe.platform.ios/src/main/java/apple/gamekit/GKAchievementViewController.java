@@ -57,65 +57,10 @@ public class GKAchievementViewController extends GKGameCenterViewController {
         super(peer);
     }
 
-    /**
-     * achievementDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementViewController_Ref/index.html#//apple_ref/occ/instp/GKAchievementViewController/achievementDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("achievementDelegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native GKAchievementViewControllerDelegate achievementDelegate();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native GKAchievementViewController alloc();
-
-    @Generated
-    @Selector("init")
-    public native GKAchievementViewController init();
-
-    @Generated
-    @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native GKAchievementViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native GKAchievementViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    @Generated
-    @Selector("initWithRootViewController:")
-    public native GKAchievementViewController initWithRootViewController(UIViewController rootViewController);
-
-    /**
-     * achievementDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementViewController_Ref/index.html#//apple_ref/occ/instp/GKAchievementViewController/achievementDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAchievementDelegate:")
-    public native void setAchievementDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) GKAchievementViewControllerDelegate value);
-
-    /**
-     * achievementDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementViewController_Ref/index.html#//apple_ref/occ/instp/GKAchievementViewController/achievementDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setAchievementDelegate(@Mapped(ObjCObjectMapper.class) GKAchievementViewControllerDelegate value) {
-        Object __old = achievementDelegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setAchievementDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKAchievementViewController initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -228,4 +173,59 @@ public class GKAchievementViewController extends GKGameCenterViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * achievementDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementViewController_Ref/index.html#//apple_ref/occ/instp/GKAchievementViewController/achievementDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("achievementDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native GKAchievementViewControllerDelegate achievementDelegate();
+
+    @Generated
+    @Selector("init")
+    public native GKAchievementViewController init();
+
+    @Generated
+    @Selector("initWithNavigationBarClass:toolbarClass:")
+    public native GKAchievementViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
+            Class toolbarClass);
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native GKAchievementViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    @Generated
+    @Selector("initWithRootViewController:")
+    public native GKAchievementViewController initWithRootViewController(UIViewController rootViewController);
+
+    /**
+     * achievementDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementViewController_Ref/index.html#//apple_ref/occ/instp/GKAchievementViewController/achievementDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAchievementDelegate:")
+    public native void setAchievementDelegate_unsafe(
+            @Mapped(ObjCObjectMapper.class) GKAchievementViewControllerDelegate value);
+
+    /**
+     * achievementDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKAchievementViewController_Ref/index.html#//apple_ref/occ/instp/GKAchievementViewController/achievementDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setAchievementDelegate(@Mapped(ObjCObjectMapper.class) GKAchievementViewControllerDelegate value) {
+        Object __old = achievementDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setAchievementDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKAchievementViewController initWithCoder(NSCoder aDecoder);
 }

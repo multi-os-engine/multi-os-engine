@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UISearchBarIcon {
-    @Generated
-    private UISearchBarIcon() {
-    }
-
     @Generated @NInt public static final long Search = 0x0000000000000000L;
     @Generated @NInt public static final long Clear = 0x0000000000000001L;
     @Generated @NInt public static final long Bookmark = 0x0000000000000002L;
     @Generated @NInt public static final long ResultsList = 0x0000000000000003L;
+
+    @Generated
+    private UISearchBarIcon() {
+    }
 }

@@ -58,35 +58,6 @@ public class GKPath extends NSObject {
     @Selector("alloc")
     public static native GKPath alloc();
 
-    @Generated
-    @Selector("init")
-    public native GKPath init();
-
-    /**
-     * initWithGraphNodes:radius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instm/GKPath/initWithGraphNodes:radius:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithGraphNodes:radius:")
-    public native GKPath initWithGraphNodesRadius(NSArray<? extends GKGraphNode2D> graphNodes, float radius);
-
-    /**
-     * cyclical</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instp/GKPath/cyclical">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isCyclical")
-    public native boolean isCyclical();
-
-    /**
-     * numPoints</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instp/GKPath/numPoints">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numPoints")
-    @NUInt
-    public native long numPoints();
-
     /**
      * pathWithGraphNodes:radius:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/clm/GKPath/pathWithGraphNodes:radius:">iOS Dev Center</a>
@@ -94,30 +65,6 @@ public class GKPath extends NSObject {
     @Generated
     @Selector("pathWithGraphNodes:radius:")
     public static native GKPath pathWithGraphNodesRadius(NSArray<? extends GKGraphNode2D> graphNodes, float radius);
-
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instp/GKPath/radius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("radius")
-    public native float radius();
-
-    /**
-     * cyclical</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instp/GKPath/cyclical">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCyclical:")
-    public native void setCyclical(boolean value);
-
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instp/GKPath/radius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRadius:")
-    public native void setRadius(float value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -218,4 +165,57 @@ public class GKPath extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GKPath init();
+
+    /**
+     * initWithGraphNodes:radius:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instm/GKPath/initWithGraphNodes:radius:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithGraphNodes:radius:")
+    public native GKPath initWithGraphNodesRadius(NSArray<? extends GKGraphNode2D> graphNodes, float radius);
+
+    /**
+     * cyclical</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instp/GKPath/cyclical">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isCyclical")
+    public native boolean isCyclical();
+
+    /**
+     * cyclical</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instp/GKPath/cyclical">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCyclical:")
+    public native void setCyclical(boolean value);
+
+    /**
+     * numPoints</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instp/GKPath/numPoints">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numPoints")
+    @NUInt
+    public native long numPoints();
+
+    /**
+     * radius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instp/GKPath/radius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("radius")
+    public native float radius();
+
+    /**
+     * radius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKPath_Class/index.html#//apple_ref/occ/instp/GKPath/radius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRadius:")
+    public native void setRadius(float value);
 }

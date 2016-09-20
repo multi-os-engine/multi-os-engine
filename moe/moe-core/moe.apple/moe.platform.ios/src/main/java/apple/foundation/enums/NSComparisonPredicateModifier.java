@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSComparisonPredicateModifier {
-    @Generated
-    private NSComparisonPredicateModifier() {
-    }
-
     @Generated @NUInt public static final long DirectPredicateModifier = 0x0000000000000000L;
     @Generated @NUInt public static final long AllPredicateModifier = 0x0000000000000001L;
     @Generated @NUInt public static final long AnyPredicateModifier = 0x0000000000000002L;
+
+    @Generated
+    private NSComparisonPredicateModifier() {
+    }
 }

@@ -60,74 +60,6 @@ public class AVAssetReaderOutput extends NSObject {
     @Selector("alloc")
     public static native AVAssetReaderOutput alloc();
 
-    /**
-     * alwaysCopiesSampleData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutput/alwaysCopiesSampleData">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alwaysCopiesSampleData")
-    public native boolean alwaysCopiesSampleData();
-
-    /**
-     * copyNextSampleBuffer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutput/copyNextSampleBuffer">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("copyNextSampleBuffer")
-    public native CMSampleBufferRef copyNextSampleBuffer();
-
-    @Generated
-    @Selector("init")
-    public native AVAssetReaderOutput init();
-
-    /**
-     * markConfigurationAsFinal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutput/markConfigurationAsFinal">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("markConfigurationAsFinal")
-    public native void markConfigurationAsFinal();
-
-    /**
-     * mediaType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutput/mediaType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mediaType")
-    public native String mediaType();
-
-    /**
-     * resetForReadingTimeRanges:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutput/resetForReadingTimeRanges:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resetForReadingTimeRanges:")
-    public native void resetForReadingTimeRanges(NSArray<? extends NSValue> timeRanges);
-
-    /**
-     * alwaysCopiesSampleData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutput/alwaysCopiesSampleData">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAlwaysCopiesSampleData:")
-    public native void setAlwaysCopiesSampleData(boolean value);
-
-    /**
-     * supportsRandomAccess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutput/supportsRandomAccess">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSupportsRandomAccess:")
-    public native void setSupportsRandomAccess(boolean value);
-
-    /**
-     * supportsRandomAccess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutput/supportsRandomAccess">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("supportsRandomAccess")
-    public native boolean supportsRandomAccess();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -227,4 +159,72 @@ public class AVAssetReaderOutput extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * alwaysCopiesSampleData</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutput/alwaysCopiesSampleData">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alwaysCopiesSampleData")
+    public native boolean alwaysCopiesSampleData();
+
+    /**
+     * copyNextSampleBuffer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutput/copyNextSampleBuffer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("copyNextSampleBuffer")
+    public native CMSampleBufferRef copyNextSampleBuffer();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetReaderOutput init();
+
+    /**
+     * markConfigurationAsFinal</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutput/markConfigurationAsFinal">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("markConfigurationAsFinal")
+    public native void markConfigurationAsFinal();
+
+    /**
+     * mediaType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutput/mediaType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mediaType")
+    public native String mediaType();
+
+    /**
+     * resetForReadingTimeRanges:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutput/resetForReadingTimeRanges:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resetForReadingTimeRanges:")
+    public native void resetForReadingTimeRanges(NSArray<? extends NSValue> timeRanges);
+
+    /**
+     * alwaysCopiesSampleData</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutput/alwaysCopiesSampleData">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAlwaysCopiesSampleData:")
+    public native void setAlwaysCopiesSampleData(boolean value);
+
+    /**
+     * supportsRandomAccess</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutput/supportsRandomAccess">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSupportsRandomAccess:")
+    public native void setSupportsRandomAccess(boolean value);
+
+    /**
+     * supportsRandomAccess</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutput_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutput/supportsRandomAccess">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("supportsRandomAccess")
+    public native boolean supportsRandomAccess();
 }

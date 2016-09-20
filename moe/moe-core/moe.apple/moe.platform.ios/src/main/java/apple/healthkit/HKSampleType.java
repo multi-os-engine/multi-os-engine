@@ -61,14 +61,6 @@ public class HKSampleType extends HKObjectType {
     public static native HKSampleType alloc();
 
     @Generated
-    @Selector("init")
-    public native HKSampleType init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKSampleType initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -188,12 +180,6 @@ public class HKSampleType extends HKObjectType {
     public static native boolean supportsSecureCoding();
 
     @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    @Generated
     @Selector("version")
     @NInt
     public static native long version();
@@ -201,4 +187,18 @@ public class HKSampleType extends HKObjectType {
     @Generated
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
+
+    @Generated
+    @Selector("init")
+    public native HKSampleType init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKSampleType initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

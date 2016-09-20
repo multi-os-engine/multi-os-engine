@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class WKSelectionGranularity {
+    @Generated @NInt public static final long Dynamic = 0x0000000000000000L;
+    @Generated @NInt public static final long Character = 0x0000000000000001L;
+
     @Generated
     private WKSelectionGranularity() {
     }
-
-    @Generated @NInt public static final long Dynamic = 0x0000000000000000L;
-    @Generated @NInt public static final long Character = 0x0000000000000001L;
 }

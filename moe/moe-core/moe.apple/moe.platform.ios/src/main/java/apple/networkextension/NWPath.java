@@ -59,35 +59,6 @@ public class NWPath extends NSObject {
     public static native NWPath alloc();
 
     @Generated
-    @Selector("init")
-    public native NWPath init();
-
-    /**
-     * isEqualToPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWPathClassRef/index.html#//apple_ref/occ/instm/NWPath/isEqualToPath:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEqualToPath:")
-    public native boolean isEqualToPath(NWPath path);
-
-    /**
-     * expensive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWPathClassRef/index.html#//apple_ref/occ/instp/NWPath/expensive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isExpensive")
-    public native boolean isExpensive();
-
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWPathClassRef/index.html#//apple_ref/occ/instp/NWPath/status">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("status")
-    @NInt
-    public native long status();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -186,4 +157,33 @@ public class NWPath extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NWPath init();
+
+    /**
+     * isEqualToPath:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWPathClassRef/index.html#//apple_ref/occ/instm/NWPath/isEqualToPath:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEqualToPath:")
+    public native boolean isEqualToPath(NWPath path);
+
+    /**
+     * expensive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWPathClassRef/index.html#//apple_ref/occ/instp/NWPath/expensive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isExpensive")
+    public native boolean isExpensive();
+
+    /**
+     * status</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWPathClassRef/index.html#//apple_ref/occ/instp/NWPath/status">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("status")
+    @NInt
+    public native long status();
 }

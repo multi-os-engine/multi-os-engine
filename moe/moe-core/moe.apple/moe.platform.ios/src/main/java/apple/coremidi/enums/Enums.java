@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kMIDIInvalidUniqueID = 0x00000000;
     @Generated public static final int kMIDIThruConnection_MaxEndpoints = 0x00000008;
     @Generated public static final int kMIDIInvalidClient = 0xFFFFD5B2;
@@ -41,4 +37,8 @@ public final class Enums {
     @Generated public static final int kMIDIObjectNotFound = 0xFFFFD5A6;
     @Generated public static final int kMIDIIDNotUnique = 0xFFFFD5A5;
     @Generated public static final int kMIDINotPermitted = 0xFFFFD5A4;
+
+    @Generated
+    private Enums() {
+    }
 }

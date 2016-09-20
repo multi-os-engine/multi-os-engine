@@ -63,59 +63,9 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native UITraitCollection alloc();
 
-    /**
-     * containsTraitsInCollection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instm/UITraitCollection/containsTraitsInCollection:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containsTraitsInCollection:")
-    public native boolean containsTraitsInCollection(UITraitCollection trait);
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * displayScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/displayScale">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("displayScale")
-    @NFloat
-    public native double displayScale();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * horizontalSizeClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/horizontalSizeClass">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("horizontalSizeClass")
-    @NInt
-    public native long horizontalSizeClass();
-
-    @Generated
-    @Selector("init")
-    public native UITraitCollection init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UITraitCollection initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     /**
      * traitCollectionWithDisplayScale:</br>
@@ -157,33 +107,6 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("traitCollectionWithVerticalSizeClass:")
     public static native UITraitCollection traitCollectionWithVerticalSizeClass(@NInt long verticalSizeClass);
-
-    /**
-     * userInterfaceIdiom</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/userInterfaceIdiom">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInterfaceIdiom")
-    @NInt
-    public native long userInterfaceIdiom();
-
-    /**
-     * verticalSizeClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/verticalSizeClass">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("verticalSizeClass")
-    @NInt
-    public native long verticalSizeClass();
-
-    /**
-     * forceTouchCapability</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/forceTouchCapability">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("forceTouchCapability")
-    @NInt
-    public native long forceTouchCapability();
 
     /**
      * traitCollectionWithForceTouchCapability:</br>
@@ -292,4 +215,81 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * containsTraitsInCollection:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instm/UITraitCollection/containsTraitsInCollection:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containsTraitsInCollection:")
+    public native boolean containsTraitsInCollection(UITraitCollection trait);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * displayScale</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/displayScale">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("displayScale")
+    @NFloat
+    public native double displayScale();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * horizontalSizeClass</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/horizontalSizeClass">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("horizontalSizeClass")
+    @NInt
+    public native long horizontalSizeClass();
+
+    @Generated
+    @Selector("init")
+    public native UITraitCollection init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UITraitCollection initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * userInterfaceIdiom</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/userInterfaceIdiom">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInterfaceIdiom")
+    @NInt
+    public native long userInterfaceIdiom();
+
+    /**
+     * verticalSizeClass</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/verticalSizeClass">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("verticalSizeClass")
+    @NInt
+    public native long verticalSizeClass();
+
+    /**
+     * forceTouchCapability</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/occ/instp/UITraitCollection/forceTouchCapability">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("forceTouchCapability")
+    @NInt
+    public native long forceTouchCapability();
 }

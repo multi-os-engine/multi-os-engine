@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class SCNRenderingAPI {
+    @Generated @NUInt public static final long Metal = 0x0000000000000000L;
+    @Generated @NUInt public static final long OpenGLES2 = 0x0000000000000001L;
+
     @Generated
     private SCNRenderingAPI() {
     }
-
-    @Generated @NUInt public static final long Metal = 0x0000000000000000L;
-    @Generated @NUInt public static final long OpenGLES2 = 0x0000000000000001L;
 }

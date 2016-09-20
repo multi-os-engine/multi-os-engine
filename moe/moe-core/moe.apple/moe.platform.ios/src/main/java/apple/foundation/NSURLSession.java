@@ -58,228 +58,6 @@ public class NSURLSession extends NSObject {
     public static native NSURLSession alloc();
 
     /**
-     * configuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instp/NSURLSession/configuration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("configuration")
-    public native NSURLSessionConfiguration configuration();
-
-    /**
-     * dataTaskWithRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/dataTaskWithRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dataTaskWithRequest:")
-    public native NSURLSessionDataTask dataTaskWithRequest(NSURLRequest request);
-
-    /**
-     * dataTaskWithRequest:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/dataTaskWithRequest:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dataTaskWithRequest:completionHandler:")
-    public native NSURLSessionDataTask dataTaskWithRequestCompletionHandler(NSURLRequest request,
-            @ObjCBlock(name = "call_dataTaskWithRequestCompletionHandler") Block_dataTaskWithRequestCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_dataTaskWithRequestCompletionHandler {
-        @Generated
-        void call_dataTaskWithRequestCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
-    }
-
-    /**
-     * dataTaskWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/dataTaskWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dataTaskWithURL:")
-    public native NSURLSessionDataTask dataTaskWithURL(NSURL url);
-
-    /**
-     * dataTaskWithURL:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/dataTaskWithURL:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dataTaskWithURL:completionHandler:")
-    public native NSURLSessionDataTask dataTaskWithURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_dataTaskWithURLCompletionHandler") Block_dataTaskWithURLCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_dataTaskWithURLCompletionHandler {
-        @Generated
-        void call_dataTaskWithURLCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
-    }
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instp/NSURLSession/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native NSURLSessionDelegate delegate();
-
-    /**
-     * delegateQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instp/NSURLSession/delegateQueue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegateQueue")
-    public native NSOperationQueue delegateQueue();
-
-    /**
-     * downloadTaskWithRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadTaskWithRequest:")
-    public native NSURLSessionDownloadTask downloadTaskWithRequest(NSURLRequest request);
-
-    /**
-     * downloadTaskWithRequest:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithRequest:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadTaskWithRequest:completionHandler:")
-    public native NSURLSessionDownloadTask downloadTaskWithRequestCompletionHandler(NSURLRequest request,
-            @ObjCBlock(name = "call_downloadTaskWithRequestCompletionHandler") Block_downloadTaskWithRequestCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_downloadTaskWithRequestCompletionHandler {
-        @Generated
-        void call_downloadTaskWithRequestCompletionHandler(NSURL arg0, NSURLResponse arg1, NSError arg2);
-    }
-
-    /**
-     * downloadTaskWithResumeData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithResumeData:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadTaskWithResumeData:")
-    public native NSURLSessionDownloadTask downloadTaskWithResumeData(NSData resumeData);
-
-    /**
-     * downloadTaskWithResumeData:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithResumeData:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadTaskWithResumeData:completionHandler:")
-    public native NSURLSessionDownloadTask downloadTaskWithResumeDataCompletionHandler(NSData resumeData,
-            @ObjCBlock(name = "call_downloadTaskWithResumeDataCompletionHandler") Block_downloadTaskWithResumeDataCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_downloadTaskWithResumeDataCompletionHandler {
-        @Generated
-        void call_downloadTaskWithResumeDataCompletionHandler(NSURL arg0, NSURLResponse arg1, NSError arg2);
-    }
-
-    /**
-     * downloadTaskWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadTaskWithURL:")
-    public native NSURLSessionDownloadTask downloadTaskWithURL(NSURL url);
-
-    /**
-     * downloadTaskWithURL:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithURL:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadTaskWithURL:completionHandler:")
-    public native NSURLSessionDownloadTask downloadTaskWithURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_downloadTaskWithURLCompletionHandler") Block_downloadTaskWithURLCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_downloadTaskWithURLCompletionHandler {
-        @Generated
-        void call_downloadTaskWithURLCompletionHandler(NSURL arg0, NSURLResponse arg1, NSError arg2);
-    }
-
-    /**
-     * finishTasksAndInvalidate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/finishTasksAndInvalidate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("finishTasksAndInvalidate")
-    public native void finishTasksAndInvalidate();
-
-    /**
-     * flushWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/flushWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("flushWithCompletionHandler:")
-    public native void flushWithCompletionHandler(
-            @ObjCBlock(name = "call_flushWithCompletionHandler") Block_flushWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_flushWithCompletionHandler {
-        @Generated
-        void call_flushWithCompletionHandler();
-    }
-
-    /**
-     * getTasksWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/getTasksWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getTasksWithCompletionHandler:")
-    public native void getTasksWithCompletionHandler(
-            @ObjCBlock(name = "call_getTasksWithCompletionHandler") Block_getTasksWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_getTasksWithCompletionHandler {
-        @Generated
-        void call_getTasksWithCompletionHandler(NSArray<? extends NSURLSessionDataTask> arg0,
-                NSArray<? extends NSURLSessionUploadTask> arg1, NSArray<? extends NSURLSessionDownloadTask> arg2);
-    }
-
-    @Generated
-    @Selector("init")
-    public native NSURLSession init();
-
-    /**
-     * invalidateAndCancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/invalidateAndCancel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("invalidateAndCancel")
-    public native void invalidateAndCancel();
-
-    /**
-     * resetWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/resetWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resetWithCompletionHandler:")
-    public native void resetWithCompletionHandler(
-            @ObjCBlock(name = "call_resetWithCompletionHandler") Block_resetWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_resetWithCompletionHandler {
-        @Generated
-        void call_resetWithCompletionHandler();
-    }
-
-    /**
-     * sessionDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instp/NSURLSession/sessionDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sessionDescription")
-    public native String sessionDescription();
-
-    /**
      * sessionWithConfiguration:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/clm/NSURLSession/sessionWithConfiguration:">iOS Dev Center</a>
      */
@@ -298,106 +76,12 @@ public class NSURLSession extends NSObject {
             NSOperationQueue queue);
 
     /**
-     * sessionDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instp/NSURLSession/sessionDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSessionDescription:")
-    public native void setSessionDescription(String value);
-
-    /**
      * sharedSession</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/clm/NSURLSession/sharedSession">iOS Dev Center</a>
      */
     @Generated
     @Selector("sharedSession")
     public static native NSURLSession sharedSession();
-
-    /**
-     * uploadTaskWithRequest:fromData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/uploadTaskWithRequest:fromData:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uploadTaskWithRequest:fromData:")
-    public native NSURLSessionUploadTask uploadTaskWithRequestFromData(NSURLRequest request, NSData bodyData);
-
-    /**
-     * uploadTaskWithRequest:fromData:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/uploadTaskWithRequest:fromData:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uploadTaskWithRequest:fromData:completionHandler:")
-    public native NSURLSessionUploadTask uploadTaskWithRequestFromDataCompletionHandler(NSURLRequest request,
-            NSData bodyData,
-            @ObjCBlock(name = "call_uploadTaskWithRequestFromDataCompletionHandler") Block_uploadTaskWithRequestFromDataCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_uploadTaskWithRequestFromDataCompletionHandler {
-        @Generated
-        void call_uploadTaskWithRequestFromDataCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
-    }
-
-    /**
-     * uploadTaskWithRequest:fromFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/uploadTaskWithRequest:fromFile:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uploadTaskWithRequest:fromFile:")
-    public native NSURLSessionUploadTask uploadTaskWithRequestFromFile(NSURLRequest request, NSURL fileURL);
-
-    /**
-     * uploadTaskWithRequest:fromFile:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/uploadTaskWithRequest:fromFile:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uploadTaskWithRequest:fromFile:completionHandler:")
-    public native NSURLSessionUploadTask uploadTaskWithRequestFromFileCompletionHandler(NSURLRequest request,
-            NSURL fileURL,
-            @ObjCBlock(name = "call_uploadTaskWithRequestFromFileCompletionHandler") Block_uploadTaskWithRequestFromFileCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_uploadTaskWithRequestFromFileCompletionHandler {
-        @Generated
-        void call_uploadTaskWithRequestFromFileCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
-    }
-
-    /**
-     * uploadTaskWithStreamedRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/uploadTaskWithStreamedRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uploadTaskWithStreamedRequest:")
-    public native NSURLSessionUploadTask uploadTaskWithStreamedRequest(NSURLRequest request);
-
-    @Generated
-    @Selector("getAllTasksWithCompletionHandler:")
-    public native void getAllTasksWithCompletionHandler(
-            @ObjCBlock(name = "call_getAllTasksWithCompletionHandler") Block_getAllTasksWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_getAllTasksWithCompletionHandler {
-        @Generated
-        void call_getAllTasksWithCompletionHandler(NSArray<? extends NSURLSessionTask> arg0);
-    }
-
-    /**
-     * streamTaskWithHostName:port:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/streamTaskWithHostName:port:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("streamTaskWithHostName:port:")
-    public native NSURLSessionStreamTask streamTaskWithHostNamePort(String hostname, @NInt long port);
-
-    /**
-     * streamTaskWithNetService:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/streamTaskWithNetService:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("streamTaskWithNetService:")
-    public native NSURLSessionStreamTask streamTaskWithNetService(NSNetService service);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -498,4 +182,320 @@ public class NSURLSession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * configuration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instp/NSURLSession/configuration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("configuration")
+    public native NSURLSessionConfiguration configuration();
+
+    /**
+     * dataTaskWithRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/dataTaskWithRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dataTaskWithRequest:")
+    public native NSURLSessionDataTask dataTaskWithRequest(NSURLRequest request);
+
+    /**
+     * dataTaskWithRequest:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/dataTaskWithRequest:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dataTaskWithRequest:completionHandler:")
+    public native NSURLSessionDataTask dataTaskWithRequestCompletionHandler(NSURLRequest request,
+            @ObjCBlock(name = "call_dataTaskWithRequestCompletionHandler") Block_dataTaskWithRequestCompletionHandler completionHandler);
+
+    /**
+     * dataTaskWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/dataTaskWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dataTaskWithURL:")
+    public native NSURLSessionDataTask dataTaskWithURL(NSURL url);
+
+    /**
+     * dataTaskWithURL:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/dataTaskWithURL:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dataTaskWithURL:completionHandler:")
+    public native NSURLSessionDataTask dataTaskWithURLCompletionHandler(NSURL url,
+            @ObjCBlock(name = "call_dataTaskWithURLCompletionHandler") Block_dataTaskWithURLCompletionHandler completionHandler);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instp/NSURLSession/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native NSURLSessionDelegate delegate();
+
+    /**
+     * delegateQueue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instp/NSURLSession/delegateQueue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegateQueue")
+    public native NSOperationQueue delegateQueue();
+
+    /**
+     * downloadTaskWithRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadTaskWithRequest:")
+    public native NSURLSessionDownloadTask downloadTaskWithRequest(NSURLRequest request);
+
+    /**
+     * downloadTaskWithRequest:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithRequest:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadTaskWithRequest:completionHandler:")
+    public native NSURLSessionDownloadTask downloadTaskWithRequestCompletionHandler(NSURLRequest request,
+            @ObjCBlock(name = "call_downloadTaskWithRequestCompletionHandler") Block_downloadTaskWithRequestCompletionHandler completionHandler);
+
+    /**
+     * downloadTaskWithResumeData:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithResumeData:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadTaskWithResumeData:")
+    public native NSURLSessionDownloadTask downloadTaskWithResumeData(NSData resumeData);
+
+    /**
+     * downloadTaskWithResumeData:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithResumeData:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadTaskWithResumeData:completionHandler:")
+    public native NSURLSessionDownloadTask downloadTaskWithResumeDataCompletionHandler(NSData resumeData,
+            @ObjCBlock(name = "call_downloadTaskWithResumeDataCompletionHandler") Block_downloadTaskWithResumeDataCompletionHandler completionHandler);
+
+    /**
+     * downloadTaskWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadTaskWithURL:")
+    public native NSURLSessionDownloadTask downloadTaskWithURL(NSURL url);
+
+    /**
+     * downloadTaskWithURL:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/downloadTaskWithURL:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadTaskWithURL:completionHandler:")
+    public native NSURLSessionDownloadTask downloadTaskWithURLCompletionHandler(NSURL url,
+            @ObjCBlock(name = "call_downloadTaskWithURLCompletionHandler") Block_downloadTaskWithURLCompletionHandler completionHandler);
+
+    /**
+     * finishTasksAndInvalidate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/finishTasksAndInvalidate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("finishTasksAndInvalidate")
+    public native void finishTasksAndInvalidate();
+
+    /**
+     * flushWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/flushWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("flushWithCompletionHandler:")
+    public native void flushWithCompletionHandler(
+            @ObjCBlock(name = "call_flushWithCompletionHandler") Block_flushWithCompletionHandler completionHandler);
+
+    /**
+     * getTasksWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/getTasksWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getTasksWithCompletionHandler:")
+    public native void getTasksWithCompletionHandler(
+            @ObjCBlock(name = "call_getTasksWithCompletionHandler") Block_getTasksWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("init")
+    public native NSURLSession init();
+
+    /**
+     * invalidateAndCancel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/invalidateAndCancel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("invalidateAndCancel")
+    public native void invalidateAndCancel();
+
+    /**
+     * resetWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/resetWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resetWithCompletionHandler:")
+    public native void resetWithCompletionHandler(
+            @ObjCBlock(name = "call_resetWithCompletionHandler") Block_resetWithCompletionHandler completionHandler);
+
+    /**
+     * sessionDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instp/NSURLSession/sessionDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sessionDescription")
+    public native String sessionDescription();
+
+    /**
+     * sessionDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instp/NSURLSession/sessionDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSessionDescription:")
+    public native void setSessionDescription(String value);
+
+    /**
+     * uploadTaskWithRequest:fromData:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/uploadTaskWithRequest:fromData:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uploadTaskWithRequest:fromData:")
+    public native NSURLSessionUploadTask uploadTaskWithRequestFromData(NSURLRequest request, NSData bodyData);
+
+    /**
+     * uploadTaskWithRequest:fromData:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/uploadTaskWithRequest:fromData:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uploadTaskWithRequest:fromData:completionHandler:")
+    public native NSURLSessionUploadTask uploadTaskWithRequestFromDataCompletionHandler(NSURLRequest request,
+            NSData bodyData,
+            @ObjCBlock(name = "call_uploadTaskWithRequestFromDataCompletionHandler") Block_uploadTaskWithRequestFromDataCompletionHandler completionHandler);
+
+    /**
+     * uploadTaskWithRequest:fromFile:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/uploadTaskWithRequest:fromFile:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uploadTaskWithRequest:fromFile:")
+    public native NSURLSessionUploadTask uploadTaskWithRequestFromFile(NSURLRequest request, NSURL fileURL);
+
+    /**
+     * uploadTaskWithRequest:fromFile:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/uploadTaskWithRequest:fromFile:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uploadTaskWithRequest:fromFile:completionHandler:")
+    public native NSURLSessionUploadTask uploadTaskWithRequestFromFileCompletionHandler(NSURLRequest request,
+            NSURL fileURL,
+            @ObjCBlock(name = "call_uploadTaskWithRequestFromFileCompletionHandler") Block_uploadTaskWithRequestFromFileCompletionHandler completionHandler);
+
+    /**
+     * uploadTaskWithStreamedRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/uploadTaskWithStreamedRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uploadTaskWithStreamedRequest:")
+    public native NSURLSessionUploadTask uploadTaskWithStreamedRequest(NSURLRequest request);
+
+    @Generated
+    @Selector("getAllTasksWithCompletionHandler:")
+    public native void getAllTasksWithCompletionHandler(
+            @ObjCBlock(name = "call_getAllTasksWithCompletionHandler") Block_getAllTasksWithCompletionHandler completionHandler);
+
+    /**
+     * streamTaskWithHostName:port:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/streamTaskWithHostName:port:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("streamTaskWithHostName:port:")
+    public native NSURLSessionStreamTask streamTaskWithHostNamePort(String hostname, @NInt long port);
+
+    /**
+     * streamTaskWithNetService:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/occ/instm/NSURLSession/streamTaskWithNetService:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("streamTaskWithNetService:")
+    public native NSURLSessionStreamTask streamTaskWithNetService(NSNetService service);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_dataTaskWithRequestCompletionHandler {
+        @Generated
+        void call_dataTaskWithRequestCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_dataTaskWithURLCompletionHandler {
+        @Generated
+        void call_dataTaskWithURLCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_downloadTaskWithRequestCompletionHandler {
+        @Generated
+        void call_downloadTaskWithRequestCompletionHandler(NSURL arg0, NSURLResponse arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_downloadTaskWithResumeDataCompletionHandler {
+        @Generated
+        void call_downloadTaskWithResumeDataCompletionHandler(NSURL arg0, NSURLResponse arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_downloadTaskWithURLCompletionHandler {
+        @Generated
+        void call_downloadTaskWithURLCompletionHandler(NSURL arg0, NSURLResponse arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_flushWithCompletionHandler {
+        @Generated
+        void call_flushWithCompletionHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getTasksWithCompletionHandler {
+        @Generated
+        void call_getTasksWithCompletionHandler(NSArray<? extends NSURLSessionDataTask> arg0,
+                NSArray<? extends NSURLSessionUploadTask> arg1, NSArray<? extends NSURLSessionDownloadTask> arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resetWithCompletionHandler {
+        @Generated
+        void call_resetWithCompletionHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_uploadTaskWithRequestFromDataCompletionHandler {
+        @Generated
+        void call_uploadTaskWithRequestFromDataCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_uploadTaskWithRequestFromFileCompletionHandler {
+        @Generated
+        void call_uploadTaskWithRequestFromFileCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getAllTasksWithCompletionHandler {
+        @Generated
+        void call_getAllTasksWithCompletionHandler(NSArray<? extends NSURLSessionTask> arg0);
+    }
 }

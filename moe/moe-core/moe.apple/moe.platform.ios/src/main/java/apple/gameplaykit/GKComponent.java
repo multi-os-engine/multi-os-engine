@@ -60,32 +60,6 @@ public class GKComponent extends NSObject implements NSCopying {
     public static native GKComponent alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * entity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponent_Class/index.html#//apple_ref/occ/instp/GKComponent/entity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("entity")
-    public native GKEntity entity();
-
-    @Generated
-    @Selector("init")
-    public native GKComponent init();
-
-    /**
-     * updateWithDeltaTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponent_Class/index.html#//apple_ref/occ/instm/GKComponent/updateWithDeltaTime:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateWithDeltaTime:")
-    public native void updateWithDeltaTime(double seconds);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -184,4 +158,30 @@ public class GKComponent extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * entity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponent_Class/index.html#//apple_ref/occ/instp/GKComponent/entity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("entity")
+    public native GKEntity entity();
+
+    @Generated
+    @Selector("init")
+    public native GKComponent init();
+
+    /**
+     * updateWithDeltaTime:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKComponent_Class/index.html#//apple_ref/occ/instm/GKComponent/updateWithDeltaTime:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateWithDeltaTime:")
+    public native void updateWithDeltaTime(double seconds);
 }

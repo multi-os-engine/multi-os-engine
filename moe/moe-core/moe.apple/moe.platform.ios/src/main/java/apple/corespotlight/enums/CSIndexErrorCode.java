@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CSIndexErrorCode {
-    @Generated
-    private CSIndexErrorCode() {
-    }
-
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long IndexUnavailableError = 0xFFFFFFFFFFFFFC18L;
     @Generated @NInt public static final long InvalidItemError = 0xFFFFFFFFFFFFFC17L;
@@ -32,4 +28,7 @@ public final class CSIndexErrorCode {
     @Generated @NInt public static final long RemoteConnectionError = 0xFFFFFFFFFFFFFC15L;
     @Generated @NInt public static final long QuotaExceeded = 0xFFFFFFFFFFFFFC14L;
     @Generated @NInt public static final long IndexingUnsupported = 0xFFFFFFFFFFFFFC13L;
+    @Generated
+    private CSIndexErrorCode() {
+    }
 }

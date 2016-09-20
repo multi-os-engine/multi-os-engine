@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSAttributeType {
-    @Generated
-    private NSAttributeType() {
-    }
-
     @Generated @NUInt public static final long UndefinedAttributeType = 0x0000000000000000L;
     @Generated @NUInt public static final long Integer16AttributeType = 0x0000000000000064L;
     @Generated @NUInt public static final long Integer32AttributeType = 0x00000000000000C8L;
@@ -38,4 +34,8 @@ public final class NSAttributeType {
     @Generated @NUInt public static final long BinaryDataAttributeType = 0x00000000000003E8L;
     @Generated @NUInt public static final long TransformableAttributeType = 0x0000000000000708L;
     @Generated @NUInt public static final long ObjectIDAttributeType = 0x00000000000007D0L;
+
+    @Generated
+    private NSAttributeType() {
+    }
 }

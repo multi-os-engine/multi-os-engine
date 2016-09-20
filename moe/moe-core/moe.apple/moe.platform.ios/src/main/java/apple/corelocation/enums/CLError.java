@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CLError {
-    @Generated
-    private CLError() {
-    }
-
     @Generated @NInt public static final long LocationUnknown = 0x0000000000000000L;
     @Generated @NInt public static final long Denied = 0x0000000000000001L;
     @Generated @NInt public static final long Network = 0x0000000000000002L;
@@ -43,4 +39,8 @@ public final class CLError {
     @Generated @NInt public static final long DeferredCanceled = 0x000000000000000FL;
     @Generated @NInt public static final long RangingUnavailable = 0x0000000000000010L;
     @Generated @NInt public static final long RangingFailure = 0x0000000000000011L;
+
+    @Generated
+    private CLError() {
+    }
 }

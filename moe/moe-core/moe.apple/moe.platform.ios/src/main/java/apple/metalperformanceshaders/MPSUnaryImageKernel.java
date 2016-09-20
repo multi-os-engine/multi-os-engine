@@ -69,104 +69,6 @@ public class MPSUnaryImageKernel extends MPSKernel {
     @Selector("alloc")
     public static native MPSUnaryImageKernel alloc();
 
-    /**
-     * clipRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/clipRect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("clipRect")
-    @ByValue
-    public native MTLRegion clipRect();
-
-    /**
-     * edgeMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/edgeMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("edgeMode")
-    @NUInt
-    public native long edgeMode();
-
-    /**
-     * encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSUnaryImageKernel/encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:")
-    public native boolean encodeToCommandBufferInPlaceTextureFallbackCopyAllocator(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, Ptr<ObjCObject> texture,
-            @ObjCBlock(name = "call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator") Block_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator copyAllocator);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        Object call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator(MPSKernel arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, @Mapped(ObjCObjectMapper.class) Object arg2);
-    }
-
-    /**
-     * encodeToCommandBuffer:sourceTexture:destinationTexture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSUnaryImageKernel/encodeToCommandBuffer:sourceTexture:destinationTexture:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("encodeToCommandBuffer:sourceTexture:destinationTexture:")
-    public native void encodeToCommandBufferSourceTextureDestinationTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
-
-    @Generated
-    @Selector("init")
-    public native MPSUnaryImageKernel init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSUnaryImageKernel initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/offset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("offset")
-    @ByValue
-    public native MPSOffset offset();
-
-    /**
-     * clipRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/clipRect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setClipRect:")
-    public native void setClipRect(@ByValue MTLRegion value);
-
-    /**
-     * edgeMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/edgeMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEdgeMode:")
-    public native void setEdgeMode(@NUInt long value);
-
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/offset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOffset:")
-    public native void setOffset(@ByValue MPSOffset value);
-
-    /**
-     * sourceRegionForDestinationSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSUnaryImageKernel/sourceRegionForDestinationSize:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceRegionForDestinationSize:")
-    @ByValue
-    public native MPSRegion sourceRegionForDestinationSize(@ByValue MTLSize destinationSize);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -266,4 +168,102 @@ public class MPSUnaryImageKernel extends MPSKernel {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * clipRect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/clipRect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("clipRect")
+    @ByValue
+    public native MTLRegion clipRect();
+
+    /**
+     * edgeMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/edgeMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("edgeMode")
+    @NUInt
+    public native long edgeMode();
+
+    /**
+     * encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSUnaryImageKernel/encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:")
+    public native boolean encodeToCommandBufferInPlaceTextureFallbackCopyAllocator(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, Ptr<ObjCObject> texture,
+            @ObjCBlock(name = "call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator") Block_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator copyAllocator);
+
+    /**
+     * encodeToCommandBuffer:sourceTexture:destinationTexture:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSUnaryImageKernel/encodeToCommandBuffer:sourceTexture:destinationTexture:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("encodeToCommandBuffer:sourceTexture:destinationTexture:")
+    public native void encodeToCommandBufferSourceTextureDestinationTexture(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
+
+    @Generated
+    @Selector("init")
+    public native MPSUnaryImageKernel init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSUnaryImageKernel initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * offset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/offset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("offset")
+    @ByValue
+    public native MPSOffset offset();
+
+    /**
+     * clipRect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/clipRect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setClipRect:")
+    public native void setClipRect(@ByValue MTLRegion value);
+
+    /**
+     * edgeMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/edgeMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEdgeMode:")
+    public native void setEdgeMode(@NUInt long value);
+
+    /**
+     * offset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instp/MPSUnaryImageKernel/offset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOffset:")
+    public native void setOffset(@ByValue MPSOffset value);
+
+    /**
+     * sourceRegionForDestinationSize:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSUnaryImageKernel_ClassReference/index.html#//apple_ref/occ/instm/MPSUnaryImageKernel/sourceRegionForDestinationSize:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceRegionForDestinationSize:")
+    @ByValue
+    public native MPSRegion sourceRegionForDestinationSize(@ByValue MTLSize destinationSize);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator {
+        @Generated
+        @MappedReturn(ObjCObjectMapper.class)
+        Object call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator(MPSKernel arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1, @Mapped(ObjCObjectMapper.class) Object arg2);
+    }
 }

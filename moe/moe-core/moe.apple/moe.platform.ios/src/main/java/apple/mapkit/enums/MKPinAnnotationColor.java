@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MKPinAnnotationColor {
-    @Generated
-    private MKPinAnnotationColor() {
-    }
-
     @Generated @NUInt public static final long Red = 0x0000000000000000L;
     @Generated @NUInt public static final long Green = 0x0000000000000001L;
     @Generated @NUInt public static final long Purple = 0x0000000000000002L;
+
+    @Generated
+    private MKPinAnnotationColor() {
+    }
 }

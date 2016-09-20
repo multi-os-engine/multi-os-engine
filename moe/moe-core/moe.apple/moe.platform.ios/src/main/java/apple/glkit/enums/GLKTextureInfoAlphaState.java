@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GLKTextureInfoAlphaState {
-    @Generated
-    private GLKTextureInfoAlphaState() {
-    }
-
     @Generated public static final int None = 0x00000000;
     @Generated public static final int NonPremultiplied = 0x00000001;
     @Generated public static final int Premultiplied = 0x00000002;
+
+    @Generated
+    private GLKTextureInfoAlphaState() {
+    }
 }

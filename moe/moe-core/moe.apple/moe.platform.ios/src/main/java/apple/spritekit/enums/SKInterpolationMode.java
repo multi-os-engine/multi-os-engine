@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKInterpolationMode {
-    @Generated
-    private SKInterpolationMode() {
-    }
-
     @Generated @NInt public static final long Linear = 0x0000000000000001L;
     @Generated @NInt public static final long Spline = 0x0000000000000002L;
     @Generated @NInt public static final long Step = 0x0000000000000003L;
+
+    @Generated
+    private SKInterpolationMode() {
+    }
 }

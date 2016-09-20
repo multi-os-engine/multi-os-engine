@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKSceneScaleMode {
-    @Generated
-    private SKSceneScaleMode() {
-    }
-
     @Generated @NInt public static final long Fill = 0x0000000000000000L;
     @Generated @NInt public static final long AspectFill = 0x0000000000000001L;
     @Generated @NInt public static final long AspectFit = 0x0000000000000002L;
     @Generated @NInt public static final long ResizeFill = 0x0000000000000003L;
+
+    @Generated
+    private SKSceneScaleMode() {
+    }
 }

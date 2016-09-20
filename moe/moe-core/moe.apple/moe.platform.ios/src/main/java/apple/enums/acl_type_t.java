@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class acl_type_t {
-    @Generated
-    private acl_type_t() {
-    }
-
     @Generated public static final int ACL_TYPE_EXTENDED = 0x00000100;
     @Generated public static final int ACL_TYPE_ACCESS = 0x00000000;
     @Generated public static final int ACL_TYPE_DEFAULT = 0x00000001;
@@ -31,4 +27,8 @@ public final class acl_type_t {
     @Generated public static final int ACL_TYPE_CODA = 0x00000003;
     @Generated public static final int ACL_TYPE_NTFS = 0x00000004;
     @Generated public static final int ACL_TYPE_NWFS = 0x00000005;
+
+    @Generated
+    private acl_type_t() {
+    }
 }

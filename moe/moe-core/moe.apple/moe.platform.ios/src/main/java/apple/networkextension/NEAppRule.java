@@ -63,80 +63,8 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     public static native NEAppRule alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NEAppRule init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEAppRule initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithSigningIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instm/NEAppRule/initWithSigningIdentifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSigningIdentifier:")
-    public native NEAppRule initWithSigningIdentifier(String signingIdentifier);
-
-    /**
-     * matchDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instp/NEAppRule/matchDomains">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("matchDomains")
-    public native NSArray<?> matchDomains();
-
-    /**
-     * matchSigningIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instp/NEAppRule/matchSigningIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("matchSigningIdentifier")
-    public native String matchSigningIdentifier();
-
-    /**
-     * matchDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instp/NEAppRule/matchDomains">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMatchDomains:")
-    public native void setMatchDomains(NSArray<?> value);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * matchPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instp/NEAppRule/matchPath">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("matchPath")
-    public native String matchPath();
-
-    /**
-     * matchPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instp/NEAppRule/matchPath">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMatchPath:")
-    public native void setMatchPath(String value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -237,4 +165,76 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NEAppRule init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEAppRule initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithSigningIdentifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instm/NEAppRule/initWithSigningIdentifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSigningIdentifier:")
+    public native NEAppRule initWithSigningIdentifier(String signingIdentifier);
+
+    /**
+     * matchDomains</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instp/NEAppRule/matchDomains">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("matchDomains")
+    public native NSArray<?> matchDomains();
+
+    /**
+     * matchSigningIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instp/NEAppRule/matchSigningIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("matchSigningIdentifier")
+    public native String matchSigningIdentifier();
+
+    /**
+     * matchDomains</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instp/NEAppRule/matchDomains">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMatchDomains:")
+    public native void setMatchDomains(NSArray<?> value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * matchPath</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instp/NEAppRule/matchPath">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("matchPath")
+    public native String matchPath();
+
+    /**
+     * matchPath</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEAppRuleClassRef/index.html#//apple_ref/occ/instp/NEAppRule/matchPath">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMatchPath:")
+    public native void setMatchPath(String value);
 }

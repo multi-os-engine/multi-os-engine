@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PKPassLibraryAddPassesStatus {
-    @Generated
-    private PKPassLibraryAddPassesStatus() {
-    }
-
     @Generated @NInt public static final long DidAddPasses = 0x0000000000000000L;
     @Generated @NInt public static final long ShouldReviewPasses = 0x0000000000000001L;
     @Generated @NInt public static final long DidCancelAddPasses = 0x0000000000000002L;
+
+    @Generated
+    private PKPassLibraryAddPassesStatus() {
+    }
 }

@@ -61,121 +61,13 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     @Selector("alloc")
     public static native MDLPhysicallyPlausibleLight alloc();
 
-    /**
-     * attenuationEndDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/attenuationEndDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attenuationEndDistance")
-    public native float attenuationEndDistance();
-
-    /**
-     * attenuationStartDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/attenuationStartDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attenuationStartDistance")
-    public native float attenuationStartDistance();
-
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/color">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("color")
-    public native CGColorRef color();
-
-    @Generated
-    @Selector("init")
-    public native MDLPhysicallyPlausibleLight init();
-
-    /**
-     * innerConeAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/innerConeAngle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("innerConeAngle")
-    public native float innerConeAngle();
-
     @Generated
     @Selector("lightWithSCNLight:")
     public static native MDLPhysicallyPlausibleLight lightWithSCNLight(SCNLight scnLight);
 
-    /**
-     * lumens</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/lumens">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lumens")
-    public native float lumens();
-
     @Generated
     @Selector("objectWithSCNNode:")
     public static native MDLPhysicallyPlausibleLight objectWithSCNNode(SCNNode scnNode);
-
-    /**
-     * outerConeAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/outerConeAngle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("outerConeAngle")
-    public native float outerConeAngle();
-
-    /**
-     * attenuationEndDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/attenuationEndDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAttenuationEndDistance:")
-    public native void setAttenuationEndDistance(float value);
-
-    /**
-     * attenuationStartDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/attenuationStartDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAttenuationStartDistance:")
-    public native void setAttenuationStartDistance(float value);
-
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/color">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setColor:")
-    public native void setColor(CGColorRef value);
-
-    /**
-     * setColorByTemperature:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instm/MDLPhysicallyPlausibleLight/setColorByTemperature:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setColorByTemperature:")
-    public native void setColorByTemperature(float temperature);
-
-    /**
-     * innerConeAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/innerConeAngle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setInnerConeAngle:")
-    public native void setInnerConeAngle(float value);
-
-    /**
-     * lumens</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/lumens">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLumens:")
-    public native void setLumens(float value);
-
-    /**
-     * outerConeAngle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/outerConeAngle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOuterConeAngle:")
-    public native void setOuterConeAngle(float value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -276,4 +168,112 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * attenuationEndDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/attenuationEndDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attenuationEndDistance")
+    public native float attenuationEndDistance();
+
+    /**
+     * attenuationStartDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/attenuationStartDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attenuationStartDistance")
+    public native float attenuationStartDistance();
+
+    /**
+     * color</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/color">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("color")
+    public native CGColorRef color();
+
+    @Generated
+    @Selector("init")
+    public native MDLPhysicallyPlausibleLight init();
+
+    /**
+     * innerConeAngle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/innerConeAngle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("innerConeAngle")
+    public native float innerConeAngle();
+
+    /**
+     * lumens</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/lumens">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lumens")
+    public native float lumens();
+
+    /**
+     * outerConeAngle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/outerConeAngle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("outerConeAngle")
+    public native float outerConeAngle();
+
+    /**
+     * attenuationEndDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/attenuationEndDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAttenuationEndDistance:")
+    public native void setAttenuationEndDistance(float value);
+
+    /**
+     * attenuationStartDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/attenuationStartDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAttenuationStartDistance:")
+    public native void setAttenuationStartDistance(float value);
+
+    /**
+     * color</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/color">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setColor:")
+    public native void setColor(CGColorRef value);
+
+    /**
+     * setColorByTemperature:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instm/MDLPhysicallyPlausibleLight/setColorByTemperature:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setColorByTemperature:")
+    public native void setColorByTemperature(float temperature);
+
+    /**
+     * innerConeAngle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/innerConeAngle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setInnerConeAngle:")
+    public native void setInnerConeAngle(float value);
+
+    /**
+     * lumens</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/lumens">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLumens:")
+    public native void setLumens(float value);
+
+    /**
+     * outerConeAngle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLPhysicallyPlausibleLight_Class/index.html#//apple_ref/occ/instp/MDLPhysicallyPlausibleLight/outerConeAngle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOuterConeAngle:")
+    public native void setOuterConeAngle(float value);
 }

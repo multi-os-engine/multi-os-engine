@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class ES1 {
-    @Generated
-    private ES1() {
-    }
-
     @Generated public static final int VERSION_ES_CM_1_0 = 0x00000001;
     @Generated public static final int VERSION_ES_CL_1_0 = 0x00000001;
     @Generated public static final int VERSION_ES_CM_1_1 = 0x00000001;
@@ -540,4 +536,8 @@ public final class ES1 {
     @Generated public static final int STENCIL_INDEX8_OES = 0x00008D48;
     @Generated public static final int MIRRORED_REPEAT_OES = 0x00008370;
     @Generated public static final int VERTEX_ARRAY_BINDING_OES = 0x000085B5;
+
+    @Generated
+    private ES1() {
+    }
 }

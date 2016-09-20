@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class acl_flag_t {
-    @Generated
-    private acl_flag_t() {
-    }
-
     @Generated public static final int ACL_FLAG_DEFER_INHERIT = 0x00000001;
     @Generated public static final int ACL_FLAG_NO_INHERIT = 0x00020000;
     @Generated public static final int ACL_ENTRY_INHERITED = 0x00000010;
@@ -31,4 +27,8 @@ public final class acl_flag_t {
     @Generated public static final int ACL_ENTRY_DIRECTORY_INHERIT = 0x00000040;
     @Generated public static final int ACL_ENTRY_LIMIT_INHERIT = 0x00000080;
     @Generated public static final int ACL_ENTRY_ONLY_INHERIT = 0x00000100;
+
+    @Generated
+    private acl_flag_t() {
+    }
 }

@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITableViewCellAccessoryType {
-    @Generated
-    private UITableViewCellAccessoryType() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long DisclosureIndicator = 0x0000000000000001L;
     @Generated @NInt public static final long DetailDisclosureButton = 0x0000000000000002L;
     @Generated @NInt public static final long Checkmark = 0x0000000000000003L;
     @Generated @NInt public static final long DetailButton = 0x0000000000000004L;
+
+    @Generated
+    private UITableViewCellAccessoryType() {
+    }
 }

@@ -26,11 +26,11 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure()
 public final class KernVersion0Header extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public KernVersion0Header() {

@@ -55,78 +55,10 @@ public class CKNotification extends NSObject {
         super(peer);
     }
 
-    /**
-     * alertActionLocalizationKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/alertActionLocalizationKey">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alertActionLocalizationKey")
-    public native String alertActionLocalizationKey();
-
-    /**
-     * alertBody</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/alertBody">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alertBody")
-    public native String alertBody();
-
-    /**
-     * alertLaunchImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/alertLaunchImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alertLaunchImage")
-    public native String alertLaunchImage();
-
-    /**
-     * alertLocalizationArgs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/alertLocalizationArgs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alertLocalizationArgs")
-    public native NSArray<String> alertLocalizationArgs();
-
-    /**
-     * alertLocalizationKey</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/alertLocalizationKey">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alertLocalizationKey")
-    public native String alertLocalizationKey();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native CKNotification alloc();
-
-    /**
-     * badge</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/badge">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("badge")
-    public native NSNumber badge();
-
-    /**
-     * containerIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/containerIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containerIdentifier")
-    public native String containerIdentifier();
-
-    @Generated
-    @Selector("init")
-    public native CKNotification init();
-
-    /**
-     * isPruned</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/isPruned">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPruned")
-    public native boolean isPruned();
 
     /**
      * notificationFromRemoteNotificationDictionary:</br>
@@ -136,47 +68,6 @@ public class CKNotification extends NSObject {
     @Selector("notificationFromRemoteNotificationDictionary:")
     public static native CKNotification notificationFromRemoteNotificationDictionary(
             NSDictionary<String, ? extends NSObject> notificationDictionary);
-
-    /**
-     * notificationID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/notificationID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("notificationID")
-    public native CKNotificationID notificationID();
-
-    /**
-     * notificationType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/notificationType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("notificationType")
-    @NInt
-    public native long notificationType();
-
-    /**
-     * soundName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/soundName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("soundName")
-    public native String soundName();
-
-    /**
-     * category</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/category">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("category")
-    public native String category();
-
-    /**
-     * subscriptionID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/subscriptionID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subscriptionID")
-    public native String subscriptionID();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -277,4 +168,113 @@ public class CKNotification extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * alertActionLocalizationKey</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/alertActionLocalizationKey">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alertActionLocalizationKey")
+    public native String alertActionLocalizationKey();
+
+    /**
+     * alertBody</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/alertBody">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alertBody")
+    public native String alertBody();
+
+    /**
+     * alertLaunchImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/alertLaunchImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alertLaunchImage")
+    public native String alertLaunchImage();
+
+    /**
+     * alertLocalizationArgs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/alertLocalizationArgs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alertLocalizationArgs")
+    public native NSArray<String> alertLocalizationArgs();
+
+    /**
+     * alertLocalizationKey</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/alertLocalizationKey">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alertLocalizationKey")
+    public native String alertLocalizationKey();
+
+    /**
+     * badge</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/badge">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("badge")
+    public native NSNumber badge();
+
+    /**
+     * containerIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/containerIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containerIdentifier")
+    public native String containerIdentifier();
+
+    @Generated
+    @Selector("init")
+    public native CKNotification init();
+
+    /**
+     * isPruned</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/isPruned">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPruned")
+    public native boolean isPruned();
+
+    /**
+     * notificationID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/notificationID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("notificationID")
+    public native CKNotificationID notificationID();
+
+    /**
+     * notificationType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/notificationType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("notificationType")
+    @NInt
+    public native long notificationType();
+
+    /**
+     * soundName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/soundName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("soundName")
+    public native String soundName();
+
+    /**
+     * category</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/category">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("category")
+    public native String category();
+
+    /**
+     * subscriptionID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKNotification_class/index.html#//apple_ref/occ/instp/CKNotification/subscriptionID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subscriptionID")
+    public native String subscriptionID();
 }

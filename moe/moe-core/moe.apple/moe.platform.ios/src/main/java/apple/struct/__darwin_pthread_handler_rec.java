@@ -32,11 +32,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class __darwin_pthread_handler_rec extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public __darwin_pthread_handler_rec() {
@@ -62,13 +62,6 @@ public final class __darwin_pthread_handler_rec extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void set__routine(@FunctionPtr(name = "call___routine") Function___routine value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function___routine {
-        @Generated
-        void call___routine(VoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr __arg();
@@ -91,4 +84,11 @@ public final class __darwin_pthread_handler_rec extends StructObject {
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call___routine")
     public native Function___routine __routine();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function___routine {
+        @Generated
+        void call___routine(VoidPtr arg0);
+    }
 }

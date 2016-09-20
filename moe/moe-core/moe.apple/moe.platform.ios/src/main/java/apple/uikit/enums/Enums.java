@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int UISegmentedControlNoSegment = 0xFFFFFFFF;
     @Generated public static final int UIPrintingNotAvailableError = 0x00000001;
     @Generated public static final int UIPrintNoContentError = 0x00000002;
@@ -36,4 +32,8 @@ public final class Enums {
     @Generated public static final int NSControlCharacterLineBreakAction = 0x00000008;
     @Generated public static final int NSControlCharacterParagraphBreakAction = 0x00000010;
     @Generated public static final int NSControlCharacterContainerBreakAction = 0x00000020;
+
+    @Generated
+    private Enums() {
+    }
 }

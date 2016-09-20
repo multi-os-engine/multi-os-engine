@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class AVAudioSessionSetActiveOptions {
+    @Generated @NUInt public static final long AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation = 0x0000000000000001L;
+
     @Generated
     private AVAudioSessionSetActiveOptions() {
     }
-
-    @Generated @NUInt public static final long AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation = 0x0000000000000001L;
 }

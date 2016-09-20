@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SecPadding {
-    @Generated
-    private SecPadding() {
-    }
-
     @Generated public static final int None = 0x00000000;
     @Generated public static final int PKCS1 = 0x00000001;
     @Generated public static final int OAEP = 0x00000002;
@@ -35,4 +31,8 @@ public final class SecPadding {
     @Generated public static final int PKCS1SHA256 = 0x00008004;
     @Generated public static final int PKCS1SHA384 = 0x00008005;
     @Generated public static final int PKCS1SHA512 = 0x00008006;
+
+    @Generated
+    private SecPadding() {
+    }
 }

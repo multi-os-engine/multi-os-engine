@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class PKPaymentPassActivationState {
-    @Generated
-    private PKPaymentPassActivationState() {
-    }
-
     @Generated @NUInt public static final long Activated = 0x0000000000000000L;
     @Generated @NUInt public static final long RequiresActivation = 0x0000000000000001L;
     @Generated @NUInt public static final long Activating = 0x0000000000000002L;
     @Generated @NUInt public static final long Suspended = 0x0000000000000003L;
     @Generated @NUInt public static final long Deactivated = 0x0000000000000004L;
+
+    @Generated
+    private PKPaymentPassActivationState() {
+    }
 }

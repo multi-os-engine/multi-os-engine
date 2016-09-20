@@ -105,13 +105,6 @@ public final class SystemConfiguration {
             @FunctionPtr(name = "call_SCNetworkReachabilitySetCallback") Function_SCNetworkReachabilitySetCallback callout,
             @UncertainArgument("Options: reference, array Fallback: reference") SCNetworkReachabilityContext context);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_SCNetworkReachabilitySetCallback {
-        @Generated
-        void call_SCNetworkReachabilitySetCallback(VoidPtr arg0, int arg1, VoidPtr arg2);
-    }
-
     /**
      * SCNetworkReachabilityScheduleWithRunLoop</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SystemConfiguration/Reference/SCNetworkReachabilityRef/index.html#//apple_ref/c/func/SCNetworkReachabilityScheduleWithRunLoop">iOS Dev Center</a>
@@ -166,4 +159,11 @@ public final class SystemConfiguration {
     @Generated
     @CVariable()
     public static native CFStringRef kCFErrorDomainSystemConfiguration();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_SCNetworkReachabilitySetCallback {
+        @Generated
+        void call_SCNetworkReachabilitySetCallback(VoidPtr arg0, int arg1, VoidPtr arg2);
+    }
 }

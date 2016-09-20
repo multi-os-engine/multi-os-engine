@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFStringTokenizerTokenType {
-    @Generated
-    private CFStringTokenizerTokenType() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long Normal = 0x0000000000000001L;
     @Generated @NUInt public static final long HasSubTokensMask = 0x0000000000000002L;
@@ -32,4 +28,7 @@ public final class CFStringTokenizerTokenType {
     @Generated @NUInt public static final long HasHasNumbersMask = 0x0000000000000008L;
     @Generated @NUInt public static final long HasNonLettersMask = 0x0000000000000010L;
     @Generated @NUInt public static final long IsCJWordMask = 0x0000000000000020L;
+    @Generated
+    private CFStringTokenizerTokenType() {
+    }
 }

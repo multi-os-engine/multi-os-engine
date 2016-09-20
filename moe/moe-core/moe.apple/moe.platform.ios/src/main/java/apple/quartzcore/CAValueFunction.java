@@ -60,10 +60,6 @@ public class CAValueFunction extends NSObject implements NSCoding {
     @Selector("alloc")
     public static native CAValueFunction alloc();
 
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
     /**
      * functionWithName:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAValueFunction_class/index.html#//apple_ref/occ/clm/CAValueFunction/functionWithName:">iOS Dev Center</a>
@@ -71,22 +67,6 @@ public class CAValueFunction extends NSObject implements NSCoding {
     @Generated
     @Selector("functionWithName:")
     public static native CAValueFunction functionWithName(String name);
-
-    @Generated
-    @Selector("init")
-    public native CAValueFunction init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAValueFunction initWithCoder(NSCoder aDecoder);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAValueFunction_class/index.html#//apple_ref/occ/instp/CAValueFunction/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -187,4 +167,24 @@ public class CAValueFunction extends NSObject implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CAValueFunction init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAValueFunction initWithCoder(NSCoder aDecoder);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAValueFunction_class/index.html#//apple_ref/occ/instp/CAValueFunction/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
 }

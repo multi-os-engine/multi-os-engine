@@ -60,117 +60,13 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     }
 
     @Generated
-    @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNMorpher alloc();
 
     @Generated
-    @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
-
-    @Generated
-    @Selector("animationKeys")
-    public native NSArray<String> animationKeys();
-
-    /**
-     * calculationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/calculationMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("calculationMode")
-    @NInt
-    public native long calculationMode();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native SCNMorpher init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNMorpher initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
-
-    @Generated
-    @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
-
-    @Generated
-    @Selector("removeAllAnimations")
-    public native void removeAllAnimations();
-
-    @Generated
-    @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
-
-    @Generated
-    @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
-
-    @Generated
-    @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
-
-    /**
-     * calculationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/calculationMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCalculationMode:")
-    public native void setCalculationMode(@NInt long value);
-
-    /**
-     * targets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/targets">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTargets:")
-    public native void setTargets(NSArray<? extends SCNGeometry> value);
-
-    /**
-     * setWeight:forTargetAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instm/SCNMorpher/setWeight:forTargetAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWeight:forTargetAtIndex:")
-    public native void setWeightForTargetAtIndex(@NFloat double weight, @NUInt long targetIndex);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * targets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/targets">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("targets")
-    public native NSArray<? extends SCNGeometry> targets();
-
-    /**
-     * weightForTargetAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instm/SCNMorpher/weightForTargetAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("weightForTargetAtIndex:")
-    @NFloat
-    public native double weightForTargetAtIndex(@NUInt long targetIndex);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -271,4 +167,108 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("addAnimation:forKey:")
+    public native void addAnimationForKey(CAAnimation animation, String key);
+
+    @Generated
+    @Selector("animationForKey:")
+    public native CAAnimation animationForKey(String key);
+
+    @Generated
+    @Selector("animationKeys")
+    public native NSArray<String> animationKeys();
+
+    /**
+     * calculationMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/calculationMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("calculationMode")
+    @NInt
+    public native long calculationMode();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SCNMorpher init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNMorpher initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("isAnimationForKeyPaused:")
+    public native boolean isAnimationForKeyPaused(String key);
+
+    @Generated
+    @Selector("pauseAnimationForKey:")
+    public native void pauseAnimationForKey(String key);
+
+    @Generated
+    @Selector("removeAllAnimations")
+    public native void removeAllAnimations();
+
+    @Generated
+    @Selector("removeAnimationForKey:")
+    public native void removeAnimationForKey(String key);
+
+    @Generated
+    @Selector("removeAnimationForKey:fadeOutDuration:")
+    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("resumeAnimationForKey:")
+    public native void resumeAnimationForKey(String key);
+
+    /**
+     * calculationMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/calculationMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCalculationMode:")
+    public native void setCalculationMode(@NInt long value);
+
+    /**
+     * targets</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/targets">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTargets:")
+    public native void setTargets(NSArray<? extends SCNGeometry> value);
+
+    /**
+     * setWeight:forTargetAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instm/SCNMorpher/setWeight:forTargetAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWeight:forTargetAtIndex:")
+    public native void setWeightForTargetAtIndex(@NFloat double weight, @NUInt long targetIndex);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * targets</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instp/SCNMorpher/targets">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("targets")
+    public native NSArray<? extends SCNGeometry> targets();
+
+    /**
+     * weightForTargetAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNMorpher_Class/index.html#//apple_ref/occ/instm/SCNMorpher/weightForTargetAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("weightForTargetAtIndex:")
+    @NFloat
+    public native double weightForTargetAtIndex(@NUInt long targetIndex);
 }

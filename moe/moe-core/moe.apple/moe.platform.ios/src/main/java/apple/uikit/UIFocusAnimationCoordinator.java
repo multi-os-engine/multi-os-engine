@@ -54,38 +54,10 @@ public class UIFocusAnimationCoordinator extends NSObject {
         super(peer);
     }
 
-    /**
-     * addCoordinatedAnimations:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusAnimationCoordinator_Class/index.html#//apple_ref/occ/instm/UIFocusAnimationCoordinator/addCoordinatedAnimations:completion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addCoordinatedAnimations:completion:")
-    public native void addCoordinatedAnimationsCompletion(
-            @ObjCBlock(name = "call_addCoordinatedAnimationsCompletion_0") Block_addCoordinatedAnimationsCompletion_0 animations,
-            @ObjCBlock(name = "call_addCoordinatedAnimationsCompletion_1") Block_addCoordinatedAnimationsCompletion_1 completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addCoordinatedAnimationsCompletion_0 {
-        @Generated
-        void call_addCoordinatedAnimationsCompletion_0();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addCoordinatedAnimationsCompletion_1 {
-        @Generated
-        void call_addCoordinatedAnimationsCompletion_1();
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIFocusAnimationCoordinator alloc();
-
-    @Generated
-    @Selector("init")
-    public native UIFocusAnimationCoordinator init();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -186,4 +158,32 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addCoordinatedAnimations:completion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFocusAnimationCoordinator_Class/index.html#//apple_ref/occ/instm/UIFocusAnimationCoordinator/addCoordinatedAnimations:completion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addCoordinatedAnimations:completion:")
+    public native void addCoordinatedAnimationsCompletion(
+            @ObjCBlock(name = "call_addCoordinatedAnimationsCompletion_0") Block_addCoordinatedAnimationsCompletion_0 animations,
+            @ObjCBlock(name = "call_addCoordinatedAnimationsCompletion_1") Block_addCoordinatedAnimationsCompletion_1 completion);
+
+    @Generated
+    @Selector("init")
+    public native UIFocusAnimationCoordinator init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addCoordinatedAnimationsCompletion_0 {
+        @Generated
+        void call_addCoordinatedAnimationsCompletion_0();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addCoordinatedAnimationsCompletion_1 {
+        @Generated
+        void call_addCoordinatedAnimationsCompletion_1();
+    }
 }

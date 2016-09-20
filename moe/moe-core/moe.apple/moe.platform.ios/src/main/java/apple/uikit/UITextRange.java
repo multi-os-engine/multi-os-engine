@@ -58,34 +58,6 @@ public class UITextRange extends NSObject {
     @Selector("alloc")
     public static native UITextRange alloc();
 
-    /**
-     * end</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextRange_Class/index.html#//apple_ref/occ/instp/UITextRange/end">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("end")
-    public native UITextPosition end();
-
-    @Generated
-    @Selector("init")
-    public native UITextRange init();
-
-    /**
-     * empty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextRange_Class/index.html#//apple_ref/occ/instp/UITextRange/empty">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEmpty")
-    public native boolean isEmpty();
-
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextRange_Class/index.html#//apple_ref/occ/instp/UITextRange/start">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("start")
-    public native UITextPosition start();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -185,4 +157,32 @@ public class UITextRange extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * end</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextRange_Class/index.html#//apple_ref/occ/instp/UITextRange/end">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("end")
+    public native UITextPosition end();
+
+    @Generated
+    @Selector("init")
+    public native UITextRange init();
+
+    /**
+     * empty</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextRange_Class/index.html#//apple_ref/occ/instp/UITextRange/empty">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEmpty")
+    public native boolean isEmpty();
+
+    /**
+     * start</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextRange_Class/index.html#//apple_ref/occ/instp/UITextRange/start">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("start")
+    public native UITextPosition start();
 }

@@ -57,26 +57,10 @@ public class AVAssetReader extends NSObject {
         super(peer);
     }
 
-    /**
-     * addOutput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instm/AVAssetReader/addOutput:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addOutput:")
-    public native void addOutput(AVAssetReaderOutput output);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetReader alloc();
-
-    /**
-     * asset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/asset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("asset")
-    public native AVAsset asset();
 
     /**
      * assetReaderWithAsset:error:</br>
@@ -85,84 +69,6 @@ public class AVAssetReader extends NSObject {
     @Generated
     @Selector("assetReaderWithAsset:error:")
     public static native AVAssetReader assetReaderWithAssetError(AVAsset asset, Ptr<NSError> outError);
-
-    /**
-     * canAddOutput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instm/AVAssetReader/canAddOutput:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("canAddOutput:")
-    public native boolean canAddOutput(AVAssetReaderOutput output);
-
-    /**
-     * cancelReading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instm/AVAssetReader/cancelReading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelReading")
-    public native void cancelReading();
-
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/error">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("error")
-    public native NSError error();
-
-    @Generated
-    @Selector("init")
-    public native AVAssetReader init();
-
-    /**
-     * initWithAsset:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instm/AVAssetReader/initWithAsset:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAsset:error:")
-    public native AVAssetReader initWithAssetError(AVAsset asset, Ptr<NSError> outError);
-
-    /**
-     * outputs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/outputs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("outputs")
-    public native NSArray<? extends AVAssetReaderOutput> outputs();
-
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/timeRange">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTimeRange:")
-    public native void setTimeRange(@ByValue CMTimeRange value);
-
-    /**
-     * startReading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instm/AVAssetReader/startReading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startReading")
-    public native boolean startReading();
-
-    /**
-     * status</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/status">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("status")
-    @NInt
-    public native long status();
-
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/timeRange">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeRange")
-    @ByValue
-    public native CMTimeRange timeRange();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -263,4 +169,98 @@ public class AVAssetReader extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addOutput:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instm/AVAssetReader/addOutput:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addOutput:")
+    public native void addOutput(AVAssetReaderOutput output);
+
+    /**
+     * asset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/asset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("asset")
+    public native AVAsset asset();
+
+    /**
+     * canAddOutput:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instm/AVAssetReader/canAddOutput:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("canAddOutput:")
+    public native boolean canAddOutput(AVAssetReaderOutput output);
+
+    /**
+     * cancelReading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instm/AVAssetReader/cancelReading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelReading")
+    public native void cancelReading();
+
+    /**
+     * error</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/error">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("error")
+    public native NSError error();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetReader init();
+
+    /**
+     * initWithAsset:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instm/AVAssetReader/initWithAsset:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAsset:error:")
+    public native AVAssetReader initWithAssetError(AVAsset asset, Ptr<NSError> outError);
+
+    /**
+     * outputs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/outputs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("outputs")
+    public native NSArray<? extends AVAssetReaderOutput> outputs();
+
+    /**
+     * timeRange</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/timeRange">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTimeRange:")
+    public native void setTimeRange(@ByValue CMTimeRange value);
+
+    /**
+     * startReading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instm/AVAssetReader/startReading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startReading")
+    public native boolean startReading();
+
+    /**
+     * status</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/status">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("status")
+    @NInt
+    public native long status();
+
+    /**
+     * timeRange</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReader_Class/index.html#//apple_ref/occ/instp/AVAssetReader/timeRange">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeRange")
+    @ByValue
+    public native CMTimeRange timeRange();
 }

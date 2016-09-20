@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIEventSubtype {
-    @Generated
-    private UIEventSubtype() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long MotionShake = 0x0000000000000001L;
     @Generated @NInt public static final long RemoteControlPlay = 0x0000000000000064L;
@@ -37,4 +33,8 @@ public final class UIEventSubtype {
     @Generated @NInt public static final long RemoteControlEndSeekingBackward = 0x000000000000006BL;
     @Generated @NInt public static final long RemoteControlBeginSeekingForward = 0x000000000000006CL;
     @Generated @NInt public static final long RemoteControlEndSeekingForward = 0x000000000000006DL;
+
+    @Generated
+    private UIEventSubtype() {
+    }
 }

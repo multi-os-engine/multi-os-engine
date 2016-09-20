@@ -27,11 +27,11 @@ import org.moe.natj.general.ptr.BytePtr;
 @Generated
 @Structure()
 public final class __sbuf extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public __sbuf() {

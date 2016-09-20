@@ -53,86 +53,10 @@ public class NEHotspotNetwork extends NSObject {
         super(peer);
     }
 
-    /**
-     * BSSID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/BSSID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("BSSID")
-    public native String BSSID();
-
-    /**
-     * SSID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/SSID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("SSID")
-    public native String SSID();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NEHotspotNetwork alloc();
-
-    /**
-     * autoJoined</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/autoJoined">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("didAutoJoin")
-    public native boolean didAutoJoin();
-
-    /**
-     * justJoined</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/justJoined">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("didJustJoin")
-    public native boolean didJustJoin();
-
-    @Generated
-    @Selector("init")
-    public native NEHotspotNetwork init();
-
-    /**
-     * chosenHelper</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/chosenHelper">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isChosenHelper")
-    public native boolean isChosenHelper();
-
-    /**
-     * secure</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/secure">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isSecure")
-    public native boolean isSecure();
-
-    /**
-     * setConfidence:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instm/NEHotspotNetwork/setConfidence:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setConfidence:")
-    public native void setConfidence(@NInt long confidence);
-
-    /**
-     * setPassword:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instm/NEHotspotNetwork/setPassword:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPassword:")
-    public native void setPassword(String password);
-
-    /**
-     * signalStrength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/signalStrength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("signalStrength")
-    public native double signalStrength();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -233,4 +157,80 @@ public class NEHotspotNetwork extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * BSSID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/BSSID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("BSSID")
+    public native String BSSID();
+
+    /**
+     * SSID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/SSID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("SSID")
+    public native String SSID();
+
+    /**
+     * autoJoined</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/autoJoined">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("didAutoJoin")
+    public native boolean didAutoJoin();
+
+    /**
+     * justJoined</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/justJoined">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("didJustJoin")
+    public native boolean didJustJoin();
+
+    @Generated
+    @Selector("init")
+    public native NEHotspotNetwork init();
+
+    /**
+     * chosenHelper</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/chosenHelper">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isChosenHelper")
+    public native boolean isChosenHelper();
+
+    /**
+     * secure</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/secure">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isSecure")
+    public native boolean isSecure();
+
+    /**
+     * setConfidence:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instm/NEHotspotNetwork/setConfidence:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setConfidence:")
+    public native void setConfidence(@NInt long confidence);
+
+    /**
+     * setPassword:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instm/NEHotspotNetwork/setPassword:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPassword:")
+    public native void setPassword(String password);
+
+    /**
+     * signalStrength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEHotspotNetworkClassRef/index.html#//apple_ref/occ/instp/NEHotspotNetwork/signalStrength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("signalStrength")
+    public native double signalStrength();
 }

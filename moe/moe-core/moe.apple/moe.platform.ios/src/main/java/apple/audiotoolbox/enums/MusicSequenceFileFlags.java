@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class MusicSequenceFileFlags {
+    @Generated public static final int Default = 0x00000000;
+    @Generated public static final int EraseFile = 0x00000001;
+
     @Generated
     private MusicSequenceFileFlags() {
     }
-
-    @Generated public static final int Default = 0x00000000;
-    @Generated public static final int EraseFile = 0x00000001;
 }

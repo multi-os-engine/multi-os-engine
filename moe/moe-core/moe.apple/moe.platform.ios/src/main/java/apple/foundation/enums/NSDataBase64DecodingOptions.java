@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDataBase64DecodingOptions {
+    @Generated @NUInt public static final long NSDataBase64DecodingIgnoreUnknownCharacters = 0x0000000000000001L;
+
     @Generated
     private NSDataBase64DecodingOptions() {
     }
-
-    @Generated @NUInt public static final long NSDataBase64DecodingIgnoreUnknownCharacters = 0x0000000000000001L;
 }

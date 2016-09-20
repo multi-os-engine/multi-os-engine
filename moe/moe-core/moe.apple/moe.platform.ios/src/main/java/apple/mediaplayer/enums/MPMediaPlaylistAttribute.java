@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MPMediaPlaylistAttribute {
-    @Generated
-    private MPMediaPlaylistAttribute() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long OnTheGo = 0x0000000000000001L;
     @Generated @NUInt public static final long Smart = 0x0000000000000002L;
     @Generated @NUInt public static final long Genius = 0x0000000000000004L;
+
+    @Generated
+    private MPMediaPlaylistAttribute() {
+    }
 }

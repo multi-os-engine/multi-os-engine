@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class vDSP_DFT_Direction {
+    @Generated public static final int FORWARD = 0x00000001;
+    @Generated public static final int INVERSE = 0xFFFFFFFF;
+
     @Generated
     private vDSP_DFT_Direction() {
     }
-
-    @Generated public static final int FORWARD = 0x00000001;
-    @Generated public static final int INVERSE = 0xFFFFFFFF;
 }

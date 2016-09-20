@@ -56,161 +56,10 @@ public class UIAccessibilityElement extends NSObject implements UIAccessibilityI
         super(peer);
     }
 
-    /**
-     * accessibilityContainer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityContainer">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accessibilityContainer")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object accessibilityContainer();
-
-    /**
-     * accessibilityFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityFrame">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accessibilityFrame")
-    @ByValue
-    public native CGRect accessibilityFrame();
-
-    /**
-     * accessibilityHint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityHint">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accessibilityHint")
-    public native String accessibilityHint();
-
-    @Generated
-    @Selector("accessibilityIdentifier")
-    public native String accessibilityIdentifier();
-
-    /**
-     * accessibilityLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityLabel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accessibilityLabel")
-    public native String accessibilityLabel();
-
-    /**
-     * accessibilityTraits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityTraits">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accessibilityTraits")
-    public native long accessibilityTraits();
-
-    /**
-     * accessibilityValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accessibilityValue")
-    public native String accessibilityValue();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIAccessibilityElement alloc();
-
-    @Generated
-    @Selector("init")
-    public native UIAccessibilityElement init();
-
-    /**
-     * initWithAccessibilityContainer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instm/UIAccessibilityElement/initWithAccessibilityContainer:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAccessibilityContainer:")
-    public native UIAccessibilityElement initWithAccessibilityContainer(
-            @Mapped(ObjCObjectMapper.class) Object container);
-
-    /**
-     * isAccessibilityElement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/isAccessibilityElement">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isAccessibilityElement")
-    public native boolean isAccessibilityElement();
-
-    /**
-     * accessibilityContainer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityContainer">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityContainer:")
-    public native void setAccessibilityContainer_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
-
-    /**
-     * accessibilityContainer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityContainer">iOS Dev Center</a>
-     */
-    @Generated
-    public void setAccessibilityContainer(@Mapped(ObjCObjectMapper.class) Object value) {
-        Object __old = accessibilityContainer();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setAccessibilityContainer_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * accessibilityFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityFrame">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityFrame:")
-    public native void setAccessibilityFrame(@ByValue CGRect value);
-
-    /**
-     * accessibilityHint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityHint">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityHint:")
-    public native void setAccessibilityHint(String value);
-
-    @Generated
-    @Selector("setAccessibilityIdentifier:")
-    public native void setAccessibilityIdentifier(String value);
-
-    /**
-     * accessibilityLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityLabel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityLabel:")
-    public native void setAccessibilityLabel(String value);
-
-    /**
-     * accessibilityTraits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityTraits">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityTraits:")
-    public native void setAccessibilityTraits(long value);
-
-    /**
-     * accessibilityValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityValue:")
-    public native void setAccessibilityValue(String value);
-
-    /**
-     * isAccessibilityElement</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/isAccessibilityElement">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIsAccessibilityElement:")
-    public native void setIsAccessibilityElement(boolean value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -311,4 +160,155 @@ public class UIAccessibilityElement extends NSObject implements UIAccessibilityI
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * accessibilityContainer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityContainer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accessibilityContainer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object accessibilityContainer();
+
+    /**
+     * accessibilityFrame</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityFrame">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accessibilityFrame")
+    @ByValue
+    public native CGRect accessibilityFrame();
+
+    /**
+     * accessibilityHint</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityHint">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accessibilityHint")
+    public native String accessibilityHint();
+
+    @Generated
+    @Selector("accessibilityIdentifier")
+    public native String accessibilityIdentifier();
+
+    /**
+     * accessibilityLabel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityLabel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accessibilityLabel")
+    public native String accessibilityLabel();
+
+    /**
+     * accessibilityTraits</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityTraits">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accessibilityTraits")
+    public native long accessibilityTraits();
+
+    /**
+     * accessibilityValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accessibilityValue")
+    public native String accessibilityValue();
+
+    @Generated
+    @Selector("init")
+    public native UIAccessibilityElement init();
+
+    /**
+     * initWithAccessibilityContainer:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instm/UIAccessibilityElement/initWithAccessibilityContainer:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAccessibilityContainer:")
+    public native UIAccessibilityElement initWithAccessibilityContainer(
+            @Mapped(ObjCObjectMapper.class) Object container);
+
+    /**
+     * isAccessibilityElement</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/isAccessibilityElement">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isAccessibilityElement")
+    public native boolean isAccessibilityElement();
+
+    /**
+     * accessibilityContainer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityContainer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityContainer:")
+    public native void setAccessibilityContainer_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * accessibilityContainer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityContainer">iOS Dev Center</a>
+     */
+    @Generated
+    public void setAccessibilityContainer(@Mapped(ObjCObjectMapper.class) Object value) {
+        Object __old = accessibilityContainer();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setAccessibilityContainer_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * accessibilityFrame</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityFrame">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityFrame:")
+    public native void setAccessibilityFrame(@ByValue CGRect value);
+
+    /**
+     * accessibilityHint</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityHint">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityHint:")
+    public native void setAccessibilityHint(String value);
+
+    @Generated
+    @Selector("setAccessibilityIdentifier:")
+    public native void setAccessibilityIdentifier(String value);
+
+    /**
+     * accessibilityLabel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityLabel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityLabel:")
+    public native void setAccessibilityLabel(String value);
+
+    /**
+     * accessibilityTraits</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityTraits">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityTraits:")
+    public native void setAccessibilityTraits(long value);
+
+    /**
+     * accessibilityValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/accessibilityValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityValue:")
+    public native void setAccessibilityValue(String value);
+
+    /**
+     * isAccessibilityElement</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityElement_Class/index.html#//apple_ref/occ/instp/UIAccessibilityElement/isAccessibilityElement">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIsAccessibilityElement:")
+    public native void setIsAccessibilityElement(boolean value);
 }

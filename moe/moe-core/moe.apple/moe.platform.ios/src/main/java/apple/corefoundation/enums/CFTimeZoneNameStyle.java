@@ -21,14 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFTimeZoneNameStyle {
-    @Generated
-    private CFTimeZoneNameStyle() {
-    }
-
     @Generated @NInt public static final long Standard = 0x0000000000000000L;
     @Generated @NInt public static final long ShortStandard = 0x0000000000000001L;
     @Generated @NInt public static final long DaylightSaving = 0x0000000000000002L;
     @Generated @NInt public static final long ShortDaylightSaving = 0x0000000000000003L;
     @Generated @NInt public static final long Generic = 0x0000000000000004L;
     @Generated @NInt public static final long ShortGeneric = 0x0000000000000005L;
+    @Generated
+    private CFTimeZoneNameStyle() {
+    }
 }

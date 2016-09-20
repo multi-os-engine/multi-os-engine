@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CBLAS_TRANSPOSE {
-    @Generated
-    private CBLAS_TRANSPOSE() {
-    }
-
     @Generated public static final int CblasNoTrans = 0x0000006F;
     @Generated public static final int CblasTrans = 0x00000070;
     @Generated public static final int CblasConjTrans = 0x00000071;
     @Generated public static final int AtlasConj = 0x00000072;
+
+    @Generated
+    private CBLAS_TRANSPOSE() {
+    }
 }

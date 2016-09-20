@@ -57,27 +57,10 @@ public class CMAccelerometerData extends CMLogItem {
         super(peer);
     }
 
-    /**
-     * acceleration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAccelerometerData_Class/index.html#//apple_ref/occ/instp/CMAccelerometerData/acceleration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("acceleration")
-    @ByValue
-    public native CMAcceleration acceleration();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native CMAccelerometerData alloc();
-
-    @Generated
-    @Selector("init")
-    public native CMAccelerometerData init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMAccelerometerData initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -179,13 +162,30 @@ public class CMAccelerometerData extends CMLogItem {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * acceleration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAccelerometerData_Class/index.html#//apple_ref/occ/instp/CMAccelerometerData/acceleration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("acceleration")
+    @ByValue
+    public native CMAcceleration acceleration();
+
+    @Generated
+    @Selector("init")
+    public native CMAccelerometerData init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CMAccelerometerData initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

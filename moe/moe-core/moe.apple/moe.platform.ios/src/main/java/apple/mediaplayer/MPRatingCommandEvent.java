@@ -59,18 +59,6 @@ public class MPRatingCommandEvent extends MPRemoteCommandEvent {
     public static native MPRatingCommandEvent alloc();
 
     @Generated
-    @Selector("init")
-    public native MPRatingCommandEvent init();
-
-    /**
-     * rating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPRatingCommandEvent/rating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rating")
-    public native float rating();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class MPRatingCommandEvent extends MPRemoteCommandEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPRatingCommandEvent init();
+
+    /**
+     * rating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPRatingCommandEvent/rating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rating")
+    public native float rating();
 }

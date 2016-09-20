@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class SCNAntialiasingMode {
-    @Generated
-    private SCNAntialiasingMode() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long Multisampling2X = 0x0000000000000001L;
     @Generated @NUInt public static final long Multisampling4X = 0x0000000000000002L;
+
+    @Generated
+    private SCNAntialiasingMode() {
+    }
 }

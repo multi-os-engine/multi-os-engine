@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHLivePhotoViewPlaybackStyle {
-    @Generated
-    private PHLivePhotoViewPlaybackStyle() {
-    }
-
     @Generated @NInt public static final long Undefined = 0x0000000000000000L;
     @Generated @NInt public static final long Full = 0x0000000000000001L;
     @Generated @NInt public static final long Hint = 0x0000000000000002L;
+
+    @Generated
+    private PHLivePhotoViewPlaybackStyle() {
+    }
 }

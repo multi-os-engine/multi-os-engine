@@ -68,6 +68,178 @@ public class SKUniform extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native SKUniform alloc();
 
+    /**
+     * uniformWithName:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniformWithName:")
+    public static native SKUniform uniformWithName(String name);
+
+    /**
+     * uniformWithName:float:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:float:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniformWithName:float:")
+    public static native SKUniform uniformWithNameFloat(String name, float value);
+
+    /**
+     * uniformWithName:floatMatrix2:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatMatrix2:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniformWithName:floatMatrix2:")
+    public static native SKUniform uniformWithNameFloatMatrix2(String name, @ByValue GLKMatrix2 value);
+
+    /**
+     * uniformWithName:floatMatrix3:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatMatrix3:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniformWithName:floatMatrix3:")
+    public static native SKUniform uniformWithNameFloatMatrix3(String name, @ByValue GLKMatrix3 value);
+
+    /**
+     * uniformWithName:floatMatrix4:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatMatrix4:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniformWithName:floatMatrix4:")
+    public static native SKUniform uniformWithNameFloatMatrix4(String name, @ByValue GLKMatrix4 value);
+
+    /**
+     * uniformWithName:floatVector2:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatVector2:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniformWithName:floatVector2:")
+    public static native SKUniform uniformWithNameFloatVector2(String name, @ByValue GLKVector2 value);
+
+    /**
+     * uniformWithName:floatVector3:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatVector3:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniformWithName:floatVector3:")
+    public static native SKUniform uniformWithNameFloatVector3(String name, @ByValue GLKVector3 value);
+
+    /**
+     * uniformWithName:floatVector4:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatVector4:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniformWithName:floatVector4:")
+    public static native SKUniform uniformWithNameFloatVector4(String name, @ByValue GLKVector4 value);
+
+    /**
+     * uniformWithName:texture:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:texture:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniformWithName:texture:")
+    public static native SKUniform uniformWithNameTexture(String name, SKTexture texture);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     @Generated
     @Owned
     @Selector("copyWithZone:")
@@ -308,176 +480,4 @@ public class SKUniform extends NSObject implements NSCopying, NSCoding {
     @Selector("uniformType")
     @NInt
     public native long uniformType();
-
-    /**
-     * uniformWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniformWithName:")
-    public static native SKUniform uniformWithName(String name);
-
-    /**
-     * uniformWithName:float:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:float:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniformWithName:float:")
-    public static native SKUniform uniformWithNameFloat(String name, float value);
-
-    /**
-     * uniformWithName:floatMatrix2:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatMatrix2:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniformWithName:floatMatrix2:")
-    public static native SKUniform uniformWithNameFloatMatrix2(String name, @ByValue GLKMatrix2 value);
-
-    /**
-     * uniformWithName:floatMatrix3:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatMatrix3:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniformWithName:floatMatrix3:")
-    public static native SKUniform uniformWithNameFloatMatrix3(String name, @ByValue GLKMatrix3 value);
-
-    /**
-     * uniformWithName:floatMatrix4:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatMatrix4:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniformWithName:floatMatrix4:")
-    public static native SKUniform uniformWithNameFloatMatrix4(String name, @ByValue GLKMatrix4 value);
-
-    /**
-     * uniformWithName:floatVector2:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatVector2:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniformWithName:floatVector2:")
-    public static native SKUniform uniformWithNameFloatVector2(String name, @ByValue GLKVector2 value);
-
-    /**
-     * uniformWithName:floatVector3:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatVector3:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniformWithName:floatVector3:")
-    public static native SKUniform uniformWithNameFloatVector3(String name, @ByValue GLKVector3 value);
-
-    /**
-     * uniformWithName:floatVector4:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:floatVector4:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniformWithName:floatVector4:")
-    public static native SKUniform uniformWithNameFloatVector4(String name, @ByValue GLKVector4 value);
-
-    /**
-     * uniformWithName:texture:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKUniform_Ref/index.html#//apple_ref/occ/clm/SKUniform/uniformWithName:texture:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniformWithName:texture:")
-    public static native SKUniform uniformWithNameTexture(String name, SKTexture texture);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

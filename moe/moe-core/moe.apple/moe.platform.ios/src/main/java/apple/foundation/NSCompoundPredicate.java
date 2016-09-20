@@ -69,28 +69,6 @@ public class NSCompoundPredicate extends NSPredicate {
             NSArray<? extends NSPredicate> subpredicates);
 
     /**
-     * compoundPredicateType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/instp/NSCompoundPredicate/compoundPredicateType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("compoundPredicateType")
-    @NUInt
-    public native long compoundPredicateType();
-
-    @Generated
-    @Selector("init")
-    public native NSCompoundPredicate init();
-
-    /**
-     * initWithType:subpredicates:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/instm/NSCompoundPredicate/initWithType:subpredicates:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithType:subpredicates:")
-    public native NSCompoundPredicate initWithTypeSubpredicates(@NUInt long type,
-            NSArray<? extends NSPredicate> subpredicates);
-
-    /**
      * notPredicateWithSubpredicate:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/clm/NSCompoundPredicate/notPredicateWithSubpredicate:">iOS Dev Center</a>
      */
@@ -127,18 +105,6 @@ public class NSCompoundPredicate extends NSPredicate {
     @Generated
     @Selector("predicateWithValue:")
     public static native NSPredicate predicateWithValue(boolean value);
-
-    /**
-     * subpredicates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/instp/NSCompoundPredicate/subpredicates">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subpredicates")
-    public native NSArray<?> subpredicates();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSCompoundPredicate initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -240,13 +206,47 @@ public class NSCompoundPredicate extends NSPredicate {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * compoundPredicateType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/instp/NSCompoundPredicate/compoundPredicateType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("compoundPredicateType")
+    @NUInt
+    public native long compoundPredicateType();
+
+    @Generated
+    @Selector("init")
+    public native NSCompoundPredicate init();
+
+    /**
+     * initWithType:subpredicates:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/instm/NSCompoundPredicate/initWithType:subpredicates:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithType:subpredicates:")
+    public native NSCompoundPredicate initWithTypeSubpredicates(@NUInt long type,
+            NSArray<? extends NSPredicate> subpredicates);
+
+    /**
+     * subpredicates</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/index.html#//apple_ref/occ/instp/NSCompoundPredicate/subpredicates">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subpredicates")
+    public native NSArray<?> subpredicates();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSCompoundPredicate initWithCoder(NSCoder coder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

@@ -59,18 +59,6 @@ public class MPChangePlaybackRateCommandEvent extends MPRemoteCommandEvent {
     public static native MPChangePlaybackRateCommandEvent alloc();
 
     @Generated
-    @Selector("init")
-    public native MPChangePlaybackRateCommandEvent init();
-
-    /**
-     * playbackRate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPChangePlaybackRateCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPChangePlaybackRateCommandEvent/playbackRate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("playbackRate")
-    public native float playbackRate();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class MPChangePlaybackRateCommandEvent extends MPRemoteCommandEvent {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native MPChangePlaybackRateCommandEvent init();
+
+    /**
+     * playbackRate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPChangePlaybackRateCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPChangePlaybackRateCommandEvent/playbackRate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("playbackRate")
+    public native float playbackRate();
 }

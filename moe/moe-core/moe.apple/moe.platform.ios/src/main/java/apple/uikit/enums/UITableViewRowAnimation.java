@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITableViewRowAnimation {
-    @Generated
-    private UITableViewRowAnimation() {
-    }
-
     @Generated @NInt public static final long Fade = 0x0000000000000000L;
     @Generated @NInt public static final long Right = 0x0000000000000001L;
     @Generated @NInt public static final long Left = 0x0000000000000002L;
@@ -33,4 +29,8 @@ public final class UITableViewRowAnimation {
     @Generated @NInt public static final long None = 0x0000000000000005L;
     @Generated @NInt public static final long Middle = 0x0000000000000006L;
     @Generated @NInt public static final long Automatic = 0x0000000000000064L;
+
+    @Generated
+    private UITableViewRowAnimation() {
+    }
 }

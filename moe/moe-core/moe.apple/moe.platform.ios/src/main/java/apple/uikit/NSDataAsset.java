@@ -62,56 +62,6 @@ public class NSDataAsset extends NSObject implements NSCopying {
     public static native NSDataAsset alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSDataAsset_Class/index.html#//apple_ref/occ/instp/NSDataAsset/data">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("data")
-    public native NSData data();
-
-    @Generated
-    @Selector("init")
-    public native NSDataAsset init();
-
-    /**
-     * initWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSDataAsset_Class/index.html#//apple_ref/occ/instm/NSDataAsset/initWithName:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithName:")
-    public native NSDataAsset initWithName(String name);
-
-    /**
-     * initWithName:bundle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSDataAsset_Class/index.html#//apple_ref/occ/instm/NSDataAsset/initWithName:bundle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithName:bundle:")
-    public native NSDataAsset initWithNameBundle(String name, NSBundle bundle);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSDataAsset_Class/index.html#//apple_ref/occ/instp/NSDataAsset/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * typeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSDataAsset_Class/index.html#//apple_ref/occ/instp/NSDataAsset/typeIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("typeIdentifier")
-    public native String typeIdentifier();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -210,4 +160,54 @@ public class NSDataAsset extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * data</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSDataAsset_Class/index.html#//apple_ref/occ/instp/NSDataAsset/data">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("data")
+    public native NSData data();
+
+    @Generated
+    @Selector("init")
+    public native NSDataAsset init();
+
+    /**
+     * initWithName:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSDataAsset_Class/index.html#//apple_ref/occ/instm/NSDataAsset/initWithName:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithName:")
+    public native NSDataAsset initWithName(String name);
+
+    /**
+     * initWithName:bundle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSDataAsset_Class/index.html#//apple_ref/occ/instm/NSDataAsset/initWithName:bundle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithName:bundle:")
+    public native NSDataAsset initWithNameBundle(String name, NSBundle bundle);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSDataAsset_Class/index.html#//apple_ref/occ/instp/NSDataAsset/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * typeIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/NSDataAsset_Class/index.html#//apple_ref/occ/instp/NSDataAsset/typeIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("typeIdentifier")
+    public native String typeIdentifier();
 }

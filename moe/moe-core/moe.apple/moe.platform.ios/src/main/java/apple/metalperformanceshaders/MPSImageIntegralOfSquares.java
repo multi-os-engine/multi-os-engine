@@ -60,14 +60,6 @@ public class MPSImageIntegralOfSquares extends MPSUnaryImageKernel {
     public static native MPSImageIntegralOfSquares alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSImageIntegralOfSquares init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageIntegralOfSquares initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -166,4 +158,12 @@ public class MPSImageIntegralOfSquares extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageIntegralOfSquares init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageIntegralOfSquares initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 }

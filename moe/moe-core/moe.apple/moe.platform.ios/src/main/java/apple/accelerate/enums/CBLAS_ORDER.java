@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CBLAS_ORDER {
+    @Generated public static final int RowMajor = 0x00000065;
+    @Generated public static final int ColMajor = 0x00000066;
+
     @Generated
     private CBLAS_ORDER() {
     }
-
-    @Generated public static final int RowMajor = 0x00000065;
-    @Generated public static final int ColMajor = 0x00000066;
 }

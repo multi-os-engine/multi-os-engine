@@ -21,12 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class LAAccessControlOperation {
-    @Generated
-    private LAAccessControlOperation() {
-    }
-
     @Generated @NInt public static final long CreateItem = 0x0000000000000000L;
     @Generated @NInt public static final long UseItem = 0x0000000000000001L;
     @Generated @NInt public static final long CreateKey = 0x0000000000000002L;
     @Generated @NInt public static final long UseKeySign = 0x0000000000000003L;
+    @Generated
+    private LAAccessControlOperation() {
+    }
 }

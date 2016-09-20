@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class AVAudioSessionSilenceSecondaryAudioHintType {
+    @Generated @NUInt public static final long Begin = 0x0000000000000001L;
+    @Generated @NUInt public static final long End = 0x0000000000000000L;
+
     @Generated
     private AVAudioSessionSilenceSecondaryAudioHintType() {
     }
-
-    @Generated @NUInt public static final long Begin = 0x0000000000000001L;
-    @Generated @NUInt public static final long End = 0x0000000000000000L;
 }

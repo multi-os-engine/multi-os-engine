@@ -63,41 +63,8 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
     public static native CLFloor alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CLFloor init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CLFloor initWithCoder(NSCoder aDecoder);
-
-    /**
-     * level</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLFloor_class/index.html#//apple_ref/occ/instp/CLFloor/level">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("level")
-    @NInt
-    public native long level();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -198,4 +165,37 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CLFloor init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CLFloor initWithCoder(NSCoder aDecoder);
+
+    /**
+     * level</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLFloor_class/index.html#//apple_ref/occ/instp/CLFloor/level">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("level")
+    @NInt
+    public native long level();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

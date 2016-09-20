@@ -55,35 +55,6 @@ public class NSMetadataItem extends NSObject {
     @Selector("alloc")
     public static native NSMetadataItem alloc();
 
-    /**
-     * attributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataItem_Class/index.html#//apple_ref/occ/instp/NSMetadataItem/attributes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attributes")
-    public native NSArray<String> attributes();
-
-    @Generated
-    @Selector("init")
-    public native NSMetadataItem init();
-
-    /**
-     * valueForAttribute:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataItem_Class/index.html#//apple_ref/occ/instm/NSMetadataItem/valueForAttribute:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueForAttribute:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForAttribute(String key);
-
-    /**
-     * valuesForAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataItem_Class/index.html#//apple_ref/occ/instm/NSMetadataItem/valuesForAttributes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valuesForAttributes:")
-    public native NSDictionary<String, ?> valuesForAttributes(NSArray<String> keys);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -183,4 +154,33 @@ public class NSMetadataItem extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * attributes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataItem_Class/index.html#//apple_ref/occ/instp/NSMetadataItem/attributes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attributes")
+    public native NSArray<String> attributes();
+
+    @Generated
+    @Selector("init")
+    public native NSMetadataItem init();
+
+    /**
+     * valueForAttribute:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataItem_Class/index.html#//apple_ref/occ/instm/NSMetadataItem/valueForAttribute:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueForAttribute:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object valueForAttribute(String key);
+
+    /**
+     * valuesForAttributes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMetadataItem_Class/index.html#//apple_ref/occ/instm/NSMetadataItem/valuesForAttributes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valuesForAttributes:")
+    public native NSDictionary<String, ?> valuesForAttributes(NSArray<String> keys);
 }

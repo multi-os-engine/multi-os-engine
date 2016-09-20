@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITextBorderStyle {
-    @Generated
-    private UITextBorderStyle() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Line = 0x0000000000000001L;
     @Generated @NInt public static final long Bezel = 0x0000000000000002L;
     @Generated @NInt public static final long RoundedRect = 0x0000000000000003L;
+
+    @Generated
+    private UITextBorderStyle() {
+    }
 }

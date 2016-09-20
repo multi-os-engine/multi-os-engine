@@ -59,18 +59,6 @@ public class MPSkipIntervalCommandEvent extends MPRemoteCommandEvent {
     public static native MPSkipIntervalCommandEvent alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSkipIntervalCommandEvent init();
-
-    /**
-     * interval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPSkipIntervalCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPSkipIntervalCommandEvent/interval">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("interval")
-    public native double interval();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class MPSkipIntervalCommandEvent extends MPRemoteCommandEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSkipIntervalCommandEvent init();
+
+    /**
+     * interval</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPSkipIntervalCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPSkipIntervalCommandEvent/interval">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("interval")
+    public native double interval();
 }

@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSFileManagerItemReplacementOptions {
+    @Generated @NUInt public static final long UsingNewMetadataOnly = 0x0000000000000001L;
+    @Generated @NUInt public static final long WithoutDeletingBackupItem = 0x0000000000000002L;
+
     @Generated
     private NSFileManagerItemReplacementOptions() {
     }
-
-    @Generated @NUInt public static final long UsingNewMetadataOnly = 0x0000000000000001L;
-    @Generated @NUInt public static final long WithoutDeletingBackupItem = 0x0000000000000002L;
 }

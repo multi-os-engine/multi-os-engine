@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPageViewControllerNavigationDirection {
+    @Generated @NInt public static final long Forward = 0x0000000000000000L;
+    @Generated @NInt public static final long Reverse = 0x0000000000000001L;
+
     @Generated
     private UIPageViewControllerNavigationDirection() {
     }
-
-    @Generated @NInt public static final long Forward = 0x0000000000000000L;
-    @Generated @NInt public static final long Reverse = 0x0000000000000001L;
 }

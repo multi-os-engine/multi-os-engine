@@ -28,11 +28,11 @@ import org.moe.natj.general.ann.UncertainReturn;
 @Generated
 @Structure()
 public final class sa_endpoints extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public sa_endpoints() {

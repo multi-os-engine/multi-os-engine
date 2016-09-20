@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CBCharacteristicWriteType {
+    @Generated @NInt public static final long WithResponse = 0x0000000000000000L;
+    @Generated @NInt public static final long WithoutResponse = 0x0000000000000001L;
+
     @Generated
     private CBCharacteristicWriteType() {
     }
-
-    @Generated @NInt public static final long WithResponse = 0x0000000000000000L;
-    @Generated @NInt public static final long WithoutResponse = 0x0000000000000001L;
 }

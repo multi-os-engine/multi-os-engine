@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSLineBreakMode {
-    @Generated
-    private NSLineBreakMode() {
-    }
-
     @Generated @NInt public static final long WordWrapping = 0x0000000000000000L;
     @Generated @NInt public static final long CharWrapping = 0x0000000000000001L;
     @Generated @NInt public static final long Clipping = 0x0000000000000002L;
     @Generated @NInt public static final long TruncatingHead = 0x0000000000000003L;
     @Generated @NInt public static final long TruncatingTail = 0x0000000000000004L;
     @Generated @NInt public static final long TruncatingMiddle = 0x0000000000000005L;
+
+    @Generated
+    private NSLineBreakMode() {
+    }
 }

@@ -59,10 +59,6 @@ public class NWEndpoint extends NSObject {
     public static native NWEndpoint alloc();
 
     @Generated
-    @Selector("init")
-    public native NWEndpoint init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class NWEndpoint extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NWEndpoint init();
 }

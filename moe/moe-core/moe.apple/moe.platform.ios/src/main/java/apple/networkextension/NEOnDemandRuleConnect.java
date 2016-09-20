@@ -61,14 +61,6 @@ public class NEOnDemandRuleConnect extends NEOnDemandRule {
     public static native NEOnDemandRuleConnect alloc();
 
     @Generated
-    @Selector("init")
-    public native NEOnDemandRuleConnect init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEOnDemandRuleConnect initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -168,13 +160,21 @@ public class NEOnDemandRuleConnect extends NEOnDemandRule {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native NEOnDemandRuleConnect init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEOnDemandRuleConnect initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
 }

@@ -21,11 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFPropertyListMutabilityOptions {
-    @Generated
-    private CFPropertyListMutabilityOptions() {
-    }
-
     @Generated @NUInt public static final long Immutable = 0x0000000000000000L;
     @Generated @NUInt public static final long MutableContainers = 0x0000000000000001L;
     @Generated @NUInt public static final long MutableContainersAndLeaves = 0x0000000000000002L;
+    @Generated
+    private CFPropertyListMutabilityOptions() {
+    }
 }

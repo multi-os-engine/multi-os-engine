@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CBLAS_DIAG {
+    @Generated public static final int NonUnit = 0x00000083;
+    @Generated public static final int Unit = 0x00000084;
+
     @Generated
     private CBLAS_DIAG() {
     }
-
-    @Generated public static final int NonUnit = 0x00000083;
-    @Generated public static final int Unit = 0x00000084;
 }

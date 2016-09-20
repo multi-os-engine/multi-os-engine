@@ -60,99 +60,6 @@ public class CNContactFetchRequest extends NSObject {
     public static native CNContactFetchRequest alloc();
 
     @Generated
-    @Selector("init")
-    public native CNContactFetchRequest init();
-
-    /**
-     * initWithKeysToFetch:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instm/CNContactFetchRequest/initWithKeysToFetch:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithKeysToFetch:")
-    public native CNContactFetchRequest initWithKeysToFetch(NSArray<?> keysToFetch);
-
-    /**
-     * keysToFetch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/keysToFetch">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("keysToFetch")
-    public native NSArray<?> keysToFetch();
-
-    /**
-     * mutableObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/mutableObjects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mutableObjects")
-    public native boolean mutableObjects();
-
-    /**
-     * predicate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/predicate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("predicate")
-    public native NSPredicate predicate();
-
-    /**
-     * keysToFetch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/keysToFetch">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setKeysToFetch:")
-    public native void setKeysToFetch(NSArray<?> value);
-
-    /**
-     * mutableObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/mutableObjects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMutableObjects:")
-    public native void setMutableObjects(boolean value);
-
-    /**
-     * predicate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/predicate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPredicate:")
-    public native void setPredicate(NSPredicate value);
-
-    /**
-     * sortOrder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/sortOrder">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSortOrder:")
-    public native void setSortOrder(@NInt long value);
-
-    /**
-     * unifyResults</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/unifyResults">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUnifyResults:")
-    public native void setUnifyResults(boolean value);
-
-    /**
-     * sortOrder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/sortOrder">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sortOrder")
-    @NInt
-    public native long sortOrder();
-
-    /**
-     * unifyResults</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/unifyResults">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unifyResults")
-    public native boolean unifyResults();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -251,4 +158,97 @@ public class CNContactFetchRequest extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CNContactFetchRequest init();
+
+    /**
+     * initWithKeysToFetch:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instm/CNContactFetchRequest/initWithKeysToFetch:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithKeysToFetch:")
+    public native CNContactFetchRequest initWithKeysToFetch(NSArray<?> keysToFetch);
+
+    /**
+     * keysToFetch</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/keysToFetch">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("keysToFetch")
+    public native NSArray<?> keysToFetch();
+
+    /**
+     * mutableObjects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/mutableObjects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mutableObjects")
+    public native boolean mutableObjects();
+
+    /**
+     * predicate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/predicate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("predicate")
+    public native NSPredicate predicate();
+
+    /**
+     * keysToFetch</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/keysToFetch">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setKeysToFetch:")
+    public native void setKeysToFetch(NSArray<?> value);
+
+    /**
+     * mutableObjects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/mutableObjects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMutableObjects:")
+    public native void setMutableObjects(boolean value);
+
+    /**
+     * predicate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/predicate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPredicate:")
+    public native void setPredicate(NSPredicate value);
+
+    /**
+     * sortOrder</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/sortOrder">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSortOrder:")
+    public native void setSortOrder(@NInt long value);
+
+    /**
+     * unifyResults</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/unifyResults">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUnifyResults:")
+    public native void setUnifyResults(boolean value);
+
+    /**
+     * sortOrder</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/sortOrder">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sortOrder")
+    @NInt
+    public native long sortOrder();
+
+    /**
+     * unifyResults</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFetchRequest_Class/index.html#//apple_ref/occ/instp/CNContactFetchRequest/unifyResults">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unifyResults")
+    public native boolean unifyResults();
 }

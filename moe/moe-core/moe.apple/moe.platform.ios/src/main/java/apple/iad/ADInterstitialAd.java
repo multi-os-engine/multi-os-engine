@@ -61,84 +61,6 @@ public class ADInterstitialAd extends NSObject {
     @Selector("alloc")
     public static native ADInterstitialAd alloc();
 
-    /**
-     * cancelAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instm/ADInterstitialAd/cancelAction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelAction")
-    public native void cancelAction();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instp/ADInterstitialAd/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native ADInterstitialAdDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native ADInterstitialAd init();
-
-    /**
-     * actionInProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instp/ADInterstitialAd/actionInProgress">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isActionInProgress")
-    public native boolean isActionInProgress();
-
-    /**
-     * loaded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instp/ADInterstitialAd/loaded">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isLoaded")
-    public native boolean isLoaded();
-
-    /**
-     * presentFromViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instm/ADInterstitialAd/presentFromViewController:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("presentFromViewController:")
-    public native void presentFromViewController(UIViewController viewController);
-
-    /**
-     * presentInView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instm/ADInterstitialAd/presentInView:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("presentInView:")
-    public native boolean presentInView(UIView containerView);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instp/ADInterstitialAd/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ADInterstitialAdDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instp/ADInterstitialAd/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) ADInterstitialAdDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -238,4 +160,82 @@ public class ADInterstitialAd extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * cancelAction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instm/ADInterstitialAd/cancelAction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelAction")
+    public native void cancelAction();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instp/ADInterstitialAd/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native ADInterstitialAdDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native ADInterstitialAd init();
+
+    /**
+     * actionInProgress</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instp/ADInterstitialAd/actionInProgress">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isActionInProgress")
+    public native boolean isActionInProgress();
+
+    /**
+     * loaded</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instp/ADInterstitialAd/loaded">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isLoaded")
+    public native boolean isLoaded();
+
+    /**
+     * presentFromViewController:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instm/ADInterstitialAd/presentFromViewController:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("presentFromViewController:")
+    public native void presentFromViewController(UIViewController viewController);
+
+    /**
+     * presentInView:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instm/ADInterstitialAd/presentInView:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("presentInView:")
+    public native boolean presentInView(UIView containerView);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instp/ADInterstitialAd/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ADInterstitialAdDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADInterstitialAd_Ref/index.html#//apple_ref/occ/instp/ADInterstitialAd/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) ADInterstitialAdDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 }

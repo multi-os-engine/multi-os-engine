@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLLibraryError {
-    @Generated
-    private MTLLibraryError() {
-    }
-
     @Generated @NUInt public static final long Unsupported = 0x0000000000000001L;
     @Generated @NUInt public static final long Internal = 0x0000000000000002L;
     @Generated @NUInt public static final long CompileFailure = 0x0000000000000003L;
     @Generated @NUInt public static final long CompileWarning = 0x0000000000000004L;
+
+    @Generated
+    private MTLLibraryError() {
+    }
 }

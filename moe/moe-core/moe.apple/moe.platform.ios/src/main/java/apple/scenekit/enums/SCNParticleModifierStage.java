@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNParticleModifierStage {
-    @Generated
-    private SCNParticleModifierStage() {
-    }
-
     @Generated @NInt public static final long PreDynamics = 0x0000000000000000L;
     @Generated @NInt public static final long PostDynamics = 0x0000000000000001L;
     @Generated @NInt public static final long PreCollision = 0x0000000000000002L;
     @Generated @NInt public static final long PostCollision = 0x0000000000000003L;
+
+    @Generated
+    private SCNParticleModifierStage() {
+    }
 }

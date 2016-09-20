@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIModalPresentationStyle {
-    @Generated
-    private UIModalPresentationStyle() {
-    }
-
     @Generated @NInt public static final long FullScreen = 0x0000000000000000L;
     @Generated @NInt public static final long PageSheet = 0x0000000000000001L;
     @Generated @NInt public static final long FormSheet = 0x0000000000000002L;
@@ -34,4 +30,8 @@ public final class UIModalPresentationStyle {
     @Generated @NInt public static final long OverCurrentContext = 0x0000000000000006L;
     @Generated @NInt public static final long Popover = 0x0000000000000007L;
     @Generated @NInt public static final long None = 0xFFFFFFFFFFFFFFFFL;
+
+    @Generated
+    private UIModalPresentationStyle() {
+    }
 }

@@ -66,38 +66,6 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     public static native AVAsynchronousCIImageFilteringRequest alloc();
 
     @Generated
-    @Selector("compositionTime")
-    @ByValue
-    public native CMTime compositionTime();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("finishWithError:")
-    public native void finishWithError(NSError error);
-
-    @Generated
-    @Selector("finishWithImage:context:")
-    public native void finishWithImageContext(CIImage filteredImage, CIContext context);
-
-    @Generated
-    @Selector("init")
-    public native AVAsynchronousCIImageFilteringRequest init();
-
-    @Generated
-    @Selector("renderSize")
-    @ByValue
-    public native CGSize renderSize();
-
-    @Generated
-    @Selector("sourceImage")
-    public native CIImage sourceImage();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -196,4 +164,36 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("compositionTime")
+    @ByValue
+    public native CMTime compositionTime();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("finishWithError:")
+    public native void finishWithError(NSError error);
+
+    @Generated
+    @Selector("finishWithImage:context:")
+    public native void finishWithImageContext(CIImage filteredImage, CIContext context);
+
+    @Generated
+    @Selector("init")
+    public native AVAsynchronousCIImageFilteringRequest init();
+
+    @Generated
+    @Selector("renderSize")
+    @ByValue
+    public native CGSize renderSize();
+
+    @Generated
+    @Selector("sourceImage")
+    public native CIImage sourceImage();
 }

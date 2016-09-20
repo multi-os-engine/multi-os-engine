@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PKPaymentAuthorizationStatus {
-    @Generated
-    private PKPaymentAuthorizationStatus() {
-    }
-
     @Generated @NInt public static final long Success = 0x0000000000000000L;
     @Generated @NInt public static final long Failure = 0x0000000000000001L;
     @Generated @NInt public static final long InvalidBillingPostalAddress = 0x0000000000000002L;
@@ -33,4 +29,8 @@ public final class PKPaymentAuthorizationStatus {
     @Generated @NInt public static final long PINRequired = 0x0000000000000005L;
     @Generated @NInt public static final long PINIncorrect = 0x0000000000000006L;
     @Generated @NInt public static final long PINLockout = 0x0000000000000007L;
+
+    @Generated
+    private PKPaymentAuthorizationStatus() {
+    }
 }

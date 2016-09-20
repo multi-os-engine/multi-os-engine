@@ -62,39 +62,6 @@ public class AVAudioUnitReverb extends AVAudioUnitEffect {
     public static native AVAudioUnitReverb alloc();
 
     @Generated
-    @Selector("init")
-    public native AVAudioUnitReverb init();
-
-    @Generated
-    @Selector("initWithAudioComponentDescription:")
-    public native AVAudioUnitReverb initWithAudioComponentDescription(
-            @ByValue AudioComponentDescription audioComponentDescription);
-
-    /**
-     * loadFactoryPreset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitReverb_Class/index.html#//apple_ref/occ/instm/AVAudioUnitReverb/loadFactoryPreset:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadFactoryPreset:")
-    public native void loadFactoryPreset(@NInt long preset);
-
-    /**
-     * wetDryMix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitReverb_Class/index.html#//apple_ref/occ/instp/AVAudioUnitReverb/wetDryMix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWetDryMix:")
-    public native void setWetDryMix(float value);
-
-    /**
-     * wetDryMix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitReverb_Class/index.html#//apple_ref/occ/instp/AVAudioUnitReverb/wetDryMix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("wetDryMix")
-    public native float wetDryMix();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -199,4 +166,37 @@ public class AVAudioUnitReverb extends AVAudioUnitEffect {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioUnitReverb init();
+
+    @Generated
+    @Selector("initWithAudioComponentDescription:")
+    public native AVAudioUnitReverb initWithAudioComponentDescription(
+            @ByValue AudioComponentDescription audioComponentDescription);
+
+    /**
+     * loadFactoryPreset:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitReverb_Class/index.html#//apple_ref/occ/instm/AVAudioUnitReverb/loadFactoryPreset:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadFactoryPreset:")
+    public native void loadFactoryPreset(@NInt long preset);
+
+    /**
+     * wetDryMix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitReverb_Class/index.html#//apple_ref/occ/instp/AVAudioUnitReverb/wetDryMix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWetDryMix:")
+    public native void setWetDryMix(float value);
+
+    /**
+     * wetDryMix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitReverb_Class/index.html#//apple_ref/occ/instp/AVAudioUnitReverb/wetDryMix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("wetDryMix")
+    public native float wetDryMix();
 }

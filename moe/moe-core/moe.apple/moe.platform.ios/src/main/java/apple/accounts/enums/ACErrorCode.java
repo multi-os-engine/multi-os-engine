@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class ACErrorCode {
-    @Generated
-    private ACErrorCode() {
-    }
-
     @Generated public static final int Unknown = 0x00000001;
     @Generated public static final int AccountMissingRequiredProperty = 0x00000002;
     @Generated public static final int AccountAuthenticationFailed = 0x00000003;
@@ -47,4 +43,8 @@ public final class ACErrorCode {
     @Generated public static final int MissingTransportMessageID = 0x00000015;
     @Generated public static final int CredentialItemNotFound = 0x00000016;
     @Generated public static final int CredentialItemNotExpired = 0x00000017;
+
+    @Generated
+    private ACErrorCode() {
+    }
 }

@@ -76,13 +76,6 @@ public interface SCNActionable {
     void runActionCompletionHandler(SCNAction action,
             @ObjCBlock(name = "call_runActionCompletionHandler") Block_runActionCompletionHandler block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_runActionCompletionHandler {
-        @Generated
-        void call_runActionCompletionHandler();
-    }
-
     /**
      * runAction:forKey:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNActionable_Protocol/index.html#//apple_ref/occ/intfm/SCNActionable/runAction:forKey:">iOS Dev Center</a>
@@ -100,14 +93,21 @@ public interface SCNActionable {
     void runActionForKeyCompletionHandler(SCNAction action, String key,
             @ObjCBlock(name = "call_runActionForKeyCompletionHandler") Block_runActionForKeyCompletionHandler block);
 
+    @Generated
+    @Selector("actionKeys")
+    NSArray<String> actionKeys();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_runActionCompletionHandler {
+        @Generated
+        void call_runActionCompletionHandler();
+    }
+
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_runActionForKeyCompletionHandler {
         @Generated
         void call_runActionForKeyCompletionHandler();
     }
-
-    @Generated
-    @Selector("actionKeys")
-    NSArray<String> actionKeys();
 }

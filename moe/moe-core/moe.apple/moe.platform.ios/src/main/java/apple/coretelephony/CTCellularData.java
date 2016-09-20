@@ -60,39 +60,6 @@ public class CTCellularData extends NSObject {
     public static native CTCellularData alloc();
 
     @Generated
-    @Selector("cellularDataRestrictionDidUpdateNotifier")
-    @ObjCBlock(name = "call_cellularDataRestrictionDidUpdateNotifier_ret")
-    public native Block_cellularDataRestrictionDidUpdateNotifier_ret cellularDataRestrictionDidUpdateNotifier();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_cellularDataRestrictionDidUpdateNotifier_ret {
-        @Generated
-        void call_cellularDataRestrictionDidUpdateNotifier_ret(@NUInt long arg0);
-    }
-
-    @Generated
-    @Selector("init")
-    public native CTCellularData init();
-
-    @Generated
-    @Selector("restrictedState")
-    @NUInt
-    public native long restrictedState();
-
-    @Generated
-    @Selector("setCellularDataRestrictionDidUpdateNotifier:")
-    public native void setCellularDataRestrictionDidUpdateNotifier(
-            @ObjCBlock(name = "call_setCellularDataRestrictionDidUpdateNotifier") Block_setCellularDataRestrictionDidUpdateNotifier value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setCellularDataRestrictionDidUpdateNotifier {
-        @Generated
-        void call_setCellularDataRestrictionDidUpdateNotifier(@NUInt long arg0);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -191,4 +158,37 @@ public class CTCellularData extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("cellularDataRestrictionDidUpdateNotifier")
+    @ObjCBlock(name = "call_cellularDataRestrictionDidUpdateNotifier_ret")
+    public native Block_cellularDataRestrictionDidUpdateNotifier_ret cellularDataRestrictionDidUpdateNotifier();
+
+    @Generated
+    @Selector("init")
+    public native CTCellularData init();
+
+    @Generated
+    @Selector("restrictedState")
+    @NUInt
+    public native long restrictedState();
+
+    @Generated
+    @Selector("setCellularDataRestrictionDidUpdateNotifier:")
+    public native void setCellularDataRestrictionDidUpdateNotifier(
+            @ObjCBlock(name = "call_setCellularDataRestrictionDidUpdateNotifier") Block_setCellularDataRestrictionDidUpdateNotifier value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_cellularDataRestrictionDidUpdateNotifier_ret {
+        @Generated
+        void call_cellularDataRestrictionDidUpdateNotifier_ret(@NUInt long arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setCellularDataRestrictionDidUpdateNotifier {
+        @Generated
+        void call_setCellularDataRestrictionDidUpdateNotifier(@NUInt long arg0);
+    }
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class WCErrorCode {
-    @Generated
-    private WCErrorCode() {
-    }
-
     @Generated @NInt public static final long GenericError = 0x0000000000001B59L;
     @Generated @NInt public static final long SessionNotSupported = 0x0000000000001B5AL;
     @Generated @NInt public static final long SessionMissingDelegate = 0x0000000000001B5BL;
@@ -42,4 +38,7 @@ public final class WCErrorCode {
     @Generated @NInt public static final long InsufficientSpace = 0x0000000000001B67L;
     @Generated @NInt public static final long SessionInactive = 0x0000000000001B68L;
     @Generated @NInt public static final long TransferTimedOut = 0x0000000000001B69L;
+    @Generated
+    private WCErrorCode() {
+    }
 }

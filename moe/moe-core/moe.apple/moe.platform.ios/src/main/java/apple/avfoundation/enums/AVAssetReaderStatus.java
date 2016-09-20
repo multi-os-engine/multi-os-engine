@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVAssetReaderStatus {
-    @Generated
-    private AVAssetReaderStatus() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Reading = 0x0000000000000001L;
     @Generated @NInt public static final long Completed = 0x0000000000000002L;
     @Generated @NInt public static final long Failed = 0x0000000000000003L;
     @Generated @NInt public static final long Cancelled = 0x0000000000000004L;
+
+    @Generated
+    private AVAssetReaderStatus() {
+    }
 }

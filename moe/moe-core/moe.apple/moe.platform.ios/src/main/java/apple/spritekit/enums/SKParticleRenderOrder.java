@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class SKParticleRenderOrder {
-    @Generated
-    private SKParticleRenderOrder() {
-    }
-
     @Generated @NUInt public static final long OldestLast = 0x0000000000000000L;
     @Generated @NUInt public static final long OldestFirst = 0x0000000000000001L;
     @Generated @NUInt public static final long DontCare = 0x0000000000000002L;
+
+    @Generated
+    private SKParticleRenderOrder() {
+    }
 }

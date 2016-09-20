@@ -56,30 +56,6 @@ public class NSPipe extends NSObject {
     public static native NSPipe alloc();
 
     /**
-     * fileHandleForReading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPipe_Class/index.html#//apple_ref/occ/instp/NSPipe/fileHandleForReading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fileHandleForReading")
-    public native NSFileHandle fileHandleForReading();
-
-    /**
-     * fileHandleForWriting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPipe_Class/index.html#//apple_ref/occ/instp/NSPipe/fileHandleForWriting">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fileHandleForWriting")
-    public native NSFileHandle fileHandleForWriting();
-
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPipe_Class/index.html#//apple_ref/occ/instm/NSPipe/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native NSPipe init();
-
-    /**
      * pipe</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPipe_Class/index.html#//apple_ref/occ/clm/NSPipe/pipe">iOS Dev Center</a>
      */
@@ -186,4 +162,28 @@ public class NSPipe extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * fileHandleForReading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPipe_Class/index.html#//apple_ref/occ/instp/NSPipe/fileHandleForReading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fileHandleForReading")
+    public native NSFileHandle fileHandleForReading();
+
+    /**
+     * fileHandleForWriting</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPipe_Class/index.html#//apple_ref/occ/instp/NSPipe/fileHandleForWriting">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fileHandleForWriting")
+    public native NSFileHandle fileHandleForWriting();
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPipe_Class/index.html#//apple_ref/occ/instm/NSPipe/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native NSPipe init();
 }

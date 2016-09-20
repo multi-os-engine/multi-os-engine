@@ -58,97 +58,9 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native NSExtensionItem alloc();
 
-    /**
-     * attachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attachments">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attachments")
-    public native NSArray<?> attachments();
-
-    /**
-     * attributedContentText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attributedContentText">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attributedContentText")
-    public native NSAttributedString attributedContentText();
-
-    /**
-     * attributedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attributedTitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attributedTitle")
-    public native NSAttributedString attributedTitle();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NSExtensionItem init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSExtensionItem initWithCoder(NSCoder aDecoder);
-
-    /**
-     * attachments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attachments">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAttachments:")
-    public native void setAttachments(NSArray<?> value);
-
-    /**
-     * attributedContentText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attributedContentText">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAttributedContentText:")
-    public native void setAttributedContentText(NSAttributedString value);
-
-    /**
-     * attributedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attributedTitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAttributedTitle:")
-    public native void setAttributedTitle(NSAttributedString value);
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInfo")
-    public native NSDictionary<?, ?> userInfo();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -249,4 +161,92 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * attachments</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attachments">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attachments")
+    public native NSArray<?> attachments();
+
+    /**
+     * attributedContentText</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attributedContentText">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attributedContentText")
+    public native NSAttributedString attributedContentText();
+
+    /**
+     * attributedTitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attributedTitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attributedTitle")
+    public native NSAttributedString attributedTitle();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NSExtensionItem init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSExtensionItem initWithCoder(NSCoder aDecoder);
+
+    /**
+     * attachments</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attachments">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAttachments:")
+    public native void setAttachments(NSArray<?> value);
+
+    /**
+     * attributedContentText</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attributedContentText">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAttributedContentText:")
+    public native void setAttributedContentText(NSAttributedString value);
+
+    /**
+     * attributedTitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/attributedTitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAttributedTitle:")
+    public native void setAttributedTitle(NSAttributedString value);
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUserInfo:")
+    public native void setUserInfo(NSDictionary<?, ?> value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSExtensionItem_Class/index.html#//apple_ref/occ/instp/NSExtensionItem/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInfo")
+    public native NSDictionary<?, ?> userInfo();
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSUnderlineStyle {
-    @Generated
-    private NSUnderlineStyle() {
-    }
-
     @Generated @NInt public static final long StyleNone = 0x0000000000000000L;
     @Generated @NInt public static final long StyleSingle = 0x0000000000000001L;
     @Generated @NInt public static final long StyleThick = 0x0000000000000002L;
@@ -35,4 +31,8 @@ public final class NSUnderlineStyle {
     @Generated @NInt public static final long PatternDashDot = 0x0000000000000300L;
     @Generated @NInt public static final long PatternDashDotDot = 0x0000000000000400L;
     @Generated @NInt public static final long ByWord = 0x0000000000008000L;
+
+    @Generated
+    private NSUnderlineStyle() {
+    }
 }

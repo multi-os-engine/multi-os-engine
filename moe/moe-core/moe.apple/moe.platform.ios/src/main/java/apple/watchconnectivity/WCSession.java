@@ -60,26 +60,10 @@ public class WCSession extends NSObject {
         super(peer);
     }
 
-    /**
-     * activateSession</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/activateSession">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("activateSession")
-    public native void activateSession();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native WCSession alloc();
-
-    /**
-     * applicationContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/applicationContext">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applicationContext")
-    public native NSDictionary<String, ?> applicationContext();
 
     /**
      * defaultSession</br>
@@ -90,202 +74,12 @@ public class WCSession extends NSObject {
     public static native WCSession defaultSession();
 
     /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native WCSessionDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native WCSession init();
-
-    /**
-     * complicationEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/complicationEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isComplicationEnabled")
-    public native boolean isComplicationEnabled();
-
-    /**
-     * paired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/paired">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPaired")
-    public native boolean isPaired();
-
-    /**
-     * reachable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/reachable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isReachable")
-    public native boolean isReachable();
-
-    /**
      * isSupported</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/clm/WCSession/isSupported">iOS Dev Center</a>
      */
     @Generated
     @Selector("isSupported")
     public static native boolean isSupported();
-
-    /**
-     * watchAppInstalled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/watchAppInstalled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isWatchAppInstalled")
-    public native boolean isWatchAppInstalled();
-
-    /**
-     * outstandingFileTransfers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/outstandingFileTransfers">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("outstandingFileTransfers")
-    public native NSArray<? extends WCSessionFileTransfer> outstandingFileTransfers();
-
-    /**
-     * outstandingUserInfoTransfers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/outstandingUserInfoTransfers">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("outstandingUserInfoTransfers")
-    public native NSArray<? extends WCSessionUserInfoTransfer> outstandingUserInfoTransfers();
-
-    /**
-     * receivedApplicationContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/receivedApplicationContext">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("receivedApplicationContext")
-    public native NSDictionary<String, ?> receivedApplicationContext();
-
-    /**
-     * sendMessage:replyHandler:errorHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/sendMessage:replyHandler:errorHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sendMessage:replyHandler:errorHandler:")
-    public native void sendMessageReplyHandlerErrorHandler(NSDictionary<String, ?> message,
-            @ObjCBlock(name = "call_sendMessageReplyHandlerErrorHandler_1") Block_sendMessageReplyHandlerErrorHandler_1 replyHandler,
-            @ObjCBlock(name = "call_sendMessageReplyHandlerErrorHandler_2") Block_sendMessageReplyHandlerErrorHandler_2 errorHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sendMessageReplyHandlerErrorHandler_1 {
-        @Generated
-        void call_sendMessageReplyHandlerErrorHandler_1(NSDictionary<String, ?> arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sendMessageReplyHandlerErrorHandler_2 {
-        @Generated
-        void call_sendMessageReplyHandlerErrorHandler_2(NSError arg0);
-    }
-
-    /**
-     * sendMessageData:replyHandler:errorHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/sendMessageData:replyHandler:errorHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sendMessageData:replyHandler:errorHandler:")
-    public native void sendMessageDataReplyHandlerErrorHandler(NSData data,
-            @ObjCBlock(name = "call_sendMessageDataReplyHandlerErrorHandler_1") Block_sendMessageDataReplyHandlerErrorHandler_1 replyHandler,
-            @ObjCBlock(name = "call_sendMessageDataReplyHandlerErrorHandler_2") Block_sendMessageDataReplyHandlerErrorHandler_2 errorHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sendMessageDataReplyHandlerErrorHandler_1 {
-        @Generated
-        void call_sendMessageDataReplyHandlerErrorHandler_1(NSData arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sendMessageDataReplyHandlerErrorHandler_2 {
-        @Generated
-        void call_sendMessageDataReplyHandlerErrorHandler_2(NSError arg0);
-    }
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WCSessionDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) WCSessionDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * transferCurrentComplicationUserInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/transferCurrentComplicationUserInfo:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transferCurrentComplicationUserInfo:")
-    public native WCSessionUserInfoTransfer transferCurrentComplicationUserInfo(NSDictionary<String, ?> userInfo);
-
-    /**
-     * transferFile:metadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/transferFile:metadata:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transferFile:metadata:")
-    public native WCSessionFileTransfer transferFileMetadata(NSURL file, NSDictionary<String, ?> metadata);
-
-    /**
-     * transferUserInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/transferUserInfo:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transferUserInfo:")
-    public native WCSessionUserInfoTransfer transferUserInfo(NSDictionary<String, ?> userInfo);
-
-    /**
-     * updateApplicationContext:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/updateApplicationContext:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateApplicationContext:error:")
-    public native boolean updateApplicationContextError(NSDictionary<String, ?> applicationContext, Ptr<NSError> error);
-
-    /**
-     * watchDirectoryURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/watchDirectoryURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("watchDirectoryURL")
-    public native NSURL watchDirectoryURL();
-
-    /**
-     * activationState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/activationState">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("activationState")
-    @NInt
-    public native long activationState();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -386,4 +180,210 @@ public class WCSession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * activateSession</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/activateSession">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("activateSession")
+    public native void activateSession();
+
+    /**
+     * applicationContext</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/applicationContext">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applicationContext")
+    public native NSDictionary<String, ?> applicationContext();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native WCSessionDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native WCSession init();
+
+    /**
+     * complicationEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/complicationEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isComplicationEnabled")
+    public native boolean isComplicationEnabled();
+
+    /**
+     * paired</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/paired">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPaired")
+    public native boolean isPaired();
+
+    /**
+     * reachable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/reachable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isReachable")
+    public native boolean isReachable();
+
+    /**
+     * watchAppInstalled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/watchAppInstalled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isWatchAppInstalled")
+    public native boolean isWatchAppInstalled();
+
+    /**
+     * outstandingFileTransfers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/outstandingFileTransfers">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("outstandingFileTransfers")
+    public native NSArray<? extends WCSessionFileTransfer> outstandingFileTransfers();
+
+    /**
+     * outstandingUserInfoTransfers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/outstandingUserInfoTransfers">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("outstandingUserInfoTransfers")
+    public native NSArray<? extends WCSessionUserInfoTransfer> outstandingUserInfoTransfers();
+
+    /**
+     * receivedApplicationContext</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/receivedApplicationContext">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("receivedApplicationContext")
+    public native NSDictionary<String, ?> receivedApplicationContext();
+
+    /**
+     * sendMessage:replyHandler:errorHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/sendMessage:replyHandler:errorHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sendMessage:replyHandler:errorHandler:")
+    public native void sendMessageReplyHandlerErrorHandler(NSDictionary<String, ?> message,
+            @ObjCBlock(name = "call_sendMessageReplyHandlerErrorHandler_1") Block_sendMessageReplyHandlerErrorHandler_1 replyHandler,
+            @ObjCBlock(name = "call_sendMessageReplyHandlerErrorHandler_2") Block_sendMessageReplyHandlerErrorHandler_2 errorHandler);
+
+    /**
+     * sendMessageData:replyHandler:errorHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/sendMessageData:replyHandler:errorHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sendMessageData:replyHandler:errorHandler:")
+    public native void sendMessageDataReplyHandlerErrorHandler(NSData data,
+            @ObjCBlock(name = "call_sendMessageDataReplyHandlerErrorHandler_1") Block_sendMessageDataReplyHandlerErrorHandler_1 replyHandler,
+            @ObjCBlock(name = "call_sendMessageDataReplyHandlerErrorHandler_2") Block_sendMessageDataReplyHandlerErrorHandler_2 errorHandler);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WCSessionDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) WCSessionDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * transferCurrentComplicationUserInfo:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/transferCurrentComplicationUserInfo:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transferCurrentComplicationUserInfo:")
+    public native WCSessionUserInfoTransfer transferCurrentComplicationUserInfo(NSDictionary<String, ?> userInfo);
+
+    /**
+     * transferFile:metadata:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/transferFile:metadata:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transferFile:metadata:")
+    public native WCSessionFileTransfer transferFileMetadata(NSURL file, NSDictionary<String, ?> metadata);
+
+    /**
+     * transferUserInfo:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/transferUserInfo:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transferUserInfo:")
+    public native WCSessionUserInfoTransfer transferUserInfo(NSDictionary<String, ?> userInfo);
+
+    /**
+     * updateApplicationContext:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instm/WCSession/updateApplicationContext:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateApplicationContext:error:")
+    public native boolean updateApplicationContextError(NSDictionary<String, ?> applicationContext, Ptr<NSError> error);
+
+    /**
+     * watchDirectoryURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/watchDirectoryURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("watchDirectoryURL")
+    public native NSURL watchDirectoryURL();
+
+    /**
+     * activationState</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSession_class/index.html#//apple_ref/occ/instp/WCSession/activationState">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("activationState")
+    @NInt
+    public native long activationState();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sendMessageReplyHandlerErrorHandler_1 {
+        @Generated
+        void call_sendMessageReplyHandlerErrorHandler_1(NSDictionary<String, ?> arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sendMessageReplyHandlerErrorHandler_2 {
+        @Generated
+        void call_sendMessageReplyHandlerErrorHandler_2(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sendMessageDataReplyHandlerErrorHandler_1 {
+        @Generated
+        void call_sendMessageDataReplyHandlerErrorHandler_1(NSData arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sendMessageDataReplyHandlerErrorHandler_2 {
+        @Generated
+        void call_sendMessageDataReplyHandlerErrorHandler_2(NSError arg0);
+    }
 }

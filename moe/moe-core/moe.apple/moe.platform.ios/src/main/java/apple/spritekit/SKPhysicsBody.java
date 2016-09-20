@@ -63,109 +63,10 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSCoding {
         super(peer);
     }
 
-    /**
-     * affectedByGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/affectedByGravity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("affectedByGravity")
-    public native boolean affectedByGravity();
-
-    /**
-     * allContactedBodies</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/allContactedBodies">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allContactedBodies")
-    public native NSArray<? extends SKPhysicsBody> allContactedBodies();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native SKPhysicsBody alloc();
-
-    /**
-     * allowsRotation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/allowsRotation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allowsRotation")
-    public native boolean allowsRotation();
-
-    /**
-     * angularDamping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/angularDamping">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("angularDamping")
-    @NFloat
-    public native double angularDamping();
-
-    /**
-     * angularVelocity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/angularVelocity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("angularVelocity")
-    @NFloat
-    public native double angularVelocity();
-
-    /**
-     * applyAngularImpulse:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyAngularImpulse:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyAngularImpulse:")
-    public native void applyAngularImpulse(@NFloat double impulse);
-
-    /**
-     * applyForce:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyForce:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyForce:")
-    public native void applyForce(@ByValue CGVector force);
-
-    /**
-     * applyForce:atPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyForce:atPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyForce:atPoint:")
-    public native void applyForceAtPoint(@ByValue CGVector force, @ByValue CGPoint point);
-
-    /**
-     * applyImpulse:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyImpulse:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyImpulse:")
-    public native void applyImpulse(@ByValue CGVector impulse);
-
-    /**
-     * applyImpulse:atPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyImpulse:atPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyImpulse:atPoint:")
-    public native void applyImpulseAtPoint(@ByValue CGVector impulse, @ByValue CGPoint point);
-
-    /**
-     * applyTorque:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyTorque:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyTorque:")
-    public native void applyTorque(@NFloat double torque);
-
-    /**
-     * area</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/area">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("area")
-    @NFloat
-    public native double area();
 
     /**
      * bodyWithBodies:</br>
@@ -264,6 +165,205 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSCoding {
     @Selector("bodyWithTexture:size:")
     public static native SKPhysicsBody bodyWithTextureSize(SKTexture texture, @ByValue CGSize size);
 
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * affectedByGravity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/affectedByGravity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("affectedByGravity")
+    public native boolean affectedByGravity();
+
+    /**
+     * allContactedBodies</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/allContactedBodies">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allContactedBodies")
+    public native NSArray<? extends SKPhysicsBody> allContactedBodies();
+
+    /**
+     * allowsRotation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/allowsRotation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allowsRotation")
+    public native boolean allowsRotation();
+
+    /**
+     * angularDamping</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/angularDamping">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("angularDamping")
+    @NFloat
+    public native double angularDamping();
+
+    /**
+     * angularVelocity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/angularVelocity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("angularVelocity")
+    @NFloat
+    public native double angularVelocity();
+
+    /**
+     * applyAngularImpulse:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyAngularImpulse:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyAngularImpulse:")
+    public native void applyAngularImpulse(@NFloat double impulse);
+
+    /**
+     * applyForce:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyForce:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyForce:")
+    public native void applyForce(@ByValue CGVector force);
+
+    /**
+     * applyForce:atPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyForce:atPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyForce:atPoint:")
+    public native void applyForceAtPoint(@ByValue CGVector force, @ByValue CGPoint point);
+
+    /**
+     * applyImpulse:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyImpulse:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyImpulse:")
+    public native void applyImpulse(@ByValue CGVector impulse);
+
+    /**
+     * applyImpulse:atPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyImpulse:atPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyImpulse:atPoint:")
+    public native void applyImpulseAtPoint(@ByValue CGVector impulse, @ByValue CGPoint point);
+
+    /**
+     * applyTorque:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instm/SKPhysicsBody/applyTorque:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyTorque:")
+    public native void applyTorque(@NFloat double torque);
+
+    /**
+     * area</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/area">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("area")
+    @NFloat
+    public native double area();
+
     /**
      * categoryBitMask</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/categoryBitMask">iOS Dev Center</a>
@@ -350,12 +450,28 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSCoding {
     public native boolean isDynamic();
 
     /**
+     * dynamic</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/dynamic">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDynamic:")
+    public native void setDynamic(boolean value);
+
+    /**
      * resting</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/resting">iOS Dev Center</a>
      */
     @Generated
     @Selector("isResting")
     public native boolean isResting();
+
+    /**
+     * resting</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/resting">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setResting:")
+    public native void setResting(boolean value);
 
     /**
      * joints</br>
@@ -481,14 +597,6 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSCoding {
     public native void setDensity(@NFloat double value);
 
     /**
-     * dynamic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/dynamic">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDynamic:")
-    public native void setDynamic(boolean value);
-
-    /**
      * fieldBitMask</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/fieldBitMask">iOS Dev Center</a>
      */
@@ -527,14 +635,6 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("setPinned:")
     public native void setPinned(boolean value);
-
-    /**
-     * resting</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsBody_Ref/index.html#//apple_ref/occ/instp/SKPhysicsBody/resting">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setResting:")
-    public native void setResting(boolean value);
 
     /**
      * restitution</br>
@@ -576,104 +676,4 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSCoding {
     @Selector("velocity")
     @ByValue
     public native CGVector velocity();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

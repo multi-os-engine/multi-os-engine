@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSFileVersionReplacingOptions {
+    @Generated @NUInt public static final long NSFileVersionReplacingByMoving = 0x0000000000000001L;
+
     @Generated
     private NSFileVersionReplacingOptions() {
     }
-
-    @Generated @NUInt public static final long NSFileVersionReplacingByMoving = 0x0000000000000001L;
 }

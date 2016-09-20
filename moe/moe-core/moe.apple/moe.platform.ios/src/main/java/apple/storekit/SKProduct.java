@@ -61,74 +61,6 @@ public class SKProduct extends NSObject {
     @Selector("alloc")
     public static native SKProduct alloc();
 
-    /**
-     * downloadContentLengths</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/downloadContentLengths">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadContentLengths")
-    public native NSArray<? extends NSNumber> downloadContentLengths();
-
-    /**
-     * downloadContentVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/downloadContentVersion">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadContentVersion")
-    public native String downloadContentVersion();
-
-    @Generated
-    @Selector("init")
-    public native SKProduct init();
-
-    /**
-     * downloadable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/downloadable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isDownloadable")
-    public native boolean isDownloadable();
-
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/localizedDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedDescription")
-    public native String localizedDescription();
-
-    /**
-     * localizedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/localizedTitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedTitle")
-    public native String localizedTitle();
-
-    /**
-     * price</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/price">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("price")
-    public native NSDecimalNumber price();
-
-    /**
-     * priceLocale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/priceLocale">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("priceLocale")
-    public native NSLocale priceLocale();
-
-    /**
-     * productIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/productIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("productIdentifier")
-    public native String productIdentifier();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -228,4 +160,72 @@ public class SKProduct extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * downloadContentLengths</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/downloadContentLengths">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadContentLengths")
+    public native NSArray<? extends NSNumber> downloadContentLengths();
+
+    /**
+     * downloadContentVersion</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/downloadContentVersion">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadContentVersion")
+    public native String downloadContentVersion();
+
+    @Generated
+    @Selector("init")
+    public native SKProduct init();
+
+    /**
+     * downloadable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/downloadable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isDownloadable")
+    public native boolean isDownloadable();
+
+    /**
+     * localizedDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/localizedDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedDescription")
+    public native String localizedDescription();
+
+    /**
+     * localizedTitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/localizedTitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedTitle")
+    public native String localizedTitle();
+
+    /**
+     * price</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/price">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("price")
+    public native NSDecimalNumber price();
+
+    /**
+     * priceLocale</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/priceLocale">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("priceLocale")
+    public native NSLocale priceLocale();
+
+    /**
+     * productIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProduct_Reference/index.html#//apple_ref/occ/instp/SKProduct/productIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("productIdentifier")
+    public native String productIdentifier();
 }

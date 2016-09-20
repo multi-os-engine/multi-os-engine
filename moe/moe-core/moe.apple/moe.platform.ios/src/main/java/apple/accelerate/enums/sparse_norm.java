@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class sparse_norm {
-    @Generated
-    private sparse_norm() {
-    }
-
     @Generated public static final int SPARSE_NORM_ONE = 0x000000AB;
     @Generated public static final int SPARSE_NORM_TWO = 0x000000AD;
     @Generated public static final int SPARSE_NORM_INF = 0x000000AF;
     @Generated public static final int SPARSE_NORM_R1 = 0x000000B3;
+
+    @Generated
+    private sparse_norm() {
+    }
 }

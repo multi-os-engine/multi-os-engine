@@ -20,14 +20,14 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int SKErrorUnknown = 0x00000000;
     @Generated public static final int SKErrorClientInvalid = 0x00000001;
     @Generated public static final int SKErrorPaymentCancelled = 0x00000002;
     @Generated public static final int SKErrorPaymentInvalid = 0x00000003;
     @Generated public static final int SKErrorPaymentNotAllowed = 0x00000004;
     @Generated public static final int SKErrorStoreProductNotAvailable = 0x00000005;
+
+    @Generated
+    private Enums() {
+    }
 }

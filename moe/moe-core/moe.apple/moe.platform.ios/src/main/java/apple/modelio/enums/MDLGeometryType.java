@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MDLGeometryType {
-    @Generated
-    private MDLGeometryType() {
-    }
-
     @Generated @NInt public static final long TypePoints = 0x0000000000000000L;
     @Generated @NInt public static final long TypeLines = 0x0000000000000001L;
     @Generated @NInt public static final long TypeTriangles = 0x0000000000000002L;
@@ -36,4 +32,8 @@ public final class MDLGeometryType {
     @Generated @NInt public static final long KindTriangles = 0x0000000000000002L;
     @Generated @NInt public static final long KindTriangleStrips = 0x0000000000000003L;
     @Generated @NInt public static final long KindQuads = 0x0000000000000004L;
+
+    @Generated
+    private MDLGeometryType() {
+    }
 }

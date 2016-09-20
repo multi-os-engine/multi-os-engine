@@ -61,85 +61,6 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
     public static native CKModifyRecordZonesOperation alloc();
 
     @Generated
-    @Selector("init")
-    public native CKModifyRecordZonesOperation init();
-
-    /**
-     * initWithRecordZonesToSave:recordZoneIDsToDelete:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instm/CKModifyRecordZonesOperation/initWithRecordZonesToSave:recordZoneIDsToDelete:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRecordZonesToSave:recordZoneIDsToDelete:")
-    public native CKModifyRecordZonesOperation initWithRecordZonesToSaveRecordZoneIDsToDelete(
-            NSArray<? extends CKRecordZone> recordZonesToSave, NSArray<? extends CKRecordZoneID> recordZoneIDsToDelete);
-
-    /**
-     * recordZoneIDsToDelete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/recordZoneIDsToDelete">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recordZoneIDsToDelete")
-    public native NSArray<? extends CKRecordZoneID> recordZoneIDsToDelete();
-
-    /**
-     * recordZonesToSave</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/recordZonesToSave">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recordZonesToSave")
-    public native NSArray<? extends CKRecordZone> recordZonesToSave();
-
-    /**
-     * modifyRecordZonesCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/modifyRecordZonesCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setModifyRecordZonesCompletionBlock:")
-    public native void setModifyRecordZonesCompletionBlock(
-            @ObjCBlock(name = "call_setModifyRecordZonesCompletionBlock") Block_setModifyRecordZonesCompletionBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setModifyRecordZonesCompletionBlock {
-        @Generated
-        void call_setModifyRecordZonesCompletionBlock(NSArray<? extends CKRecordZone> arg0,
-                NSArray<? extends CKRecordZoneID> arg1, NSError arg2);
-    }
-
-    /**
-     * recordZoneIDsToDelete</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/recordZoneIDsToDelete">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRecordZoneIDsToDelete:")
-    public native void setRecordZoneIDsToDelete(NSArray<? extends CKRecordZoneID> value);
-
-    /**
-     * recordZonesToSave</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/recordZonesToSave">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRecordZonesToSave:")
-    public native void setRecordZonesToSave(NSArray<? extends CKRecordZone> value);
-
-    /**
-     * modifyRecordZonesCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/modifyRecordZonesCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("modifyRecordZonesCompletionBlock")
-    @ObjCBlock(name = "call_modifyRecordZonesCompletionBlock_ret")
-    public native Block_modifyRecordZonesCompletionBlock_ret modifyRecordZonesCompletionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_modifyRecordZonesCompletionBlock_ret {
-        @Generated
-        void call_modifyRecordZonesCompletionBlock_ret(NSArray<? extends CKRecordZone> arg0,
-                NSArray<? extends CKRecordZoneID> arg1, NSError arg2);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -238,4 +159,83 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CKModifyRecordZonesOperation init();
+
+    /**
+     * initWithRecordZonesToSave:recordZoneIDsToDelete:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instm/CKModifyRecordZonesOperation/initWithRecordZonesToSave:recordZoneIDsToDelete:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRecordZonesToSave:recordZoneIDsToDelete:")
+    public native CKModifyRecordZonesOperation initWithRecordZonesToSaveRecordZoneIDsToDelete(
+            NSArray<? extends CKRecordZone> recordZonesToSave, NSArray<? extends CKRecordZoneID> recordZoneIDsToDelete);
+
+    /**
+     * recordZoneIDsToDelete</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/recordZoneIDsToDelete">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recordZoneIDsToDelete")
+    public native NSArray<? extends CKRecordZoneID> recordZoneIDsToDelete();
+
+    /**
+     * recordZonesToSave</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/recordZonesToSave">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recordZonesToSave")
+    public native NSArray<? extends CKRecordZone> recordZonesToSave();
+
+    /**
+     * modifyRecordZonesCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/modifyRecordZonesCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setModifyRecordZonesCompletionBlock:")
+    public native void setModifyRecordZonesCompletionBlock(
+            @ObjCBlock(name = "call_setModifyRecordZonesCompletionBlock") Block_setModifyRecordZonesCompletionBlock value);
+
+    /**
+     * recordZoneIDsToDelete</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/recordZoneIDsToDelete">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRecordZoneIDsToDelete:")
+    public native void setRecordZoneIDsToDelete(NSArray<? extends CKRecordZoneID> value);
+
+    /**
+     * recordZonesToSave</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/recordZonesToSave">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRecordZonesToSave:")
+    public native void setRecordZonesToSave(NSArray<? extends CKRecordZone> value);
+
+    /**
+     * modifyRecordZonesCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKModifyRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKModifyRecordZonesOperation/modifyRecordZonesCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("modifyRecordZonesCompletionBlock")
+    @ObjCBlock(name = "call_modifyRecordZonesCompletionBlock_ret")
+    public native Block_modifyRecordZonesCompletionBlock_ret modifyRecordZonesCompletionBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setModifyRecordZonesCompletionBlock {
+        @Generated
+        void call_setModifyRecordZonesCompletionBlock(NSArray<? extends CKRecordZone> arg0,
+                NSArray<? extends CKRecordZoneID> arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_modifyRecordZonesCompletionBlock_ret {
+        @Generated
+        void call_modifyRecordZonesCompletionBlock_ret(NSArray<? extends CKRecordZone> arg0,
+                NSArray<? extends CKRecordZoneID> arg1, NSError arg2);
+    }
 }

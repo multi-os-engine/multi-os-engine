@@ -63,16 +63,6 @@ public class NSIncrementalStore extends NSPersistentStore {
     public static native NSIncrementalStore alloc();
 
     /**
-     * executeRequest:withContext:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/executeRequest:withContext:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("executeRequest:withContext:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object executeRequestWithContextError(NSPersistentStoreRequest request,
-            NSManagedObjectContext context, Ptr<NSError> error);
-
-    /**
      * identifierForNewStoreAtURL:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/clm/NSIncrementalStore/identifierForNewStoreAtURL:">iOS Dev Center</a>
      */
@@ -80,85 +70,6 @@ public class NSIncrementalStore extends NSPersistentStore {
     @Selector("identifierForNewStoreAtURL:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object identifierForNewStoreAtURL(NSURL storeURL);
-
-    @Generated
-    @Selector("init")
-    public native NSIncrementalStore init();
-
-    @Generated
-    @Selector("initWithPersistentStoreCoordinator:configurationName:URL:options:")
-    public native NSIncrementalStore initWithPersistentStoreCoordinatorConfigurationNameURLOptions(
-            NSPersistentStoreCoordinator root, String name, NSURL url, NSDictionary<?, ?> options);
-
-    /**
-     * loadMetadata:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/loadMetadata:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadMetadata:")
-    public native boolean loadMetadata(Ptr<NSError> error);
-
-    /**
-     * managedObjectContextDidRegisterObjectsWithIDs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/managedObjectContextDidRegisterObjectsWithIDs:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("managedObjectContextDidRegisterObjectsWithIDs:")
-    public native void managedObjectContextDidRegisterObjectsWithIDs(NSArray<? extends NSManagedObjectID> objectIDs);
-
-    /**
-     * managedObjectContextDidUnregisterObjectsWithIDs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/managedObjectContextDidUnregisterObjectsWithIDs:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("managedObjectContextDidUnregisterObjectsWithIDs:")
-    public native void managedObjectContextDidUnregisterObjectsWithIDs(NSArray<? extends NSManagedObjectID> objectIDs);
-
-    /**
-     * newObjectIDForEntity:referenceObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/newObjectIDForEntity:referenceObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newObjectIDForEntity:referenceObject:")
-    public native NSManagedObjectID newObjectIDForEntityReferenceObject(NSEntityDescription entity,
-            @Mapped(ObjCObjectMapper.class) Object data);
-
-    /**
-     * newValueForRelationship:forObjectWithID:withContext:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/newValueForRelationship:forObjectWithID:withContext:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newValueForRelationship:forObjectWithID:withContext:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object newValueForRelationshipForObjectWithIDWithContextError(NSRelationshipDescription relationship,
-            NSManagedObjectID objectID, NSManagedObjectContext context, Ptr<NSError> error);
-
-    /**
-     * newValuesForObjectWithID:withContext:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/newValuesForObjectWithID:withContext:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newValuesForObjectWithID:withContext:error:")
-    public native NSIncrementalStoreNode newValuesForObjectWithIDWithContextError(NSManagedObjectID objectID,
-            NSManagedObjectContext context, Ptr<NSError> error);
-
-    /**
-     * obtainPermanentIDsForObjects:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/obtainPermanentIDsForObjects:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("obtainPermanentIDsForObjects:error:")
-    public native NSArray<? extends NSManagedObjectID> obtainPermanentIDsForObjectsError(
-            NSArray<? extends NSManagedObject> array, Ptr<NSError> error);
-
-    /**
-     * referenceObjectForObjectID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/referenceObjectForObjectID:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("referenceObjectForObjectID:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object referenceObjectForObjectID(NSManagedObjectID objectID);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -272,4 +183,93 @@ public class NSIncrementalStore extends NSPersistentStore {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * executeRequest:withContext:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/executeRequest:withContext:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("executeRequest:withContext:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object executeRequestWithContextError(NSPersistentStoreRequest request,
+            NSManagedObjectContext context, Ptr<NSError> error);
+
+    @Generated
+    @Selector("init")
+    public native NSIncrementalStore init();
+
+    @Generated
+    @Selector("initWithPersistentStoreCoordinator:configurationName:URL:options:")
+    public native NSIncrementalStore initWithPersistentStoreCoordinatorConfigurationNameURLOptions(
+            NSPersistentStoreCoordinator root, String name, NSURL url, NSDictionary<?, ?> options);
+
+    /**
+     * loadMetadata:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/loadMetadata:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadMetadata:")
+    public native boolean loadMetadata(Ptr<NSError> error);
+
+    /**
+     * managedObjectContextDidRegisterObjectsWithIDs:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/managedObjectContextDidRegisterObjectsWithIDs:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("managedObjectContextDidRegisterObjectsWithIDs:")
+    public native void managedObjectContextDidRegisterObjectsWithIDs(NSArray<? extends NSManagedObjectID> objectIDs);
+
+    /**
+     * managedObjectContextDidUnregisterObjectsWithIDs:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/managedObjectContextDidUnregisterObjectsWithIDs:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("managedObjectContextDidUnregisterObjectsWithIDs:")
+    public native void managedObjectContextDidUnregisterObjectsWithIDs(NSArray<? extends NSManagedObjectID> objectIDs);
+
+    /**
+     * newObjectIDForEntity:referenceObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/newObjectIDForEntity:referenceObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newObjectIDForEntity:referenceObject:")
+    public native NSManagedObjectID newObjectIDForEntityReferenceObject(NSEntityDescription entity,
+            @Mapped(ObjCObjectMapper.class) Object data);
+
+    /**
+     * newValueForRelationship:forObjectWithID:withContext:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/newValueForRelationship:forObjectWithID:withContext:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newValueForRelationship:forObjectWithID:withContext:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object newValueForRelationshipForObjectWithIDWithContextError(NSRelationshipDescription relationship,
+            NSManagedObjectID objectID, NSManagedObjectContext context, Ptr<NSError> error);
+
+    /**
+     * newValuesForObjectWithID:withContext:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/newValuesForObjectWithID:withContext:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newValuesForObjectWithID:withContext:error:")
+    public native NSIncrementalStoreNode newValuesForObjectWithIDWithContextError(NSManagedObjectID objectID,
+            NSManagedObjectContext context, Ptr<NSError> error);
+
+    /**
+     * obtainPermanentIDsForObjects:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/obtainPermanentIDsForObjects:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("obtainPermanentIDsForObjects:error:")
+    public native NSArray<? extends NSManagedObjectID> obtainPermanentIDsForObjectsError(
+            NSArray<? extends NSManagedObject> array, Ptr<NSError> error);
+
+    /**
+     * referenceObjectForObjectID:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/index.html#//apple_ref/occ/instm/NSIncrementalStore/referenceObjectForObjectID:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("referenceObjectForObjectID:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object referenceObjectForObjectID(NSManagedObjectID objectID);
 }

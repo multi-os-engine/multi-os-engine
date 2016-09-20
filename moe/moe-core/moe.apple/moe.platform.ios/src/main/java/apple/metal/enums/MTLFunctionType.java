@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLFunctionType {
-    @Generated
-    private MTLFunctionType() {
-    }
-
     @Generated @NUInt public static final long Vertex = 0x0000000000000001L;
     @Generated @NUInt public static final long Fragment = 0x0000000000000002L;
     @Generated @NUInt public static final long Kernel = 0x0000000000000003L;
+
+    @Generated
+    private MTLFunctionType() {
+    }
 }

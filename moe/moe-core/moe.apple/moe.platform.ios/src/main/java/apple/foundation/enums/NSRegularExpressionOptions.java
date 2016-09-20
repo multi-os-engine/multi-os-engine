@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSRegularExpressionOptions {
-    @Generated
-    private NSRegularExpressionOptions() {
-    }
-
     @Generated @NUInt public static final long CaseInsensitive = 0x0000000000000001L;
     @Generated @NUInt public static final long AllowCommentsAndWhitespace = 0x0000000000000002L;
     @Generated @NUInt public static final long IgnoreMetacharacters = 0x0000000000000004L;
@@ -32,4 +28,8 @@ public final class NSRegularExpressionOptions {
     @Generated @NUInt public static final long AnchorsMatchLines = 0x0000000000000010L;
     @Generated @NUInt public static final long UseUnixLineSeparators = 0x0000000000000020L;
     @Generated @NUInt public static final long UseUnicodeWordBoundaries = 0x0000000000000040L;
+
+    @Generated
+    private NSRegularExpressionOptions() {
+    }
 }

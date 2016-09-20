@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class EKEntityType {
+    @Generated @NUInt public static final long Event = 0x0000000000000000L;
+    @Generated @NUInt public static final long Reminder = 0x0000000000000001L;
+
     @Generated
     private EKEntityType() {
     }
-
-    @Generated @NUInt public static final long Event = 0x0000000000000000L;
-    @Generated @NUInt public static final long Reminder = 0x0000000000000001L;
 }

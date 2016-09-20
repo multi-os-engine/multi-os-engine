@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSLayoutFormatOptions {
-    @Generated
-    private NSLayoutFormatOptions() {
-    }
-
     @Generated @NUInt public static final long AlignAllLeft = 0x0000000000000002L;
     @Generated @NUInt public static final long AlignAllRight = 0x0000000000000004L;
     @Generated @NUInt public static final long AlignAllTop = 0x0000000000000008L;
@@ -41,4 +37,8 @@ public final class NSLayoutFormatOptions {
     @Generated @NUInt public static final long DirectionLeftToRight = 0x0000000000010000L;
     @Generated @NUInt public static final long DirectionRightToLeft = 0x0000000000020000L;
     @Generated @NUInt public static final long DirectionMask = 0x0000000000030000L;
+
+    @Generated
+    private NSLayoutFormatOptions() {
+    }
 }

@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class AVAudioCommonFormat {
-    @Generated
-    private AVAudioCommonFormat() {
-    }
-
     @Generated @NUInt public static final long OtherFormat = 0x0000000000000000L;
     @Generated @NUInt public static final long PCMFormatFloat32 = 0x0000000000000001L;
     @Generated @NUInt public static final long PCMFormatFloat64 = 0x0000000000000002L;
     @Generated @NUInt public static final long PCMFormatInt16 = 0x0000000000000003L;
     @Generated @NUInt public static final long PCMFormatInt32 = 0x0000000000000004L;
+
+    @Generated
+    private AVAudioCommonFormat() {
+    }
 }

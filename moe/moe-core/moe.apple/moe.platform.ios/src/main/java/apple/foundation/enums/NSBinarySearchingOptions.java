@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSBinarySearchingOptions {
-    @Generated
-    private NSBinarySearchingOptions() {
-    }
-
     @Generated @NUInt public static final long FirstEqual = 0x0000000000000100L;
     @Generated @NUInt public static final long LastEqual = 0x0000000000000200L;
     @Generated @NUInt public static final long InsertionIndex = 0x0000000000000400L;
+
+    @Generated
+    private NSBinarySearchingOptions() {
+    }
 }

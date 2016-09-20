@@ -62,42 +62,9 @@ public class HKBloodTypeObject extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native HKBloodTypeObject alloc();
 
-    /**
-     * bloodType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/help/HKBloodTypeObject_Class/index.html#//apple_ref/occ/instp/HKBloodTypeObject/bloodType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bloodType")
-    @NInt
-    public native long bloodType();
-
-    @Generated
-    @Selector("init")
-    public native HKBloodTypeObject init();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKBloodTypeObject initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -198,4 +165,37 @@ public class HKBloodTypeObject extends NSObject implements NSCopying, NSSecureCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bloodType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/help/HKBloodTypeObject_Class/index.html#//apple_ref/occ/instp/HKBloodTypeObject/bloodType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bloodType")
+    @NInt
+    public native long bloodType();
+
+    @Generated
+    @Selector("init")
+    public native HKBloodTypeObject init();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKBloodTypeObject initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

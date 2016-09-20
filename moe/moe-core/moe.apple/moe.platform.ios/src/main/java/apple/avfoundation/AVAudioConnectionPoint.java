@@ -59,23 +59,6 @@ public class AVAudioConnectionPoint extends NSObject {
     public static native AVAudioConnectionPoint alloc();
 
     @Generated
-    @Selector("bus")
-    @NUInt
-    public native long bus();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioConnectionPoint init();
-
-    @Generated
-    @Selector("initWithNode:bus:")
-    public native AVAudioConnectionPoint initWithNodeBus(AVAudioNode node, @NUInt long bus);
-
-    @Generated
-    @Selector("node")
-    public native AVAudioNode node();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -174,4 +157,21 @@ public class AVAudioConnectionPoint extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("bus")
+    @NUInt
+    public native long bus();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioConnectionPoint init();
+
+    @Generated
+    @Selector("initWithNode:bus:")
+    public native AVAudioConnectionPoint initWithNodeBus(AVAudioNode node, @NUInt long bus);
+
+    @Generated
+    @Selector("node")
+    public native AVAudioNode node();
 }

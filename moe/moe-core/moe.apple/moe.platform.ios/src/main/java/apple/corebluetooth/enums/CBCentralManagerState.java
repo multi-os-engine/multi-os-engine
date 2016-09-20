@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CBCentralManagerState {
-    @Generated
-    private CBCentralManagerState() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Resetting = 0x0000000000000001L;
     @Generated @NInt public static final long Unsupported = 0x0000000000000002L;
     @Generated @NInt public static final long Unauthorized = 0x0000000000000003L;
     @Generated @NInt public static final long PoweredOff = 0x0000000000000004L;
     @Generated @NInt public static final long PoweredOn = 0x0000000000000005L;
+
+    @Generated
+    private CBCentralManagerState() {
+    }
 }

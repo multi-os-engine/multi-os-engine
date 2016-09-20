@@ -64,27 +64,6 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     public static native SCNGeometryElement alloc();
 
     /**
-     * bytesPerIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometryElement_Class/index.html#//apple_ref/occ/instp/SCNGeometryElement/bytesPerIndex">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bytesPerIndex")
-    @NInt
-    public native long bytesPerIndex();
-
-    /**
-     * data</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometryElement_Class/index.html#//apple_ref/occ/instp/SCNGeometryElement/data">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("data")
-    public native NSData data();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
      * geometryElementWithData:primitiveType:primitiveCount:bytesPerIndex:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometryElement_Class/index.html#//apple_ref/occ/clm/SCNGeometryElement/geometryElementWithData:primitiveType:primitiveCount:bytesPerIndex:">iOS Dev Center</a>
      */
@@ -94,40 +73,8 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
             @NInt long primitiveType, @NInt long primitiveCount, @NInt long bytesPerIndex);
 
     @Generated
-    @Selector("init")
-    public native SCNGeometryElement init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNGeometryElement initWithCoder(NSCoder aDecoder);
-
-    /**
-     * primitiveCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometryElement_Class/index.html#//apple_ref/occ/instp/SCNGeometryElement/primitiveCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("primitiveCount")
-    @NInt
-    public native long primitiveCount();
-
-    /**
-     * primitiveType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometryElement_Class/index.html#//apple_ref/occ/instp/SCNGeometryElement/primitiveType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("primitiveType")
-    @NInt
-    public native long primitiveType();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     /**
      * geometryElementWithMDLSubmesh:</br>
@@ -236,4 +183,57 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bytesPerIndex</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometryElement_Class/index.html#//apple_ref/occ/instp/SCNGeometryElement/bytesPerIndex">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bytesPerIndex")
+    @NInt
+    public native long bytesPerIndex();
+
+    /**
+     * data</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometryElement_Class/index.html#//apple_ref/occ/instp/SCNGeometryElement/data">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("data")
+    public native NSData data();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SCNGeometryElement init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNGeometryElement initWithCoder(NSCoder aDecoder);
+
+    /**
+     * primitiveCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometryElement_Class/index.html#//apple_ref/occ/instp/SCNGeometryElement/primitiveCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("primitiveCount")
+    @NInt
+    public native long primitiveCount();
+
+    /**
+     * primitiveType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNGeometryElement_Class/index.html#//apple_ref/occ/instp/SCNGeometryElement/primitiveType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("primitiveType")
+    @NInt
+    public native long primitiveType();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -306,13 +306,6 @@ public final class Security {
     public static native void SecAddSharedWebCredential(CFStringRef fqdn, CFStringRef account, CFStringRef password,
             @ObjCBlock(name = "call_SecAddSharedWebCredential") Block_SecAddSharedWebCredential completionHandler);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_SecAddSharedWebCredential {
-        @Generated
-        void call_SecAddSharedWebCredential(CFErrorRef arg0);
-    }
-
     /**
      * SecRequestSharedWebCredential</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Security/Reference/SharedWebCredentialsRef/index.html#//apple_ref/c/func/SecRequestSharedWebCredential">iOS Dev Center</a>
@@ -321,13 +314,6 @@ public final class Security {
     @CFunction
     public static native void SecRequestSharedWebCredential(CFStringRef fqdn, CFStringRef account,
             @ObjCBlock(name = "call_SecRequestSharedWebCredential") Block_SecRequestSharedWebCredential completionHandler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_SecRequestSharedWebCredential {
-        @Generated
-        void call_SecRequestSharedWebCredential(CFArrayRef arg0, CFErrorRef arg1);
-    }
 
     /**
      * SecCreateSharedWebCredentialPassword</br>
@@ -435,13 +421,6 @@ public final class Security {
     @CFunction
     public static native int SecTrustEvaluateAsync(SecTrustRef trust, NSObject queue,
             @ObjCBlock(name = "call_SecTrustEvaluateAsync") Block_SecTrustEvaluateAsync result);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_SecTrustEvaluateAsync {
-        @Generated
-        void call_SecTrustEvaluateAsync(SecTrustRef arg0, int arg1);
-    }
 
     /**
      * SecTrustGetTrustResult</br>
@@ -558,20 +537,6 @@ public final class Security {
     public static native int SSLSetIOFuncs(SSLContextRef context,
             @FunctionPtr(name = "call_SSLSetIOFuncs_1") Function_SSLSetIOFuncs_1 readFunc,
             @FunctionPtr(name = "call_SSLSetIOFuncs_2") Function_SSLSetIOFuncs_2 writeFunc);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_SSLSetIOFuncs_1 {
-        @Generated
-        int call_SSLSetIOFuncs_1(ConstVoidPtr arg0, VoidPtr arg1, NUIntPtr arg2);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_SSLSetIOFuncs_2 {
-        @Generated
-        int call_SSLSetIOFuncs_2(ConstVoidPtr arg0, ConstVoidPtr arg1, NUIntPtr arg2);
-    }
 
     /**
      * SSLSetProtocolVersionMin</br>
@@ -1513,4 +1478,39 @@ public final class Security {
     @Generated
     @CVariable()
     public static native CFStringRef kSecTrustCertificateTransparency();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_SecAddSharedWebCredential {
+        @Generated
+        void call_SecAddSharedWebCredential(CFErrorRef arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_SecRequestSharedWebCredential {
+        @Generated
+        void call_SecRequestSharedWebCredential(CFArrayRef arg0, CFErrorRef arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_SecTrustEvaluateAsync {
+        @Generated
+        void call_SecTrustEvaluateAsync(SecTrustRef arg0, int arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_SSLSetIOFuncs_1 {
+        @Generated
+        int call_SSLSetIOFuncs_1(ConstVoidPtr arg0, VoidPtr arg1, NUIntPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_SSLSetIOFuncs_2 {
+        @Generated
+        int call_SSLSetIOFuncs_2(ConstVoidPtr arg0, ConstVoidPtr arg1, NUIntPtr arg2);
+    }
 }

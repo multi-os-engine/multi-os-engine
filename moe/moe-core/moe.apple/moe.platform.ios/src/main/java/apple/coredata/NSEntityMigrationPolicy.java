@@ -60,73 +60,6 @@ public class NSEntityMigrationPolicy extends NSObject {
     @Selector("alloc")
     public static native NSEntityMigrationPolicy alloc();
 
-    /**
-     * beginEntityMapping:manager:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/beginEntityMapping:manager:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("beginEntityMapping:manager:error:")
-    public native boolean beginEntityMappingManagerError(NSEntityMapping mapping, NSMigrationManager manager,
-            Ptr<NSError> error);
-
-    /**
-     * createDestinationInstancesForSourceInstance:entityMapping:manager:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/createDestinationInstancesForSourceInstance:entityMapping:manager:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("createDestinationInstancesForSourceInstance:entityMapping:manager:error:")
-    public native boolean createDestinationInstancesForSourceInstanceEntityMappingManagerError(
-            NSManagedObject sInstance, NSEntityMapping mapping, NSMigrationManager manager, Ptr<NSError> error);
-
-    /**
-     * createRelationshipsForDestinationInstance:entityMapping:manager:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/createRelationshipsForDestinationInstance:entityMapping:manager:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("createRelationshipsForDestinationInstance:entityMapping:manager:error:")
-    public native boolean createRelationshipsForDestinationInstanceEntityMappingManagerError(NSManagedObject dInstance,
-            NSEntityMapping mapping, NSMigrationManager manager, Ptr<NSError> error);
-
-    /**
-     * endEntityMapping:manager:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/endEntityMapping:manager:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("endEntityMapping:manager:error:")
-    public native boolean endEntityMappingManagerError(NSEntityMapping mapping, NSMigrationManager manager,
-            Ptr<NSError> error);
-
-    /**
-     * endInstanceCreationForEntityMapping:manager:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/endInstanceCreationForEntityMapping:manager:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("endInstanceCreationForEntityMapping:manager:error:")
-    public native boolean endInstanceCreationForEntityMappingManagerError(NSEntityMapping mapping,
-            NSMigrationManager manager, Ptr<NSError> error);
-
-    /**
-     * endRelationshipCreationForEntityMapping:manager:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/endRelationshipCreationForEntityMapping:manager:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("endRelationshipCreationForEntityMapping:manager:error:")
-    public native boolean endRelationshipCreationForEntityMappingManagerError(NSEntityMapping mapping,
-            NSMigrationManager manager, Ptr<NSError> error);
-
-    @Generated
-    @Selector("init")
-    public native NSEntityMigrationPolicy init();
-
-    /**
-     * performCustomValidationForEntityMapping:manager:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/performCustomValidationForEntityMapping:manager:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("performCustomValidationForEntityMapping:manager:error:")
-    public native boolean performCustomValidationForEntityMappingManagerError(NSEntityMapping mapping,
-            NSMigrationManager manager, Ptr<NSError> error);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -226,4 +159,71 @@ public class NSEntityMigrationPolicy extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * beginEntityMapping:manager:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/beginEntityMapping:manager:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("beginEntityMapping:manager:error:")
+    public native boolean beginEntityMappingManagerError(NSEntityMapping mapping, NSMigrationManager manager,
+            Ptr<NSError> error);
+
+    /**
+     * createDestinationInstancesForSourceInstance:entityMapping:manager:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/createDestinationInstancesForSourceInstance:entityMapping:manager:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("createDestinationInstancesForSourceInstance:entityMapping:manager:error:")
+    public native boolean createDestinationInstancesForSourceInstanceEntityMappingManagerError(
+            NSManagedObject sInstance, NSEntityMapping mapping, NSMigrationManager manager, Ptr<NSError> error);
+
+    /**
+     * createRelationshipsForDestinationInstance:entityMapping:manager:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/createRelationshipsForDestinationInstance:entityMapping:manager:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("createRelationshipsForDestinationInstance:entityMapping:manager:error:")
+    public native boolean createRelationshipsForDestinationInstanceEntityMappingManagerError(NSManagedObject dInstance,
+            NSEntityMapping mapping, NSMigrationManager manager, Ptr<NSError> error);
+
+    /**
+     * endEntityMapping:manager:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/endEntityMapping:manager:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("endEntityMapping:manager:error:")
+    public native boolean endEntityMappingManagerError(NSEntityMapping mapping, NSMigrationManager manager,
+            Ptr<NSError> error);
+
+    /**
+     * endInstanceCreationForEntityMapping:manager:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/endInstanceCreationForEntityMapping:manager:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("endInstanceCreationForEntityMapping:manager:error:")
+    public native boolean endInstanceCreationForEntityMappingManagerError(NSEntityMapping mapping,
+            NSMigrationManager manager, Ptr<NSError> error);
+
+    /**
+     * endRelationshipCreationForEntityMapping:manager:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/endRelationshipCreationForEntityMapping:manager:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("endRelationshipCreationForEntityMapping:manager:error:")
+    public native boolean endRelationshipCreationForEntityMappingManagerError(NSEntityMapping mapping,
+            NSMigrationManager manager, Ptr<NSError> error);
+
+    @Generated
+    @Selector("init")
+    public native NSEntityMigrationPolicy init();
+
+    /**
+     * performCustomValidationForEntityMapping:manager:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/index.html#//apple_ref/occ/instm/NSEntityMigrationPolicy/performCustomValidationForEntityMapping:manager:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("performCustomValidationForEntityMapping:manager:error:")
+    public native boolean performCustomValidationForEntityMappingManagerError(NSEntityMapping mapping,
+            NSMigrationManager manager, Ptr<NSError> error);
 }

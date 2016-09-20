@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIWebPaginationMode {
-    @Generated
-    private UIWebPaginationMode() {
-    }
-
     @Generated @NInt public static final long Unpaginated = 0x0000000000000000L;
     @Generated @NInt public static final long LeftToRight = 0x0000000000000001L;
     @Generated @NInt public static final long TopToBottom = 0x0000000000000002L;
     @Generated @NInt public static final long BottomToTop = 0x0000000000000003L;
     @Generated @NInt public static final long RightToLeft = 0x0000000000000004L;
+
+    @Generated
+    private UIWebPaginationMode() {
+    }
 }

@@ -57,114 +57,10 @@ public class HMTrigger extends NSObject {
         super(peer);
     }
 
-    /**
-     * actionSets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/actionSets">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("actionSets")
-    public native NSArray<? extends HMActionSet> actionSets();
-
-    /**
-     * addActionSet:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/addActionSet:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addActionSet:completionHandler:")
-    public native void addActionSetCompletionHandler(HMActionSet actionSet,
-            @ObjCBlock(name = "call_addActionSetCompletionHandler") Block_addActionSetCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addActionSetCompletionHandler {
-        @Generated
-        void call_addActionSetCompletionHandler(NSError arg0);
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native HMTrigger alloc();
-
-    /**
-     * enable:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/enable:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enable:completionHandler:")
-    public native void enableCompletionHandler(boolean enable,
-            @ObjCBlock(name = "call_enableCompletionHandler") Block_enableCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enableCompletionHandler {
-        @Generated
-        void call_enableCompletionHandler(NSError arg0);
-    }
-
-    @Generated
-    @Selector("init")
-    public native HMTrigger init();
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * lastFireDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/lastFireDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lastFireDate")
-    public native NSDate lastFireDate();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * removeActionSet:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/removeActionSet:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeActionSet:completionHandler:")
-    public native void removeActionSetCompletionHandler(HMActionSet actionSet,
-            @ObjCBlock(name = "call_removeActionSetCompletionHandler") Block_removeActionSetCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_removeActionSetCompletionHandler {
-        @Generated
-        void call_removeActionSetCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/updateName:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updateNameCompletionHandler {
-        @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
-    }
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -265,4 +161,108 @@ public class HMTrigger extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * actionSets</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/actionSets">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("actionSets")
+    public native NSArray<? extends HMActionSet> actionSets();
+
+    /**
+     * addActionSet:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/addActionSet:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addActionSet:completionHandler:")
+    public native void addActionSetCompletionHandler(HMActionSet actionSet,
+            @ObjCBlock(name = "call_addActionSetCompletionHandler") Block_addActionSetCompletionHandler completion);
+
+    /**
+     * enable:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/enable:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enable:completionHandler:")
+    public native void enableCompletionHandler(boolean enable,
+            @ObjCBlock(name = "call_enableCompletionHandler") Block_enableCompletionHandler completion);
+
+    @Generated
+    @Selector("init")
+    public native HMTrigger init();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * lastFireDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/lastFireDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lastFireDate")
+    public native NSDate lastFireDate();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instp/HMTrigger/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * removeActionSet:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/removeActionSet:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeActionSet:completionHandler:")
+    public native void removeActionSetCompletionHandler(HMActionSet actionSet,
+            @ObjCBlock(name = "call_removeActionSetCompletionHandler") Block_removeActionSetCompletionHandler completion);
+
+    /**
+     * updateName:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/instm/HMTrigger/updateName:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateName:completionHandler:")
+    public native void updateNameCompletionHandler(String name,
+            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+
+    @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addActionSetCompletionHandler {
+        @Generated
+        void call_addActionSetCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enableCompletionHandler {
+        @Generated
+        void call_enableCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeActionSetCompletionHandler {
+        @Generated
+        void call_removeActionSetCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateNameCompletionHandler {
+        @Generated
+        void call_updateNameCompletionHandler(NSError arg0);
+    }
 }

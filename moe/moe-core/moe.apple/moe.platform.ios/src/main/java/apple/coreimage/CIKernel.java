@@ -62,28 +62,6 @@ public class CIKernel extends NSObject {
     public static native CIKernel alloc();
 
     /**
-     * applyWithExtent:roiCallback:arguments:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/instm/CIKernel/applyWithExtent:roiCallback:arguments:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyWithExtent:roiCallback:arguments:")
-    public native CIImage applyWithExtentRoiCallbackArguments(@ByValue CGRect extent,
-            @ObjCBlock(name = "call_applyWithExtentRoiCallbackArguments") Block_applyWithExtentRoiCallbackArguments callback,
-            NSArray<?> args);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applyWithExtentRoiCallbackArguments {
-        @Generated
-        @ByValue
-        CGRect call_applyWithExtentRoiCallbackArguments(int arg0, @ByValue CGRect arg1);
-    }
-
-    @Generated
-    @Selector("init")
-    public native CIKernel init();
-
-    /**
      * kernelWithString:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/clm/CIKernel/kernelWithString:">iOS Dev Center</a>
      */
@@ -98,22 +76,6 @@ public class CIKernel extends NSObject {
     @Generated
     @Selector("kernelsWithString:")
     public static native NSArray<? extends CIKernel> kernelsWithString(String string);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/instp/CIKernel/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * setROISelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/instm/CIKernel/setROISelector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setROISelector:")
-    public native void setROISelector(SEL method);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -214,4 +176,42 @@ public class CIKernel extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * applyWithExtent:roiCallback:arguments:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/instm/CIKernel/applyWithExtent:roiCallback:arguments:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyWithExtent:roiCallback:arguments:")
+    public native CIImage applyWithExtentRoiCallbackArguments(@ByValue CGRect extent,
+            @ObjCBlock(name = "call_applyWithExtentRoiCallbackArguments") Block_applyWithExtentRoiCallbackArguments callback,
+            NSArray<?> args);
+
+    @Generated
+    @Selector("init")
+    public native CIKernel init();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/instp/CIKernel/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * setROISelector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/index.html#//apple_ref/occ/instm/CIKernel/setROISelector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setROISelector:")
+    public native void setROISelector(SEL method);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applyWithExtentRoiCallbackArguments {
+        @Generated
+        @ByValue
+        CGRect call_applyWithExtentRoiCallbackArguments(int arg0, @ByValue CGRect arg1);
+    }
 }

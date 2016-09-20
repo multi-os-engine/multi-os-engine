@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PKAddPassButtonStyle {
+    @Generated @NInt public static final long Black = 0x0000000000000000L;
+    @Generated @NInt public static final long BlackOutline = 0x0000000000000001L;
+
     @Generated
     private PKAddPassButtonStyle() {
     }
-
-    @Generated @NInt public static final long Black = 0x0000000000000000L;
-    @Generated @NInt public static final long BlackOutline = 0x0000000000000001L;
 }

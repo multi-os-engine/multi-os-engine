@@ -60,10 +60,6 @@ public class MDLColorSwatchTexture extends MDLTexture {
     public static native MDLColorSwatchTexture alloc();
 
     @Generated
-    @Selector("init")
-    public native MDLColorSwatchTexture init();
-
-    @Generated
     @Selector("textureCubeWithImagesNamed:")
     public static native MDLColorSwatchTexture textureCubeWithImagesNamed(NSArray<String> names);
 
@@ -179,4 +175,8 @@ public class MDLColorSwatchTexture extends MDLTexture {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MDLColorSwatchTexture init();
 }

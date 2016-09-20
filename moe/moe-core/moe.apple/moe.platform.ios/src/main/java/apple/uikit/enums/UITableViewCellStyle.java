@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITableViewCellStyle {
-    @Generated
-    private UITableViewCellStyle() {
-    }
-
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     @Generated @NInt public static final long Value1 = 0x0000000000000001L;
     @Generated @NInt public static final long Value2 = 0x0000000000000002L;
     @Generated @NInt public static final long Subtitle = 0x0000000000000003L;
+
+    @Generated
+    private UITableViewCellStyle() {
+    }
 }

@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKCalendarType {
-    @Generated
-    private EKCalendarType() {
-    }
-
     @Generated @NInt public static final long Local = 0x0000000000000000L;
     @Generated @NInt public static final long CalDAV = 0x0000000000000001L;
     @Generated @NInt public static final long Exchange = 0x0000000000000002L;
     @Generated @NInt public static final long Subscription = 0x0000000000000003L;
     @Generated @NInt public static final long Birthday = 0x0000000000000004L;
+
+    @Generated
+    private EKCalendarType() {
+    }
 }

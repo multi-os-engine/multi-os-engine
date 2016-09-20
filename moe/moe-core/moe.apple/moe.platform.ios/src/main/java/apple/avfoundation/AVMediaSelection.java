@@ -61,35 +61,6 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
     public static native AVMediaSelection alloc();
 
     @Generated
-    @Selector("asset")
-    public native AVAsset asset();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native AVMediaSelection init();
-
-    @Generated
-    @Selector("mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup:")
-    public native boolean mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup(
-            AVMediaSelectionGroup mediaSelectionGroup);
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("selectedMediaOptionInMediaSelectionGroup:")
-    public native AVMediaSelectionOption selectedMediaOptionInMediaSelectionGroup(
-            AVMediaSelectionGroup mediaSelectionGroup);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -188,4 +159,33 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("asset")
+    public native AVAsset asset();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native AVMediaSelection init();
+
+    @Generated
+    @Selector("mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup:")
+    public native boolean mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup(
+            AVMediaSelectionGroup mediaSelectionGroup);
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("selectedMediaOptionInMediaSelectionGroup:")
+    public native AVMediaSelectionOption selectedMediaOptionInMediaSelectionGroup(
+            AVMediaSelectionGroup mediaSelectionGroup);
 }

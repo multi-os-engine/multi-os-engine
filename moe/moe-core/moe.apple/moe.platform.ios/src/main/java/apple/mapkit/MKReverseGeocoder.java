@@ -61,101 +61,6 @@ public class MKReverseGeocoder extends NSObject {
     @Selector("alloc")
     public static native MKReverseGeocoder alloc();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instm/MKReverseGeocoder/cancel">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("cancel")
-    public native void cancel();
-
-    /**
-     * coordinate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/coordinate">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("coordinate")
-    @ByValue
-    public native CLLocationCoordinate2D coordinate();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MKReverseGeocoderDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native MKReverseGeocoder init();
-
-    /**
-     * initWithCoordinate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instm/MKReverseGeocoder/initWithCoordinate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("initWithCoordinate:")
-    public native MKReverseGeocoder initWithCoordinate(@ByValue CLLocationCoordinate2D coordinate);
-
-    /**
-     * querying</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/querying">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("isQuerying")
-    public native boolean isQuerying();
-
-    /**
-     * placemark</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/placemark">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("placemark")
-    public native MKPlacemark placemark();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MKReverseGeocoderDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MKReverseGeocoderDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instm/MKReverseGeocoder/start">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("start")
-    public native void start();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -255,4 +160,99 @@ public class MKReverseGeocoder extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cancel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instm/MKReverseGeocoder/cancel">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("cancel")
+    public native void cancel();
+
+    /**
+     * coordinate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/coordinate">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("coordinate")
+    @ByValue
+    public native CLLocationCoordinate2D coordinate();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MKReverseGeocoderDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native MKReverseGeocoder init();
+
+    /**
+     * initWithCoordinate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instm/MKReverseGeocoder/initWithCoordinate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("initWithCoordinate:")
+    public native MKReverseGeocoder initWithCoordinate(@ByValue CLLocationCoordinate2D coordinate);
+
+    /**
+     * querying</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/querying">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("isQuerying")
+    public native boolean isQuerying();
+
+    /**
+     * placemark</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/placemark">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("placemark")
+    public native MKPlacemark placemark();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MKReverseGeocoderDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instp/MKReverseGeocoder/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) MKReverseGeocoderDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * start</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKReverseGeocoder_Class/index.html#//apple_ref/occ/instm/MKReverseGeocoder/start">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("start")
+    public native void start();
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLCompareFunction {
-    @Generated
-    private MTLCompareFunction() {
-    }
-
     @Generated @NUInt public static final long Never = 0x0000000000000000L;
     @Generated @NUInt public static final long Less = 0x0000000000000001L;
     @Generated @NUInt public static final long Equal = 0x0000000000000002L;
@@ -33,4 +29,8 @@ public final class MTLCompareFunction {
     @Generated @NUInt public static final long NotEqual = 0x0000000000000005L;
     @Generated @NUInt public static final long GreaterEqual = 0x0000000000000006L;
     @Generated @NUInt public static final long Always = 0x0000000000000007L;
+
+    @Generated
+    private MTLCompareFunction() {
+    }
 }

@@ -68,48 +68,6 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     public static native AVComposition assetWithURL(NSURL URL);
 
     @Generated
-    @Selector("init")
-    public native AVComposition init();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    /**
-     * naturalSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVComposition_Class/index.html#//apple_ref/occ/instp/AVComposition/naturalSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("naturalSize")
-    @ByValue
-    public native CGSize naturalSize();
-
-    /**
-     * tracks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVComposition_Class/index.html#//apple_ref/occ/instp/AVComposition/tracks">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tracks")
-    public native NSArray<? extends AVCompositionTrack> tracks();
-
-    @Generated
-    @Selector("URLAssetInitializationOptions")
-    public native NSDictionary<String, ?> URLAssetInitializationOptions();
-
-    @Generated
-    @Selector("trackWithTrackID:")
-    public native AVCompositionTrack trackWithTrackID(int trackID);
-
-    @Generated
-    @Selector("tracksWithMediaCharacteristic:")
-    public native NSArray<? extends AVCompositionTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
-
-    @Generated
-    @Selector("tracksWithMediaType:")
-    public native NSArray<? extends AVCompositionTrack> tracksWithMediaType(String mediaType);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -208,4 +166,46 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native AVComposition init();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    /**
+     * naturalSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVComposition_Class/index.html#//apple_ref/occ/instp/AVComposition/naturalSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("naturalSize")
+    @ByValue
+    public native CGSize naturalSize();
+
+    /**
+     * tracks</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVComposition_Class/index.html#//apple_ref/occ/instp/AVComposition/tracks">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tracks")
+    public native NSArray<? extends AVCompositionTrack> tracks();
+
+    @Generated
+    @Selector("URLAssetInitializationOptions")
+    public native NSDictionary<String, ?> URLAssetInitializationOptions();
+
+    @Generated
+    @Selector("trackWithTrackID:")
+    public native AVCompositionTrack trackWithTrackID(int trackID);
+
+    @Generated
+    @Selector("tracksWithMediaCharacteristic:")
+    public native NSArray<? extends AVCompositionTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
+
+    @Generated
+    @Selector("tracksWithMediaType:")
+    public native NSArray<? extends AVCompositionTrack> tracksWithMediaType(String mediaType);
 }

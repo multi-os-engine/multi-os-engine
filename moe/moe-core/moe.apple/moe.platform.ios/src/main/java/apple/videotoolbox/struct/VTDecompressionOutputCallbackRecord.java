@@ -32,11 +32,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure(alignment = 4)
 public final class VTDecompressionOutputCallbackRecord extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public VTDecompressionOutputCallbackRecord() {
@@ -62,14 +62,6 @@ public final class VTDecompressionOutputCallbackRecord extends StructObject {
     public native void setDecompressionOutputCallback(
             @FunctionPtr(name = "call_decompressionOutputCallback") Function_decompressionOutputCallback value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_decompressionOutputCallback {
-        @Generated
-        void call_decompressionOutputCallback(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, VoidPtr arg4,
-                @ByValue CMTime arg5, @ByValue CMTime arg6);
-    }
-
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr decompressionOutputRefCon();
@@ -82,4 +74,12 @@ public final class VTDecompressionOutputCallbackRecord extends StructObject {
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_decompressionOutputCallback")
     public native Function_decompressionOutputCallback decompressionOutputCallback();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_decompressionOutputCallback {
+        @Generated
+        void call_decompressionOutputCallback(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, VoidPtr arg4,
+                @ByValue CMTime arg5, @ByValue CMTime arg6);
+    }
 }

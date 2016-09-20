@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVCaptureFocusMode {
-    @Generated
-    private AVCaptureFocusMode() {
-    }
-
     @Generated @NInt public static final long Locked = 0x0000000000000000L;
     @Generated @NInt public static final long AutoFocus = 0x0000000000000001L;
     @Generated @NInt public static final long ContinuousAutoFocus = 0x0000000000000002L;
+
+    @Generated
+    private AVCaptureFocusMode() {
+    }
 }

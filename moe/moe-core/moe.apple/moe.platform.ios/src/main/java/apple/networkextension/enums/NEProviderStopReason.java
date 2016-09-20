@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NEProviderStopReason {
-    @Generated
-    private NEProviderStopReason() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long UserInitiated = 0x0000000000000001L;
     @Generated @NInt public static final long ProviderFailed = 0x0000000000000002L;
@@ -40,4 +36,7 @@ public final class NEProviderStopReason {
     @Generated @NInt public static final long UserLogout = 0x000000000000000CL;
     @Generated @NInt public static final long UserSwitch = 0x000000000000000DL;
     @Generated @NInt public static final long ConnectionFailed = 0x000000000000000EL;
+    @Generated
+    private NEProviderStopReason() {
+    }
 }

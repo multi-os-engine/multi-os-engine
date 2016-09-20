@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNMorpherCalculationMode {
+    @Generated @NInt public static final long Normalized = 0x0000000000000000L;
+    @Generated @NInt public static final long Additive = 0x0000000000000001L;
+
     @Generated
     private SCNMorpherCalculationMode() {
     }
-
-    @Generated @NInt public static final long Normalized = 0x0000000000000000L;
-    @Generated @NInt public static final long Additive = 0x0000000000000001L;
 }

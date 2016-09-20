@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKBlendMode {
-    @Generated
-    private SKBlendMode() {
-    }
-
     @Generated @NInt public static final long Alpha = 0x0000000000000000L;
     @Generated @NInt public static final long Add = 0x0000000000000001L;
     @Generated @NInt public static final long Subtract = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class SKBlendMode {
     @Generated @NInt public static final long MultiplyX2 = 0x0000000000000004L;
     @Generated @NInt public static final long Screen = 0x0000000000000005L;
     @Generated @NInt public static final long Replace = 0x0000000000000006L;
+
+    @Generated
+    private SKBlendMode() {
+    }
 }

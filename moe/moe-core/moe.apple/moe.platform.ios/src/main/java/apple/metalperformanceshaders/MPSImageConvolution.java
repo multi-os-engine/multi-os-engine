@@ -60,58 +60,6 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageConvolution alloc();
 
-    /**
-     * bias</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageConvolution_ClassReference/index.html#//apple_ref/occ/instp/MPSImageConvolution/bias">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bias")
-    public native float bias();
-
-    @Generated
-    @Selector("init")
-    public native MPSImageConvolution init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageConvolution initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * initWithDevice:kernelWidth:kernelHeight:weights:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageConvolution_ClassReference/index.html#//apple_ref/occ/instm/MPSImageConvolution/initWithDevice:kernelWidth:kernelHeight:weights:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDevice:kernelWidth:kernelHeight:weights:")
-    public native MPSImageConvolution initWithDeviceKernelWidthKernelHeightWeights(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            ConstFloatPtr kernelWeights);
-
-    /**
-     * kernelHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageConvolution_ClassReference/index.html#//apple_ref/occ/instp/MPSImageConvolution/kernelHeight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("kernelHeight")
-    @NUInt
-    public native long kernelHeight();
-
-    /**
-     * kernelWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageConvolution_ClassReference/index.html#//apple_ref/occ/instp/MPSImageConvolution/kernelWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("kernelWidth")
-    @NUInt
-    public native long kernelWidth();
-
-    /**
-     * bias</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageConvolution_ClassReference/index.html#//apple_ref/occ/instp/MPSImageConvolution/bias">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBias:")
-    public native void setBias(float value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -211,4 +159,56 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bias</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageConvolution_ClassReference/index.html#//apple_ref/occ/instp/MPSImageConvolution/bias">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bias")
+    public native float bias();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageConvolution init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageConvolution initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * initWithDevice:kernelWidth:kernelHeight:weights:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageConvolution_ClassReference/index.html#//apple_ref/occ/instm/MPSImageConvolution/initWithDevice:kernelWidth:kernelHeight:weights:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDevice:kernelWidth:kernelHeight:weights:")
+    public native MPSImageConvolution initWithDeviceKernelWidthKernelHeightWeights(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
+            ConstFloatPtr kernelWeights);
+
+    /**
+     * kernelHeight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageConvolution_ClassReference/index.html#//apple_ref/occ/instp/MPSImageConvolution/kernelHeight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("kernelHeight")
+    @NUInt
+    public native long kernelHeight();
+
+    /**
+     * kernelWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageConvolution_ClassReference/index.html#//apple_ref/occ/instp/MPSImageConvolution/kernelWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("kernelWidth")
+    @NUInt
+    public native long kernelWidth();
+
+    /**
+     * bias</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageConvolution_ClassReference/index.html#//apple_ref/occ/instp/MPSImageConvolution/bias">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBias:")
+    public native void setBias(float value);
 }

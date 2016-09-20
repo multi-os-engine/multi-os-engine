@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLWinding {
+    @Generated @NUInt public static final long Clockwise = 0x0000000000000000L;
+    @Generated @NUInt public static final long CounterClockwise = 0x0000000000000001L;
+
     @Generated
     private MTLWinding() {
     }
-
-    @Generated @NUInt public static final long Clockwise = 0x0000000000000000L;
-    @Generated @NUInt public static final long CounterClockwise = 0x0000000000000001L;
 }

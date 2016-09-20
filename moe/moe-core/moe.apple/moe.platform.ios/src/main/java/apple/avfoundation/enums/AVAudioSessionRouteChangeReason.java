@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class AVAudioSessionRouteChangeReason {
-    @Generated
-    private AVAudioSessionRouteChangeReason() {
-    }
-
     @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NUInt public static final long NewDeviceAvailable = 0x0000000000000001L;
     @Generated @NUInt public static final long OldDeviceUnavailable = 0x0000000000000002L;
@@ -33,4 +29,8 @@ public final class AVAudioSessionRouteChangeReason {
     @Generated @NUInt public static final long WakeFromSleep = 0x0000000000000006L;
     @Generated @NUInt public static final long NoSuitableRouteForCategory = 0x0000000000000007L;
     @Generated @NUInt public static final long RouteConfigurationChange = 0x0000000000000008L;
+
+    @Generated
+    private AVAudioSessionRouteChangeReason() {
+    }
 }

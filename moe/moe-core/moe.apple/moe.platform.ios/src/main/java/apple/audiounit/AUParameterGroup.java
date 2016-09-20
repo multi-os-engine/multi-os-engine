@@ -56,48 +56,14 @@ public class AUParameterGroup extends AUParameterNode implements NSSecureCoding 
         super(peer);
     }
 
-    /**
-     * allParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterGroup_ClassReference/index.html#//apple_ref/occ/instp/AUParameterGroup/allParameters">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allParameters")
-    public native NSArray<? extends AUParameter> allParameters();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native AUParameterGroup alloc();
 
-    /**
-     * children</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterGroup_ClassReference/index.html#//apple_ref/occ/instp/AUParameterGroup/children">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("children")
-    public native NSArray<? extends AUParameterNode> children();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native AUParameterGroup init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AUParameterGroup initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -198,4 +164,38 @@ public class AUParameterGroup extends AUParameterNode implements NSSecureCoding 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allParameters</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterGroup_ClassReference/index.html#//apple_ref/occ/instp/AUParameterGroup/allParameters">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allParameters")
+    public native NSArray<? extends AUParameter> allParameters();
+
+    /**
+     * children</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameterGroup_ClassReference/index.html#//apple_ref/occ/instp/AUParameterGroup/children">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("children")
+    public native NSArray<? extends AUParameterNode> children();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native AUParameterGroup init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AUParameterGroup initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

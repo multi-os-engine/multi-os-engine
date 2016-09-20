@@ -33,11 +33,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CFAllocatorContext extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CFAllocatorContext() {
@@ -70,79 +70,29 @@ public final class CFAllocatorContext extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_retain {
-        @Generated
-        ConstVoidPtr call_retain(ConstVoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_release {
-        @Generated
-        void call_release(ConstVoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_copyDescription {
-        @Generated
-        VoidPtr call_copyDescription(ConstVoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setAllocate(@FunctionPtr(name = "call_allocate") Function_allocate value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_allocate {
-        @Generated
-        VoidPtr call_allocate(@NInt long arg0, @NUInt long arg1, VoidPtr arg2);
-    }
 
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setReallocate(@FunctionPtr(name = "call_reallocate") Function_reallocate value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_reallocate {
-        @Generated
-        VoidPtr call_reallocate(VoidPtr arg0, @NInt long arg1, @NUInt long arg2, VoidPtr arg3);
-    }
-
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void setDeallocate(@FunctionPtr(name = "call_deallocate") Function_deallocate value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_deallocate {
-        @Generated
-        void call_deallocate(VoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void setPreferredSize(@FunctionPtr(name = "call_preferredSize") Function_preferredSize value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_preferredSize {
-        @Generated
-        @NInt
-        long call_preferredSize(@NInt long arg0, @NUInt long arg1, VoidPtr arg2);
-    }
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -178,4 +128,54 @@ public final class CFAllocatorContext extends StructObject {
     @StructureField(order = 8, isGetter = true)
     @FunctionPtr(name = "call_preferredSize")
     public native Function_preferredSize preferredSize();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_retain {
+        @Generated
+        ConstVoidPtr call_retain(ConstVoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_release {
+        @Generated
+        void call_release(ConstVoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_copyDescription {
+        @Generated
+        VoidPtr call_copyDescription(ConstVoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_allocate {
+        @Generated
+        VoidPtr call_allocate(@NInt long arg0, @NUInt long arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_reallocate {
+        @Generated
+        VoidPtr call_reallocate(VoidPtr arg0, @NInt long arg1, @NUInt long arg2, VoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_deallocate {
+        @Generated
+        void call_deallocate(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_preferredSize {
+        @Generated
+        @NInt
+        long call_preferredSize(@NInt long arg0, @NUInt long arg1, VoidPtr arg2);
+    }
 }

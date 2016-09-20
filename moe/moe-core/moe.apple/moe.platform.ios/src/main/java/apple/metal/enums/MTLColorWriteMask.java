@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLColorWriteMask {
-    @Generated
-    private MTLColorWriteMask() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long Red = 0x0000000000000008L;
     @Generated @NUInt public static final long Green = 0x0000000000000004L;
     @Generated @NUInt public static final long Blue = 0x0000000000000002L;
     @Generated @NUInt public static final long Alpha = 0x0000000000000001L;
     @Generated @NUInt public static final long All = 0x000000000000000FL;
+
+    @Generated
+    private MTLColorWriteMask() {
+    }
 }

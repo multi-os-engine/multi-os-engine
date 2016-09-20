@@ -70,18 +70,6 @@ public class SCNAnimationEvent extends NSObject {
     public static native SCNAnimationEvent animationEventWithKeyTimeBlock(@NFloat double time,
             @ObjCBlock(name = "call_animationEventWithKeyTimeBlock") Block_animationEventWithKeyTimeBlock eventBlock);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_animationEventWithKeyTimeBlock {
-        @Generated
-        void call_animationEventWithKeyTimeBlock(CAAnimation arg0, @Mapped(ObjCObjectMapper.class) Object arg1,
-                boolean arg2);
-    }
-
-    @Generated
-    @Selector("init")
-    public native SCNAnimationEvent init();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -181,4 +169,16 @@ public class SCNAnimationEvent extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SCNAnimationEvent init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_animationEventWithKeyTimeBlock {
+        @Generated
+        void call_animationEventWithKeyTimeBlock(CAAnimation arg0, @Mapped(ObjCObjectMapper.class) Object arg1,
+                boolean arg2);
+    }
 }

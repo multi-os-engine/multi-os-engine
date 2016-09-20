@@ -54,14 +54,6 @@ public class CADisplayLink extends NSObject {
         super(peer);
     }
 
-    /**
-     * addToRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instm/CADisplayLink/addToRunLoop:forMode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addToRunLoop:forMode:")
-    public native void addToRunLoopForMode(NSRunLoop runloop, String mode);
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -75,75 +67,6 @@ public class CADisplayLink extends NSObject {
     @Selector("displayLinkWithTarget:selector:")
     public static native CADisplayLink displayLinkWithTargetSelector(@Mapped(ObjCObjectMapper.class) Object target,
             SEL sel);
-
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/duration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("duration")
-    public native double duration();
-
-    /**
-     * frameInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/frameInterval">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("frameInterval")
-    @NInt
-    public native long frameInterval();
-
-    @Generated
-    @Selector("init")
-    public native CADisplayLink init();
-
-    /**
-     * invalidate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instm/CADisplayLink/invalidate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("invalidate")
-    public native void invalidate();
-
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/paused">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPaused")
-    public native boolean isPaused();
-
-    /**
-     * removeFromRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instm/CADisplayLink/removeFromRunLoop:forMode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeFromRunLoop:forMode:")
-    public native void removeFromRunLoopForMode(NSRunLoop runloop, String mode);
-
-    /**
-     * frameInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/frameInterval">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFrameInterval:")
-    public native void setFrameInterval(@NInt long value);
-
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/paused">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPaused:")
-    public native void setPaused(boolean value);
-
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/timestamp">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timestamp")
-    public native double timestamp();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -244,4 +167,81 @@ public class CADisplayLink extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addToRunLoop:forMode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instm/CADisplayLink/addToRunLoop:forMode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addToRunLoop:forMode:")
+    public native void addToRunLoopForMode(NSRunLoop runloop, String mode);
+
+    /**
+     * duration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/duration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("duration")
+    public native double duration();
+
+    /**
+     * frameInterval</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/frameInterval">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("frameInterval")
+    @NInt
+    public native long frameInterval();
+
+    @Generated
+    @Selector("init")
+    public native CADisplayLink init();
+
+    /**
+     * invalidate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instm/CADisplayLink/invalidate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("invalidate")
+    public native void invalidate();
+
+    /**
+     * paused</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/paused">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPaused")
+    public native boolean isPaused();
+
+    /**
+     * paused</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/paused">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPaused:")
+    public native void setPaused(boolean value);
+
+    /**
+     * removeFromRunLoop:forMode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instm/CADisplayLink/removeFromRunLoop:forMode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeFromRunLoop:forMode:")
+    public native void removeFromRunLoopForMode(NSRunLoop runloop, String mode);
+
+    /**
+     * frameInterval</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/frameInterval">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFrameInterval:")
+    public native void setFrameInterval(@NInt long value);
+
+    /**
+     * timestamp</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CADisplayLink_ClassRef/index.html#//apple_ref/occ/instp/CADisplayLink/timestamp">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timestamp")
+    public native double timestamp();
 }

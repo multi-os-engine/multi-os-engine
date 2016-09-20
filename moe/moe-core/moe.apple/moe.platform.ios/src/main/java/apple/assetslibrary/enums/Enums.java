@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int ALAssetsGroupLibrary = 0x00000001;
     @Generated public static final int ALAssetsGroupAlbum = 0x00000002;
     @Generated public static final int ALAssetsGroupEvent = 0x00000004;
@@ -41,4 +37,8 @@ public final class Enums {
     @Generated public static final int ALAssetsLibraryDataUnavailableError = 0xFFFFF312;
     @Generated public static final int ALAssetsLibraryAccessUserDeniedError = 0xFFFFF311;
     @Generated public static final int ALAssetsLibraryAccessGloballyDeniedError = 0xFFFFF310;
+
+    @Generated
+    private Enums() {
+    }
 }

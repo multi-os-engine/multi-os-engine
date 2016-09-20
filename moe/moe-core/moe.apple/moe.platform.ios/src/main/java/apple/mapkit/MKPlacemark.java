@@ -67,55 +67,6 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     public static native MKPlacemark alloc();
 
     @Generated
-    @Selector("coordinate")
-    @ByValue
-    public native CLLocationCoordinate2D coordinate();
-
-    /**
-     * countryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPlacemark_Class/index.html#//apple_ref/occ/instp/MKPlacemark/countryCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("countryCode")
-    public native String countryCode();
-
-    @Generated
-    @Selector("init")
-    public native MKPlacemark init();
-
-    /**
-     * initWithCoordinate:addressDictionary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPlacemark_Class/index.html#//apple_ref/occ/instm/MKPlacemark/initWithCoordinate:addressDictionary:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithCoordinate:addressDictionary:")
-    public native MKPlacemark initWithCoordinateAddressDictionary(@ByValue CLLocationCoordinate2D coordinate,
-            NSDictionary<String, ?> addressDictionary);
-
-    @Generated
-    @Selector("initWithPlacemark:")
-    public native MKPlacemark initWithPlacemark(CLPlacemark placemark);
-
-    @Generated
-    @IsOptional
-    @Selector("setCoordinate:")
-    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
-
-    @Generated
-    @IsOptional
-    @Selector("subtitle")
-    public native String subtitle();
-
-    @Generated
-    @IsOptional
-    @Selector("title")
-    public native String title();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKPlacemark initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -215,13 +166,62 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("coordinate")
+    @ByValue
+    public native CLLocationCoordinate2D coordinate();
+
+    /**
+     * countryCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPlacemark_Class/index.html#//apple_ref/occ/instp/MKPlacemark/countryCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("countryCode")
+    public native String countryCode();
+
+    @Generated
+    @Selector("init")
+    public native MKPlacemark init();
+
+    /**
+     * initWithCoordinate:addressDictionary:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPlacemark_Class/index.html#//apple_ref/occ/instm/MKPlacemark/initWithCoordinate:addressDictionary:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithCoordinate:addressDictionary:")
+    public native MKPlacemark initWithCoordinateAddressDictionary(@ByValue CLLocationCoordinate2D coordinate,
+            NSDictionary<String, ?> addressDictionary);
+
+    @Generated
+    @Selector("initWithPlacemark:")
+    public native MKPlacemark initWithPlacemark(CLPlacemark placemark);
+
+    @Generated
+    @IsOptional
+    @Selector("setCoordinate:")
+    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
+
+    @Generated
+    @IsOptional
+    @Selector("subtitle")
+    public native String subtitle();
+
+    @Generated
+    @IsOptional
+    @Selector("title")
+    public native String title();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MKPlacemark initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

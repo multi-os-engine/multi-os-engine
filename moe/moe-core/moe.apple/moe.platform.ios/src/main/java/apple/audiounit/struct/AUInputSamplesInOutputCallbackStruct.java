@@ -32,11 +32,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class AUInputSamplesInOutputCallbackStruct extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public AUInputSamplesInOutputCallbackStruct() {
@@ -62,15 +62,6 @@ public final class AUInputSamplesInOutputCallbackStruct extends StructObject {
     public native void setInputToOutputCallback(
             @FunctionPtr(name = "call_inputToOutputCallback") Function_inputToOutputCallback value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_inputToOutputCallback {
-        @Generated
-        void call_inputToOutputCallback(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg1, double arg2,
-                double arg3);
-    }
-
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr userData();
@@ -83,4 +74,13 @@ public final class AUInputSamplesInOutputCallbackStruct extends StructObject {
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_inputToOutputCallback")
     public native Function_inputToOutputCallback inputToOutputCallback();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_inputToOutputCallback {
+        @Generated
+        void call_inputToOutputCallback(VoidPtr arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg1, double arg2,
+                double arg3);
+    }
 }

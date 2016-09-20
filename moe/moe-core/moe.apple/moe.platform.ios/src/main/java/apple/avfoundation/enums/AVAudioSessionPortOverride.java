@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class AVAudioSessionPortOverride {
+    @Generated @NUInt public static final long None = 0x0000000000000000L;
+    @Generated @NUInt public static final long Speaker = 0x0000000073706B72L;
+
     @Generated
     private AVAudioSessionPortOverride() {
     }
-
-    @Generated @NUInt public static final long None = 0x0000000000000000L;
-    @Generated @NUInt public static final long Speaker = 0x0000000073706B72L;
 }

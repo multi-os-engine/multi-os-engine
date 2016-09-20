@@ -58,58 +58,6 @@ public class MDLTextureSampler extends NSObject {
     @Selector("alloc")
     public static native MDLTextureSampler alloc();
 
-    /**
-     * hardwareFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/hardwareFilter">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hardwareFilter")
-    public native MDLTextureFilter hardwareFilter();
-
-    @Generated
-    @Selector("init")
-    public native MDLTextureSampler init();
-
-    /**
-     * hardwareFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/hardwareFilter">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHardwareFilter:")
-    public native void setHardwareFilter(MDLTextureFilter value);
-
-    /**
-     * texture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/texture">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTexture:")
-    public native void setTexture(MDLTexture value);
-
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/transform">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTransform:")
-    public native void setTransform(MDLTransform value);
-
-    /**
-     * texture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/texture">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("texture")
-    public native MDLTexture texture();
-
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/transform">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transform")
-    public native MDLTransform transform();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -209,4 +157,56 @@ public class MDLTextureSampler extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * hardwareFilter</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/hardwareFilter">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hardwareFilter")
+    public native MDLTextureFilter hardwareFilter();
+
+    @Generated
+    @Selector("init")
+    public native MDLTextureSampler init();
+
+    /**
+     * hardwareFilter</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/hardwareFilter">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHardwareFilter:")
+    public native void setHardwareFilter(MDLTextureFilter value);
+
+    /**
+     * texture</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/texture">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTexture:")
+    public native void setTexture(MDLTexture value);
+
+    /**
+     * transform</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/transform">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTransform:")
+    public native void setTransform(MDLTransform value);
+
+    /**
+     * texture</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/texture">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("texture")
+    public native MDLTexture texture();
+
+    /**
+     * transform</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLTextureSampler_Class/index.html#//apple_ref/occ/instp/MDLTextureSampler/transform">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transform")
+    public native MDLTransform transform();
 }

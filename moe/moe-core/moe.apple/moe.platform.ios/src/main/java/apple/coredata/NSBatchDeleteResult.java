@@ -59,20 +59,6 @@ public class NSBatchDeleteResult extends NSPersistentStoreResult {
     public static native NSBatchDeleteResult alloc();
 
     @Generated
-    @Selector("init")
-    public native NSBatchDeleteResult init();
-
-    @Generated
-    @Selector("result")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object result();
-
-    @Generated
-    @Selector("resultType")
-    @NUInt
-    public native long resultType();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -171,4 +157,18 @@ public class NSBatchDeleteResult extends NSPersistentStoreResult {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSBatchDeleteResult init();
+
+    @Generated
+    @Selector("result")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object result();
+
+    @Generated
+    @Selector("resultType")
+    @NUInt
+    public native long resultType();
 }

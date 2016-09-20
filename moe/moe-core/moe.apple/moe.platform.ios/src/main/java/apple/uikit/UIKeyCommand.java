@@ -62,32 +62,6 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("alloc")
     public static native UIKeyCommand alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UIKeyCommand init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIKeyCommand initWithCoder(NSCoder aDecoder);
-
-    /**
-     * input</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/input">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("input")
-    public native String input();
-
     /**
      * keyCommandWithInput:modifierFlags:action:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/clm/UIKeyCommand/keyCommandWithInput:modifierFlags:action:">iOS Dev Center</a>
@@ -97,32 +71,9 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     public static native UIKeyCommand keyCommandWithInputModifierFlagsAction(String input, @NInt long modifierFlags,
             SEL action);
 
-    /**
-     * modifierFlags</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/modifierFlags">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("modifierFlags")
-    @NInt
-    public native long modifierFlags();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * discoverabilityTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/discoverabilityTitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("discoverabilityTitle")
-    public native String discoverabilityTitle();
 
     /**
      * keyCommandWithInput:modifierFlags:action:discoverabilityTitle:</br>
@@ -132,14 +83,6 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("keyCommandWithInput:modifierFlags:action:discoverabilityTitle:")
     public static native UIKeyCommand keyCommandWithInputModifierFlagsActionDiscoverabilityTitle(String input,
             @NInt long modifierFlags, SEL action, String discoverabilityTitle);
-
-    /**
-     * discoverabilityTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/discoverabilityTitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDiscoverabilityTitle:")
-    public native void setDiscoverabilityTitle(String value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -240,4 +183,61 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UIKeyCommand init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIKeyCommand initWithCoder(NSCoder aDecoder);
+
+    /**
+     * input</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/input">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("input")
+    public native String input();
+
+    /**
+     * modifierFlags</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/modifierFlags">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("modifierFlags")
+    @NInt
+    public native long modifierFlags();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * discoverabilityTitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/discoverabilityTitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("discoverabilityTitle")
+    public native String discoverabilityTitle();
+
+    /**
+     * discoverabilityTitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKeyCommand_class/index.html#//apple_ref/occ/instp/UIKeyCommand/discoverabilityTitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDiscoverabilityTitle:")
+    public native void setDiscoverabilityTitle(String value);
 }

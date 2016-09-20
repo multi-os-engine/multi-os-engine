@@ -26,11 +26,11 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure()
 public final class __darwin_arm_debug_state64 extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public __darwin_arm_debug_state64() {

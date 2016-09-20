@@ -61,20 +61,6 @@ public class MDLMeshBufferZoneDefault extends NSObject implements MDLMeshBufferZ
     public static native MDLMeshBufferZoneDefault alloc();
 
     @Generated
-    @Selector("allocator")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MDLMeshBufferAllocator allocator();
-
-    @Generated
-    @Selector("capacity")
-    @NUInt
-    public native long capacity();
-
-    @Generated
-    @Selector("init")
-    public native MDLMeshBufferZoneDefault init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -173,4 +159,18 @@ public class MDLMeshBufferZoneDefault extends NSObject implements MDLMeshBufferZ
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("allocator")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MDLMeshBufferAllocator allocator();
+
+    @Generated
+    @Selector("capacity")
+    @NUInt
+    public native long capacity();
+
+    @Generated
+    @Selector("init")
+    public native MDLMeshBufferZoneDefault init();
 }

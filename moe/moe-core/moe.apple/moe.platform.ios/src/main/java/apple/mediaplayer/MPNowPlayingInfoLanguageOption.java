@@ -59,45 +59,6 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     public static native MPNowPlayingInfoLanguageOption alloc();
 
     @Generated
-    @Selector("displayName")
-    public native String displayName();
-
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native MPNowPlayingInfoLanguageOption init();
-
-    @Generated
-    @Selector("initWithType:languageTag:characteristics:displayName:identifier:")
-    public native MPNowPlayingInfoLanguageOption initWithTypeLanguageTagCharacteristicsDisplayNameIdentifier(
-            @NUInt long languageOptionType, String languageTag, NSArray<String> languageOptionCharacteristics,
-            String displayName, String identifier);
-
-    @Generated
-    @Selector("isAutomaticLegibleLanguageOption")
-    public native boolean isAutomaticLegibleLanguageOption();
-
-    @Generated
-    @Selector("languageOptionCharacteristics")
-    public native NSArray<String> languageOptionCharacteristics();
-
-    @Generated
-    @Selector("languageOptionType")
-    @NUInt
-    public native long languageOptionType();
-
-    @Generated
-    @Selector("languageTag")
-    public native String languageTag();
-
-    @Generated
-    @Selector("isAutomaticAudibleLanguageOption")
-    public native boolean isAutomaticAudibleLanguageOption();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -196,4 +157,43 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("displayName")
+    public native String displayName();
+
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native MPNowPlayingInfoLanguageOption init();
+
+    @Generated
+    @Selector("initWithType:languageTag:characteristics:displayName:identifier:")
+    public native MPNowPlayingInfoLanguageOption initWithTypeLanguageTagCharacteristicsDisplayNameIdentifier(
+            @NUInt long languageOptionType, String languageTag, NSArray<String> languageOptionCharacteristics,
+            String displayName, String identifier);
+
+    @Generated
+    @Selector("isAutomaticLegibleLanguageOption")
+    public native boolean isAutomaticLegibleLanguageOption();
+
+    @Generated
+    @Selector("languageOptionCharacteristics")
+    public native NSArray<String> languageOptionCharacteristics();
+
+    @Generated
+    @Selector("languageOptionType")
+    @NUInt
+    public native long languageOptionType();
+
+    @Generated
+    @Selector("languageTag")
+    public native String languageTag();
+
+    @Generated
+    @Selector("isAutomaticAudibleLanguageOption")
+    public native boolean isAutomaticAudibleLanguageOption();
 }

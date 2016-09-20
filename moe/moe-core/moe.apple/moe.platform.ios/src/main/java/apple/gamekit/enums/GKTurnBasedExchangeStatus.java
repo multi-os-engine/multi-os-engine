@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GKTurnBasedExchangeStatus {
-    @Generated
-    private GKTurnBasedExchangeStatus() {
-    }
-
     @Generated public static final byte Unknown = 0;
     @Generated public static final byte Active = 1;
     @Generated public static final byte Complete = 2;
     @Generated public static final byte Resolved = 3;
     @Generated public static final byte Canceled = 4;
+
+    @Generated
+    private GKTurnBasedExchangeStatus() {
+    }
 }

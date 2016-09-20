@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class MusicSequenceType {
-    @Generated
-    private MusicSequenceType() {
-    }
-
     @Generated public static final int Beats = 0x62656174;
     @Generated public static final int Seconds = 0x73656373;
     @Generated public static final int Samples = 0x73616D70;
+
+    @Generated
+    private MusicSequenceType() {
+    }
 }

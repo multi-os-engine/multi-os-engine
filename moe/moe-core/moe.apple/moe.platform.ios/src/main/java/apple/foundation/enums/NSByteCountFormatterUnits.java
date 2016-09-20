@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSByteCountFormatterUnits {
-    @Generated
-    private NSByteCountFormatterUnits() {
-    }
-
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     @Generated @NUInt public static final long Bytes = 0x0000000000000001L;
     @Generated @NUInt public static final long KB = 0x0000000000000002L;
@@ -36,4 +32,8 @@ public final class NSByteCountFormatterUnits {
     @Generated @NUInt public static final long ZB = 0x0000000000000080L;
     @Generated @NUInt public static final long YBOrHigher = 0x000000000000FF00L;
     @Generated @NUInt public static final long All = 0x000000000000FFFFL;
+
+    @Generated
+    private NSByteCountFormatterUnits() {
+    }
 }

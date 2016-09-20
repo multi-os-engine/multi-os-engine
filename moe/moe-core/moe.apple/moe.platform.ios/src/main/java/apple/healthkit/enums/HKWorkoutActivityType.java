@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class HKWorkoutActivityType {
-    @Generated
-    private HKWorkoutActivityType() {
-    }
-
     @Generated @NUInt public static final long AmericanFootball = 0x0000000000000001L;
     @Generated @NUInt public static final long Archery = 0x0000000000000002L;
     @Generated @NUInt public static final long AustralianFootball = 0x0000000000000003L;
@@ -83,4 +79,8 @@ public final class HKWorkoutActivityType {
     @Generated @NUInt public static final long Wrestling = 0x0000000000000038L;
     @Generated @NUInt public static final long Yoga = 0x0000000000000039L;
     @Generated @NUInt public static final long Other = 0x0000000000000BB8L;
+
+    @Generated
+    private HKWorkoutActivityType() {
+    }
 }

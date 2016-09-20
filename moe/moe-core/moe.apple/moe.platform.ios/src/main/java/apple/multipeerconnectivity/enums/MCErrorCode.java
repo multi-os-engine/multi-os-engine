@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MCErrorCode {
-    @Generated
-    private MCErrorCode() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long NotConnected = 0x0000000000000001L;
     @Generated @NInt public static final long InvalidParameter = 0x0000000000000002L;
@@ -32,4 +28,7 @@ public final class MCErrorCode {
     @Generated @NInt public static final long TimedOut = 0x0000000000000004L;
     @Generated @NInt public static final long Cancelled = 0x0000000000000005L;
     @Generated @NInt public static final long Unavailable = 0x0000000000000006L;
+    @Generated
+    private MCErrorCode() {
+    }
 }

@@ -62,22 +62,6 @@ public class CABTMIDICentralViewController extends UITableViewController {
     public static native CABTMIDICentralViewController alloc();
 
     @Generated
-    @Selector("init")
-    public native CABTMIDICentralViewController init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CABTMIDICentralViewController initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native CABTMIDICentralViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    @Generated
-    @Selector("initWithStyle:")
-    public native CABTMIDICentralViewController initWithStyle(@NInt long style);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -188,4 +172,20 @@ public class CABTMIDICentralViewController extends UITableViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CABTMIDICentralViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CABTMIDICentralViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native CABTMIDICentralViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    @Generated
+    @Selector("initWithStyle:")
+    public native CABTMIDICentralViewController initWithStyle(@NInt long style);
 }

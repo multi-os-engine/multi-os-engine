@@ -56,83 +56,6 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("alloc")
     public static native NSURLSessionStreamTask alloc();
 
-    /**
-     * captureStreams</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/captureStreams">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("captureStreams")
-    public native void captureStreams();
-
-    /**
-     * closeRead</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/closeRead">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("closeRead")
-    public native void closeRead();
-
-    /**
-     * closeWrite</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/closeWrite">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("closeWrite")
-    public native void closeWrite();
-
-    @Generated
-    @Selector("init")
-    public native NSURLSessionStreamTask init();
-
-    /**
-     * readDataOfMinLength:maxLength:timeout:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/readDataOfMinLength:maxLength:timeout:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("readDataOfMinLength:maxLength:timeout:completionHandler:")
-    public native void readDataOfMinLengthMaxLengthTimeoutCompletionHandler(@NUInt long minBytes, @NUInt long maxBytes,
-            double timeout,
-            @ObjCBlock(name = "call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler") Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler {
-        @Generated
-        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(NSData arg0, boolean arg1, NSError arg2);
-    }
-
-    /**
-     * startSecureConnection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/startSecureConnection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startSecureConnection")
-    public native void startSecureConnection();
-
-    /**
-     * stopSecureConnection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/stopSecureConnection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopSecureConnection")
-    public native void stopSecureConnection();
-
-    /**
-     * writeData:timeout:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/writeData:timeout:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("writeData:timeout:completionHandler:")
-    public native void writeDataTimeoutCompletionHandler(NSData data, double timeout,
-            @ObjCBlock(name = "call_writeDataTimeoutCompletionHandler") Block_writeDataTimeoutCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_writeDataTimeoutCompletionHandler {
-        @Generated
-        void call_writeDataTimeoutCompletionHandler(NSError arg0);
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -232,4 +155,81 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * captureStreams</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/captureStreams">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("captureStreams")
+    public native void captureStreams();
+
+    /**
+     * closeRead</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/closeRead">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("closeRead")
+    public native void closeRead();
+
+    /**
+     * closeWrite</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/closeWrite">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("closeWrite")
+    public native void closeWrite();
+
+    @Generated
+    @Selector("init")
+    public native NSURLSessionStreamTask init();
+
+    /**
+     * readDataOfMinLength:maxLength:timeout:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/readDataOfMinLength:maxLength:timeout:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("readDataOfMinLength:maxLength:timeout:completionHandler:")
+    public native void readDataOfMinLengthMaxLengthTimeoutCompletionHandler(@NUInt long minBytes, @NUInt long maxBytes,
+            double timeout,
+            @ObjCBlock(name = "call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler") Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler completionHandler);
+
+    /**
+     * startSecureConnection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/startSecureConnection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startSecureConnection")
+    public native void startSecureConnection();
+
+    /**
+     * stopSecureConnection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/stopSecureConnection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopSecureConnection")
+    public native void stopSecureConnection();
+
+    /**
+     * writeData:timeout:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLSessionStreamTask_Class/index.html#//apple_ref/occ/instm/NSURLSessionStreamTask/writeData:timeout:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("writeData:timeout:completionHandler:")
+    public native void writeDataTimeoutCompletionHandler(NSData data, double timeout,
+            @ObjCBlock(name = "call_writeDataTimeoutCompletionHandler") Block_writeDataTimeoutCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler {
+        @Generated
+        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(NSData arg0, boolean arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeDataTimeoutCompletionHandler {
+        @Generated
+        void call_writeDataTimeoutCompletionHandler(NSError arg0);
+    }
 }

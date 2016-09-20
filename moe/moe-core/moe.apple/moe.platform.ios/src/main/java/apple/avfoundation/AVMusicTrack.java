@@ -61,97 +61,6 @@ public class AVMusicTrack extends NSObject {
     public static native AVMusicTrack alloc();
 
     @Generated
-    @Selector("destinationAudioUnit")
-    public native AVAudioUnit destinationAudioUnit();
-
-    @Generated
-    @Selector("destinationMIDIEndpoint")
-    public native int destinationMIDIEndpoint();
-
-    @Generated
-    @Selector("init")
-    public native AVMusicTrack init();
-
-    @Generated
-    @Selector("isLoopingEnabled")
-    public native boolean isLoopingEnabled();
-
-    @Generated
-    @Selector("isMuted")
-    public native boolean isMuted();
-
-    @Generated
-    @Selector("isSoloed")
-    public native boolean isSoloed();
-
-    @Generated
-    @Selector("lengthInBeats")
-    public native double lengthInBeats();
-
-    @Generated
-    @Selector("lengthInSeconds")
-    public native double lengthInSeconds();
-
-    @Generated
-    @Selector("loopRange")
-    @ByValue
-    public native AVBeatRange loopRange();
-
-    @Generated
-    @Selector("numberOfLoops")
-    @NInt
-    public native long numberOfLoops();
-
-    @Generated
-    @Selector("offsetTime")
-    public native double offsetTime();
-
-    @Generated
-    @Selector("setDestinationAudioUnit:")
-    public native void setDestinationAudioUnit(AVAudioUnit value);
-
-    @Generated
-    @Selector("setDestinationMIDIEndpoint:")
-    public native void setDestinationMIDIEndpoint(int value);
-
-    @Generated
-    @Selector("setLengthInBeats:")
-    public native void setLengthInBeats(double value);
-
-    @Generated
-    @Selector("setLengthInSeconds:")
-    public native void setLengthInSeconds(double value);
-
-    @Generated
-    @Selector("setLoopRange:")
-    public native void setLoopRange(@ByValue AVBeatRange value);
-
-    @Generated
-    @Selector("setLoopingEnabled:")
-    public native void setLoopingEnabled(boolean value);
-
-    @Generated
-    @Selector("setMuted:")
-    public native void setMuted(boolean value);
-
-    @Generated
-    @Selector("setNumberOfLoops:")
-    public native void setNumberOfLoops(@NInt long value);
-
-    @Generated
-    @Selector("setOffsetTime:")
-    public native void setOffsetTime(double value);
-
-    @Generated
-    @Selector("setSoloed:")
-    public native void setSoloed(boolean value);
-
-    @Generated
-    @Selector("timeResolution")
-    @NUInt
-    public native long timeResolution();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -250,4 +159,95 @@ public class AVMusicTrack extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("destinationAudioUnit")
+    public native AVAudioUnit destinationAudioUnit();
+
+    @Generated
+    @Selector("destinationMIDIEndpoint")
+    public native int destinationMIDIEndpoint();
+
+    @Generated
+    @Selector("init")
+    public native AVMusicTrack init();
+
+    @Generated
+    @Selector("isLoopingEnabled")
+    public native boolean isLoopingEnabled();
+
+    @Generated
+    @Selector("setLoopingEnabled:")
+    public native void setLoopingEnabled(boolean value);
+
+    @Generated
+    @Selector("isMuted")
+    public native boolean isMuted();
+
+    @Generated
+    @Selector("setMuted:")
+    public native void setMuted(boolean value);
+
+    @Generated
+    @Selector("isSoloed")
+    public native boolean isSoloed();
+
+    @Generated
+    @Selector("setSoloed:")
+    public native void setSoloed(boolean value);
+
+    @Generated
+    @Selector("lengthInBeats")
+    public native double lengthInBeats();
+
+    @Generated
+    @Selector("lengthInSeconds")
+    public native double lengthInSeconds();
+
+    @Generated
+    @Selector("loopRange")
+    @ByValue
+    public native AVBeatRange loopRange();
+
+    @Generated
+    @Selector("numberOfLoops")
+    @NInt
+    public native long numberOfLoops();
+
+    @Generated
+    @Selector("offsetTime")
+    public native double offsetTime();
+
+    @Generated
+    @Selector("setDestinationAudioUnit:")
+    public native void setDestinationAudioUnit(AVAudioUnit value);
+
+    @Generated
+    @Selector("setDestinationMIDIEndpoint:")
+    public native void setDestinationMIDIEndpoint(int value);
+
+    @Generated
+    @Selector("setLengthInBeats:")
+    public native void setLengthInBeats(double value);
+
+    @Generated
+    @Selector("setLengthInSeconds:")
+    public native void setLengthInSeconds(double value);
+
+    @Generated
+    @Selector("setLoopRange:")
+    public native void setLoopRange(@ByValue AVBeatRange value);
+
+    @Generated
+    @Selector("setNumberOfLoops:")
+    public native void setNumberOfLoops(@NInt long value);
+
+    @Generated
+    @Selector("setOffsetTime:")
+    public native void setOffsetTime(double value);
+
+    @Generated
+    @Selector("timeResolution")
+    @NUInt
+    public native long timeResolution();
 }

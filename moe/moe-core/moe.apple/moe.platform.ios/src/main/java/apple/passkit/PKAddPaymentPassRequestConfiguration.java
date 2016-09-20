@@ -58,106 +58,6 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("alloc")
     public static native PKAddPaymentPassRequestConfiguration alloc();
 
-    /**
-     * cardholderName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/cardholderName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cardholderName")
-    public native String cardholderName();
-
-    /**
-     * encryptionScheme</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/encryptionScheme">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("encryptionScheme")
-    public native String encryptionScheme();
-
-    @Generated
-    @Selector("init")
-    public native PKAddPaymentPassRequestConfiguration init();
-
-    /**
-     * initWithEncryptionScheme:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instm/PKAddPaymentPassRequestConfiguration/initWithEncryptionScheme:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithEncryptionScheme:")
-    public native PKAddPaymentPassRequestConfiguration initWithEncryptionScheme(String encryptionScheme);
-
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/localizedDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedDescription")
-    public native String localizedDescription();
-
-    /**
-     * paymentNetwork</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/paymentNetwork">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("paymentNetwork")
-    public native String paymentNetwork();
-
-    /**
-     * primaryAccountIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/primaryAccountIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("primaryAccountIdentifier")
-    public native String primaryAccountIdentifier();
-
-    /**
-     * primaryAccountSuffix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/primaryAccountSuffix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("primaryAccountSuffix")
-    public native String primaryAccountSuffix();
-
-    /**
-     * cardholderName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/cardholderName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCardholderName:")
-    public native void setCardholderName(String value);
-
-    /**
-     * localizedDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/localizedDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLocalizedDescription:")
-    public native void setLocalizedDescription(String value);
-
-    /**
-     * paymentNetwork</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/paymentNetwork">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPaymentNetwork:")
-    public native void setPaymentNetwork(String value);
-
-    /**
-     * primaryAccountIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/primaryAccountIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPrimaryAccountIdentifier:")
-    public native void setPrimaryAccountIdentifier(String value);
-
-    /**
-     * primaryAccountSuffix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/primaryAccountSuffix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPrimaryAccountSuffix:")
-    public native void setPrimaryAccountSuffix(String value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -257,4 +157,104 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cardholderName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/cardholderName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cardholderName")
+    public native String cardholderName();
+
+    /**
+     * encryptionScheme</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/encryptionScheme">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("encryptionScheme")
+    public native String encryptionScheme();
+
+    @Generated
+    @Selector("init")
+    public native PKAddPaymentPassRequestConfiguration init();
+
+    /**
+     * initWithEncryptionScheme:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instm/PKAddPaymentPassRequestConfiguration/initWithEncryptionScheme:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithEncryptionScheme:")
+    public native PKAddPaymentPassRequestConfiguration initWithEncryptionScheme(String encryptionScheme);
+
+    /**
+     * localizedDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/localizedDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedDescription")
+    public native String localizedDescription();
+
+    /**
+     * paymentNetwork</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/paymentNetwork">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("paymentNetwork")
+    public native String paymentNetwork();
+
+    /**
+     * primaryAccountIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/primaryAccountIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("primaryAccountIdentifier")
+    public native String primaryAccountIdentifier();
+
+    /**
+     * primaryAccountSuffix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/primaryAccountSuffix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("primaryAccountSuffix")
+    public native String primaryAccountSuffix();
+
+    /**
+     * cardholderName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/cardholderName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCardholderName:")
+    public native void setCardholderName(String value);
+
+    /**
+     * localizedDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/localizedDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLocalizedDescription:")
+    public native void setLocalizedDescription(String value);
+
+    /**
+     * paymentNetwork</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/paymentNetwork">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPaymentNetwork:")
+    public native void setPaymentNetwork(String value);
+
+    /**
+     * primaryAccountIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/primaryAccountIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPrimaryAccountIdentifier:")
+    public native void setPrimaryAccountIdentifier(String value);
+
+    /**
+     * primaryAccountSuffix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPaymentPassRequestConfiguration_Class/index.html#//apple_ref/occ/instp/PKAddPaymentPassRequestConfiguration/primaryAccountSuffix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPrimaryAccountSuffix:")
+    public native void setPrimaryAccountSuffix(String value);
 }

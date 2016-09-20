@@ -20,13 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SCNetworkConnectionStatus {
-    @Generated
-    private SCNetworkConnectionStatus() {
-    }
-
     @Generated public static final int Invalid = 0xFFFFFFFF;
     @Generated public static final int Disconnected = 0x00000000;
     @Generated public static final int Connecting = 0x00000001;
     @Generated public static final int Connected = 0x00000002;
     @Generated public static final int Disconnecting = 0x00000003;
+    @Generated
+    private SCNetworkConnectionStatus() {
+    }
 }

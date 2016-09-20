@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNParticleImageSequenceAnimationMode {
-    @Generated
-    private SCNParticleImageSequenceAnimationMode() {
-    }
-
     @Generated @NInt public static final long Repeat = 0x0000000000000000L;
     @Generated @NInt public static final long Clamp = 0x0000000000000001L;
     @Generated @NInt public static final long AutoReverse = 0x0000000000000002L;
+
+    @Generated
+    private SCNParticleImageSequenceAnimationMode() {
+    }
 }

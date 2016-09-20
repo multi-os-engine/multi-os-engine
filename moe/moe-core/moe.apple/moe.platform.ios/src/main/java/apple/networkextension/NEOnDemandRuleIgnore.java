@@ -61,14 +61,6 @@ public class NEOnDemandRuleIgnore extends NEOnDemandRule {
     public static native NEOnDemandRuleIgnore alloc();
 
     @Generated
-    @Selector("init")
-    public native NEOnDemandRuleIgnore init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEOnDemandRuleIgnore initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -168,13 +160,21 @@ public class NEOnDemandRuleIgnore extends NEOnDemandRule {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NEOnDemandRuleIgnore init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEOnDemandRuleIgnore initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

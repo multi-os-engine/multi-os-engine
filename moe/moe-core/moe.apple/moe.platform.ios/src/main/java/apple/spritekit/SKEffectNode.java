@@ -61,31 +61,6 @@ public class SKEffectNode extends SKNode {
     @Selector("alloc")
     public static native SKEffectNode alloc();
 
-    /**
-     * blendMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/blendMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("blendMode")
-    @NInt
-    public native long blendMode();
-
-    /**
-     * filter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/filter">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("filter")
-    public native CIFilter filter();
-
-    @Generated
-    @Selector("init")
-    public native SKEffectNode init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKEffectNode initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("node")
     public static native SKEffectNode node();
@@ -93,86 +68,6 @@ public class SKEffectNode extends SKNode {
     @Generated
     @Selector("nodeWithFileNamed:")
     public static native SKEffectNode nodeWithFileNamed(String filename);
-
-    /**
-     * blendMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/blendMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBlendMode:")
-    public native void setBlendMode(@NInt long value);
-
-    /**
-     * filter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/filter">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFilter:")
-    public native void setFilter(CIFilter value);
-
-    /**
-     * shader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shader">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShader:")
-    public native void setShader(SKShader value);
-
-    /**
-     * shouldCenterFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldCenterFilter">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShouldCenterFilter:")
-    public native void setShouldCenterFilter(boolean value);
-
-    /**
-     * shouldEnableEffects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldEnableEffects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShouldEnableEffects:")
-    public native void setShouldEnableEffects(boolean value);
-
-    /**
-     * shouldRasterize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldRasterize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShouldRasterize:")
-    public native void setShouldRasterize(boolean value);
-
-    /**
-     * shader</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shader">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shader")
-    public native SKShader shader();
-
-    /**
-     * shouldCenterFilter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldCenterFilter">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shouldCenterFilter")
-    public native boolean shouldCenterFilter();
-
-    /**
-     * shouldEnableEffects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldEnableEffects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shouldEnableEffects")
-    public native boolean shouldEnableEffects();
-
-    /**
-     * shouldRasterize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldRasterize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shouldRasterize")
-    public native boolean shouldRasterize();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -291,4 +186,109 @@ public class SKEffectNode extends SKNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * blendMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/blendMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("blendMode")
+    @NInt
+    public native long blendMode();
+
+    /**
+     * filter</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/filter">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("filter")
+    public native CIFilter filter();
+
+    @Generated
+    @Selector("init")
+    public native SKEffectNode init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKEffectNode initWithCoder(NSCoder aDecoder);
+
+    /**
+     * blendMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/blendMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBlendMode:")
+    public native void setBlendMode(@NInt long value);
+
+    /**
+     * filter</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/filter">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFilter:")
+    public native void setFilter(CIFilter value);
+
+    /**
+     * shader</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shader">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShader:")
+    public native void setShader(SKShader value);
+
+    /**
+     * shouldCenterFilter</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldCenterFilter">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShouldCenterFilter:")
+    public native void setShouldCenterFilter(boolean value);
+
+    /**
+     * shouldEnableEffects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldEnableEffects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShouldEnableEffects:")
+    public native void setShouldEnableEffects(boolean value);
+
+    /**
+     * shouldRasterize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldRasterize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShouldRasterize:")
+    public native void setShouldRasterize(boolean value);
+
+    /**
+     * shader</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shader">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shader")
+    public native SKShader shader();
+
+    /**
+     * shouldCenterFilter</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldCenterFilter">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shouldCenterFilter")
+    public native boolean shouldCenterFilter();
+
+    /**
+     * shouldEnableEffects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldEnableEffects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shouldEnableEffects")
+    public native boolean shouldEnableEffects();
+
+    /**
+     * shouldRasterize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKEffectNode_Ref/index.html#//apple_ref/occ/instp/SKEffectNode/shouldRasterize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shouldRasterize")
+    public native boolean shouldRasterize();
 }

@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GLKTextureTarget {
-    @Generated
-    private GLKTextureTarget() {
-    }
-
     @Generated public static final int Target2D = 0x00000DE1;
     @Generated public static final int TargetCubeMap = 0x00008513;
     @Generated public static final int TargetCt = 0x00000002;
+
+    @Generated
+    private GLKTextureTarget() {
+    }
 }

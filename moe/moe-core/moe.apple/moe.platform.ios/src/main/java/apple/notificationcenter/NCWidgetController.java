@@ -58,18 +58,6 @@ public class NCWidgetController extends NSObject {
     @Selector("alloc")
     public static native NCWidgetController alloc();
 
-    @Generated
-    @Selector("init")
-    public native NCWidgetController init();
-
-    /**
-     * setHasContent:forWidgetWithBundleIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NotificationCenter/Reference/NCWidgetController_Class/index.html#//apple_ref/occ/instm/NCWidgetController/setHasContent:forWidgetWithBundleIdentifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHasContent:forWidgetWithBundleIdentifier:")
-    public native void setHasContentForWidgetWithBundleIdentifier(boolean flag, String bundleID);
-
     /**
      * widgetController</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NotificationCenter/Reference/NCWidgetController_Class/index.html#//apple_ref/occ/clm/NCWidgetController/widgetController">iOS Dev Center</a>
@@ -177,4 +165,16 @@ public class NCWidgetController extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NCWidgetController init();
+
+    /**
+     * setHasContent:forWidgetWithBundleIdentifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NotificationCenter/Reference/NCWidgetController_Class/index.html#//apple_ref/occ/instm/NCWidgetController/setHasContent:forWidgetWithBundleIdentifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHasContent:forWidgetWithBundleIdentifier:")
+    public native void setHasContentForWidgetWithBundleIdentifier(boolean flag, String bundleID);
 }

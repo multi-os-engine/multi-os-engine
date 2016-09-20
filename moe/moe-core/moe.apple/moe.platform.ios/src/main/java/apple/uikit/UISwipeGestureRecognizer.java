@@ -58,49 +58,6 @@ public class UISwipeGestureRecognizer extends UIGestureRecognizer {
     @Selector("alloc")
     public static native UISwipeGestureRecognizer alloc();
 
-    /**
-     * direction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UISwipeGestureRecognizer/direction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("direction")
-    @NUInt
-    public native long direction();
-
-    @Generated
-    @Selector("init")
-    public native UISwipeGestureRecognizer init();
-
-    @Generated
-    @Selector("initWithTarget:action:")
-    public native UISwipeGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
-            SEL action);
-
-    /**
-     * numberOfTouchesRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UISwipeGestureRecognizer/numberOfTouchesRequired">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberOfTouchesRequired")
-    @NUInt
-    public native long numberOfTouchesRequired();
-
-    /**
-     * direction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UISwipeGestureRecognizer/direction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDirection:")
-    public native void setDirection(@NUInt long value);
-
-    /**
-     * numberOfTouchesRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UISwipeGestureRecognizer/numberOfTouchesRequired">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNumberOfTouchesRequired:")
-    public native void setNumberOfTouchesRequired(@NUInt long value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -200,4 +157,47 @@ public class UISwipeGestureRecognizer extends UIGestureRecognizer {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * direction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UISwipeGestureRecognizer/direction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("direction")
+    @NUInt
+    public native long direction();
+
+    @Generated
+    @Selector("init")
+    public native UISwipeGestureRecognizer init();
+
+    @Generated
+    @Selector("initWithTarget:action:")
+    public native UISwipeGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
+            SEL action);
+
+    /**
+     * numberOfTouchesRequired</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UISwipeGestureRecognizer/numberOfTouchesRequired">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberOfTouchesRequired")
+    @NUInt
+    public native long numberOfTouchesRequired();
+
+    /**
+     * direction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UISwipeGestureRecognizer/direction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDirection:")
+    public native void setDirection(@NUInt long value);
+
+    /**
+     * numberOfTouchesRequired</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwipeGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UISwipeGestureRecognizer/numberOfTouchesRequired">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNumberOfTouchesRequired:")
+    public native void setNumberOfTouchesRequired(@NUInt long value);
 }

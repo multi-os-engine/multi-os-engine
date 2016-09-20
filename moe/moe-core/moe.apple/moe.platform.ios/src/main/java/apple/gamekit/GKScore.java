@@ -67,6 +67,129 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     public static native GKScore alloc();
 
     /**
+     * reportScores:withCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/clm/GKScore/reportScores:withCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reportScores:withCompletionHandler:")
+    public static native void reportScoresWithCompletionHandler(NSArray<? extends GKScore> scores,
+            @ObjCBlock(name = "call_reportScoresWithCompletionHandler") Block_reportScoresWithCompletionHandler completionHandler);
+
+    /**
+     * reportScores:withEligibleChallenges:withCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/clm/GKScore/reportScores:withEligibleChallenges:withCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reportScores:withEligibleChallenges:withCompletionHandler:")
+    public static native void reportScoresWithEligibleChallengesWithCompletionHandler(NSArray<? extends GKScore> scores,
+            NSArray<? extends GKChallenge> challenges,
+            @ObjCBlock(name = "call_reportScoresWithEligibleChallengesWithCompletionHandler") Block_reportScoresWithEligibleChallengesWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
      * category</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/category">iOS Dev Center</a>
      */
@@ -85,14 +208,6 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
             NSArray<? extends GKPlayer> players,
             @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_challengeComposeControllerWithMessagePlayersCompletionHandler {
-        @Generated
-        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController arg0, boolean arg1,
-                NSArray<String> arg2);
-    }
-
     /**
      * challengeComposeControllerWithPlayers:message:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instm/GKScore/challengeComposeControllerWithPlayers:message:completionHandler:">iOS Dev Center</a>
@@ -103,14 +218,6 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     public native UIViewController challengeComposeControllerWithPlayersMessageCompletionHandler(
             NSArray<String> playerIDs, String message,
             @ObjCBlock(name = "call_challengeComposeControllerWithPlayersMessageCompletionHandler") Block_challengeComposeControllerWithPlayersMessageCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_challengeComposeControllerWithPlayersMessageCompletionHandler {
-        @Generated
-        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(UIViewController arg0, boolean arg1,
-                NSArray<String> arg2);
-    }
 
     /**
      * context</br>
@@ -235,46 +342,6 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     public native void reportScoreWithCompletionHandler(
             @ObjCBlock(name = "call_reportScoreWithCompletionHandler") Block_reportScoreWithCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_reportScoreWithCompletionHandler {
-        @Generated
-        void call_reportScoreWithCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * reportScores:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/clm/GKScore/reportScores:withCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reportScores:withCompletionHandler:")
-    public static native void reportScoresWithCompletionHandler(NSArray<? extends GKScore> scores,
-            @ObjCBlock(name = "call_reportScoresWithCompletionHandler") Block_reportScoresWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_reportScoresWithCompletionHandler {
-        @Generated
-        void call_reportScoresWithCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * reportScores:withEligibleChallenges:withCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/clm/GKScore/reportScores:withEligibleChallenges:withCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reportScores:withEligibleChallenges:withCompletionHandler:")
-    public static native void reportScoresWithEligibleChallengesWithCompletionHandler(NSArray<? extends GKScore> scores,
-            NSArray<? extends GKChallenge> challenges,
-            @ObjCBlock(name = "call_reportScoresWithEligibleChallengesWithCompletionHandler") Block_reportScoresWithEligibleChallengesWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_reportScoresWithEligibleChallengesWithCompletionHandler {
-        @Generated
-        void call_reportScoresWithEligibleChallengesWithCompletionHandler(NSError arg0);
-    }
-
     /**
      * category</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScore_Ref/index.html#//apple_ref/occ/instp/GKScore/category">iOS Dev Center</a>
@@ -325,10 +392,6 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     public native boolean shouldSetDefaultLeaderboard();
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
@@ -342,103 +405,40 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("value")
     public native long value();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_challengeComposeControllerWithMessagePlayersCompletionHandler {
+        @Generated
+        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController arg0, boolean arg1,
+                NSArray<String> arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_challengeComposeControllerWithPlayersMessageCompletionHandler {
+        @Generated
+        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(UIViewController arg0, boolean arg1,
+                NSArray<String> arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_reportScoreWithCompletionHandler {
+        @Generated
+        void call_reportScoreWithCompletionHandler(NSError arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public interface Block_reportScoresWithCompletionHandler {
+        @Generated
+        void call_reportScoresWithCompletionHandler(NSError arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_reportScoresWithEligibleChallengesWithCompletionHandler {
+        @Generated
+        void call_reportScoresWithEligibleChallengesWithCompletionHandler(NSError arg0);
+    }
 }

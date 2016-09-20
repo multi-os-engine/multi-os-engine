@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSNetServicesError {
-    @Generated
-    private NSNetServicesError() {
-    }
-
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFEE6C0L;
     @Generated @NInt public static final long CollisionError = 0xFFFFFFFFFFFEE6BFL;
     @Generated @NInt public static final long NotFoundError = 0xFFFFFFFFFFFEE6BEL;
@@ -33,4 +29,8 @@ public final class NSNetServicesError {
     @Generated @NInt public static final long CancelledError = 0xFFFFFFFFFFFEE6BBL;
     @Generated @NInt public static final long InvalidError = 0xFFFFFFFFFFFEE6BAL;
     @Generated @NInt public static final long TimeoutError = 0xFFFFFFFFFFFEE6B9L;
+
+    @Generated
+    private NSNetServicesError() {
+    }
 }

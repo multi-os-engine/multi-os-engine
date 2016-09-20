@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIControlState {
-    @Generated
-    private UIControlState() {
-    }
-
     @Generated @NUInt public static final long Normal = 0x0000000000000000L;
     @Generated @NUInt public static final long Highlighted = 0x0000000000000001L;
     @Generated @NUInt public static final long Disabled = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class UIControlState {
     @Generated @NUInt public static final long Application = 0x0000000000FF0000L;
     @Generated @NUInt public static final long Reserved = 0x00000000FF000000L;
     @Generated @NUInt public static final long Focused = 0x0000000000000008L;
+
+    @Generated
+    private UIControlState() {
+    }
 }

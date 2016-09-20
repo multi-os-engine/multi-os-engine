@@ -75,13 +75,6 @@ public interface MTLDevice {
     Object newBufferWithBytesNoCopyLengthOptionsDeallocator(VoidPtr pointer, @NUInt long length, @NUInt long options,
             @ObjCBlock(name = "call_newBufferWithBytesNoCopyLengthOptionsDeallocator") Block_newBufferWithBytesNoCopyLengthOptionsDeallocator deallocator);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newBufferWithBytesNoCopyLengthOptionsDeallocator {
-        @Generated
-        void call_newBufferWithBytesNoCopyLengthOptionsDeallocator(VoidPtr arg0, @NUInt long arg1);
-    }
-
     /**
      * newBufferWithLength:options:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newBufferWithLength:options:">iOS Dev Center</a>
@@ -118,14 +111,6 @@ public interface MTLDevice {
     void newComputePipelineStateWithFunctionCompletionHandler(@Mapped(ObjCObjectMapper.class) Object computeFunction,
             @ObjCBlock(name = "call_newComputePipelineStateWithFunctionCompletionHandler") Block_newComputePipelineStateWithFunctionCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newComputePipelineStateWithFunctionCompletionHandler {
-        @Generated
-        void call_newComputePipelineStateWithFunctionCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
-    }
-
     /**
      * newComputePipelineStateWithFunction:error:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newComputePipelineStateWithFunction:error:">iOS Dev Center</a>
@@ -145,14 +130,6 @@ public interface MTLDevice {
     void newComputePipelineStateWithFunctionOptionsCompletionHandler(
             @Mapped(ObjCObjectMapper.class) Object computeFunction, @NUInt long options,
             @ObjCBlock(name = "call_newComputePipelineStateWithFunctionOptionsCompletionHandler") Block_newComputePipelineStateWithFunctionOptionsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newComputePipelineStateWithFunctionOptionsCompletionHandler {
-        @Generated
-        void call_newComputePipelineStateWithFunctionOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, MTLComputePipelineReflection arg1, NSError arg2);
-    }
 
     /**
      * newComputePipelineStateWithFunction:options:reflection:error:</br>
@@ -210,14 +187,6 @@ public interface MTLDevice {
     void newLibraryWithSourceOptionsCompletionHandler(String source, MTLCompileOptions options,
             @ObjCBlock(name = "call_newLibraryWithSourceOptionsCompletionHandler") Block_newLibraryWithSourceOptionsCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newLibraryWithSourceOptionsCompletionHandler {
-        @Generated
-        void call_newLibraryWithSourceOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
-    }
-
     /**
      * newLibraryWithSource:options:error:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newLibraryWithSource:options:error:">iOS Dev Center</a>
@@ -235,14 +204,6 @@ public interface MTLDevice {
     @Selector("newRenderPipelineStateWithDescriptor:completionHandler:")
     void newRenderPipelineStateWithDescriptorCompletionHandler(MTLRenderPipelineDescriptor descriptor,
             @ObjCBlock(name = "call_newRenderPipelineStateWithDescriptorCompletionHandler") Block_newRenderPipelineStateWithDescriptorCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newRenderPipelineStateWithDescriptorCompletionHandler {
-        @Generated
-        void call_newRenderPipelineStateWithDescriptorCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
-    }
 
     /**
      * newRenderPipelineStateWithDescriptor:error:</br>
@@ -262,14 +223,6 @@ public interface MTLDevice {
     void newRenderPipelineStateWithDescriptorOptionsCompletionHandler(MTLRenderPipelineDescriptor descriptor,
             @NUInt long options,
             @ObjCBlock(name = "call_newRenderPipelineStateWithDescriptorOptionsCompletionHandler") Block_newRenderPipelineStateWithDescriptorOptionsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newRenderPipelineStateWithDescriptorOptionsCompletionHandler {
-        @Generated
-        void call_newRenderPipelineStateWithDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, MTLRenderPipelineReflection arg1, NSError arg2);
-    }
 
     /**
      * newRenderPipelineStateWithDescriptor:options:reflection:error:</br>
@@ -326,14 +279,6 @@ public interface MTLDevice {
             @NUInt long options,
             @ObjCBlock(name = "call_newComputePipelineStateWithDescriptorOptionsCompletionHandler") Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler {
-        @Generated
-        void call_newComputePipelineStateWithDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, MTLComputePipelineReflection arg1, NSError arg2);
-    }
-
     /**
      * newComputePipelineStateWithDescriptor:options:reflection:error:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDevice_Ref/index.html#//apple_ref/occ/intfm/MTLDevice/newComputePipelineStateWithDescriptor:options:reflection:error:">iOS Dev Center</a>
@@ -351,4 +296,59 @@ public interface MTLDevice {
     @Generated
     @Selector("supportsTextureSampleCount:")
     boolean supportsTextureSampleCount(@NUInt long sampleCount);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newBufferWithBytesNoCopyLengthOptionsDeallocator {
+        @Generated
+        void call_newBufferWithBytesNoCopyLengthOptionsDeallocator(VoidPtr arg0, @NUInt long arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newComputePipelineStateWithFunctionCompletionHandler {
+        @Generated
+        void call_newComputePipelineStateWithFunctionCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
+                NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newComputePipelineStateWithFunctionOptionsCompletionHandler {
+        @Generated
+        void call_newComputePipelineStateWithFunctionOptionsCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object arg0, MTLComputePipelineReflection arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newLibraryWithSourceOptionsCompletionHandler {
+        @Generated
+        void call_newLibraryWithSourceOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
+                NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newRenderPipelineStateWithDescriptorCompletionHandler {
+        @Generated
+        void call_newRenderPipelineStateWithDescriptorCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
+                NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newRenderPipelineStateWithDescriptorOptionsCompletionHandler {
+        @Generated
+        void call_newRenderPipelineStateWithDescriptorOptionsCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object arg0, MTLRenderPipelineReflection arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler {
+        @Generated
+        void call_newComputePipelineStateWithDescriptorOptionsCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object arg0, MTLComputePipelineReflection arg1, NSError arg2);
+    }
 }

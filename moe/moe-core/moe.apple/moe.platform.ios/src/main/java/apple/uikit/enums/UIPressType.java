@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPressType {
-    @Generated
-    private UIPressType() {
-    }
-
     @Generated @NInt public static final long UpArrow = 0x0000000000000000L;
     @Generated @NInt public static final long DownArrow = 0x0000000000000001L;
     @Generated @NInt public static final long LeftArrow = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class UIPressType {
     @Generated @NInt public static final long Select = 0x0000000000000004L;
     @Generated @NInt public static final long Menu = 0x0000000000000005L;
     @Generated @NInt public static final long PlayPause = 0x0000000000000006L;
+
+    @Generated
+    private UIPressType() {
+    }
 }

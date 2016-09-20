@@ -57,115 +57,6 @@ public class NSURLCache extends NSObject {
     public static native NSURLCache alloc();
 
     /**
-     * cachedResponseForRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instm/NSURLCache/cachedResponseForRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cachedResponseForRequest:")
-    public native NSCachedURLResponse cachedResponseForRequest(NSURLRequest request);
-
-    /**
-     * currentDiskUsage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/currentDiskUsage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentDiskUsage")
-    @NUInt
-    public native long currentDiskUsage();
-
-    /**
-     * currentMemoryUsage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/currentMemoryUsage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentMemoryUsage")
-    @NUInt
-    public native long currentMemoryUsage();
-
-    /**
-     * diskCapacity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/diskCapacity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("diskCapacity")
-    @NUInt
-    public native long diskCapacity();
-
-    @Generated
-    @Selector("getCachedResponseForDataTask:completionHandler:")
-    public native void getCachedResponseForDataTaskCompletionHandler(NSURLSessionDataTask dataTask,
-            @ObjCBlock(name = "call_getCachedResponseForDataTaskCompletionHandler") Block_getCachedResponseForDataTaskCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_getCachedResponseForDataTaskCompletionHandler {
-        @Generated
-        void call_getCachedResponseForDataTaskCompletionHandler(NSCachedURLResponse arg0);
-    }
-
-    @Generated
-    @Selector("init")
-    public native NSURLCache init();
-
-    /**
-     * initWithMemoryCapacity:diskCapacity:diskPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instm/NSURLCache/initWithMemoryCapacity:diskCapacity:diskPath:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithMemoryCapacity:diskCapacity:diskPath:")
-    public native NSURLCache initWithMemoryCapacityDiskCapacityDiskPath(@NUInt long memoryCapacity,
-            @NUInt long diskCapacity, String path);
-
-    /**
-     * memoryCapacity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/memoryCapacity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("memoryCapacity")
-    @NUInt
-    public native long memoryCapacity();
-
-    /**
-     * removeAllCachedResponses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instm/NSURLCache/removeAllCachedResponses">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeAllCachedResponses")
-    public native void removeAllCachedResponses();
-
-    @Generated
-    @Selector("removeCachedResponseForDataTask:")
-    public native void removeCachedResponseForDataTask(NSURLSessionDataTask dataTask);
-
-    /**
-     * removeCachedResponseForRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instm/NSURLCache/removeCachedResponseForRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeCachedResponseForRequest:")
-    public native void removeCachedResponseForRequest(NSURLRequest request);
-
-    @Generated
-    @Selector("removeCachedResponsesSinceDate:")
-    public native void removeCachedResponsesSinceDate(NSDate date);
-
-    /**
-     * diskCapacity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/diskCapacity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDiskCapacity:")
-    public native void setDiskCapacity(@NUInt long value);
-
-    /**
-     * memoryCapacity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/memoryCapacity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMemoryCapacity:")
-    public native void setMemoryCapacity(@NUInt long value);
-
-    /**
      * setSharedURLCache:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/clm/NSURLCache/setSharedURLCache:">iOS Dev Center</a>
      */
@@ -180,19 +71,6 @@ public class NSURLCache extends NSObject {
     @Generated
     @Selector("sharedURLCache")
     public static native NSURLCache sharedURLCache();
-
-    @Generated
-    @Selector("storeCachedResponse:forDataTask:")
-    public native void storeCachedResponseForDataTask(NSCachedURLResponse cachedResponse,
-            NSURLSessionDataTask dataTask);
-
-    /**
-     * storeCachedResponse:forRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instm/NSURLCache/storeCachedResponse:forRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("storeCachedResponse:forRequest:")
-    public native void storeCachedResponseForRequest(NSCachedURLResponse cachedResponse, NSURLRequest request);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -293,4 +171,126 @@ public class NSURLCache extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cachedResponseForRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instm/NSURLCache/cachedResponseForRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cachedResponseForRequest:")
+    public native NSCachedURLResponse cachedResponseForRequest(NSURLRequest request);
+
+    /**
+     * currentDiskUsage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/currentDiskUsage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentDiskUsage")
+    @NUInt
+    public native long currentDiskUsage();
+
+    /**
+     * currentMemoryUsage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/currentMemoryUsage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentMemoryUsage")
+    @NUInt
+    public native long currentMemoryUsage();
+
+    /**
+     * diskCapacity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/diskCapacity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("diskCapacity")
+    @NUInt
+    public native long diskCapacity();
+
+    @Generated
+    @Selector("getCachedResponseForDataTask:completionHandler:")
+    public native void getCachedResponseForDataTaskCompletionHandler(NSURLSessionDataTask dataTask,
+            @ObjCBlock(name = "call_getCachedResponseForDataTaskCompletionHandler") Block_getCachedResponseForDataTaskCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("init")
+    public native NSURLCache init();
+
+    /**
+     * initWithMemoryCapacity:diskCapacity:diskPath:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instm/NSURLCache/initWithMemoryCapacity:diskCapacity:diskPath:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithMemoryCapacity:diskCapacity:diskPath:")
+    public native NSURLCache initWithMemoryCapacityDiskCapacityDiskPath(@NUInt long memoryCapacity,
+            @NUInt long diskCapacity, String path);
+
+    /**
+     * memoryCapacity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/memoryCapacity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("memoryCapacity")
+    @NUInt
+    public native long memoryCapacity();
+
+    /**
+     * removeAllCachedResponses</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instm/NSURLCache/removeAllCachedResponses">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeAllCachedResponses")
+    public native void removeAllCachedResponses();
+
+    @Generated
+    @Selector("removeCachedResponseForDataTask:")
+    public native void removeCachedResponseForDataTask(NSURLSessionDataTask dataTask);
+
+    /**
+     * removeCachedResponseForRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instm/NSURLCache/removeCachedResponseForRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeCachedResponseForRequest:")
+    public native void removeCachedResponseForRequest(NSURLRequest request);
+
+    @Generated
+    @Selector("removeCachedResponsesSinceDate:")
+    public native void removeCachedResponsesSinceDate(NSDate date);
+
+    /**
+     * diskCapacity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/diskCapacity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDiskCapacity:")
+    public native void setDiskCapacity(@NUInt long value);
+
+    /**
+     * memoryCapacity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instp/NSURLCache/memoryCapacity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMemoryCapacity:")
+    public native void setMemoryCapacity(@NUInt long value);
+
+    @Generated
+    @Selector("storeCachedResponse:forDataTask:")
+    public native void storeCachedResponseForDataTask(NSCachedURLResponse cachedResponse,
+            NSURLSessionDataTask dataTask);
+
+    /**
+     * storeCachedResponse:forRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCache_Class/index.html#//apple_ref/occ/instm/NSURLCache/storeCachedResponse:forRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("storeCachedResponse:forRequest:")
+    public native void storeCachedResponseForRequest(NSCachedURLResponse cachedResponse, NSURLRequest request);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getCachedResponseForDataTaskCompletionHandler {
+        @Generated
+        void call_getCachedResponseForDataTaskCompletionHandler(NSCachedURLResponse arg0);
+    }
 }

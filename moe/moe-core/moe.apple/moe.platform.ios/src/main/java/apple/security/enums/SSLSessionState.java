@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SSLSessionState {
-    @Generated
-    private SSLSessionState() {
-    }
-
     @Generated public static final int Idle = 0x00000000;
     @Generated public static final int Handshake = 0x00000001;
     @Generated public static final int Connected = 0x00000002;
     @Generated public static final int Closed = 0x00000003;
     @Generated public static final int Aborted = 0x00000004;
+
+    @Generated
+    private SSLSessionState() {
+    }
 }

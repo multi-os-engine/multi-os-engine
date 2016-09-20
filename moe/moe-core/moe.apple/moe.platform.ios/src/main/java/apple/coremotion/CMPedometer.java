@@ -61,10 +61,6 @@ public class CMPedometer extends NSObject {
     @Selector("alloc")
     public static native CMPedometer alloc();
 
-    @Generated
-    @Selector("init")
-    public native CMPedometer init();
-
     /**
      * isDistanceAvailable</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/clm/CMPedometer/isDistanceAvailable">iOS Dev Center</a>
@@ -88,46 +84,6 @@ public class CMPedometer extends NSObject {
     @Generated
     @Selector("isStepCountingAvailable")
     public static native boolean isStepCountingAvailable();
-
-    /**
-     * queryPedometerDataFromDate:toDate:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/instm/CMPedometer/queryPedometerDataFromDate:toDate:withHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("queryPedometerDataFromDate:toDate:withHandler:")
-    public native void queryPedometerDataFromDateToDateWithHandler(NSDate start, NSDate end,
-            @ObjCBlock(name = "call_queryPedometerDataFromDateToDateWithHandler") Block_queryPedometerDataFromDateToDateWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_queryPedometerDataFromDateToDateWithHandler {
-        @Generated
-        void call_queryPedometerDataFromDateToDateWithHandler(CMPedometerData arg0, NSError arg1);
-    }
-
-    /**
-     * startPedometerUpdatesFromDate:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/instm/CMPedometer/startPedometerUpdatesFromDate:withHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startPedometerUpdatesFromDate:withHandler:")
-    public native void startPedometerUpdatesFromDateWithHandler(NSDate start,
-            @ObjCBlock(name = "call_startPedometerUpdatesFromDateWithHandler") Block_startPedometerUpdatesFromDateWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startPedometerUpdatesFromDateWithHandler {
-        @Generated
-        void call_startPedometerUpdatesFromDateWithHandler(CMPedometerData arg0, NSError arg1);
-    }
-
-    /**
-     * stopPedometerUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/instm/CMPedometer/stopPedometerUpdates">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopPedometerUpdates")
-    public native void stopPedometerUpdates();
 
     /**
      * isCadenceAvailable</br>
@@ -244,4 +200,48 @@ public class CMPedometer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native CMPedometer init();
+
+    /**
+     * queryPedometerDataFromDate:toDate:withHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/instm/CMPedometer/queryPedometerDataFromDate:toDate:withHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("queryPedometerDataFromDate:toDate:withHandler:")
+    public native void queryPedometerDataFromDateToDateWithHandler(NSDate start, NSDate end,
+            @ObjCBlock(name = "call_queryPedometerDataFromDateToDateWithHandler") Block_queryPedometerDataFromDateToDateWithHandler handler);
+
+    /**
+     * startPedometerUpdatesFromDate:withHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/instm/CMPedometer/startPedometerUpdatesFromDate:withHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startPedometerUpdatesFromDate:withHandler:")
+    public native void startPedometerUpdatesFromDateWithHandler(NSDate start,
+            @ObjCBlock(name = "call_startPedometerUpdatesFromDateWithHandler") Block_startPedometerUpdatesFromDateWithHandler handler);
+
+    /**
+     * stopPedometerUpdates</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMPedometer_class/index.html#//apple_ref/occ/instm/CMPedometer/stopPedometerUpdates">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopPedometerUpdates")
+    public native void stopPedometerUpdates();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_queryPedometerDataFromDateToDateWithHandler {
+        @Generated
+        void call_queryPedometerDataFromDateToDateWithHandler(CMPedometerData arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startPedometerUpdatesFromDateWithHandler {
+        @Generated
+        void call_startPedometerUpdatesFromDateWithHandler(CMPedometerData arg0, NSError arg1);
+    }
 }

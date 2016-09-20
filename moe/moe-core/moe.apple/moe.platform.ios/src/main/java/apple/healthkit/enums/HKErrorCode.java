@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKErrorCode {
-    @Generated
-    private HKErrorCode() {
-    }
-
     @Generated @NInt public static final long NoError = 0x0000000000000000L;
     @Generated @NInt public static final long ErrorHealthDataUnavailable = 0x0000000000000001L;
     @Generated @NInt public static final long ErrorHealthDataRestricted = 0x0000000000000002L;
@@ -35,4 +31,8 @@ public final class HKErrorCode {
     @Generated @NInt public static final long ErrorUserCanceled = 0x0000000000000007L;
     @Generated @NInt public static final long ErrorAnotherWorkoutSessionStarted = 0x0000000000000008L;
     @Generated @NInt public static final long ErrorUserExitedWorkoutSession = 0x0000000000000009L;
+
+    @Generated
+    private HKErrorCode() {
+    }
 }

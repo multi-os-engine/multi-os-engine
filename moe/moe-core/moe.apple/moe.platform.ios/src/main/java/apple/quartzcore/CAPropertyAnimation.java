@@ -72,78 +72,6 @@ public class CAPropertyAnimation extends CAAnimation {
     public static native CAPropertyAnimation animationWithKeyPath(String path);
 
     @Generated
-    @Selector("init")
-    public native CAPropertyAnimation init();
-
-    /**
-     * additive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/additive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isAdditive")
-    public native boolean isAdditive();
-
-    /**
-     * cumulative</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/cumulative">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isCumulative")
-    public native boolean isCumulative();
-
-    /**
-     * keyPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/keyPath">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("keyPath")
-    public native String keyPath();
-
-    /**
-     * additive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/additive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAdditive:")
-    public native void setAdditive(boolean value);
-
-    /**
-     * cumulative</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/cumulative">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCumulative:")
-    public native void setCumulative(boolean value);
-
-    /**
-     * keyPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/keyPath">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setKeyPath:")
-    public native void setKeyPath(String value);
-
-    /**
-     * valueFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/valueFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setValueFunction:")
-    public native void setValueFunction(CAValueFunction value);
-
-    /**
-     * valueFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/valueFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueFunction")
-    public native CAValueFunction valueFunction();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAPropertyAnimation initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -247,4 +175,76 @@ public class CAPropertyAnimation extends CAAnimation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CAPropertyAnimation init();
+
+    /**
+     * additive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/additive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isAdditive")
+    public native boolean isAdditive();
+
+    /**
+     * additive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/additive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAdditive:")
+    public native void setAdditive(boolean value);
+
+    /**
+     * cumulative</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/cumulative">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isCumulative")
+    public native boolean isCumulative();
+
+    /**
+     * cumulative</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/cumulative">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCumulative:")
+    public native void setCumulative(boolean value);
+
+    /**
+     * keyPath</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/keyPath">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("keyPath")
+    public native String keyPath();
+
+    /**
+     * keyPath</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/keyPath">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setKeyPath:")
+    public native void setKeyPath(String value);
+
+    /**
+     * valueFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/valueFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setValueFunction:")
+    public native void setValueFunction(CAValueFunction value);
+
+    /**
+     * valueFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/index.html#//apple_ref/occ/instp/CAPropertyAnimation/valueFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueFunction")
+    public native CAValueFunction valueFunction();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAPropertyAnimation initWithCoder(NSCoder aDecoder);
 }

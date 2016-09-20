@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKSpan {
+    @Generated @NInt public static final long ThisEvent = 0x0000000000000000L;
+    @Generated @NInt public static final long FutureEvents = 0x0000000000000001L;
+
     @Generated
     private EKSpan() {
     }
-
-    @Generated @NInt public static final long ThisEvent = 0x0000000000000000L;
-    @Generated @NInt public static final long FutureEvents = 0x0000000000000001L;
 }

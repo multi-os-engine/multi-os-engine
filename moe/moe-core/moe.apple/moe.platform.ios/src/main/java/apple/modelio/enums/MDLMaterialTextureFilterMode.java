@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MDLMaterialTextureFilterMode {
+    @Generated @NUInt public static final long Nearest = 0x0000000000000000L;
+    @Generated @NUInt public static final long Linear = 0x0000000000000001L;
+
     @Generated
     private MDLMaterialTextureFilterMode() {
     }
-
-    @Generated @NUInt public static final long Nearest = 0x0000000000000000L;
-    @Generated @NUInt public static final long Linear = 0x0000000000000001L;
 }

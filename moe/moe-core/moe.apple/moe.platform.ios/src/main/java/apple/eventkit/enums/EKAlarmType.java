@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKAlarmType {
-    @Generated
-    private EKAlarmType() {
-    }
-
     @Generated @NInt public static final long Display = 0x0000000000000000L;
     @Generated @NInt public static final long Audio = 0x0000000000000001L;
     @Generated @NInt public static final long Procedure = 0x0000000000000002L;
     @Generated @NInt public static final long Email = 0x0000000000000003L;
+
+    @Generated
+    private EKAlarmType() {
+    }
 }

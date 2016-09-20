@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDateIntervalFormatterStyle {
-    @Generated
-    private NSDateIntervalFormatterStyle() {
-    }
-
     @Generated @NUInt public static final long NoStyle = 0x0000000000000000L;
     @Generated @NUInt public static final long ShortStyle = 0x0000000000000001L;
     @Generated @NUInt public static final long MediumStyle = 0x0000000000000002L;
     @Generated @NUInt public static final long LongStyle = 0x0000000000000003L;
     @Generated @NUInt public static final long FullStyle = 0x0000000000000004L;
+
+    @Generated
+    private NSDateIntervalFormatterStyle() {
+    }
 }

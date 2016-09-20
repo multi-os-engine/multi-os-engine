@@ -58,42 +58,6 @@ public class CBService extends CBAttribute {
     @Selector("alloc")
     public static native CBService alloc();
 
-    /**
-     * characteristics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBService_Class/index.html#//apple_ref/occ/instp/CBService/characteristics">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("characteristics")
-    public native NSArray<? extends CBCharacteristic> characteristics();
-
-    /**
-     * includedServices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBService_Class/index.html#//apple_ref/occ/instp/CBService/includedServices">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("includedServices")
-    public native NSArray<? extends CBService> includedServices();
-
-    @Generated
-    @Selector("init")
-    public native CBService init();
-
-    /**
-     * isPrimary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBService_Class/index.html#//apple_ref/occ/instp/CBService/isPrimary">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPrimary")
-    public native boolean isPrimary();
-
-    /**
-     * peripheral</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBService_Class/index.html#//apple_ref/occ/instp/CBService/peripheral">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("peripheral")
-    public native CBPeripheral peripheral();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -193,4 +157,40 @@ public class CBService extends CBAttribute {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * characteristics</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBService_Class/index.html#//apple_ref/occ/instp/CBService/characteristics">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("characteristics")
+    public native NSArray<? extends CBCharacteristic> characteristics();
+
+    /**
+     * includedServices</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBService_Class/index.html#//apple_ref/occ/instp/CBService/includedServices">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("includedServices")
+    public native NSArray<? extends CBService> includedServices();
+
+    @Generated
+    @Selector("init")
+    public native CBService init();
+
+    /**
+     * isPrimary</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBService_Class/index.html#//apple_ref/occ/instp/CBService/isPrimary">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPrimary")
+    public native boolean isPrimary();
+
+    /**
+     * peripheral</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBService_Class/index.html#//apple_ref/occ/instp/CBService/peripheral">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("peripheral")
+    public native CBPeripheral peripheral();
 }

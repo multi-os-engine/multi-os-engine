@@ -21,12 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EAWiFiUnconfiguredAccessoryBrowserState {
-    @Generated
-    private EAWiFiUnconfiguredAccessoryBrowserState() {
-    }
-
     @Generated @NInt public static final long WiFiUnavailable = 0x0000000000000000L;
     @Generated @NInt public static final long Stopped = 0x0000000000000001L;
     @Generated @NInt public static final long Searching = 0x0000000000000002L;
     @Generated @NInt public static final long Configuring = 0x0000000000000003L;
+    @Generated
+    private EAWiFiUnconfiguredAccessoryBrowserState() {
+    }
 }

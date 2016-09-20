@@ -21,13 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class GCControllerPlayerIndex {
-    @Generated
-    private GCControllerPlayerIndex() {
-    }
-
     @Generated @NInt public static final long IndexUnset = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long Index1 = 0x0000000000000000L;
     @Generated @NInt public static final long Index2 = 0x0000000000000001L;
     @Generated @NInt public static final long Index3 = 0x0000000000000002L;
     @Generated @NInt public static final long Index4 = 0x0000000000000003L;
+    @Generated
+    private GCControllerPlayerIndex() {
+    }
 }

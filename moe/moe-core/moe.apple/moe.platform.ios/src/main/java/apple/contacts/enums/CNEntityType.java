@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CNEntityType {
+    @Generated @NInt public static final long CNEntityTypeContacts = 0x0000000000000000L;
+
     @Generated
     private CNEntityType() {
     }
-
-    @Generated @NInt public static final long CNEntityTypeContacts = 0x0000000000000000L;
 }

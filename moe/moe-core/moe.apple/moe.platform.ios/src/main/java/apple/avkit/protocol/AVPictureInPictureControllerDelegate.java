@@ -53,14 +53,6 @@ public interface AVPictureInPictureControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler {
-        @Generated
-        void call_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
-                boolean arg0);
-    }
-
     /**
      * pictureInPictureControllerDidStartPictureInPicture:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPictureInPictureControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPictureInPictureControllerDelegate/pictureInPictureControllerDidStartPictureInPicture:">iOS Dev Center</a>
@@ -107,5 +99,13 @@ public interface AVPictureInPictureControllerDelegate {
     default void pictureInPictureControllerWillStopPictureInPicture(
             AVPictureInPictureController pictureInPictureController) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler {
+        @Generated
+        void call_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
+                boolean arg0);
     }
 }

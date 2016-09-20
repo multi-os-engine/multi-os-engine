@@ -64,131 +64,10 @@ public class SCNScene extends NSObject implements NSSecureCoding {
         super(peer);
     }
 
-    /**
-     * addParticleSystem:withTransform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instm/SCNScene/addParticleSystem:withTransform:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addParticleSystem:withTransform:")
-    public native void addParticleSystemWithTransform(SCNParticleSystem system, @ByValue SCNMatrix4 transform);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native SCNScene alloc();
-
-    /**
-     * attributeForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instm/SCNScene/attributeForKey:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attributeForKey:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object attributeForKey(String key);
-
-    /**
-     * background</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/background">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("background")
-    public native SCNMaterialProperty background();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * fogColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fogColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object fogColor();
-
-    /**
-     * fogDensityExponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogDensityExponent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fogDensityExponent")
-    @NFloat
-    public native double fogDensityExponent();
-
-    /**
-     * fogEndDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogEndDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fogEndDistance")
-    @NFloat
-    public native double fogEndDistance();
-
-    /**
-     * fogStartDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogStartDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fogStartDistance")
-    @NFloat
-    public native double fogStartDistance();
-
-    @Generated
-    @Selector("init")
-    public native SCNScene init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNScene initWithCoder(NSCoder aDecoder);
-
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/paused">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPaused")
-    public native boolean isPaused();
-
-    /**
-     * particleSystems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/particleSystems">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("particleSystems")
-    public native NSArray<? extends SCNParticleSystem> particleSystems();
-
-    /**
-     * physicsWorld</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/physicsWorld">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("physicsWorld")
-    public native SCNPhysicsWorld physicsWorld();
-
-    /**
-     * removeAllParticleSystems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instm/SCNScene/removeAllParticleSystems">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeAllParticleSystems")
-    public native void removeAllParticleSystems();
-
-    /**
-     * removeParticleSystem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instm/SCNScene/removeParticleSystem:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeParticleSystem:")
-    public native void removeParticleSystem(SCNParticleSystem system);
-
-    /**
-     * rootNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/rootNode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rootNode")
-    public native SCNNode rootNode();
 
     /**
      * scene</br>
@@ -224,63 +103,9 @@ public class SCNScene extends NSObject implements NSSecureCoding {
     public static native SCNScene sceneWithURLOptionsError(NSURL url, NSDictionary<String, ?> options,
             Ptr<NSError> error);
 
-    /**
-     * setAttribute:forKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instm/SCNScene/setAttribute:forKey:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAttribute:forKey:")
-    public native void setAttributeForKey(@Mapped(ObjCObjectMapper.class) Object attribute, String key);
-
-    /**
-     * fogColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFogColor:")
-    public native void setFogColor(@Mapped(ObjCObjectMapper.class) Object value);
-
-    /**
-     * fogDensityExponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogDensityExponent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFogDensityExponent:")
-    public native void setFogDensityExponent(@NFloat double value);
-
-    /**
-     * fogEndDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogEndDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFogEndDistance:")
-    public native void setFogEndDistance(@NFloat double value);
-
-    /**
-     * fogStartDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogStartDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFogStartDistance:")
-    public native void setFogStartDistance(@NFloat double value);
-
-    /**
-     * paused</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/paused">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPaused:")
-    public native void setPaused(boolean value);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     /**
      * sceneWithMDLAsset:</br>
@@ -389,4 +214,179 @@ public class SCNScene extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addParticleSystem:withTransform:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instm/SCNScene/addParticleSystem:withTransform:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addParticleSystem:withTransform:")
+    public native void addParticleSystemWithTransform(SCNParticleSystem system, @ByValue SCNMatrix4 transform);
+
+    /**
+     * attributeForKey:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instm/SCNScene/attributeForKey:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attributeForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object attributeForKey(String key);
+
+    /**
+     * background</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/background">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("background")
+    public native SCNMaterialProperty background();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * fogColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fogColor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object fogColor();
+
+    /**
+     * fogDensityExponent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogDensityExponent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fogDensityExponent")
+    @NFloat
+    public native double fogDensityExponent();
+
+    /**
+     * fogEndDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogEndDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fogEndDistance")
+    @NFloat
+    public native double fogEndDistance();
+
+    /**
+     * fogStartDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogStartDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fogStartDistance")
+    @NFloat
+    public native double fogStartDistance();
+
+    @Generated
+    @Selector("init")
+    public native SCNScene init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNScene initWithCoder(NSCoder aDecoder);
+
+    /**
+     * paused</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/paused">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPaused")
+    public native boolean isPaused();
+
+    /**
+     * paused</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/paused">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPaused:")
+    public native void setPaused(boolean value);
+
+    /**
+     * particleSystems</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/particleSystems">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("particleSystems")
+    public native NSArray<? extends SCNParticleSystem> particleSystems();
+
+    /**
+     * physicsWorld</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/physicsWorld">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("physicsWorld")
+    public native SCNPhysicsWorld physicsWorld();
+
+    /**
+     * removeAllParticleSystems</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instm/SCNScene/removeAllParticleSystems">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeAllParticleSystems")
+    public native void removeAllParticleSystems();
+
+    /**
+     * removeParticleSystem:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instm/SCNScene/removeParticleSystem:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeParticleSystem:")
+    public native void removeParticleSystem(SCNParticleSystem system);
+
+    /**
+     * rootNode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/rootNode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rootNode")
+    public native SCNNode rootNode();
+
+    /**
+     * setAttribute:forKey:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instm/SCNScene/setAttribute:forKey:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAttribute:forKey:")
+    public native void setAttributeForKey(@Mapped(ObjCObjectMapper.class) Object attribute, String key);
+
+    /**
+     * fogColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFogColor:")
+    public native void setFogColor(@Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * fogDensityExponent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogDensityExponent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFogDensityExponent:")
+    public native void setFogDensityExponent(@NFloat double value);
+
+    /**
+     * fogEndDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogEndDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFogEndDistance:")
+    public native void setFogEndDistance(@NFloat double value);
+
+    /**
+     * fogStartDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNScene_Class/index.html#//apple_ref/occ/instp/SCNScene/fogStartDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFogStartDistance:")
+    public native void setFogStartDistance(@NFloat double value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSCompoundPredicateType {
-    @Generated
-    private NSCompoundPredicateType() {
-    }
-
     @Generated @NUInt public static final long NotPredicateType = 0x0000000000000000L;
     @Generated @NUInt public static final long AndPredicateType = 0x0000000000000001L;
     @Generated @NUInt public static final long OrPredicateType = 0x0000000000000002L;
+
+    @Generated
+    private NSCompoundPredicateType() {
+    }
 }

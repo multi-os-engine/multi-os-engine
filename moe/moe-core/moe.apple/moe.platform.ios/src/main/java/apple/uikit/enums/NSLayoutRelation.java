@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSLayoutRelation {
-    @Generated
-    private NSLayoutRelation() {
-    }
-
     @Generated @NInt public static final long LessThanOrEqual = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long Equal = 0x0000000000000000L;
     @Generated @NInt public static final long GreaterThanOrEqual = 0x0000000000000001L;
+
+    @Generated
+    private NSLayoutRelation() {
+    }
 }

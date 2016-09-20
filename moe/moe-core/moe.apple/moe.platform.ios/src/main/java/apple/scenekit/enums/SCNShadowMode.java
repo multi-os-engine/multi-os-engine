@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNShadowMode {
-    @Generated
-    private SCNShadowMode() {
-    }
-
     @Generated @NInt public static final long Forward = 0x0000000000000000L;
     @Generated @NInt public static final long Deferred = 0x0000000000000001L;
     @Generated @NInt public static final long Modulated = 0x0000000000000002L;
+
+    @Generated
+    private SCNShadowMode() {
+    }
 }

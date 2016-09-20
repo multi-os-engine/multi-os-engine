@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPrintInfoOrientation {
+    @Generated @NInt public static final long Portrait = 0x0000000000000000L;
+    @Generated @NInt public static final long Landscape = 0x0000000000000001L;
+
     @Generated
     private UIPrintInfoOrientation() {
     }
-
-    @Generated @NInt public static final long Portrait = 0x0000000000000000L;
-    @Generated @NInt public static final long Landscape = 0x0000000000000001L;
 }

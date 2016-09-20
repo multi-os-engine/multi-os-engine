@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UICollectionViewScrollPosition {
-    @Generated
-    private UICollectionViewScrollPosition() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long Top = 0x0000000000000001L;
     @Generated @NUInt public static final long CenteredVertically = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class UICollectionViewScrollPosition {
     @Generated @NUInt public static final long Left = 0x0000000000000008L;
     @Generated @NUInt public static final long CenteredHorizontally = 0x0000000000000010L;
     @Generated @NUInt public static final long Right = 0x0000000000000020L;
+
+    @Generated
+    private UICollectionViewScrollPosition() {
+    }
 }

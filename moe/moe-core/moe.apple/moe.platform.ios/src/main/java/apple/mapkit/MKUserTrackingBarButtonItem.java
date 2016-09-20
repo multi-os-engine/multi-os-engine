@@ -66,62 +66,6 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     public static native MKUserTrackingBarButtonItem alloc();
 
     @Generated
-    @Selector("init")
-    public native MKUserTrackingBarButtonItem init();
-
-    @Generated
-    @Selector("initWithBarButtonSystemItem:target:action:")
-    public native MKUserTrackingBarButtonItem initWithBarButtonSystemItemTargetAction(@NInt long systemItem,
-            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
-
-    @Generated
-    @Selector("initWithCustomView:")
-    public native MKUserTrackingBarButtonItem initWithCustomView(UIView customView);
-
-    @Generated
-    @Selector("initWithImage:landscapeImagePhone:style:target:action:")
-    public native MKUserTrackingBarButtonItem initWithImageLandscapeImagePhoneStyleTargetAction(UIImage image,
-            UIImage landscapeImagePhone, @NInt long style, @Mapped(ObjCObjectMapper.class) Object target, SEL action);
-
-    @Generated
-    @Selector("initWithImage:style:target:action:")
-    public native MKUserTrackingBarButtonItem initWithImageStyleTargetAction(UIImage image, @NInt long style,
-            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
-
-    /**
-     * initWithMapView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserTrackingBarButtonItemClassRef/index.html#//apple_ref/occ/instm/MKUserTrackingBarButtonItem/initWithMapView:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithMapView:")
-    public native MKUserTrackingBarButtonItem initWithMapView(MKMapView mapView);
-
-    @Generated
-    @Selector("initWithTitle:style:target:action:")
-    public native MKUserTrackingBarButtonItem initWithTitleStyleTargetAction(String title, @NInt long style,
-            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
-
-    /**
-     * mapView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserTrackingBarButtonItemClassRef/index.html#//apple_ref/occ/instp/MKUserTrackingBarButtonItem/mapView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mapView")
-    public native MKMapView mapView();
-
-    /**
-     * mapView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserTrackingBarButtonItemClassRef/index.html#//apple_ref/occ/instp/MKUserTrackingBarButtonItem/mapView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMapView:")
-    public native void setMapView(MKMapView value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKUserTrackingBarButtonItem initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -136,23 +80,9 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -163,27 +93,10 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -194,24 +107,9 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -303,4 +201,106 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MKUserTrackingBarButtonItem init();
+
+    @Generated
+    @Selector("initWithBarButtonSystemItem:target:action:")
+    public native MKUserTrackingBarButtonItem initWithBarButtonSystemItemTargetAction(@NInt long systemItem,
+            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+
+    @Generated
+    @Selector("initWithCustomView:")
+    public native MKUserTrackingBarButtonItem initWithCustomView(UIView customView);
+
+    @Generated
+    @Selector("initWithImage:landscapeImagePhone:style:target:action:")
+    public native MKUserTrackingBarButtonItem initWithImageLandscapeImagePhoneStyleTargetAction(UIImage image,
+            UIImage landscapeImagePhone, @NInt long style, @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+
+    @Generated
+    @Selector("initWithImage:style:target:action:")
+    public native MKUserTrackingBarButtonItem initWithImageStyleTargetAction(UIImage image, @NInt long style,
+            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+
+    /**
+     * initWithMapView:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserTrackingBarButtonItemClassRef/index.html#//apple_ref/occ/instm/MKUserTrackingBarButtonItem/initWithMapView:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithMapView:")
+    public native MKUserTrackingBarButtonItem initWithMapView(MKMapView mapView);
+
+    @Generated
+    @Selector("initWithTitle:style:target:action:")
+    public native MKUserTrackingBarButtonItem initWithTitleStyleTargetAction(String title, @NInt long style,
+            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+
+    /**
+     * mapView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserTrackingBarButtonItemClassRef/index.html#//apple_ref/occ/instp/MKUserTrackingBarButtonItem/mapView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mapView")
+    public native MKMapView mapView();
+
+    /**
+     * mapView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserTrackingBarButtonItemClassRef/index.html#//apple_ref/occ/instp/MKUserTrackingBarButtonItem/mapView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMapView:")
+    public native void setMapView(MKMapView value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MKUserTrackingBarButtonItem initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

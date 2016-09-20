@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class MessageComposeResult {
-    @Generated
-    private MessageComposeResult() {
-    }
-
     @Generated public static final int Cancelled = 0x00000000;
     @Generated public static final int Sent = 0x00000001;
     @Generated public static final int Failed = 0x00000002;
+
+    @Generated
+    private MessageComposeResult() {
+    }
 }

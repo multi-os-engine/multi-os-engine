@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIButtonType {
-    @Generated
-    private UIButtonType() {
-    }
-
     @Generated @NInt public static final long Custom = 0x0000000000000000L;
     @Generated @NInt public static final long System = 0x0000000000000001L;
     @Generated @NInt public static final long DetailDisclosure = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class UIButtonType {
     @Generated @NInt public static final long InfoDark = 0x0000000000000004L;
     @Generated @NInt public static final long ContactAdd = 0x0000000000000005L;
     @Generated @NInt public static final long RoundedRect = 0x0000000000000001L;
+
+    @Generated
+    private UIButtonType() {
+    }
 }

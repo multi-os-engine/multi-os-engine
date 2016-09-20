@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class GKGameCenterViewControllerState {
-    @Generated
-    private GKGameCenterViewControllerState() {
-    }
-
     @Generated @NInt public static final long Default = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long Leaderboards = 0x0000000000000000L;
     @Generated @NInt public static final long Achievements = 0x0000000000000001L;
     @Generated @NInt public static final long Challenges = 0x0000000000000002L;
+
+    @Generated
+    private GKGameCenterViewControllerState() {
+    }
 }

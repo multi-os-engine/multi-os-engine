@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIInputViewStyle {
+    @Generated @NInt public static final long Default = 0x0000000000000000L;
+    @Generated @NInt public static final long Keyboard = 0x0000000000000001L;
+
     @Generated
     private UIInputViewStyle() {
     }
-
-    @Generated @NInt public static final long Default = 0x0000000000000000L;
-    @Generated @NInt public static final long Keyboard = 0x0000000000000001L;
 }

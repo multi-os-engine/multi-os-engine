@@ -33,11 +33,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class MIDISysexSendRequest extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public MIDISysexSendRequest() {
@@ -94,14 +94,6 @@ public final class MIDISysexSendRequest extends StructObject {
     @StructureField(order = 5, isGetter = false)
     public native void setCompletionProc(@FunctionPtr(name = "call_completionProc") Function_completionProc value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_completionProc {
-        @Generated
-        void call_completionProc(
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDISysexSendRequest arg0);
-    }
-
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native VoidPtr completionRefCon();
@@ -114,4 +106,12 @@ public final class MIDISysexSendRequest extends StructObject {
     @StructureField(order = 5, isGetter = true)
     @FunctionPtr(name = "call_completionProc")
     public native Function_completionProc completionProc();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_completionProc {
+        @Generated
+        void call_completionProc(
+                @UncertainArgument("Options: reference, array Fallback: reference") MIDISysexSendRequest arg0);
+    }
 }

@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSEntityMappingType {
-    @Generated
-    private NSEntityMappingType() {
-    }
-
     @Generated @NUInt public static final long UndefinedEntityMappingType = 0x0000000000000000L;
     @Generated @NUInt public static final long CustomEntityMappingType = 0x0000000000000001L;
     @Generated @NUInt public static final long AddEntityMappingType = 0x0000000000000002L;
     @Generated @NUInt public static final long RemoveEntityMappingType = 0x0000000000000003L;
     @Generated @NUInt public static final long CopyEntityMappingType = 0x0000000000000004L;
     @Generated @NUInt public static final long TransformEntityMappingType = 0x0000000000000005L;
+
+    @Generated
+    private NSEntityMappingType() {
+    }
 }

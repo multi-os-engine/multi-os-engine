@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class LACredentialType {
+    @Generated @NInt public static final long LACredentialTypeApplicationPassword = 0x0000000000000000L;
+
     @Generated
     private LACredentialType() {
     }
-
-    @Generated @NInt public static final long LACredentialTypeApplicationPassword = 0x0000000000000000L;
 }

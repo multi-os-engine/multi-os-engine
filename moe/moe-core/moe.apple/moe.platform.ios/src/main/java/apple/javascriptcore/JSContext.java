@@ -56,14 +56,6 @@ public class JSContext extends NSObject {
         super(peer);
     }
 
-    /**
-     * JSGlobalContextRef</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/JSGlobalContextRef">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("JSGlobalContextRef")
-    public native JSGlobalContextRef JSGlobalContextRef();
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -108,134 +100,6 @@ public class JSContext extends NSObject {
     @Generated
     @Selector("currentThis")
     public static native JSValue currentThis();
-
-    /**
-     * evaluateScript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/evaluateScript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("evaluateScript:")
-    public native JSValue evaluateScript(String script);
-
-    /**
-     * evaluateScript:withSourceURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/evaluateScript:withSourceURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("evaluateScript:withSourceURL:")
-    public native JSValue evaluateScriptWithSourceURL(String script, NSURL sourceURL);
-
-    /**
-     * exception</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/exception">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("exception")
-    public native JSValue exception();
-
-    /**
-     * globalObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/globalObject">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("globalObject")
-    public native JSValue globalObject();
-
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native JSContext init();
-
-    /**
-     * initWithVirtualMachine:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/initWithVirtualMachine:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithVirtualMachine:")
-    public native JSContext initWithVirtualMachine(JSVirtualMachine virtualMachine);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * objectForKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/objectForKeyedSubscript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objectForKeyedSubscript:")
-    public native JSValue objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
-
-    /**
-     * exception</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/exception">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setException:")
-    public native void setException(JSValue value);
-
-    /**
-     * exceptionHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/exceptionHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setExceptionHandler:")
-    public native void setExceptionHandler(
-            @ObjCBlock(name = "call_setExceptionHandler") Block_setExceptionHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setExceptionHandler {
-        @Generated
-        void call_setExceptionHandler(JSContext arg0, JSValue arg1);
-    }
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setName:")
-    public native void setName(String value);
-
-    /**
-     * setObject:forKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/setObject:forKeyedSubscript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object object, NSObject key);
-
-    /**
-     * virtualMachine</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/virtualMachine">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("virtualMachine")
-    public native JSVirtualMachine virtualMachine();
-
-    /**
-     * exceptionHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/exceptionHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("exceptionHandler")
-    @ObjCBlock(name = "call_exceptionHandler_ret")
-    public native Block_exceptionHandler_ret exceptionHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_exceptionHandler_ret {
-        @Generated
-        void call_exceptionHandler_ret(JSContext arg0, JSValue arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -336,4 +200,140 @@ public class JSContext extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * JSGlobalContextRef</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/JSGlobalContextRef">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("JSGlobalContextRef")
+    public native JSGlobalContextRef JSGlobalContextRef();
+
+    /**
+     * evaluateScript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/evaluateScript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("evaluateScript:")
+    public native JSValue evaluateScript(String script);
+
+    /**
+     * evaluateScript:withSourceURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/evaluateScript:withSourceURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("evaluateScript:withSourceURL:")
+    public native JSValue evaluateScriptWithSourceURL(String script, NSURL sourceURL);
+
+    /**
+     * exception</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/exception">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("exception")
+    public native JSValue exception();
+
+    /**
+     * globalObject</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/globalObject">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("globalObject")
+    public native JSValue globalObject();
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native JSContext init();
+
+    /**
+     * initWithVirtualMachine:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/initWithVirtualMachine:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithVirtualMachine:")
+    public native JSContext initWithVirtualMachine(JSVirtualMachine virtualMachine);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * objectForKeyedSubscript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/objectForKeyedSubscript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objectForKeyedSubscript:")
+    public native JSValue objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
+
+    /**
+     * exception</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/exception">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setException:")
+    public native void setException(JSValue value);
+
+    /**
+     * exceptionHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/exceptionHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setExceptionHandler:")
+    public native void setExceptionHandler(
+            @ObjCBlock(name = "call_setExceptionHandler") Block_setExceptionHandler value);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
+
+    /**
+     * setObject:forKeyedSubscript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instm/JSContext/setObject:forKeyedSubscript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setObject:forKeyedSubscript:")
+    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object object, NSObject key);
+
+    /**
+     * virtualMachine</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/virtualMachine">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("virtualMachine")
+    public native JSVirtualMachine virtualMachine();
+
+    /**
+     * exceptionHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSContext_Ref/index.html#//apple_ref/occ/instp/JSContext/exceptionHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("exceptionHandler")
+    @ObjCBlock(name = "call_exceptionHandler_ret")
+    public native Block_exceptionHandler_ret exceptionHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setExceptionHandler {
+        @Generated
+        void call_setExceptionHandler(JSContext arg0, JSValue arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_exceptionHandler_ret {
+        @Generated
+        void call_exceptionHandler_ret(JSContext arg0, JSValue arg1);
+    }
 }

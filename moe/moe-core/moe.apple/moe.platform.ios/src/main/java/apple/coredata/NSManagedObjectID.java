@@ -55,52 +55,10 @@ public class NSManagedObjectID extends NSObject implements NSCopying {
         super(peer);
     }
 
-    /**
-     * URIRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectID_Class/index.html#//apple_ref/occ/instm/NSManagedObjectID/URIRepresentation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URIRepresentation")
-    public native NSURL URIRepresentation();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSManagedObjectID alloc();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * entity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectID_Class/index.html#//apple_ref/occ/instp/NSManagedObjectID/entity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("entity")
-    public native NSEntityDescription entity();
-
-    @Generated
-    @Selector("init")
-    public native NSManagedObjectID init();
-
-    /**
-     * temporaryID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectID_Class/index.html#//apple_ref/occ/instp/NSManagedObjectID/temporaryID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isTemporaryID")
-    public native boolean isTemporaryID();
-
-    /**
-     * persistentStore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectID_Class/index.html#//apple_ref/occ/instp/NSManagedObjectID/persistentStore">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("persistentStore")
-    public native NSPersistentStore persistentStore();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -201,4 +159,46 @@ public class NSManagedObjectID extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URIRepresentation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectID_Class/index.html#//apple_ref/occ/instm/NSManagedObjectID/URIRepresentation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URIRepresentation")
+    public native NSURL URIRepresentation();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * entity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectID_Class/index.html#//apple_ref/occ/instp/NSManagedObjectID/entity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("entity")
+    public native NSEntityDescription entity();
+
+    @Generated
+    @Selector("init")
+    public native NSManagedObjectID init();
+
+    /**
+     * temporaryID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectID_Class/index.html#//apple_ref/occ/instp/NSManagedObjectID/temporaryID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isTemporaryID")
+    public native boolean isTemporaryID();
+
+    /**
+     * persistentStore</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectID_Class/index.html#//apple_ref/occ/instp/NSManagedObjectID/persistentStore">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("persistentStore")
+    public native NSPersistentStore persistentStore();
 }

@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSPropertyListFormat {
-    @Generated
-    private NSPropertyListFormat() {
-    }
-
     @Generated @NUInt public static final long OpenStepFormat = 0x0000000000000001L;
     @Generated @NUInt public static final long XMLFormat_v1_0 = 0x0000000000000064L;
     @Generated @NUInt public static final long BinaryFormat_v1_0 = 0x00000000000000C8L;
+
+    @Generated
+    private NSPropertyListFormat() {
+    }
 }

@@ -38,11 +38,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class _RuneLocale extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public _RuneLocale() {
@@ -74,26 +74,9 @@ public final class _RuneLocale extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void set__sgetrune(@FunctionPtr(name = "call___sgetrune") Function___sgetrune value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function___sgetrune {
-        @Generated
-        int call___sgetrune(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0,
-                @NUInt long arg1, @ReferenceInfo(type = Byte.class, depth = 2) Ptr<ConstBytePtr> arg2);
-    }
-
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void set__sputrune(@FunctionPtr(name = "call___sputrune") Function___sputrune value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function___sputrune {
-        @Generated
-        int call___sputrune(int arg0, BytePtr arg1, @NUInt long arg2,
-                @ReferenceInfo(type = Byte.class, depth = 2) Ptr<BytePtr> arg3);
-    }
 
     @Generated
     @StructureField(order = 4, isGetter = true)
@@ -197,4 +180,21 @@ public final class _RuneLocale extends StructObject {
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call___sputrune")
     public native Function___sputrune __sputrune();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function___sgetrune {
+        @Generated
+        int call___sgetrune(
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0,
+                @NUInt long arg1, @ReferenceInfo(type = Byte.class, depth = 2) Ptr<ConstBytePtr> arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function___sputrune {
+        @Generated
+        int call___sputrune(int arg0, BytePtr arg1, @NUInt long arg2,
+                @ReferenceInfo(type = Byte.class, depth = 2) Ptr<BytePtr> arg3);
+    }
 }

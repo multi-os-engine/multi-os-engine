@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSEnergyFormatterUnit {
-    @Generated
-    private NSEnergyFormatterUnit() {
-    }
-
     @Generated @NInt public static final long Joule = 0x000000000000000BL;
     @Generated @NInt public static final long Kilojoule = 0x000000000000000EL;
     @Generated @NInt public static final long Calorie = 0x0000000000000701L;
     @Generated @NInt public static final long Kilocalorie = 0x0000000000000702L;
+
+    @Generated
+    private NSEnergyFormatterUnit() {
+    }
 }

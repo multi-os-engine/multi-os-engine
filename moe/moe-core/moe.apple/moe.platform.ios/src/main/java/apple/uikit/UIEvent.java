@@ -53,80 +53,10 @@ public class UIEvent extends NSObject {
         super(peer);
     }
 
-    /**
-     * allTouches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instm/UIEvent/allTouches">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allTouches")
-    public native NSSet<? extends UITouch> allTouches();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIEvent alloc();
-
-    @Generated
-    @Selector("init")
-    public native UIEvent init();
-
-    /**
-     * subtype</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instp/UIEvent/subtype">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subtype")
-    @NInt
-    public native long subtype();
-
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instp/UIEvent/timestamp">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timestamp")
-    public native double timestamp();
-
-    /**
-     * touchesForGestureRecognizer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instm/UIEvent/touchesForGestureRecognizer:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("touchesForGestureRecognizer:")
-    public native NSSet<? extends UITouch> touchesForGestureRecognizer(UIGestureRecognizer gesture);
-
-    /**
-     * touchesForView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instm/UIEvent/touchesForView:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("touchesForView:")
-    public native NSSet<? extends UITouch> touchesForView(UIView view);
-
-    /**
-     * touchesForWindow:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instm/UIEvent/touchesForWindow:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("touchesForWindow:")
-    public native NSSet<? extends UITouch> touchesForWindow(UIWindow window);
-
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instp/UIEvent/type">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("type")
-    @NInt
-    public native long type();
-
-    @Generated
-    @Selector("coalescedTouchesForTouch:")
-    public native NSArray<? extends UITouch> coalescedTouchesForTouch(UITouch touch);
-
-    @Generated
-    @Selector("predictedTouchesForTouch:")
-    public native NSArray<? extends UITouch> predictedTouchesForTouch(UITouch touch);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -227,4 +157,74 @@ public class UIEvent extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allTouches</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instm/UIEvent/allTouches">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allTouches")
+    public native NSSet<? extends UITouch> allTouches();
+
+    @Generated
+    @Selector("init")
+    public native UIEvent init();
+
+    /**
+     * subtype</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instp/UIEvent/subtype">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subtype")
+    @NInt
+    public native long subtype();
+
+    /**
+     * timestamp</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instp/UIEvent/timestamp">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timestamp")
+    public native double timestamp();
+
+    /**
+     * touchesForGestureRecognizer:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instm/UIEvent/touchesForGestureRecognizer:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("touchesForGestureRecognizer:")
+    public native NSSet<? extends UITouch> touchesForGestureRecognizer(UIGestureRecognizer gesture);
+
+    /**
+     * touchesForView:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instm/UIEvent/touchesForView:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("touchesForView:")
+    public native NSSet<? extends UITouch> touchesForView(UIView view);
+
+    /**
+     * touchesForWindow:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instm/UIEvent/touchesForWindow:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("touchesForWindow:")
+    public native NSSet<? extends UITouch> touchesForWindow(UIWindow window);
+
+    /**
+     * type</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIEvent_Class/index.html#//apple_ref/occ/instp/UIEvent/type">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("type")
+    @NInt
+    public native long type();
+
+    @Generated
+    @Selector("coalescedTouchesForTouch:")
+    public native NSArray<? extends UITouch> coalescedTouchesForTouch(UITouch touch);
+
+    @Generated
+    @Selector("predictedTouchesForTouch:")
+    public native NSArray<? extends UITouch> predictedTouchesForTouch(UITouch touch);
 }

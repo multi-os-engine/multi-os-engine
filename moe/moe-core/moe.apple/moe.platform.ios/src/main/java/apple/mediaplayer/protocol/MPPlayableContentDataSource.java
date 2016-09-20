@@ -46,13 +46,6 @@ public interface MPPlayableContentDataSource {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_beginLoadingChildItemsAtIndexPathCompletionHandler {
-        @Generated
-        void call_beginLoadingChildItemsAtIndexPathCompletionHandler(NSError arg0);
-    }
-
     /**
      * childItemsDisplayPlaybackProgressAtIndexPath:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPPlayableContentDataSource_Ref/index.html#//apple_ref/occ/intfm/MPPlayableContentDataSource/childItemsDisplayPlaybackProgressAtIndexPath:">iOS Dev Center</a>
@@ -80,4 +73,11 @@ public interface MPPlayableContentDataSource {
     @Selector("numberOfChildItemsAtIndexPath:")
     @NInt
     long numberOfChildItemsAtIndexPath(NSIndexPath indexPath);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_beginLoadingChildItemsAtIndexPathCompletionHandler {
+        @Generated
+        void call_beginLoadingChildItemsAtIndexPathCompletionHandler(NSError arg0);
+    }
 }

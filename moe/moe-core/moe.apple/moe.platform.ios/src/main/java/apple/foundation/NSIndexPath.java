@@ -63,58 +63,6 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSIndexPath alloc();
 
     /**
-     * compare:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/compare:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("compare:")
-    @NInt
-    public native long compare(NSIndexPath otherObject);
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * getIndexes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/getIndexes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getIndexes:")
-    public native void getIndexes(NUIntPtr indexes);
-
-    /**
-     * indexAtPosition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/indexAtPosition:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("indexAtPosition:")
-    @NUInt
-    public native long indexAtPosition(@NUInt long position);
-
-    /**
-     * indexPathByAddingIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/indexPathByAddingIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("indexPathByAddingIndex:")
-    public native NSIndexPath indexPathByAddingIndex(@NUInt long index);
-
-    /**
-     * indexPathByRemovingLastIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/indexPathByRemovingLastIndex">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("indexPathByRemovingLastIndex")
-    public native NSIndexPath indexPathByRemovingLastIndex();
-
-    /**
      * indexPathForItem:inSection:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/clm/NSIndexPath/indexPathForItem:inSection:">iOS Dev Center</a>
      */
@@ -146,87 +94,9 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("indexPathWithIndexes:length:")
     public static native NSIndexPath indexPathWithIndexesLength(ConstNUIntPtr indexes, @NUInt long length);
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native NSIndexPath init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSIndexPath initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/initWithIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithIndex:")
-    public native NSIndexPath initWithIndex(@NUInt long index);
-
-    /**
-     * initWithIndexes:length:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/initWithIndexes:length:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithIndexes:length:")
-    public native NSIndexPath initWithIndexesLength(ConstNUIntPtr indexes, @NUInt long length);
-
-    /**
-     * item</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instp/NSIndexPath/item">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("item")
-    @NInt
-    public native long item();
-
-    /**
-     * length</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instp/NSIndexPath/length">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("length")
-    @NUInt
-    public native long length();
-
-    /**
-     * row</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instp/NSIndexPath/row">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("row")
-    @NInt
-    public native long row();
-
-    /**
-     * section</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instp/NSIndexPath/section">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("section")
-    @NInt
-    public native long section();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * getIndexes:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/getIndexes:range:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getIndexes:range:")
-    public native void getIndexesRange(NUIntPtr indexes, @ByValue NSRange positionRange);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -327,4 +197,134 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * compare:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/compare:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("compare:")
+    @NInt
+    public native long compare(NSIndexPath otherObject);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * getIndexes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/getIndexes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getIndexes:")
+    public native void getIndexes(NUIntPtr indexes);
+
+    /**
+     * indexAtPosition:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/indexAtPosition:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("indexAtPosition:")
+    @NUInt
+    public native long indexAtPosition(@NUInt long position);
+
+    /**
+     * indexPathByAddingIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/indexPathByAddingIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("indexPathByAddingIndex:")
+    public native NSIndexPath indexPathByAddingIndex(@NUInt long index);
+
+    /**
+     * indexPathByRemovingLastIndex</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/indexPathByRemovingLastIndex">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("indexPathByRemovingLastIndex")
+    public native NSIndexPath indexPathByRemovingLastIndex();
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native NSIndexPath init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSIndexPath initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/initWithIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithIndex:")
+    public native NSIndexPath initWithIndex(@NUInt long index);
+
+    /**
+     * initWithIndexes:length:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/initWithIndexes:length:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithIndexes:length:")
+    public native NSIndexPath initWithIndexesLength(ConstNUIntPtr indexes, @NUInt long length);
+
+    /**
+     * item</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instp/NSIndexPath/item">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("item")
+    @NInt
+    public native long item();
+
+    /**
+     * length</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instp/NSIndexPath/length">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("length")
+    @NUInt
+    public native long length();
+
+    /**
+     * row</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instp/NSIndexPath/row">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("row")
+    @NInt
+    public native long row();
+
+    /**
+     * section</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instp/NSIndexPath/section">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("section")
+    @NInt
+    public native long section();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * getIndexes:range:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/index.html#//apple_ref/occ/instm/NSIndexPath/getIndexes:range:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getIndexes:range:")
+    public native void getIndexesRange(NUIntPtr indexes, @ByValue NSRange positionRange);
 }

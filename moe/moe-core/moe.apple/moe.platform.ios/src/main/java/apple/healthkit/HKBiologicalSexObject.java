@@ -62,42 +62,9 @@ public class HKBiologicalSexObject extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native HKBiologicalSexObject alloc();
 
-    /**
-     * biologicalSex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKBiologicalSexObject_Class/index.html#//apple_ref/occ/instp/HKBiologicalSexObject/biologicalSex">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("biologicalSex")
-    @NInt
-    public native long biologicalSex();
-
-    @Generated
-    @Selector("init")
-    public native HKBiologicalSexObject init();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKBiologicalSexObject initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -198,4 +165,37 @@ public class HKBiologicalSexObject extends NSObject implements NSCopying, NSSecu
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * biologicalSex</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKBiologicalSexObject_Class/index.html#//apple_ref/occ/instp/HKBiologicalSexObject/biologicalSex">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("biologicalSex")
+    @NInt
+    public native long biologicalSex();
+
+    @Generated
+    @Selector("init")
+    public native HKBiologicalSexObject init();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKBiologicalSexObject initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

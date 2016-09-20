@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGColorRenderingIntent {
-    @Generated
-    private CGColorRenderingIntent() {
-    }
-
     @Generated public static final int Default = 0x00000000;
     @Generated public static final int AbsoluteColorimetric = 0x00000001;
     @Generated public static final int RelativeColorimetric = 0x00000002;
     @Generated public static final int Perceptual = 0x00000003;
     @Generated public static final int Saturation = 0x00000004;
+
+    @Generated
+    private CGColorRenderingIntent() {
+    }
 }

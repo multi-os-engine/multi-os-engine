@@ -90,6 +90,10 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Library("CoreGraphics")
 @Runtime(CRuntime.class)
 public final class CoreGraphics {
+    @Generated public static final char kCGFontIndexMax = 0xFFFE;
+    @Generated public static final char kCGFontIndexInvalid = 0xFFFF;
+    @Generated public static final char kCGGlyphMax = 0xFFFE;
+
     static {
         NatJ.register();
     }
@@ -573,13 +577,6 @@ public final class CoreGraphics {
     public static native CGDataProviderRef CGDataProviderCreateWithData(VoidPtr info, ConstVoidPtr data,
             @NUInt long size,
             @FunctionPtr(name = "call_CGDataProviderCreateWithData") Function_CGDataProviderCreateWithData releaseData);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CGDataProviderCreateWithData {
-        @Generated
-        void call_CGDataProviderCreateWithData(VoidPtr arg0, ConstVoidPtr arg1, @NUInt long arg2);
-    }
 
     /**
      * CGDataProviderCreateWithCFData</br>
@@ -1718,14 +1715,6 @@ public final class CoreGraphics {
     public static native void CGPathApply(CGPathRef path, VoidPtr info,
             @FunctionPtr(name = "call_CGPathApply") Function_CGPathApply function);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CGPathApply {
-        @Generated
-        void call_CGPathApply(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") CGPathElement arg1);
-    }
-
     /**
      * CGPDFObjectGetType</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGPDFObject/index.html#//apple_ref/c/func/CGPDFObjectGetType">iOS Dev Center</a>
@@ -1991,15 +1980,6 @@ public final class CoreGraphics {
     public static native void CGPDFDictionaryApplyFunction(CGPDFDictionaryRef dict,
             @FunctionPtr(name = "call_CGPDFDictionaryApplyFunction") Function_CGPDFDictionaryApplyFunction function,
             VoidPtr info);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CGPDFDictionaryApplyFunction {
-        @Generated
-        void call_CGPDFDictionaryApplyFunction(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0,
-                VoidPtr arg1, VoidPtr arg2);
-    }
 
     /**
      * CGPDFPageRetain</br>
@@ -3298,13 +3278,6 @@ public final class CoreGraphics {
             @FunctionPtr(name = "call_CGBitmapContextCreateWithData") Function_CGBitmapContextCreateWithData releaseCallback,
             VoidPtr releaseInfo);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CGBitmapContextCreateWithData {
-        @Generated
-        void call_CGBitmapContextCreateWithData(VoidPtr arg0, VoidPtr arg1);
-    }
-
     /**
      * CGBitmapContextCreate</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CGBitmapContext/index.html#//apple_ref/c/func/CGBitmapContextCreate">iOS Dev Center</a>
@@ -3793,13 +3766,6 @@ public final class CoreGraphics {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
             @FunctionPtr(name = "call_CGPDFOperatorTableSetCallback") Function_CGPDFOperatorTableSetCallback callback);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CGPDFOperatorTableSetCallback {
-        @Generated
-        void call_CGPDFOperatorTableSetCallback(VoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @CVariable()
     @ByValue
@@ -3971,10 +3937,6 @@ public final class CoreGraphics {
     @CVariable()
     public static native CFStringRef kCGColorSpaceROMMRGB();
 
-    @Generated public static final char kCGFontIndexMax = 0xFFFE;
-    @Generated public static final char kCGFontIndexInvalid = 0xFFFF;
-    @Generated public static final char kCGGlyphMax = 0xFFFE;
-
     @Generated
     @CFunction
     @NUInt
@@ -4001,4 +3963,42 @@ public final class CoreGraphics {
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDCIP3();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CGDataProviderCreateWithData {
+        @Generated
+        void call_CGDataProviderCreateWithData(VoidPtr arg0, ConstVoidPtr arg1, @NUInt long arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CGPathApply {
+        @Generated
+        void call_CGPathApply(VoidPtr arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") CGPathElement arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CGPDFDictionaryApplyFunction {
+        @Generated
+        void call_CGPDFDictionaryApplyFunction(
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0,
+                VoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CGBitmapContextCreateWithData {
+        @Generated
+        void call_CGBitmapContextCreateWithData(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CGPDFOperatorTableSetCallback {
+        @Generated
+        void call_CGPDFOperatorTableSetCallback(VoidPtr arg0, VoidPtr arg1);
+    }
 }

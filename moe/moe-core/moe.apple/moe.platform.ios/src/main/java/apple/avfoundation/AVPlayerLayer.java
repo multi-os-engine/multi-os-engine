@@ -65,32 +65,8 @@ public class AVPlayerLayer extends CALayer {
     public static native AVPlayerLayer alloc();
 
     @Generated
-    @Selector("init")
-    public native AVPlayerLayer init();
-
-    @Generated
-    @Selector("initWithLayer:")
-    public native AVPlayerLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
-
-    /**
-     * readyForDisplay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/readyForDisplay">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isReadyForDisplay")
-    public native boolean isReadyForDisplay();
-
-    @Generated
     @Selector("layer")
     public static native AVPlayerLayer layer();
-
-    /**
-     * player</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/player">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("player")
-    public native AVPlayer player();
 
     /**
      * playerLayerWithPlayer:</br>
@@ -99,51 +75,6 @@ public class AVPlayerLayer extends CALayer {
     @Generated
     @Selector("playerLayerWithPlayer:")
     public static native AVPlayerLayer playerLayerWithPlayer(AVPlayer player);
-
-    /**
-     * player</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/player">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPlayer:")
-    public native void setPlayer(AVPlayer value);
-
-    /**
-     * videoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/videoGravity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setVideoGravity:")
-    public native void setVideoGravity(String value);
-
-    /**
-     * videoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/videoGravity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("videoGravity")
-    public native String videoGravity();
-
-    /**
-     * videoRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/videoRect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("videoRect")
-    @ByValue
-    public native CGRect videoRect();
-
-    @Generated
-    @Selector("pixelBufferAttributes")
-    public native NSDictionary<String, ?> pixelBufferAttributes();
-
-    @Generated
-    @Selector("setPixelBufferAttributes:")
-    public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVPlayerLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -258,4 +189,73 @@ public class AVPlayerLayer extends CALayer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVPlayerLayer init();
+
+    @Generated
+    @Selector("initWithLayer:")
+    public native AVPlayerLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+
+    /**
+     * readyForDisplay</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/readyForDisplay">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isReadyForDisplay")
+    public native boolean isReadyForDisplay();
+
+    /**
+     * player</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/player">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("player")
+    public native AVPlayer player();
+
+    /**
+     * player</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/player">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPlayer:")
+    public native void setPlayer(AVPlayer value);
+
+    /**
+     * videoGravity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/videoGravity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setVideoGravity:")
+    public native void setVideoGravity(String value);
+
+    /**
+     * videoGravity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/videoGravity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("videoGravity")
+    public native String videoGravity();
+
+    /**
+     * videoRect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/instp/AVPlayerLayer/videoRect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("videoRect")
+    @ByValue
+    public native CGRect videoRect();
+
+    @Generated
+    @Selector("pixelBufferAttributes")
+    public native NSDictionary<String, ?> pixelBufferAttributes();
+
+    @Generated
+    @Selector("setPixelBufferAttributes:")
+    public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVPlayerLayer initWithCoder(NSCoder aDecoder);
 }

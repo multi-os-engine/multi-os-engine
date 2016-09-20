@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKHeartRateSensorLocation {
-    @Generated
-    private HKHeartRateSensorLocation() {
-    }
-
     @Generated @NInt public static final long Other = 0x0000000000000000L;
     @Generated @NInt public static final long Chest = 0x0000000000000001L;
     @Generated @NInt public static final long Wrist = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class HKHeartRateSensorLocation {
     @Generated @NInt public static final long Hand = 0x0000000000000004L;
     @Generated @NInt public static final long EarLobe = 0x0000000000000005L;
     @Generated @NInt public static final long Foot = 0x0000000000000006L;
+
+    @Generated
+    private HKHeartRateSensorLocation() {
+    }
 }

@@ -58,119 +58,9 @@ public class MPMediaItem extends MPMediaEntity {
     }
 
     @Generated
-    @Selector("albumArtist")
-    public native String albumArtist();
-
-    @Generated
-    @Selector("albumArtistPersistentID")
-    public native long albumArtistPersistentID();
-
-    @Generated
-    @Selector("albumPersistentID")
-    public native long albumPersistentID();
-
-    @Generated
-    @Selector("albumTitle")
-    public native String albumTitle();
-
-    @Generated
-    @Selector("albumTrackCount")
-    @NUInt
-    public native long albumTrackCount();
-
-    @Generated
-    @Selector("albumTrackNumber")
-    @NUInt
-    public native long albumTrackNumber();
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native MPMediaItem alloc();
-
-    @Generated
-    @Selector("artist")
-    public native String artist();
-
-    @Generated
-    @Selector("artistPersistentID")
-    public native long artistPersistentID();
-
-    @Generated
-    @Selector("artwork")
-    public native MPMediaItemArtwork artwork();
-
-    @Generated
-    @Selector("assetURL")
-    public native NSURL assetURL();
-
-    @Generated
-    @Selector("beatsPerMinute")
-    @NUInt
-    public native long beatsPerMinute();
-
-    @Generated
-    @Selector("bookmarkTime")
-    public native double bookmarkTime();
-
-    @Generated
-    @Selector("comments")
-    public native String comments();
-
-    @Generated
-    @Selector("composer")
-    public native String composer();
-
-    @Generated
-    @Selector("composerPersistentID")
-    public native long composerPersistentID();
-
-    @Generated
-    @Selector("discCount")
-    @NUInt
-    public native long discCount();
-
-    @Generated
-    @Selector("discNumber")
-    @NUInt
-    public native long discNumber();
-
-    @Generated
-    @Selector("genre")
-    public native String genre();
-
-    @Generated
-    @Selector("genrePersistentID")
-    public native long genrePersistentID();
-
-    @Generated
-    @Selector("init")
-    public native MPMediaItem init();
-
-    @Generated
-    @Selector("isCloudItem")
-    public native boolean isCloudItem();
-
-    @Generated
-    @Selector("isCompilation")
-    public native boolean isCompilation();
-
-    @Generated
-    @Selector("lastPlayedDate")
-    public native NSDate lastPlayedDate();
-
-    @Generated
-    @Selector("lyrics")
-    public native String lyrics();
-
-    @Generated
-    @Selector("mediaType")
-    @NUInt
-    public native long mediaType();
-
-    @Generated
-    @Selector("persistentID")
-    public native long persistentID();
 
     /**
      * persistentIDPropertyForGroupingType:</br>
@@ -180,41 +70,6 @@ public class MPMediaItem extends MPMediaEntity {
     @Selector("persistentIDPropertyForGroupingType:")
     public static native String persistentIDPropertyForGroupingType(@NInt long groupingType);
 
-    @Generated
-    @Selector("playCount")
-    @NUInt
-    public native long playCount();
-
-    @Generated
-    @Selector("playbackDuration")
-    public native double playbackDuration();
-
-    @Generated
-    @Selector("podcastPersistentID")
-    public native long podcastPersistentID();
-
-    @Generated
-    @Selector("podcastTitle")
-    public native String podcastTitle();
-
-    @Generated
-    @Selector("rating")
-    @NUInt
-    public native long rating();
-
-    @Generated
-    @Selector("releaseDate")
-    public native NSDate releaseDate();
-
-    @Generated
-    @Selector("skipCount")
-    @NUInt
-    public native long skipCount();
-
-    @Generated
-    @Selector("title")
-    public native String title();
-
     /**
      * titlePropertyForGroupingType:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/index.html#//apple_ref/occ/clm/MPMediaItem/titlePropertyForGroupingType:">iOS Dev Center</a>
@@ -222,18 +77,6 @@ public class MPMediaItem extends MPMediaEntity {
     @Generated
     @Selector("titlePropertyForGroupingType:")
     public static native String titlePropertyForGroupingType(@NInt long groupingType);
-
-    @Generated
-    @Selector("userGrouping")
-    public native String userGrouping();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaItem initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("hasProtectedAsset")
-    public native boolean hasProtectedAsset();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -339,13 +182,170 @@ public class MPMediaItem extends MPMediaEntity {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("albumArtist")
+    public native String albumArtist();
+
+    @Generated
+    @Selector("albumArtistPersistentID")
+    public native long albumArtistPersistentID();
+
+    @Generated
+    @Selector("albumPersistentID")
+    public native long albumPersistentID();
+
+    @Generated
+    @Selector("albumTitle")
+    public native String albumTitle();
+
+    @Generated
+    @Selector("albumTrackCount")
+    @NUInt
+    public native long albumTrackCount();
+
+    @Generated
+    @Selector("albumTrackNumber")
+    @NUInt
+    public native long albumTrackNumber();
+
+    @Generated
+    @Selector("artist")
+    public native String artist();
+
+    @Generated
+    @Selector("artistPersistentID")
+    public native long artistPersistentID();
+
+    @Generated
+    @Selector("artwork")
+    public native MPMediaItemArtwork artwork();
+
+    @Generated
+    @Selector("assetURL")
+    public native NSURL assetURL();
+
+    @Generated
+    @Selector("beatsPerMinute")
+    @NUInt
+    public native long beatsPerMinute();
+
+    @Generated
+    @Selector("bookmarkTime")
+    public native double bookmarkTime();
+
+    @Generated
+    @Selector("comments")
+    public native String comments();
+
+    @Generated
+    @Selector("composer")
+    public native String composer();
+
+    @Generated
+    @Selector("composerPersistentID")
+    public native long composerPersistentID();
+
+    @Generated
+    @Selector("discCount")
+    @NUInt
+    public native long discCount();
+
+    @Generated
+    @Selector("discNumber")
+    @NUInt
+    public native long discNumber();
+
+    @Generated
+    @Selector("genre")
+    public native String genre();
+
+    @Generated
+    @Selector("genrePersistentID")
+    public native long genrePersistentID();
+
+    @Generated
+    @Selector("init")
+    public native MPMediaItem init();
+
+    @Generated
+    @Selector("isCloudItem")
+    public native boolean isCloudItem();
+
+    @Generated
+    @Selector("isCompilation")
+    public native boolean isCompilation();
+
+    @Generated
+    @Selector("lastPlayedDate")
+    public native NSDate lastPlayedDate();
+
+    @Generated
+    @Selector("lyrics")
+    public native String lyrics();
+
+    @Generated
+    @Selector("mediaType")
+    @NUInt
+    public native long mediaType();
+
+    @Generated
+    @Selector("persistentID")
+    public native long persistentID();
+
+    @Generated
+    @Selector("playCount")
+    @NUInt
+    public native long playCount();
+
+    @Generated
+    @Selector("playbackDuration")
+    public native double playbackDuration();
+
+    @Generated
+    @Selector("podcastPersistentID")
+    public native long podcastPersistentID();
+
+    @Generated
+    @Selector("podcastTitle")
+    public native String podcastTitle();
+
+    @Generated
+    @Selector("rating")
+    @NUInt
+    public native long rating();
+
+    @Generated
+    @Selector("releaseDate")
+    public native NSDate releaseDate();
+
+    @Generated
+    @Selector("skipCount")
+    @NUInt
+    public native long skipCount();
+
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    @Generated
+    @Selector("userGrouping")
+    public native String userGrouping();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaItem initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("hasProtectedAsset")
+    public native boolean hasProtectedAsset();
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

@@ -68,120 +68,6 @@ public class NSLinguisticTagger extends NSObject {
     @Selector("availableTagSchemesForLanguage:")
     public static native NSArray<String> availableTagSchemesForLanguage(String language);
 
-    /**
-     * enumerateTagsInRange:scheme:options:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/enumerateTagsInRange:scheme:options:usingBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enumerateTagsInRange:scheme:options:usingBlock:")
-    public native void enumerateTagsInRangeSchemeOptionsUsingBlock(@ByValue NSRange range, String tagScheme,
-            @NUInt long opts,
-            @ObjCBlock(name = "call_enumerateTagsInRangeSchemeOptionsUsingBlock") Block_enumerateTagsInRangeSchemeOptionsUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateTagsInRangeSchemeOptionsUsingBlock {
-        @Generated
-        void call_enumerateTagsInRangeSchemeOptionsUsingBlock(String arg0, @ByValue NSRange arg1, @ByValue NSRange arg2,
-                BoolPtr arg3);
-    }
-
-    @Generated
-    @Selector("init")
-    public native NSLinguisticTagger init();
-
-    /**
-     * initWithTagSchemes:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/initWithTagSchemes:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTagSchemes:options:")
-    public native NSLinguisticTagger initWithTagSchemesOptions(NSArray<String> tagSchemes, @NUInt long opts);
-
-    /**
-     * orthographyAtIndex:effectiveRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/orthographyAtIndex:effectiveRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("orthographyAtIndex:effectiveRange:")
-    public native NSOrthography orthographyAtIndexEffectiveRange(@NUInt long charIndex, NSRange effectiveRange);
-
-    /**
-     * possibleTagsAtIndex:scheme:tokenRange:sentenceRange:scores:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/possibleTagsAtIndex:scheme:tokenRange:sentenceRange:scores:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("possibleTagsAtIndex:scheme:tokenRange:sentenceRange:scores:")
-    public native NSArray<String> possibleTagsAtIndexSchemeTokenRangeSentenceRangeScores(@NUInt long charIndex,
-            String tagScheme, NSRange tokenRange, NSRange sentenceRange, Ptr<NSArray<? extends NSValue>> scores);
-
-    /**
-     * sentenceRangeForRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/sentenceRangeForRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sentenceRangeForRange:")
-    @ByValue
-    public native NSRange sentenceRangeForRange(@ByValue NSRange range);
-
-    /**
-     * setOrthography:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/setOrthography:range:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOrthography:range:")
-    public native void setOrthographyRange(NSOrthography orthography, @ByValue NSRange range);
-
-    /**
-     * string</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instp/NSLinguisticTagger/string">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setString:")
-    public native void setString(String value);
-
-    /**
-     * string</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instp/NSLinguisticTagger/string">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("string")
-    public native String string();
-
-    /**
-     * stringEditedInRange:changeInLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/stringEditedInRange:changeInLength:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringEditedInRange:changeInLength:")
-    public native void stringEditedInRangeChangeInLength(@ByValue NSRange newRange, @NInt long delta);
-
-    /**
-     * tagAtIndex:scheme:tokenRange:sentenceRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/tagAtIndex:scheme:tokenRange:sentenceRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tagAtIndex:scheme:tokenRange:sentenceRange:")
-    public native String tagAtIndexSchemeTokenRangeSentenceRange(@NUInt long charIndex, String tagScheme,
-            NSRange tokenRange, NSRange sentenceRange);
-
-    /**
-     * tagSchemes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instp/NSLinguisticTagger/tagSchemes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tagSchemes")
-    public native NSArray<String> tagSchemes();
-
-    /**
-     * tagsInRange:scheme:options:tokenRanges:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/tagsInRange:scheme:options:tokenRanges:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tagsInRange:scheme:options:tokenRanges:")
-    public native NSArray<String> tagsInRangeSchemeOptionsTokenRanges(@ByValue NSRange range, String tagScheme,
-            @NUInt long opts, Ptr<NSArray<? extends NSValue>> tokenRanges);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -281,4 +167,118 @@ public class NSLinguisticTagger extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * enumerateTagsInRange:scheme:options:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/enumerateTagsInRange:scheme:options:usingBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enumerateTagsInRange:scheme:options:usingBlock:")
+    public native void enumerateTagsInRangeSchemeOptionsUsingBlock(@ByValue NSRange range, String tagScheme,
+            @NUInt long opts,
+            @ObjCBlock(name = "call_enumerateTagsInRangeSchemeOptionsUsingBlock") Block_enumerateTagsInRangeSchemeOptionsUsingBlock block);
+
+    @Generated
+    @Selector("init")
+    public native NSLinguisticTagger init();
+
+    /**
+     * initWithTagSchemes:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/initWithTagSchemes:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTagSchemes:options:")
+    public native NSLinguisticTagger initWithTagSchemesOptions(NSArray<String> tagSchemes, @NUInt long opts);
+
+    /**
+     * orthographyAtIndex:effectiveRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/orthographyAtIndex:effectiveRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("orthographyAtIndex:effectiveRange:")
+    public native NSOrthography orthographyAtIndexEffectiveRange(@NUInt long charIndex, NSRange effectiveRange);
+
+    /**
+     * possibleTagsAtIndex:scheme:tokenRange:sentenceRange:scores:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/possibleTagsAtIndex:scheme:tokenRange:sentenceRange:scores:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("possibleTagsAtIndex:scheme:tokenRange:sentenceRange:scores:")
+    public native NSArray<String> possibleTagsAtIndexSchemeTokenRangeSentenceRangeScores(@NUInt long charIndex,
+            String tagScheme, NSRange tokenRange, NSRange sentenceRange, Ptr<NSArray<? extends NSValue>> scores);
+
+    /**
+     * sentenceRangeForRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/sentenceRangeForRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sentenceRangeForRange:")
+    @ByValue
+    public native NSRange sentenceRangeForRange(@ByValue NSRange range);
+
+    /**
+     * setOrthography:range:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/setOrthography:range:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOrthography:range:")
+    public native void setOrthographyRange(NSOrthography orthography, @ByValue NSRange range);
+
+    /**
+     * string</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instp/NSLinguisticTagger/string">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setString:")
+    public native void setString(String value);
+
+    /**
+     * string</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instp/NSLinguisticTagger/string">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("string")
+    public native String string();
+
+    /**
+     * stringEditedInRange:changeInLength:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/stringEditedInRange:changeInLength:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringEditedInRange:changeInLength:")
+    public native void stringEditedInRangeChangeInLength(@ByValue NSRange newRange, @NInt long delta);
+
+    /**
+     * tagAtIndex:scheme:tokenRange:sentenceRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/tagAtIndex:scheme:tokenRange:sentenceRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tagAtIndex:scheme:tokenRange:sentenceRange:")
+    public native String tagAtIndexSchemeTokenRangeSentenceRange(@NUInt long charIndex, String tagScheme,
+            NSRange tokenRange, NSRange sentenceRange);
+
+    /**
+     * tagSchemes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instp/NSLinguisticTagger/tagSchemes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tagSchemes")
+    public native NSArray<String> tagSchemes();
+
+    /**
+     * tagsInRange:scheme:options:tokenRanges:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSLinguisticTagger_Class/index.html#//apple_ref/occ/instm/NSLinguisticTagger/tagsInRange:scheme:options:tokenRanges:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tagsInRange:scheme:options:tokenRanges:")
+    public native NSArray<String> tagsInRangeSchemeOptionsTokenRanges(@ByValue NSRange range, String tagScheme,
+            @NUInt long opts, Ptr<NSArray<? extends NSValue>> tokenRanges);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateTagsInRangeSchemeOptionsUsingBlock {
+        @Generated
+        void call_enumerateTagsInRangeSchemeOptionsUsingBlock(String arg0, @ByValue NSRange arg1, @ByValue NSRange arg2,
+                BoolPtr arg3);
+    }
 }

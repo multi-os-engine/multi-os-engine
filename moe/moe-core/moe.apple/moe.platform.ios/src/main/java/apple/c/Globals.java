@@ -89,6 +89,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Generated
 @Runtime(CRuntime.class)
 public final class Globals {
+    @Generated public static final int OS_ACTIVITY_FLAG_DEFAULT = 0x00000000;
+    @Generated public static final int OS_ACTIVITY_FLAG_DETACHED = 0x00000001;
+
     static {
         NatJ.register();
     }
@@ -1082,13 +1085,6 @@ public final class Globals {
     public static native void dispatch_set_finalizer_f(NSObject object,
             @FunctionPtr(name = "call_dispatch_set_finalizer_f") Function_dispatch_set_finalizer_f finalizer);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_set_finalizer_f {
-        @Generated
-        void call_dispatch_set_finalizer_f(VoidPtr arg0);
-    }
-
     /**
      * dispatch_suspend</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_suspend">iOS Dev Center</a>
@@ -1133,13 +1129,6 @@ public final class Globals {
     public static native void dispatch_async(NSObject queue,
             @ObjCBlock(name = "call_dispatch_async") Block_dispatch_async block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_async {
-        @Generated
-        void call_dispatch_async();
-    }
-
     /**
      * dispatch_async_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_async_f">iOS Dev Center</a>
@@ -1148,13 +1137,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_async_f(NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_async_f") Function_dispatch_async_f work);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_async_f {
-        @Generated
-        void call_dispatch_async_f(VoidPtr arg0);
-    }
 
     /**
      * dispatch_sync</br>
@@ -1165,13 +1147,6 @@ public final class Globals {
     public static native void dispatch_sync(NSObject queue,
             @ObjCBlock(name = "call_dispatch_sync") Block_dispatch_sync block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_sync {
-        @Generated
-        void call_dispatch_sync();
-    }
-
     /**
      * dispatch_sync_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_sync_f">iOS Dev Center</a>
@@ -1180,13 +1155,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_sync_f(NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_sync_f") Function_dispatch_sync_f work);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_sync_f {
-        @Generated
-        void call_dispatch_sync_f(VoidPtr arg0);
-    }
 
     /**
      * dispatch_apply</br>
@@ -1197,13 +1165,6 @@ public final class Globals {
     public static native void dispatch_apply(@NUInt long iterations, NSObject queue,
             @ObjCBlock(name = "call_dispatch_apply") Block_dispatch_apply block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_apply {
-        @Generated
-        void call_dispatch_apply(@NUInt long arg0);
-    }
-
     /**
      * dispatch_apply_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_apply_f">iOS Dev Center</a>
@@ -1212,13 +1173,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_apply_f(@NUInt long iterations, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_apply_f") Function_dispatch_apply_f work);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_apply_f {
-        @Generated
-        void call_dispatch_apply_f(VoidPtr arg0, @NUInt long arg1);
-    }
 
     /**
      * dispatch_get_current_queue</br>
@@ -1311,13 +1265,6 @@ public final class Globals {
     public static native void dispatch_after(long when, NSObject queue,
             @ObjCBlock(name = "call_dispatch_after") Block_dispatch_after block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_after {
-        @Generated
-        void call_dispatch_after();
-    }
-
     /**
      * dispatch_after_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_after_f">iOS Dev Center</a>
@@ -1326,13 +1273,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_after_f(long when, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_after_f") Function_dispatch_after_f work);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_after_f {
-        @Generated
-        void call_dispatch_after_f(VoidPtr arg0);
-    }
 
     /**
      * dispatch_barrier_async</br>
@@ -1343,13 +1283,6 @@ public final class Globals {
     public static native void dispatch_barrier_async(NSObject queue,
             @ObjCBlock(name = "call_dispatch_barrier_async") Block_dispatch_barrier_async block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_barrier_async {
-        @Generated
-        void call_dispatch_barrier_async();
-    }
-
     /**
      * dispatch_barrier_async_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_barrier_async_f">iOS Dev Center</a>
@@ -1358,13 +1291,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_barrier_async_f(NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_barrier_async_f") Function_dispatch_barrier_async_f work);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_barrier_async_f {
-        @Generated
-        void call_dispatch_barrier_async_f(VoidPtr arg0);
-    }
 
     /**
      * dispatch_barrier_sync</br>
@@ -1375,13 +1301,6 @@ public final class Globals {
     public static native void dispatch_barrier_sync(NSObject queue,
             @ObjCBlock(name = "call_dispatch_barrier_sync") Block_dispatch_barrier_sync block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_barrier_sync {
-        @Generated
-        void call_dispatch_barrier_sync();
-    }
-
     /**
      * dispatch_barrier_sync_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_barrier_sync_f">iOS Dev Center</a>
@@ -1391,13 +1310,6 @@ public final class Globals {
     public static native void dispatch_barrier_sync_f(NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_barrier_sync_f") Function_dispatch_barrier_sync_f work);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_barrier_sync_f {
-        @Generated
-        void call_dispatch_barrier_sync_f(VoidPtr arg0);
-    }
-
     /**
      * dispatch_queue_set_specific</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_queue_set_specific">iOS Dev Center</a>
@@ -1406,13 +1318,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_queue_set_specific(NSObject queue, ConstVoidPtr key, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_queue_set_specific") Function_dispatch_queue_set_specific destructor);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_queue_set_specific {
-        @Generated
-        void call_dispatch_queue_set_specific(VoidPtr arg0);
-    }
 
     /**
      * dispatch_queue_get_specific</br>
@@ -1435,25 +1340,11 @@ public final class Globals {
     public static native void dispatch_block_perform(@NUInt long flags,
             @ObjCBlock(name = "call_dispatch_block_perform") Block_dispatch_block_perform block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_perform {
-        @Generated
-        void call_dispatch_block_perform();
-    }
-
     @Generated
     @CFunction
     @NInt
     public static native long dispatch_block_wait(
             @ObjCBlock(name = "call_dispatch_block_wait") Block_dispatch_block_wait block, long timeout);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_wait {
-        @Generated
-        void call_dispatch_block_wait();
-    }
 
     @Generated
     @CFunction
@@ -1461,44 +1352,16 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_block_notify_0") Block_dispatch_block_notify_0 block, NSObject queue,
             @ObjCBlock(name = "call_dispatch_block_notify_2") Block_dispatch_block_notify_2 notification_block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_notify_0 {
-        @Generated
-        void call_dispatch_block_notify_0();
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_notify_2 {
-        @Generated
-        void call_dispatch_block_notify_2();
-    }
-
     @Generated
     @CFunction
     public static native void dispatch_block_cancel(
             @ObjCBlock(name = "call_dispatch_block_cancel") Block_dispatch_block_cancel block);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_cancel {
-        @Generated
-        void call_dispatch_block_cancel();
-    }
 
     @Generated
     @CFunction
     @NInt
     public static native long dispatch_block_testcancel(
             @ObjCBlock(name = "call_dispatch_block_testcancel") Block_dispatch_block_testcancel block);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_testcancel {
-        @Generated
-        void call_dispatch_block_testcancel();
-    }
 
     @Generated
     @CFunction
@@ -1536,13 +1399,6 @@ public final class Globals {
     public static native void dispatch_source_set_event_handler(NSObject source,
             @ObjCBlock(name = "call_dispatch_source_set_event_handler") Block_dispatch_source_set_event_handler handler);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_source_set_event_handler {
-        @Generated
-        void call_dispatch_source_set_event_handler();
-    }
-
     /**
      * dispatch_source_set_event_handler_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_set_event_handler_f">iOS Dev Center</a>
@@ -1551,13 +1407,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_source_set_event_handler_f(NSObject source,
             @FunctionPtr(name = "call_dispatch_source_set_event_handler_f") Function_dispatch_source_set_event_handler_f handler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_source_set_event_handler_f {
-        @Generated
-        void call_dispatch_source_set_event_handler_f(VoidPtr arg0);
-    }
 
     /**
      * dispatch_source_set_cancel_handler</br>
@@ -1568,13 +1417,6 @@ public final class Globals {
     public static native void dispatch_source_set_cancel_handler(NSObject source,
             @ObjCBlock(name = "call_dispatch_source_set_cancel_handler") Block_dispatch_source_set_cancel_handler handler);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_source_set_cancel_handler {
-        @Generated
-        void call_dispatch_source_set_cancel_handler();
-    }
-
     /**
      * dispatch_source_set_cancel_handler_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_set_cancel_handler_f">iOS Dev Center</a>
@@ -1583,13 +1425,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_source_set_cancel_handler_f(NSObject source,
             @FunctionPtr(name = "call_dispatch_source_set_cancel_handler_f") Function_dispatch_source_set_cancel_handler_f handler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_source_set_cancel_handler_f {
-        @Generated
-        void call_dispatch_source_set_cancel_handler_f(VoidPtr arg0);
-    }
 
     /**
      * dispatch_source_cancel</br>
@@ -1660,13 +1495,6 @@ public final class Globals {
     public static native void dispatch_source_set_registration_handler(NSObject source,
             @ObjCBlock(name = "call_dispatch_source_set_registration_handler") Block_dispatch_source_set_registration_handler handler);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_source_set_registration_handler {
-        @Generated
-        void call_dispatch_source_set_registration_handler();
-    }
-
     /**
      * dispatch_source_set_registration_handler_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_source_set_registration_handler_f">iOS Dev Center</a>
@@ -1675,13 +1503,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_source_set_registration_handler_f(NSObject source,
             @FunctionPtr(name = "call_dispatch_source_set_registration_handler_f") Function_dispatch_source_set_registration_handler_f handler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_source_set_registration_handler_f {
-        @Generated
-        void call_dispatch_source_set_registration_handler_f(VoidPtr arg0);
-    }
 
     /**
      * dispatch_group_create</br>
@@ -1700,13 +1521,6 @@ public final class Globals {
     public static native void dispatch_group_async(NSObject group, NSObject queue,
             @ObjCBlock(name = "call_dispatch_group_async") Block_dispatch_group_async block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_group_async {
-        @Generated
-        void call_dispatch_group_async();
-    }
-
     /**
      * dispatch_group_async_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_group_async_f">iOS Dev Center</a>
@@ -1715,13 +1529,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_group_async_f(NSObject group, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_group_async_f") Function_dispatch_group_async_f work);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_group_async_f {
-        @Generated
-        void call_dispatch_group_async_f(VoidPtr arg0);
-    }
 
     /**
      * dispatch_group_wait</br>
@@ -1741,13 +1548,6 @@ public final class Globals {
     public static native void dispatch_group_notify(NSObject group, NSObject queue,
             @ObjCBlock(name = "call_dispatch_group_notify") Block_dispatch_group_notify block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_group_notify {
-        @Generated
-        void call_dispatch_group_notify();
-    }
-
     /**
      * dispatch_group_notify_f</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_group_notify_f">iOS Dev Center</a>
@@ -1756,13 +1556,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_group_notify_f(NSObject group, NSObject queue, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_group_notify_f") Function_dispatch_group_notify_f work);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_group_notify_f {
-        @Generated
-        void call_dispatch_group_notify_f(VoidPtr arg0);
-    }
 
     /**
      * dispatch_group_enter</br>
@@ -1815,25 +1608,11 @@ public final class Globals {
     public static native void dispatch_once(NIntPtr predicate,
             @ObjCBlock(name = "call_dispatch_once") Block_dispatch_once block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_once {
-        @Generated
-        void call_dispatch_once();
-    }
-
     @Generated
     @Inline
     @CFunction
     public static native void _dispatch_once(NIntPtr predicate,
             @ObjCBlock(name = "call__dispatch_once") Block__dispatch_once block);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block__dispatch_once {
-        @Generated
-        void call__dispatch_once();
-    }
 
     /**
      * dispatch_once_f</br>
@@ -1844,25 +1623,11 @@ public final class Globals {
     public static native void dispatch_once_f(NIntPtr predicate, VoidPtr context,
             @FunctionPtr(name = "call_dispatch_once_f") Function_dispatch_once_f function);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_dispatch_once_f {
-        @Generated
-        void call_dispatch_once_f(VoidPtr arg0);
-    }
-
     @Generated
     @Inline
     @CFunction
     public static native void _dispatch_once_f(NIntPtr predicate, VoidPtr context,
             @FunctionPtr(name = "call__dispatch_once_f") Function__dispatch_once_f function);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function__dispatch_once_f {
-        @Generated
-        void call__dispatch_once_f(VoidPtr arg0);
-    }
 
     /**
      * dispatch_data_create</br>
@@ -1872,13 +1637,6 @@ public final class Globals {
     @CFunction
     public static native NSObject dispatch_data_create(ConstVoidPtr buffer, @NUInt long size, NSObject queue,
             @ObjCBlock(name = "call_dispatch_data_create") Block_dispatch_data_create destructor);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_data_create {
-        @Generated
-        void call_dispatch_data_create();
-    }
 
     /**
      * dispatch_data_get_size</br>
@@ -1923,13 +1681,6 @@ public final class Globals {
     public static native boolean dispatch_data_apply(NSObject data,
             @ObjCBlock(name = "call_dispatch_data_apply") Block_dispatch_data_apply applier);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_data_apply {
-        @Generated
-        boolean call_dispatch_data_apply(NSObject arg0, @NUInt long arg1, ConstVoidPtr arg2, @NUInt long arg3);
-    }
-
     /**
      * dispatch_data_copy_region</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_data_copy_region">iOS Dev Center</a>
@@ -1947,13 +1698,6 @@ public final class Globals {
     public static native void dispatch_read(int fd, @NUInt long length, NSObject queue,
             @ObjCBlock(name = "call_dispatch_read") Block_dispatch_read handler);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_read {
-        @Generated
-        void call_dispatch_read(NSObject arg0, int arg1);
-    }
-
     /**
      * dispatch_write</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_write">iOS Dev Center</a>
@@ -1963,13 +1707,6 @@ public final class Globals {
     public static native void dispatch_write(int fd, NSObject data, NSObject queue,
             @ObjCBlock(name = "call_dispatch_write") Block_dispatch_write handler);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_write {
-        @Generated
-        void call_dispatch_write(NSObject arg0, int arg1);
-    }
-
     /**
      * dispatch_io_create</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_create">iOS Dev Center</a>
@@ -1978,13 +1715,6 @@ public final class Globals {
     @CFunction
     public static native NSObject dispatch_io_create(@NUInt long type, int fd, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_create") Block_dispatch_io_create cleanup_handler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_io_create {
-        @Generated
-        void call_dispatch_io_create(int arg0);
-    }
 
     /**
      * dispatch_io_create_with_path</br>
@@ -1997,13 +1727,6 @@ public final class Globals {
             char mode, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_create_with_path") Block_dispatch_io_create_with_path cleanup_handler);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_io_create_with_path {
-        @Generated
-        void call_dispatch_io_create_with_path(int arg0);
-    }
-
     /**
      * dispatch_io_create_with_io</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_create_with_io">iOS Dev Center</a>
@@ -2012,13 +1735,6 @@ public final class Globals {
     @CFunction
     public static native NSObject dispatch_io_create_with_io(@NUInt long type, NSObject io, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_create_with_io") Block_dispatch_io_create_with_io cleanup_handler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_io_create_with_io {
-        @Generated
-        void call_dispatch_io_create_with_io(int arg0);
-    }
 
     /**
      * dispatch_io_read</br>
@@ -2029,13 +1745,6 @@ public final class Globals {
     public static native void dispatch_io_read(NSObject channel, long offset, @NUInt long length, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_read") Block_dispatch_io_read io_handler);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_io_read {
-        @Generated
-        void call_dispatch_io_read(boolean arg0, NSObject arg1, int arg2);
-    }
-
     /**
      * dispatch_io_write</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html#//apple_ref/c/func/dispatch_io_write">iOS Dev Center</a>
@@ -2044,13 +1753,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_io_write(NSObject channel, long offset, NSObject data, NSObject queue,
             @ObjCBlock(name = "call_dispatch_io_write") Block_dispatch_io_write io_handler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_io_write {
-        @Generated
-        void call_dispatch_io_write(boolean arg0, NSObject arg1, int arg2);
-    }
 
     /**
      * dispatch_io_close</br>
@@ -2068,13 +1770,6 @@ public final class Globals {
     @CFunction
     public static native void dispatch_io_barrier(NSObject channel,
             @ObjCBlock(name = "call_dispatch_io_barrier") Block_dispatch_io_barrier barrier);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_io_barrier {
-        @Generated
-        void call_dispatch_io_barrier();
-    }
 
     /**
      * dispatch_io_get_descriptor</br>
@@ -3464,36 +3159,6 @@ public final class Globals {
             @FunctionPtr(name = "call_funopen_3") Function_funopen_3 arg4,
             @FunctionPtr(name = "call_funopen_4") Function_funopen_4 arg5);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_funopen_1 {
-        @Generated
-        int call_funopen_1(VoidPtr arg0, BytePtr arg1, int arg2);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_funopen_2 {
-        @Generated
-        int call_funopen_2(VoidPtr arg0,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-                int arg2);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_funopen_3 {
-        @Generated
-        long call_funopen_3(VoidPtr arg0, long arg1, int arg2);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_funopen_4 {
-        @Generated
-        int call_funopen_4(VoidPtr arg0);
-    }
-
     @Generated
     @Variadic()
     @CFunction
@@ -3589,13 +3254,6 @@ public final class Globals {
     @CFunction
     public static native int atexit(@FunctionPtr(name = "call_atexit") Function_atexit arg1);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_atexit {
-        @Generated
-        void call_atexit();
-    }
-
     @Generated
     @CFunction
     public static native double atof(
@@ -3621,13 +3279,6 @@ public final class Globals {
     @CFunction
     public static native VoidPtr bsearch(ConstVoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3, @NUInt long arg4,
             @FunctionPtr(name = "call_bsearch") Function_bsearch arg5);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_bsearch {
-        @Generated
-        int call_bsearch(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
 
     @Generated
     @CFunction
@@ -3701,13 +3352,6 @@ public final class Globals {
     @CFunction
     public static native void qsort(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
             @FunctionPtr(name = "call_qsort") Function_qsort arg4);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_qsort {
-        @Generated
-        int call_qsort(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
 
     @Generated
     @CFunction
@@ -3897,24 +3541,10 @@ public final class Globals {
     @CFunction
     public static native int atexit_b(@ObjCBlock(name = "call_atexit_b") Block_atexit_b arg1);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_atexit_b {
-        @Generated
-        void call_atexit_b();
-    }
-
     @Generated
     @CFunction
     public static native VoidPtr bsearch_b(ConstVoidPtr arg1, ConstVoidPtr arg2, @NUInt long arg3, @NUInt long arg4,
             @ObjCBlock(name = "call_bsearch_b") Block_bsearch_b arg5);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_bsearch_b {
-        @Generated
-        int call_bsearch_b(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
 
     @Generated
     @CFunction
@@ -3998,108 +3628,45 @@ public final class Globals {
     public static native int heapsort(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
             @FunctionPtr(name = "call_heapsort") Function_heapsort arg4);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_heapsort {
-        @Generated
-        int call_heapsort(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
-
     @Generated
     @CFunction
     public static native int heapsort_b(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
             @ObjCBlock(name = "call_heapsort_b") Block_heapsort_b arg4);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_heapsort_b {
-        @Generated
-        int call_heapsort_b(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
 
     @Generated
     @CFunction
     public static native int mergesort(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
             @FunctionPtr(name = "call_mergesort") Function_mergesort arg4);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_mergesort {
-        @Generated
-        int call_mergesort(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
-
     @Generated
     @CFunction
     public static native int mergesort_b(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
             @ObjCBlock(name = "call_mergesort_b") Block_mergesort_b arg4);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_mergesort_b {
-        @Generated
-        int call_mergesort_b(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
 
     @Generated
     @CFunction
     public static native void psort(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
             @FunctionPtr(name = "call_psort") Function_psort arg4);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_psort {
-        @Generated
-        int call_psort(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
-
     @Generated
     @CFunction
     public static native void psort_b(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
             @ObjCBlock(name = "call_psort_b") Block_psort_b arg4);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_psort_b {
-        @Generated
-        int call_psort_b(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
 
     @Generated
     @CFunction
     public static native void psort_r(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3, VoidPtr arg4,
             @FunctionPtr(name = "call_psort_r") Function_psort_r arg5);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_psort_r {
-        @Generated
-        int call_psort_r(VoidPtr arg0, ConstVoidPtr arg1, ConstVoidPtr arg2);
-    }
-
     @Generated
     @CFunction
     public static native void qsort_b(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3,
             @ObjCBlock(name = "call_qsort_b") Block_qsort_b arg4);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_qsort_b {
-        @Generated
-        int call_qsort_b(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
-
     @Generated
     @CFunction
     public static native void qsort_r(VoidPtr arg1, @NUInt long arg2, @NUInt long arg3, VoidPtr arg4,
             @FunctionPtr(name = "call_qsort_r") Function_qsort_r arg5);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_qsort_r {
-        @Generated
-        int call_qsort_r(VoidPtr arg0, ConstVoidPtr arg1, ConstVoidPtr arg2);
-    }
 
     @Generated
     @CFunction
@@ -5001,20 +4568,6 @@ public final class Globals {
     public static native Block_dispatch_block_create_ret dispatch_block_create(@NUInt long flags,
             @ObjCBlock(name = "call_dispatch_block_create") Block_dispatch_block_create block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_create_ret {
-        @Generated
-        void call_dispatch_block_create_ret();
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_create {
-        @Generated
-        void call_dispatch_block_create();
-    }
-
     @Generated
     @CFunction
     @ObjCBlock(name = "call_dispatch_block_create_with_qos_class_ret")
@@ -5022,38 +4575,10 @@ public final class Globals {
             @NUInt long flags, int qos_class, int relative_priority,
             @ObjCBlock(name = "call_dispatch_block_create_with_qos_class") Block_dispatch_block_create_with_qos_class block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_create_with_qos_class_ret {
-        @Generated
-        void call_dispatch_block_create_with_qos_class_ret();
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_dispatch_block_create_with_qos_class {
-        @Generated
-        void call_dispatch_block_create_with_qos_class();
-    }
-
     @Generated
     @CFunction
     @FunctionPtr(name = "call_signal_ret")
     public static native Function_signal_ret signal(int arg1, @FunctionPtr(name = "call_signal") Function_signal arg2);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_signal_ret {
-        @Generated
-        void call_signal_ret(int arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_signal {
-        @Generated
-        void call_signal(int arg0);
-    }
 
     @Generated
     @CFunction
@@ -5061,38 +4586,10 @@ public final class Globals {
     public static native Function_bsd_signal_ret bsd_signal(int arg1,
             @FunctionPtr(name = "call_bsd_signal") Function_bsd_signal arg2);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_bsd_signal_ret {
-        @Generated
-        void call_bsd_signal_ret(int arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_bsd_signal {
-        @Generated
-        void call_bsd_signal(int arg0);
-    }
-
     @Generated
     @CFunction
     @FunctionPtr(name = "call_sigset_ret")
     public static native Function_sigset_ret sigset(int arg1, @FunctionPtr(name = "call_sigset") Function_sigset arg2);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_sigset_ret {
-        @Generated
-        void call_sigset_ret(int arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_sigset {
-        @Generated
-        void call_sigset(int arg0);
-    }
 
     @Generated
     @CFunction
@@ -5119,26 +4616,12 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
             int flags, @ObjCBlock(name = "call__os_activity_initiate") Block__os_activity_initiate activity_block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block__os_activity_initiate {
-        @Generated
-        void call__os_activity_initiate();
-    }
-
     @Generated
     @CFunction
     public static native void _os_activity_initiate_f(VoidPtr dso,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
             int flags, VoidPtr context,
             @FunctionPtr(name = "call__os_activity_initiate_f") Function__os_activity_initiate_f activity_func);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function__os_activity_initiate_f {
-        @Generated
-        void call__os_activity_initiate_f(VoidPtr arg0);
-    }
 
     @Generated
     @CFunction
@@ -5155,6 +4638,523 @@ public final class Globals {
     @CVariable()
     public static native VoidPtr __dso_handle();
 
-    @Generated public static final int OS_ACTIVITY_FLAG_DEFAULT = 0x00000000;
-    @Generated public static final int OS_ACTIVITY_FLAG_DETACHED = 0x00000001;
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_set_finalizer_f {
+        @Generated
+        void call_dispatch_set_finalizer_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_async {
+        @Generated
+        void call_dispatch_async();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_async_f {
+        @Generated
+        void call_dispatch_async_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_sync {
+        @Generated
+        void call_dispatch_sync();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_sync_f {
+        @Generated
+        void call_dispatch_sync_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_apply {
+        @Generated
+        void call_dispatch_apply(@NUInt long arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_apply_f {
+        @Generated
+        void call_dispatch_apply_f(VoidPtr arg0, @NUInt long arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_after {
+        @Generated
+        void call_dispatch_after();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_after_f {
+        @Generated
+        void call_dispatch_after_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_barrier_async {
+        @Generated
+        void call_dispatch_barrier_async();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_barrier_async_f {
+        @Generated
+        void call_dispatch_barrier_async_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_barrier_sync {
+        @Generated
+        void call_dispatch_barrier_sync();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_barrier_sync_f {
+        @Generated
+        void call_dispatch_barrier_sync_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_queue_set_specific {
+        @Generated
+        void call_dispatch_queue_set_specific(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_perform {
+        @Generated
+        void call_dispatch_block_perform();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_wait {
+        @Generated
+        void call_dispatch_block_wait();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_notify_0 {
+        @Generated
+        void call_dispatch_block_notify_0();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_notify_2 {
+        @Generated
+        void call_dispatch_block_notify_2();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_cancel {
+        @Generated
+        void call_dispatch_block_cancel();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_testcancel {
+        @Generated
+        void call_dispatch_block_testcancel();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_source_set_event_handler {
+        @Generated
+        void call_dispatch_source_set_event_handler();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_source_set_event_handler_f {
+        @Generated
+        void call_dispatch_source_set_event_handler_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_source_set_cancel_handler {
+        @Generated
+        void call_dispatch_source_set_cancel_handler();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_source_set_cancel_handler_f {
+        @Generated
+        void call_dispatch_source_set_cancel_handler_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_source_set_registration_handler {
+        @Generated
+        void call_dispatch_source_set_registration_handler();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_source_set_registration_handler_f {
+        @Generated
+        void call_dispatch_source_set_registration_handler_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_group_async {
+        @Generated
+        void call_dispatch_group_async();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_group_async_f {
+        @Generated
+        void call_dispatch_group_async_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_group_notify {
+        @Generated
+        void call_dispatch_group_notify();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_group_notify_f {
+        @Generated
+        void call_dispatch_group_notify_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_once {
+        @Generated
+        void call_dispatch_once();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block__dispatch_once {
+        @Generated
+        void call__dispatch_once();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_once_f {
+        @Generated
+        void call_dispatch_once_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function__dispatch_once_f {
+        @Generated
+        void call__dispatch_once_f(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_data_create {
+        @Generated
+        void call_dispatch_data_create();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_data_apply {
+        @Generated
+        boolean call_dispatch_data_apply(NSObject arg0, @NUInt long arg1, ConstVoidPtr arg2, @NUInt long arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_read {
+        @Generated
+        void call_dispatch_read(NSObject arg0, int arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_write {
+        @Generated
+        void call_dispatch_write(NSObject arg0, int arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_io_create {
+        @Generated
+        void call_dispatch_io_create(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_io_create_with_path {
+        @Generated
+        void call_dispatch_io_create_with_path(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_io_create_with_io {
+        @Generated
+        void call_dispatch_io_create_with_io(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_io_read {
+        @Generated
+        void call_dispatch_io_read(boolean arg0, NSObject arg1, int arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_io_write {
+        @Generated
+        void call_dispatch_io_write(boolean arg0, NSObject arg1, int arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_io_barrier {
+        @Generated
+        void call_dispatch_io_barrier();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_funopen_1 {
+        @Generated
+        int call_funopen_1(VoidPtr arg0, BytePtr arg1, int arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_funopen_2 {
+        @Generated
+        int call_funopen_2(VoidPtr arg0,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+                int arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_funopen_3 {
+        @Generated
+        long call_funopen_3(VoidPtr arg0, long arg1, int arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_funopen_4 {
+        @Generated
+        int call_funopen_4(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_atexit {
+        @Generated
+        void call_atexit();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_bsearch {
+        @Generated
+        int call_bsearch(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_qsort {
+        @Generated
+        int call_qsort(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_atexit_b {
+        @Generated
+        void call_atexit_b();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_bsearch_b {
+        @Generated
+        int call_bsearch_b(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_heapsort {
+        @Generated
+        int call_heapsort(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_heapsort_b {
+        @Generated
+        int call_heapsort_b(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_mergesort {
+        @Generated
+        int call_mergesort(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_mergesort_b {
+        @Generated
+        int call_mergesort_b(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_psort {
+        @Generated
+        int call_psort(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_psort_b {
+        @Generated
+        int call_psort_b(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_psort_r {
+        @Generated
+        int call_psort_r(VoidPtr arg0, ConstVoidPtr arg1, ConstVoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_qsort_b {
+        @Generated
+        int call_qsort_b(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_qsort_r {
+        @Generated
+        int call_qsort_r(VoidPtr arg0, ConstVoidPtr arg1, ConstVoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_create_ret {
+        @Generated
+        void call_dispatch_block_create_ret();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_create {
+        @Generated
+        void call_dispatch_block_create();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_create_with_qos_class_ret {
+        @Generated
+        void call_dispatch_block_create_with_qos_class_ret();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_block_create_with_qos_class {
+        @Generated
+        void call_dispatch_block_create_with_qos_class();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_signal_ret {
+        @Generated
+        void call_signal_ret(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_signal {
+        @Generated
+        void call_signal(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_bsd_signal_ret {
+        @Generated
+        void call_bsd_signal_ret(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_bsd_signal {
+        @Generated
+        void call_bsd_signal(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_sigset_ret {
+        @Generated
+        void call_sigset_ret(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_sigset {
+        @Generated
+        void call_sigset(int arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block__os_activity_initiate {
+        @Generated
+        void call__os_activity_initiate();
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function__os_activity_initiate_f {
+        @Generated
+        void call__os_activity_initiate_f(VoidPtr arg0);
+    }
 }

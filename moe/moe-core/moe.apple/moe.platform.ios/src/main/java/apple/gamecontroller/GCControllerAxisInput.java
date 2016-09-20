@@ -60,50 +60,6 @@ public class GCControllerAxisInput extends GCControllerElement {
     public static native GCControllerAxisInput alloc();
 
     @Generated
-    @Selector("init")
-    public native GCControllerAxisInput init();
-
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerAxisInput_Ref/index.html#//apple_ref/occ/instp/GCControllerAxisInput/valueChangedHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setValueChangedHandler:")
-    public native void setValueChangedHandler(
-            @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setValueChangedHandler {
-        @Generated
-        void call_setValueChangedHandler(GCControllerAxisInput arg0, float arg1);
-    }
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerAxisInput_Ref/index.html#//apple_ref/occ/instp/GCControllerAxisInput/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    public native float value();
-
-    /**
-     * valueChangedHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerAxisInput_Ref/index.html#//apple_ref/occ/instp/GCControllerAxisInput/valueChangedHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueChangedHandler")
-    @ObjCBlock(name = "call_valueChangedHandler_ret")
-    public native Block_valueChangedHandler_ret valueChangedHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_valueChangedHandler_ret {
-        @Generated
-        void call_valueChangedHandler_ret(GCControllerAxisInput arg0, float arg1);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -202,4 +158,48 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GCControllerAxisInput init();
+
+    /**
+     * valueChangedHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerAxisInput_Ref/index.html#//apple_ref/occ/instp/GCControllerAxisInput/valueChangedHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setValueChangedHandler:")
+    public native void setValueChangedHandler(
+            @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerAxisInput_Ref/index.html#//apple_ref/occ/instp/GCControllerAxisInput/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    public native float value();
+
+    /**
+     * valueChangedHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerAxisInput_Ref/index.html#//apple_ref/occ/instp/GCControllerAxisInput/valueChangedHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueChangedHandler")
+    @ObjCBlock(name = "call_valueChangedHandler_ret")
+    public native Block_valueChangedHandler_ret valueChangedHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setValueChangedHandler {
+        @Generated
+        void call_setValueChangedHandler(GCControllerAxisInput arg0, float arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_valueChangedHandler_ret {
+        @Generated
+        void call_valueChangedHandler_ret(GCControllerAxisInput arg0, float arg1);
+    }
 }

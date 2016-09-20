@@ -60,23 +60,6 @@ public class UIStoryboardPopoverSegue extends UIStoryboardSegue {
     public static native UIStoryboardPopoverSegue alloc();
 
     @Generated
-    @Selector("init")
-    public native UIStoryboardPopoverSegue init();
-
-    @Generated
-    @Selector("initWithIdentifier:source:destination:")
-    public native UIStoryboardPopoverSegue initWithIdentifierSourceDestination(String identifier,
-            UIViewController source, UIViewController destination);
-
-    /**
-     * popoverController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardPopoverSegue_Class/index.html#//apple_ref/occ/instp/UIStoryboardPopoverSegue/popoverController">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("popoverController")
-    public native UIPopoverController popoverController();
-
-    @Generated
     @Selector("segueWithIdentifier:source:destination:performHandler:")
     public static native UIStoryboardPopoverSegue segueWithIdentifierSourceDestinationPerformHandler(String identifier,
             UIViewController source, UIViewController destination,
@@ -181,4 +164,21 @@ public class UIStoryboardPopoverSegue extends UIStoryboardSegue {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIStoryboardPopoverSegue init();
+
+    @Generated
+    @Selector("initWithIdentifier:source:destination:")
+    public native UIStoryboardPopoverSegue initWithIdentifierSourceDestination(String identifier,
+            UIViewController source, UIViewController destination);
+
+    /**
+     * popoverController</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboardPopoverSegue_Class/index.html#//apple_ref/occ/instp/UIStoryboardPopoverSegue/popoverController">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("popoverController")
+    public native UIPopoverController popoverController();
 }

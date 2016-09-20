@@ -59,10 +59,6 @@ public class PHObjectPlaceholder extends PHObject {
     public static native PHObjectPlaceholder alloc();
 
     @Generated
-    @Selector("init")
-    public native PHObjectPlaceholder init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class PHObjectPlaceholder extends PHObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native PHObjectPlaceholder init();
 }

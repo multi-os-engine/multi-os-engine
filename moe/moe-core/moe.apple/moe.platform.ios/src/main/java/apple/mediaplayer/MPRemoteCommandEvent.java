@@ -58,26 +58,6 @@ public class MPRemoteCommandEvent extends NSObject {
     @Selector("alloc")
     public static native MPRemoteCommandEvent alloc();
 
-    /**
-     * command</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandEvent/command">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("command")
-    public native MPRemoteCommand command();
-
-    @Generated
-    @Selector("init")
-    public native MPRemoteCommandEvent init();
-
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandEvent/timestamp">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timestamp")
-    public native double timestamp();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -177,4 +157,24 @@ public class MPRemoteCommandEvent extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * command</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandEvent/command">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("command")
+    public native MPRemoteCommand command();
+
+    @Generated
+    @Selector("init")
+    public native MPRemoteCommandEvent init();
+
+    /**
+     * timestamp</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRemoteCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPRemoteCommandEvent/timestamp">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timestamp")
+    public native double timestamp();
 }

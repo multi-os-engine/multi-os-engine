@@ -55,38 +55,10 @@ public class MDLURLTexture extends MDLTexture {
         super(peer);
     }
 
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLURLTexture_Class/index.html#//apple_ref/occ/instp/MDLURLTexture/URL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URL")
-    public native NSURL URL();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native MDLURLTexture alloc();
-
-    @Generated
-    @Selector("init")
-    public native MDLURLTexture init();
-
-    /**
-     * initWithURL:name:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLURLTexture_Class/index.html#//apple_ref/occ/instm/MDLURLTexture/initWithURL:name:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:name:")
-    public native MDLURLTexture initWithURLName(NSURL URL, String name);
-
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLURLTexture_Class/index.html#//apple_ref/occ/instp/MDLURLTexture/URL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setURL:")
-    public native void setURL(NSURL value);
 
     @Generated
     @Selector("textureCubeWithImagesNamed:")
@@ -203,4 +175,32 @@ public class MDLURLTexture extends MDLTexture {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLURLTexture_Class/index.html#//apple_ref/occ/instp/MDLURLTexture/URL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URL")
+    public native NSURL URL();
+
+    @Generated
+    @Selector("init")
+    public native MDLURLTexture init();
+
+    /**
+     * initWithURL:name:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLURLTexture_Class/index.html#//apple_ref/occ/instm/MDLURLTexture/initWithURL:name:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:name:")
+    public native MDLURLTexture initWithURLName(NSURL URL, String name);
+
+    /**
+     * URL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLURLTexture_Class/index.html#//apple_ref/occ/instp/MDLURLTexture/URL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setURL:")
+    public native void setURL(NSURL value);
 }

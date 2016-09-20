@@ -63,56 +63,8 @@ public class CKRecordZoneID extends NSObject implements NSSecureCoding, NSCopyin
     public static native CKRecordZoneID alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CKRecordZoneID init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CKRecordZoneID initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithZoneName:ownerName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZoneID_class/index.html#//apple_ref/occ/instm/CKRecordZoneID/initWithZoneName:ownerName:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithZoneName:ownerName:")
-    public native CKRecordZoneID initWithZoneNameOwnerName(String zoneName, String ownerName);
-
-    /**
-     * ownerName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZoneID_class/index.html#//apple_ref/occ/instp/CKRecordZoneID/ownerName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ownerName")
-    public native String ownerName();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * zoneName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZoneID_class/index.html#//apple_ref/occ/instp/CKRecordZoneID/zoneName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("zoneName")
-    public native String zoneName();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -213,4 +165,52 @@ public class CKRecordZoneID extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CKRecordZoneID init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CKRecordZoneID initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithZoneName:ownerName:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZoneID_class/index.html#//apple_ref/occ/instm/CKRecordZoneID/initWithZoneName:ownerName:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithZoneName:ownerName:")
+    public native CKRecordZoneID initWithZoneNameOwnerName(String zoneName, String ownerName);
+
+    /**
+     * ownerName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZoneID_class/index.html#//apple_ref/occ/instp/CKRecordZoneID/ownerName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ownerName")
+    public native String ownerName();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * zoneName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordZoneID_class/index.html#//apple_ref/occ/instp/CKRecordZoneID/zoneName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("zoneName")
+    public native String zoneName();
 }

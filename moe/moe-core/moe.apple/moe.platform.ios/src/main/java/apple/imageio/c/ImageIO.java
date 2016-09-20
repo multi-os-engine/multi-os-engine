@@ -142,13 +142,6 @@ public final class ImageIO {
             CFDictionaryRef options,
             @ObjCBlock(name = "call_CGImageMetadataEnumerateTagsUsingBlock") Block_CGImageMetadataEnumerateTagsUsingBlock block);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_CGImageMetadataEnumerateTagsUsingBlock {
-        @Generated
-        boolean call_CGImageMetadataEnumerateTagsUsingBlock(CFStringRef arg0, CGImageMetadataTagRef arg1);
-    }
-
     @Generated
     @CFunction
     public static native CGImageMetadataTagRef CGImageMetadataCopyTagMatchingImageProperty(CGImageMetadataRef metadata,
@@ -1782,4 +1775,11 @@ public final class ImageIO {
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGCompressionFilter();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGImageMetadataEnumerateTagsUsingBlock {
+        @Generated
+        boolean call_CGImageMetadataEnumerateTagsUsingBlock(CFStringRef arg0, CGImageMetadataTagRef arg1);
+    }
 }

@@ -60,14 +60,6 @@ public class MPSImageTranspose extends MPSUnaryImageKernel {
     public static native MPSImageTranspose alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSImageTranspose init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageTranspose initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -166,4 +158,12 @@ public class MPSImageTranspose extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageTranspose init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageTranspose initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 }

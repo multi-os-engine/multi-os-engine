@@ -59,10 +59,6 @@ public class GLKEffectProperty extends NSObject {
     public static native GLKEffectProperty alloc();
 
     @Generated
-    @Selector("init")
-    public native GLKEffectProperty init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class GLKEffectProperty extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native GLKEffectProperty init();
 }

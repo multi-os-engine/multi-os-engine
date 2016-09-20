@@ -63,64 +63,8 @@ public class CKRecordID extends NSObject implements NSSecureCoding, NSCopying {
     public static native CKRecordID alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CKRecordID init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CKRecordID initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithRecordName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordID_class/index.html#//apple_ref/occ/instm/CKRecordID/initWithRecordName:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRecordName:")
-    public native CKRecordID initWithRecordName(String recordName);
-
-    /**
-     * initWithRecordName:zoneID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordID_class/index.html#//apple_ref/occ/instm/CKRecordID/initWithRecordName:zoneID:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRecordName:zoneID:")
-    public native CKRecordID initWithRecordNameZoneID(String recordName, CKRecordZoneID zoneID);
-
-    /**
-     * recordName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordID_class/index.html#//apple_ref/occ/instp/CKRecordID/recordName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recordName")
-    public native String recordName();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * zoneID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordID_class/index.html#//apple_ref/occ/instp/CKRecordID/zoneID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("zoneID")
-    public native CKRecordZoneID zoneID();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -221,4 +165,60 @@ public class CKRecordID extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CKRecordID init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CKRecordID initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithRecordName:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordID_class/index.html#//apple_ref/occ/instm/CKRecordID/initWithRecordName:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRecordName:")
+    public native CKRecordID initWithRecordName(String recordName);
+
+    /**
+     * initWithRecordName:zoneID:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordID_class/index.html#//apple_ref/occ/instm/CKRecordID/initWithRecordName:zoneID:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRecordName:zoneID:")
+    public native CKRecordID initWithRecordNameZoneID(String recordName, CKRecordZoneID zoneID);
+
+    /**
+     * recordName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordID_class/index.html#//apple_ref/occ/instp/CKRecordID/recordName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recordName")
+    public native String recordName();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * zoneID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKRecordID_class/index.html#//apple_ref/occ/instp/CKRecordID/zoneID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("zoneID")
+    public native CKRecordZoneID zoneID();
 }

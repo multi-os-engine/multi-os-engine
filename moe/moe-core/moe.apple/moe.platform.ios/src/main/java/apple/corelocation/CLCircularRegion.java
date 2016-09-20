@@ -62,54 +62,6 @@ public class CLCircularRegion extends CLRegion {
     @Selector("alloc")
     public static native CLCircularRegion alloc();
 
-    /**
-     * center</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLCircularRegion_class/index.html#//apple_ref/occ/instp/CLCircularRegion/center">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("center")
-    @ByValue
-    public native CLLocationCoordinate2D center();
-
-    /**
-     * containsCoordinate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLCircularRegion_class/index.html#//apple_ref/occ/instm/CLCircularRegion/containsCoordinate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containsCoordinate:")
-    public native boolean containsCoordinate(@ByValue CLLocationCoordinate2D coordinate);
-
-    @Generated
-    @Selector("init")
-    public native CLCircularRegion init();
-
-    @Generated
-    @Deprecated
-    @Selector("initCircularRegionWithCenter:radius:identifier:")
-    public native CLCircularRegion initCircularRegionWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center,
-            double radius, String identifier);
-
-    /**
-     * initWithCenter:radius:identifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLCircularRegion_class/index.html#//apple_ref/occ/instm/CLCircularRegion/initWithCenter:radius:identifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithCenter:radius:identifier:")
-    public native CLCircularRegion initWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center, double radius,
-            String identifier);
-
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLCircularRegion_class/index.html#//apple_ref/occ/instp/CLCircularRegion/radius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("radius")
-    public native double radius();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CLCircularRegion initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -210,13 +162,61 @@ public class CLCircularRegion extends CLRegion {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * center</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLCircularRegion_class/index.html#//apple_ref/occ/instp/CLCircularRegion/center">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("center")
+    @ByValue
+    public native CLLocationCoordinate2D center();
+
+    /**
+     * containsCoordinate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLCircularRegion_class/index.html#//apple_ref/occ/instm/CLCircularRegion/containsCoordinate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containsCoordinate:")
+    public native boolean containsCoordinate(@ByValue CLLocationCoordinate2D coordinate);
+
+    @Generated
+    @Selector("init")
+    public native CLCircularRegion init();
+
+    @Generated
+    @Deprecated
+    @Selector("initCircularRegionWithCenter:radius:identifier:")
+    public native CLCircularRegion initCircularRegionWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center,
+            double radius, String identifier);
+
+    /**
+     * initWithCenter:radius:identifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLCircularRegion_class/index.html#//apple_ref/occ/instm/CLCircularRegion/initWithCenter:radius:identifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithCenter:radius:identifier:")
+    public native CLCircularRegion initWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center, double radius,
+            String identifier);
+
+    /**
+     * radius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLCircularRegion_class/index.html#//apple_ref/occ/instp/CLCircularRegion/radius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("radius")
+    public native double radius();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CLCircularRegion initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

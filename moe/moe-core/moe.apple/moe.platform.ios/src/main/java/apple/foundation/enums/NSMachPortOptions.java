@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSMachPortOptions {
-    @Generated
-    private NSMachPortOptions() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long SendRight = 0x0000000000000001L;
     @Generated @NUInt public static final long ReceiveRight = 0x0000000000000002L;
+
+    @Generated
+    private NSMachPortOptions() {
+    }
 }

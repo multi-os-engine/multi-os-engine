@@ -55,31 +55,10 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
         super(peer);
     }
 
-    /**
-     * ISO</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureManualExposureBracketedStillImageSettings_Class/index.html#//apple_ref/occ/instp/AVCaptureManualExposureBracketedStillImageSettings/ISO">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ISO")
-    public native float ISO();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native AVCaptureManualExposureBracketedStillImageSettings alloc();
-
-    /**
-     * exposureDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureManualExposureBracketedStillImageSettings_Class/index.html#//apple_ref/occ/instp/AVCaptureManualExposureBracketedStillImageSettings/exposureDuration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("exposureDuration")
-    @ByValue
-    public native CMTime exposureDuration();
-
-    @Generated
-    @Selector("init")
-    public native AVCaptureManualExposureBracketedStillImageSettings init();
 
     /**
      * manualExposureSettingsWithExposureDuration:ISO:</br>
@@ -189,4 +168,25 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * ISO</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureManualExposureBracketedStillImageSettings_Class/index.html#//apple_ref/occ/instp/AVCaptureManualExposureBracketedStillImageSettings/ISO">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ISO")
+    public native float ISO();
+
+    /**
+     * exposureDuration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureManualExposureBracketedStillImageSettings_Class/index.html#//apple_ref/occ/instp/AVCaptureManualExposureBracketedStillImageSettings/exposureDuration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("exposureDuration")
+    @ByValue
+    public native CMTime exposureDuration();
+
+    @Generated
+    @Selector("init")
+    public native AVCaptureManualExposureBracketedStillImageSettings init();
 }

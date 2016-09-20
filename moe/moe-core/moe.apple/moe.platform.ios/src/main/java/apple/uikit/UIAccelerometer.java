@@ -60,65 +60,12 @@ public class UIAccelerometer extends NSObject {
     public static native UIAccelerometer alloc();
 
     /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/instp/UIAccelerometer/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UIAccelerometerDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native UIAccelerometer init();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/instp/UIAccelerometer/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIAccelerometerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/instp/UIAccelerometer/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIAccelerometerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * updateInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/instp/UIAccelerometer/updateInterval">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUpdateInterval:")
-    public native void setUpdateInterval(double value);
-
-    /**
      * sharedAccelerometer</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/clm/UIAccelerometer/sharedAccelerometer">iOS Dev Center</a>
      */
     @Generated
     @Selector("sharedAccelerometer")
     public static native UIAccelerometer sharedAccelerometer();
-
-    /**
-     * updateInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/instp/UIAccelerometer/updateInterval">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateInterval")
-    public native double updateInterval();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -219,4 +166,57 @@ public class UIAccelerometer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/instp/UIAccelerometer/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIAccelerometerDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native UIAccelerometer init();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/instp/UIAccelerometer/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIAccelerometerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/instp/UIAccelerometer/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIAccelerometerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * updateInterval</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/instp/UIAccelerometer/updateInterval">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUpdateInterval:")
+    public native void setUpdateInterval(double value);
+
+    /**
+     * updateInterval</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccelerometer_Class/index.html#//apple_ref/occ/instp/UIAccelerometer/updateInterval">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateInterval")
+    public native double updateInterval();
 }

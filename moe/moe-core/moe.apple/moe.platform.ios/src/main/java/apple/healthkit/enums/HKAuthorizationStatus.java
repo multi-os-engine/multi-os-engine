@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKAuthorizationStatus {
-    @Generated
-    private HKAuthorizationStatus() {
-    }
-
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
     @Generated @NInt public static final long SharingDenied = 0x0000000000000001L;
     @Generated @NInt public static final long SharingAuthorized = 0x0000000000000002L;
+
+    @Generated
+    private HKAuthorizationStatus() {
+    }
 }

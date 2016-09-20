@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLMultisampleDepthResolveFilter {
-    @Generated
-    private MTLMultisampleDepthResolveFilter() {
-    }
-
     @Generated @NUInt public static final long Sample0 = 0x0000000000000000L;
     @Generated @NUInt public static final long Min = 0x0000000000000001L;
     @Generated @NUInt public static final long Max = 0x0000000000000002L;
+
+    @Generated
+    private MTLMultisampleDepthResolveFilter() {
+    }
 }

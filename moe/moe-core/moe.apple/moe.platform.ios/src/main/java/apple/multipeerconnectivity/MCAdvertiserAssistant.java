@@ -60,92 +60,6 @@ public class MCAdvertiserAssistant extends NSObject {
     @Selector("alloc")
     public static native MCAdvertiserAssistant alloc();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MCAdvertiserAssistantDelegate delegate();
-
-    /**
-     * discoveryInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/discoveryInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("discoveryInfo")
-    public native NSDictionary<String, String> discoveryInfo();
-
-    @Generated
-    @Selector("init")
-    public native MCAdvertiserAssistant init();
-
-    /**
-     * initWithServiceType:discoveryInfo:session:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instm/MCAdvertiserAssistant/initWithServiceType:discoveryInfo:session:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithServiceType:discoveryInfo:session:")
-    public native MCAdvertiserAssistant initWithServiceTypeDiscoveryInfoSession(String serviceType,
-            NSDictionary<String, String> info, MCSession session);
-
-    /**
-     * serviceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/serviceType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("serviceType")
-    public native String serviceType();
-
-    /**
-     * session</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/session">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("session")
-    public native MCSession session();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCAdvertiserAssistantDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MCAdvertiserAssistantDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instm/MCAdvertiserAssistant/start">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("start")
-    public native void start();
-
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instm/MCAdvertiserAssistant/stop">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stop")
-    public native void stop();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -245,4 +159,90 @@ public class MCAdvertiserAssistant extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MCAdvertiserAssistantDelegate delegate();
+
+    /**
+     * discoveryInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/discoveryInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("discoveryInfo")
+    public native NSDictionary<String, String> discoveryInfo();
+
+    @Generated
+    @Selector("init")
+    public native MCAdvertiserAssistant init();
+
+    /**
+     * initWithServiceType:discoveryInfo:session:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instm/MCAdvertiserAssistant/initWithServiceType:discoveryInfo:session:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithServiceType:discoveryInfo:session:")
+    public native MCAdvertiserAssistant initWithServiceTypeDiscoveryInfoSession(String serviceType,
+            NSDictionary<String, String> info, MCSession session);
+
+    /**
+     * serviceType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/serviceType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("serviceType")
+    public native String serviceType();
+
+    /**
+     * session</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/session">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("session")
+    public native MCSession session();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCAdvertiserAssistantDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instp/MCAdvertiserAssistant/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) MCAdvertiserAssistantDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * start</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instm/MCAdvertiserAssistant/start">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("start")
+    public native void start();
+
+    /**
+     * stop</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCAdvertiserAssistant_class/index.html#//apple_ref/occ/instm/MCAdvertiserAssistant/stop">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stop")
+    public native void stop();
 }

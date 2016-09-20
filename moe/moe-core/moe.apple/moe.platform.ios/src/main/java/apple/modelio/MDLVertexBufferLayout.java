@@ -60,33 +60,6 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
     public static native MDLVertexBufferLayout alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native MDLVertexBufferLayout init();
-
-    /**
-     * stride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexBufferLayout_Class/index.html#//apple_ref/occ/instp/MDLVertexBufferLayout/stride">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setStride:")
-    public native void setStride(@NUInt long value);
-
-    /**
-     * stride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexBufferLayout_Class/index.html#//apple_ref/occ/instp/MDLVertexBufferLayout/stride">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stride")
-    @NUInt
-    public native long stride();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -185,4 +158,31 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native MDLVertexBufferLayout init();
+
+    /**
+     * stride</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexBufferLayout_Class/index.html#//apple_ref/occ/instp/MDLVertexBufferLayout/stride">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setStride:")
+    public native void setStride(@NUInt long value);
+
+    /**
+     * stride</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexBufferLayout_Class/index.html#//apple_ref/occ/instp/MDLVertexBufferLayout/stride">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stride")
+    @NUInt
+    public native long stride();
 }

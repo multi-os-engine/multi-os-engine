@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class WKUserScriptInjectionTime {
+    @Generated @NInt public static final long Start = 0x0000000000000000L;
+    @Generated @NInt public static final long End = 0x0000000000000001L;
+
     @Generated
     private WKUserScriptInjectionTime() {
     }
-
-    @Generated @NInt public static final long Start = 0x0000000000000000L;
-    @Generated @NInt public static final long End = 0x0000000000000001L;
 }

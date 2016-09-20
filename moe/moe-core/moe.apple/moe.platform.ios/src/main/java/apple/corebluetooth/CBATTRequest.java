@@ -59,51 +59,6 @@ public class CBATTRequest extends NSObject {
     @Selector("alloc")
     public static native CBATTRequest alloc();
 
-    /**
-     * central</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBATTRequest_class/index.html#//apple_ref/occ/instp/CBATTRequest/central">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("central")
-    public native CBCentral central();
-
-    /**
-     * characteristic</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBATTRequest_class/index.html#//apple_ref/occ/instp/CBATTRequest/characteristic">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("characteristic")
-    public native CBCharacteristic characteristic();
-
-    @Generated
-    @Selector("init")
-    public native CBATTRequest init();
-
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBATTRequest_class/index.html#//apple_ref/occ/instp/CBATTRequest/offset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("offset")
-    @NUInt
-    public native long offset();
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBATTRequest_class/index.html#//apple_ref/occ/instp/CBATTRequest/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setValue:")
-    public native void setValue(NSData value);
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBATTRequest_class/index.html#//apple_ref/occ/instp/CBATTRequest/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    public native NSData value();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -203,4 +158,49 @@ public class CBATTRequest extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * central</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBATTRequest_class/index.html#//apple_ref/occ/instp/CBATTRequest/central">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("central")
+    public native CBCentral central();
+
+    /**
+     * characteristic</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBATTRequest_class/index.html#//apple_ref/occ/instp/CBATTRequest/characteristic">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("characteristic")
+    public native CBCharacteristic characteristic();
+
+    @Generated
+    @Selector("init")
+    public native CBATTRequest init();
+
+    /**
+     * offset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBATTRequest_class/index.html#//apple_ref/occ/instp/CBATTRequest/offset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("offset")
+    @NUInt
+    public native long offset();
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBATTRequest_class/index.html#//apple_ref/occ/instp/CBATTRequest/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setValue:")
+    public native void setValue(NSData value);
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBATTRequest_class/index.html#//apple_ref/occ/instp/CBATTRequest/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    public native NSData value();
 }

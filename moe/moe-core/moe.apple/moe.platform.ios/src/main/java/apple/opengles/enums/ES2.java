@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class ES2 {
-    @Generated
-    private ES2() {
-    }
-
     @Generated public static final int ES_VERSION_2_0 = 0x00000001;
     @Generated public static final int DEPTH_BUFFER_BIT = 0x00000100;
     @Generated public static final int STENCIL_BUFFER_BIT = 0x00000400;
@@ -487,4 +483,8 @@ public final class ES2 {
     @Generated public static final int FRAGMENT_SHADER_DERIVATIVE_HINT_OES = 0x00008B8B;
     @Generated public static final int HALF_FLOAT_OES = 0x00008D61;
     @Generated public static final int VERTEX_ARRAY_BINDING_OES = 0x000085B5;
+
+    @Generated
+    private ES2() {
+    }
 }

@@ -107,10 +107,6 @@ public class CATransaction extends NSObject {
     @Selector("flush")
     public static native void flush();
 
-    @Generated
-    @Selector("init")
-    public native CATransaction init();
-
     /**
      * lock</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATransaction_class/index.html#//apple_ref/occ/clm/CATransaction/lock">iOS Dev Center</a>
@@ -143,13 +139,6 @@ public class CATransaction extends NSObject {
     @Selector("setCompletionBlock:")
     public static native void setCompletionBlock(
             @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setCompletionBlock {
-        @Generated
-        void call_setCompletionBlock();
-    }
 
     /**
      * setDisableActions:</br>
@@ -192,13 +181,6 @@ public class CATransaction extends NSObject {
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")
     public static native Block_completionBlock_ret completionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_completionBlock_ret {
-        @Generated
-        void call_completionBlock_ret();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -299,4 +281,22 @@ public class CATransaction extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CATransaction init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setCompletionBlock {
+        @Generated
+        void call_setCompletionBlock();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_completionBlock_ret {
+        @Generated
+        void call_completionBlock_ret();
+    }
 }

@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CFStreamErrorHTTPAuthentication {
-    @Generated
-    private CFStreamErrorHTTPAuthentication() {
-    }
-
     @Generated public static final int TypeUnsupported = 0xFFFFFC18;
     @Generated public static final int BadUserName = 0xFFFFFC17;
     @Generated public static final int BadPassword = 0xFFFFFC16;
+
+    @Generated
+    private CFStreamErrorHTTPAuthentication() {
+    }
 }

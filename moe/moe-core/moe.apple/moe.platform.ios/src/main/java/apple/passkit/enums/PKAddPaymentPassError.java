@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PKAddPaymentPassError {
-    @Generated
-    private PKAddPaymentPassError() {
-    }
-
     @Generated @NInt public static final long Unsupported = 0x0000000000000000L;
     @Generated @NInt public static final long UserCancelled = 0x0000000000000001L;
     @Generated @NInt public static final long SystemCancelled = 0x0000000000000002L;
+
+    @Generated
+    private PKAddPaymentPassError() {
+    }
 }

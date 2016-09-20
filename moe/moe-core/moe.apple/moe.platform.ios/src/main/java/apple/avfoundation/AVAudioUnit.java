@@ -66,76 +66,11 @@ public class AVAudioUnit extends AVAudioNode {
     @Selector("alloc")
     public static native AVAudioUnit alloc();
 
-    /**
-     * audioComponentDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/audioComponentDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("audioComponentDescription")
-    @ByValue
-    public native AudioComponentDescription audioComponentDescription();
-
-    /**
-     * audioUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/audioUnit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("audioUnit")
-    public native AudioComponentInstance audioUnit();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioUnit init();
-
-    /**
-     * loadAudioUnitPresetAtURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instm/AVAudioUnit/loadAudioUnitPresetAtURL:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadAudioUnitPresetAtURL:error:")
-    public native boolean loadAudioUnitPresetAtURLError(NSURL url, Ptr<NSError> outError);
-
-    /**
-     * manufacturerName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/manufacturerName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("manufacturerName")
-    public native String manufacturerName();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/version">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("version")
-    @NUInt
-    public native long version();
-
-    @Generated
-    @Selector("AUAudioUnit")
-    public native AUAudioUnit AUAudioUnit();
-
     @Generated
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription audioComponentDescription, int options,
             @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_instantiateWithComponentDescriptionOptionsCompletionHandler {
-        @Generated
-        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(AVAudioUnit arg0, NSError arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -236,4 +171,69 @@ public class AVAudioUnit extends AVAudioNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * audioComponentDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/audioComponentDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("audioComponentDescription")
+    @ByValue
+    public native AudioComponentDescription audioComponentDescription();
+
+    /**
+     * audioUnit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/audioUnit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("audioUnit")
+    public native AudioComponentInstance audioUnit();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioUnit init();
+
+    /**
+     * loadAudioUnitPresetAtURL:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instm/AVAudioUnit/loadAudioUnitPresetAtURL:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadAudioUnitPresetAtURL:error:")
+    public native boolean loadAudioUnitPresetAtURLError(NSURL url, Ptr<NSError> outError);
+
+    /**
+     * manufacturerName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/manufacturerName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("manufacturerName")
+    public native String manufacturerName();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * version</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnit_Class/index.html#//apple_ref/occ/instp/AVAudioUnit/version">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("version")
+    @NUInt
+    public native long version();
+
+    @Generated
+    @Selector("AUAudioUnit")
+    public native AUAudioUnit AUAudioUnit();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_instantiateWithComponentDescriptionOptionsCompletionHandler {
+        @Generated
+        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(AVAudioUnit arg0, NSError arg1);
+    }
 }

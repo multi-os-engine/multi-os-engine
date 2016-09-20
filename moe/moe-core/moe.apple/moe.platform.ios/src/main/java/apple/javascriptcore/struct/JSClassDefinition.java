@@ -36,11 +36,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class JSClassDefinition extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public JSClassDefinition() {
@@ -109,133 +109,47 @@ public final class JSClassDefinition extends StructObject {
     @StructureField(order = 6, isGetter = false)
     public native void setInitialize(@FunctionPtr(name = "call_initialize") Function_initialize value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_initialize {
-        @Generated
-        void call_initialize(VoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void set_finalize(@FunctionPtr(name = "call__finalize") Function__finalize value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function__finalize {
-        @Generated
-        void call__finalize(VoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void setHasProperty(@FunctionPtr(name = "call_hasProperty") Function_hasProperty value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_hasProperty {
-        @Generated
-        boolean call_hasProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
-    }
-
     @Generated
     @StructureField(order = 9, isGetter = false)
     public native void setGetProperty(@FunctionPtr(name = "call_getProperty") Function_getProperty value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getProperty {
-        @Generated
-        VoidPtr call_getProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
-    }
 
     @Generated
     @StructureField(order = 10, isGetter = false)
     public native void setSetProperty(@FunctionPtr(name = "call_setProperty") Function_setProperty value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_setProperty {
-        @Generated
-        boolean call_setProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, VoidPtr arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
-    }
-
     @Generated
     @StructureField(order = 11, isGetter = false)
     public native void setDeleteProperty(@FunctionPtr(name = "call_deleteProperty") Function_deleteProperty value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_deleteProperty {
-        @Generated
-        boolean call_deleteProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
-    }
 
     @Generated
     @StructureField(order = 12, isGetter = false)
     public native void setGetPropertyNames(
             @FunctionPtr(name = "call_getPropertyNames") Function_getPropertyNames value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getPropertyNames {
-        @Generated
-        void call_getPropertyNames(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
-    }
-
     @Generated
     @StructureField(order = 13, isGetter = false)
     public native void setCallAsFunction(@FunctionPtr(name = "call_callAsFunction") Function_callAsFunction value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_callAsFunction {
-        @Generated
-        VoidPtr call_callAsFunction(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, @NUInt long arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg4,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg5);
-    }
 
     @Generated
     @StructureField(order = 14, isGetter = false)
     public native void setCallAsConstructor(
             @FunctionPtr(name = "call_callAsConstructor") Function_callAsConstructor value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_callAsConstructor {
-        @Generated
-        VoidPtr call_callAsConstructor(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
-    }
-
     @Generated
     @StructureField(order = 15, isGetter = false)
     public native void setHasInstance(@FunctionPtr(name = "call_hasInstance") Function_hasInstance value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_hasInstance {
-        @Generated
-        boolean call_hasInstance(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
-    }
-
     @Generated
     @StructureField(order = 16, isGetter = false)
     public native void setConvertToType(@FunctionPtr(name = "call_convertToType") Function_convertToType value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_convertToType {
-        @Generated
-        VoidPtr call_convertToType(VoidPtr arg0, VoidPtr arg1, int arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
-    }
 
     @Generated
     @StructureField(order = 6, isGetter = true)
@@ -291,4 +205,90 @@ public final class JSClassDefinition extends StructObject {
     @StructureField(order = 16, isGetter = true)
     @FunctionPtr(name = "call_convertToType")
     public native Function_convertToType convertToType();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_initialize {
+        @Generated
+        void call_initialize(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function__finalize {
+        @Generated
+        void call__finalize(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_hasProperty {
+        @Generated
+        boolean call_hasProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getProperty {
+        @Generated
+        VoidPtr call_getProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_setProperty {
+        @Generated
+        boolean call_setProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, VoidPtr arg3,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_deleteProperty {
+        @Generated
+        boolean call_deleteProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getPropertyNames {
+        @Generated
+        void call_getPropertyNames(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_callAsFunction {
+        @Generated
+        VoidPtr call_callAsFunction(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, @NUInt long arg3,
+                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg4,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_callAsConstructor {
+        @Generated
+        VoidPtr call_callAsConstructor(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2,
+                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg3,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_hasInstance {
+        @Generated
+        boolean call_hasInstance(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_convertToType {
+        @Generated
+        VoidPtr call_convertToType(VoidPtr arg0, VoidPtr arg1, int arg2,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
+    }
 }

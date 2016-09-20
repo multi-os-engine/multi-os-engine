@@ -63,10 +63,6 @@ public class SKPhysicsJointSliding extends SKPhysicsJoint {
     @Selector("alloc")
     public static native SKPhysicsJointSliding alloc();
 
-    @Generated
-    @Selector("init")
-    public native SKPhysicsJointSliding init();
-
     /**
      * jointWithBodyA:bodyB:anchor:axis:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/clm/SKPhysicsJointSliding/jointWithBodyA:bodyB:anchor:axis:">iOS Dev Center</a>
@@ -75,60 +71,6 @@ public class SKPhysicsJointSliding extends SKPhysicsJoint {
     @Selector("jointWithBodyA:bodyB:anchor:axis:")
     public static native SKPhysicsJointSliding jointWithBodyABodyBAnchorAxis(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
             @ByValue CGPoint anchor, @ByValue CGVector axis);
-
-    /**
-     * lowerDistanceLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/lowerDistanceLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lowerDistanceLimit")
-    @NFloat
-    public native double lowerDistanceLimit();
-
-    /**
-     * lowerDistanceLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/lowerDistanceLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLowerDistanceLimit:")
-    public native void setLowerDistanceLimit(@NFloat double value);
-
-    /**
-     * shouldEnableLimits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/shouldEnableLimits">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShouldEnableLimits:")
-    public native void setShouldEnableLimits(boolean value);
-
-    /**
-     * upperDistanceLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/upperDistanceLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUpperDistanceLimit:")
-    public native void setUpperDistanceLimit(@NFloat double value);
-
-    /**
-     * shouldEnableLimits</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/shouldEnableLimits">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shouldEnableLimits")
-    public native boolean shouldEnableLimits();
-
-    /**
-     * upperDistanceLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/upperDistanceLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("upperDistanceLimit")
-    @NFloat
-    public native double upperDistanceLimit();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKPhysicsJointSliding initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -229,4 +171,62 @@ public class SKPhysicsJointSliding extends SKPhysicsJoint {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SKPhysicsJointSliding init();
+
+    /**
+     * lowerDistanceLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/lowerDistanceLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lowerDistanceLimit")
+    @NFloat
+    public native double lowerDistanceLimit();
+
+    /**
+     * lowerDistanceLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/lowerDistanceLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLowerDistanceLimit:")
+    public native void setLowerDistanceLimit(@NFloat double value);
+
+    /**
+     * shouldEnableLimits</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/shouldEnableLimits">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShouldEnableLimits:")
+    public native void setShouldEnableLimits(boolean value);
+
+    /**
+     * upperDistanceLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/upperDistanceLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUpperDistanceLimit:")
+    public native void setUpperDistanceLimit(@NFloat double value);
+
+    /**
+     * shouldEnableLimits</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/shouldEnableLimits">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shouldEnableLimits")
+    public native boolean shouldEnableLimits();
+
+    /**
+     * upperDistanceLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointSliding_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJointSliding/upperDistanceLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("upperDistanceLimit")
+    @NFloat
+    public native double upperDistanceLimit();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKPhysicsJointSliding initWithCoder(NSCoder aDecoder);
 }

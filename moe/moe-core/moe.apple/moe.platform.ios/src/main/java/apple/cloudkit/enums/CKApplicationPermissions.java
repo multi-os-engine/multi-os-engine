@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CKApplicationPermissions {
+    @Generated @NUInt public static final long CKApplicationPermissionUserDiscoverability = 0x0000000000000001L;
+
     @Generated
     private CKApplicationPermissions() {
     }
-
-    @Generated @NUInt public static final long CKApplicationPermissionUserDiscoverability = 0x0000000000000001L;
 }

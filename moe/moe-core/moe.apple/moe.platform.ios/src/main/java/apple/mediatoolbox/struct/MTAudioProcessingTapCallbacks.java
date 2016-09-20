@@ -38,11 +38,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure(alignment = 4)
 public final class MTAudioProcessingTapCallbacks extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public MTAudioProcessingTapCallbacks() {
@@ -74,59 +74,21 @@ public final class MTAudioProcessingTapCallbacks extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setInit(@FunctionPtr(name = "call_init") Function_init value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_init {
-        @Generated
-        void call_init(VoidPtr arg0, VoidPtr arg1, @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
-    }
-
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void set_finalize(@FunctionPtr(name = "call__finalize") Function__finalize value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function__finalize {
-        @Generated
-        void call__finalize(VoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setPrepare(@FunctionPtr(name = "call_prepare") Function_prepare value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_prepare {
-        @Generated
-        void call_prepare(VoidPtr arg0, @NInt long arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription arg2);
-    }
-
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setUnprepare(@FunctionPtr(name = "call_unprepare") Function_unprepare value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_unprepare {
-        @Generated
-        void call_unprepare(VoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setProcess(@FunctionPtr(name = "call_process") Function_process value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_process {
-        @Generated
-        void call_process(VoidPtr arg0, @NInt long arg1, int arg2,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg3, NIntPtr arg4,
-                IntPtr arg5);
-    }
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -152,4 +114,42 @@ public final class MTAudioProcessingTapCallbacks extends StructObject {
     @StructureField(order = 6, isGetter = true)
     @FunctionPtr(name = "call_process")
     public native Function_process process();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_init {
+        @Generated
+        void call_init(VoidPtr arg0, VoidPtr arg1, @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function__finalize {
+        @Generated
+        void call__finalize(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_prepare {
+        @Generated
+        void call_prepare(VoidPtr arg0, @NInt long arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_unprepare {
+        @Generated
+        void call_unprepare(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_process {
+        @Generated
+        void call_process(VoidPtr arg0, @NInt long arg1, int arg2,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg3, NIntPtr arg4,
+                IntPtr arg5);
+    }
 }

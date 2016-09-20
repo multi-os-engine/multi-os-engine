@@ -58,53 +58,6 @@ public class MTLArrayType extends NSObject {
     @Selector("alloc")
     public static native MTLArrayType alloc();
 
-    /**
-     * arrayLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArrayType_Ref/index.html#//apple_ref/occ/instp/MTLArrayType/arrayLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("arrayLength")
-    @NUInt
-    public native long arrayLength();
-
-    /**
-     * elementArrayType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArrayType_Ref/index.html#//apple_ref/occ/instm/MTLArrayType/elementArrayType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("elementArrayType")
-    public native MTLArrayType elementArrayType();
-
-    /**
-     * elementStructType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArrayType_Ref/index.html#//apple_ref/occ/instm/MTLArrayType/elementStructType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("elementStructType")
-    public native MTLStructType elementStructType();
-
-    /**
-     * elementType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArrayType_Ref/index.html#//apple_ref/occ/instp/MTLArrayType/elementType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("elementType")
-    @NUInt
-    public native long elementType();
-
-    @Generated
-    @Selector("init")
-    public native MTLArrayType init();
-
-    /**
-     * stride</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArrayType_Ref/index.html#//apple_ref/occ/instp/MTLArrayType/stride">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stride")
-    @NUInt
-    public native long stride();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -204,4 +157,51 @@ public class MTLArrayType extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * arrayLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArrayType_Ref/index.html#//apple_ref/occ/instp/MTLArrayType/arrayLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("arrayLength")
+    @NUInt
+    public native long arrayLength();
+
+    /**
+     * elementArrayType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArrayType_Ref/index.html#//apple_ref/occ/instm/MTLArrayType/elementArrayType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("elementArrayType")
+    public native MTLArrayType elementArrayType();
+
+    /**
+     * elementStructType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArrayType_Ref/index.html#//apple_ref/occ/instm/MTLArrayType/elementStructType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("elementStructType")
+    public native MTLStructType elementStructType();
+
+    /**
+     * elementType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArrayType_Ref/index.html#//apple_ref/occ/instp/MTLArrayType/elementType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("elementType")
+    @NUInt
+    public native long elementType();
+
+    @Generated
+    @Selector("init")
+    public native MTLArrayType init();
+
+    /**
+     * stride</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLArrayType_Ref/index.html#//apple_ref/occ/instp/MTLArrayType/stride">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stride")
+    @NUInt
+    public native long stride();
 }

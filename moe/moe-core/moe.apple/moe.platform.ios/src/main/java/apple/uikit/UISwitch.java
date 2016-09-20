@@ -68,130 +68,6 @@ public class UISwitch extends UIControl implements NSCoding {
     public static native UISwitch alloc();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UISwitch init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UISwitch initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithFrame:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instm/UISwitch/initWithFrame:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFrame:")
-    public native UISwitch initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * on</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/on">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isOn")
-    public native boolean isOn();
-
-    /**
-     * offImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/offImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("offImage")
-    public native UIImage offImage();
-
-    /**
-     * onImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("onImage")
-    public native UIImage onImage();
-
-    /**
-     * onTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("onTintColor")
-    public native UIColor onTintColor();
-
-    /**
-     * offImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/offImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOffImage:")
-    public native void setOffImage(UIImage value);
-
-    /**
-     * on</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/on">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOn:")
-    public native void setOn(boolean value);
-
-    /**
-     * setOn:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instm/UISwitch/setOn:animated:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOn:animated:")
-    public native void setOnAnimated(boolean on, boolean animated);
-
-    /**
-     * onImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOnImage:")
-    public native void setOnImage(UIImage value);
-
-    /**
-     * onTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOnTintColor:")
-    public native void setOnTintColor(UIColor value);
-
-    /**
-     * thumbTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/thumbTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setThumbTintColor:")
-    public native void setThumbTintColor(UIColor value);
-
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/tintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
-
-    /**
-     * thumbTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/thumbTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("thumbTintColor")
-    public native UIColor thumbTintColor();
-
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/tintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tintColor")
-    public native UIColor tintColor();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -244,23 +120,9 @@ public class UISwitch extends UIControl implements NSCoding {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -271,27 +133,10 @@ public class UISwitch extends UIControl implements NSCoding {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -302,24 +147,9 @@ public class UISwitch extends UIControl implements NSCoding {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -517,4 +347,174 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UISwitch init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UISwitch initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithFrame:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instm/UISwitch/initWithFrame:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFrame:")
+    public native UISwitch initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * on</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/on">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isOn")
+    public native boolean isOn();
+
+    /**
+     * on</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/on">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOn:")
+    public native void setOn(boolean value);
+
+    /**
+     * offImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/offImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("offImage")
+    public native UIImage offImage();
+
+    /**
+     * onImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("onImage")
+    public native UIImage onImage();
+
+    /**
+     * onTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("onTintColor")
+    public native UIColor onTintColor();
+
+    /**
+     * offImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/offImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOffImage:")
+    public native void setOffImage(UIImage value);
+
+    /**
+     * setOn:animated:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instm/UISwitch/setOn:animated:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOn:animated:")
+    public native void setOnAnimated(boolean on, boolean animated);
+
+    /**
+     * onImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOnImage:")
+    public native void setOnImage(UIImage value);
+
+    /**
+     * onTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/onTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOnTintColor:")
+    public native void setOnTintColor(UIColor value);
+
+    /**
+     * thumbTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/thumbTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setThumbTintColor:")
+    public native void setThumbTintColor(UIColor value);
+
+    /**
+     * tintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/tintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTintColor:")
+    public native void setTintColor(UIColor value);
+
+    /**
+     * thumbTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/thumbTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("thumbTintColor")
+    public native UIColor thumbTintColor();
+
+    /**
+     * tintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISwitch_Class/index.html#//apple_ref/occ/instp/UISwitch/tintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tintColor")
+    public native UIColor tintColor();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGImageAlphaInfo {
-    @Generated
-    private CGImageAlphaInfo() {
-    }
-
     @Generated public static final int None = 0x00000000;
     @Generated public static final int PremultipliedLast = 0x00000001;
     @Generated public static final int PremultipliedFirst = 0x00000002;
@@ -32,4 +28,8 @@ public final class CGImageAlphaInfo {
     @Generated public static final int NoneSkipLast = 0x00000005;
     @Generated public static final int NoneSkipFirst = 0x00000006;
     @Generated public static final int Only = 0x00000007;
+
+    @Generated
+    private CGImageAlphaInfo() {
+    }
 }

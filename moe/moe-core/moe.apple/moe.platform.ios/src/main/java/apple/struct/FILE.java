@@ -33,11 +33,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class FILE extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public FILE() {
@@ -118,47 +118,17 @@ public final class FILE extends StructObject {
     @StructureField(order = 8, isGetter = false)
     public native void set_close(@FunctionPtr(name = "call__close") Function__close value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function__close {
-        @Generated
-        int call__close(VoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 9, isGetter = false)
     public native void set_read(@FunctionPtr(name = "call__read") Function__read value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function__read {
-        @Generated
-        int call__read(VoidPtr arg0, BytePtr arg1, int arg2);
-    }
 
     @Generated
     @StructureField(order = 10, isGetter = false)
     public native void set_seek(@FunctionPtr(name = "call__seek") Function__seek value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function__seek {
-        @Generated
-        long call__seek(VoidPtr arg0, long arg1, int arg2);
-    }
-
     @Generated
     @StructureField(order = 11, isGetter = false)
     public native void set_write(@FunctionPtr(name = "call__write") Function__write value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function__write {
-        @Generated
-        int call__write(VoidPtr arg0,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-                int arg2);
-    }
 
     @Generated
     @StructureField(order = 12, isGetter = true)
@@ -245,4 +215,34 @@ public final class FILE extends StructObject {
     @StructureField(order = 11, isGetter = true)
     @FunctionPtr(name = "call__write")
     public native Function__write _write();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function__close {
+        @Generated
+        int call__close(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function__read {
+        @Generated
+        int call__read(VoidPtr arg0, BytePtr arg1, int arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function__seek {
+        @Generated
+        long call__seek(VoidPtr arg0, long arg1, int arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function__write {
+        @Generated
+        int call__write(VoidPtr arg0,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+                int arg2);
+    }
 }

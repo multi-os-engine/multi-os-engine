@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MKOverlayLevel {
+    @Generated @NInt public static final long Roads = 0x0000000000000000L;
+    @Generated @NInt public static final long Labels = 0x0000000000000001L;
+
     @Generated
     private MKOverlayLevel() {
     }
-
-    @Generated @NInt public static final long Roads = 0x0000000000000000L;
-    @Generated @NInt public static final long Labels = 0x0000000000000001L;
 }

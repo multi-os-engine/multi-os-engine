@@ -67,67 +67,6 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     public static native MPMediaItemCollection collectionWithItems(NSArray<? extends MPMediaItem> items);
 
     @Generated
-    @Selector("init")
-    public native MPMediaPlaylist init();
-
-    @Generated
-    @Selector("initWithItems:")
-    public native MPMediaPlaylist initWithItems(NSArray<? extends MPMediaItem> items);
-
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
-    @Selector("persistentID")
-    public native long persistentID();
-
-    @Generated
-    @Selector("playlistAttributes")
-    @NUInt
-    public native long playlistAttributes();
-
-    @Generated
-    @Selector("seedItems")
-    public native NSArray<? extends MPMediaItem> seedItems();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaPlaylist initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("addItemWithProductID:completionHandler:")
-    public native void addItemWithProductIDCompletionHandler(String productID,
-            @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addItemWithProductIDCompletionHandler {
-        @Generated
-        void call_addItemWithProductIDCompletionHandler(NSError arg0);
-    }
-
-    @Generated
-    @Selector("addMediaItems:completionHandler:")
-    public native void addMediaItemsCompletionHandler(NSArray<? extends MPMediaItem> mediaItems,
-            @ObjCBlock(name = "call_addMediaItemsCompletionHandler") Block_addMediaItemsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addMediaItemsCompletionHandler {
-        @Generated
-        void call_addMediaItemsCompletionHandler(NSError arg0);
-    }
-
-    @Generated
-    @Selector("authorDisplayName")
-    public native String authorDisplayName();
-
-    @Generated
-    @Selector("descriptionText")
-    public native String descriptionText();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -231,13 +170,74 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPMediaPlaylist init();
+
+    @Generated
+    @Selector("initWithItems:")
+    public native MPMediaPlaylist initWithItems(NSArray<? extends MPMediaItem> items);
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("persistentID")
+    public native long persistentID();
+
+    @Generated
+    @Selector("playlistAttributes")
+    @NUInt
+    public native long playlistAttributes();
+
+    @Generated
+    @Selector("seedItems")
+    public native NSArray<? extends MPMediaItem> seedItems();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaPlaylist initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("addItemWithProductID:completionHandler:")
+    public native void addItemWithProductIDCompletionHandler(String productID,
+            @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("addMediaItems:completionHandler:")
+    public native void addMediaItemsCompletionHandler(NSArray<? extends MPMediaItem> mediaItems,
+            @ObjCBlock(name = "call_addMediaItemsCompletionHandler") Block_addMediaItemsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("authorDisplayName")
+    public native String authorDisplayName();
+
+    @Generated
+    @Selector("descriptionText")
+    public native String descriptionText();
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_addItemWithProductIDCompletionHandler {
+        @Generated
+        void call_addItemWithProductIDCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addMediaItemsCompletionHandler {
+        @Generated
+        void call_addMediaItemsCompletionHandler(NSError arg0);
+    }
 }

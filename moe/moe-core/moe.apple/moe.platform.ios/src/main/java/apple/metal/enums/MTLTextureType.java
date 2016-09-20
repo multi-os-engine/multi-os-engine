@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLTextureType {
-    @Generated
-    private MTLTextureType() {
-    }
-
     @Generated @NUInt public static final long Type1D = 0x0000000000000000L;
     @Generated @NUInt public static final long Type1DArray = 0x0000000000000001L;
     @Generated @NUInt public static final long Type2D = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class MTLTextureType {
     @Generated @NUInt public static final long Type2DMultisample = 0x0000000000000004L;
     @Generated @NUInt public static final long TypeCube = 0x0000000000000005L;
     @Generated @NUInt public static final long Type3D = 0x0000000000000007L;
+
+    @Generated
+    private MTLTextureType() {
+    }
 }

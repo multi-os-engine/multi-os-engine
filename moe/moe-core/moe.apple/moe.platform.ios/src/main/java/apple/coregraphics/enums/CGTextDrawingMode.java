@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGTextDrawingMode {
-    @Generated
-    private CGTextDrawingMode() {
-    }
-
     @Generated public static final int Fill = 0x00000000;
     @Generated public static final int Stroke = 0x00000001;
     @Generated public static final int FillStroke = 0x00000002;
@@ -32,4 +28,8 @@ public final class CGTextDrawingMode {
     @Generated public static final int StrokeClip = 0x00000005;
     @Generated public static final int FillStrokeClip = 0x00000006;
     @Generated public static final int Clip = 0x00000007;
+
+    @Generated
+    private CGTextDrawingMode() {
+    }
 }

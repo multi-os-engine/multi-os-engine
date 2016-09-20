@@ -61,6 +61,224 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     }
 
     /**
+     * URLByResolvingAliasFileAtURL:options:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLByResolvingAliasFileAtURL:options:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLByResolvingAliasFileAtURL:options:error:")
+    public static native NSURL URLByResolvingAliasFileAtURLOptionsError(NSURL url, @NUInt long options,
+            Ptr<NSError> error);
+
+    /**
+     * URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:")
+    public static native NSURL URLByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError(
+            NSData bookmarkData, @NUInt long options, NSURL relativeURL, BoolPtr isStale, Ptr<NSError> error);
+
+    /**
+     * URLWithString:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLWithString:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLWithString:")
+    public static native NSURL URLWithString(String URLString);
+
+    /**
+     * URLWithString:relativeToURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLWithString:relativeToURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLWithString:relativeToURL:")
+    public static native NSURL URLWithStringRelativeToURL(String URLString, NSURL baseURL);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSURL alloc();
+
+    /**
+     * bookmarkDataWithContentsOfURL:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/bookmarkDataWithContentsOfURL:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bookmarkDataWithContentsOfURL:error:")
+    public static native NSData bookmarkDataWithContentsOfURLError(NSURL bookmarkFileURL, Ptr<NSError> error);
+
+    /**
+     * fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:")
+    public static native NSURL fileURLWithFileSystemRepresentationIsDirectoryRelativeToURL(
+            @Mapped(CStringMapper.class) String path, boolean isDir, NSURL baseURL);
+
+    /**
+     * fileURLWithPath:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithPath:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fileURLWithPath:")
+    public static native NSURL fileURLWithPath(String path);
+
+    /**
+     * fileURLWithPath:isDirectory:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithPath:isDirectory:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fileURLWithPath:isDirectory:")
+    public static native NSURL fileURLWithPathIsDirectory(String path, boolean isDir);
+
+    /**
+     * fileURLWithPathComponents:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithPathComponents:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fileURLWithPathComponents:")
+    public static native NSURL fileURLWithPathComponents(NSArray<String> components);
+
+    /**
+     * resourceValuesForKeys:fromBookmarkData:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/resourceValuesForKeys:fromBookmarkData:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resourceValuesForKeys:fromBookmarkData:")
+    public static native NSDictionary<String, ?> resourceValuesForKeysFromBookmarkData(NSArray<String> keys,
+            NSData bookmarkData);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    /**
+     * writeBookmarkData:toURL:options:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/writeBookmarkData:toURL:options:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("writeBookmarkData:toURL:options:error:")
+    public static native boolean writeBookmarkDataToURLOptionsError(NSData bookmarkData, NSURL bookmarkFileURL,
+            @NUInt long options, Ptr<NSError> error);
+
+    @Generated
+    @Selector("URLWithDataRepresentation:relativeToURL:")
+    public static native NSURL URLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
+
+    @Generated
+    @Selector("absoluteURLWithDataRepresentation:relativeToURL:")
+    public static native NSURL absoluteURLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
+
+    @Generated
+    @Selector("fileURLWithPath:isDirectory:relativeToURL:")
+    public static native NSURL fileURLWithPathIsDirectoryRelativeToURL(String path, boolean isDir, NSURL baseURL);
+
+    @Generated
+    @Selector("fileURLWithPath:relativeToURL:")
+    public static native NSURL fileURLWithPathRelativeToURL(String path, NSURL baseURL);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
      * URLByAppendingPathComponent:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instm/NSURL/URLByAppendingPathComponent:">iOS Dev Center</a>
      */
@@ -101,24 +319,6 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     public native NSURL URLByDeletingPathExtension();
 
     /**
-     * URLByResolvingAliasFileAtURL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLByResolvingAliasFileAtURL:options:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLByResolvingAliasFileAtURL:options:error:")
-    public static native NSURL URLByResolvingAliasFileAtURLOptionsError(NSURL url, @NUInt long options,
-            Ptr<NSError> error);
-
-    /**
-     * URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:")
-    public static native NSURL URLByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError(
-            NSData bookmarkData, @NUInt long options, NSURL relativeURL, BoolPtr isStale, Ptr<NSError> error);
-
-    /**
      * URLByResolvingSymlinksInPath</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/URLByResolvingSymlinksInPath">iOS Dev Center</a>
      */
@@ -133,22 +333,6 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("URLByStandardizingPath")
     public native NSURL URLByStandardizingPath();
-
-    /**
-     * URLWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLWithString:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLWithString:")
-    public static native NSURL URLWithString(String URLString);
-
-    /**
-     * URLWithString:relativeToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/URLWithString:relativeToURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLWithString:relativeToURL:")
-    public static native NSURL URLWithStringRelativeToURL(String URLString, NSURL baseURL);
 
     /**
      * absoluteString</br>
@@ -166,11 +350,6 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Selector("absoluteURL")
     public native NSURL absoluteURL();
 
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSURL alloc();
-
     /**
      * baseURL</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/baseURL">iOS Dev Center</a>
@@ -178,14 +357,6 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("baseURL")
     public native NSURL baseURL();
-
-    /**
-     * bookmarkDataWithContentsOfURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/bookmarkDataWithContentsOfURL:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bookmarkDataWithContentsOfURL:error:")
-    public static native NSData bookmarkDataWithContentsOfURLError(NSURL bookmarkFileURL, Ptr<NSError> error);
 
     /**
      * bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:</br>
@@ -246,39 +417,6 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Selector("fileSystemRepresentation")
     @MappedReturn(CStringMapper.class)
     public native String fileSystemRepresentation();
-
-    /**
-     * fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:")
-    public static native NSURL fileURLWithFileSystemRepresentationIsDirectoryRelativeToURL(
-            @Mapped(CStringMapper.class) String path, boolean isDir, NSURL baseURL);
-
-    /**
-     * fileURLWithPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithPath:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fileURLWithPath:")
-    public static native NSURL fileURLWithPath(String path);
-
-    /**
-     * fileURLWithPath:isDirectory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithPath:isDirectory:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fileURLWithPath:isDirectory:")
-    public static native NSURL fileURLWithPathIsDirectory(String path, boolean isDir);
-
-    /**
-     * fileURLWithPathComponents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/fileURLWithPathComponents:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fileURLWithPathComponents:")
-    public static native NSURL fileURLWithPathComponents(NSArray<String> components);
 
     /**
      * fragment</br>
@@ -535,15 +673,6 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     public native NSDictionary<String, ?> resourceValuesForKeysError(NSArray<String> keys, Ptr<NSError> error);
 
     /**
-     * resourceValuesForKeys:fromBookmarkData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/resourceValuesForKeys:fromBookmarkData:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resourceValuesForKeys:fromBookmarkData:")
-    public static native NSDictionary<String, ?> resourceValuesForKeysFromBookmarkData(NSArray<String> keys,
-            NSData bookmarkData);
-
-    /**
      * scheme</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/instp/NSURL/scheme">iOS Dev Center</a>
      */
@@ -601,10 +730,6 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     public native void stopAccessingSecurityScopedResource();
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
@@ -618,34 +743,9 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Selector("user")
     public native String user();
 
-    /**
-     * writeBookmarkData:toURL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURL_Class/index.html#//apple_ref/occ/clm/NSURL/writeBookmarkData:toURL:options:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("writeBookmarkData:toURL:options:error:")
-    public static native boolean writeBookmarkDataToURLOptionsError(NSData bookmarkData, NSURL bookmarkFileURL,
-            @NUInt long options, Ptr<NSError> error);
-
-    @Generated
-    @Selector("URLWithDataRepresentation:relativeToURL:")
-    public static native NSURL URLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
-
-    @Generated
-    @Selector("absoluteURLWithDataRepresentation:relativeToURL:")
-    public static native NSURL absoluteURLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
-
     @Generated
     @Selector("dataRepresentation")
     public native NSData dataRepresentation();
-
-    @Generated
-    @Selector("fileURLWithPath:isDirectory:relativeToURL:")
-    public static native NSURL fileURLWithPathIsDirectoryRelativeToURL(String path, boolean isDir, NSURL baseURL);
-
-    @Generated
-    @Selector("fileURLWithPath:relativeToURL:")
-    public static native NSURL fileURLWithPathRelativeToURL(String path, NSURL baseURL);
 
     @Generated
     @Selector("hasDirectoryPath")
@@ -666,104 +766,4 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, QLPrev
     @Generated
     @Selector("initWithDataRepresentation:relativeToURL:")
     public native NSURL initWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

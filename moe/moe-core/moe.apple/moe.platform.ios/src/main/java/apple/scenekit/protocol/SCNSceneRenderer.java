@@ -88,6 +88,14 @@ public interface SCNSceneRenderer {
     boolean isJitteringEnabled();
 
     /**
+     * jitteringEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRenderer_Protocol/index.html#//apple_ref/occ/intfp/SCNSceneRenderer/jitteringEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setJitteringEnabled:")
+    void setJitteringEnabled(boolean value);
+
+    /**
      * isNodeInsideFrustum:withPointOfView:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRenderer_Protocol/index.html#//apple_ref/occ/intfm/SCNSceneRenderer/isNodeInsideFrustum:withPointOfView:">iOS Dev Center</a>
      */
@@ -102,6 +110,14 @@ public interface SCNSceneRenderer {
     @Generated
     @Selector("isPlaying")
     boolean isPlaying();
+
+    /**
+     * playing</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRenderer_Protocol/index.html#//apple_ref/occ/intfp/SCNSceneRenderer/playing">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPlaying:")
+    void setPlaying(boolean value);
 
     /**
      * loops</br>
@@ -136,13 +152,6 @@ public interface SCNSceneRenderer {
     boolean prepareObjectShouldAbortBlock(@Mapped(ObjCObjectMapper.class) Object object,
             @ObjCBlock(name = "call_prepareObjectShouldAbortBlock") Block_prepareObjectShouldAbortBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_prepareObjectShouldAbortBlock {
-        @Generated
-        boolean call_prepareObjectShouldAbortBlock();
-    }
-
     /**
      * prepareObjects:withCompletionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRenderer_Protocol/index.html#//apple_ref/occ/intfm/SCNSceneRenderer/prepareObjects:withCompletionHandler:">iOS Dev Center</a>
@@ -151,13 +160,6 @@ public interface SCNSceneRenderer {
     @Selector("prepareObjects:withCompletionHandler:")
     void prepareObjectsWithCompletionHandler(NSArray<?> objects,
             @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") Block_prepareObjectsWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_prepareObjectsWithCompletionHandler {
-        @Generated
-        void call_prepareObjectsWithCompletionHandler(boolean arg0);
-    }
 
     /**
      * projectPoint:</br>
@@ -201,14 +203,6 @@ public interface SCNSceneRenderer {
     void setDelegate(@Mapped(ObjCObjectMapper.class) Object value);
 
     /**
-     * jitteringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRenderer_Protocol/index.html#//apple_ref/occ/intfp/SCNSceneRenderer/jitteringEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setJitteringEnabled:")
-    void setJitteringEnabled(boolean value);
-
-    /**
      * loops</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRenderer_Protocol/index.html#//apple_ref/occ/intfp/SCNSceneRenderer/loops">iOS Dev Center</a>
      */
@@ -223,14 +217,6 @@ public interface SCNSceneRenderer {
     @Generated
     @Selector("setOverlaySKScene:")
     void setOverlaySKScene(SKScene value);
-
-    /**
-     * playing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRenderer_Protocol/index.html#//apple_ref/occ/intfp/SCNSceneRenderer/playing">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPlaying:")
-    void setPlaying(boolean value);
 
     /**
      * pointOfView</br>
@@ -377,13 +363,6 @@ public interface SCNSceneRenderer {
             SCNNode pointOfView,
             @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler {
-        @Generated
-        void call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler();
-    }
-
     /**
      * renderingAPI</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNSceneRenderer_Protocol/index.html#//apple_ref/occ/intfp/SCNSceneRenderer/renderingAPI">iOS Dev Center</a>
@@ -417,4 +396,25 @@ public interface SCNSceneRenderer {
     @Selector("stencilPixelFormat")
     @NUInt
     long stencilPixelFormat();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_prepareObjectShouldAbortBlock {
+        @Generated
+        boolean call_prepareObjectShouldAbortBlock();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_prepareObjectsWithCompletionHandler {
+        @Generated
+        void call_prepareObjectsWithCompletionHandler(boolean arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler {
+        @Generated
+        void call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler();
+    }
 }

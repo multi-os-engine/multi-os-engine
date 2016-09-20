@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLBlendFactor {
-    @Generated
-    private MTLBlendFactor() {
-    }
-
     @Generated @NUInt public static final long Zero = 0x0000000000000000L;
     @Generated @NUInt public static final long One = 0x0000000000000001L;
     @Generated @NUInt public static final long SourceColor = 0x0000000000000002L;
@@ -40,4 +36,8 @@ public final class MTLBlendFactor {
     @Generated @NUInt public static final long OneMinusBlendColor = 0x000000000000000CL;
     @Generated @NUInt public static final long BlendAlpha = 0x000000000000000DL;
     @Generated @NUInt public static final long OneMinusBlendAlpha = 0x000000000000000EL;
+
+    @Generated
+    private MTLBlendFactor() {
+    }
 }

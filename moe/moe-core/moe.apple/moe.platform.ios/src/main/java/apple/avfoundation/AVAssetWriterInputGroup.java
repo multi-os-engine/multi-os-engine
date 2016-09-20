@@ -68,35 +68,6 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     public static native AVAssetWriterInputGroup assetWriterInputGroupWithInputsDefaultInput(
             NSArray<? extends AVAssetWriterInput> inputs, AVAssetWriterInput defaultInput);
 
-    /**
-     * defaultInput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputGroup_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputGroup/defaultInput">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultInput")
-    public native AVAssetWriterInput defaultInput();
-
-    @Generated
-    @Selector("init")
-    public native AVAssetWriterInputGroup init();
-
-    /**
-     * initWithInputs:defaultInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputGroup_Class/index.html#//apple_ref/occ/instm/AVAssetWriterInputGroup/initWithInputs:defaultInput:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithInputs:defaultInput:")
-    public native AVAssetWriterInputGroup initWithInputsDefaultInput(NSArray<? extends AVAssetWriterInput> inputs,
-            AVAssetWriterInput defaultInput);
-
-    /**
-     * inputs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputGroup_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputGroup/inputs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("inputs")
-    public native NSArray<? extends AVAssetWriterInput> inputs();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -221,4 +192,33 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * defaultInput</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputGroup_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputGroup/defaultInput">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultInput")
+    public native AVAssetWriterInput defaultInput();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetWriterInputGroup init();
+
+    /**
+     * initWithInputs:defaultInput:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputGroup_Class/index.html#//apple_ref/occ/instm/AVAssetWriterInputGroup/initWithInputs:defaultInput:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithInputs:defaultInput:")
+    public native AVAssetWriterInputGroup initWithInputsDefaultInput(NSArray<? extends AVAssetWriterInput> inputs,
+            AVAssetWriterInput defaultInput);
+
+    /**
+     * inputs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputGroup_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputGroup/inputs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("inputs")
+    public native NSArray<? extends AVAssetWriterInput> inputs();
 }

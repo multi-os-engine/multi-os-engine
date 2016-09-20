@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioUnitParameterUnit {
-    @Generated
-    private AudioUnitParameterUnit() {
-    }
-
     @Generated public static final int Generic = 0x00000000;
     @Generated public static final int Indexed = 0x00000001;
     @Generated public static final int Boolean = 0x00000002;
@@ -51,4 +47,8 @@ public final class AudioUnitParameterUnit {
     @Generated public static final int Milliseconds = 0x00000018;
     @Generated public static final int Ratio = 0x00000019;
     @Generated public static final int CustomUnit = 0x0000001A;
+
+    @Generated
+    private AudioUnitParameterUnit() {
+    }
 }

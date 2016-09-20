@@ -54,55 +54,10 @@ public class MPTimedMetadata extends NSObject {
         super(peer);
     }
 
-    /**
-     * allMetadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPTimedMetadata_Class/index.html#//apple_ref/occ/instp/MPTimedMetadata/allMetadata">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allMetadata")
-    public native NSDictionary<?, ?> allMetadata();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native MPTimedMetadata alloc();
-
-    @Generated
-    @Selector("init")
-    public native MPTimedMetadata init();
-
-    /**
-     * key</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPTimedMetadata_Class/index.html#//apple_ref/occ/instp/MPTimedMetadata/key">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("key")
-    public native String key();
-
-    /**
-     * keyspace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPTimedMetadata_Class/index.html#//apple_ref/occ/instp/MPTimedMetadata/keyspace">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("keyspace")
-    public native String keyspace();
-
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPTimedMetadata_Class/index.html#//apple_ref/occ/instp/MPTimedMetadata/timestamp">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timestamp")
-    public native double timestamp();
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPTimedMetadata_Class/index.html#//apple_ref/occ/instp/MPTimedMetadata/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object value();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -203,4 +158,49 @@ public class MPTimedMetadata extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allMetadata</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPTimedMetadata_Class/index.html#//apple_ref/occ/instp/MPTimedMetadata/allMetadata">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allMetadata")
+    public native NSDictionary<?, ?> allMetadata();
+
+    @Generated
+    @Selector("init")
+    public native MPTimedMetadata init();
+
+    /**
+     * key</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPTimedMetadata_Class/index.html#//apple_ref/occ/instp/MPTimedMetadata/key">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("key")
+    public native String key();
+
+    /**
+     * keyspace</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPTimedMetadata_Class/index.html#//apple_ref/occ/instp/MPTimedMetadata/keyspace">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("keyspace")
+    public native String keyspace();
+
+    /**
+     * timestamp</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPTimedMetadata_Class/index.html#//apple_ref/occ/instp/MPTimedMetadata/timestamp">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timestamp")
+    public native double timestamp();
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPTimedMetadata_Class/index.html#//apple_ref/occ/instp/MPTimedMetadata/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object value();
 }

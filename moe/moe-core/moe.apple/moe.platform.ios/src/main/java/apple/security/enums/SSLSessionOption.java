@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SSLSessionOption {
-    @Generated
-    private SSLSessionOption() {
-    }
-
     @Generated public static final int BreakOnServerAuth = 0x00000000;
     @Generated public static final int BreakOnCertRequested = 0x00000001;
     @Generated public static final int BreakOnClientAuth = 0x00000002;
@@ -32,4 +28,8 @@ public final class SSLSessionOption {
     @Generated public static final int AllowServerIdentityChange = 0x00000005;
     @Generated public static final int Fallback = 0x00000006;
     @Generated public static final int BreakOnClientHello = 0x00000007;
+
+    @Generated
+    private SSLSessionOption() {
+    }
 }

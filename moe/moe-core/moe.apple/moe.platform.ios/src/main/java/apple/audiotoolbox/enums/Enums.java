@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kAUNodeInteraction_Connection = 0x00000001;
     @Generated public static final int kAUNodeInteraction_InputCallback = 0x00000002;
     @Generated public static final int kAudioFileUnspecifiedError = 0x7768743F;
@@ -497,4 +493,8 @@ public final class Enums {
     @Generated public static final int kSequenceTrackProperty_TrackLength = 0x00000005;
     @Generated public static final int kSequenceTrackProperty_TimeResolution = 0x00000006;
     @Generated public static final int kAudioToolboxError_NoTrackDestination = 0xFFFEFB60;
+
+    @Generated
+    private Enums() {
+    }
 }

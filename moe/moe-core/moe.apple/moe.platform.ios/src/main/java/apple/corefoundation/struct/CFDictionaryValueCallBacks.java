@@ -32,11 +32,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CFDictionaryValueCallBacks extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CFDictionaryValueCallBacks() {
@@ -61,45 +61,17 @@ public final class CFDictionaryValueCallBacks extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_retain {
-        @Generated
-        ConstVoidPtr call_retain(VoidPtr arg0, ConstVoidPtr arg1);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_release {
-        @Generated
-        void call_release(VoidPtr arg0, ConstVoidPtr arg1);
-    }
 
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_copyDescription {
-        @Generated
-        VoidPtr call_copyDescription(ConstVoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setEqual(@FunctionPtr(name = "call_equal") Function_equal value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_equal {
-        @Generated
-        byte call_equal(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -120,4 +92,32 @@ public final class CFDictionaryValueCallBacks extends StructObject {
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_equal")
     public native Function_equal equal();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_retain {
+        @Generated
+        ConstVoidPtr call_retain(VoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_release {
+        @Generated
+        void call_release(VoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_copyDescription {
+        @Generated
+        VoidPtr call_copyDescription(ConstVoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_equal {
+        @Generated
+        byte call_equal(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
 }

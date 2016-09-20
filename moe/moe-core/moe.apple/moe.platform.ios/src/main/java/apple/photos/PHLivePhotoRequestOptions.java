@@ -64,80 +64,6 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     public static native PHLivePhotoRequestOptions alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * deliveryMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/deliveryMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deliveryMode")
-    @NInt
-    public native long deliveryMode();
-
-    @Generated
-    @Selector("init")
-    public native PHLivePhotoRequestOptions init();
-
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isNetworkAccessAllowed")
-    public native boolean isNetworkAccessAllowed();
-
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/progressHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("progressHandler")
-    @ObjCBlock(name = "call_progressHandler_ret")
-    public native Block_progressHandler_ret progressHandler();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_progressHandler_ret {
-        @Generated
-        void call_progressHandler_ret(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
-    }
-
-    /**
-     * deliveryMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/deliveryMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDeliveryMode:")
-    public native void setDeliveryMode(@NInt long value);
-
-    /**
-     * networkAccessAllowed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/networkAccessAllowed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNetworkAccessAllowed:")
-    public native void setNetworkAccessAllowed(boolean value);
-
-    /**
-     * progressHandler</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/progressHandler">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProgressHandler:")
-    public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setProgressHandler {
-        @Generated
-        void call_setProgressHandler(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -236,4 +162,78 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * deliveryMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/deliveryMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deliveryMode")
+    @NInt
+    public native long deliveryMode();
+
+    @Generated
+    @Selector("init")
+    public native PHLivePhotoRequestOptions init();
+
+    /**
+     * networkAccessAllowed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/networkAccessAllowed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isNetworkAccessAllowed")
+    public native boolean isNetworkAccessAllowed();
+
+    /**
+     * networkAccessAllowed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/networkAccessAllowed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNetworkAccessAllowed:")
+    public native void setNetworkAccessAllowed(boolean value);
+
+    /**
+     * progressHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/progressHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("progressHandler")
+    @ObjCBlock(name = "call_progressHandler_ret")
+    public native Block_progressHandler_ret progressHandler();
+
+    /**
+     * deliveryMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/deliveryMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDeliveryMode:")
+    public native void setDeliveryMode(@NInt long value);
+
+    /**
+     * progressHandler</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHLivePhotoRequestOptions_Class/index.html#//apple_ref/occ/instp/PHLivePhotoRequestOptions/progressHandler">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProgressHandler:")
+    public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_progressHandler_ret {
+        @Generated
+        void call_progressHandler_ret(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setProgressHandler {
+        @Generated
+        void call_setProgressHandler(double arg0, NSError arg1, BoolPtr arg2, NSDictionary<?, ?> arg3);
+    }
 }

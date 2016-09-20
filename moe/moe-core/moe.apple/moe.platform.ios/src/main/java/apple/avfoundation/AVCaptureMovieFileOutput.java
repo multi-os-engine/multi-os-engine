@@ -61,53 +61,6 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     public static native AVCaptureMovieFileOutput alloc();
 
     @Generated
-    @Selector("init")
-    public native AVCaptureMovieFileOutput init();
-
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/metadata">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("metadata")
-    public native NSArray<?> metadata();
-
-    /**
-     * movieFragmentInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/movieFragmentInterval">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("movieFragmentInterval")
-    @ByValue
-    public native CMTime movieFragmentInterval();
-
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/metadata">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMetadata:")
-    public native void setMetadata(NSArray<?> value);
-
-    /**
-     * movieFragmentInterval</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/movieFragmentInterval">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMovieFragmentInterval:")
-    public native void setMovieFragmentInterval(@ByValue CMTime value);
-
-    @Generated
-    @Selector("recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:")
-    public native boolean recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection(
-            AVCaptureConnection connection);
-
-    @Generated
-    @Selector("setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection:")
-    public native void setRecordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection(
-            boolean doRecordChanges, AVCaptureConnection connection);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -206,4 +159,51 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVCaptureMovieFileOutput init();
+
+    /**
+     * metadata</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/metadata">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("metadata")
+    public native NSArray<?> metadata();
+
+    /**
+     * movieFragmentInterval</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/movieFragmentInterval">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("movieFragmentInterval")
+    @ByValue
+    public native CMTime movieFragmentInterval();
+
+    /**
+     * metadata</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/metadata">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMetadata:")
+    public native void setMetadata(NSArray<?> value);
+
+    /**
+     * movieFragmentInterval</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureMovieFileOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureMovieFileOutput/movieFragmentInterval">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMovieFragmentInterval:")
+    public native void setMovieFragmentInterval(@ByValue CMTime value);
+
+    @Generated
+    @Selector("recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:")
+    public native boolean recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection(
+            AVCaptureConnection connection);
+
+    @Generated
+    @Selector("setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection:")
+    public native void setRecordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection(
+            boolean doRecordChanges, AVCaptureConnection connection);
 }

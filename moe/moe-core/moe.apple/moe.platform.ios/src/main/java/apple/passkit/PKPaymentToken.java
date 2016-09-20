@@ -60,52 +60,6 @@ public class PKPaymentToken extends NSObject {
     public static native PKPaymentToken alloc();
 
     @Generated
-    @Selector("init")
-    public native PKPaymentToken init();
-
-    /**
-     * paymentData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentToken_Ref/index.html#//apple_ref/occ/instp/PKPaymentToken/paymentData">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("paymentData")
-    public native NSData paymentData();
-
-    /**
-     * paymentInstrumentName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentToken_Ref/index.html#//apple_ref/occ/instp/PKPaymentToken/paymentInstrumentName">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("paymentInstrumentName")
-    public native String paymentInstrumentName();
-
-    /**
-     * paymentNetwork</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentToken_Ref/index.html#//apple_ref/occ/instp/PKPaymentToken/paymentNetwork">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("paymentNetwork")
-    public native String paymentNetwork();
-
-    /**
-     * transactionIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentToken_Ref/index.html#//apple_ref/occ/instp/PKPaymentToken/transactionIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transactionIdentifier")
-    public native String transactionIdentifier();
-
-    /**
-     * paymentMethod</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentToken_Ref/index.html#//apple_ref/occ/instp/PKPaymentToken/paymentMethod">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("paymentMethod")
-    public native PKPaymentMethod paymentMethod();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -204,4 +158,50 @@ public class PKPaymentToken extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native PKPaymentToken init();
+
+    /**
+     * paymentData</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentToken_Ref/index.html#//apple_ref/occ/instp/PKPaymentToken/paymentData">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("paymentData")
+    public native NSData paymentData();
+
+    /**
+     * paymentInstrumentName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentToken_Ref/index.html#//apple_ref/occ/instp/PKPaymentToken/paymentInstrumentName">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("paymentInstrumentName")
+    public native String paymentInstrumentName();
+
+    /**
+     * paymentNetwork</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentToken_Ref/index.html#//apple_ref/occ/instp/PKPaymentToken/paymentNetwork">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("paymentNetwork")
+    public native String paymentNetwork();
+
+    /**
+     * transactionIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentToken_Ref/index.html#//apple_ref/occ/instp/PKPaymentToken/transactionIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transactionIdentifier")
+    public native String transactionIdentifier();
+
+    /**
+     * paymentMethod</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentToken_Ref/index.html#//apple_ref/occ/instp/PKPaymentToken/paymentMethod">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("paymentMethod")
+    public native PKPaymentMethod paymentMethod();
 }

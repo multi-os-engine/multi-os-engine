@@ -61,20 +61,6 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
     public static native NSURLCredential alloc();
 
     /**
-     * certificates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/certificates">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("certificates")
-    public native NSArray<?> certificates();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
      * credentialForTrust:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/clm/NSURLCredential/credentialForTrust:">iOS Dev Center</a>
      */
@@ -101,93 +87,8 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
             @NUInt long persistence);
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * hasPassword</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/hasPassword">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hasPassword")
-    public native boolean hasPassword();
-
-    /**
-     * identity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/identity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identity")
-    public native SecIdentityRef identity();
-
-    @Generated
-    @Selector("init")
-    public native NSURLCredential init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSURLCredential initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithIdentity:certificates:persistence:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instm/NSURLCredential/initWithIdentity:certificates:persistence:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithIdentity:certificates:persistence:")
-    public native NSURLCredential initWithIdentityCertificatesPersistence(SecIdentityRef identity, NSArray<?> certArray,
-            @NUInt long persistence);
-
-    /**
-     * initWithTrust:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instm/NSURLCredential/initWithTrust:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTrust:")
-    public native NSURLCredential initWithTrust(SecTrustRef trust);
-
-    /**
-     * initWithUser:password:persistence:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instm/NSURLCredential/initWithUser:password:persistence:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithUser:password:persistence:")
-    public native NSURLCredential initWithUserPasswordPersistence(String user, String password,
-            @NUInt long persistence);
-
-    /**
-     * password</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/password">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("password")
-    public native String password();
-
-    /**
-     * persistence</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/persistence">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("persistence")
-    @NUInt
-    public native long persistence();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * user</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/user">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("user")
-    public native String user();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -288,4 +189,103 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * certificates</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/certificates">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("certificates")
+    public native NSArray<?> certificates();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * hasPassword</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/hasPassword">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hasPassword")
+    public native boolean hasPassword();
+
+    /**
+     * identity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/identity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identity")
+    public native SecIdentityRef identity();
+
+    @Generated
+    @Selector("init")
+    public native NSURLCredential init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSURLCredential initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithIdentity:certificates:persistence:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instm/NSURLCredential/initWithIdentity:certificates:persistence:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithIdentity:certificates:persistence:")
+    public native NSURLCredential initWithIdentityCertificatesPersistence(SecIdentityRef identity, NSArray<?> certArray,
+            @NUInt long persistence);
+
+    /**
+     * initWithTrust:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instm/NSURLCredential/initWithTrust:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTrust:")
+    public native NSURLCredential initWithTrust(SecTrustRef trust);
+
+    /**
+     * initWithUser:password:persistence:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instm/NSURLCredential/initWithUser:password:persistence:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithUser:password:persistence:")
+    public native NSURLCredential initWithUserPasswordPersistence(String user, String password,
+            @NUInt long persistence);
+
+    /**
+     * password</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/password">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("password")
+    public native String password();
+
+    /**
+     * persistence</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/persistence">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("persistence")
+    @NUInt
+    public native long persistence();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * user</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredential_Class/index.html#//apple_ref/occ/instp/NSURLCredential/user">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("user")
+    public native String user();
 }

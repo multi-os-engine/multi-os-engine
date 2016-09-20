@@ -60,46 +60,9 @@ public class CKQueryNotification extends CKNotification {
     public static native CKQueryNotification alloc();
 
     @Generated
-    @Selector("init")
-    public native CKQueryNotification init();
-
-    /**
-     * isPublicDatabase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryNotification_class/index.html#//apple_ref/occ/instp/CKQueryNotification/isPublicDatabase">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPublicDatabase")
-    public native boolean isPublicDatabase();
-
-    @Generated
     @Selector("notificationFromRemoteNotificationDictionary:")
     public static native CKQueryNotification notificationFromRemoteNotificationDictionary(
             NSDictionary<String, ? extends NSObject> notificationDictionary);
-
-    /**
-     * queryNotificationReason</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryNotification_class/index.html#//apple_ref/occ/instp/CKQueryNotification/queryNotificationReason">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("queryNotificationReason")
-    @NInt
-    public native long queryNotificationReason();
-
-    /**
-     * recordFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryNotification_class/index.html#//apple_ref/occ/instp/CKQueryNotification/recordFields">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recordFields")
-    public native NSDictionary<String, ?> recordFields();
-
-    /**
-     * recordID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryNotification_class/index.html#//apple_ref/occ/instp/CKQueryNotification/recordID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recordID")
-    public native CKRecordID recordID();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -200,4 +163,41 @@ public class CKQueryNotification extends CKNotification {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CKQueryNotification init();
+
+    /**
+     * isPublicDatabase</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryNotification_class/index.html#//apple_ref/occ/instp/CKQueryNotification/isPublicDatabase">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPublicDatabase")
+    public native boolean isPublicDatabase();
+
+    /**
+     * queryNotificationReason</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryNotification_class/index.html#//apple_ref/occ/instp/CKQueryNotification/queryNotificationReason">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("queryNotificationReason")
+    @NInt
+    public native long queryNotificationReason();
+
+    /**
+     * recordFields</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryNotification_class/index.html#//apple_ref/occ/instp/CKQueryNotification/recordFields">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recordFields")
+    public native NSDictionary<String, ?> recordFields();
+
+    /**
+     * recordID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKQueryNotification_class/index.html#//apple_ref/occ/instp/CKQueryNotification/recordID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recordID")
+    public native CKRecordID recordID();
 }

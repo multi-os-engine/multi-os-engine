@@ -56,82 +56,10 @@ public class HMServiceGroup extends NSObject {
         super(peer);
     }
 
-    /**
-     * addService:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instm/HMServiceGroup/addService:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addService:completionHandler:")
-    public native void addServiceCompletionHandler(HMService service,
-            @ObjCBlock(name = "call_addServiceCompletionHandler") Block_addServiceCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addServiceCompletionHandler {
-        @Generated
-        void call_addServiceCompletionHandler(NSError arg0);
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native HMServiceGroup alloc();
-
-    @Generated
-    @Selector("init")
-    public native HMServiceGroup init();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instp/HMServiceGroup/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * removeService:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instm/HMServiceGroup/removeService:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeService:completionHandler:")
-    public native void removeServiceCompletionHandler(HMService service,
-            @ObjCBlock(name = "call_removeServiceCompletionHandler") Block_removeServiceCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_removeServiceCompletionHandler {
-        @Generated
-        void call_removeServiceCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * services</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instp/HMServiceGroup/services">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("services")
-    public native NSArray<? extends HMService> services();
-
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instm/HMServiceGroup/updateName:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updateNameCompletionHandler {
-        @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
-    }
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -232,4 +160,76 @@ public class HMServiceGroup extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addService:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instm/HMServiceGroup/addService:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addService:completionHandler:")
+    public native void addServiceCompletionHandler(HMService service,
+            @ObjCBlock(name = "call_addServiceCompletionHandler") Block_addServiceCompletionHandler completion);
+
+    @Generated
+    @Selector("init")
+    public native HMServiceGroup init();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instp/HMServiceGroup/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * removeService:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instm/HMServiceGroup/removeService:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeService:completionHandler:")
+    public native void removeServiceCompletionHandler(HMService service,
+            @ObjCBlock(name = "call_removeServiceCompletionHandler") Block_removeServiceCompletionHandler completion);
+
+    /**
+     * services</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instp/HMServiceGroup/services">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("services")
+    public native NSArray<? extends HMService> services();
+
+    /**
+     * updateName:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMServiceGroup_Class/index.html#//apple_ref/occ/instm/HMServiceGroup/updateName:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateName:completionHandler:")
+    public native void updateNameCompletionHandler(String name,
+            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+
+    @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addServiceCompletionHandler {
+        @Generated
+        void call_addServiceCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeServiceCompletionHandler {
+        @Generated
+        void call_removeServiceCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateNameCompletionHandler {
+        @Generated
+        void call_updateNameCompletionHandler(NSError arg0);
+    }
 }

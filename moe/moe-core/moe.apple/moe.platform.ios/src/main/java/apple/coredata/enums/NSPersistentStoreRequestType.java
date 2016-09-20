@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSPersistentStoreRequestType {
-    @Generated
-    private NSPersistentStoreRequestType() {
-    }
-
     @Generated @NUInt public static final long FetchRequestType = 0x0000000000000001L;
     @Generated @NUInt public static final long SaveRequestType = 0x0000000000000002L;
     @Generated @NUInt public static final long BatchUpdateRequestType = 0x0000000000000006L;
     @Generated @NUInt public static final long BatchDeleteRequestType = 0x0000000000000007L;
+
+    @Generated
+    private NSPersistentStoreRequestType() {
+    }
 }

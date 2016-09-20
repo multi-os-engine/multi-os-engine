@@ -60,83 +60,6 @@ public class SKDownload extends NSObject {
     @Selector("alloc")
     public static native SKDownload alloc();
 
-    /**
-     * contentIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/contentIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentIdentifier")
-    public native String contentIdentifier();
-
-    /**
-     * contentLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/contentLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentLength")
-    public native long contentLength();
-
-    /**
-     * contentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/contentURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentURL")
-    public native NSURL contentURL();
-
-    /**
-     * contentVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/contentVersion">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentVersion")
-    public native String contentVersion();
-
-    /**
-     * downloadState</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/downloadState">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadState")
-    @NInt
-    public native long downloadState();
-
-    /**
-     * error</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/error">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("error")
-    public native NSError error();
-
-    @Generated
-    @Selector("init")
-    public native SKDownload init();
-
-    /**
-     * progress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/progress">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("progress")
-    public native float progress();
-
-    /**
-     * timeRemaining</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/timeRemaining">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeRemaining")
-    public native double timeRemaining();
-
-    /**
-     * transaction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/transaction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transaction")
-    public native SKPaymentTransaction transaction();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -236,4 +159,81 @@ public class SKDownload extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * contentIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/contentIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentIdentifier")
+    public native String contentIdentifier();
+
+    /**
+     * contentLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/contentLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentLength")
+    public native long contentLength();
+
+    /**
+     * contentURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/contentURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentURL")
+    public native NSURL contentURL();
+
+    /**
+     * contentVersion</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/contentVersion">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentVersion")
+    public native String contentVersion();
+
+    /**
+     * downloadState</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/downloadState">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadState")
+    @NInt
+    public native long downloadState();
+
+    /**
+     * error</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/error">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("error")
+    public native NSError error();
+
+    @Generated
+    @Selector("init")
+    public native SKDownload init();
+
+    /**
+     * progress</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/progress">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("progress")
+    public native float progress();
+
+    /**
+     * timeRemaining</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/timeRemaining">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeRemaining")
+    public native double timeRemaining();
+
+    /**
+     * transaction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKDownload_Ref/index.html#//apple_ref/occ/instp/SKDownload/transaction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transaction")
+    public native SKPaymentTransaction transaction();
 }

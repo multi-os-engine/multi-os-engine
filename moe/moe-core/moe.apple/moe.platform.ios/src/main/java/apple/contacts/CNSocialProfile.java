@@ -62,29 +62,6 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native CNSocialProfile alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CNSocialProfile init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNSocialProfile initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithUrlString:username:userIdentifier:service:")
-    public native CNSocialProfile initWithUrlStringUsernameUserIdentifierService(String urlString, String username,
-            String userIdentifier, String service);
-
     /**
      * localizedStringForKey:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/clm/CNSocialProfile/localizedStringForKey:">iOS Dev Center</a>
@@ -101,47 +78,9 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
     @Selector("localizedStringForService:")
     public static native String localizedStringForService(String service);
 
-    /**
-     * service</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/service">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("service")
-    public native String service();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * urlString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/urlString">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("urlString")
-    public native String urlString();
-
-    /**
-     * userIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/userIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userIdentifier")
-    public native String userIdentifier();
-
-    /**
-     * username</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/username">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("username")
-    public native String username();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -242,4 +181,65 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CNSocialProfile init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNSocialProfile initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithUrlString:username:userIdentifier:service:")
+    public native CNSocialProfile initWithUrlStringUsernameUserIdentifierService(String urlString, String username,
+            String userIdentifier, String service);
+
+    /**
+     * service</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/service">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("service")
+    public native String service();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * urlString</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/urlString">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("urlString")
+    public native String urlString();
+
+    /**
+     * userIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/userIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userIdentifier")
+    public native String userIdentifier();
+
+    /**
+     * username</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNSocialProfile_Class/index.html#//apple_ref/occ/instp/CNSocialProfile/username">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("username")
+    public native String username();
 }

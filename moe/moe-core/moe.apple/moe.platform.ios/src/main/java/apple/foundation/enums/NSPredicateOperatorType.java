@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSPredicateOperatorType {
-    @Generated
-    private NSPredicateOperatorType() {
-    }
-
     @Generated @NUInt public static final long LessThanPredicateOperatorType = 0x0000000000000000L;
     @Generated @NUInt public static final long LessThanOrEqualToPredicateOperatorType = 0x0000000000000001L;
     @Generated @NUInt public static final long GreaterThanPredicateOperatorType = 0x0000000000000002L;
@@ -39,4 +35,8 @@ public final class NSPredicateOperatorType {
     @Generated @NUInt public static final long CustomSelectorPredicateOperatorType = 0x000000000000000BL;
     @Generated @NUInt public static final long ContainsPredicateOperatorType = 0x0000000000000063L;
     @Generated @NUInt public static final long BetweenPredicateOperatorType = 0x0000000000000064L;
+
+    @Generated
+    private NSPredicateOperatorType() {
+    }
 }

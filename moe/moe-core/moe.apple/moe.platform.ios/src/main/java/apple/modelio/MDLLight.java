@@ -60,19 +60,6 @@ public class MDLLight extends MDLObject {
     @Selector("alloc")
     public static native MDLLight alloc();
 
-    @Generated
-    @Selector("init")
-    public native MDLLight init();
-
-    /**
-     * lightType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLight_Class/index.html#//apple_ref/occ/instp/MDLLight/lightType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lightType")
-    @NUInt
-    public native long lightType();
-
     /**
      * lightWithSCNLight:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLight_Class/index.html#//apple_ref/occ/clm/MDLLight/lightWithSCNLight:">iOS Dev Center</a>
@@ -84,14 +71,6 @@ public class MDLLight extends MDLObject {
     @Generated
     @Selector("objectWithSCNNode:")
     public static native MDLLight objectWithSCNNode(SCNNode scnNode);
-
-    /**
-     * lightType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLight_Class/index.html#//apple_ref/occ/instp/MDLLight/lightType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLightType:")
-    public native void setLightType(@NUInt long value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -192,4 +171,25 @@ public class MDLLight extends MDLObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MDLLight init();
+
+    /**
+     * lightType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLight_Class/index.html#//apple_ref/occ/instp/MDLLight/lightType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lightType")
+    @NUInt
+    public native long lightType();
+
+    /**
+     * lightType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLLight_Class/index.html#//apple_ref/occ/instp/MDLLight/lightType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLightType:")
+    public native void setLightType(@NUInt long value);
 }

@@ -63,67 +63,6 @@ public class SFSafariViewController extends UIViewController {
     @Selector("alloc")
     public static native SFSafariViewController alloc();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/index.html#//apple_ref/occ/instp/SFSafariViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native SFSafariViewControllerDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native SFSafariViewController init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SFSafariViewController initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native SFSafariViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    /**
-     * initWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/index.html#//apple_ref/occ/instm/SFSafariViewController/initWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:")
-    public native SFSafariViewController initWithURL(NSURL URL);
-
-    /**
-     * initWithURL:entersReaderIfAvailable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/index.html#//apple_ref/occ/instm/SFSafariViewController/initWithURL:entersReaderIfAvailable:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:entersReaderIfAvailable:")
-    public native SFSafariViewController initWithURLEntersReaderIfAvailable(NSURL URL, boolean entersReaderIfAvailable);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/index.html#//apple_ref/occ/instp/SFSafariViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/index.html#//apple_ref/occ/instp/SFSafariViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -235,4 +174,65 @@ public class SFSafariViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/index.html#//apple_ref/occ/instp/SFSafariViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native SFSafariViewControllerDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native SFSafariViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SFSafariViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native SFSafariViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    /**
+     * initWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/index.html#//apple_ref/occ/instm/SFSafariViewController/initWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:")
+    public native SFSafariViewController initWithURL(NSURL URL);
+
+    /**
+     * initWithURL:entersReaderIfAvailable:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/index.html#//apple_ref/occ/instm/SFSafariViewController/initWithURL:entersReaderIfAvailable:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:entersReaderIfAvailable:")
+    public native SFSafariViewController initWithURLEntersReaderIfAvailable(NSURL URL, boolean entersReaderIfAvailable);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/index.html#//apple_ref/occ/instp/SFSafariViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/index.html#//apple_ref/occ/instp/SFSafariViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 }

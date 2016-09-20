@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIDocumentPickerMode {
-    @Generated
-    private UIDocumentPickerMode() {
-    }
-
     @Generated @NUInt public static final long Import = 0x0000000000000000L;
     @Generated @NUInt public static final long Open = 0x0000000000000001L;
     @Generated @NUInt public static final long ExportToService = 0x0000000000000002L;
     @Generated @NUInt public static final long MoveToService = 0x0000000000000003L;
+
+    @Generated
+    private UIDocumentPickerMode() {
+    }
 }

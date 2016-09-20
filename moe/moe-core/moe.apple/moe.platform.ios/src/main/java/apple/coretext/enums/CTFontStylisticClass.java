@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTFontStylisticClass {
-    @Generated
-    private CTFontStylisticClass() {
-    }
-
     @Generated public static final int ClassUnknown = 0x00000000;
     @Generated public static final int ClassOldStyleSerifs = 0x10000000;
     @Generated public static final int ClassTransitionalSerifs = 0x20000000;
@@ -46,4 +42,8 @@ public final class CTFontStylisticClass {
     @Generated public static final int OrnamentalsClass = 0x90000000;
     @Generated public static final int ScriptsClass = 0xA0000000;
     @Generated public static final int SymbolicClass = 0xC0000000;
+
+    @Generated
+    private CTFontStylisticClass() {
+    }
 }

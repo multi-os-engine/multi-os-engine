@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGLineCap {
-    @Generated
-    private CGLineCap() {
-    }
-
     @Generated public static final int Butt = 0x00000000;
     @Generated public static final int Round = 0x00000001;
     @Generated public static final int Square = 0x00000002;
+
+    @Generated
+    private CGLineCap() {
+    }
 }

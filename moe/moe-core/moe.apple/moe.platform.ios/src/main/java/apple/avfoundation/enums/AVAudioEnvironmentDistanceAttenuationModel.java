@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVAudioEnvironmentDistanceAttenuationModel {
-    @Generated
-    private AVAudioEnvironmentDistanceAttenuationModel() {
-    }
-
     @Generated @NInt public static final long Exponential = 0x0000000000000001L;
     @Generated @NInt public static final long Inverse = 0x0000000000000002L;
     @Generated @NInt public static final long Linear = 0x0000000000000003L;
+
+    @Generated
+    private AVAudioEnvironmentDistanceAttenuationModel() {
+    }
 }

@@ -88,10 +88,6 @@ public class CNContactVCardSerialization extends NSObject {
     public static native CNKeyDescriptor descriptorForRequiredKeys();
 
     @Generated
-    @Selector("init")
-    public native CNContactVCardSerialization init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -190,4 +186,8 @@ public class CNContactVCardSerialization extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CNContactVCardSerialization init();
 }

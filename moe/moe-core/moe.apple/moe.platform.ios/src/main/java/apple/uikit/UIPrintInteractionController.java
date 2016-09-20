@@ -82,6 +82,130 @@ public class UIPrintInteractionController extends NSObject {
     public static native boolean canPrintURL(NSURL url);
 
     /**
+     * isPrintingAvailable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionController_Class/index.html#//apple_ref/occ/clm/UIPrintInteractionController/isPrintingAvailable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPrintingAvailable")
+    public static native boolean isPrintingAvailable();
+
+    /**
+     * printableUTIs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionController_Class/index.html#//apple_ref/occ/clm/UIPrintInteractionController/printableUTIs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("printableUTIs")
+    public static native NSSet<String> printableUTIs();
+
+    /**
+     * sharedPrintController</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionController_Class/index.html#//apple_ref/occ/clm/UIPrintInteractionController/sharedPrintController">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sharedPrintController")
+    public static native UIPrintInteractionController sharedPrintController();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
      * delegate</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionController_Class/index.html#//apple_ref/occ/instp/UIPrintInteractionController/delegate">iOS Dev Center</a>
      */
@@ -103,14 +227,6 @@ public class UIPrintInteractionController extends NSObject {
     public native UIPrintInteractionController init();
 
     /**
-     * isPrintingAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionController_Class/index.html#//apple_ref/occ/clm/UIPrintInteractionController/isPrintingAvailable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPrintingAvailable")
-    public static native boolean isPrintingAvailable();
-
-    /**
      * presentAnimated:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionController_Class/index.html#//apple_ref/occ/instm/UIPrintInteractionController/presentAnimated:completionHandler:">iOS Dev Center</a>
      */
@@ -118,13 +234,6 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("presentAnimated:completionHandler:")
     public native boolean presentAnimatedCompletionHandler(boolean animated,
             @ObjCBlock(name = "call_presentAnimatedCompletionHandler") Block_presentAnimatedCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_presentAnimatedCompletionHandler {
-        @Generated
-        void call_presentAnimatedCompletionHandler(UIPrintInteractionController arg0, boolean arg1, NSError arg2);
-    }
 
     /**
      * presentFromBarButtonItem:animated:completionHandler:</br>
@@ -135,14 +244,6 @@ public class UIPrintInteractionController extends NSObject {
     public native boolean presentFromBarButtonItemAnimatedCompletionHandler(UIBarButtonItem item, boolean animated,
             @ObjCBlock(name = "call_presentFromBarButtonItemAnimatedCompletionHandler") Block_presentFromBarButtonItemAnimatedCompletionHandler completion);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_presentFromBarButtonItemAnimatedCompletionHandler {
-        @Generated
-        void call_presentFromBarButtonItemAnimatedCompletionHandler(UIPrintInteractionController arg0, boolean arg1,
-                NSError arg2);
-    }
-
     /**
      * presentFromRect:inView:animated:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionController_Class/index.html#//apple_ref/occ/instm/UIPrintInteractionController/presentFromRect:inView:animated:completionHandler:">iOS Dev Center</a>
@@ -152,14 +253,6 @@ public class UIPrintInteractionController extends NSObject {
     public native boolean presentFromRectInViewAnimatedCompletionHandler(@ByValue CGRect rect, UIView view,
             boolean animated,
             @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_presentFromRectInViewAnimatedCompletionHandler {
-        @Generated
-        void call_presentFromRectInViewAnimatedCompletionHandler(UIPrintInteractionController arg0, boolean arg1,
-                NSError arg2);
-    }
 
     /**
      * printFormatter</br>
@@ -201,21 +294,6 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("printToPrinter:completionHandler:")
     public native boolean printToPrinterCompletionHandler(UIPrinter printer,
             @ObjCBlock(name = "call_printToPrinterCompletionHandler") Block_printToPrinterCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_printToPrinterCompletionHandler {
-        @Generated
-        void call_printToPrinterCompletionHandler(UIPrintInteractionController arg0, boolean arg1, NSError arg2);
-    }
-
-    /**
-     * printableUTIs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionController_Class/index.html#//apple_ref/occ/clm/UIPrintInteractionController/printableUTIs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("printableUTIs")
-    public static native NSSet<String> printableUTIs();
 
     /**
      * printingItem</br>
@@ -323,14 +401,6 @@ public class UIPrintInteractionController extends NSObject {
     public native void setShowsPaperSelectionForLoadedPapers(boolean value);
 
     /**
-     * sharedPrintController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionController_Class/index.html#//apple_ref/occ/clm/UIPrintInteractionController/sharedPrintController">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sharedPrintController")
-    public static native UIPrintInteractionController sharedPrintController();
-
-    /**
      * showsNumberOfCopies</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInteractionController_Class/index.html#//apple_ref/occ/instp/UIPrintInteractionController/showsNumberOfCopies">iOS Dev Center</a>
      */
@@ -354,103 +424,33 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("showsPaperSelectionForLoadedPapers")
     public native boolean showsPaperSelectionForLoadedPapers();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_presentAnimatedCompletionHandler {
+        @Generated
+        void call_presentAnimatedCompletionHandler(UIPrintInteractionController arg0, boolean arg1, NSError arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_presentFromBarButtonItemAnimatedCompletionHandler {
+        @Generated
+        void call_presentFromBarButtonItemAnimatedCompletionHandler(UIPrintInteractionController arg0, boolean arg1,
+                NSError arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_presentFromRectInViewAnimatedCompletionHandler {
+        @Generated
+        void call_presentFromRectInViewAnimatedCompletionHandler(UIPrintInteractionController arg0, boolean arg1,
+                NSError arg2);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_printToPrinterCompletionHandler {
+        @Generated
+        void call_printToPrinterCompletionHandler(UIPrintInteractionController arg0, boolean arg1, NSError arg2);
+    }
 }

@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AU3DMixerAttenuationCurve {
-    @Generated
-    private AU3DMixerAttenuationCurve() {
-    }
-
     @Generated public static final int Power = 0x00000000;
     @Generated public static final int Exponential = 0x00000001;
     @Generated public static final int Inverse = 0x00000002;
     @Generated public static final int Linear = 0x00000003;
+
+    @Generated
+    private AU3DMixerAttenuationCurve() {
+    }
 }

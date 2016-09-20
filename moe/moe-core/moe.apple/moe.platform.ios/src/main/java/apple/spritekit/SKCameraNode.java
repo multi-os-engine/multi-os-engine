@@ -60,30 +60,6 @@ public class SKCameraNode extends SKNode {
     @Selector("alloc")
     public static native SKCameraNode alloc();
 
-    /**
-     * containedNodeSet</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCameraNode/index.html#//apple_ref/occ/instm/SKCameraNode/containedNodeSet">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containedNodeSet")
-    public native NSSet<? extends SKNode> containedNodeSet();
-
-    /**
-     * containsNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCameraNode/index.html#//apple_ref/occ/instm/SKCameraNode/containsNode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containsNode:")
-    public native boolean containsNode(SKNode node);
-
-    @Generated
-    @Selector("init")
-    public native SKCameraNode init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKCameraNode initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("node")
     public static native SKCameraNode node();
@@ -209,4 +185,28 @@ public class SKCameraNode extends SKNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * containedNodeSet</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCameraNode/index.html#//apple_ref/occ/instm/SKCameraNode/containedNodeSet">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containedNodeSet")
+    public native NSSet<? extends SKNode> containedNodeSet();
+
+    /**
+     * containsNode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCameraNode/index.html#//apple_ref/occ/instm/SKCameraNode/containsNode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containsNode:")
+    public native boolean containsNode(SKNode node);
+
+    @Generated
+    @Selector("init")
+    public native SKCameraNode init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKCameraNode initWithCoder(NSCoder aDecoder);
 }

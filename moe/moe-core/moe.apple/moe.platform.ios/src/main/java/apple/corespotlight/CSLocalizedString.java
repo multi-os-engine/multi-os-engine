@@ -76,129 +76,6 @@ public class CSLocalizedString extends NSString {
     public static native CSLocalizedString alloc();
 
     @Generated
-    @Selector("init")
-    public native CSLocalizedString init();
-
-    @Generated
-    @Selector("initWithBytes:length:encoding:")
-    public native CSLocalizedString initWithBytesLengthEncoding(ConstVoidPtr bytes, @NUInt long len,
-            @NUInt long encoding);
-
-    @Generated
-    @Selector("initWithBytesNoCopy:length:encoding:freeWhenDone:")
-    public native CSLocalizedString initWithBytesNoCopyLengthEncodingFreeWhenDone(VoidPtr bytes, @NUInt long len,
-            @NUInt long encoding, boolean freeBuffer);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithCString:")
-    public native CSLocalizedString initWithCString(ConstBytePtr bytes);
-
-    @Generated
-    @Selector("initWithCString:encoding:")
-    public native CSLocalizedString initWithCStringEncoding(ConstBytePtr nullTerminatedCString, @NUInt long encoding);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithCString:length:")
-    public native CSLocalizedString initWithCStringLength(ConstBytePtr bytes, @NUInt long length);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithCStringNoCopy:length:freeWhenDone:")
-    public native CSLocalizedString initWithCStringNoCopyLengthFreeWhenDone(BytePtr bytes, @NUInt long length,
-            boolean freeBuffer);
-
-    @Generated
-    @Selector("initWithCharacters:length:")
-    public native CSLocalizedString initWithCharactersLength(ConstCharPtr characters, @NUInt long length);
-
-    @Generated
-    @Selector("initWithCharactersNoCopy:length:freeWhenDone:")
-    public native CSLocalizedString initWithCharactersNoCopyLengthFreeWhenDone(CharPtr characters, @NUInt long length,
-            boolean freeBuffer);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CSLocalizedString initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithContentsOfFile:")
-    public native CSLocalizedString initWithContentsOfFile(String path);
-
-    @Generated
-    @Selector("initWithContentsOfFile:encoding:error:")
-    public native CSLocalizedString initWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Selector("initWithContentsOfFile:usedEncoding:error:")
-    public native CSLocalizedString initWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithContentsOfURL:")
-    public native CSLocalizedString initWithContentsOfURL(NSURL url);
-
-    @Generated
-    @Selector("initWithContentsOfURL:encoding:error:")
-    public native CSLocalizedString initWithContentsOfURLEncodingError(NSURL url, @NUInt long enc, Ptr<NSError> error);
-
-    @Generated
-    @Selector("initWithContentsOfURL:usedEncoding:error:")
-    public native CSLocalizedString initWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc, Ptr<NSError> error);
-
-    @Generated
-    @Selector("initWithData:encoding:")
-    public native CSLocalizedString initWithDataEncoding(NSData data, @NUInt long encoding);
-
-    @Generated
-    @Variadic()
-    @Selector("initWithFormat:")
-    public native CSLocalizedString initWithFormat(String format, Object... varargs);
-
-    @Generated
-    @Selector("initWithFormat:arguments:")
-    public native CSLocalizedString initWithFormatArguments(String format, BytePtr argList);
-
-    @Generated
-    @Variadic()
-    @Selector("initWithFormat:locale:")
-    public native CSLocalizedString initWithFormatLocale(String format, @Mapped(ObjCObjectMapper.class) Object locale,
-            Object... varargs);
-
-    @Generated
-    @Selector("initWithFormat:locale:arguments:")
-    public native CSLocalizedString initWithFormatLocaleArguments(String format,
-            @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList);
-
-    /**
-     * initWithLocalizedStrings:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSLocalizedString_Class/index.html#//apple_ref/occ/instm/CSLocalizedString/initWithLocalizedStrings:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithLocalizedStrings:")
-    public native CSLocalizedString initWithLocalizedStrings(NSDictionary<?, ?> localizedStrings);
-
-    @Generated
-    @Selector("initWithString:")
-    public native CSLocalizedString initWithString(String aString);
-
-    @Generated
-    @Selector("initWithUTF8String:")
-    public native CSLocalizedString initWithUTF8String(ConstBytePtr nullTerminatedCString);
-
-    /**
-     * localizedString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSLocalizedString_Class/index.html#//apple_ref/occ/instm/CSLocalizedString/localizedString">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedString")
-    public native String localizedString();
-
-    @Generated
     @Selector("string")
     public static native CSLocalizedString string();
 
@@ -392,13 +269,136 @@ public class CSLocalizedString extends NSString {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CSLocalizedString init();
+
+    @Generated
+    @Selector("initWithBytes:length:encoding:")
+    public native CSLocalizedString initWithBytesLengthEncoding(ConstVoidPtr bytes, @NUInt long len,
+            @NUInt long encoding);
+
+    @Generated
+    @Selector("initWithBytesNoCopy:length:encoding:freeWhenDone:")
+    public native CSLocalizedString initWithBytesNoCopyLengthEncodingFreeWhenDone(VoidPtr bytes, @NUInt long len,
+            @NUInt long encoding, boolean freeBuffer);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithCString:")
+    public native CSLocalizedString initWithCString(ConstBytePtr bytes);
+
+    @Generated
+    @Selector("initWithCString:encoding:")
+    public native CSLocalizedString initWithCStringEncoding(ConstBytePtr nullTerminatedCString, @NUInt long encoding);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithCString:length:")
+    public native CSLocalizedString initWithCStringLength(ConstBytePtr bytes, @NUInt long length);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithCStringNoCopy:length:freeWhenDone:")
+    public native CSLocalizedString initWithCStringNoCopyLengthFreeWhenDone(BytePtr bytes, @NUInt long length,
+            boolean freeBuffer);
+
+    @Generated
+    @Selector("initWithCharacters:length:")
+    public native CSLocalizedString initWithCharactersLength(ConstCharPtr characters, @NUInt long length);
+
+    @Generated
+    @Selector("initWithCharactersNoCopy:length:freeWhenDone:")
+    public native CSLocalizedString initWithCharactersNoCopyLengthFreeWhenDone(CharPtr characters, @NUInt long length,
+            boolean freeBuffer);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CSLocalizedString initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithContentsOfFile:")
+    public native CSLocalizedString initWithContentsOfFile(String path);
+
+    @Generated
+    @Selector("initWithContentsOfFile:encoding:error:")
+    public native CSLocalizedString initWithContentsOfFileEncodingError(String path, @NUInt long enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithContentsOfFile:usedEncoding:error:")
+    public native CSLocalizedString initWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithContentsOfURL:")
+    public native CSLocalizedString initWithContentsOfURL(NSURL url);
+
+    @Generated
+    @Selector("initWithContentsOfURL:encoding:error:")
+    public native CSLocalizedString initWithContentsOfURLEncodingError(NSURL url, @NUInt long enc, Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithContentsOfURL:usedEncoding:error:")
+    public native CSLocalizedString initWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc, Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithData:encoding:")
+    public native CSLocalizedString initWithDataEncoding(NSData data, @NUInt long encoding);
+
+    @Generated
+    @Variadic()
+    @Selector("initWithFormat:")
+    public native CSLocalizedString initWithFormat(String format, Object... varargs);
+
+    @Generated
+    @Selector("initWithFormat:arguments:")
+    public native CSLocalizedString initWithFormatArguments(String format, BytePtr argList);
+
+    @Generated
+    @Variadic()
+    @Selector("initWithFormat:locale:")
+    public native CSLocalizedString initWithFormatLocale(String format, @Mapped(ObjCObjectMapper.class) Object locale,
+            Object... varargs);
+
+    @Generated
+    @Selector("initWithFormat:locale:arguments:")
+    public native CSLocalizedString initWithFormatLocaleArguments(String format,
+            @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList);
+
+    /**
+     * initWithLocalizedStrings:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSLocalizedString_Class/index.html#//apple_ref/occ/instm/CSLocalizedString/initWithLocalizedStrings:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithLocalizedStrings:")
+    public native CSLocalizedString initWithLocalizedStrings(NSDictionary<?, ?> localizedStrings);
+
+    @Generated
+    @Selector("initWithString:")
+    public native CSLocalizedString initWithString(String aString);
+
+    @Generated
+    @Selector("initWithUTF8String:")
+    public native CSLocalizedString initWithUTF8String(ConstBytePtr nullTerminatedCString);
+
+    /**
+     * localizedString</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSLocalizedString_Class/index.html#//apple_ref/occ/instm/CSLocalizedString/localizedString">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedString")
+    public native String localizedString();
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

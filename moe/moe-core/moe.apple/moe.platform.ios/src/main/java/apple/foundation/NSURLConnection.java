@@ -67,14 +67,6 @@ public class NSURLConnection extends NSObject {
     public static native boolean canHandleRequest(NSURLRequest request);
 
     /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/cancel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancel")
-    public native void cancel();
-
-    /**
      * connectionWithRequest:delegate:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/clm/NSURLConnection/connectionWithRequest:delegate:">iOS Dev Center</a>
      */
@@ -83,62 +75,6 @@ public class NSURLConnection extends NSObject {
     @Selector("connectionWithRequest:delegate:")
     public static native NSURLConnection connectionWithRequestDelegate(NSURLRequest request,
             @Mapped(ObjCObjectMapper.class) Object delegate);
-
-    /**
-     * currentRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instp/NSURLConnection/currentRequest">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentRequest")
-    public native NSURLRequest currentRequest();
-
-    @Generated
-    @Selector("init")
-    public native NSURLConnection init();
-
-    /**
-     * initWithRequest:delegate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/initWithRequest:delegate:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("initWithRequest:delegate:")
-    public native NSURLConnection initWithRequestDelegate(NSURLRequest request,
-            @Mapped(ObjCObjectMapper.class) Object delegate);
-
-    /**
-     * initWithRequest:delegate:startImmediately:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/initWithRequest:delegate:startImmediately:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("initWithRequest:delegate:startImmediately:")
-    public native NSURLConnection initWithRequestDelegateStartImmediately(NSURLRequest request,
-            @Mapped(ObjCObjectMapper.class) Object delegate, boolean startImmediately);
-
-    /**
-     * newsstandAssetDownload</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instp/NSURLConnection/newsstandAssetDownload">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newsstandAssetDownload")
-    public native NKAssetDownload newsstandAssetDownload();
-
-    /**
-     * originalRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instp/NSURLConnection/originalRequest">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("originalRequest")
-    public native NSURLRequest originalRequest();
-
-    /**
-     * scheduleInRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/scheduleInRunLoop:forMode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("scheduleInRunLoop:forMode:")
-    public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
 
     /**
      * sendAsynchronousRequest:queue:completionHandler:</br>
@@ -151,13 +87,6 @@ public class NSURLConnection extends NSObject {
             NSOperationQueue queue,
             @ObjCBlock(name = "call_sendAsynchronousRequestQueueCompletionHandler") Block_sendAsynchronousRequestQueueCompletionHandler handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sendAsynchronousRequestQueueCompletionHandler {
-        @Generated
-        void call_sendAsynchronousRequestQueueCompletionHandler(NSURLResponse arg0, NSData arg1, NSError arg2);
-    }
-
     /**
      * sendSynchronousRequest:returningResponse:error:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/clm/NSURLConnection/sendSynchronousRequest:returningResponse:error:">iOS Dev Center</a>
@@ -167,30 +96,6 @@ public class NSURLConnection extends NSObject {
     @Selector("sendSynchronousRequest:returningResponse:error:")
     public static native NSData sendSynchronousRequestReturningResponseError(NSURLRequest request,
             Ptr<NSURLResponse> response, Ptr<NSError> error);
-
-    /**
-     * setDelegateQueue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/setDelegateQueue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegateQueue:")
-    public native void setDelegateQueue(NSOperationQueue queue);
-
-    /**
-     * start</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/start">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("start")
-    public native void start();
-
-    /**
-     * unscheduleFromRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/unscheduleFromRunLoop:forMode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unscheduleFromRunLoop:forMode:")
-    public native void unscheduleFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -291,4 +196,99 @@ public class NSURLConnection extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cancel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/cancel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancel")
+    public native void cancel();
+
+    /**
+     * currentRequest</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instp/NSURLConnection/currentRequest">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentRequest")
+    public native NSURLRequest currentRequest();
+
+    @Generated
+    @Selector("init")
+    public native NSURLConnection init();
+
+    /**
+     * initWithRequest:delegate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/initWithRequest:delegate:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("initWithRequest:delegate:")
+    public native NSURLConnection initWithRequestDelegate(NSURLRequest request,
+            @Mapped(ObjCObjectMapper.class) Object delegate);
+
+    /**
+     * initWithRequest:delegate:startImmediately:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/initWithRequest:delegate:startImmediately:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("initWithRequest:delegate:startImmediately:")
+    public native NSURLConnection initWithRequestDelegateStartImmediately(NSURLRequest request,
+            @Mapped(ObjCObjectMapper.class) Object delegate, boolean startImmediately);
+
+    /**
+     * newsstandAssetDownload</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instp/NSURLConnection/newsstandAssetDownload">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newsstandAssetDownload")
+    public native NKAssetDownload newsstandAssetDownload();
+
+    /**
+     * originalRequest</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instp/NSURLConnection/originalRequest">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("originalRequest")
+    public native NSURLRequest originalRequest();
+
+    /**
+     * scheduleInRunLoop:forMode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/scheduleInRunLoop:forMode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("scheduleInRunLoop:forMode:")
+    public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
+
+    /**
+     * setDelegateQueue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/setDelegateQueue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegateQueue:")
+    public native void setDelegateQueue(NSOperationQueue queue);
+
+    /**
+     * start</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/start">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("start")
+    public native void start();
+
+    /**
+     * unscheduleFromRunLoop:forMode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/occ/instm/NSURLConnection/unscheduleFromRunLoop:forMode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unscheduleFromRunLoop:forMode:")
+    public native void unscheduleFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sendAsynchronousRequestQueueCompletionHandler {
+        @Generated
+        void call_sendAsynchronousRequestQueueCompletionHandler(NSURLResponse arg0, NSData arg1, NSError arg2);
+    }
 }

@@ -56,16 +56,8 @@ public class NSMessagePort extends NSPort {
     public static native NSMessagePort alloc();
 
     @Generated
-    @Selector("init")
-    public native NSMessagePort init();
-
-    @Generated
     @Selector("port")
     public static native NSPort port();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMessagePort initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -166,4 +158,12 @@ public class NSMessagePort extends NSPort {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSMessagePort init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSMessagePort initWithCoder(NSCoder aDecoder);
 }

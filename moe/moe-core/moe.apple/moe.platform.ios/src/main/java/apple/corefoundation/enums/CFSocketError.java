@@ -21,11 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFSocketError {
-    @Generated
-    private CFSocketError() {
-    }
-
     @Generated @NInt public static final long Success = 0x0000000000000000L;
     @Generated @NInt public static final long Error = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long Timeout = 0xFFFFFFFFFFFFFFFEL;
+    @Generated
+    private CFSocketError() {
+    }
 }

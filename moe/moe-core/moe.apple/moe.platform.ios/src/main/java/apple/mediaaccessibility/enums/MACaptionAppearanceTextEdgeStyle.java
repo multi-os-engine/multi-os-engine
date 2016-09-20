@@ -21,14 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MACaptionAppearanceTextEdgeStyle {
-    @Generated
-    private MACaptionAppearanceTextEdgeStyle() {
-    }
-
     @Generated @NInt public static final long Undefined = 0x0000000000000000L;
     @Generated @NInt public static final long None = 0x0000000000000001L;
     @Generated @NInt public static final long Raised = 0x0000000000000002L;
     @Generated @NInt public static final long Depressed = 0x0000000000000003L;
     @Generated @NInt public static final long Uniform = 0x0000000000000004L;
     @Generated @NInt public static final long DropShadow = 0x0000000000000005L;
+    @Generated
+    private MACaptionAppearanceTextEdgeStyle() {
+    }
 }

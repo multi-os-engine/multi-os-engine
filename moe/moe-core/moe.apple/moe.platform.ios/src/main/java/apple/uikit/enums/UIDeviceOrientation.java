@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIDeviceOrientation {
-    @Generated
-    private UIDeviceOrientation() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Portrait = 0x0000000000000001L;
     @Generated @NInt public static final long PortraitUpsideDown = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class UIDeviceOrientation {
     @Generated @NInt public static final long LandscapeRight = 0x0000000000000004L;
     @Generated @NInt public static final long FaceUp = 0x0000000000000005L;
     @Generated @NInt public static final long FaceDown = 0x0000000000000006L;
+
+    @Generated
+    private UIDeviceOrientation() {
+    }
 }

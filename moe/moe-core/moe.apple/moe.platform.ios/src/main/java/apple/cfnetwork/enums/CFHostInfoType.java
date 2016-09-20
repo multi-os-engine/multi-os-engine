@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CFHostInfoType {
-    @Generated
-    private CFHostInfoType() {
-    }
-
     @Generated public static final int Addresses = 0x00000000;
     @Generated public static final int Names = 0x00000001;
     @Generated public static final int Reachability = 0x00000002;
+
+    @Generated
+    private CFHostInfoType() {
+    }
 }

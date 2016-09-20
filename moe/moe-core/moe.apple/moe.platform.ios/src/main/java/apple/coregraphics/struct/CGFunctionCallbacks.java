@@ -32,11 +32,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CGFunctionCallbacks extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CGFunctionCallbacks() {
@@ -69,23 +69,9 @@ public final class CGFunctionCallbacks extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setEvaluate(@FunctionPtr(name = "call_evaluate") Function_evaluate value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_evaluate {
-        @Generated
-        void call_evaluate(VoidPtr arg0, ConstNFloatPtr arg1, NFloatPtr arg2);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_releaseInfo {
-        @Generated
-        void call_releaseInfo(VoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -96,4 +82,18 @@ public final class CGFunctionCallbacks extends StructObject {
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
     public native Function_releaseInfo releaseInfo();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_evaluate {
+        @Generated
+        void call_evaluate(VoidPtr arg0, ConstNFloatPtr arg1, NFloatPtr arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_releaseInfo {
+        @Generated
+        void call_releaseInfo(VoidPtr arg0);
+    }
 }

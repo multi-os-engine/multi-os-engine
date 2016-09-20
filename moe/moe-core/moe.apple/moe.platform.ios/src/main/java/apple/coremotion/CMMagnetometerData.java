@@ -63,23 +63,6 @@ public class CMMagnetometerData extends CMLogItem {
     public static native CMMagnetometerData alloc();
 
     @Generated
-    @Selector("init")
-    public native CMMagnetometerData init();
-
-    /**
-     * magneticField</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMagnetometerData_Class/index.html#//apple_ref/occ/instp/CMMagnetometerData/magneticField">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("magneticField")
-    @ByValue
-    public native CMMagneticField magneticField();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMMagnetometerData initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -179,13 +162,30 @@ public class CMMagnetometerData extends CMLogItem {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CMMagnetometerData init();
+
+    /**
+     * magneticField</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMagnetometerData_Class/index.html#//apple_ref/occ/instp/CMMagnetometerData/magneticField">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("magneticField")
+    @ByValue
+    public native CMMagneticField magneticField();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CMMagnetometerData initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

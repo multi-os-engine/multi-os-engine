@@ -61,26 +61,6 @@ public class GKRule extends NSObject {
     public static native GKRule alloc();
 
     /**
-     * evaluatePredicateWithSystem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRule_Class/index.html#//apple_ref/occ/instm/GKRule/evaluatePredicateWithSystem:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("evaluatePredicateWithSystem:")
-    public native boolean evaluatePredicateWithSystem(GKRuleSystem system);
-
-    @Generated
-    @Selector("init")
-    public native GKRule init();
-
-    /**
-     * performActionWithSystem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRule_Class/index.html#//apple_ref/occ/instm/GKRule/performActionWithSystem:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("performActionWithSystem:")
-    public native void performActionWithSystem(GKRuleSystem system);
-
-    /**
      * ruleWithBlockPredicate:action:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRule_Class/index.html#//apple_ref/occ/clm/GKRule/ruleWithBlockPredicate:action:">iOS Dev Center</a>
      */
@@ -89,20 +69,6 @@ public class GKRule extends NSObject {
     public static native GKRule ruleWithBlockPredicateAction(
             @ObjCBlock(name = "call_ruleWithBlockPredicateAction_0") Block_ruleWithBlockPredicateAction_0 predicate,
             @ObjCBlock(name = "call_ruleWithBlockPredicateAction_1") Block_ruleWithBlockPredicateAction_1 action);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_ruleWithBlockPredicateAction_0 {
-        @Generated
-        boolean call_ruleWithBlockPredicateAction_0(GKRuleSystem arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_ruleWithBlockPredicateAction_1 {
-        @Generated
-        void call_ruleWithBlockPredicateAction_1(GKRuleSystem arg0);
-    }
 
     /**
      * ruleWithPredicate:assertingFact:grade:</br>
@@ -121,23 +87,6 @@ public class GKRule extends NSObject {
     @Selector("ruleWithPredicate:retractingFact:grade:")
     public static native GKRule ruleWithPredicateRetractingFactGrade(NSPredicate predicate,
             @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
-
-    /**
-     * salience</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRule_Class/index.html#//apple_ref/occ/instp/GKRule/salience">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("salience")
-    @NInt
-    public native long salience();
-
-    /**
-     * salience</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRule_Class/index.html#//apple_ref/occ/instp/GKRule/salience">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSalience:")
-    public native void setSalience(@NInt long value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -238,4 +187,55 @@ public class GKRule extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * evaluatePredicateWithSystem:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRule_Class/index.html#//apple_ref/occ/instm/GKRule/evaluatePredicateWithSystem:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("evaluatePredicateWithSystem:")
+    public native boolean evaluatePredicateWithSystem(GKRuleSystem system);
+
+    @Generated
+    @Selector("init")
+    public native GKRule init();
+
+    /**
+     * performActionWithSystem:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRule_Class/index.html#//apple_ref/occ/instm/GKRule/performActionWithSystem:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("performActionWithSystem:")
+    public native void performActionWithSystem(GKRuleSystem system);
+
+    /**
+     * salience</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRule_Class/index.html#//apple_ref/occ/instp/GKRule/salience">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("salience")
+    @NInt
+    public native long salience();
+
+    /**
+     * salience</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKRule_Class/index.html#//apple_ref/occ/instp/GKRule/salience">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSalience:")
+    public native void setSalience(@NInt long value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_ruleWithBlockPredicateAction_0 {
+        @Generated
+        boolean call_ruleWithBlockPredicateAction_0(GKRuleSystem arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_ruleWithBlockPredicateAction_1 {
+        @Generated
+        void call_ruleWithBlockPredicateAction_1(GKRuleSystem arg0);
+    }
 }

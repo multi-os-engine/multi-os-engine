@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIDocumentSaveOperation {
+    @Generated @NInt public static final long Creating = 0x0000000000000000L;
+    @Generated @NInt public static final long Overwriting = 0x0000000000000001L;
+
     @Generated
     private UIDocumentSaveOperation() {
     }
-
-    @Generated @NInt public static final long Creating = 0x0000000000000000L;
-    @Generated @NInt public static final long Overwriting = 0x0000000000000001L;
 }

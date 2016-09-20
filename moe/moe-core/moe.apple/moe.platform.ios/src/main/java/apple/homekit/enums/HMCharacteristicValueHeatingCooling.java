@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HMCharacteristicValueHeatingCooling {
-    @Generated
-    private HMCharacteristicValueHeatingCooling() {
-    }
-
     @Generated @NInt public static final long Off = 0x0000000000000000L;
     @Generated @NInt public static final long Heat = 0x0000000000000001L;
     @Generated @NInt public static final long Cool = 0x0000000000000002L;
     @Generated @NInt public static final long Auto = 0x0000000000000003L;
+
+    @Generated
+    private HMCharacteristicValueHeatingCooling() {
+    }
 }

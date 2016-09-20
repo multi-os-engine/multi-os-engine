@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGImageMetadataErrors {
-    @Generated
-    private CGImageMetadataErrors() {
-    }
-
     @Generated public static final int Unknown = 0x00000000;
     @Generated public static final int UnsupportedFormat = 0x00000001;
     @Generated public static final int BadArgument = 0x00000002;
     @Generated public static final int ConflictingArguments = 0x00000003;
     @Generated public static final int PrefixConflict = 0x00000004;
+
+    @Generated
+    private CGImageMetadataErrors() {
+    }
 }

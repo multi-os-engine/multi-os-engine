@@ -62,28 +62,6 @@ public class CIWarpKernel extends CIKernel {
     public static native CIWarpKernel alloc();
 
     /**
-     * applyWithExtent:roiCallback:inputImage:arguments:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIWarpKernel_Class/index.html#//apple_ref/occ/instm/CIWarpKernel/applyWithExtent:roiCallback:inputImage:arguments:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyWithExtent:roiCallback:inputImage:arguments:")
-    public native CIImage applyWithExtentRoiCallbackInputImageArguments(@ByValue CGRect extent,
-            @ObjCBlock(name = "call_applyWithExtentRoiCallbackInputImageArguments") Block_applyWithExtentRoiCallbackInputImageArguments callback,
-            CIImage image, NSArray<?> args);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_applyWithExtentRoiCallbackInputImageArguments {
-        @Generated
-        @ByValue
-        CGRect call_applyWithExtentRoiCallbackInputImageArguments(int arg0, @ByValue CGRect arg1);
-    }
-
-    @Generated
-    @Selector("init")
-    public native CIWarpKernel init();
-
-    /**
      * kernelWithString:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIWarpKernel_Class/index.html#//apple_ref/occ/clm/CIWarpKernel/kernelWithString:">iOS Dev Center</a>
      */
@@ -194,4 +172,26 @@ public class CIWarpKernel extends CIKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * applyWithExtent:roiCallback:inputImage:arguments:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIWarpKernel_Class/index.html#//apple_ref/occ/instm/CIWarpKernel/applyWithExtent:roiCallback:inputImage:arguments:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyWithExtent:roiCallback:inputImage:arguments:")
+    public native CIImage applyWithExtentRoiCallbackInputImageArguments(@ByValue CGRect extent,
+            @ObjCBlock(name = "call_applyWithExtentRoiCallbackInputImageArguments") Block_applyWithExtentRoiCallbackInputImageArguments callback,
+            CIImage image, NSArray<?> args);
+
+    @Generated
+    @Selector("init")
+    public native CIWarpKernel init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applyWithExtentRoiCallbackInputImageArguments {
+        @Generated
+        @ByValue
+        CGRect call_applyWithExtentRoiCallbackInputImageArguments(int arg0, @ByValue CGRect arg1);
+    }
 }

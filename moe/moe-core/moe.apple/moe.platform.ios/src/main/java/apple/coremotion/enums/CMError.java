@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CMError {
-    @Generated
-    private CMError() {
-    }
-
     @Generated public static final int CMErrorNULL = 0x00000064;
     @Generated public static final int CMErrorDeviceRequiresMovement = 0x00000065;
     @Generated public static final int CMErrorTrueNorthNotAvailable = 0x00000066;
@@ -36,4 +32,8 @@ public final class CMError {
     @Generated public static final int CMErrorNotAvailable = 0x0000006D;
     @Generated public static final int CMErrorNotEntitled = 0x0000006E;
     @Generated public static final int CMErrorNotAuthorized = 0x0000006F;
+
+    @Generated
+    private CMError() {
+    }
 }

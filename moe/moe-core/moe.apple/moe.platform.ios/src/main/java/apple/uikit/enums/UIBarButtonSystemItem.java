@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIBarButtonSystemItem {
-    @Generated
-    private UIBarButtonSystemItem() {
-    }
-
     @Generated @NInt public static final long Done = 0x0000000000000000L;
     @Generated @NInt public static final long Cancel = 0x0000000000000001L;
     @Generated @NInt public static final long Edit = 0x0000000000000002L;
@@ -49,4 +45,8 @@ public final class UIBarButtonSystemItem {
     @Generated @NInt public static final long Undo = 0x0000000000000015L;
     @Generated @NInt public static final long Redo = 0x0000000000000016L;
     @Generated @NInt public static final long PageCurl = 0x0000000000000017L;
+
+    @Generated
+    private UIBarButtonSystemItem() {
+    }
 }

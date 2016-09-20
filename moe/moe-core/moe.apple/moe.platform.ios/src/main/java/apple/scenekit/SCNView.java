@@ -79,328 +79,6 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("alloc")
     public static native SCNView alloc();
 
-    /**
-     * allowsCameraControl</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/allowsCameraControl">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allowsCameraControl")
-    public native boolean allowsCameraControl();
-
-    /**
-     * antialiasingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/antialiasingMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("antialiasingMode")
-    @NUInt
-    public native long antialiasingMode();
-
-    @Generated
-    @Selector("autoenablesDefaultLighting")
-    public native boolean autoenablesDefaultLighting();
-
-    @Generated
-    @Selector("context")
-    public native VoidPtr context();
-
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object delegate();
-
-    /**
-     * eaglContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/eaglContext">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("eaglContext")
-    public native EAGLContext eaglContext();
-
-    @Generated
-    @Selector("hitTest:options:")
-    public native NSArray<? extends SCNHitTestResult> hitTestOptions(@ByValue CGPoint point,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("init")
-    public native SCNView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native SCNView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * initWithFrame:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/initWithFrame:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFrame:options:")
-    public native SCNView initWithFrameOptions(@ByValue CGRect frame, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("isJitteringEnabled")
-    public native boolean isJitteringEnabled();
-
-    @Generated
-    @Selector("isNodeInsideFrustum:withPointOfView:")
-    public native boolean isNodeInsideFrustumWithPointOfView(SCNNode node, SCNNode pointOfView);
-
-    @Generated
-    @Selector("isPlaying")
-    public native boolean isPlaying();
-
-    @Generated
-    @Selector("loops")
-    public native boolean loops();
-
-    @Generated
-    @Selector("overlaySKScene")
-    public native SKScene overlaySKScene();
-
-    /**
-     * pause:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/pause:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pause:")
-    public native void pause(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    /**
-     * play:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/play:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("play:")
-    public native void play(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
-    @Selector("pointOfView")
-    public native SCNNode pointOfView();
-
-    /**
-     * preferredFramesPerSecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/preferredFramesPerSecond">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preferredFramesPerSecond")
-    @NInt
-    public native long preferredFramesPerSecond();
-
-    @Generated
-    @Selector("prepareObject:shouldAbortBlock:")
-    public native boolean prepareObjectShouldAbortBlock(@Mapped(ObjCObjectMapper.class) Object object,
-            @ObjCBlock(name = "call_prepareObjectShouldAbortBlock") SCNSceneRenderer.Block_prepareObjectShouldAbortBlock block);
-
-    @Generated
-    @Selector("prepareObjects:withCompletionHandler:")
-    public native void prepareObjectsWithCompletionHandler(NSArray<?> objects,
-            @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") SCNSceneRenderer.Block_prepareObjectsWithCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("projectPoint:")
-    @ByValue
-    public native SCNVector3 projectPoint(@ByValue SCNVector3 point);
-
-    @Generated
-    @Selector("scene")
-    public native SCNScene scene();
-
-    @Generated
-    @Selector("sceneTime")
-    public native double sceneTime();
-
-    /**
-     * allowsCameraControl</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/allowsCameraControl">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAllowsCameraControl:")
-    public native void setAllowsCameraControl(boolean value);
-
-    /**
-     * antialiasingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/antialiasingMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAntialiasingMode:")
-    public native void setAntialiasingMode(@NUInt long value);
-
-    @Generated
-    @Selector("setAutoenablesDefaultLighting:")
-    public native void setAutoenablesDefaultLighting(boolean value);
-
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
-
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * eaglContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/eaglContext">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEaglContext:")
-    public native void setEaglContext(EAGLContext value);
-
-    @Generated
-    @Selector("setJitteringEnabled:")
-    public native void setJitteringEnabled(boolean value);
-
-    @Generated
-    @Selector("setLoops:")
-    public native void setLoops(boolean value);
-
-    @Generated
-    @Selector("setOverlaySKScene:")
-    public native void setOverlaySKScene(SKScene value);
-
-    @Generated
-    @Selector("setPlaying:")
-    public native void setPlaying(boolean value);
-
-    @Generated
-    @Selector("setPointOfView:")
-    public native void setPointOfView(SCNNode value);
-
-    /**
-     * preferredFramesPerSecond</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/preferredFramesPerSecond">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPreferredFramesPerSecond:")
-    public native void setPreferredFramesPerSecond(@NInt long value);
-
-    @Generated
-    @Selector("setScene:")
-    public native void setScene(SCNScene value);
-
-    @Generated
-    @Selector("setSceneTime:")
-    public native void setSceneTime(double value);
-
-    @Generated
-    @Selector("setShowsStatistics:")
-    public native void setShowsStatistics(boolean value);
-
-    @Generated
-    @Selector("setTechnique:")
-    public native void setTechnique(SCNTechnique value);
-
-    @Generated
-    @Selector("showsStatistics")
-    public native boolean showsStatistics();
-
-    /**
-     * snapshot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/snapshot">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("snapshot")
-    public native UIImage snapshot();
-
-    /**
-     * stop:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/stop:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stop:")
-    public native void stop(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    @Generated
-    @Selector("technique")
-    public native SCNTechnique technique();
-
-    @Generated
-    @Selector("unprojectPoint:")
-    @ByValue
-    public native SCNVector3 unprojectPoint(@ByValue SCNVector3 point);
-
-    @Generated
-    @Selector("audioEngine")
-    public native AVAudioEngine audioEngine();
-
-    @Generated
-    @Selector("audioEnvironmentNode")
-    public native AVAudioEnvironmentNode audioEnvironmentNode();
-
-    @Generated
-    @Selector("audioListener")
-    public native SCNNode audioListener();
-
-    @Generated
-    @Selector("colorPixelFormat")
-    @NUInt
-    public native long colorPixelFormat();
-
-    @Generated
-    @Selector("commandQueue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object commandQueue();
-
-    @Generated
-    @Selector("currentRenderCommandEncoder")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object currentRenderCommandEncoder();
-
-    @Generated
-    @Selector("debugOptions")
-    @NUInt
-    public native long debugOptions();
-
-    @Generated
-    @Selector("depthPixelFormat")
-    @NUInt
-    public native long depthPixelFormat();
-
-    @Generated
-    @Selector("device")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object device();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("nodesInsideFrustumWithPointOfView:")
-    public native NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
-
-    @Generated
-    @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
-    public native void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene,
-            SKTransition transition, SCNNode pointOfView,
-            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("renderingAPI")
-    @NUInt
-    public native long renderingAPI();
-
-    @Generated
-    @Selector("setAudioListener:")
-    public native void setAudioListener(SCNNode value);
-
-    @Generated
-    @Selector("setDebugOptions:")
-    public native void setDebugOptions(@NUInt long value);
-
-    @Generated
-    @Selector("stencilPixelFormat")
-    @NUInt
-    public native long stencilPixelFormat();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -454,23 +132,9 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -481,27 +145,10 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -512,24 +159,9 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -727,4 +359,372 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allowsCameraControl</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/allowsCameraControl">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allowsCameraControl")
+    public native boolean allowsCameraControl();
+
+    /**
+     * antialiasingMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/antialiasingMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("antialiasingMode")
+    @NUInt
+    public native long antialiasingMode();
+
+    @Generated
+    @Selector("autoenablesDefaultLighting")
+    public native boolean autoenablesDefaultLighting();
+
+    @Generated
+    @Selector("context")
+    public native VoidPtr context();
+
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object delegate();
+
+    /**
+     * eaglContext</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/eaglContext">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("eaglContext")
+    public native EAGLContext eaglContext();
+
+    @Generated
+    @Selector("hitTest:options:")
+    public native NSArray<? extends SCNHitTestResult> hitTestOptions(@ByValue CGPoint point,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("init")
+    public native SCNView init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native SCNView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * initWithFrame:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/initWithFrame:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFrame:options:")
+    public native SCNView initWithFrameOptions(@ByValue CGRect frame, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("isJitteringEnabled")
+    public native boolean isJitteringEnabled();
+
+    @Generated
+    @Selector("setJitteringEnabled:")
+    public native void setJitteringEnabled(boolean value);
+
+    @Generated
+    @Selector("isNodeInsideFrustum:withPointOfView:")
+    public native boolean isNodeInsideFrustumWithPointOfView(SCNNode node, SCNNode pointOfView);
+
+    @Generated
+    @Selector("isPlaying")
+    public native boolean isPlaying();
+
+    @Generated
+    @Selector("setPlaying:")
+    public native void setPlaying(boolean value);
+
+    @Generated
+    @Selector("loops")
+    public native boolean loops();
+
+    @Generated
+    @Selector("overlaySKScene")
+    public native SKScene overlaySKScene();
+
+    /**
+     * pause:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/pause:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pause:")
+    public native void pause(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    /**
+     * play:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/play:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("play:")
+    public native void play(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @Selector("pointOfView")
+    public native SCNNode pointOfView();
+
+    /**
+     * preferredFramesPerSecond</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/preferredFramesPerSecond">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preferredFramesPerSecond")
+    @NInt
+    public native long preferredFramesPerSecond();
+
+    @Generated
+    @Selector("prepareObject:shouldAbortBlock:")
+    public native boolean prepareObjectShouldAbortBlock(@Mapped(ObjCObjectMapper.class) Object object,
+            @ObjCBlock(name = "call_prepareObjectShouldAbortBlock") SCNSceneRenderer.Block_prepareObjectShouldAbortBlock block);
+
+    @Generated
+    @Selector("prepareObjects:withCompletionHandler:")
+    public native void prepareObjectsWithCompletionHandler(NSArray<?> objects,
+            @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") SCNSceneRenderer.Block_prepareObjectsWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("projectPoint:")
+    @ByValue
+    public native SCNVector3 projectPoint(@ByValue SCNVector3 point);
+
+    @Generated
+    @Selector("scene")
+    public native SCNScene scene();
+
+    @Generated
+    @Selector("sceneTime")
+    public native double sceneTime();
+
+    /**
+     * allowsCameraControl</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/allowsCameraControl">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAllowsCameraControl:")
+    public native void setAllowsCameraControl(boolean value);
+
+    /**
+     * antialiasingMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/antialiasingMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAntialiasingMode:")
+    public native void setAntialiasingMode(@NUInt long value);
+
+    @Generated
+    @Selector("setAutoenablesDefaultLighting:")
+    public native void setAutoenablesDefaultLighting(boolean value);
+
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * eaglContext</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/eaglContext">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEaglContext:")
+    public native void setEaglContext(EAGLContext value);
+
+    @Generated
+    @Selector("setLoops:")
+    public native void setLoops(boolean value);
+
+    @Generated
+    @Selector("setOverlaySKScene:")
+    public native void setOverlaySKScene(SKScene value);
+
+    @Generated
+    @Selector("setPointOfView:")
+    public native void setPointOfView(SCNNode value);
+
+    /**
+     * preferredFramesPerSecond</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instp/SCNView/preferredFramesPerSecond">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPreferredFramesPerSecond:")
+    public native void setPreferredFramesPerSecond(@NInt long value);
+
+    @Generated
+    @Selector("setScene:")
+    public native void setScene(SCNScene value);
+
+    @Generated
+    @Selector("setSceneTime:")
+    public native void setSceneTime(double value);
+
+    @Generated
+    @Selector("setShowsStatistics:")
+    public native void setShowsStatistics(boolean value);
+
+    @Generated
+    @Selector("setTechnique:")
+    public native void setTechnique(SCNTechnique value);
+
+    @Generated
+    @Selector("showsStatistics")
+    public native boolean showsStatistics();
+
+    /**
+     * snapshot</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/snapshot">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("snapshot")
+    public native UIImage snapshot();
+
+    /**
+     * stop:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNView_Class/index.html#//apple_ref/occ/instm/SCNView/stop:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stop:")
+    public native void stop(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @Selector("technique")
+    public native SCNTechnique technique();
+
+    @Generated
+    @Selector("unprojectPoint:")
+    @ByValue
+    public native SCNVector3 unprojectPoint(@ByValue SCNVector3 point);
+
+    @Generated
+    @Selector("audioEngine")
+    public native AVAudioEngine audioEngine();
+
+    @Generated
+    @Selector("audioEnvironmentNode")
+    public native AVAudioEnvironmentNode audioEnvironmentNode();
+
+    @Generated
+    @Selector("audioListener")
+    public native SCNNode audioListener();
+
+    @Generated
+    @Selector("colorPixelFormat")
+    @NUInt
+    public native long colorPixelFormat();
+
+    @Generated
+    @Selector("commandQueue")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object commandQueue();
+
+    @Generated
+    @Selector("currentRenderCommandEncoder")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object currentRenderCommandEncoder();
+
+    @Generated
+    @Selector("debugOptions")
+    @NUInt
+    public native long debugOptions();
+
+    @Generated
+    @Selector("depthPixelFormat")
+    @NUInt
+    public native long depthPixelFormat();
+
+    @Generated
+    @Selector("device")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object device();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("nodesInsideFrustumWithPointOfView:")
+    public native NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
+
+    @Generated
+    @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
+    public native void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene,
+            SKTransition transition, SCNNode pointOfView,
+            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("renderingAPI")
+    @NUInt
+    public native long renderingAPI();
+
+    @Generated
+    @Selector("setAudioListener:")
+    public native void setAudioListener(SCNNode value);
+
+    @Generated
+    @Selector("setDebugOptions:")
+    public native void setDebugOptions(@NUInt long value);
+
+    @Generated
+    @Selector("stencilPixelFormat")
+    @NUInt
+    public native long stencilPixelFormat();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

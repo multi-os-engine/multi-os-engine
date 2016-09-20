@@ -54,15 +54,6 @@ public class EAGLContext extends NSObject {
         super(peer);
     }
 
-    /**
-     * API</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/API">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("API")
-    @NUInt
-    public native long API();
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -77,89 +68,12 @@ public class EAGLContext extends NSObject {
     public static native EAGLContext currentContext();
 
     /**
-     * debugLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/debugLabel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("debugLabel")
-    public native String debugLabel();
-
-    @Generated
-    @Selector("init")
-    public native EAGLContext init();
-
-    /**
-     * initWithAPI:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instm/EAGLContext/initWithAPI:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAPI:")
-    public native EAGLContext initWithAPI(@NUInt long api);
-
-    /**
-     * initWithAPI:sharegroup:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instm/EAGLContext/initWithAPI:sharegroup:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAPI:sharegroup:")
-    public native EAGLContext initWithAPISharegroup(@NUInt long api, EAGLSharegroup sharegroup);
-
-    /**
-     * multiThreaded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/multiThreaded">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isMultiThreaded")
-    public native boolean isMultiThreaded();
-
-    /**
-     * presentRenderbuffer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instm/EAGLContext/presentRenderbuffer:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("presentRenderbuffer:")
-    public native boolean presentRenderbuffer(@NUInt long target);
-
-    /**
-     * renderbufferStorage:fromDrawable:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instm/EAGLContext/renderbufferStorage:fromDrawable:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("renderbufferStorage:fromDrawable:")
-    public native boolean renderbufferStorageFromDrawable(@NUInt long target,
-            @Mapped(ObjCObjectMapper.class) EAGLDrawable drawable);
-
-    /**
      * setCurrentContext:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/clm/EAGLContext/setCurrentContext:">iOS Dev Center</a>
      */
     @Generated
     @Selector("setCurrentContext:")
     public static native boolean setCurrentContext(EAGLContext context);
-
-    /**
-     * debugLabel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/debugLabel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDebugLabel:")
-    public native void setDebugLabel(String value);
-
-    /**
-     * multiThreaded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/multiThreaded">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMultiThreaded:")
-    public native void setMultiThreaded(boolean value);
-
-    /**
-     * sharegroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/sharegroup">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sharegroup")
-    public native EAGLSharegroup sharegroup();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -260,4 +174,90 @@ public class EAGLContext extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/API">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("API")
+    @NUInt
+    public native long API();
+
+    /**
+     * debugLabel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/debugLabel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("debugLabel")
+    public native String debugLabel();
+
+    @Generated
+    @Selector("init")
+    public native EAGLContext init();
+
+    /**
+     * initWithAPI:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instm/EAGLContext/initWithAPI:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAPI:")
+    public native EAGLContext initWithAPI(@NUInt long api);
+
+    /**
+     * initWithAPI:sharegroup:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instm/EAGLContext/initWithAPI:sharegroup:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAPI:sharegroup:")
+    public native EAGLContext initWithAPISharegroup(@NUInt long api, EAGLSharegroup sharegroup);
+
+    /**
+     * multiThreaded</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/multiThreaded">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isMultiThreaded")
+    public native boolean isMultiThreaded();
+
+    /**
+     * multiThreaded</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/multiThreaded">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMultiThreaded:")
+    public native void setMultiThreaded(boolean value);
+
+    /**
+     * presentRenderbuffer:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instm/EAGLContext/presentRenderbuffer:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("presentRenderbuffer:")
+    public native boolean presentRenderbuffer(@NUInt long target);
+
+    /**
+     * renderbufferStorage:fromDrawable:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instm/EAGLContext/renderbufferStorage:fromDrawable:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("renderbufferStorage:fromDrawable:")
+    public native boolean renderbufferStorageFromDrawable(@NUInt long target,
+            @Mapped(ObjCObjectMapper.class) EAGLDrawable drawable);
+
+    /**
+     * debugLabel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/debugLabel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDebugLabel:")
+    public native void setDebugLabel(String value);
+
+    /**
+     * sharegroup</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/OpenGLES/Reference/EAGLContext_ClassRef/index.html#//apple_ref/occ/instp/EAGLContext/sharegroup">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sharegroup")
+    public native EAGLSharegroup sharegroup();
 }

@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kSOCKS5NoAcceptableMethod = 0x000000FF;
     @Generated public static final int kCFStreamErrorSOCKS4RequestFailed = 0x0000005B;
     @Generated public static final int kCFStreamErrorSOCKS4IdentdFailed = 0x0000005C;
@@ -37,4 +33,8 @@ public final class Enums {
     @Generated public static final int kCFStreamErrorSOCKS5SubDomainUserPass = 0x00000003;
     @Generated public static final int kCFStreamErrorSOCKS5SubDomainMethod = 0x00000004;
     @Generated public static final int kCFStreamErrorSOCKS5SubDomainResponse = 0x00000005;
+
+    @Generated
+    private Enums() {
+    }
 }

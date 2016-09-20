@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CLDeviceOrientation {
-    @Generated
-    private CLDeviceOrientation() {
-    }
-
     @Generated public static final int Unknown = 0x00000000;
     @Generated public static final int Portrait = 0x00000001;
     @Generated public static final int PortraitUpsideDown = 0x00000002;
@@ -31,4 +27,8 @@ public final class CLDeviceOrientation {
     @Generated public static final int LandscapeRight = 0x00000004;
     @Generated public static final int FaceUp = 0x00000005;
     @Generated public static final int FaceDown = 0x00000006;
+
+    @Generated
+    private CLDeviceOrientation() {
+    }
 }

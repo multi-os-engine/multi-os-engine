@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HMCharacteristicValueDoorState {
-    @Generated
-    private HMCharacteristicValueDoorState() {
-    }
-
     @Generated @NInt public static final long Open = 0x0000000000000000L;
     @Generated @NInt public static final long Closed = 0x0000000000000001L;
     @Generated @NInt public static final long Opening = 0x0000000000000002L;
     @Generated @NInt public static final long Closing = 0x0000000000000003L;
     @Generated @NInt public static final long Stopped = 0x0000000000000004L;
+
+    @Generated
+    private HMCharacteristicValueDoorState() {
+    }
 }

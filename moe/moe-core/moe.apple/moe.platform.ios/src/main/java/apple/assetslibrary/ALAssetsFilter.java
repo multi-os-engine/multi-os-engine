@@ -83,10 +83,6 @@ public class ALAssetsFilter extends NSObject {
     public static native ALAssetsFilter alloc();
 
     @Generated
-    @Selector("init")
-    public native ALAssetsFilter init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -185,4 +181,8 @@ public class ALAssetsFilter extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native ALAssetsFilter init();
 }

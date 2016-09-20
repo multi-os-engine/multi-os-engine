@@ -64,56 +64,6 @@ public class GKSavedGame extends NSObject implements NSCopying {
     public static native GKSavedGame alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * deviceName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instp/GKSavedGame/deviceName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deviceName")
-    public native String deviceName();
-
-    @Generated
-    @Selector("init")
-    public native GKSavedGame init();
-
-    /**
-     * loadDataWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instm/GKSavedGame/loadDataWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadDataWithCompletionHandler:")
-    public native void loadDataWithCompletionHandler(
-            @ObjCBlock(name = "call_loadDataWithCompletionHandler") Block_loadDataWithCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadDataWithCompletionHandler {
-        @Generated
-        void call_loadDataWithCompletionHandler(NSData arg0, NSError arg1);
-    }
-
-    /**
-     * modificationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instp/GKSavedGame/modificationDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("modificationDate")
-    public native NSDate modificationDate();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instp/GKSavedGame/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -212,4 +162,54 @@ public class GKSavedGame extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * deviceName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instp/GKSavedGame/deviceName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deviceName")
+    public native String deviceName();
+
+    @Generated
+    @Selector("init")
+    public native GKSavedGame init();
+
+    /**
+     * loadDataWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instm/GKSavedGame/loadDataWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadDataWithCompletionHandler:")
+    public native void loadDataWithCompletionHandler(
+            @ObjCBlock(name = "call_loadDataWithCompletionHandler") Block_loadDataWithCompletionHandler handler);
+
+    /**
+     * modificationDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instp/GKSavedGame/modificationDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("modificationDate")
+    public native NSDate modificationDate();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSavedGame_Ref/index.html#//apple_ref/occ/instp/GKSavedGame/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadDataWithCompletionHandler {
+        @Generated
+        void call_loadDataWithCompletionHandler(NSData arg0, NSError arg1);
+    }
 }

@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class vImageARGBType {
-    @Generated
-    private vImageARGBType() {
-    }
-
     @Generated public static final int kvImageARGB8888 = 0x00000000;
     @Generated public static final int kvImageARGB16U = 0x00000001;
     @Generated public static final int kvImageARGB16Q12 = 0x00000002;
+
+    @Generated
+    private vImageARGBType() {
+    }
 }

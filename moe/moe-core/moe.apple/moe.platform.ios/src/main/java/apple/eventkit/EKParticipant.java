@@ -57,80 +57,10 @@ public class EKParticipant extends EKObject implements NSCopying {
         super(peer);
     }
 
-    /**
-     * ABRecordWithAddressBook:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instm/EKParticipant/ABRecordWithAddressBook:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("ABRecordWithAddressBook:")
-    public native ConstVoidPtr ABRecordWithAddressBook(ConstVoidPtr addressBook);
-
-    /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/URL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URL")
-    public native NSURL URL();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native EKParticipant alloc();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native EKParticipant init();
-
-    @Generated
-    @Selector("isCurrentUser")
-    public native boolean isCurrentUser();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * participantRole</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/participantRole">iOS Dev Center</a>
-     */
-    @NInt
-    @Generated
-    @Selector("participantRole")
-    public native long participantRole();
-
-    /**
-     * participantStatus</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/participantStatus">iOS Dev Center</a>
-     */
-    @NInt
-    @Generated
-    @Selector("participantStatus")
-    public native long participantStatus();
-
-    /**
-     * participantType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/participantType">iOS Dev Center</a>
-     */
-    @NInt
-    @Generated
-    @Selector("participantType")
-    public native long participantType();
-
-    @Generated
-    @Selector("contactPredicate")
-    public native NSPredicate contactPredicate();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -231,4 +161,74 @@ public class EKParticipant extends EKObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * ABRecordWithAddressBook:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instm/EKParticipant/ABRecordWithAddressBook:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("ABRecordWithAddressBook:")
+    public native ConstVoidPtr ABRecordWithAddressBook(ConstVoidPtr addressBook);
+
+    /**
+     * URL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/URL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URL")
+    public native NSURL URL();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native EKParticipant init();
+
+    @Generated
+    @Selector("isCurrentUser")
+    public native boolean isCurrentUser();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * participantRole</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/participantRole">iOS Dev Center</a>
+     */
+    @NInt
+    @Generated
+    @Selector("participantRole")
+    public native long participantRole();
+
+    /**
+     * participantStatus</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/participantStatus">iOS Dev Center</a>
+     */
+    @NInt
+    @Generated
+    @Selector("participantStatus")
+    public native long participantStatus();
+
+    /**
+     * participantType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKParticipantClassRef/index.html#//apple_ref/occ/instp/EKParticipant/participantType">iOS Dev Center</a>
+     */
+    @NInt
+    @Generated
+    @Selector("participantType")
+    public native long participantType();
+
+    @Generated
+    @Selector("contactPredicate")
+    public native NSPredicate contactPredicate();
 }

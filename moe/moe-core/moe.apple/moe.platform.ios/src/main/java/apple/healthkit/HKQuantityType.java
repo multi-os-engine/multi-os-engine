@@ -55,35 +55,10 @@ public class HKQuantityType extends HKSampleType {
         super(peer);
     }
 
-    /**
-     * aggregationStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantityType/index.html#//apple_ref/occ/instp/HKQuantityType/aggregationStyle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("aggregationStyle")
-    @NInt
-    public native long aggregationStyle();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native HKQuantityType alloc();
-
-    @Generated
-    @Selector("init")
-    public native HKQuantityType init();
-
-    /**
-     * isCompatibleWithUnit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantityType/index.html#//apple_ref/occ/instm/HKQuantityType/isCompatibleWithUnit:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isCompatibleWithUnit:")
-    public native boolean isCompatibleWithUnit(HKUnit unit);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKQuantityType initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -205,12 +180,6 @@ public class HKQuantityType extends HKSampleType {
     public static native boolean supportsSecureCoding();
 
     @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -218,4 +187,35 @@ public class HKQuantityType extends HKSampleType {
     @Generated
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
+
+    /**
+     * aggregationStyle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantityType/index.html#//apple_ref/occ/instp/HKQuantityType/aggregationStyle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("aggregationStyle")
+    @NInt
+    public native long aggregationStyle();
+
+    @Generated
+    @Selector("init")
+    public native HKQuantityType init();
+
+    /**
+     * isCompatibleWithUnit:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuantityType/index.html#//apple_ref/occ/instm/HKQuantityType/isCompatibleWithUnit:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isCompatibleWithUnit:")
+    public native boolean isCompatibleWithUnit(HKUnit unit);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKQuantityType initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

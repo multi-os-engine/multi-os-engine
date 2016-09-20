@@ -61,36 +61,6 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent {
     public static native HMCharacteristicEvent<?> alloc();
 
     @Generated
-    @Selector("characteristic")
-    public native HMCharacteristic characteristic();
-
-    @Generated
-    @Selector("init")
-    public native HMCharacteristicEvent<?> init();
-
-    @Generated
-    @Selector("initWithCharacteristic:triggerValue:")
-    public native HMCharacteristicEvent<?> initWithCharacteristicTriggerValue(HMCharacteristic characteristic,
-            @Mapped(ObjCObjectMapper.class) Object triggerValue);
-
-    @Generated
-    @Selector("triggerValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object triggerValue();
-
-    @Generated
-    @Selector("updateTriggerValue:completionHandler:")
-    public native void updateTriggerValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object triggerValue,
-            @ObjCBlock(name = "call_updateTriggerValueCompletionHandler") Block_updateTriggerValueCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updateTriggerValueCompletionHandler {
-        @Generated
-        void call_updateTriggerValueCompletionHandler(NSError arg0);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -189,4 +159,34 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("characteristic")
+    public native HMCharacteristic characteristic();
+
+    @Generated
+    @Selector("init")
+    public native HMCharacteristicEvent<?> init();
+
+    @Generated
+    @Selector("initWithCharacteristic:triggerValue:")
+    public native HMCharacteristicEvent<?> initWithCharacteristicTriggerValue(HMCharacteristic characteristic,
+            @Mapped(ObjCObjectMapper.class) Object triggerValue);
+
+    @Generated
+    @Selector("triggerValue")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object triggerValue();
+
+    @Generated
+    @Selector("updateTriggerValue:completionHandler:")
+    public native void updateTriggerValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object triggerValue,
+            @ObjCBlock(name = "call_updateTriggerValueCompletionHandler") Block_updateTriggerValueCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateTriggerValueCompletionHandler {
+        @Generated
+        void call_updateTriggerValueCompletionHandler(NSError arg0);
+    }
 }

@@ -27,11 +27,11 @@ import org.moe.natj.general.ptr.FloatPtr;
 @Generated
 @Structure()
 public final class DSPSplitComplex extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public DSPSplitComplex() {

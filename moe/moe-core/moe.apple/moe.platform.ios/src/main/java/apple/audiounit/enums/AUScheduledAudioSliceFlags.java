@@ -20,14 +20,14 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AUScheduledAudioSliceFlags {
-    @Generated
-    private AUScheduledAudioSliceFlags() {
-    }
-
     @Generated public static final int Complete = 0x00000001;
     @Generated public static final int BeganToRender = 0x00000002;
     @Generated public static final int BeganToRenderLate = 0x00000004;
     @Generated public static final int Loop = 0x00000008;
     @Generated public static final int Interrupt = 0x00000010;
     @Generated public static final int InterruptAtLoop = 0x00000020;
+
+    @Generated
+    private AUScheduledAudioSliceFlags() {
+    }
 }

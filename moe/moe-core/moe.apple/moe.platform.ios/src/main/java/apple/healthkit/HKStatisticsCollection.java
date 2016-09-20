@@ -61,50 +61,6 @@ public class HKStatisticsCollection extends NSObject {
     @Selector("alloc")
     public static native HKStatisticsCollection alloc();
 
-    /**
-     * enumerateStatisticsFromDate:toDate:withBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollection_Class/index.html#//apple_ref/occ/instm/HKStatisticsCollection/enumerateStatisticsFromDate:toDate:withBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enumerateStatisticsFromDate:toDate:withBlock:")
-    public native void enumerateStatisticsFromDateToDateWithBlock(NSDate startDate, NSDate endDate,
-            @ObjCBlock(name = "call_enumerateStatisticsFromDateToDateWithBlock") Block_enumerateStatisticsFromDateToDateWithBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateStatisticsFromDateToDateWithBlock {
-        @Generated
-        void call_enumerateStatisticsFromDateToDateWithBlock(HKStatistics arg0, BoolPtr arg1);
-    }
-
-    @Generated
-    @Selector("init")
-    public native HKStatisticsCollection init();
-
-    /**
-     * sources</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollection_Class/index.html#//apple_ref/occ/instm/HKStatisticsCollection/sources">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sources")
-    public native NSSet<? extends HKSource> sources();
-
-    /**
-     * statistics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollection_Class/index.html#//apple_ref/occ/instm/HKStatisticsCollection/statistics">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("statistics")
-    public native NSArray<? extends HKStatistics> statistics();
-
-    /**
-     * statisticsForDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollection_Class/index.html#//apple_ref/occ/instm/HKStatisticsCollection/statisticsForDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("statisticsForDate:")
-    public native HKStatistics statisticsForDate(NSDate date);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -204,4 +160,48 @@ public class HKStatisticsCollection extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * enumerateStatisticsFromDate:toDate:withBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollection_Class/index.html#//apple_ref/occ/instm/HKStatisticsCollection/enumerateStatisticsFromDate:toDate:withBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enumerateStatisticsFromDate:toDate:withBlock:")
+    public native void enumerateStatisticsFromDateToDateWithBlock(NSDate startDate, NSDate endDate,
+            @ObjCBlock(name = "call_enumerateStatisticsFromDateToDateWithBlock") Block_enumerateStatisticsFromDateToDateWithBlock block);
+
+    @Generated
+    @Selector("init")
+    public native HKStatisticsCollection init();
+
+    /**
+     * sources</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollection_Class/index.html#//apple_ref/occ/instm/HKStatisticsCollection/sources">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sources")
+    public native NSSet<? extends HKSource> sources();
+
+    /**
+     * statistics</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollection_Class/index.html#//apple_ref/occ/instm/HKStatisticsCollection/statistics">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("statistics")
+    public native NSArray<? extends HKStatistics> statistics();
+
+    /**
+     * statisticsForDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsCollection_Class/index.html#//apple_ref/occ/instm/HKStatisticsCollection/statisticsForDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("statisticsForDate:")
+    public native HKStatistics statisticsForDate(NSDate date);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateStatisticsFromDateToDateWithBlock {
+        @Generated
+        void call_enumerateStatisticsFromDateToDateWithBlock(HKStatistics arg0, BoolPtr arg1);
+    }
 }

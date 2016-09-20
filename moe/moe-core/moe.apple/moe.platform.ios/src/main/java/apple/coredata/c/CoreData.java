@@ -31,6 +31,8 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Library("CoreData")
 @Runtime(CRuntime.class)
 public final class CoreData {
+    @Generated @NUInt public static final long NSFetchRequestExpressionType = 0x0000000000000032L;
+
     static {
         NatJ.register();
     }
@@ -347,6 +349,4 @@ public final class CoreData {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersistentStoreForceDestroyOption();
-
-    @Generated @NUInt public static final long NSFetchRequestExpressionType = 0x0000000000000032L;
 }

@@ -60,18 +60,6 @@ public class AVAssetWriterInputPassDescription extends NSObject {
     public static native AVAssetWriterInputPassDescription alloc();
 
     @Generated
-    @Selector("init")
-    public native AVAssetWriterInputPassDescription init();
-
-    /**
-     * sourceTimeRanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPassDescription_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputPassDescription/sourceTimeRanges">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceTimeRanges")
-    public native NSArray<? extends NSValue> sourceTimeRanges();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -170,4 +158,16 @@ public class AVAssetWriterInputPassDescription extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetWriterInputPassDescription init();
+
+    /**
+     * sourceTimeRanges</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetWriterInputPassDescription_Class/index.html#//apple_ref/occ/instp/AVAssetWriterInputPassDescription/sourceTimeRanges">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceTimeRanges")
+    public native NSArray<? extends NSValue> sourceTimeRanges();
 }

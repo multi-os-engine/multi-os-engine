@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MKMapType {
-    @Generated
-    private MKMapType() {
-    }
-
     @Generated @NUInt public static final long Standard = 0x0000000000000000L;
     @Generated @NUInt public static final long Satellite = 0x0000000000000001L;
     @Generated @NUInt public static final long Hybrid = 0x0000000000000002L;
     @Generated @NUInt public static final long SatelliteFlyover = 0x0000000000000003L;
     @Generated @NUInt public static final long HybridFlyover = 0x0000000000000004L;
+
+    @Generated
+    private MKMapType() {
+    }
 }

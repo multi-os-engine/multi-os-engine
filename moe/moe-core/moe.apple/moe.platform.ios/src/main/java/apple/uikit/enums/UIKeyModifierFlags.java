@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIKeyModifierFlags {
-    @Generated
-    private UIKeyModifierFlags() {
-    }
-
     @Generated @NInt public static final long AlphaShift = 0x0000000000010000L;
     @Generated @NInt public static final long Shift = 0x0000000000020000L;
     @Generated @NInt public static final long Control = 0x0000000000040000L;
     @Generated @NInt public static final long Alternate = 0x0000000000080000L;
     @Generated @NInt public static final long Command = 0x0000000000100000L;
     @Generated @NInt public static final long NumericPad = 0x0000000000200000L;
+
+    @Generated
+    private UIKeyModifierFlags() {
+    }
 }

@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CNContactDisplayNameOrder {
-    @Generated
-    private CNContactDisplayNameOrder() {
-    }
-
     @Generated @NInt public static final long UserDefault = 0x0000000000000000L;
     @Generated @NInt public static final long GivenNameFirst = 0x0000000000000001L;
     @Generated @NInt public static final long FamilyNameFirst = 0x0000000000000002L;
+
+    @Generated
+    private CNContactDisplayNameOrder() {
+    }
 }

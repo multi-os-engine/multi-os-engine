@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIControlContentVerticalAlignment {
-    @Generated
-    private UIControlContentVerticalAlignment() {
-    }
-
     @Generated @NInt public static final long Center = 0x0000000000000000L;
     @Generated @NInt public static final long Top = 0x0000000000000001L;
     @Generated @NInt public static final long Bottom = 0x0000000000000002L;
     @Generated @NInt public static final long Fill = 0x0000000000000003L;
+
+    @Generated
+    private UIControlContentVerticalAlignment() {
+    }
 }

@@ -56,10 +56,6 @@ public class NSURLSessionDataTask extends NSURLSessionTask {
     public static native NSURLSessionDataTask alloc();
 
     @Generated
-    @Selector("init")
-    public native NSURLSessionDataTask init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -158,4 +154,8 @@ public class NSURLSessionDataTask extends NSURLSessionTask {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSURLSessionDataTask init();
 }

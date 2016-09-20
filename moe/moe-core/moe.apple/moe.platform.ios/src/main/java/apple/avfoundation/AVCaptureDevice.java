@@ -63,6 +63,161 @@ public class AVCaptureDevice extends NSObject {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native AVCaptureDevice alloc();
+
+    /**
+     * authorizationStatusForMediaType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/authorizationStatusForMediaType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("authorizationStatusForMediaType:")
+    @NInt
+    public static native long authorizationStatusForMediaType(String mediaType);
+
+    /**
+     * defaultDeviceWithMediaType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/defaultDeviceWithMediaType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultDeviceWithMediaType:")
+    public static native AVCaptureDevice defaultDeviceWithMediaType(String mediaType);
+
+    /**
+     * deviceWithUniqueID:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/deviceWithUniqueID:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deviceWithUniqueID:")
+    public static native AVCaptureDevice deviceWithUniqueID(String deviceUniqueID);
+
+    /**
+     * devices</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/devices">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("devices")
+    public static native NSArray<?> devices();
+
+    /**
+     * devicesWithMediaType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/devicesWithMediaType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("devicesWithMediaType:")
+    public static native NSArray<?> devicesWithMediaType(String mediaType);
+
+    /**
+     * requestAccessForMediaType:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/requestAccessForMediaType:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestAccessForMediaType:completionHandler:")
+    public static native void requestAccessForMediaTypeCompletionHandler(String mediaType,
+            @ObjCBlock(name = "call_requestAccessForMediaTypeCompletionHandler") Block_requestAccessForMediaTypeCompletionHandler handler);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version();
+
     /**
      * ISO</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/ISO">iOS Dev Center</a>
@@ -96,20 +251,6 @@ public class AVCaptureDevice extends NSObject {
     @Selector("activeVideoMinFrameDuration")
     @ByValue
     public native CMTime activeVideoMinFrameDuration();
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native AVCaptureDevice alloc();
-
-    /**
-     * authorizationStatusForMediaType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/authorizationStatusForMediaType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("authorizationStatusForMediaType:")
-    @NInt
-    public static native long authorizationStatusForMediaType(String mediaType);
 
     /**
      * autoFocusRangeRestriction</br>
@@ -155,14 +296,6 @@ public class AVCaptureDevice extends NSObject {
             @ByValue AVCaptureWhiteBalanceGains whiteBalanceGains);
 
     /**
-     * defaultDeviceWithMediaType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/defaultDeviceWithMediaType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultDeviceWithMediaType:")
-    public static native AVCaptureDevice defaultDeviceWithMediaType(String mediaType);
-
-    /**
      * deviceWhiteBalanceGains</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/deviceWhiteBalanceGains">iOS Dev Center</a>
      */
@@ -190,30 +323,6 @@ public class AVCaptureDevice extends NSObject {
     @ByValue
     public native AVCaptureWhiteBalanceGains deviceWhiteBalanceGainsForTemperatureAndTintValues(
             @ByValue AVCaptureWhiteBalanceTemperatureAndTintValues tempAndTintValues);
-
-    /**
-     * deviceWithUniqueID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/deviceWithUniqueID:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deviceWithUniqueID:")
-    public static native AVCaptureDevice deviceWithUniqueID(String deviceUniqueID);
-
-    /**
-     * devices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/devices">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("devices")
-    public static native NSArray<?> devices();
-
-    /**
-     * devicesWithMediaType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/devicesWithMediaType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("devicesWithMediaType:")
-    public static native NSArray<?> devicesWithMediaType(String mediaType);
 
     /**
      * exposureDuration</br>
@@ -459,6 +568,14 @@ public class AVCaptureDevice extends NSObject {
     public native boolean isSmoothAutoFocusEnabled();
 
     /**
+     * smoothAutoFocusEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/smoothAutoFocusEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSmoothAutoFocusEnabled:")
+    public native void setSmoothAutoFocusEnabled(boolean value);
+
+    /**
      * smoothAutoFocusSupported</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/smoothAutoFocusSupported">iOS Dev Center</a>
      */
@@ -473,6 +590,14 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("isSubjectAreaChangeMonitoringEnabled")
     public native boolean isSubjectAreaChangeMonitoringEnabled();
+
+    /**
+     * subjectAreaChangeMonitoringEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/subjectAreaChangeMonitoringEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSubjectAreaChangeMonitoringEnabled:")
+    public native void setSubjectAreaChangeMonitoringEnabled(boolean value);
 
     /**
      * torchActive</br>
@@ -505,6 +630,14 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("isVideoHDREnabled")
     public native boolean isVideoHDREnabled();
+
+    /**
+     * videoHDREnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/videoHDREnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setVideoHDREnabled:")
+    public native void setVideoHDREnabled(boolean value);
 
     /**
      * isWhiteBalanceModeSupported:</br>
@@ -596,22 +729,6 @@ public class AVCaptureDevice extends NSObject {
     public native void rampToVideoZoomFactorWithRate(@NFloat double factor, float rate);
 
     /**
-     * requestAccessForMediaType:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/clm/AVCaptureDevice/requestAccessForMediaType:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestAccessForMediaType:completionHandler:")
-    public static native void requestAccessForMediaTypeCompletionHandler(String mediaType,
-            @ObjCBlock(name = "call_requestAccessForMediaTypeCompletionHandler") Block_requestAccessForMediaTypeCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestAccessForMediaTypeCompletionHandler {
-        @Generated
-        void call_requestAccessForMediaTypeCompletionHandler(boolean arg0);
-    }
-
-    /**
      * activeFormat</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/activeFormat">iOS Dev Center</a>
      */
@@ -676,13 +793,6 @@ public class AVCaptureDevice extends NSObject {
     public native void setExposureModeCustomWithDurationISOCompletionHandler(@ByValue CMTime duration, float ISO,
             @ObjCBlock(name = "call_setExposureModeCustomWithDurationISOCompletionHandler") Block_setExposureModeCustomWithDurationISOCompletionHandler handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setExposureModeCustomWithDurationISOCompletionHandler {
-        @Generated
-        void call_setExposureModeCustomWithDurationISOCompletionHandler(@ByValue CMTime arg0);
-    }
-
     /**
      * exposurePointOfInterest</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/exposurePointOfInterest">iOS Dev Center</a>
@@ -699,13 +809,6 @@ public class AVCaptureDevice extends NSObject {
     @Selector("setExposureTargetBias:completionHandler:")
     public native void setExposureTargetBiasCompletionHandler(float bias,
             @ObjCBlock(name = "call_setExposureTargetBiasCompletionHandler") Block_setExposureTargetBiasCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setExposureTargetBiasCompletionHandler {
-        @Generated
-        void call_setExposureTargetBiasCompletionHandler(@ByValue CMTime arg0);
-    }
 
     /**
      * flashMode</br>
@@ -732,13 +835,6 @@ public class AVCaptureDevice extends NSObject {
     public native void setFocusModeLockedWithLensPositionCompletionHandler(float lensPosition,
             @ObjCBlock(name = "call_setFocusModeLockedWithLensPositionCompletionHandler") Block_setFocusModeLockedWithLensPositionCompletionHandler handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setFocusModeLockedWithLensPositionCompletionHandler {
-        @Generated
-        void call_setFocusModeLockedWithLensPositionCompletionHandler(@ByValue CMTime arg0);
-    }
-
     /**
      * focusPointOfInterest</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/focusPointOfInterest">iOS Dev Center</a>
@@ -746,22 +842,6 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("setFocusPointOfInterest:")
     public native void setFocusPointOfInterest(@ByValue CGPoint value);
-
-    /**
-     * smoothAutoFocusEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/smoothAutoFocusEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSmoothAutoFocusEnabled:")
-    public native void setSmoothAutoFocusEnabled(boolean value);
-
-    /**
-     * subjectAreaChangeMonitoringEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/subjectAreaChangeMonitoringEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSubjectAreaChangeMonitoringEnabled:")
-    public native void setSubjectAreaChangeMonitoringEnabled(boolean value);
 
     /**
      * torchMode</br>
@@ -778,14 +858,6 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("setTorchModeOnWithLevel:error:")
     public native boolean setTorchModeOnWithLevelError(float torchLevel, Ptr<NSError> outError);
-
-    /**
-     * videoHDREnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureDevice_Class/index.html#//apple_ref/occ/instp/AVCaptureDevice/videoHDREnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setVideoHDREnabled:")
-    public native void setVideoHDREnabled(boolean value);
 
     /**
      * videoZoomFactor</br>
@@ -812,13 +884,6 @@ public class AVCaptureDevice extends NSObject {
     public native void setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler(
             @ByValue AVCaptureWhiteBalanceGains whiteBalanceGains,
             @ObjCBlock(name = "call_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler") Block_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler {
-        @Generated
-        void call_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler(@ByValue CMTime arg0);
-    }
 
     /**
      * supportsAVCaptureSessionPreset:</br>
@@ -889,103 +954,38 @@ public class AVCaptureDevice extends NSObject {
     @NInt
     public native long whiteBalanceMode();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_requestAccessForMediaTypeCompletionHandler {
+        @Generated
+        void call_requestAccessForMediaTypeCompletionHandler(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_setExposureModeCustomWithDurationISOCompletionHandler {
+        @Generated
+        void call_setExposureModeCustomWithDurationISOCompletionHandler(@ByValue CMTime arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_setExposureTargetBiasCompletionHandler {
+        @Generated
+        void call_setExposureTargetBiasCompletionHandler(@ByValue CMTime arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public interface Block_setFocusModeLockedWithLensPositionCompletionHandler {
+        @Generated
+        void call_setFocusModeLockedWithLensPositionCompletionHandler(@ByValue CMTime arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
+    public interface Block_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler {
+        @Generated
+        void call_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler(@ByValue CMTime arg0);
+    }
 }

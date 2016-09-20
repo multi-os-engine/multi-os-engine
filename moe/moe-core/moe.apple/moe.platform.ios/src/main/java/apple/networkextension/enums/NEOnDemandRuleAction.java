@@ -21,12 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NEOnDemandRuleAction {
-    @Generated
-    private NEOnDemandRuleAction() {
-    }
-
     @Generated @NInt public static final long Connect = 0x0000000000000001L;
     @Generated @NInt public static final long Disconnect = 0x0000000000000002L;
     @Generated @NInt public static final long EvaluateConnection = 0x0000000000000003L;
     @Generated @NInt public static final long Ignore = 0x0000000000000004L;
+    @Generated
+    private NEOnDemandRuleAction() {
+    }
 }

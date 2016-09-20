@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNGeometryPrimitiveType {
-    @Generated
-    private SCNGeometryPrimitiveType() {
-    }
-
     @Generated @NInt public static final long Triangles = 0x0000000000000000L;
     @Generated @NInt public static final long TriangleStrip = 0x0000000000000001L;
     @Generated @NInt public static final long Line = 0x0000000000000002L;
     @Generated @NInt public static final long Point = 0x0000000000000003L;
+
+    @Generated
+    private SCNGeometryPrimitiveType() {
+    }
 }

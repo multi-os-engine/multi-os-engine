@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class HKStatisticsOptions {
-    @Generated
-    private HKStatisticsOptions() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long SeparateBySource = 0x0000000000000001L;
     @Generated @NUInt public static final long DiscreteAverage = 0x0000000000000002L;
     @Generated @NUInt public static final long DiscreteMin = 0x0000000000000004L;
     @Generated @NUInt public static final long DiscreteMax = 0x0000000000000008L;
     @Generated @NUInt public static final long CumulativeSum = 0x0000000000000010L;
+
+    @Generated
+    private HKStatisticsOptions() {
+    }
 }

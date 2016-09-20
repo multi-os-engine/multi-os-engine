@@ -60,26 +60,6 @@ public class MDLAreaLight extends MDLPhysicallyPlausibleLight {
     @Selector("alloc")
     public static native MDLAreaLight alloc();
 
-    /**
-     * areaRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAreaLight_Class/index.html#//apple_ref/occ/instp/MDLAreaLight/areaRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("areaRadius")
-    public native float areaRadius();
-
-    /**
-     * aspect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAreaLight_Class/index.html#//apple_ref/occ/instp/MDLAreaLight/aspect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("aspect")
-    public native float aspect();
-
-    @Generated
-    @Selector("init")
-    public native MDLAreaLight init();
-
     @Generated
     @Selector("lightWithSCNLight:")
     public static native MDLAreaLight lightWithSCNLight(SCNLight scnLight);
@@ -87,22 +67,6 @@ public class MDLAreaLight extends MDLPhysicallyPlausibleLight {
     @Generated
     @Selector("objectWithSCNNode:")
     public static native MDLAreaLight objectWithSCNNode(SCNNode scnNode);
-
-    /**
-     * areaRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAreaLight_Class/index.html#//apple_ref/occ/instp/MDLAreaLight/areaRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAreaRadius:")
-    public native void setAreaRadius(float value);
-
-    /**
-     * aspect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAreaLight_Class/index.html#//apple_ref/occ/instp/MDLAreaLight/aspect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAspect:")
-    public native void setAspect(float value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -203,4 +167,40 @@ public class MDLAreaLight extends MDLPhysicallyPlausibleLight {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * areaRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAreaLight_Class/index.html#//apple_ref/occ/instp/MDLAreaLight/areaRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("areaRadius")
+    public native float areaRadius();
+
+    /**
+     * aspect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAreaLight_Class/index.html#//apple_ref/occ/instp/MDLAreaLight/aspect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("aspect")
+    public native float aspect();
+
+    @Generated
+    @Selector("init")
+    public native MDLAreaLight init();
+
+    /**
+     * areaRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAreaLight_Class/index.html#//apple_ref/occ/instp/MDLAreaLight/areaRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAreaRadius:")
+    public native void setAreaRadius(float value);
+
+    /**
+     * aspect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLAreaLight_Class/index.html#//apple_ref/occ/instp/MDLAreaLight/aspect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAspect:")
+    public native void setAspect(float value);
 }

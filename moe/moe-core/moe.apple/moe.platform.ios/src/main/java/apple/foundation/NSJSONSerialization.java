@@ -84,10 +84,6 @@ public class NSJSONSerialization extends NSObject {
     public static native NSData dataWithJSONObjectOptionsError(@Mapped(ObjCObjectMapper.class) Object obj,
             @NUInt long opt, Ptr<NSError> error);
 
-    @Generated
-    @Selector("init")
-    public native NSJSONSerialization init();
-
     /**
      * isValidJSONObject:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSJSONSerialization_Class/index.html#//apple_ref/occ/clm/NSJSONSerialization/isValidJSONObject:">iOS Dev Center</a>
@@ -205,4 +201,8 @@ public class NSJSONSerialization extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSJSONSerialization init();
 }

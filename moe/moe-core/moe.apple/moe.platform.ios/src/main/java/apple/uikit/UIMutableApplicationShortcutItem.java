@@ -59,100 +59,6 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @Selector("alloc")
     public static native UIMutableApplicationShortcutItem alloc();
 
-    /**
-     * icon</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/icon">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("icon")
-    public native UIApplicationShortcutIcon icon();
-
-    @Generated
-    @Selector("init")
-    public native UIMutableApplicationShortcutItem init();
-
-    @Generated
-    @Selector("initWithType:localizedTitle:")
-    public native UIMutableApplicationShortcutItem initWithTypeLocalizedTitle(String type, String localizedTitle);
-
-    @Generated
-    @Selector("initWithType:localizedTitle:localizedSubtitle:icon:userInfo:")
-    public native UIMutableApplicationShortcutItem initWithTypeLocalizedTitleLocalizedSubtitleIconUserInfo(String type,
-            String localizedTitle, String localizedSubtitle, UIApplicationShortcutIcon icon,
-            NSDictionary<?, ?> userInfo);
-
-    /**
-     * localizedSubtitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/localizedSubtitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedSubtitle")
-    public native String localizedSubtitle();
-
-    /**
-     * localizedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/localizedTitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedTitle")
-    public native String localizedTitle();
-
-    /**
-     * icon</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/icon">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIcon:")
-    public native void setIcon(UIApplicationShortcutIcon value);
-
-    /**
-     * localizedSubtitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/localizedSubtitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLocalizedSubtitle:")
-    public native void setLocalizedSubtitle(String value);
-
-    /**
-     * localizedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/localizedTitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLocalizedTitle:")
-    public native void setLocalizedTitle(String value);
-
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/type">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setType:")
-    public native void setType(String value);
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<String, ?> value);
-
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/type">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("type")
-    public native String type();
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInfo")
-    public native NSDictionary<String, ?> userInfo();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -252,4 +158,98 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * icon</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/icon">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("icon")
+    public native UIApplicationShortcutIcon icon();
+
+    @Generated
+    @Selector("init")
+    public native UIMutableApplicationShortcutItem init();
+
+    @Generated
+    @Selector("initWithType:localizedTitle:")
+    public native UIMutableApplicationShortcutItem initWithTypeLocalizedTitle(String type, String localizedTitle);
+
+    @Generated
+    @Selector("initWithType:localizedTitle:localizedSubtitle:icon:userInfo:")
+    public native UIMutableApplicationShortcutItem initWithTypeLocalizedTitleLocalizedSubtitleIconUserInfo(String type,
+            String localizedTitle, String localizedSubtitle, UIApplicationShortcutIcon icon,
+            NSDictionary<?, ?> userInfo);
+
+    /**
+     * localizedSubtitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/localizedSubtitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedSubtitle")
+    public native String localizedSubtitle();
+
+    /**
+     * localizedTitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/localizedTitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedTitle")
+    public native String localizedTitle();
+
+    /**
+     * icon</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/icon">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIcon:")
+    public native void setIcon(UIApplicationShortcutIcon value);
+
+    /**
+     * localizedSubtitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/localizedSubtitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLocalizedSubtitle:")
+    public native void setLocalizedSubtitle(String value);
+
+    /**
+     * localizedTitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/localizedTitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLocalizedTitle:")
+    public native void setLocalizedTitle(String value);
+
+    /**
+     * type</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/type">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setType:")
+    public native void setType(String value);
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUserInfo:")
+    public native void setUserInfo(NSDictionary<String, ?> value);
+
+    /**
+     * type</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/type">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("type")
+    public native String type();
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIMutableApplicationShortcutItem/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInfo")
+    public native NSDictionary<String, ?> userInfo();
 }

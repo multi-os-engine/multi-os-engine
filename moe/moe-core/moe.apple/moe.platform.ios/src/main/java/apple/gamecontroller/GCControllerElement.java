@@ -58,26 +58,6 @@ public class GCControllerElement extends NSObject {
     @Selector("alloc")
     public static native GCControllerElement alloc();
 
-    /**
-     * collection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerElement_Ref/index.html#//apple_ref/occ/instp/GCControllerElement/collection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("collection")
-    public native GCControllerElement collection();
-
-    @Generated
-    @Selector("init")
-    public native GCControllerElement init();
-
-    /**
-     * analog</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerElement_Ref/index.html#//apple_ref/occ/instp/GCControllerElement/analog">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isAnalog")
-    public native boolean isAnalog();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -177,4 +157,24 @@ public class GCControllerElement extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * collection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerElement_Ref/index.html#//apple_ref/occ/instp/GCControllerElement/collection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("collection")
+    public native GCControllerElement collection();
+
+    @Generated
+    @Selector("init")
+    public native GCControllerElement init();
+
+    /**
+     * analog</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameController/Reference/GCControllerElement_Ref/index.html#//apple_ref/occ/instp/GCControllerElement/analog">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isAnalog")
+    public native boolean isAnalog();
 }

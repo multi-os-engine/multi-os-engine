@@ -64,55 +64,6 @@ public class PHAsset extends PHObject {
     public static native PHAsset alloc();
 
     /**
-     * burstIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/burstIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("burstIdentifier")
-    public native String burstIdentifier();
-
-    /**
-     * burstSelectionTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/burstSelectionTypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("burstSelectionTypes")
-    @NUInt
-    public native long burstSelectionTypes();
-
-    /**
-     * canPerformEditOperation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instm/PHAsset/canPerformEditOperation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("canPerformEditOperation:")
-    public native boolean canPerformEditOperation(@NInt long editOperation);
-
-    /**
-     * cancelContentEditingInputRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instm/PHAsset/cancelContentEditingInputRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelContentEditingInputRequest:")
-    public native void cancelContentEditingInputRequest(@NUInt long requestID);
-
-    /**
-     * creationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/creationDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("creationDate")
-    public native NSDate creationDate();
-
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/duration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("duration")
-    public native double duration();
-
-    /**
      * fetchAssetsInAssetCollection:options:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/clm/PHAsset/fetchAssetsInAssetCollection:options:">iOS Dev Center</a>
      */
@@ -173,114 +124,6 @@ public class PHAsset extends PHObject {
     @Selector("fetchKeyAssetsInAssetCollection:options:")
     public static native PHFetchResult<PHAsset> fetchKeyAssetsInAssetCollectionOptions(
             PHAssetCollection assetCollection, PHFetchOptions options);
-
-    @Generated
-    @Selector("init")
-    public native PHAsset init();
-
-    /**
-     * favorite</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/favorite">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isFavorite")
-    public native boolean isFavorite();
-
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/hidden">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isHidden")
-    public native boolean isHidden();
-
-    /**
-     * location</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/location">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("location")
-    public native CLLocation location();
-
-    /**
-     * mediaSubtypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/mediaSubtypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mediaSubtypes")
-    @NUInt
-    public native long mediaSubtypes();
-
-    /**
-     * mediaType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/mediaType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mediaType")
-    @NInt
-    public native long mediaType();
-
-    /**
-     * modificationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/modificationDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("modificationDate")
-    public native NSDate modificationDate();
-
-    /**
-     * pixelHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/pixelHeight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pixelHeight")
-    @NUInt
-    public native long pixelHeight();
-
-    /**
-     * pixelWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/pixelWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pixelWidth")
-    @NUInt
-    public native long pixelWidth();
-
-    /**
-     * representsBurst</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/representsBurst">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("representsBurst")
-    public native boolean representsBurst();
-
-    /**
-     * requestContentEditingInputWithOptions:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instm/PHAsset/requestContentEditingInputWithOptions:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestContentEditingInputWithOptions:completionHandler:")
-    @NUInt
-    public native long requestContentEditingInputWithOptionsCompletionHandler(
-            PHContentEditingInputRequestOptions options,
-            @ObjCBlock(name = "call_requestContentEditingInputWithOptionsCompletionHandler") Block_requestContentEditingInputWithOptionsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestContentEditingInputWithOptionsCompletionHandler {
-        @Generated
-        void call_requestContentEditingInputWithOptionsCompletionHandler(PHContentEditingInput arg0,
-                NSDictionary<?, ?> arg1);
-    }
-
-    /**
-     * sourceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/sourceType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceType")
-    @NUInt
-    public native long sourceType();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -381,4 +224,161 @@ public class PHAsset extends PHObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * burstIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/burstIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("burstIdentifier")
+    public native String burstIdentifier();
+
+    /**
+     * burstSelectionTypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/burstSelectionTypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("burstSelectionTypes")
+    @NUInt
+    public native long burstSelectionTypes();
+
+    /**
+     * canPerformEditOperation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instm/PHAsset/canPerformEditOperation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("canPerformEditOperation:")
+    public native boolean canPerformEditOperation(@NInt long editOperation);
+
+    /**
+     * cancelContentEditingInputRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instm/PHAsset/cancelContentEditingInputRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelContentEditingInputRequest:")
+    public native void cancelContentEditingInputRequest(@NUInt long requestID);
+
+    /**
+     * creationDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/creationDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("creationDate")
+    public native NSDate creationDate();
+
+    /**
+     * duration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/duration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("duration")
+    public native double duration();
+
+    @Generated
+    @Selector("init")
+    public native PHAsset init();
+
+    /**
+     * favorite</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/favorite">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isFavorite")
+    public native boolean isFavorite();
+
+    /**
+     * hidden</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/hidden">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isHidden")
+    public native boolean isHidden();
+
+    /**
+     * location</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/location">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("location")
+    public native CLLocation location();
+
+    /**
+     * mediaSubtypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/mediaSubtypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mediaSubtypes")
+    @NUInt
+    public native long mediaSubtypes();
+
+    /**
+     * mediaType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/mediaType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mediaType")
+    @NInt
+    public native long mediaType();
+
+    /**
+     * modificationDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/modificationDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("modificationDate")
+    public native NSDate modificationDate();
+
+    /**
+     * pixelHeight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/pixelHeight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pixelHeight")
+    @NUInt
+    public native long pixelHeight();
+
+    /**
+     * pixelWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/pixelWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pixelWidth")
+    @NUInt
+    public native long pixelWidth();
+
+    /**
+     * representsBurst</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/representsBurst">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("representsBurst")
+    public native boolean representsBurst();
+
+    /**
+     * requestContentEditingInputWithOptions:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instm/PHAsset/requestContentEditingInputWithOptions:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestContentEditingInputWithOptions:completionHandler:")
+    @NUInt
+    public native long requestContentEditingInputWithOptionsCompletionHandler(
+            PHContentEditingInputRequestOptions options,
+            @ObjCBlock(name = "call_requestContentEditingInputWithOptionsCompletionHandler") Block_requestContentEditingInputWithOptionsCompletionHandler completionHandler);
+
+    /**
+     * sourceType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAsset_Class/index.html#//apple_ref/occ/instp/PHAsset/sourceType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceType")
+    @NUInt
+    public native long sourceType();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestContentEditingInputWithOptionsCompletionHandler {
+        @Generated
+        void call_requestContentEditingInputWithOptionsCompletionHandler(PHContentEditingInput arg0,
+                NSDictionary<?, ?> arg1);
+    }
 }

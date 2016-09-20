@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UISplitViewControllerDisplayMode {
-    @Generated
-    private UISplitViewControllerDisplayMode() {
-    }
-
     @Generated @NInt public static final long Automatic = 0x0000000000000000L;
     @Generated @NInt public static final long PrimaryHidden = 0x0000000000000001L;
     @Generated @NInt public static final long AllVisible = 0x0000000000000002L;
     @Generated @NInt public static final long PrimaryOverlay = 0x0000000000000003L;
+
+    @Generated
+    private UISplitViewControllerDisplayMode() {
+    }
 }

@@ -69,42 +69,6 @@ public class CAEmitterBehavior extends NSObject implements NSCoding {
     public static native CAEmitterBehavior behaviorWithType(String type);
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CAEmitterBehavior init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAEmitterBehavior initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithType:")
-    public native CAEmitterBehavior initWithType(String type);
-
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    @Generated
-    @Selector("setName:")
-    public native void setName(String value);
-
-    @Generated
-    @Selector("type")
-    public native String type();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -203,4 +167,40 @@ public class CAEmitterBehavior extends NSObject implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CAEmitterBehavior init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAEmitterBehavior initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithType:")
+    public native CAEmitterBehavior initWithType(String type);
+
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
+
+    @Generated
+    @Selector("type")
+    public native String type();
 }

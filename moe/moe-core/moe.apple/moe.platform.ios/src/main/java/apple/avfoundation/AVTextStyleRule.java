@@ -60,33 +60,6 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AVTextStyleRule alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native AVTextStyleRule init();
-
-    /**
-     * initWithTextMarkupAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instm/AVTextStyleRule/initWithTextMarkupAttributes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTextMarkupAttributes:")
-    public native AVTextStyleRule initWithTextMarkupAttributes(NSDictionary<String, ?> textMarkupAttributes);
-
-    /**
-     * initWithTextMarkupAttributes:textSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instm/AVTextStyleRule/initWithTextMarkupAttributes:textSelector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTextMarkupAttributes:textSelector:")
-    public native AVTextStyleRule initWithTextMarkupAttributesTextSelector(NSDictionary<String, ?> textMarkupAttributes,
-            String textSelector);
-
     /**
      * propertyListForTextStyleRules:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/clm/AVTextStyleRule/propertyListForTextStyleRules:">iOS Dev Center</a>
@@ -95,22 +68,6 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Selector("propertyListForTextStyleRules:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object propertyListForTextStyleRules(NSArray<? extends AVTextStyleRule> textStyleRules);
-
-    /**
-     * textMarkupAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instp/AVTextStyleRule/textMarkupAttributes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textMarkupAttributes")
-    public native NSDictionary<String, ?> textMarkupAttributes();
-
-    /**
-     * textSelector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instp/AVTextStyleRule/textSelector">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textSelector")
-    public native String textSelector();
 
     /**
      * textStyleRuleWithTextMarkupAttributes:</br>
@@ -238,4 +195,47 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native AVTextStyleRule init();
+
+    /**
+     * initWithTextMarkupAttributes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instm/AVTextStyleRule/initWithTextMarkupAttributes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTextMarkupAttributes:")
+    public native AVTextStyleRule initWithTextMarkupAttributes(NSDictionary<String, ?> textMarkupAttributes);
+
+    /**
+     * initWithTextMarkupAttributes:textSelector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instm/AVTextStyleRule/initWithTextMarkupAttributes:textSelector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTextMarkupAttributes:textSelector:")
+    public native AVTextStyleRule initWithTextMarkupAttributesTextSelector(NSDictionary<String, ?> textMarkupAttributes,
+            String textSelector);
+
+    /**
+     * textMarkupAttributes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instp/AVTextStyleRule/textMarkupAttributes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textMarkupAttributes")
+    public native NSDictionary<String, ?> textMarkupAttributes();
+
+    /**
+     * textSelector</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTextStyleRule_Class/index.html#//apple_ref/occ/instp/AVTextStyleRule/textSelector">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textSelector")
+    public native String textSelector();
 }

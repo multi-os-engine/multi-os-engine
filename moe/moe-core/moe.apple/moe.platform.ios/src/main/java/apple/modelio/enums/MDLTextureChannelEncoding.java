@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MDLTextureChannelEncoding {
-    @Generated
-    private MDLTextureChannelEncoding() {
-    }
-
     @Generated @NInt public static final long UInt8 = 0x0000000000000001L;
     @Generated @NInt public static final long Uint8 = 0x0000000000000001L;
     @Generated @NInt public static final long UInt16 = 0x0000000000000002L;
@@ -35,4 +31,8 @@ public final class MDLTextureChannelEncoding {
     @Generated @NInt public static final long Uint32 = 0x0000000000000004L;
     @Generated @NInt public static final long Float16 = 0x0000000000000102L;
     @Generated @NInt public static final long Float32 = 0x0000000000000104L;
+
+    @Generated
+    private MDLTextureChannelEncoding() {
+    }
 }

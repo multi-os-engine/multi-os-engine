@@ -56,26 +56,6 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     @Selector("alloc")
     public static native NSURLSessionDownloadTask alloc();
 
-    /**
-     * cancelByProducingResumeData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDownloadTask_class/index.html#//apple_ref/occ/instm/NSURLSessionDownloadTask/cancelByProducingResumeData:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelByProducingResumeData:")
-    public native void cancelByProducingResumeData(
-            @ObjCBlock(name = "call_cancelByProducingResumeData") Block_cancelByProducingResumeData completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_cancelByProducingResumeData {
-        @Generated
-        void call_cancelByProducingResumeData(NSData arg0);
-    }
-
-    @Generated
-    @Selector("init")
-    public native NSURLSessionDownloadTask init();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -175,4 +155,24 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cancelByProducingResumeData:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDownloadTask_class/index.html#//apple_ref/occ/instm/NSURLSessionDownloadTask/cancelByProducingResumeData:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelByProducingResumeData:")
+    public native void cancelByProducingResumeData(
+            @ObjCBlock(name = "call_cancelByProducingResumeData") Block_cancelByProducingResumeData completionHandler);
+
+    @Generated
+    @Selector("init")
+    public native NSURLSessionDownloadTask init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_cancelByProducingResumeData {
+        @Generated
+        void call_cancelByProducingResumeData(NSData arg0);
+    }
 }

@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class VTDecodeInfoFlags {
-    @Generated
-    private VTDecodeInfoFlags() {
-    }
-
     @Generated public static final int Asynchronous = 0x00000001;
     @Generated public static final int FrameDropped = 0x00000002;
     @Generated public static final int ImageBufferModifiable = 0x00000004;
+
+    @Generated
+    private VTDecodeInfoFlags() {
+    }
 }

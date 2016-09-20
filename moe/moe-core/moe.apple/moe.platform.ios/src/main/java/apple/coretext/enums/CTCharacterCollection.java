@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTCharacterCollection {
-    @Generated
-    private CTCharacterCollection() {
-    }
-
     @Generated public static final char CharacterCollectionIdentityMapping = 0x0000;
     @Generated public static final char CharacterCollectionAdobeCNS1 = 0x0001;
     @Generated public static final char CharacterCollectionAdobeGB1 = 0x0002;
@@ -36,4 +32,8 @@ public final class CTCharacterCollection {
     @Generated public static final char AdobeJapan1CharacterCollection = 0x0003;
     @Generated public static final char AdobeJapan2CharacterCollection = 0x0004;
     @Generated public static final char AdobeKorea1CharacterCollection = 0x0005;
+
+    @Generated
+    private CTCharacterCollection() {
+    }
 }

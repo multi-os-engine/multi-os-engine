@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTRubyAlignment {
-    @Generated
-    private CTRubyAlignment() {
-    }
-
     @Generated public static final byte Invalid = -1;
     @Generated public static final byte Auto = 0;
     @Generated public static final byte Start = 1;
@@ -32,4 +28,8 @@ public final class CTRubyAlignment {
     @Generated public static final byte DistributeLetter = 4;
     @Generated public static final byte DistributeSpace = 5;
     @Generated public static final byte LineEdge = 6;
+
+    @Generated
+    private CTRubyAlignment() {
+    }
 }

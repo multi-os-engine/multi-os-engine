@@ -58,58 +58,6 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
     @Selector("alloc")
     public static native AVAudioEnvironmentReverbParameters alloc();
 
-    /**
-     * enable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentReverbParameters/enable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enable")
-    public native boolean enable();
-
-    /**
-     * filterParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentReverbParameters/filterParameters">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("filterParameters")
-    public native AVAudioUnitEQFilterParameters filterParameters();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioEnvironmentReverbParameters init();
-
-    /**
-     * level</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentReverbParameters/level">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("level")
-    public native float level();
-
-    /**
-     * loadFactoryReverbPreset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instm/AVAudioEnvironmentReverbParameters/loadFactoryReverbPreset:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadFactoryReverbPreset:")
-    public native void loadFactoryReverbPreset(@NInt long preset);
-
-    /**
-     * enable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentReverbParameters/enable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnable:")
-    public native void setEnable(boolean value);
-
-    /**
-     * level</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentReverbParameters/level">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLevel:")
-    public native void setLevel(float value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -209,4 +157,56 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * enable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentReverbParameters/enable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enable")
+    public native boolean enable();
+
+    /**
+     * filterParameters</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentReverbParameters/filterParameters">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("filterParameters")
+    public native AVAudioUnitEQFilterParameters filterParameters();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioEnvironmentReverbParameters init();
+
+    /**
+     * level</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentReverbParameters/level">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("level")
+    public native float level();
+
+    /**
+     * loadFactoryReverbPreset:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instm/AVAudioEnvironmentReverbParameters/loadFactoryReverbPreset:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadFactoryReverbPreset:")
+    public native void loadFactoryReverbPreset(@NInt long preset);
+
+    /**
+     * enable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentReverbParameters/enable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnable:")
+    public native void setEnable(boolean value);
+
+    /**
+     * level</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioEnvironmentReverbParameters_Class/index.html#//apple_ref/occ/instp/AVAudioEnvironmentReverbParameters/level">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLevel:")
+    public native void setLevel(float value);
 }

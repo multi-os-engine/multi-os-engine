@@ -55,79 +55,10 @@ public class AVAudioSessionPortDescription extends NSObject {
         super(peer);
     }
 
-    /**
-     * UID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/UID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("UID")
-    public native String UID();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native AVAudioSessionPortDescription alloc();
-
-    /**
-     * channels</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/channels">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("channels")
-    public native NSArray<? extends AVAudioSessionChannelDescription> channels();
-
-    /**
-     * dataSources</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/dataSources">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dataSources")
-    public native NSArray<? extends AVAudioSessionDataSourceDescription> dataSources();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioSessionPortDescription init();
-
-    /**
-     * portName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/portName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("portName")
-    public native String portName();
-
-    /**
-     * portType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/portType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("portType")
-    public native String portType();
-
-    /**
-     * preferredDataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/preferredDataSource">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preferredDataSource")
-    public native AVAudioSessionDataSourceDescription preferredDataSource();
-
-    /**
-     * selectedDataSource</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/selectedDataSource">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("selectedDataSource")
-    public native AVAudioSessionDataSourceDescription selectedDataSource();
-
-    /**
-     * setPreferredDataSource:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instm/AVAudioSessionPortDescription/setPreferredDataSource:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPreferredDataSource:error:")
-    public native boolean setPreferredDataSourceError(AVAudioSessionDataSourceDescription dataSource,
-            Ptr<NSError> outError);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -228,4 +159,73 @@ public class AVAudioSessionPortDescription extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * UID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/UID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("UID")
+    public native String UID();
+
+    /**
+     * channels</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/channels">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("channels")
+    public native NSArray<? extends AVAudioSessionChannelDescription> channels();
+
+    /**
+     * dataSources</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/dataSources">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dataSources")
+    public native NSArray<? extends AVAudioSessionDataSourceDescription> dataSources();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioSessionPortDescription init();
+
+    /**
+     * portName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/portName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("portName")
+    public native String portName();
+
+    /**
+     * portType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/portType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("portType")
+    public native String portType();
+
+    /**
+     * preferredDataSource</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/preferredDataSource">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preferredDataSource")
+    public native AVAudioSessionDataSourceDescription preferredDataSource();
+
+    /**
+     * selectedDataSource</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instp/AVAudioSessionPortDescription/selectedDataSource">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("selectedDataSource")
+    public native AVAudioSessionDataSourceDescription selectedDataSource();
+
+    /**
+     * setPreferredDataSource:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioSessionPortDescription_class/index.html#//apple_ref/occ/instm/AVAudioSessionPortDescription/setPreferredDataSource:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPreferredDataSource:error:")
+    public native boolean setPreferredDataSourceError(AVAudioSessionDataSourceDescription dataSource,
+            Ptr<NSError> outError);
 }

@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SCNetworkConnectionPPPStatus {
-    @Generated
-    private SCNetworkConnectionPPPStatus() {
-    }
-
     @Generated public static final int Disconnected = 0x00000000;
     @Generated public static final int Initializing = 0x00000001;
     @Generated public static final int ConnectingLink = 0x00000002;
@@ -38,4 +34,7 @@ public final class SCNetworkConnectionPPPStatus {
     @Generated public static final int HoldingLinkOff = 0x0000000B;
     @Generated public static final int Suspended = 0x0000000C;
     @Generated public static final int WaitingForRedial = 0x0000000D;
+    @Generated
+    private SCNetworkConnectionPPPStatus() {
+    }
 }

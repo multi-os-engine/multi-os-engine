@@ -35,11 +35,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class JSStaticFunction extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public JSStaticFunction() {
@@ -73,15 +73,6 @@ public final class JSStaticFunction extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setCallAsFunction(@FunctionPtr(name = "call_callAsFunction") Function_callAsFunction value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_callAsFunction {
-        @Generated
-        VoidPtr call_callAsFunction(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, @NUInt long arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg4,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg5);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int attributes();
@@ -94,4 +85,13 @@ public final class JSStaticFunction extends StructObject {
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_callAsFunction")
     public native Function_callAsFunction callAsFunction();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_callAsFunction {
+        @Generated
+        VoidPtr call_callAsFunction(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, @NUInt long arg3,
+                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg4,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg5);
+    }
 }

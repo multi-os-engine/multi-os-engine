@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHImageRequestOptionsVersion {
-    @Generated
-    private PHImageRequestOptionsVersion() {
-    }
-
     @Generated @NInt public static final long Current = 0x0000000000000000L;
     @Generated @NInt public static final long Unadjusted = 0x0000000000000001L;
     @Generated @NInt public static final long Original = 0x0000000000000002L;
+
+    @Generated
+    private PHImageRequestOptionsVersion() {
+    }
 }

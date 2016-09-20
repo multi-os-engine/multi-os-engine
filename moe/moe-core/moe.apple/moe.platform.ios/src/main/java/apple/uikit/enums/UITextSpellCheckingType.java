@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITextSpellCheckingType {
-    @Generated
-    private UITextSpellCheckingType() {
-    }
-
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     @Generated @NInt public static final long No = 0x0000000000000001L;
     @Generated @NInt public static final long Yes = 0x0000000000000002L;
+
+    @Generated
+    private UITextSpellCheckingType() {
+    }
 }

@@ -59,74 +59,6 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
     @Selector("alloc")
     public static native AVAssetResourceLoadingContentInformationRequest alloc();
 
-    /**
-     * contentLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/contentLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentLength")
-    public native long contentLength();
-
-    /**
-     * contentType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/contentType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentType")
-    public native String contentType();
-
-    @Generated
-    @Selector("init")
-    public native AVAssetResourceLoadingContentInformationRequest init();
-
-    /**
-     * byteRangeAccessSupported</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/byteRangeAccessSupported">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isByteRangeAccessSupported")
-    public native boolean isByteRangeAccessSupported();
-
-    /**
-     * renewalDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/renewalDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("renewalDate")
-    public native NSDate renewalDate();
-
-    /**
-     * byteRangeAccessSupported</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/byteRangeAccessSupported">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setByteRangeAccessSupported:")
-    public native void setByteRangeAccessSupported(boolean value);
-
-    /**
-     * contentLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/contentLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setContentLength:")
-    public native void setContentLength(long value);
-
-    /**
-     * contentType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/contentType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setContentType:")
-    public native void setContentType(String value);
-
-    /**
-     * renewalDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/renewalDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRenewalDate:")
-    public native void setRenewalDate(NSDate value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -226,4 +158,72 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * contentLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/contentLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentLength")
+    public native long contentLength();
+
+    /**
+     * contentType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/contentType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentType")
+    public native String contentType();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetResourceLoadingContentInformationRequest init();
+
+    /**
+     * byteRangeAccessSupported</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/byteRangeAccessSupported">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isByteRangeAccessSupported")
+    public native boolean isByteRangeAccessSupported();
+
+    /**
+     * byteRangeAccessSupported</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/byteRangeAccessSupported">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setByteRangeAccessSupported:")
+    public native void setByteRangeAccessSupported(boolean value);
+
+    /**
+     * renewalDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/renewalDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("renewalDate")
+    public native NSDate renewalDate();
+
+    /**
+     * contentLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/contentLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setContentLength:")
+    public native void setContentLength(long value);
+
+    /**
+     * contentType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/contentType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setContentType:")
+    public native void setContentType(String value);
+
+    /**
+     * renewalDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingContentInformationRequest/renewalDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRenewalDate:")
+    public native void setRenewalDate(NSDate value);
 }

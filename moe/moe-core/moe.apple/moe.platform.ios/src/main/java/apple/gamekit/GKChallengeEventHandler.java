@@ -68,46 +68,6 @@ public class GKChallengeEventHandler extends NSObject {
     @Selector("challengeEventHandler")
     public static native GKChallengeEventHandler challengeEventHandler();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallengeEventHandler_Ref/index.html#//apple_ref/occ/instp/GKChallengeEventHandler/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native GKChallengeEventHandlerDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native GKChallengeEventHandler init();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallengeEventHandler_Ref/index.html#//apple_ref/occ/instp/GKChallengeEventHandler/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKChallengeEventHandlerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallengeEventHandler_Ref/index.html#//apple_ref/occ/instp/GKChallengeEventHandler/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) GKChallengeEventHandlerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -207,4 +167,44 @@ public class GKChallengeEventHandler extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallengeEventHandler_Ref/index.html#//apple_ref/occ/instp/GKChallengeEventHandler/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native GKChallengeEventHandlerDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native GKChallengeEventHandler init();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallengeEventHandler_Ref/index.html#//apple_ref/occ/instp/GKChallengeEventHandler/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKChallengeEventHandlerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKChallengeEventHandler_Ref/index.html#//apple_ref/occ/instp/GKChallengeEventHandler/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) GKChallengeEventHandlerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 }

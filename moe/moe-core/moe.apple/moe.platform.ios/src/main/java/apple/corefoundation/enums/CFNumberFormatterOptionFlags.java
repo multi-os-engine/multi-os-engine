@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFNumberFormatterOptionFlags {
+    @Generated @NUInt public static final long kCFNumberFormatterParseIntegersOnly = 0x0000000000000001L;
+
     @Generated
     private CFNumberFormatterOptionFlags() {
     }
-
-    @Generated @NUInt public static final long kCFNumberFormatterParseIntegersOnly = 0x0000000000000001L;
 }

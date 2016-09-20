@@ -59,59 +59,6 @@ public class EAWiFiUnconfiguredAccessory extends NSObject {
     public static native EAWiFiUnconfiguredAccessory alloc();
 
     @Generated
-    @Selector("init")
-    public native EAWiFiUnconfiguredAccessory init();
-
-    /**
-     * macAddress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/macAddress">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("macAddress")
-    public native String macAddress();
-
-    /**
-     * manufacturer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/manufacturer">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("manufacturer")
-    public native String manufacturer();
-
-    /**
-     * model</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/model">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("model")
-    public native String model();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * properties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/properties">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("properties")
-    @NUInt
-    public native long properties();
-
-    /**
-     * ssid</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/ssid">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ssid")
-    public native String ssid();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -210,4 +157,57 @@ public class EAWiFiUnconfiguredAccessory extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native EAWiFiUnconfiguredAccessory init();
+
+    /**
+     * macAddress</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/macAddress">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("macAddress")
+    public native String macAddress();
+
+    /**
+     * manufacturer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/manufacturer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("manufacturer")
+    public native String manufacturer();
+
+    /**
+     * model</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/model">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("model")
+    public native String model();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * properties</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/properties">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("properties")
+    @NUInt
+    public native long properties();
+
+    /**
+     * ssid</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessory_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessory/ssid">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ssid")
+    public native String ssid();
 }

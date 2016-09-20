@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNParticleSortingMode {
-    @Generated
-    private SCNParticleSortingMode() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long ProjectedDepth = 0x0000000000000001L;
     @Generated @NInt public static final long Distance = 0x0000000000000002L;
     @Generated @NInt public static final long OldestFirst = 0x0000000000000003L;
     @Generated @NInt public static final long YoungestFirst = 0x0000000000000004L;
+
+    @Generated
+    private SCNParticleSortingMode() {
+    }
 }

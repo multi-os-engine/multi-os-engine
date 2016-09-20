@@ -60,29 +60,6 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
     public static native AVPlayerItemMetadataCollector alloc();
 
     @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native AVPlayerItemMetadataCollectorPushDelegate delegate();
-
-    @Generated
-    @Selector("delegateQueue")
-    public native NSObject delegateQueue();
-
-    @Generated
-    @Selector("init")
-    public native AVPlayerItemMetadataCollector init();
-
-    @Generated
-    @Selector("initWithIdentifiers:classifyingLabels:")
-    public native AVPlayerItemMetadataCollector initWithIdentifiersClassifyingLabels(NSArray<String> identifiers,
-            NSArray<String> classifyingLabels);
-
-    @Generated
-    @Selector("setDelegate:queue:")
-    public native void setDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) AVPlayerItemMetadataCollectorPushDelegate delegate, NSObject delegateQueue);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -181,4 +158,27 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native AVPlayerItemMetadataCollectorPushDelegate delegate();
+
+    @Generated
+    @Selector("delegateQueue")
+    public native NSObject delegateQueue();
+
+    @Generated
+    @Selector("init")
+    public native AVPlayerItemMetadataCollector init();
+
+    @Generated
+    @Selector("initWithIdentifiers:classifyingLabels:")
+    public native AVPlayerItemMetadataCollector initWithIdentifiersClassifyingLabels(NSArray<String> identifiers,
+            NSArray<String> classifyingLabels);
+
+    @Generated
+    @Selector("setDelegate:queue:")
+    public native void setDelegateQueue(
+            @Mapped(ObjCObjectMapper.class) AVPlayerItemMetadataCollectorPushDelegate delegate, NSObject delegateQueue);
 }

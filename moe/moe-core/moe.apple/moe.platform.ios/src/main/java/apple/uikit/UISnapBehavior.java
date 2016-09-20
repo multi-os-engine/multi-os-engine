@@ -62,53 +62,6 @@ public class UISnapBehavior extends UIDynamicBehavior {
     @Selector("alloc")
     public static native UISnapBehavior alloc();
 
-    /**
-     * damping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISnapBehavior_Class/index.html#//apple_ref/occ/instp/UISnapBehavior/damping">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("damping")
-    @NFloat
-    public native double damping();
-
-    @Generated
-    @Selector("init")
-    public native UISnapBehavior init();
-
-    /**
-     * initWithItem:snapToPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISnapBehavior_Class/index.html#//apple_ref/occ/instm/UISnapBehavior/initWithItem:snapToPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithItem:snapToPoint:")
-    public native UISnapBehavior initWithItemSnapToPoint(@Mapped(ObjCObjectMapper.class) UIDynamicItem item,
-            @ByValue CGPoint point);
-
-    /**
-     * damping</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISnapBehavior_Class/index.html#//apple_ref/occ/instp/UISnapBehavior/damping">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDamping:")
-    public native void setDamping(@NFloat double value);
-
-    /**
-     * snapPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISnapBehavior_Class/index.html#//apple_ref/occ/instp/UISnapBehavior/snapPoint">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSnapPoint:")
-    public native void setSnapPoint(@ByValue CGPoint value);
-
-    /**
-     * snapPoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISnapBehavior_Class/index.html#//apple_ref/occ/instp/UISnapBehavior/snapPoint">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("snapPoint")
-    @ByValue
-    public native CGPoint snapPoint();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -208,4 +161,51 @@ public class UISnapBehavior extends UIDynamicBehavior {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * damping</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISnapBehavior_Class/index.html#//apple_ref/occ/instp/UISnapBehavior/damping">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("damping")
+    @NFloat
+    public native double damping();
+
+    @Generated
+    @Selector("init")
+    public native UISnapBehavior init();
+
+    /**
+     * initWithItem:snapToPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISnapBehavior_Class/index.html#//apple_ref/occ/instm/UISnapBehavior/initWithItem:snapToPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithItem:snapToPoint:")
+    public native UISnapBehavior initWithItemSnapToPoint(@Mapped(ObjCObjectMapper.class) UIDynamicItem item,
+            @ByValue CGPoint point);
+
+    /**
+     * damping</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISnapBehavior_Class/index.html#//apple_ref/occ/instp/UISnapBehavior/damping">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDamping:")
+    public native void setDamping(@NFloat double value);
+
+    /**
+     * snapPoint</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISnapBehavior_Class/index.html#//apple_ref/occ/instp/UISnapBehavior/snapPoint">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSnapPoint:")
+    public native void setSnapPoint(@ByValue CGPoint value);
+
+    /**
+     * snapPoint</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UISnapBehavior_Class/index.html#//apple_ref/occ/instp/UISnapBehavior/snapPoint">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("snapPoint")
+    @ByValue
+    public native CGPoint snapPoint();
 }

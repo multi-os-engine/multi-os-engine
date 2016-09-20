@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKBloodType {
-    @Generated
-    private HKBloodType() {
-    }
-
     @Generated @NInt public static final long NotSet = 0x0000000000000000L;
     @Generated @NInt public static final long APositive = 0x0000000000000001L;
     @Generated @NInt public static final long ANegative = 0x0000000000000002L;
@@ -34,4 +30,8 @@ public final class HKBloodType {
     @Generated @NInt public static final long ABNegative = 0x0000000000000006L;
     @Generated @NInt public static final long OPositive = 0x0000000000000007L;
     @Generated @NInt public static final long ONegative = 0x0000000000000008L;
+
+    @Generated
+    private HKBloodType() {
+    }
 }

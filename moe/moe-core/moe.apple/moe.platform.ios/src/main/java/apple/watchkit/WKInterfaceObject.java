@@ -60,103 +60,6 @@ public class WKInterfaceObject extends NSObject {
     public static native WKInterfaceObject alloc();
 
     @Generated
-    @Selector("init")
-    public native WKInterfaceObject init();
-
-    /**
-     * interfaceProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instp/WKInterfaceObject/interfaceProperty">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("interfaceProperty")
-    public native String interfaceProperty();
-
-    /**
-     * setAccessibilityHint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAccessibilityHint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityHint:")
-    public native void setAccessibilityHint(String accessibilityHint);
-
-    /**
-     * setAccessibilityImageRegions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAccessibilityImageRegions:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityImageRegions:")
-    public native void setAccessibilityImageRegions(
-            NSArray<? extends WKAccessibilityImageRegion> accessibilityImageRegions);
-
-    /**
-     * setAccessibilityLabel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAccessibilityLabel:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityLabel:")
-    public native void setAccessibilityLabel(String accessibilityLabel);
-
-    /**
-     * setAccessibilityTraits:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAccessibilityTraits:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityTraits:")
-    public native void setAccessibilityTraits(long accessibilityTraits);
-
-    /**
-     * setAccessibilityValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAccessibilityValue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAccessibilityValue:")
-    public native void setAccessibilityValue(String accessibilityValue);
-
-    /**
-     * setAlpha:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAlpha:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAlpha:")
-    public native void setAlpha(@NFloat double alpha);
-
-    /**
-     * setHeight:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setHeight:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHeight:")
-    public native void setHeight(@NFloat double height);
-
-    /**
-     * setHidden:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setHidden:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHidden:")
-    public native void setHidden(boolean hidden);
-
-    /**
-     * setIsAccessibilityElement:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setIsAccessibilityElement:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIsAccessibilityElement:")
-    public native void setIsAccessibilityElement(boolean isAccessibilityElement);
-
-    /**
-     * setWidth:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setWidth:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWidth:")
-    public native void setWidth(@NFloat double width);
-
-    @Generated
-    @Selector("setAccessibilityIdentifier:")
-    public native void setAccessibilityIdentifier(String accessibilityIdentifier);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -255,4 +158,101 @@ public class WKInterfaceObject extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native WKInterfaceObject init();
+
+    /**
+     * interfaceProperty</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instp/WKInterfaceObject/interfaceProperty">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("interfaceProperty")
+    public native String interfaceProperty();
+
+    /**
+     * setAccessibilityHint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAccessibilityHint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityHint:")
+    public native void setAccessibilityHint(String accessibilityHint);
+
+    /**
+     * setAccessibilityImageRegions:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAccessibilityImageRegions:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityImageRegions:")
+    public native void setAccessibilityImageRegions(
+            NSArray<? extends WKAccessibilityImageRegion> accessibilityImageRegions);
+
+    /**
+     * setAccessibilityLabel:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAccessibilityLabel:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityLabel:")
+    public native void setAccessibilityLabel(String accessibilityLabel);
+
+    /**
+     * setAccessibilityTraits:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAccessibilityTraits:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityTraits:")
+    public native void setAccessibilityTraits(long accessibilityTraits);
+
+    /**
+     * setAccessibilityValue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAccessibilityValue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAccessibilityValue:")
+    public native void setAccessibilityValue(String accessibilityValue);
+
+    /**
+     * setAlpha:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setAlpha:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAlpha:")
+    public native void setAlpha(@NFloat double alpha);
+
+    /**
+     * setHeight:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setHeight:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHeight:")
+    public native void setHeight(@NFloat double height);
+
+    /**
+     * setHidden:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setHidden:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHidden:")
+    public native void setHidden(boolean hidden);
+
+    /**
+     * setIsAccessibilityElement:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setIsAccessibilityElement:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIsAccessibilityElement:")
+    public native void setIsAccessibilityElement(boolean isAccessibilityElement);
+
+    /**
+     * setWidth:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceObject_class/index.html#//apple_ref/occ/instm/WKInterfaceObject/setWidth:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWidth:")
+    public native void setWidth(@NFloat double width);
+
+    @Generated
+    @Selector("setAccessibilityIdentifier:")
+    public native void setAccessibilityIdentifier(String accessibilityIdentifier);
 }

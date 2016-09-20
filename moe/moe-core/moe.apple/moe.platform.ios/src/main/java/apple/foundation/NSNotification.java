@@ -57,41 +57,6 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native NSNotification alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NSNotification init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSNotification initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithName:object:userInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/index.html#//apple_ref/occ/instm/NSNotification/initWithName:object:userInfo:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithName:object:userInfo:")
-    public native NSNotification initWithNameObjectUserInfo(String name, @Mapped(ObjCObjectMapper.class) Object object,
-            NSDictionary<?, ?> userInfo);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/index.html#//apple_ref/occ/instp/NSNotification/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
     /**
      * notificationWithName:object:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/index.html#//apple_ref/occ/clm/NSNotification/notificationWithName:object:">iOS Dev Center</a>
@@ -109,23 +74,6 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
     @Selector("notificationWithName:object:userInfo:")
     public static native NSNotification notificationWithNameObjectUserInfo(String aName,
             @Mapped(ObjCObjectMapper.class) Object anObject, NSDictionary<?, ?> aUserInfo);
-
-    /**
-     * object</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/index.html#//apple_ref/occ/instp/NSNotification/object">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("object")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object object();
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/index.html#//apple_ref/occ/instp/NSNotification/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInfo")
-    public native NSDictionary<?, ?> userInfo();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -226,4 +174,56 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NSNotification init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSNotification initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithName:object:userInfo:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/index.html#//apple_ref/occ/instm/NSNotification/initWithName:object:userInfo:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithName:object:userInfo:")
+    public native NSNotification initWithNameObjectUserInfo(String name, @Mapped(ObjCObjectMapper.class) Object object,
+            NSDictionary<?, ?> userInfo);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/index.html#//apple_ref/occ/instp/NSNotification/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * object</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/index.html#//apple_ref/occ/instp/NSNotification/object">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("object")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object object();
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/index.html#//apple_ref/occ/instp/NSNotification/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInfo")
+    public native NSDictionary<?, ?> userInfo();
 }

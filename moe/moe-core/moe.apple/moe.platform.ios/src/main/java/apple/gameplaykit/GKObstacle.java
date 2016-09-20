@@ -59,10 +59,6 @@ public class GKObstacle extends NSObject {
     public static native GKObstacle alloc();
 
     @Generated
-    @Selector("init")
-    public native GKObstacle init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class GKObstacle extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GKObstacle init();
 }

@@ -59,92 +59,6 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MDLVertexAttribute alloc();
 
-    /**
-     * bufferIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/bufferIndex">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bufferIndex")
-    @NUInt
-    public native long bufferIndex();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/format">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("format")
-    @NUInt
-    public native long format();
-
-    @Generated
-    @Selector("init")
-    public native MDLVertexAttribute init();
-
-    /**
-     * initWithName:format:offset:bufferIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instm/MDLVertexAttribute/initWithName:format:offset:bufferIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithName:format:offset:bufferIndex:")
-    public native MDLVertexAttribute initWithNameFormatOffsetBufferIndex(String name, @NUInt long format,
-            @NUInt long offset, @NUInt long bufferIndex);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/offset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("offset")
-    @NUInt
-    public native long offset();
-
-    /**
-     * bufferIndex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/bufferIndex">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBufferIndex:")
-    public native void setBufferIndex(@NUInt long value);
-
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/format">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFormat:")
-    public native void setFormat(@NUInt long value);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setName:")
-    public native void setName(String value);
-
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/offset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOffset:")
-    public native void setOffset(@NUInt long value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -244,4 +158,90 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bufferIndex</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/bufferIndex">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bufferIndex")
+    @NUInt
+    public native long bufferIndex();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * format</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/format">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("format")
+    @NUInt
+    public native long format();
+
+    @Generated
+    @Selector("init")
+    public native MDLVertexAttribute init();
+
+    /**
+     * initWithName:format:offset:bufferIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instm/MDLVertexAttribute/initWithName:format:offset:bufferIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithName:format:offset:bufferIndex:")
+    public native MDLVertexAttribute initWithNameFormatOffsetBufferIndex(String name, @NUInt long format,
+            @NUInt long offset, @NUInt long bufferIndex);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * offset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/offset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("offset")
+    @NUInt
+    public native long offset();
+
+    /**
+     * bufferIndex</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/bufferIndex">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBufferIndex:")
+    public native void setBufferIndex(@NUInt long value);
+
+    /**
+     * format</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/format">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFormat:")
+    public native void setFormat(@NUInt long value);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
+
+    /**
+     * offset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLVertexAttribute_Class/index.html#//apple_ref/occ/instp/MDLVertexAttribute/offset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOffset:")
+    public native void setOffset(@NUInt long value);
 }

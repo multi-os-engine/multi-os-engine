@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKMetricPrefix {
-    @Generated
-    private HKMetricPrefix() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Pico = 0x0000000000000001L;
     @Generated @NInt public static final long Nano = 0x0000000000000002L;
@@ -38,4 +34,8 @@ public final class HKMetricPrefix {
     @Generated @NInt public static final long Mega = 0x000000000000000AL;
     @Generated @NInt public static final long Giga = 0x000000000000000BL;
     @Generated @NInt public static final long Tera = 0x000000000000000CL;
+
+    @Generated
+    private HKMetricPrefix() {
+    }
 }

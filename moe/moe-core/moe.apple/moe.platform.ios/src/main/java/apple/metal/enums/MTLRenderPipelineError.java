@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLRenderPipelineError {
-    @Generated
-    private MTLRenderPipelineError() {
-    }
-
     @Generated @NUInt public static final long Internal = 0x0000000000000001L;
     @Generated @NUInt public static final long Unsupported = 0x0000000000000002L;
     @Generated @NUInt public static final long InvalidInput = 0x0000000000000003L;
+
+    @Generated
+    private MTLRenderPipelineError() {
+    }
 }

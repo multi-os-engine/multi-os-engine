@@ -68,31 +68,6 @@ public class SCNBillboardConstraint extends SCNConstraint {
     @Selector("billboardConstraint")
     public static native SCNBillboardConstraint billboardConstraint();
 
-    /**
-     * freeAxes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBillboardConstraint_Class/index.html#//apple_ref/occ/instp/SCNBillboardConstraint/freeAxes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("freeAxes")
-    @NUInt
-    public native long freeAxes();
-
-    @Generated
-    @Selector("init")
-    public native SCNBillboardConstraint init();
-
-    /**
-     * freeAxes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBillboardConstraint_Class/index.html#//apple_ref/occ/instp/SCNBillboardConstraint/freeAxes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFreeAxes:")
-    public native void setFreeAxes(@NUInt long value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNBillboardConstraint initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -193,13 +168,38 @@ public class SCNBillboardConstraint extends SCNConstraint {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * freeAxes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBillboardConstraint_Class/index.html#//apple_ref/occ/instp/SCNBillboardConstraint/freeAxes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("freeAxes")
+    @NUInt
+    public native long freeAxes();
+
+    @Generated
+    @Selector("init")
+    public native SCNBillboardConstraint init();
+
+    /**
+     * freeAxes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNBillboardConstraint_Class/index.html#//apple_ref/occ/instp/SCNBillboardConstraint/freeAxes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFreeAxes:")
+    public native void setFreeAxes(@NUInt long value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNBillboardConstraint initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

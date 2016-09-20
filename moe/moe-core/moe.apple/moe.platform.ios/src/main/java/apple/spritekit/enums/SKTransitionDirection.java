@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKTransitionDirection {
-    @Generated
-    private SKTransitionDirection() {
-    }
-
     @Generated @NInt public static final long Up = 0x0000000000000000L;
     @Generated @NInt public static final long Down = 0x0000000000000001L;
     @Generated @NInt public static final long Right = 0x0000000000000002L;
     @Generated @NInt public static final long Left = 0x0000000000000003L;
+
+    @Generated
+    private SKTransitionDirection() {
+    }
 }

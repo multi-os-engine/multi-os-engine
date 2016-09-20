@@ -58,50 +58,6 @@ public class CBMutableService extends CBService {
     @Selector("alloc")
     public static native CBMutableService alloc();
 
-    /**
-     * characteristics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableService_Class/index.html#//apple_ref/occ/instp/CBMutableService/characteristics">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("characteristics")
-    public native NSArray<? extends CBCharacteristic> characteristics();
-
-    /**
-     * includedServices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableService_Class/index.html#//apple_ref/occ/instp/CBMutableService/includedServices">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("includedServices")
-    public native NSArray<? extends CBService> includedServices();
-
-    @Generated
-    @Selector("init")
-    public native CBMutableService init();
-
-    /**
-     * initWithType:primary:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableService_Class/index.html#//apple_ref/occ/instm/CBMutableService/initWithType:primary:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithType:primary:")
-    public native CBMutableService initWithTypePrimary(CBUUID UUID, boolean isPrimary);
-
-    /**
-     * characteristics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableService_Class/index.html#//apple_ref/occ/instp/CBMutableService/characteristics">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCharacteristics:")
-    public native void setCharacteristics(NSArray<? extends CBCharacteristic> value);
-
-    /**
-     * includedServices</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableService_Class/index.html#//apple_ref/occ/instp/CBMutableService/includedServices">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIncludedServices:")
-    public native void setIncludedServices(NSArray<? extends CBService> value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -201,4 +157,48 @@ public class CBMutableService extends CBService {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * characteristics</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableService_Class/index.html#//apple_ref/occ/instp/CBMutableService/characteristics">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("characteristics")
+    public native NSArray<? extends CBCharacteristic> characteristics();
+
+    /**
+     * includedServices</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableService_Class/index.html#//apple_ref/occ/instp/CBMutableService/includedServices">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("includedServices")
+    public native NSArray<? extends CBService> includedServices();
+
+    @Generated
+    @Selector("init")
+    public native CBMutableService init();
+
+    /**
+     * initWithType:primary:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableService_Class/index.html#//apple_ref/occ/instm/CBMutableService/initWithType:primary:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithType:primary:")
+    public native CBMutableService initWithTypePrimary(CBUUID UUID, boolean isPrimary);
+
+    /**
+     * characteristics</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableService_Class/index.html#//apple_ref/occ/instp/CBMutableService/characteristics">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCharacteristics:")
+    public native void setCharacteristics(NSArray<? extends CBCharacteristic> value);
+
+    /**
+     * includedServices</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBMutableService_Class/index.html#//apple_ref/occ/instp/CBMutableService/includedServices">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIncludedServices:")
+    public native void setIncludedServices(NSArray<? extends CBService> value);
 }

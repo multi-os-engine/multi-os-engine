@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UITableViewCellStateMask {
-    @Generated
-    private UITableViewCellStateMask() {
-    }
-
     @Generated @NUInt public static final long DefaultMask = 0x0000000000000000L;
     @Generated @NUInt public static final long ShowingEditControlMask = 0x0000000000000001L;
     @Generated @NUInt public static final long ShowingDeleteConfirmationMask = 0x0000000000000002L;
+
+    @Generated
+    private UITableViewCellStateMask() {
+    }
 }

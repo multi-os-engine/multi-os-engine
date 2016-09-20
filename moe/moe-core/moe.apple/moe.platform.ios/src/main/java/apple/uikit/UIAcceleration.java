@@ -59,42 +59,6 @@ public class UIAcceleration extends NSObject {
     public static native UIAcceleration alloc();
 
     @Generated
-    @Selector("init")
-    public native UIAcceleration init();
-
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAcceleration_Class/index.html#//apple_ref/occ/instp/UIAcceleration/timestamp">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timestamp")
-    public native double timestamp();
-
-    /**
-     * x</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAcceleration_Class/index.html#//apple_ref/occ/instp/UIAcceleration/x">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("x")
-    public native double x();
-
-    /**
-     * y</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAcceleration_Class/index.html#//apple_ref/occ/instp/UIAcceleration/y">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("y")
-    public native double y();
-
-    /**
-     * z</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAcceleration_Class/index.html#//apple_ref/occ/instp/UIAcceleration/z">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("z")
-    public native double z();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -193,4 +157,40 @@ public class UIAcceleration extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIAcceleration init();
+
+    /**
+     * timestamp</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAcceleration_Class/index.html#//apple_ref/occ/instp/UIAcceleration/timestamp">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timestamp")
+    public native double timestamp();
+
+    /**
+     * x</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAcceleration_Class/index.html#//apple_ref/occ/instp/UIAcceleration/x">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("x")
+    public native double x();
+
+    /**
+     * y</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAcceleration_Class/index.html#//apple_ref/occ/instp/UIAcceleration/y">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("y")
+    public native double y();
+
+    /**
+     * z</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAcceleration_Class/index.html#//apple_ref/occ/instp/UIAcceleration/z">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("z")
+    public native double z();
 }

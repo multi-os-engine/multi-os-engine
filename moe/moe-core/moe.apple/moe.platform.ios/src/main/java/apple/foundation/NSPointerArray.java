@@ -55,90 +55,10 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
         super(peer);
     }
 
-    /**
-     * addPointer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/addPointer:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addPointer:")
-    public native void addPointer(VoidPtr pointer);
-
-    /**
-     * allObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instp/NSPointerArray/allObjects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allObjects")
-    public native NSArray<?> allObjects();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSPointerArray alloc();
-
-    /**
-     * compact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/compact">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("compact")
-    public native void compact();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instp/NSPointerArray/count">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("count")
-    @NUInt
-    public native long count();
-
-    @Generated
-    @Selector("countByEnumeratingWithState:objects:count:")
-    @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NSPointerArray init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSPointerArray initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/initWithOptions:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithOptions:")
-    public native NSPointerArray initWithOptions(@NUInt long options);
-
-    /**
-     * initWithPointerFunctions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/initWithPointerFunctions:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithPointerFunctions:")
-    public native NSPointerArray initWithPointerFunctions(NSPointerFunctions functions);
-
-    /**
-     * insertPointer:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/insertPointer:atIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("insertPointer:atIndex:")
-    public native void insertPointerAtIndex(VoidPtr item, @NUInt long index);
 
     /**
      * pointerArrayWithOptions:</br>
@@ -155,46 +75,6 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Generated
     @Selector("pointerArrayWithPointerFunctions:")
     public static native NSPointerArray pointerArrayWithPointerFunctions(NSPointerFunctions functions);
-
-    /**
-     * pointerAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/pointerAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pointerAtIndex:")
-    public native VoidPtr pointerAtIndex(@NUInt long index);
-
-    /**
-     * pointerFunctions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instp/NSPointerArray/pointerFunctions">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pointerFunctions")
-    public native NSPointerFunctions pointerFunctions();
-
-    /**
-     * removePointerAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/removePointerAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removePointerAtIndex:")
-    public native void removePointerAtIndex(@NUInt long index);
-
-    /**
-     * replacePointerAtIndex:withPointer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/replacePointerAtIndex:withPointer:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("replacePointerAtIndex:withPointer:")
-    public native void replacePointerAtIndexWithPointer(@NUInt long index, VoidPtr item);
-
-    /**
-     * count</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instp/NSPointerArray/count">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCount:")
-    public native void setCount(@NUInt long value);
 
     /**
      * strongObjectsPointerArray</br>
@@ -311,4 +191,124 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addPointer:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/addPointer:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addPointer:")
+    public native void addPointer(VoidPtr pointer);
+
+    /**
+     * allObjects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instp/NSPointerArray/allObjects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allObjects")
+    public native NSArray<?> allObjects();
+
+    /**
+     * compact</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/compact">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("compact")
+    public native void compact();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * count</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instp/NSPointerArray/count">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("count")
+    @NUInt
+    public native long count();
+
+    @Generated
+    @Selector("countByEnumeratingWithState:objects:count:")
+    @NUInt
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NSPointerArray init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSPointerArray initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithOptions:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/initWithOptions:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithOptions:")
+    public native NSPointerArray initWithOptions(@NUInt long options);
+
+    /**
+     * initWithPointerFunctions:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/initWithPointerFunctions:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithPointerFunctions:")
+    public native NSPointerArray initWithPointerFunctions(NSPointerFunctions functions);
+
+    /**
+     * insertPointer:atIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/insertPointer:atIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("insertPointer:atIndex:")
+    public native void insertPointerAtIndex(VoidPtr item, @NUInt long index);
+
+    /**
+     * pointerAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/pointerAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pointerAtIndex:")
+    public native VoidPtr pointerAtIndex(@NUInt long index);
+
+    /**
+     * pointerFunctions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instp/NSPointerArray/pointerFunctions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pointerFunctions")
+    public native NSPointerFunctions pointerFunctions();
+
+    /**
+     * removePointerAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/removePointerAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removePointerAtIndex:")
+    public native void removePointerAtIndex(@NUInt long index);
+
+    /**
+     * replacePointerAtIndex:withPointer:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instm/NSPointerArray/replacePointerAtIndex:withPointer:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("replacePointerAtIndex:withPointer:")
+    public native void replacePointerAtIndexWithPointer(@NUInt long index, VoidPtr item);
+
+    /**
+     * count</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/index.html#//apple_ref/occ/instp/NSPointerArray/count">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCount:")
+    public native void setCount(@NUInt long value);
 }

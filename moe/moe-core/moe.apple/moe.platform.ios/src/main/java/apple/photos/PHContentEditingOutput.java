@@ -54,55 +54,10 @@ public class PHContentEditingOutput extends NSObject {
         super(peer);
     }
 
-    /**
-     * adjustmentData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingOutput_Class/index.html#//apple_ref/occ/instp/PHContentEditingOutput/adjustmentData">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("adjustmentData")
-    public native PHAdjustmentData adjustmentData();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native PHContentEditingOutput alloc();
-
-    @Generated
-    @Selector("init")
-    public native PHContentEditingOutput init();
-
-    /**
-     * initWithContentEditingInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingOutput_Class/index.html#//apple_ref/occ/instm/PHContentEditingOutput/initWithContentEditingInput:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithContentEditingInput:")
-    public native PHContentEditingOutput initWithContentEditingInput(PHContentEditingInput contentEditingInput);
-
-    /**
-     * initWithPlaceholderForCreatedAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingOutput_Class/index.html#//apple_ref/occ/instm/PHContentEditingOutput/initWithPlaceholderForCreatedAsset:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithPlaceholderForCreatedAsset:")
-    public native PHContentEditingOutput initWithPlaceholderForCreatedAsset(
-            PHObjectPlaceholder placeholderForCreatedAsset);
-
-    /**
-     * renderedContentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingOutput_Class/index.html#//apple_ref/occ/instp/PHContentEditingOutput/renderedContentURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("renderedContentURL")
-    public native NSURL renderedContentURL();
-
-    /**
-     * adjustmentData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingOutput_Class/index.html#//apple_ref/occ/instp/PHContentEditingOutput/adjustmentData">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAdjustmentData:")
-    public native void setAdjustmentData(PHAdjustmentData value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -203,4 +158,49 @@ public class PHContentEditingOutput extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * adjustmentData</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingOutput_Class/index.html#//apple_ref/occ/instp/PHContentEditingOutput/adjustmentData">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("adjustmentData")
+    public native PHAdjustmentData adjustmentData();
+
+    @Generated
+    @Selector("init")
+    public native PHContentEditingOutput init();
+
+    /**
+     * initWithContentEditingInput:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingOutput_Class/index.html#//apple_ref/occ/instm/PHContentEditingOutput/initWithContentEditingInput:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithContentEditingInput:")
+    public native PHContentEditingOutput initWithContentEditingInput(PHContentEditingInput contentEditingInput);
+
+    /**
+     * initWithPlaceholderForCreatedAsset:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingOutput_Class/index.html#//apple_ref/occ/instm/PHContentEditingOutput/initWithPlaceholderForCreatedAsset:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithPlaceholderForCreatedAsset:")
+    public native PHContentEditingOutput initWithPlaceholderForCreatedAsset(
+            PHObjectPlaceholder placeholderForCreatedAsset);
+
+    /**
+     * renderedContentURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingOutput_Class/index.html#//apple_ref/occ/instp/PHContentEditingOutput/renderedContentURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("renderedContentURL")
+    public native NSURL renderedContentURL();
+
+    /**
+     * adjustmentData</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingOutput_Class/index.html#//apple_ref/occ/instp/PHContentEditingOutput/adjustmentData">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAdjustmentData:")
+    public native void setAdjustmentData(PHAdjustmentData value);
 }

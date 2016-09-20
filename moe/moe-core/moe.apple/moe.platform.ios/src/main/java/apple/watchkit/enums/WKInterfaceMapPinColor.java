@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class WKInterfaceMapPinColor {
-    @Generated
-    private WKInterfaceMapPinColor() {
-    }
-
     @Generated @NInt public static final long Red = 0x0000000000000000L;
     @Generated @NInt public static final long Green = 0x0000000000000001L;
     @Generated @NInt public static final long Purple = 0x0000000000000002L;
+
+    @Generated
+    private WKInterfaceMapPinColor() {
+    }
 }

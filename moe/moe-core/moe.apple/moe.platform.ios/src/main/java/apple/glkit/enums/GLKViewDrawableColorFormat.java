@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GLKViewDrawableColorFormat {
-    @Generated
-    private GLKViewDrawableColorFormat() {
-    }
-
     @Generated public static final int RGBA8888 = 0x00000000;
     @Generated public static final int RGB565 = 0x00000001;
     @Generated public static final int SRGBA8888 = 0x00000002;
+
+    @Generated
+    private GLKViewDrawableColorFormat() {
+    }
 }

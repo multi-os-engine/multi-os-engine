@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class GKTurnBasedMatchStatus {
-    @Generated
-    private GKTurnBasedMatchStatus() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Open = 0x0000000000000001L;
     @Generated @NInt public static final long Ended = 0x0000000000000002L;
     @Generated @NInt public static final long Matching = 0x0000000000000003L;
+
+    @Generated
+    private GKTurnBasedMatchStatus() {
+    }
 }

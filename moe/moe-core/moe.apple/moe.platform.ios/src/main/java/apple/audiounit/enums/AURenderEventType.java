@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AURenderEventType {
-    @Generated
-    private AURenderEventType() {
-    }
-
     @Generated public static final byte Parameter = 1;
     @Generated public static final byte ParameterRamp = 2;
     @Generated public static final byte MIDI = 8;
     @Generated public static final byte MIDISysEx = 9;
+
+    @Generated
+    private AURenderEventType() {
+    }
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated @NInt public static final long NSManagedObjectValidationError = 0x000000000000060EL;
     @Generated @NInt public static final long NSValidationMultipleErrorsError = 0x0000000000000618L;
     @Generated @NInt public static final long NSValidationMissingMandatoryPropertyError = 0x0000000000000622L;
@@ -69,4 +65,8 @@ public final class Enums {
     @Generated @NInt public static final long NSManagedObjectConstraintValidationError = 0x000000000000060FL;
     @Generated @NInt public static final long NSManagedObjectConstraintMergeError = 0x000000000002079DL;
     @Generated @NInt public static final long NSMigrationConstraintViolationError = 0x0000000000020BDFL;
+
+    @Generated
+    private Enums() {
+    }
 }

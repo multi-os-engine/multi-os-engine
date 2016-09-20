@@ -60,10 +60,6 @@ public class CAMediaTimingFunction extends NSObject implements NSCoding {
     @Selector("alloc")
     public static native CAMediaTimingFunction alloc();
 
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
     /**
      * functionWithControlPoints::::</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CAMediaTimingFunction_class/index.html#//apple_ref/occ/clm/CAMediaTimingFunction/functionWithControlPoints::::">iOS Dev Center</a>
@@ -79,22 +75,6 @@ public class CAMediaTimingFunction extends NSObject implements NSCoding {
     @Generated
     @Selector("functionWithName:")
     public static native CAMediaTimingFunction functionWithName(String name);
-
-    @Generated
-    @Selector("init")
-    public native CAMediaTimingFunction init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAMediaTimingFunction initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithControlPoints::::</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CAMediaTimingFunction_class/index.html#//apple_ref/occ/instm/CAMediaTimingFunction/initWithControlPoints::::">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithControlPoints::::")
-    public native CAMediaTimingFunction initWithControlPoints(float c1x, float c1y, float c2x, float c2y);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -195,4 +175,24 @@ public class CAMediaTimingFunction extends NSObject implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CAMediaTimingFunction init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAMediaTimingFunction initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithControlPoints::::</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CAMediaTimingFunction_class/index.html#//apple_ref/occ/instm/CAMediaTimingFunction/initWithControlPoints::::">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithControlPoints::::")
+    public native CAMediaTimingFunction initWithControlPoints(float c1x, float c1y, float c2x, float c2y);
 }

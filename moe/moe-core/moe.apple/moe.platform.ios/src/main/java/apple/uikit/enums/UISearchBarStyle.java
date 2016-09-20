@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UISearchBarStyle {
-    @Generated
-    private UISearchBarStyle() {
-    }
-
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     @Generated @NUInt public static final long Prominent = 0x0000000000000001L;
     @Generated @NUInt public static final long Minimal = 0x0000000000000002L;
+
+    @Generated
+    private UISearchBarStyle() {
+    }
 }

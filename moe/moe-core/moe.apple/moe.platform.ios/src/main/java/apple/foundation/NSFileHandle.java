@@ -54,54 +54,10 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
         super(peer);
     }
 
-    /**
-     * acceptConnectionInBackgroundAndNotify</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/acceptConnectionInBackgroundAndNotify">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("acceptConnectionInBackgroundAndNotify")
-    public native void acceptConnectionInBackgroundAndNotify();
-
-    /**
-     * acceptConnectionInBackgroundAndNotifyForModes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/acceptConnectionInBackgroundAndNotifyForModes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("acceptConnectionInBackgroundAndNotifyForModes:")
-    public native void acceptConnectionInBackgroundAndNotifyForModes(NSArray<String> modes);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSFileHandle alloc();
-
-    /**
-     * availableData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/availableData">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("availableData")
-    public native NSData availableData();
-
-    /**
-     * closeFile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/closeFile">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("closeFile")
-    public native void closeFile();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * fileDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/fileDescriptor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fileDescriptor")
-    public native int fileDescriptor();
 
     /**
      * fileHandleForReadingAtPath:</br>
@@ -182,6 +138,154 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("fileHandleWithStandardOutput")
     public static native NSFileHandle fileHandleWithStandardOutput();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * acceptConnectionInBackgroundAndNotify</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/acceptConnectionInBackgroundAndNotify">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("acceptConnectionInBackgroundAndNotify")
+    public native void acceptConnectionInBackgroundAndNotify();
+
+    /**
+     * acceptConnectionInBackgroundAndNotifyForModes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/acceptConnectionInBackgroundAndNotifyForModes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("acceptConnectionInBackgroundAndNotifyForModes:")
+    public native void acceptConnectionInBackgroundAndNotifyForModes(NSArray<String> modes);
+
+    /**
+     * availableData</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/availableData">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("availableData")
+    public native NSData availableData();
+
+    /**
+     * closeFile</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instm/NSFileHandle/closeFile">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("closeFile")
+    public native void closeFile();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * fileDescriptor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/fileDescriptor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fileDescriptor")
+    public native int fileDescriptor();
 
     @Generated
     @Selector("init")
@@ -288,13 +392,6 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     public native void setReadabilityHandler(
             @ObjCBlock(name = "call_setReadabilityHandler") Block_setReadabilityHandler value);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setReadabilityHandler {
-        @Generated
-        void call_setReadabilityHandler(NSFileHandle arg0);
-    }
-
     /**
      * writeabilityHandler</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/writeabilityHandler">iOS Dev Center</a>
@@ -303,17 +400,6 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("setWriteabilityHandler:")
     public native void setWriteabilityHandler(
             @ObjCBlock(name = "call_setWriteabilityHandler") Block_setWriteabilityHandler value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setWriteabilityHandler {
-        @Generated
-        void call_setWriteabilityHandler(NSFileHandle arg0);
-    }
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -370,13 +456,6 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @ObjCBlock(name = "call_readabilityHandler_ret")
     public native Block_readabilityHandler_ret readabilityHandler();
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_readabilityHandler_ret {
-        @Generated
-        void call_readabilityHandler_ret(NSFileHandle arg0);
-    }
-
     /**
      * writeabilityHandler</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/index.html#//apple_ref/occ/instp/NSFileHandle/writeabilityHandler">iOS Dev Center</a>
@@ -388,108 +467,29 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Runtime(ObjCRuntime.class)
     @Generated
+    public interface Block_setReadabilityHandler {
+        @Generated
+        void call_setReadabilityHandler(NSFileHandle arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setWriteabilityHandler {
+        @Generated
+        void call_setWriteabilityHandler(NSFileHandle arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readabilityHandler_ret {
+        @Generated
+        void call_readabilityHandler_ret(NSFileHandle arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
     public interface Block_writeabilityHandler_ret {
         @Generated
         void call_writeabilityHandler_ret(NSFileHandle arg0);
     }
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

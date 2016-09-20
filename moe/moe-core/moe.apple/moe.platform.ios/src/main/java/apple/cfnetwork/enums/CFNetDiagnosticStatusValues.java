@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CFNetDiagnosticStatusValues {
-    @Generated
-    private CFNetDiagnosticStatusValues() {
-    }
-
     @Generated public static final int NoErr = 0x00000000;
     @Generated public static final int Err = 0xFFFEFC00;
     @Generated public static final int ConnectionUp = 0xFFFEFC01;
     @Generated public static final int ConnectionIndeterminate = 0xFFFEFC02;
     @Generated public static final int ConnectionDown = 0xFFFEFC03;
+
+    @Generated
+    private CFNetDiagnosticStatusValues() {
+    }
 }

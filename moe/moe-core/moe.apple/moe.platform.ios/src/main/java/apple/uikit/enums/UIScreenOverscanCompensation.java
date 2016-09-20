@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIScreenOverscanCompensation {
-    @Generated
-    private UIScreenOverscanCompensation() {
-    }
-
     @Generated @NInt public static final long Scale = 0x0000000000000000L;
     @Generated @NInt public static final long InsetBounds = 0x0000000000000001L;
     @Generated @NInt public static final long InsetApplicationFrame = 0x0000000000000002L;
     @Generated @NInt public static final long None = 0x0000000000000002L;
+
+    @Generated
+    private UIScreenOverscanCompensation() {
+    }
 }

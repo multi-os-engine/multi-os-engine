@@ -60,60 +60,10 @@ public class ALAssetsLibrary extends NSObject {
         super(peer);
     }
 
-    /**
-     * addAssetsGroupAlbumWithName:resultBlock:failureBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/addAssetsGroupAlbumWithName:resultBlock:failureBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("addAssetsGroupAlbumWithName:resultBlock:failureBlock:")
-    public native void addAssetsGroupAlbumWithNameResultBlockFailureBlock(String name,
-            @ObjCBlock(name = "call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1") Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1 resultBlock,
-            @ObjCBlock(name = "call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2") Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2 failureBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1 {
-        @Generated
-        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1(ALAssetsGroup arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2 {
-        @Generated
-        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2(NSError arg0);
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native ALAssetsLibrary alloc();
-
-    /**
-     * assetForURL:resultBlock:failureBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/assetForURL:resultBlock:failureBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("assetForURL:resultBlock:failureBlock:")
-    public native void assetForURLResultBlockFailureBlock(NSURL assetURL,
-            @ObjCBlock(name = "call_assetForURLResultBlockFailureBlock_1") Block_assetForURLResultBlockFailureBlock_1 resultBlock,
-            @ObjCBlock(name = "call_assetForURLResultBlockFailureBlock_2") Block_assetForURLResultBlockFailureBlock_2 failureBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_assetForURLResultBlockFailureBlock_1 {
-        @Generated
-        void call_assetForURLResultBlockFailureBlock_1(ALAsset arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_assetForURLResultBlockFailureBlock_2 {
-        @Generated
-        void call_assetForURLResultBlockFailureBlock_2(NSError arg0);
-    }
 
     /**
      * authorizationStatus</br>
@@ -133,140 +83,6 @@ public class ALAssetsLibrary extends NSObject {
     @Generated
     @Selector("disableSharedPhotoStreamsSupport")
     public static native void disableSharedPhotoStreamsSupport();
-
-    /**
-     * enumerateGroupsWithTypes:usingBlock:failureBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/enumerateGroupsWithTypes:usingBlock:failureBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("enumerateGroupsWithTypes:usingBlock:failureBlock:")
-    public native void enumerateGroupsWithTypesUsingBlockFailureBlock(@NUInt long types,
-            @ObjCBlock(name = "call_enumerateGroupsWithTypesUsingBlockFailureBlock_1") Block_enumerateGroupsWithTypesUsingBlockFailureBlock_1 enumerationBlock,
-            @ObjCBlock(name = "call_enumerateGroupsWithTypesUsingBlockFailureBlock_2") Block_enumerateGroupsWithTypesUsingBlockFailureBlock_2 failureBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateGroupsWithTypesUsingBlockFailureBlock_1 {
-        @Generated
-        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_1(ALAssetsGroup arg0, BoolPtr arg1);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateGroupsWithTypesUsingBlockFailureBlock_2 {
-        @Generated
-        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_2(NSError arg0);
-    }
-
-    /**
-     * groupForURL:resultBlock:failureBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/groupForURL:resultBlock:failureBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("groupForURL:resultBlock:failureBlock:")
-    public native void groupForURLResultBlockFailureBlock(NSURL groupURL,
-            @ObjCBlock(name = "call_groupForURLResultBlockFailureBlock_1") Block_groupForURLResultBlockFailureBlock_1 resultBlock,
-            @ObjCBlock(name = "call_groupForURLResultBlockFailureBlock_2") Block_groupForURLResultBlockFailureBlock_2 failureBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_groupForURLResultBlockFailureBlock_1 {
-        @Generated
-        void call_groupForURLResultBlockFailureBlock_1(ALAssetsGroup arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_groupForURLResultBlockFailureBlock_2 {
-        @Generated
-        void call_groupForURLResultBlockFailureBlock_2(NSError arg0);
-    }
-
-    @Generated
-    @Selector("init")
-    public native ALAssetsLibrary init();
-
-    /**
-     * videoAtPathIsCompatibleWithSavedPhotosAlbum:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/videoAtPathIsCompatibleWithSavedPhotosAlbum:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("videoAtPathIsCompatibleWithSavedPhotosAlbum:")
-    public native boolean videoAtPathIsCompatibleWithSavedPhotosAlbum(NSURL videoPathURL);
-
-    /**
-     * writeImageDataToSavedPhotosAlbum:metadata:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/writeImageDataToSavedPhotosAlbum:metadata:completionBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("writeImageDataToSavedPhotosAlbum:metadata:completionBlock:")
-    public native void writeImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSData imageData,
-            NSDictionary<?, ?> metadata,
-            @ObjCBlock(name = "call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock") Block_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock {
-        @Generated
-        void call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
-    }
-
-    /**
-     * writeImageToSavedPhotosAlbum:metadata:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/writeImageToSavedPhotosAlbum:metadata:completionBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("writeImageToSavedPhotosAlbum:metadata:completionBlock:")
-    public native void writeImageToSavedPhotosAlbumMetadataCompletionBlock(CGImageRef imageRef,
-            NSDictionary<?, ?> metadata,
-            @ObjCBlock(name = "call_writeImageToSavedPhotosAlbumMetadataCompletionBlock") Block_writeImageToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_writeImageToSavedPhotosAlbumMetadataCompletionBlock {
-        @Generated
-        void call_writeImageToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
-    }
-
-    /**
-     * writeImageToSavedPhotosAlbum:orientation:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/writeImageToSavedPhotosAlbum:orientation:completionBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("writeImageToSavedPhotosAlbum:orientation:completionBlock:")
-    public native void writeImageToSavedPhotosAlbumOrientationCompletionBlock(CGImageRef imageRef,
-            @NInt long orientation,
-            @ObjCBlock(name = "call_writeImageToSavedPhotosAlbumOrientationCompletionBlock") Block_writeImageToSavedPhotosAlbumOrientationCompletionBlock completionBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_writeImageToSavedPhotosAlbumOrientationCompletionBlock {
-        @Generated
-        void call_writeImageToSavedPhotosAlbumOrientationCompletionBlock(NSURL arg0, NSError arg1);
-    }
-
-    /**
-     * writeVideoAtPathToSavedPhotosAlbum:completionBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/writeVideoAtPathToSavedPhotosAlbum:completionBlock:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("writeVideoAtPathToSavedPhotosAlbum:completionBlock:")
-    public native void writeVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL videoPathURL,
-            @ObjCBlock(name = "call_writeVideoAtPathToSavedPhotosAlbumCompletionBlock") Block_writeVideoAtPathToSavedPhotosAlbumCompletionBlock completionBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_writeVideoAtPathToSavedPhotosAlbumCompletionBlock {
-        @Generated
-        void call_writeVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL arg0, NSError arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -367,4 +183,188 @@ public class ALAssetsLibrary extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addAssetsGroupAlbumWithName:resultBlock:failureBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/addAssetsGroupAlbumWithName:resultBlock:failureBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("addAssetsGroupAlbumWithName:resultBlock:failureBlock:")
+    public native void addAssetsGroupAlbumWithNameResultBlockFailureBlock(String name,
+            @ObjCBlock(name = "call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1") Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1 resultBlock,
+            @ObjCBlock(name = "call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2") Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2 failureBlock);
+
+    /**
+     * assetForURL:resultBlock:failureBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/assetForURL:resultBlock:failureBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("assetForURL:resultBlock:failureBlock:")
+    public native void assetForURLResultBlockFailureBlock(NSURL assetURL,
+            @ObjCBlock(name = "call_assetForURLResultBlockFailureBlock_1") Block_assetForURLResultBlockFailureBlock_1 resultBlock,
+            @ObjCBlock(name = "call_assetForURLResultBlockFailureBlock_2") Block_assetForURLResultBlockFailureBlock_2 failureBlock);
+
+    /**
+     * enumerateGroupsWithTypes:usingBlock:failureBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/enumerateGroupsWithTypes:usingBlock:failureBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("enumerateGroupsWithTypes:usingBlock:failureBlock:")
+    public native void enumerateGroupsWithTypesUsingBlockFailureBlock(@NUInt long types,
+            @ObjCBlock(name = "call_enumerateGroupsWithTypesUsingBlockFailureBlock_1") Block_enumerateGroupsWithTypesUsingBlockFailureBlock_1 enumerationBlock,
+            @ObjCBlock(name = "call_enumerateGroupsWithTypesUsingBlockFailureBlock_2") Block_enumerateGroupsWithTypesUsingBlockFailureBlock_2 failureBlock);
+
+    /**
+     * groupForURL:resultBlock:failureBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/groupForURL:resultBlock:failureBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("groupForURL:resultBlock:failureBlock:")
+    public native void groupForURLResultBlockFailureBlock(NSURL groupURL,
+            @ObjCBlock(name = "call_groupForURLResultBlockFailureBlock_1") Block_groupForURLResultBlockFailureBlock_1 resultBlock,
+            @ObjCBlock(name = "call_groupForURLResultBlockFailureBlock_2") Block_groupForURLResultBlockFailureBlock_2 failureBlock);
+
+    @Generated
+    @Selector("init")
+    public native ALAssetsLibrary init();
+
+    /**
+     * videoAtPathIsCompatibleWithSavedPhotosAlbum:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/videoAtPathIsCompatibleWithSavedPhotosAlbum:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("videoAtPathIsCompatibleWithSavedPhotosAlbum:")
+    public native boolean videoAtPathIsCompatibleWithSavedPhotosAlbum(NSURL videoPathURL);
+
+    /**
+     * writeImageDataToSavedPhotosAlbum:metadata:completionBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/writeImageDataToSavedPhotosAlbum:metadata:completionBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("writeImageDataToSavedPhotosAlbum:metadata:completionBlock:")
+    public native void writeImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSData imageData,
+            NSDictionary<?, ?> metadata,
+            @ObjCBlock(name = "call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock") Block_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
+
+    /**
+     * writeImageToSavedPhotosAlbum:metadata:completionBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/writeImageToSavedPhotosAlbum:metadata:completionBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("writeImageToSavedPhotosAlbum:metadata:completionBlock:")
+    public native void writeImageToSavedPhotosAlbumMetadataCompletionBlock(CGImageRef imageRef,
+            NSDictionary<?, ?> metadata,
+            @ObjCBlock(name = "call_writeImageToSavedPhotosAlbumMetadataCompletionBlock") Block_writeImageToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
+
+    /**
+     * writeImageToSavedPhotosAlbum:orientation:completionBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/writeImageToSavedPhotosAlbum:orientation:completionBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("writeImageToSavedPhotosAlbum:orientation:completionBlock:")
+    public native void writeImageToSavedPhotosAlbumOrientationCompletionBlock(CGImageRef imageRef,
+            @NInt long orientation,
+            @ObjCBlock(name = "call_writeImageToSavedPhotosAlbumOrientationCompletionBlock") Block_writeImageToSavedPhotosAlbumOrientationCompletionBlock completionBlock);
+
+    /**
+     * writeVideoAtPathToSavedPhotosAlbum:completionBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/index.html#//apple_ref/occ/instm/ALAssetsLibrary/writeVideoAtPathToSavedPhotosAlbum:completionBlock:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("writeVideoAtPathToSavedPhotosAlbum:completionBlock:")
+    public native void writeVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL videoPathURL,
+            @ObjCBlock(name = "call_writeVideoAtPathToSavedPhotosAlbumCompletionBlock") Block_writeVideoAtPathToSavedPhotosAlbumCompletionBlock completionBlock);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1 {
+        @Generated
+        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1(ALAssetsGroup arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2 {
+        @Generated
+        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_assetForURLResultBlockFailureBlock_1 {
+        @Generated
+        void call_assetForURLResultBlockFailureBlock_1(ALAsset arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_assetForURLResultBlockFailureBlock_2 {
+        @Generated
+        void call_assetForURLResultBlockFailureBlock_2(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateGroupsWithTypesUsingBlockFailureBlock_1 {
+        @Generated
+        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_1(ALAssetsGroup arg0, BoolPtr arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateGroupsWithTypesUsingBlockFailureBlock_2 {
+        @Generated
+        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_2(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_groupForURLResultBlockFailureBlock_1 {
+        @Generated
+        void call_groupForURLResultBlockFailureBlock_1(ALAssetsGroup arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_groupForURLResultBlockFailureBlock_2 {
+        @Generated
+        void call_groupForURLResultBlockFailureBlock_2(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock {
+        @Generated
+        void call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeImageToSavedPhotosAlbumMetadataCompletionBlock {
+        @Generated
+        void call_writeImageToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeImageToSavedPhotosAlbumOrientationCompletionBlock {
+        @Generated
+        void call_writeImageToSavedPhotosAlbumOrientationCompletionBlock(NSURL arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeVideoAtPathToSavedPhotosAlbumCompletionBlock {
+        @Generated
+        void call_writeVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL arg0, NSError arg1);
+    }
 }

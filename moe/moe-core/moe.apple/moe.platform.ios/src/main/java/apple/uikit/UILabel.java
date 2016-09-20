@@ -64,375 +64,10 @@ public class UILabel extends UIView implements NSCoding {
         super(peer);
     }
 
-    /**
-     * adjustsFontSizeToFitWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/adjustsFontSizeToFitWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("adjustsFontSizeToFitWidth")
-    public native boolean adjustsFontSizeToFitWidth();
-
-    /**
-     * adjustsLetterSpacingToFitWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/adjustsLetterSpacingToFitWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("adjustsLetterSpacingToFitWidth")
-    public native boolean adjustsLetterSpacingToFitWidth();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UILabel alloc();
-
-    /**
-     * attributedText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/attributedText">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attributedText")
-    public native NSAttributedString attributedText();
-
-    /**
-     * baselineAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/baselineAdjustment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("baselineAdjustment")
-    @NInt
-    public native long baselineAdjustment();
-
-    /**
-     * drawTextInRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instm/UILabel/drawTextInRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("drawTextInRect:")
-    public native void drawTextInRect(@ByValue CGRect rect);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/font">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("font")
-    public native UIFont font();
-
-    /**
-     * highlightedTextColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/highlightedTextColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("highlightedTextColor")
-    public native UIColor highlightedTextColor();
-
-    @Generated
-    @Selector("init")
-    public native UILabel init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UILabel initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UILabel initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/highlighted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isHighlighted")
-    public native boolean isHighlighted();
-
-    /**
-     * userInteractionEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/userInteractionEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isUserInteractionEnabled")
-    public native boolean isUserInteractionEnabled();
-
-    /**
-     * lineBreakMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/lineBreakMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lineBreakMode")
-    @NInt
-    public native long lineBreakMode();
-
-    /**
-     * minimumFontSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/minimumFontSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("minimumFontSize")
-    @NFloat
-    public native double minimumFontSize();
-
-    /**
-     * minimumScaleFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/minimumScaleFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumScaleFactor")
-    @NFloat
-    public native double minimumScaleFactor();
-
-    /**
-     * numberOfLines</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/numberOfLines">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberOfLines")
-    @NInt
-    public native long numberOfLines();
-
-    /**
-     * preferredMaxLayoutWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/preferredMaxLayoutWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preferredMaxLayoutWidth")
-    @NFloat
-    public native double preferredMaxLayoutWidth();
-
-    /**
-     * adjustsFontSizeToFitWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/adjustsFontSizeToFitWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAdjustsFontSizeToFitWidth:")
-    public native void setAdjustsFontSizeToFitWidth(boolean value);
-
-    /**
-     * adjustsLetterSpacingToFitWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/adjustsLetterSpacingToFitWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setAdjustsLetterSpacingToFitWidth:")
-    public native void setAdjustsLetterSpacingToFitWidth(boolean value);
-
-    /**
-     * attributedText</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/attributedText">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAttributedText:")
-    public native void setAttributedText(NSAttributedString value);
-
-    /**
-     * baselineAdjustment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/baselineAdjustment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBaselineAdjustment:")
-    public native void setBaselineAdjustment(@NInt long value);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/font">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFont:")
-    public native void setFont(UIFont value);
-
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/highlighted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHighlighted:")
-    public native void setHighlighted(boolean value);
-
-    /**
-     * highlightedTextColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/highlightedTextColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHighlightedTextColor:")
-    public native void setHighlightedTextColor(UIColor value);
-
-    /**
-     * lineBreakMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/lineBreakMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLineBreakMode:")
-    public native void setLineBreakMode(@NInt long value);
-
-    /**
-     * minimumFontSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/minimumFontSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setMinimumFontSize:")
-    public native void setMinimumFontSize(@NFloat double value);
-
-    /**
-     * minimumScaleFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/minimumScaleFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumScaleFactor:")
-    public native void setMinimumScaleFactor(@NFloat double value);
-
-    /**
-     * numberOfLines</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/numberOfLines">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNumberOfLines:")
-    public native void setNumberOfLines(@NInt long value);
-
-    /**
-     * preferredMaxLayoutWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/preferredMaxLayoutWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPreferredMaxLayoutWidth:")
-    public native void setPreferredMaxLayoutWidth(@NFloat double value);
-
-    /**
-     * shadowColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/shadowColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShadowColor:")
-    public native void setShadowColor(UIColor value);
-
-    /**
-     * shadowOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/shadowOffset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShadowOffset:")
-    public native void setShadowOffset(@ByValue CGSize value);
-
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/text">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setText:")
-    public native void setText(String value);
-
-    /**
-     * textAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/textAlignment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTextAlignment:")
-    public native void setTextAlignment(@NInt long value);
-
-    /**
-     * textColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/textColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTextColor:")
-    public native void setTextColor(UIColor value);
-
-    /**
-     * userInteractionEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/userInteractionEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUserInteractionEnabled:")
-    public native void setUserInteractionEnabled(boolean value);
-
-    /**
-     * shadowColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/shadowColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shadowColor")
-    public native UIColor shadowColor();
-
-    /**
-     * shadowOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/shadowOffset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shadowOffset")
-    @ByValue
-    public native CGSize shadowOffset();
-
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/text">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("text")
-    public native String text();
-
-    /**
-     * textAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/textAlignment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textAlignment")
-    @NInt
-    public native long textAlignment();
-
-    /**
-     * textColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/textColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textColor")
-    public native UIColor textColor();
-
-    /**
-     * textRectForBounds:limitedToNumberOfLines:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instm/UILabel/textRectForBounds:limitedToNumberOfLines:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("textRectForBounds:limitedToNumberOfLines:")
-    @ByValue
-    public native CGRect textRectForBoundsLimitedToNumberOfLines(@ByValue CGRect bounds, @NInt long numberOfLines);
-
-    /**
-     * allowsDefaultTighteningForTruncation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/allowsDefaultTighteningForTruncation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allowsDefaultTighteningForTruncation")
-    public native boolean allowsDefaultTighteningForTruncation();
-
-    /**
-     * allowsDefaultTighteningForTruncation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/allowsDefaultTighteningForTruncation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAllowsDefaultTighteningForTruncation:")
-    public native void setAllowsDefaultTighteningForTruncation(boolean value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -487,23 +122,9 @@ public class UILabel extends UIView implements NSCoding {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -514,27 +135,10 @@ public class UILabel extends UIView implements NSCoding {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -545,24 +149,9 @@ public class UILabel extends UIView implements NSCoding {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -760,4 +349,415 @@ public class UILabel extends UIView implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * adjustsFontSizeToFitWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/adjustsFontSizeToFitWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("adjustsFontSizeToFitWidth")
+    public native boolean adjustsFontSizeToFitWidth();
+
+    /**
+     * adjustsLetterSpacingToFitWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/adjustsLetterSpacingToFitWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("adjustsLetterSpacingToFitWidth")
+    public native boolean adjustsLetterSpacingToFitWidth();
+
+    /**
+     * attributedText</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/attributedText">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attributedText")
+    public native NSAttributedString attributedText();
+
+    /**
+     * baselineAdjustment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/baselineAdjustment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("baselineAdjustment")
+    @NInt
+    public native long baselineAdjustment();
+
+    /**
+     * drawTextInRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instm/UILabel/drawTextInRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("drawTextInRect:")
+    public native void drawTextInRect(@ByValue CGRect rect);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * font</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/font">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("font")
+    public native UIFont font();
+
+    /**
+     * highlightedTextColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/highlightedTextColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("highlightedTextColor")
+    public native UIColor highlightedTextColor();
+
+    @Generated
+    @Selector("init")
+    public native UILabel init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UILabel initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UILabel initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    /**
+     * highlighted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/highlighted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isHighlighted")
+    public native boolean isHighlighted();
+
+    /**
+     * highlighted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/highlighted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHighlighted:")
+    public native void setHighlighted(boolean value);
+
+    /**
+     * userInteractionEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/userInteractionEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isUserInteractionEnabled")
+    public native boolean isUserInteractionEnabled();
+
+    /**
+     * userInteractionEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/userInteractionEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUserInteractionEnabled:")
+    public native void setUserInteractionEnabled(boolean value);
+
+    /**
+     * lineBreakMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/lineBreakMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lineBreakMode")
+    @NInt
+    public native long lineBreakMode();
+
+    /**
+     * minimumFontSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/minimumFontSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("minimumFontSize")
+    @NFloat
+    public native double minimumFontSize();
+
+    /**
+     * minimumScaleFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/minimumScaleFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumScaleFactor")
+    @NFloat
+    public native double minimumScaleFactor();
+
+    /**
+     * numberOfLines</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/numberOfLines">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberOfLines")
+    @NInt
+    public native long numberOfLines();
+
+    /**
+     * preferredMaxLayoutWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/preferredMaxLayoutWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preferredMaxLayoutWidth")
+    @NFloat
+    public native double preferredMaxLayoutWidth();
+
+    /**
+     * adjustsFontSizeToFitWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/adjustsFontSizeToFitWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAdjustsFontSizeToFitWidth:")
+    public native void setAdjustsFontSizeToFitWidth(boolean value);
+
+    /**
+     * adjustsLetterSpacingToFitWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/adjustsLetterSpacingToFitWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setAdjustsLetterSpacingToFitWidth:")
+    public native void setAdjustsLetterSpacingToFitWidth(boolean value);
+
+    /**
+     * attributedText</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/attributedText">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAttributedText:")
+    public native void setAttributedText(NSAttributedString value);
+
+    /**
+     * baselineAdjustment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/baselineAdjustment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBaselineAdjustment:")
+    public native void setBaselineAdjustment(@NInt long value);
+
+    /**
+     * font</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/font">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFont:")
+    public native void setFont(UIFont value);
+
+    /**
+     * highlightedTextColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/highlightedTextColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHighlightedTextColor:")
+    public native void setHighlightedTextColor(UIColor value);
+
+    /**
+     * lineBreakMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/lineBreakMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLineBreakMode:")
+    public native void setLineBreakMode(@NInt long value);
+
+    /**
+     * minimumFontSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/minimumFontSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setMinimumFontSize:")
+    public native void setMinimumFontSize(@NFloat double value);
+
+    /**
+     * minimumScaleFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/minimumScaleFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumScaleFactor:")
+    public native void setMinimumScaleFactor(@NFloat double value);
+
+    /**
+     * numberOfLines</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/numberOfLines">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNumberOfLines:")
+    public native void setNumberOfLines(@NInt long value);
+
+    /**
+     * preferredMaxLayoutWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/preferredMaxLayoutWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPreferredMaxLayoutWidth:")
+    public native void setPreferredMaxLayoutWidth(@NFloat double value);
+
+    /**
+     * shadowColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/shadowColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShadowColor:")
+    public native void setShadowColor(UIColor value);
+
+    /**
+     * shadowOffset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/shadowOffset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShadowOffset:")
+    public native void setShadowOffset(@ByValue CGSize value);
+
+    /**
+     * text</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/text">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setText:")
+    public native void setText(String value);
+
+    /**
+     * textAlignment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/textAlignment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTextAlignment:")
+    public native void setTextAlignment(@NInt long value);
+
+    /**
+     * textColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/textColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTextColor:")
+    public native void setTextColor(UIColor value);
+
+    /**
+     * shadowColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/shadowColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shadowColor")
+    public native UIColor shadowColor();
+
+    /**
+     * shadowOffset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/shadowOffset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shadowOffset")
+    @ByValue
+    public native CGSize shadowOffset();
+
+    /**
+     * text</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/text">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("text")
+    public native String text();
+
+    /**
+     * textAlignment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/textAlignment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textAlignment")
+    @NInt
+    public native long textAlignment();
+
+    /**
+     * textColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/textColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textColor")
+    public native UIColor textColor();
+
+    /**
+     * textRectForBounds:limitedToNumberOfLines:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instm/UILabel/textRectForBounds:limitedToNumberOfLines:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("textRectForBounds:limitedToNumberOfLines:")
+    @ByValue
+    public native CGRect textRectForBoundsLimitedToNumberOfLines(@ByValue CGRect bounds, @NInt long numberOfLines);
+
+    /**
+     * allowsDefaultTighteningForTruncation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/allowsDefaultTighteningForTruncation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allowsDefaultTighteningForTruncation")
+    public native boolean allowsDefaultTighteningForTruncation();
+
+    /**
+     * allowsDefaultTighteningForTruncation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILabel_Class/index.html#//apple_ref/occ/instp/UILabel/allowsDefaultTighteningForTruncation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAllowsDefaultTighteningForTruncation:")
+    public native void setAllowsDefaultTighteningForTruncation(boolean value);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

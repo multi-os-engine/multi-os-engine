@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITextAutocapitalizationType {
-    @Generated
-    private UITextAutocapitalizationType() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Words = 0x0000000000000001L;
     @Generated @NInt public static final long Sentences = 0x0000000000000002L;
     @Generated @NInt public static final long AllCharacters = 0x0000000000000003L;
+
+    @Generated
+    private UITextAutocapitalizationType() {
+    }
 }

@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLTextureUsage {
-    @Generated
-    private MTLTextureUsage() {
-    }
-
     @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NUInt public static final long ShaderRead = 0x0000000000000001L;
     @Generated @NUInt public static final long ShaderWrite = 0x0000000000000002L;
     @Generated @NUInt public static final long RenderTarget = 0x0000000000000004L;
     @Generated @NUInt public static final long PixelFormatView = 0x0000000000000010L;
+
+    @Generated
+    private MTLTextureUsage() {
+    }
 }

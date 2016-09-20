@@ -58,58 +58,6 @@ public class WKBackForwardList extends NSObject {
     @Selector("alloc")
     public static native WKBackForwardList alloc();
 
-    /**
-     * backItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instp/WKBackForwardList/backItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backItem")
-    public native WKBackForwardListItem backItem();
-
-    /**
-     * backList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instp/WKBackForwardList/backList">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backList")
-    public native NSArray<? extends WKBackForwardListItem> backList();
-
-    /**
-     * currentItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instp/WKBackForwardList/currentItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentItem")
-    public native WKBackForwardListItem currentItem();
-
-    /**
-     * forwardItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instp/WKBackForwardList/forwardItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("forwardItem")
-    public native WKBackForwardListItem forwardItem();
-
-    /**
-     * forwardList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instp/WKBackForwardList/forwardList">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("forwardList")
-    public native NSArray<? extends WKBackForwardListItem> forwardList();
-
-    @Generated
-    @Selector("init")
-    public native WKBackForwardList init();
-
-    /**
-     * itemAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instm/WKBackForwardList/itemAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("itemAtIndex:")
-    public native WKBackForwardListItem itemAtIndex(@NInt long index);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -209,4 +157,56 @@ public class WKBackForwardList extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * backItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instp/WKBackForwardList/backItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backItem")
+    public native WKBackForwardListItem backItem();
+
+    /**
+     * backList</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instp/WKBackForwardList/backList">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backList")
+    public native NSArray<? extends WKBackForwardListItem> backList();
+
+    /**
+     * currentItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instp/WKBackForwardList/currentItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentItem")
+    public native WKBackForwardListItem currentItem();
+
+    /**
+     * forwardItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instp/WKBackForwardList/forwardItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("forwardItem")
+    public native WKBackForwardListItem forwardItem();
+
+    /**
+     * forwardList</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instp/WKBackForwardList/forwardList">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("forwardList")
+    public native NSArray<? extends WKBackForwardListItem> forwardList();
+
+    @Generated
+    @Selector("init")
+    public native WKBackForwardList init();
+
+    /**
+     * itemAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKBackForwardList_Ref/index.html#//apple_ref/occ/instm/WKBackForwardList/itemAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("itemAtIndex:")
+    public native WKBackForwardListItem itemAtIndex(@NInt long index);
 }

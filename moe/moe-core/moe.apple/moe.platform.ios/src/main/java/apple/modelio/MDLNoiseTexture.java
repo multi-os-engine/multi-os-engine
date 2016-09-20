@@ -60,10 +60,6 @@ public class MDLNoiseTexture extends MDLTexture {
     public static native MDLNoiseTexture alloc();
 
     @Generated
-    @Selector("init")
-    public native MDLNoiseTexture init();
-
-    @Generated
     @Selector("textureCubeWithImagesNamed:")
     public static native MDLNoiseTexture textureCubeWithImagesNamed(NSArray<String> names);
 
@@ -178,4 +174,8 @@ public class MDLNoiseTexture extends MDLTexture {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MDLNoiseTexture init();
 }

@@ -69,106 +69,6 @@ public class PHFetchResultChangeDetails extends NSObject {
     public static native PHFetchResultChangeDetails changeDetailsFromFetchResultToFetchResultChangedObjects(
             PHFetchResult<?> fromResult, PHFetchResult<?> toResult, NSArray<? extends PHObject> changedObjects);
 
-    /**
-     * changedIndexes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/changedIndexes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("changedIndexes")
-    public native NSIndexSet changedIndexes();
-
-    /**
-     * changedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/changedObjects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("changedObjects")
-    public native NSArray<? extends PHObject> changedObjects();
-
-    /**
-     * enumerateMovesWithBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instm/PHFetchResultChangeDetails/enumerateMovesWithBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enumerateMovesWithBlock:")
-    public native void enumerateMovesWithBlock(
-            @ObjCBlock(name = "call_enumerateMovesWithBlock") Block_enumerateMovesWithBlock handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateMovesWithBlock {
-        @Generated
-        void call_enumerateMovesWithBlock(@NUInt long arg0, @NUInt long arg1);
-    }
-
-    /**
-     * fetchResultAfterChanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/fetchResultAfterChanges">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchResultAfterChanges")
-    public native PHFetchResult<?> fetchResultAfterChanges();
-
-    /**
-     * fetchResultBeforeChanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/fetchResultBeforeChanges">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchResultBeforeChanges")
-    public native PHFetchResult<?> fetchResultBeforeChanges();
-
-    /**
-     * hasIncrementalChanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/hasIncrementalChanges">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hasIncrementalChanges")
-    public native boolean hasIncrementalChanges();
-
-    /**
-     * hasMoves</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/hasMoves">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hasMoves")
-    public native boolean hasMoves();
-
-    @Generated
-    @Selector("init")
-    public native PHFetchResultChangeDetails init();
-
-    /**
-     * insertedIndexes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/insertedIndexes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("insertedIndexes")
-    public native NSIndexSet insertedIndexes();
-
-    /**
-     * insertedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/insertedObjects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("insertedObjects")
-    public native NSArray<? extends PHObject> insertedObjects();
-
-    /**
-     * removedIndexes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/removedIndexes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removedIndexes")
-    public native NSIndexSet removedIndexes();
-
-    /**
-     * removedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/removedObjects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removedObjects")
-    public native NSArray<? extends PHObject> removedObjects();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -268,4 +168,104 @@ public class PHFetchResultChangeDetails extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * changedIndexes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/changedIndexes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("changedIndexes")
+    public native NSIndexSet changedIndexes();
+
+    /**
+     * changedObjects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/changedObjects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("changedObjects")
+    public native NSArray<? extends PHObject> changedObjects();
+
+    /**
+     * enumerateMovesWithBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instm/PHFetchResultChangeDetails/enumerateMovesWithBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enumerateMovesWithBlock:")
+    public native void enumerateMovesWithBlock(
+            @ObjCBlock(name = "call_enumerateMovesWithBlock") Block_enumerateMovesWithBlock handler);
+
+    /**
+     * fetchResultAfterChanges</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/fetchResultAfterChanges">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchResultAfterChanges")
+    public native PHFetchResult<?> fetchResultAfterChanges();
+
+    /**
+     * fetchResultBeforeChanges</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/fetchResultBeforeChanges">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchResultBeforeChanges")
+    public native PHFetchResult<?> fetchResultBeforeChanges();
+
+    /**
+     * hasIncrementalChanges</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/hasIncrementalChanges">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hasIncrementalChanges")
+    public native boolean hasIncrementalChanges();
+
+    /**
+     * hasMoves</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/hasMoves">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hasMoves")
+    public native boolean hasMoves();
+
+    @Generated
+    @Selector("init")
+    public native PHFetchResultChangeDetails init();
+
+    /**
+     * insertedIndexes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/insertedIndexes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("insertedIndexes")
+    public native NSIndexSet insertedIndexes();
+
+    /**
+     * insertedObjects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/insertedObjects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("insertedObjects")
+    public native NSArray<? extends PHObject> insertedObjects();
+
+    /**
+     * removedIndexes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/removedIndexes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removedIndexes")
+    public native NSIndexSet removedIndexes();
+
+    /**
+     * removedObjects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHFetchResultChangeDetails_Class/index.html#//apple_ref/occ/instp/PHFetchResultChangeDetails/removedObjects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removedObjects")
+    public native NSArray<? extends PHObject> removedObjects();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateMovesWithBlock {
+        @Generated
+        void call_enumerateMovesWithBlock(@NUInt long arg0, @NUInt long arg1);
+    }
 }

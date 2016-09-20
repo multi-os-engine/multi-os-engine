@@ -61,10 +61,6 @@ public class SKPhysicsJointFixed extends SKPhysicsJoint {
     @Selector("alloc")
     public static native SKPhysicsJointFixed alloc();
 
-    @Generated
-    @Selector("init")
-    public native SKPhysicsJointFixed init();
-
     /**
      * jointWithBodyA:bodyB:anchor:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointFixed_Ref/index.html#//apple_ref/occ/clm/SKPhysicsJointFixed/jointWithBodyA:bodyB:anchor:">iOS Dev Center</a>
@@ -73,10 +69,6 @@ public class SKPhysicsJointFixed extends SKPhysicsJoint {
     @Selector("jointWithBodyA:bodyB:anchor:")
     public static native SKPhysicsJointFixed jointWithBodyABodyBAnchor(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
             @ByValue CGPoint anchor);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKPhysicsJointFixed initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -177,4 +169,12 @@ public class SKPhysicsJointFixed extends SKPhysicsJoint {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SKPhysicsJointFixed init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKPhysicsJointFixed initWithCoder(NSCoder aDecoder);
 }

@@ -56,6 +56,120 @@ public class CMMotionManager extends NSObject {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native CMMotionManager alloc();
+
+    /**
+     * availableAttitudeReferenceFrames</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/clm/CMMotionManager/availableAttitudeReferenceFrames">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("availableAttitudeReferenceFrames")
+    @NUInt
+    public static native long availableAttitudeReferenceFrames();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version();
+
     /**
      * accelerometerData</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/accelerometerData">iOS Dev Center</a>
@@ -72,11 +186,6 @@ public class CMMotionManager extends NSObject {
     @Selector("accelerometerUpdateInterval")
     public native double accelerometerUpdateInterval();
 
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native CMMotionManager alloc();
-
     /**
      * attitudeReferenceFrame</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instp/CMMotionManager/attitudeReferenceFrame">iOS Dev Center</a>
@@ -85,15 +194,6 @@ public class CMMotionManager extends NSObject {
     @Selector("attitudeReferenceFrame")
     @NUInt
     public native long attitudeReferenceFrame();
-
-    /**
-     * availableAttitudeReferenceFrames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/clm/CMMotionManager/availableAttitudeReferenceFrames">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("availableAttitudeReferenceFrames")
-    @NUInt
-    public static native long availableAttitudeReferenceFrames();
 
     /**
      * deviceMotion</br>
@@ -276,13 +376,6 @@ public class CMMotionManager extends NSObject {
     public native void startAccelerometerUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startAccelerometerUpdatesToQueueWithHandler") Block_startAccelerometerUpdatesToQueueWithHandler handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startAccelerometerUpdatesToQueueWithHandler {
-        @Generated
-        void call_startAccelerometerUpdatesToQueueWithHandler(CMAccelerometerData arg0, NSError arg1);
-    }
-
     /**
      * startDeviceMotionUpdates</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startDeviceMotionUpdates">iOS Dev Center</a>
@@ -299,13 +392,6 @@ public class CMMotionManager extends NSObject {
     @Selector("startDeviceMotionUpdatesToQueue:withHandler:")
     public native void startDeviceMotionUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startDeviceMotionUpdatesToQueueWithHandler") Block_startDeviceMotionUpdatesToQueueWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startDeviceMotionUpdatesToQueueWithHandler {
-        @Generated
-        void call_startDeviceMotionUpdatesToQueueWithHandler(CMDeviceMotion arg0, NSError arg1);
-    }
 
     /**
      * startDeviceMotionUpdatesUsingReferenceFrame:</br>
@@ -325,13 +411,6 @@ public class CMMotionManager extends NSObject {
             NSOperationQueue queue,
             @ObjCBlock(name = "call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler") Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler {
-        @Generated
-        void call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(CMDeviceMotion arg0, NSError arg1);
-    }
-
     /**
      * startGyroUpdates</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startGyroUpdates">iOS Dev Center</a>
@@ -349,13 +428,6 @@ public class CMMotionManager extends NSObject {
     public native void startGyroUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startGyroUpdatesToQueueWithHandler") Block_startGyroUpdatesToQueueWithHandler handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startGyroUpdatesToQueueWithHandler {
-        @Generated
-        void call_startGyroUpdatesToQueueWithHandler(CMGyroData arg0, NSError arg1);
-    }
-
     /**
      * startMagnetometerUpdates</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/index.html#//apple_ref/occ/instm/CMMotionManager/startMagnetometerUpdates">iOS Dev Center</a>
@@ -372,13 +444,6 @@ public class CMMotionManager extends NSObject {
     @Selector("startMagnetometerUpdatesToQueue:withHandler:")
     public native void startMagnetometerUpdatesToQueueWithHandler(NSOperationQueue queue,
             @ObjCBlock(name = "call_startMagnetometerUpdatesToQueueWithHandler") Block_startMagnetometerUpdatesToQueueWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startMagnetometerUpdatesToQueueWithHandler {
-        @Generated
-        void call_startMagnetometerUpdatesToQueueWithHandler(CMMagnetometerData arg0, NSError arg1);
-    }
 
     /**
      * stopAccelerometerUpdates</br>
@@ -412,103 +477,38 @@ public class CMMotionManager extends NSObject {
     @Selector("stopMagnetometerUpdates")
     public native void stopMagnetometerUpdates();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_startAccelerometerUpdatesToQueueWithHandler {
+        @Generated
+        void call_startAccelerometerUpdatesToQueueWithHandler(CMAccelerometerData arg0, NSError arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_startDeviceMotionUpdatesToQueueWithHandler {
+        @Generated
+        void call_startDeviceMotionUpdatesToQueueWithHandler(CMDeviceMotion arg0, NSError arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler {
+        @Generated
+        void call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(CMDeviceMotion arg0, NSError arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public interface Block_startGyroUpdatesToQueueWithHandler {
+        @Generated
+        void call_startGyroUpdatesToQueueWithHandler(CMGyroData arg0, NSError arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
+    public interface Block_startMagnetometerUpdatesToQueueWithHandler {
+        @Generated
+        void call_startMagnetometerUpdatesToQueueWithHandler(CMMagnetometerData arg0, NSError arg1);
+    }
 }

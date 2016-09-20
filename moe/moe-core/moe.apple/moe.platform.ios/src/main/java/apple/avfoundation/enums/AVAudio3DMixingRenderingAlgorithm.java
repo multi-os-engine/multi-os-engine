@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVAudio3DMixingRenderingAlgorithm {
-    @Generated
-    private AVAudio3DMixingRenderingAlgorithm() {
-    }
-
     @Generated @NInt public static final long EqualPowerPanning = 0x0000000000000000L;
     @Generated @NInt public static final long SphericalHead = 0x0000000000000001L;
     @Generated @NInt public static final long HRTF = 0x0000000000000002L;
     @Generated @NInt public static final long SoundField = 0x0000000000000003L;
     @Generated @NInt public static final long StereoPassThrough = 0x0000000000000005L;
+
+    @Generated
+    private AVAudio3DMixingRenderingAlgorithm() {
+    }
 }

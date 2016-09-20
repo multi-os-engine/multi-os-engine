@@ -68,178 +68,6 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("alloc")
     public static native UIToolbar alloc();
 
-    /**
-     * backgroundImageForToolbarPosition:barMetrics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instm/UIToolbar/backgroundImageForToolbarPosition:barMetrics:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backgroundImageForToolbarPosition:barMetrics:")
-    public native UIImage backgroundImageForToolbarPositionBarMetrics(@NInt long topOrBottom, @NInt long barMetrics);
-
-    @Generated
-    @Selector("barPosition")
-    @NInt
-    public native long barPosition();
-
-    /**
-     * barStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/barStyle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("barStyle")
-    @NInt
-    public native long barStyle();
-
-    /**
-     * barTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/barTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("barTintColor")
-    public native UIColor barTintColor();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UIToolbarDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native UIToolbar init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIToolbar initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * translucent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/translucent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isTranslucent")
-    public native boolean isTranslucent();
-
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/items">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("items")
-    public native NSArray<? extends UIBarButtonItem> items();
-
-    /**
-     * setBackgroundImage:forToolbarPosition:barMetrics:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instm/UIToolbar/setBackgroundImage:forToolbarPosition:barMetrics:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackgroundImage:forToolbarPosition:barMetrics:")
-    public native void setBackgroundImageForToolbarPositionBarMetrics(UIImage backgroundImage, @NInt long topOrBottom,
-            @NInt long barMetrics);
-
-    /**
-     * barStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/barStyle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBarStyle:")
-    public native void setBarStyle(@NInt long value);
-
-    /**
-     * barTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/barTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBarTintColor:")
-    public native void setBarTintColor(UIColor value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIToolbarDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIToolbarDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/items">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setItems:")
-    public native void setItems(NSArray<? extends UIBarButtonItem> value);
-
-    /**
-     * setItems:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instm/UIToolbar/setItems:animated:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setItems:animated:")
-    public native void setItemsAnimated(NSArray<? extends UIBarButtonItem> items, boolean animated);
-
-    /**
-     * setShadowImage:forToolbarPosition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instm/UIToolbar/setShadowImage:forToolbarPosition:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShadowImage:forToolbarPosition:")
-    public native void setShadowImageForToolbarPosition(UIImage shadowImage, @NInt long topOrBottom);
-
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/tintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
-
-    /**
-     * translucent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/translucent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTranslucent:")
-    public native void setTranslucent(boolean value);
-
-    /**
-     * shadowImageForToolbarPosition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instm/UIToolbar/shadowImageForToolbarPosition:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shadowImageForToolbarPosition:")
-    public native UIImage shadowImageForToolbarPosition(@NInt long topOrBottom);
-
-    /**
-     * tintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/tintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tintColor")
-    public native UIColor tintColor();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIToolbar initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -293,23 +121,9 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -320,27 +134,10 @@ public class UIToolbar extends UIView implements UIBarPositioning {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -351,24 +148,9 @@ public class UIToolbar extends UIView implements UIBarPositioning {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -566,4 +348,222 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * backgroundImageForToolbarPosition:barMetrics:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instm/UIToolbar/backgroundImageForToolbarPosition:barMetrics:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backgroundImageForToolbarPosition:barMetrics:")
+    public native UIImage backgroundImageForToolbarPositionBarMetrics(@NInt long topOrBottom, @NInt long barMetrics);
+
+    @Generated
+    @Selector("barPosition")
+    @NInt
+    public native long barPosition();
+
+    /**
+     * barStyle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/barStyle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("barStyle")
+    @NInt
+    public native long barStyle();
+
+    /**
+     * barTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/barTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("barTintColor")
+    public native UIColor barTintColor();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIToolbarDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native UIToolbar init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIToolbar initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * translucent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/translucent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isTranslucent")
+    public native boolean isTranslucent();
+
+    /**
+     * translucent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/translucent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTranslucent:")
+    public native void setTranslucent(boolean value);
+
+    /**
+     * items</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/items">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("items")
+    public native NSArray<? extends UIBarButtonItem> items();
+
+    /**
+     * setBackgroundImage:forToolbarPosition:barMetrics:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instm/UIToolbar/setBackgroundImage:forToolbarPosition:barMetrics:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackgroundImage:forToolbarPosition:barMetrics:")
+    public native void setBackgroundImageForToolbarPositionBarMetrics(UIImage backgroundImage, @NInt long topOrBottom,
+            @NInt long barMetrics);
+
+    /**
+     * barStyle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/barStyle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBarStyle:")
+    public native void setBarStyle(@NInt long value);
+
+    /**
+     * barTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/barTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBarTintColor:")
+    public native void setBarTintColor(UIColor value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIToolbarDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIToolbarDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * items</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/items">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setItems:")
+    public native void setItems(NSArray<? extends UIBarButtonItem> value);
+
+    /**
+     * setItems:animated:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instm/UIToolbar/setItems:animated:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setItems:animated:")
+    public native void setItemsAnimated(NSArray<? extends UIBarButtonItem> items, boolean animated);
+
+    /**
+     * setShadowImage:forToolbarPosition:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instm/UIToolbar/setShadowImage:forToolbarPosition:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShadowImage:forToolbarPosition:")
+    public native void setShadowImageForToolbarPosition(UIImage shadowImage, @NInt long topOrBottom);
+
+    /**
+     * tintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/tintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTintColor:")
+    public native void setTintColor(UIColor value);
+
+    /**
+     * shadowImageForToolbarPosition:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instm/UIToolbar/shadowImageForToolbarPosition:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shadowImageForToolbarPosition:")
+    public native UIImage shadowImageForToolbarPosition(@NInt long topOrBottom);
+
+    /**
+     * tintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIToolbar_Class/index.html#//apple_ref/occ/instp/UIToolbar/tintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tintColor")
+    public native UIColor tintColor();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIToolbar initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

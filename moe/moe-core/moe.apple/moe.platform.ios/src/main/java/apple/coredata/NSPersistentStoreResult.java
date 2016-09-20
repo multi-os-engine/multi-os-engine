@@ -59,10 +59,6 @@ public class NSPersistentStoreResult extends NSObject {
     public static native NSPersistentStoreResult alloc();
 
     @Generated
-    @Selector("init")
-    public native NSPersistentStoreResult init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class NSPersistentStoreResult extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSPersistentStoreResult init();
 }

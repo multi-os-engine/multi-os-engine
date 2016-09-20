@@ -61,19 +61,6 @@ public class UINib extends NSObject {
     @Selector("alloc")
     public static native UINib alloc();
 
-    @Generated
-    @Selector("init")
-    public native UINib init();
-
-    /**
-     * instantiateWithOwner:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINib_Ref/index.html#//apple_ref/occ/instm/UINib/instantiateWithOwner:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("instantiateWithOwner:options:")
-    public native NSArray<?> instantiateWithOwnerOptions(@Mapped(ObjCObjectMapper.class) Object ownerOrNil,
-            NSDictionary<?, ?> optionsOrNil);
-
     /**
      * nibWithData:bundle:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINib_Ref/index.html#//apple_ref/occ/clm/UINib/nibWithData:bundle:">iOS Dev Center</a>
@@ -189,4 +176,17 @@ public class UINib extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UINib init();
+
+    /**
+     * instantiateWithOwner:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINib_Ref/index.html#//apple_ref/occ/instm/UINib/instantiateWithOwner:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("instantiateWithOwner:options:")
+    public native NSArray<?> instantiateWithOwnerOptions(@Mapped(ObjCObjectMapper.class) Object ownerOrNil,
+            NSDictionary<?, ?> optionsOrNil);
 }

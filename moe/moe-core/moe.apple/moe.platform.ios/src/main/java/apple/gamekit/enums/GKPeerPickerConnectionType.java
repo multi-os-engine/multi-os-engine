@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class GKPeerPickerConnectionType {
+    @Generated @NUInt public static final long Online = 0x0000000000000001L;
+    @Generated @NUInt public static final long Nearby = 0x0000000000000002L;
+
     @Generated
     private GKPeerPickerConnectionType() {
     }
-
-    @Generated @NUInt public static final long Online = 0x0000000000000001L;
-    @Generated @NUInt public static final long Nearby = 0x0000000000000002L;
 }

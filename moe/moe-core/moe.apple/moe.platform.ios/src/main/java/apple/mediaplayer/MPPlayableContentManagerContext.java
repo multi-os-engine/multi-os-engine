@@ -58,33 +58,6 @@ public class MPPlayableContentManagerContext extends NSObject {
     @Selector("alloc")
     public static native MPPlayableContentManagerContext alloc();
 
-    @Deprecated
-    @Generated
-    @Selector("contentLimitsEnabled")
-    public native boolean contentLimitsEnabled();
-
-    @Generated
-    @Selector("endpointAvailable")
-    public native boolean endpointAvailable();
-
-    @Generated
-    @Selector("enforcedContentItemsCount")
-    @NInt
-    public native long enforcedContentItemsCount();
-
-    @Generated
-    @Selector("enforcedContentTreeDepth")
-    @NInt
-    public native long enforcedContentTreeDepth();
-
-    @Generated
-    @Selector("init")
-    public native MPPlayableContentManagerContext init();
-
-    @Generated
-    @Selector("contentLimitsEnforced")
-    public native boolean contentLimitsEnforced();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -184,4 +157,31 @@ public class MPPlayableContentManagerContext extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Deprecated
+    @Generated
+    @Selector("contentLimitsEnabled")
+    public native boolean contentLimitsEnabled();
+
+    @Generated
+    @Selector("endpointAvailable")
+    public native boolean endpointAvailable();
+
+    @Generated
+    @Selector("enforcedContentItemsCount")
+    @NInt
+    public native long enforcedContentItemsCount();
+
+    @Generated
+    @Selector("enforcedContentTreeDepth")
+    @NInt
+    public native long enforcedContentTreeDepth();
+
+    @Generated
+    @Selector("init")
+    public native MPPlayableContentManagerContext init();
+
+    @Generated
+    @Selector("contentLimitsEnforced")
+    public native boolean contentLimitsEnforced();
 }

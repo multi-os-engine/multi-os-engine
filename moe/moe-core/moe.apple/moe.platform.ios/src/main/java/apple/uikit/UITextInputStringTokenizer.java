@@ -60,38 +60,6 @@ public class UITextInputStringTokenizer extends NSObject implements UITextInputT
     public static native UITextInputStringTokenizer alloc();
 
     @Generated
-    @Selector("init")
-    public native UITextInputStringTokenizer init();
-
-    /**
-     * initWithTextInput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputStringTokenizer_Class/index.html#//apple_ref/occ/instm/UITextInputStringTokenizer/initWithTextInput:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTextInput:")
-    public native UITextInputStringTokenizer initWithTextInput(UIResponder textInput);
-
-    @Generated
-    @Selector("isPosition:atBoundary:inDirection:")
-    public native boolean isPositionAtBoundaryInDirection(UITextPosition position, @NInt long granularity,
-            @NInt long direction);
-
-    @Generated
-    @Selector("isPosition:withinTextUnit:inDirection:")
-    public native boolean isPositionWithinTextUnitInDirection(UITextPosition position, @NInt long granularity,
-            @NInt long direction);
-
-    @Generated
-    @Selector("positionFromPosition:toBoundary:inDirection:")
-    public native UITextPosition positionFromPositionToBoundaryInDirection(UITextPosition position,
-            @NInt long granularity, @NInt long direction);
-
-    @Generated
-    @Selector("rangeEnclosingPosition:withGranularity:inDirection:")
-    public native UITextRange rangeEnclosingPositionWithGranularityInDirection(UITextPosition position,
-            @NInt long granularity, @NInt long direction);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -190,4 +158,36 @@ public class UITextInputStringTokenizer extends NSObject implements UITextInputT
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UITextInputStringTokenizer init();
+
+    /**
+     * initWithTextInput:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputStringTokenizer_Class/index.html#//apple_ref/occ/instm/UITextInputStringTokenizer/initWithTextInput:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTextInput:")
+    public native UITextInputStringTokenizer initWithTextInput(UIResponder textInput);
+
+    @Generated
+    @Selector("isPosition:atBoundary:inDirection:")
+    public native boolean isPositionAtBoundaryInDirection(UITextPosition position, @NInt long granularity,
+            @NInt long direction);
+
+    @Generated
+    @Selector("isPosition:withinTextUnit:inDirection:")
+    public native boolean isPositionWithinTextUnitInDirection(UITextPosition position, @NInt long granularity,
+            @NInt long direction);
+
+    @Generated
+    @Selector("positionFromPosition:toBoundary:inDirection:")
+    public native UITextPosition positionFromPositionToBoundaryInDirection(UITextPosition position,
+            @NInt long granularity, @NInt long direction);
+
+    @Generated
+    @Selector("rangeEnclosingPosition:withGranularity:inDirection:")
+    public native UITextRange rangeEnclosingPositionWithGranularityInDirection(UITextPosition position,
+            @NInt long granularity, @NInt long direction);
 }

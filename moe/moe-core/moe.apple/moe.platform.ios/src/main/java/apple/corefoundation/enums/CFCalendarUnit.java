@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFCalendarUnit {
-    @Generated
-    private CFCalendarUnit() {
-    }
-
     @Generated @NUInt public static final long Era = 0x0000000000000002L;
     @Generated @NUInt public static final long Year = 0x0000000000000004L;
     @Generated @NUInt public static final long Month = 0x0000000000000008L;
@@ -39,4 +35,7 @@ public final class CFCalendarUnit {
     @Generated @NUInt public static final long WeekOfMonth = 0x0000000000001000L;
     @Generated @NUInt public static final long WeekOfYear = 0x0000000000002000L;
     @Generated @NUInt public static final long YearForWeekOfYear = 0x0000000000004000L;
+    @Generated
+    private CFCalendarUnit() {
+    }
 }

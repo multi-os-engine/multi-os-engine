@@ -63,10 +63,6 @@ public class SCNTransformConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNTransformConstraint alloc();
 
-    @Generated
-    @Selector("init")
-    public native SCNTransformConstraint init();
-
     /**
      * transformConstraintInWorldSpace:withBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTransformConstraint_Class/index.html#//apple_ref/occ/clm/SCNTransformConstraint/transformConstraintInWorldSpace:withBlock:">iOS Dev Center</a>
@@ -75,18 +71,6 @@ public class SCNTransformConstraint extends SCNConstraint {
     @Selector("transformConstraintInWorldSpace:withBlock:")
     public static native SCNTransformConstraint transformConstraintInWorldSpaceWithBlock(boolean world,
             @ObjCBlock(name = "call_transformConstraintInWorldSpaceWithBlock") Block_transformConstraintInWorldSpaceWithBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_transformConstraintInWorldSpaceWithBlock {
-        @Generated
-        @ByValue
-        SCNMatrix4 call_transformConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNMatrix4 arg1);
-    }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNTransformConstraint initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -188,13 +172,29 @@ public class SCNTransformConstraint extends SCNConstraint {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SCNTransformConstraint init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNTransformConstraint initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_transformConstraintInWorldSpaceWithBlock {
+        @Generated
+        @ByValue
+        SCNMatrix4 call_transformConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNMatrix4 arg1);
+    }
 }

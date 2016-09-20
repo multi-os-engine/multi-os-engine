@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class dispatch_block_flags_t {
-    @Generated
-    private dispatch_block_flags_t() {
-    }
-
     @Generated @NUInt public static final long DISPATCH_BLOCK_BARRIER = 0x0000000000000001L;
     @Generated @NUInt public static final long DISPATCH_BLOCK_DETACHED = 0x0000000000000002L;
     @Generated @NUInt public static final long DISPATCH_BLOCK_ASSIGN_CURRENT = 0x0000000000000004L;
     @Generated @NUInt public static final long DISPATCH_BLOCK_NO_QOS_CLASS = 0x0000000000000008L;
     @Generated @NUInt public static final long DISPATCH_BLOCK_INHERIT_QOS_CLASS = 0x0000000000000010L;
     @Generated @NUInt public static final long DISPATCH_BLOCK_ENFORCE_QOS_CLASS = 0x0000000000000020L;
+
+    @Generated
+    private dispatch_block_flags_t() {
+    }
 }

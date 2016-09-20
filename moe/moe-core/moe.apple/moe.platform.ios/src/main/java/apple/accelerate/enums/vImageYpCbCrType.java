@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class vImageYpCbCrType {
-    @Generated
-    private vImageYpCbCrType() {
-    }
-
     @Generated public static final int kvImage422CbYpCrYp8 = 0x00000000;
     @Generated public static final int kvImage422YpCbYpCr8 = 0x00000001;
     @Generated public static final int kvImage422CbYpCrYp8_AA8 = 0x00000002;
@@ -36,4 +32,8 @@ public final class vImageYpCbCrType {
     @Generated public static final int kvImage422CrYpCbYpCbYpCbYpCrYpCrYp10 = 0x00000009;
     @Generated public static final int kvImage422CbYpCrYp16 = 0x0000000D;
     @Generated public static final int kvImage444AYpCbCr16 = 0x0000000E;
+
+    @Generated
+    private vImageYpCbCrType() {
+    }
 }

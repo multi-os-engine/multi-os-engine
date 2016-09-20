@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTFontManagerAutoActivationSetting {
-    @Generated
-    private CTFontManagerAutoActivationSetting() {
-    }
-
     @Generated public static final int Default = 0x00000000;
     @Generated public static final int Disabled = 0x00000001;
     @Generated public static final int Enabled = 0x00000002;
     @Generated public static final int PromptUser = 0x00000003;
+
+    @Generated
+    private CTFontManagerAutoActivationSetting() {
+    }
 }

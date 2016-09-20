@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIDeviceBatteryState {
-    @Generated
-    private UIDeviceBatteryState() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Unplugged = 0x0000000000000001L;
     @Generated @NInt public static final long Charging = 0x0000000000000002L;
     @Generated @NInt public static final long Full = 0x0000000000000003L;
+
+    @Generated
+    private UIDeviceBatteryState() {
+    }
 }

@@ -53,30 +53,10 @@ public class UIPressesEvent extends UIEvent {
         super(peer);
     }
 
-    /**
-     * allPresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPressesEvent_Ref/index.html#//apple_ref/occ/instm/UIPressesEvent/allPresses">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allPresses")
-    public native NSSet<? extends UIPress> allPresses();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIPressesEvent alloc();
-
-    @Generated
-    @Selector("init")
-    public native UIPressesEvent init();
-
-    /**
-     * pressesForGestureRecognizer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPressesEvent_Ref/index.html#//apple_ref/occ/instm/UIPressesEvent/pressesForGestureRecognizer:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pressesForGestureRecognizer:")
-    public native NSSet<? extends UIPress> pressesForGestureRecognizer(UIGestureRecognizer gesture);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -177,4 +157,24 @@ public class UIPressesEvent extends UIEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allPresses</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPressesEvent_Ref/index.html#//apple_ref/occ/instm/UIPressesEvent/allPresses">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allPresses")
+    public native NSSet<? extends UIPress> allPresses();
+
+    @Generated
+    @Selector("init")
+    public native UIPressesEvent init();
+
+    /**
+     * pressesForGestureRecognizer:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPressesEvent_Ref/index.html#//apple_ref/occ/instm/UIPressesEvent/pressesForGestureRecognizer:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pressesForGestureRecognizer:")
+    public native NSSet<? extends UIPress> pressesForGestureRecognizer(UIGestureRecognizer gesture);
 }

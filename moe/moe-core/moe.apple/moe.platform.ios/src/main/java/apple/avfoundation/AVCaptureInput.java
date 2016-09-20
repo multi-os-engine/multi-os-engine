@@ -59,18 +59,6 @@ public class AVCaptureInput extends NSObject {
     public static native AVCaptureInput alloc();
 
     @Generated
-    @Selector("init")
-    public native AVCaptureInput init();
-
-    /**
-     * ports</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureInput_Class/index.html#//apple_ref/occ/instp/AVCaptureInput/ports">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ports")
-    public native NSArray<?> ports();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class AVCaptureInput extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native AVCaptureInput init();
+
+    /**
+     * ports</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureInput_Class/index.html#//apple_ref/occ/instp/AVCaptureInput/ports">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ports")
+    public native NSArray<?> ports();
 }

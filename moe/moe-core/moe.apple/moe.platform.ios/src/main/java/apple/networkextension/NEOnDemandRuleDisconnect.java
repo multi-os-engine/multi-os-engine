@@ -61,14 +61,6 @@ public class NEOnDemandRuleDisconnect extends NEOnDemandRule {
     public static native NEOnDemandRuleDisconnect alloc();
 
     @Generated
-    @Selector("init")
-    public native NEOnDemandRuleDisconnect init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEOnDemandRuleDisconnect initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -168,13 +160,21 @@ public class NEOnDemandRuleDisconnect extends NEOnDemandRule {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NEOnDemandRuleDisconnect init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEOnDemandRuleDisconnect initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

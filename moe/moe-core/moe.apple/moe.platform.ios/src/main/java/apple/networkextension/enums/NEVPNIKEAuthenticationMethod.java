@@ -21,11 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NEVPNIKEAuthenticationMethod {
-    @Generated
-    private NEVPNIKEAuthenticationMethod() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Certificate = 0x0000000000000001L;
     @Generated @NInt public static final long SharedSecret = 0x0000000000000002L;
+    @Generated
+    private NEVPNIKEAuthenticationMethod() {
+    }
 }

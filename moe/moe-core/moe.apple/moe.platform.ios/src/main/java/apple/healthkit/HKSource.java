@@ -63,20 +63,6 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     public static native HKSource alloc();
 
     /**
-     * bundleIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSource_Class/index.html#//apple_ref/occ/instp/HKSource/bundleIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bundleIdentifier")
-    public native String bundleIdentifier();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
      * defaultSource</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSource_Class/index.html#//apple_ref/occ/clm/HKSource/defaultSource">iOS Dev Center</a>
      */
@@ -85,34 +71,8 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     public static native HKSource defaultSource();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native HKSource init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKSource initWithCoder(NSCoder aDecoder);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSource_Class/index.html#//apple_ref/occ/instp/HKSource/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -213,4 +173,44 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bundleIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSource_Class/index.html#//apple_ref/occ/instp/HKSource/bundleIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bundleIdentifier")
+    public native String bundleIdentifier();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native HKSource init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKSource initWithCoder(NSCoder aDecoder);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSource_Class/index.html#//apple_ref/occ/instp/HKSource/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

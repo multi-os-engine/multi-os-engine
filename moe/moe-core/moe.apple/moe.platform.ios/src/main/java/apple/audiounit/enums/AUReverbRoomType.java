@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AUReverbRoomType {
-    @Generated
-    private AUReverbRoomType() {
-    }
-
     @Generated public static final int SmallRoom = 0x00000000;
     @Generated public static final int MediumRoom = 0x00000001;
     @Generated public static final int LargeRoom = 0x00000002;
@@ -37,4 +33,8 @@ public final class AUReverbRoomType {
     @Generated public static final int MediumHall2 = 0x0000000A;
     @Generated public static final int MediumHall3 = 0x0000000B;
     @Generated public static final int LargeHall2 = 0x0000000C;
+
+    @Generated
+    private AUReverbRoomType() {
+    }
 }

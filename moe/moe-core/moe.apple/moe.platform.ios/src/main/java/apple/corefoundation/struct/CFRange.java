@@ -27,11 +27,11 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 @Structure()
 public final class CFRange extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CFRange() {

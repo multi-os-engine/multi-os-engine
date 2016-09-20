@@ -78,14 +78,6 @@ public class NSString extends NSObject
         super(peer);
     }
 
-    /**
-     * UTF8String</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/instp/NSString/UTF8String">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("UTF8String")
-    public native ConstBytePtr UTF8String();
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -98,6 +90,273 @@ public class NSString extends NSObject
     @Generated
     @Selector("availableStringEncodings")
     public static native ConstNUIntPtr availableStringEncodings();
+
+    /**
+     * defaultCStringEncoding</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/defaultCStringEncoding">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultCStringEncoding")
+    @NUInt
+    public static native long defaultCStringEncoding();
+
+    /**
+     * localizedNameOfStringEncoding:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/localizedNameOfStringEncoding:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedNameOfStringEncoding:")
+    public static native String localizedNameOfStringEncoding(@NUInt long encoding);
+
+    /**
+     * localizedStringWithFormat:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/localizedStringWithFormat:">iOS Dev Center</a>
+     */
+    @Generated
+    @Variadic()
+    @Selector("localizedStringWithFormat:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object localizedStringWithFormat(String format, Object... varargs);
+
+    /**
+     * pathWithComponents:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/pathWithComponents:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pathWithComponents:")
+    public static native String pathWithComponents(NSArray<String> components);
+
+    /**
+     * string</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/string">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("string")
+    public static native NSString string();
+
+    /**
+     * stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
+    @NUInt
+    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
+            NSDictionary<String, ?> opts, Ptr<NSString> string, BoolPtr usedLossyConversion);
+
+    /**
+     * stringWithCString:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithCString:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("stringWithCString:")
+    public static native NSString stringWithCString(ConstBytePtr bytes);
+
+    /**
+     * stringWithCString:encoding:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithCString:encoding:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringWithCString:encoding:")
+    public static native NSString stringWithCStringEncoding(ConstBytePtr cString, @NUInt long enc);
+
+    /**
+     * stringWithCString:length:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithCString:length:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("stringWithCString:length:")
+    public static native NSString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
+
+    /**
+     * stringWithCharacters:length:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithCharacters:length:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringWithCharacters:length:")
+    public static native NSString stringWithCharactersLength(ConstCharPtr characters, @NUInt long length);
+
+    /**
+     * stringWithContentsOfFile:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfFile:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("stringWithContentsOfFile:")
+    public static native NSString stringWithContentsOfFile(String path);
+
+    /**
+     * stringWithContentsOfFile:encoding:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfFile:encoding:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringWithContentsOfFile:encoding:error:")
+    public static native NSString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
+            Ptr<NSError> error);
+
+    /**
+     * stringWithContentsOfFile:usedEncoding:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfFile:usedEncoding:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringWithContentsOfFile:usedEncoding:error:")
+    public static native NSString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
+            Ptr<NSError> error);
+
+    /**
+     * stringWithContentsOfURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("stringWithContentsOfURL:")
+    public static native NSString stringWithContentsOfURL(NSURL url);
+
+    /**
+     * stringWithContentsOfURL:encoding:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfURL:encoding:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringWithContentsOfURL:encoding:error:")
+    public static native NSString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc, Ptr<NSError> error);
+
+    /**
+     * stringWithContentsOfURL:usedEncoding:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfURL:usedEncoding:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringWithContentsOfURL:usedEncoding:error:")
+    public static native NSString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc, Ptr<NSError> error);
+
+    /**
+     * stringWithFormat:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithFormat:">iOS Dev Center</a>
+     */
+    @Generated
+    @Variadic()
+    @Selector("stringWithFormat:")
+    public static native NSString stringWithFormat(String format, Object... varargs);
+
+    /**
+     * stringWithString:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithString:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringWithString:")
+    public static native NSString stringWithString(String string);
+
+    /**
+     * stringWithUTF8String:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithUTF8String:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringWithUTF8String:")
+    public static native NSString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version();
+
+    /**
+     * UTF8String</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/instp/NSString/UTF8String">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("UTF8String")
+    public native ConstBytePtr UTF8String();
 
     /**
      * boolValue</br>
@@ -303,15 +562,6 @@ public class NSString extends NSObject
     public native String decomposedStringWithCompatibilityMapping();
 
     /**
-     * defaultCStringEncoding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/defaultCStringEncoding">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultCStringEncoding")
-    @NUInt
-    public static native long defaultCStringEncoding();
-
-    /**
      * description</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/instp/NSString/description">iOS Dev Center</a>
      */
@@ -441,13 +691,6 @@ public class NSString extends NSObject
     public native void enumerateLinesUsingBlock(
             @ObjCBlock(name = "call_enumerateLinesUsingBlock") Block_enumerateLinesUsingBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateLinesUsingBlock {
-        @Generated
-        void call_enumerateLinesUsingBlock(String arg0, BoolPtr arg1);
-    }
-
     /**
      * enumerateLinguisticTagsInRange:scheme:options:orthography:usingBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/instm/NSString/enumerateLinguisticTagsInRange:scheme:options:orthography:usingBlock:">iOS Dev Center</a>
@@ -458,14 +701,6 @@ public class NSString extends NSObject
             String tagScheme, @NUInt long opts, NSOrthography orthography,
             @ObjCBlock(name = "call_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock") Block_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock {
-        @Generated
-        void call_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock(String arg0, @ByValue NSRange arg1,
-                @ByValue NSRange arg2, BoolPtr arg3);
-    }
-
     /**
      * enumerateSubstringsInRange:options:usingBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/instm/NSString/enumerateSubstringsInRange:options:usingBlock:">iOS Dev Center</a>
@@ -474,14 +709,6 @@ public class NSString extends NSObject
     @Selector("enumerateSubstringsInRange:options:usingBlock:")
     public native void enumerateSubstringsInRangeOptionsUsingBlock(@ByValue NSRange range, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateSubstringsInRangeOptionsUsingBlock") Block_enumerateSubstringsInRangeOptionsUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateSubstringsInRangeOptionsUsingBlock {
-        @Generated
-        void call_enumerateSubstringsInRangeOptionsUsingBlock(String arg0, @ByValue NSRange arg1, @ByValue NSRange arg2,
-                BoolPtr arg3);
-    }
 
     /**
      * fastestEncoding</br>
@@ -918,14 +1145,6 @@ public class NSString extends NSObject
     public native long localizedCompare(String string);
 
     /**
-     * localizedNameOfStringEncoding:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/localizedNameOfStringEncoding:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedNameOfStringEncoding:")
-    public static native String localizedNameOfStringEncoding(@NUInt long encoding);
-
-    /**
      * localizedStandardCompare:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/instm/NSString/localizedStandardCompare:">iOS Dev Center</a>
      */
@@ -933,16 +1152,6 @@ public class NSString extends NSObject
     @Selector("localizedStandardCompare:")
     @NInt
     public native long localizedStandardCompare(String string);
-
-    /**
-     * localizedStringWithFormat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/localizedStringWithFormat:">iOS Dev Center</a>
-     */
-    @Generated
-    @Variadic()
-    @Selector("localizedStringWithFormat:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object localizedStringWithFormat(String format, Object... varargs);
 
     /**
      * longLongValue</br>
@@ -1015,14 +1224,6 @@ public class NSString extends NSObject
     @Generated
     @Selector("pathExtension")
     public native String pathExtension();
-
-    /**
-     * pathWithComponents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/pathWithComponents:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pathWithComponents:")
-    public static native String pathWithComponents(NSArray<String> components);
 
     /**
      * precomposedStringWithCanonicalMapping</br>
@@ -1212,14 +1413,6 @@ public class NSString extends NSObject
     public native long smallestEncoding();
 
     /**
-     * string</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/string">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("string")
-    public static native NSString string();
-
-    /**
      * stringByAbbreviatingWithTildeInPath</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/instp/NSString/stringByAbbreviatingWithTildeInPath">iOS Dev Center</a>
      */
@@ -1381,127 +1574,6 @@ public class NSString extends NSObject
     public native String stringByTrimmingCharactersInSet(NSCharacterSet set);
 
     /**
-     * stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
-    @NUInt
-    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
-            NSDictionary<String, ?> opts, Ptr<NSString> string, BoolPtr usedLossyConversion);
-
-    /**
-     * stringWithCString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithCString:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("stringWithCString:")
-    public static native NSString stringWithCString(ConstBytePtr bytes);
-
-    /**
-     * stringWithCString:encoding:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithCString:encoding:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringWithCString:encoding:")
-    public static native NSString stringWithCStringEncoding(ConstBytePtr cString, @NUInt long enc);
-
-    /**
-     * stringWithCString:length:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithCString:length:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("stringWithCString:length:")
-    public static native NSString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
-
-    /**
-     * stringWithCharacters:length:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithCharacters:length:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringWithCharacters:length:")
-    public static native NSString stringWithCharactersLength(ConstCharPtr characters, @NUInt long length);
-
-    /**
-     * stringWithContentsOfFile:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfFile:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("stringWithContentsOfFile:")
-    public static native NSString stringWithContentsOfFile(String path);
-
-    /**
-     * stringWithContentsOfFile:encoding:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfFile:encoding:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringWithContentsOfFile:encoding:error:")
-    public static native NSString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            Ptr<NSError> error);
-
-    /**
-     * stringWithContentsOfFile:usedEncoding:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfFile:usedEncoding:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringWithContentsOfFile:usedEncoding:error:")
-    public static native NSString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            Ptr<NSError> error);
-
-    /**
-     * stringWithContentsOfURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("stringWithContentsOfURL:")
-    public static native NSString stringWithContentsOfURL(NSURL url);
-
-    /**
-     * stringWithContentsOfURL:encoding:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfURL:encoding:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringWithContentsOfURL:encoding:error:")
-    public static native NSString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc, Ptr<NSError> error);
-
-    /**
-     * stringWithContentsOfURL:usedEncoding:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithContentsOfURL:usedEncoding:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringWithContentsOfURL:usedEncoding:error:")
-    public static native NSString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc, Ptr<NSError> error);
-
-    /**
-     * stringWithFormat:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithFormat:">iOS Dev Center</a>
-     */
-    @Generated
-    @Variadic()
-    @Selector("stringWithFormat:")
-    public static native NSString stringWithFormat(String format, Object... varargs);
-
-    /**
-     * stringWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithString:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringWithString:")
-    public static native NSString stringWithString(String string);
-
-    /**
-     * stringWithUTF8String:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/clm/NSString/stringWithUTF8String:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringWithUTF8String:")
-    public static native NSString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
-
-    /**
      * stringsByAppendingPaths:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/index.html#//apple_ref/occ/instm/NSString/stringsByAppendingPaths:">iOS Dev Center</a>
      */
@@ -1532,10 +1604,6 @@ public class NSString extends NSObject
     @Generated
     @Selector("substringWithRange:")
     public native String substringWithRange(@ByValue NSRange range);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -1632,94 +1700,26 @@ public class NSString extends NSObject
     @Selector("variantFittingPresentationWidth:")
     public native String variantFittingPresentationWidth(@NInt long width);
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_enumerateLinesUsingBlock {
+        @Generated
+        void call_enumerateLinesUsingBlock(String arg0, BoolPtr arg1);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock {
+        @Generated
+        void call_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock(String arg0, @ByValue NSRange arg1,
+                @ByValue NSRange arg2, BoolPtr arg3);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
+    public interface Block_enumerateSubstringsInRangeOptionsUsingBlock {
+        @Generated
+        void call_enumerateSubstringsInRangeOptionsUsingBlock(String arg0, @ByValue NSRange arg1, @ByValue NSRange arg2,
+                BoolPtr arg3);
+    }
 }

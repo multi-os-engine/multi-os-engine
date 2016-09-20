@@ -66,14 +66,6 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     public static native MPMediaLibrary alloc();
 
     /**
-     * beginGeneratingLibraryChangeNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/instm/MPMediaLibrary/beginGeneratingLibraryChangeNotifications">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("beginGeneratingLibraryChangeNotifications")
-    public native void beginGeneratingLibraryChangeNotifications();
-
-    /**
      * defaultMediaLibrary</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/clm/MPMediaLibrary/defaultMediaLibrary">iOS Dev Center</a>
      */
@@ -82,54 +74,8 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     public static native MPMediaLibrary defaultMediaLibrary();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * endGeneratingLibraryChangeNotifications</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/instm/MPMediaLibrary/endGeneratingLibraryChangeNotifications">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("endGeneratingLibraryChangeNotifications")
-    public native void endGeneratingLibraryChangeNotifications();
-
-    @Generated
-    @Selector("init")
-    public native MPMediaLibrary init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMediaLibrary initWithCoder(NSCoder aDecoder);
-
-    /**
-     * lastModifiedDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/instp/MPMediaLibrary/lastModifiedDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lastModifiedDate")
-    public native NSDate lastModifiedDate();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    @Generated
-    @Selector("addItemWithProductID:completionHandler:")
-    public native void addItemWithProductIDCompletionHandler(String productID,
-            @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addItemWithProductIDCompletionHandler {
-        @Generated
-        void call_addItemWithProductIDCompletionHandler(NSArray<? extends MPMediaEntity> arg0, NSError arg1);
-    }
 
     @Generated
     @Selector("authorizationStatus")
@@ -137,29 +83,9 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     public static native long authorizationStatus();
 
     @Generated
-    @Selector("getPlaylistWithUUID:creationMetadata:completionHandler:")
-    public native void getPlaylistWithUUIDCreationMetadataCompletionHandler(NSUUID uuid,
-            MPMediaPlaylistCreationMetadata creationMetadata,
-            @ObjCBlock(name = "call_getPlaylistWithUUIDCreationMetadataCompletionHandler") Block_getPlaylistWithUUIDCreationMetadataCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_getPlaylistWithUUIDCreationMetadataCompletionHandler {
-        @Generated
-        void call_getPlaylistWithUUIDCreationMetadataCompletionHandler(MPMediaPlaylist arg0, NSError arg1);
-    }
-
-    @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
             @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestAuthorization {
-        @Generated
-        void call_requestAuthorization(@NInt long arg0);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -260,4 +186,78 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * beginGeneratingLibraryChangeNotifications</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/instm/MPMediaLibrary/beginGeneratingLibraryChangeNotifications">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("beginGeneratingLibraryChangeNotifications")
+    public native void beginGeneratingLibraryChangeNotifications();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * endGeneratingLibraryChangeNotifications</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/instm/MPMediaLibrary/endGeneratingLibraryChangeNotifications">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("endGeneratingLibraryChangeNotifications")
+    public native void endGeneratingLibraryChangeNotifications();
+
+    @Generated
+    @Selector("init")
+    public native MPMediaLibrary init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPMediaLibrary initWithCoder(NSCoder aDecoder);
+
+    /**
+     * lastModifiedDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaLibrary_ClassReference/index.html#//apple_ref/occ/instp/MPMediaLibrary/lastModifiedDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lastModifiedDate")
+    public native NSDate lastModifiedDate();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
+    @Selector("addItemWithProductID:completionHandler:")
+    public native void addItemWithProductIDCompletionHandler(String productID,
+            @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("getPlaylistWithUUID:creationMetadata:completionHandler:")
+    public native void getPlaylistWithUUIDCreationMetadataCompletionHandler(NSUUID uuid,
+            MPMediaPlaylistCreationMetadata creationMetadata,
+            @ObjCBlock(name = "call_getPlaylistWithUUIDCreationMetadataCompletionHandler") Block_getPlaylistWithUUIDCreationMetadataCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addItemWithProductIDCompletionHandler {
+        @Generated
+        void call_addItemWithProductIDCompletionHandler(NSArray<? extends MPMediaEntity> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getPlaylistWithUUIDCreationMetadataCompletionHandler {
+        @Generated
+        void call_getPlaylistWithUUIDCreationMetadataCompletionHandler(MPMediaPlaylist arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestAuthorization {
+        @Generated
+        void call_requestAuthorization(@NInt long arg0);
+    }
 }

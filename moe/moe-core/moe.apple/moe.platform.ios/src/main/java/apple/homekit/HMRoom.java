@@ -56,50 +56,10 @@ public class HMRoom extends NSObject {
         super(peer);
     }
 
-    /**
-     * accessories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/instp/HMRoom/accessories">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accessories")
-    public native NSArray<? extends HMAccessory> accessories();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native HMRoom alloc();
-
-    @Generated
-    @Selector("init")
-    public native HMRoom init();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/instp/HMRoom/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/instm/HMRoom/updateName:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updateNameCompletionHandler {
-        @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
-    }
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -200,4 +160,44 @@ public class HMRoom extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * accessories</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/instp/HMRoom/accessories">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accessories")
+    public native NSArray<? extends HMAccessory> accessories();
+
+    @Generated
+    @Selector("init")
+    public native HMRoom init();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/instp/HMRoom/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * updateName:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/instm/HMRoom/updateName:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateName:completionHandler:")
+    public native void updateNameCompletionHandler(String name,
+            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+
+    @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateNameCompletionHandler {
+        @Generated
+        void call_updateNameCompletionHandler(NSError arg0);
+    }
 }

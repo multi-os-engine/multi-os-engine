@@ -59,26 +59,6 @@ public class UIStoryboard extends NSObject {
     @Selector("alloc")
     public static native UIStoryboard alloc();
 
-    @Generated
-    @Selector("init")
-    public native UIStoryboard init();
-
-    /**
-     * instantiateInitialViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboard_Class/index.html#//apple_ref/occ/instm/UIStoryboard/instantiateInitialViewController">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("instantiateInitialViewController")
-    public native UIViewController instantiateInitialViewController();
-
-    /**
-     * instantiateViewControllerWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboard_Class/index.html#//apple_ref/occ/instm/UIStoryboard/instantiateViewControllerWithIdentifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("instantiateViewControllerWithIdentifier:")
-    public native UIViewController instantiateViewControllerWithIdentifier(String identifier);
-
     /**
      * storyboardWithName:bundle:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboard_Class/index.html#//apple_ref/occ/clm/UIStoryboard/storyboardWithName:bundle:">iOS Dev Center</a>
@@ -186,4 +166,24 @@ public class UIStoryboard extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIStoryboard init();
+
+    /**
+     * instantiateInitialViewController</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboard_Class/index.html#//apple_ref/occ/instm/UIStoryboard/instantiateInitialViewController">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("instantiateInitialViewController")
+    public native UIViewController instantiateInitialViewController();
+
+    /**
+     * instantiateViewControllerWithIdentifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIStoryboard_Class/index.html#//apple_ref/occ/instm/UIStoryboard/instantiateViewControllerWithIdentifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("instantiateViewControllerWithIdentifier:")
+    public native UIViewController instantiateViewControllerWithIdentifier(String identifier);
 }

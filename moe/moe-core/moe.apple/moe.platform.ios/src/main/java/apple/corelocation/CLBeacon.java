@@ -59,88 +59,14 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
         super(peer);
     }
 
-    /**
-     * accuracy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/accuracy">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accuracy")
-    public native double accuracy();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native CLBeacon alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CLBeacon init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CLBeacon initWithCoder(NSCoder aDecoder);
-
-    /**
-     * major</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/major">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("major")
-    public native NSNumber major();
-
-    /**
-     * minor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/minor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minor")
-    public native NSNumber minor();
-
-    /**
-     * proximity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/proximity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("proximity")
-    @NInt
-    public native long proximity();
-
-    /**
-     * proximityUUID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/proximityUUID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("proximityUUID")
-    public native NSUUID proximityUUID();
-
-    /**
-     * rssi</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/rssi">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rssi")
-    @NInt
-    public native long rssi();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -241,4 +167,78 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * accuracy</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/accuracy">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accuracy")
+    public native double accuracy();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CLBeacon init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CLBeacon initWithCoder(NSCoder aDecoder);
+
+    /**
+     * major</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/major">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("major")
+    public native NSNumber major();
+
+    /**
+     * minor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/minor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minor")
+    public native NSNumber minor();
+
+    /**
+     * proximity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/proximity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("proximity")
+    @NInt
+    public native long proximity();
+
+    /**
+     * proximityUUID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/proximityUUID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("proximityUUID")
+    public native NSUUID proximityUUID();
+
+    /**
+     * rssi</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLBeacon_class/index.html#//apple_ref/occ/instp/CLBeacon/rssi">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rssi")
+    @NInt
+    public native long rssi();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -70,6 +70,131 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native SCNParticleSystem alloc();
+
+    /**
+     * particleSystem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/clm/SCNParticleSystem/particleSystem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("particleSystem")
+    public static native SCNParticleSystem particleSystem();
+
+    /**
+     * particleSystemNamed:inDirectory:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/clm/SCNParticleSystem/particleSystemNamed:inDirectory:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("particleSystemNamed:inDirectory:")
+    public static native SCNParticleSystem particleSystemNamedInDirectory(String name, String directory);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * acceleration</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/acceleration">iOS Dev Center</a>
@@ -92,15 +217,6 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native void addModifierForPropertiesAtStageWithBlock(NSArray<String> properties, @NInt long stage,
             @ObjCBlock(name = "call_addModifierForPropertiesAtStageWithBlock") Block_addModifierForPropertiesAtStageWithBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addModifierForPropertiesAtStageWithBlock {
-        @Generated
-        void call_addModifierForPropertiesAtStageWithBlock(
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg0, NUIntPtr arg1, @NInt long arg2,
-                @NInt long arg3, float arg4);
-    }
-
     /**
      * affectedByGravity</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/affectedByGravity">iOS Dev Center</a>
@@ -116,11 +232,6 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("affectedByPhysicsFields")
     public native boolean affectedByPhysicsFields();
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native SCNParticleSystem alloc();
 
     @Generated
     @Selector("animationForKey:")
@@ -255,14 +366,6 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native void handleEventForPropertiesWithBlock(@NInt long event, NSArray<String> properties,
             @ObjCBlock(name = "call_handleEventForPropertiesWithBlock") Block_handleEventForPropertiesWithBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_handleEventForPropertiesWithBlock {
-        @Generated
-        void call_handleEventForPropertiesWithBlock(@ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg0,
-                NUIntPtr arg1, IntPtr arg2, @NInt long arg3);
-    }
-
     /**
      * idleDuration</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/idleDuration">iOS Dev Center</a>
@@ -365,6 +468,14 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native boolean isBlackPassEnabled();
 
     /**
+     * blackPassEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/blackPassEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBlackPassEnabled:")
+    public native void setBlackPassEnabled(boolean value);
+
+    /**
      * lightingEnabled</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/lightingEnabled">iOS Dev Center</a>
      */
@@ -373,12 +484,28 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native boolean isLightingEnabled();
 
     /**
+     * lightingEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/lightingEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLightingEnabled:")
+    public native void setLightingEnabled(boolean value);
+
+    /**
      * local</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/local">iOS Dev Center</a>
      */
     @Generated
     @Selector("isLocal")
     public native boolean isLocal();
+
+    /**
+     * local</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/local">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLocal:")
+    public native void setLocal(boolean value);
 
     /**
      * loops</br>
@@ -576,22 +703,6 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native double particleSizeVariation();
 
     /**
-     * particleSystem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/clm/SCNParticleSystem/particleSystem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("particleSystem")
-    public static native SCNParticleSystem particleSystem();
-
-    /**
-     * particleSystemNamed:inDirectory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/clm/SCNParticleSystem/particleSystemNamed:inDirectory:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("particleSystemNamed:inDirectory:")
-    public static native SCNParticleSystem particleSystemNamedInDirectory(String name, String directory);
-
-    /**
      * particleVelocity</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/particleVelocity">iOS Dev Center</a>
      */
@@ -716,14 +827,6 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("setBirthRateVariation:")
     public native void setBirthRateVariation(@NFloat double value);
-
-    /**
-     * blackPassEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/blackPassEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBlackPassEnabled:")
-    public native void setBlackPassEnabled(boolean value);
 
     /**
      * blendMode</br>
@@ -860,22 +963,6 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("setImageSequenceRowCount:")
     public native void setImageSequenceRowCount(@NUInt long value);
-
-    /**
-     * lightingEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/lightingEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLightingEnabled:")
-    public native void setLightingEnabled(boolean value);
-
-    /**
-     * local</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNParticleSystem_Class/index.html#//apple_ref/occ/instp/SCNParticleSystem/local">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLocal:")
-    public native void setLocal(boolean value);
 
     /**
      * loops</br>
@@ -1178,10 +1265,6 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native double stretchFactor();
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
@@ -1220,103 +1303,20 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @NFloat
     public native double warmupDuration();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_addModifierForPropertiesAtStageWithBlock {
+        @Generated
+        void call_addModifierForPropertiesAtStageWithBlock(
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg0, NUIntPtr arg1, @NInt long arg2,
+                @NInt long arg3, float arg4);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_handleEventForPropertiesWithBlock {
+        @Generated
+        void call_handleEventForPropertiesWithBlock(@ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg0,
+                NUIntPtr arg1, IntPtr arg2, @NInt long arg3);
+    }
 }

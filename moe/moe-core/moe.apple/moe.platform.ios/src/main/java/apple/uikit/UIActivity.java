@@ -62,78 +62,10 @@ public class UIActivity extends NSObject {
     @NInt
     public static native long activityCategory();
 
-    /**
-     * activityDidFinish:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/activityDidFinish:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("activityDidFinish:")
-    public native void activityDidFinish(boolean completed);
-
-    /**
-     * activityImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/activityImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("activityImage")
-    public native UIImage activityImage();
-
-    /**
-     * activityTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/activityTitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("activityTitle")
-    public native String activityTitle();
-
-    /**
-     * activityType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/activityType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("activityType")
-    public native String activityType();
-
-    /**
-     * activityViewController</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/activityViewController">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("activityViewController")
-    public native UIViewController activityViewController();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIActivity alloc();
-
-    /**
-     * canPerformWithActivityItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/canPerformWithActivityItems:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("canPerformWithActivityItems:")
-    public native boolean canPerformWithActivityItems(NSArray<?> activityItems);
-
-    @Generated
-    @Selector("init")
-    public native UIActivity init();
-
-    /**
-     * performActivity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/performActivity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("performActivity")
-    public native void performActivity();
-
-    /**
-     * prepareWithActivityItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/prepareWithActivityItems:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("prepareWithActivityItems:")
-    public native void prepareWithActivityItems(NSArray<?> activityItems);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -234,4 +166,72 @@ public class UIActivity extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * activityDidFinish:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/activityDidFinish:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("activityDidFinish:")
+    public native void activityDidFinish(boolean completed);
+
+    /**
+     * activityImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/activityImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("activityImage")
+    public native UIImage activityImage();
+
+    /**
+     * activityTitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/activityTitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("activityTitle")
+    public native String activityTitle();
+
+    /**
+     * activityType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/activityType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("activityType")
+    public native String activityType();
+
+    /**
+     * activityViewController</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/activityViewController">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("activityViewController")
+    public native UIViewController activityViewController();
+
+    /**
+     * canPerformWithActivityItems:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/canPerformWithActivityItems:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("canPerformWithActivityItems:")
+    public native boolean canPerformWithActivityItems(NSArray<?> activityItems);
+
+    @Generated
+    @Selector("init")
+    public native UIActivity init();
+
+    /**
+     * performActivity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/performActivity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("performActivity")
+    public native void performActivity();
+
+    /**
+     * prepareWithActivityItems:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivity_Class/index.html#//apple_ref/occ/instm/UIActivity/prepareWithActivityItems:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("prepareWithActivityItems:")
+    public native void prepareWithActivityItems(NSArray<?> activityItems);
 }

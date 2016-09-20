@@ -62,148 +62,6 @@ public class AUAudioUnitBus extends NSObject {
     @Selector("alloc")
     public static native AUAudioUnitBus alloc();
 
-    /**
-     * busType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/busType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("busType")
-    @NInt
-    public native long busType();
-
-    /**
-     * contextPresentationLatency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/contextPresentationLatency">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contextPresentationLatency")
-    public native double contextPresentationLatency();
-
-    /**
-     * format</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/format">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("format")
-    public native AVAudioFormat format();
-
-    /**
-     * index</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/index">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("index")
-    @NUInt
-    public native long index();
-
-    @Generated
-    @Selector("init")
-    public native AUAudioUnitBus init();
-
-    /**
-     * initWithFormat:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBus/initWithFormat:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFormat:error:")
-    public native AUAudioUnitBus initWithFormatError(AVAudioFormat format, Ptr<NSError> outError);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * maximumChannelCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/maximumChannelCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumChannelCount")
-    public native int maximumChannelCount();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * ownerAudioUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/ownerAudioUnit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ownerAudioUnit")
-    public native AUAudioUnit ownerAudioUnit();
-
-    /**
-     * contextPresentationLatency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/contextPresentationLatency">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setContextPresentationLatency:")
-    public native void setContextPresentationLatency(double value);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    /**
-     * setFormat:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBus/setFormat:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFormat:error:")
-    public native boolean setFormatError(AVAudioFormat format, Ptr<NSError> outError);
-
-    /**
-     * maximumChannelCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/maximumChannelCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumChannelCount:")
-    public native void setMaximumChannelCount(int value);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setName:")
-    public native void setName(String value);
-
-    /**
-     * supportedChannelCounts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/supportedChannelCounts">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSupportedChannelCounts:")
-    public native void setSupportedChannelCounts(NSArray<? extends NSNumber> value);
-
-    /**
-     * supportedChannelCounts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/supportedChannelCounts">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("supportedChannelCounts")
-    public native NSArray<? extends NSNumber> supportedChannelCounts();
-
-    /**
-     * supportedChannelLayoutTags</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/supportedChannelLayoutTags">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("supportedChannelLayoutTags")
-    public native NSArray<? extends NSNumber> supportedChannelLayoutTags();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -303,4 +161,146 @@ public class AUAudioUnitBus extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * busType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/busType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("busType")
+    @NInt
+    public native long busType();
+
+    /**
+     * contextPresentationLatency</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/contextPresentationLatency">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contextPresentationLatency")
+    public native double contextPresentationLatency();
+
+    /**
+     * format</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/format">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("format")
+    public native AVAudioFormat format();
+
+    /**
+     * index</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/index">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("index")
+    @NUInt
+    public native long index();
+
+    @Generated
+    @Selector("init")
+    public native AUAudioUnitBus init();
+
+    /**
+     * initWithFormat:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBus/initWithFormat:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFormat:error:")
+    public native AUAudioUnitBus initWithFormatError(AVAudioFormat format, Ptr<NSError> outError);
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    /**
+     * maximumChannelCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/maximumChannelCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumChannelCount")
+    public native int maximumChannelCount();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * ownerAudioUnit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/ownerAudioUnit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ownerAudioUnit")
+    public native AUAudioUnit ownerAudioUnit();
+
+    /**
+     * contextPresentationLatency</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/contextPresentationLatency">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setContextPresentationLatency:")
+    public native void setContextPresentationLatency(double value);
+
+    /**
+     * setFormat:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instm/AUAudioUnitBus/setFormat:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFormat:error:")
+    public native boolean setFormatError(AVAudioFormat format, Ptr<NSError> outError);
+
+    /**
+     * maximumChannelCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/maximumChannelCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumChannelCount:")
+    public native void setMaximumChannelCount(int value);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
+
+    /**
+     * supportedChannelCounts</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/supportedChannelCounts">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSupportedChannelCounts:")
+    public native void setSupportedChannelCounts(NSArray<? extends NSNumber> value);
+
+    /**
+     * supportedChannelCounts</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/supportedChannelCounts">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("supportedChannelCounts")
+    public native NSArray<? extends NSNumber> supportedChannelCounts();
+
+    /**
+     * supportedChannelLayoutTags</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUAudioUnitBus_ClassReference/index.html#//apple_ref/occ/instp/AUAudioUnitBus/supportedChannelLayoutTags">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("supportedChannelLayoutTags")
+    public native NSArray<? extends NSNumber> supportedChannelLayoutTags();
 }

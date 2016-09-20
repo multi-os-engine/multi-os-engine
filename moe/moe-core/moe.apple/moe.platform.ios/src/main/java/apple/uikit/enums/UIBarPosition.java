@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIBarPosition {
-    @Generated
-    private UIBarPosition() {
-    }
-
     @Generated @NInt public static final long Any = 0x0000000000000000L;
     @Generated @NInt public static final long Bottom = 0x0000000000000001L;
     @Generated @NInt public static final long Top = 0x0000000000000002L;
     @Generated @NInt public static final long TopAttached = 0x0000000000000003L;
+
+    @Generated
+    private UIBarPosition() {
+    }
 }

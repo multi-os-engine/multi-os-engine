@@ -60,52 +60,6 @@ public class UITextSelectionRect extends NSObject {
     @Selector("alloc")
     public static native UITextSelectionRect alloc();
 
-    /**
-     * containsEnd</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextSelectionRect_class/index.html#//apple_ref/occ/instp/UITextSelectionRect/containsEnd">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containsEnd")
-    public native boolean containsEnd();
-
-    /**
-     * containsStart</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextSelectionRect_class/index.html#//apple_ref/occ/instp/UITextSelectionRect/containsStart">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containsStart")
-    public native boolean containsStart();
-
-    @Generated
-    @Selector("init")
-    public native UITextSelectionRect init();
-
-    /**
-     * isVertical</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextSelectionRect_class/index.html#//apple_ref/occ/instp/UITextSelectionRect/isVertical">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isVertical")
-    public native boolean isVertical();
-
-    /**
-     * rect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextSelectionRect_class/index.html#//apple_ref/occ/instp/UITextSelectionRect/rect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rect")
-    @ByValue
-    public native CGRect rect();
-
-    /**
-     * writingDirection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextSelectionRect_class/index.html#//apple_ref/occ/instp/UITextSelectionRect/writingDirection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("writingDirection")
-    @NInt
-    public native long writingDirection();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -205,4 +159,50 @@ public class UITextSelectionRect extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * containsEnd</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextSelectionRect_class/index.html#//apple_ref/occ/instp/UITextSelectionRect/containsEnd">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containsEnd")
+    public native boolean containsEnd();
+
+    /**
+     * containsStart</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextSelectionRect_class/index.html#//apple_ref/occ/instp/UITextSelectionRect/containsStart">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containsStart")
+    public native boolean containsStart();
+
+    @Generated
+    @Selector("init")
+    public native UITextSelectionRect init();
+
+    /**
+     * isVertical</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextSelectionRect_class/index.html#//apple_ref/occ/instp/UITextSelectionRect/isVertical">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isVertical")
+    public native boolean isVertical();
+
+    /**
+     * rect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextSelectionRect_class/index.html#//apple_ref/occ/instp/UITextSelectionRect/rect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rect")
+    @ByValue
+    public native CGRect rect();
+
+    /**
+     * writingDirection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextSelectionRect_class/index.html#//apple_ref/occ/instp/UITextSelectionRect/writingDirection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("writingDirection")
+    @NInt
+    public native long writingDirection();
 }

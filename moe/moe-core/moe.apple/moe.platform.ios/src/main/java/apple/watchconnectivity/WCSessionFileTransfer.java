@@ -58,34 +58,6 @@ public class WCSessionFileTransfer extends NSObject {
     @Selector("alloc")
     public static native WCSessionFileTransfer alloc();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFileTransfer_class/index.html#//apple_ref/occ/instm/WCSessionFileTransfer/cancel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancel")
-    public native void cancel();
-
-    /**
-     * file</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFileTransfer_class/index.html#//apple_ref/occ/instp/WCSessionFileTransfer/file">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("file")
-    public native WCSessionFile file();
-
-    @Generated
-    @Selector("init")
-    public native WCSessionFileTransfer init();
-
-    /**
-     * transferring</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFileTransfer_class/index.html#//apple_ref/occ/instp/WCSessionFileTransfer/transferring">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isTransferring")
-    public native boolean isTransferring();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -185,4 +157,32 @@ public class WCSessionFileTransfer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * cancel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFileTransfer_class/index.html#//apple_ref/occ/instm/WCSessionFileTransfer/cancel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancel")
+    public native void cancel();
+
+    /**
+     * file</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFileTransfer_class/index.html#//apple_ref/occ/instp/WCSessionFileTransfer/file">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("file")
+    public native WCSessionFile file();
+
+    @Generated
+    @Selector("init")
+    public native WCSessionFileTransfer init();
+
+    /**
+     * transferring</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFileTransfer_class/index.html#//apple_ref/occ/instp/WCSessionFileTransfer/transferring">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isTransferring")
+    public native boolean isTransferring();
 }

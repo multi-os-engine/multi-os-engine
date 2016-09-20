@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kMTAudioProcessingTapFlag_StartOfStream = 0x00000100;
     @Generated public static final int kMTAudioProcessingTapFlag_EndOfStream = 0x00000200;
     @Generated public static final int kMTAudioProcessingTapCreationFlag_PreEffects = 0x00000001;
     @Generated public static final int kMTAudioProcessingTapCreationFlag_PostEffects = 0x00000002;
     @Generated public static final int kMTAudioProcessingTapCallbacksVersion_0 = 0x00000000;
+
+    @Generated
+    private Enums() {
+    }
 }

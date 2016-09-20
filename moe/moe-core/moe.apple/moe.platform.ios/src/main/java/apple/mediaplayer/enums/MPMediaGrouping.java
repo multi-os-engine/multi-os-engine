@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MPMediaGrouping {
-    @Generated
-    private MPMediaGrouping() {
-    }
-
     @Generated @NInt public static final long Title = 0x0000000000000000L;
     @Generated @NInt public static final long Album = 0x0000000000000001L;
     @Generated @NInt public static final long Artist = 0x0000000000000002L;
@@ -33,4 +29,8 @@ public final class MPMediaGrouping {
     @Generated @NInt public static final long Genre = 0x0000000000000005L;
     @Generated @NInt public static final long Playlist = 0x0000000000000006L;
     @Generated @NInt public static final long PodcastTitle = 0x0000000000000007L;
+
+    @Generated
+    private MPMediaGrouping() {
+    }
 }

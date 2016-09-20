@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioChannelBitmap {
-    @Generated
-    private AudioChannelBitmap() {
-    }
-
     @Generated public static final int Left = 0x00000001;
     @Generated public static final int Right = 0x00000002;
     @Generated public static final int Center = 0x00000004;
@@ -42,4 +38,8 @@ public final class AudioChannelBitmap {
     @Generated public static final int TopBackLeft = 0x00008000;
     @Generated public static final int TopBackCenter = 0x00010000;
     @Generated public static final int TopBackRight = 0x00020000;
+
+    @Generated
+    private AudioChannelBitmap() {
+    }
 }

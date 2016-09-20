@@ -59,10 +59,6 @@ public class AVAssetResourceRenewalRequest extends AVAssetResourceLoadingRequest
     public static native AVAssetResourceRenewalRequest alloc();
 
     @Generated
-    @Selector("init")
-    public native AVAssetResourceRenewalRequest init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class AVAssetResourceRenewalRequest extends AVAssetResourceLoadingRequest
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetResourceRenewalRequest init();
 }

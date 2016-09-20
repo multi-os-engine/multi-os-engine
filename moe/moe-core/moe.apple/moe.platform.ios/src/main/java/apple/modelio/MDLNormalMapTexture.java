@@ -60,19 +60,6 @@ public class MDLNormalMapTexture extends MDLTexture {
     public static native MDLNormalMapTexture alloc();
 
     @Generated
-    @Selector("init")
-    public native MDLNormalMapTexture init();
-
-    /**
-     * initByGeneratingNormalMapWithTexture:name:smoothness:contrast:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLNormalMapTexture_Class/index.html#//apple_ref/occ/instm/MDLNormalMapTexture/initByGeneratingNormalMapWithTexture:name:smoothness:contrast:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initByGeneratingNormalMapWithTexture:name:smoothness:contrast:")
-    public native MDLNormalMapTexture initByGeneratingNormalMapWithTextureNameSmoothnessContrast(
-            MDLTexture sourceTexture, String name, float smoothness, float contrast);
-
-    @Generated
     @Selector("textureCubeWithImagesNamed:")
     public static native MDLNormalMapTexture textureCubeWithImagesNamed(NSArray<String> names);
 
@@ -188,4 +175,17 @@ public class MDLNormalMapTexture extends MDLTexture {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MDLNormalMapTexture init();
+
+    /**
+     * initByGeneratingNormalMapWithTexture:name:smoothness:contrast:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ModelIO/Reference/MDLNormalMapTexture_Class/index.html#//apple_ref/occ/instm/MDLNormalMapTexture/initByGeneratingNormalMapWithTexture:name:smoothness:contrast:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initByGeneratingNormalMapWithTexture:name:smoothness:contrast:")
+    public native MDLNormalMapTexture initByGeneratingNormalMapWithTextureNameSmoothnessContrast(
+            MDLTexture sourceTexture, String name, float smoothness, float contrast);
 }

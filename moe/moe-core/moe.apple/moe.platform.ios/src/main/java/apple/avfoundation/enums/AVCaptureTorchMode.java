@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVCaptureTorchMode {
-    @Generated
-    private AVCaptureTorchMode() {
-    }
-
     @Generated @NInt public static final long Off = 0x0000000000000000L;
     @Generated @NInt public static final long On = 0x0000000000000001L;
     @Generated @NInt public static final long Auto = 0x0000000000000002L;
+
+    @Generated
+    private AVCaptureTorchMode() {
+    }
 }

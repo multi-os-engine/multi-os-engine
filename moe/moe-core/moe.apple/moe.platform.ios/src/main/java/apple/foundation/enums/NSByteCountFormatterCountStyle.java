@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSByteCountFormatterCountStyle {
-    @Generated
-    private NSByteCountFormatterCountStyle() {
-    }
-
     @Generated @NInt public static final long File = 0x0000000000000000L;
     @Generated @NInt public static final long Memory = 0x0000000000000001L;
     @Generated @NInt public static final long Decimal = 0x0000000000000002L;
     @Generated @NInt public static final long Binary = 0x0000000000000003L;
+
+    @Generated
+    private NSByteCountFormatterCountStyle() {
+    }
 }

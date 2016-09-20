@@ -64,65 +64,8 @@ public class CKReference extends NSObject implements NSSecureCoding, NSCopying, 
     public static native CKReference alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CKReference init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CKReference initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithRecord:action:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKReference_class/index.html#//apple_ref/occ/instm/CKReference/initWithRecord:action:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRecord:action:")
-    public native CKReference initWithRecordAction(CKRecord record, @NUInt long action);
-
-    /**
-     * initWithRecordID:action:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKReference_class/index.html#//apple_ref/occ/instm/CKReference/initWithRecordID:action:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRecordID:action:")
-    public native CKReference initWithRecordIDAction(CKRecordID recordID, @NUInt long action);
-
-    /**
-     * recordID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKReference_class/index.html#//apple_ref/occ/instp/CKReference/recordID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recordID")
-    public native CKRecordID recordID();
-
-    /**
-     * referenceAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKReference_class/index.html#//apple_ref/occ/instp/CKReference/referenceAction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("referenceAction")
-    @NUInt
-    public native long referenceAction();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -223,4 +166,61 @@ public class CKReference extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CKReference init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CKReference initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithRecord:action:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKReference_class/index.html#//apple_ref/occ/instm/CKReference/initWithRecord:action:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRecord:action:")
+    public native CKReference initWithRecordAction(CKRecord record, @NUInt long action);
+
+    /**
+     * initWithRecordID:action:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKReference_class/index.html#//apple_ref/occ/instm/CKReference/initWithRecordID:action:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRecordID:action:")
+    public native CKReference initWithRecordIDAction(CKRecordID recordID, @NUInt long action);
+
+    /**
+     * recordID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKReference_class/index.html#//apple_ref/occ/instp/CKReference/recordID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recordID")
+    public native CKRecordID recordID();
+
+    /**
+     * referenceAction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKReference_class/index.html#//apple_ref/occ/instp/CKReference/referenceAction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("referenceAction")
+    @NUInt
+    public native long referenceAction();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

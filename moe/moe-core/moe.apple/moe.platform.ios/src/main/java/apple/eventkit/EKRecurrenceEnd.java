@@ -60,33 +60,6 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native EKRecurrenceEnd alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * endDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceEndClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceEnd/endDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("endDate")
-    public native NSDate endDate();
-
-    @Generated
-    @Selector("init")
-    public native EKRecurrenceEnd init();
-
-    /**
-     * occurrenceCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceEndClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceEnd/occurrenceCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("occurrenceCount")
-    @NUInt
-    public native long occurrenceCount();
-
     /**
      * recurrenceEndWithEndDate:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceEndClassRef/index.html#//apple_ref/occ/clm/EKRecurrenceEnd/recurrenceEndWithEndDate:">iOS Dev Center</a>
@@ -202,4 +175,31 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * endDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceEndClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceEnd/endDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("endDate")
+    public native NSDate endDate();
+
+    @Generated
+    @Selector("init")
+    public native EKRecurrenceEnd init();
+
+    /**
+     * occurrenceCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKRecurrenceEndClassRef/index.html#//apple_ref/occ/instp/EKRecurrenceEnd/occurrenceCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("occurrenceCount")
+    @NUInt
+    public native long occurrenceCount();
 }

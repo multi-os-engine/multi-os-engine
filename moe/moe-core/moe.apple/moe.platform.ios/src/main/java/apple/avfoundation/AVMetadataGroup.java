@@ -59,22 +59,6 @@ public class AVMetadataGroup extends NSObject {
     public static native AVMetadataGroup alloc();
 
     @Generated
-    @Selector("init")
-    public native AVMetadataGroup init();
-
-    @Generated
-    @Selector("items")
-    public native NSArray<? extends AVMetadataItem> items();
-
-    @Generated
-    @Selector("classifyingLabel")
-    public native String classifyingLabel();
-
-    @Generated
-    @Selector("uniqueID")
-    public native String uniqueID();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -173,4 +157,20 @@ public class AVMetadataGroup extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVMetadataGroup init();
+
+    @Generated
+    @Selector("items")
+    public native NSArray<? extends AVMetadataItem> items();
+
+    @Generated
+    @Selector("classifyingLabel")
+    public native String classifyingLabel();
+
+    @Generated
+    @Selector("uniqueID")
+    public native String uniqueID();
 }

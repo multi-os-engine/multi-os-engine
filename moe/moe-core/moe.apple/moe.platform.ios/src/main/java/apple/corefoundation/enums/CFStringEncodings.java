@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFStringEncodings {
-    @Generated
-    private CFStringEncodings() {
-    }
-
     @Generated @NInt public static final long MacJapanese = 0x0000000000000001L;
     @Generated @NInt public static final long MacChineseTrad = 0x0000000000000002L;
     @Generated @NInt public static final long MacKorean = 0x0000000000000003L;
@@ -154,4 +150,7 @@ public final class CFStringEncodings {
     @Generated @NInt public static final long UTF7 = 0x0000000004000100L;
     @Generated @NInt public static final long UTF7_IMAP = 0x0000000000000A10L;
     @Generated @NInt public static final long ShiftJIS_X0213_00 = 0x0000000000000628L;
+    @Generated
+    private CFStringEncodings() {
+    }
 }

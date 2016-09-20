@@ -74,6 +74,132 @@ public class AVAssetExportSession extends NSObject {
     public static native AVAssetExportSession alloc();
 
     /**
+     * determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/clm/AVAssetExportSession/determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:")
+    public static native void determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler(
+            String presetName, AVAsset asset, String outputFileType,
+            @ObjCBlock(name = "call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler") Block_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler handler);
+
+    /**
+     * exportPresetsCompatibleWithAsset:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/clm/AVAssetExportSession/exportPresetsCompatibleWithAsset:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("exportPresetsCompatibleWithAsset:")
+    public static native NSArray<String> exportPresetsCompatibleWithAsset(AVAsset asset);
+
+    /**
+     * exportSessionWithAsset:presetName:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/clm/AVAssetExportSession/exportSessionWithAsset:presetName:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("exportSessionWithAsset:presetName:")
+    public static native AVAssetExportSession exportSessionWithAssetPresetName(AVAsset asset, String presetName);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
      * asset</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instp/AVAssetExportSession/asset">iOS Dev Center</a>
      */
@@ -123,23 +249,6 @@ public class AVAssetExportSession extends NSObject {
     public native AVVideoCompositing customVideoCompositor();
 
     /**
-     * determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/clm/AVAssetExportSession/determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("determineCompatibilityOfExportPreset:withAsset:outputFileType:completionHandler:")
-    public static native void determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler(
-            String presetName, AVAsset asset, String outputFileType,
-            @ObjCBlock(name = "call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler") Block_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler {
-        @Generated
-        void call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler(boolean arg0);
-    }
-
-    /**
      * determineCompatibleFileTypesWithCompletionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/instm/AVAssetExportSession/determineCompatibleFileTypesWithCompletionHandler:">iOS Dev Center</a>
      */
@@ -147,13 +256,6 @@ public class AVAssetExportSession extends NSObject {
     @Selector("determineCompatibleFileTypesWithCompletionHandler:")
     public native void determineCompatibleFileTypesWithCompletionHandler(
             @ObjCBlock(name = "call_determineCompatibleFileTypesWithCompletionHandler") Block_determineCompatibleFileTypesWithCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_determineCompatibleFileTypesWithCompletionHandler {
-        @Generated
-        void call_determineCompatibleFileTypesWithCompletionHandler(NSArray<String> arg0);
-    }
 
     /**
      * directoryForTemporaryFiles</br>
@@ -187,29 +289,6 @@ public class AVAssetExportSession extends NSObject {
     @Selector("exportAsynchronouslyWithCompletionHandler:")
     public native void exportAsynchronouslyWithCompletionHandler(
             @ObjCBlock(name = "call_exportAsynchronouslyWithCompletionHandler") Block_exportAsynchronouslyWithCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_exportAsynchronouslyWithCompletionHandler {
-        @Generated
-        void call_exportAsynchronouslyWithCompletionHandler();
-    }
-
-    /**
-     * exportPresetsCompatibleWithAsset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/clm/AVAssetExportSession/exportPresetsCompatibleWithAsset:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("exportPresetsCompatibleWithAsset:")
-    public static native NSArray<String> exportPresetsCompatibleWithAsset(AVAsset asset);
-
-    /**
-     * exportSessionWithAsset:presetName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetExportSession_Class/index.html#//apple_ref/occ/clm/AVAssetExportSession/exportSessionWithAsset:presetName:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("exportSessionWithAsset:presetName:")
-    public static native AVAssetExportSession exportSessionWithAssetPresetName(AVAsset asset, String presetName);
 
     /**
      * fileLengthLimit</br>
@@ -426,103 +505,24 @@ public class AVAssetExportSession extends NSObject {
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler {
+        @Generated
+        void call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_determineCompatibleFileTypesWithCompletionHandler {
+        @Generated
+        void call_determineCompatibleFileTypesWithCompletionHandler(NSArray<String> arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_exportAsynchronouslyWithCompletionHandler {
+        @Generated
+        void call_exportAsynchronouslyWithCompletionHandler();
+    }
 }

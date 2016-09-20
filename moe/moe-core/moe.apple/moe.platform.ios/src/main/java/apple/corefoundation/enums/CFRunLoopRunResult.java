@@ -20,12 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CFRunLoopRunResult {
-    @Generated
-    private CFRunLoopRunResult() {
-    }
-
     @Generated public static final int Finished = 0x00000001;
     @Generated public static final int Stopped = 0x00000002;
     @Generated public static final int TimedOut = 0x00000003;
     @Generated public static final int HandledSource = 0x00000004;
+    @Generated
+    private CFRunLoopRunResult() {
+    }
 }

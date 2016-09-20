@@ -65,82 +65,6 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @Selector("alloc")
     public static native AVAsynchronousVideoCompositionRequest alloc();
 
-    /**
-     * compositionTime</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instp/AVAsynchronousVideoCompositionRequest/compositionTime">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("compositionTime")
-    @ByValue
-    public native CMTime compositionTime();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * finishCancelledRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instm/AVAsynchronousVideoCompositionRequest/finishCancelledRequest">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("finishCancelledRequest")
-    public native void finishCancelledRequest();
-
-    /**
-     * finishWithComposedVideoFrame:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instm/AVAsynchronousVideoCompositionRequest/finishWithComposedVideoFrame:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("finishWithComposedVideoFrame:")
-    public native void finishWithComposedVideoFrame(CVBufferRef composedVideoFrame);
-
-    /**
-     * finishWithError:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instm/AVAsynchronousVideoCompositionRequest/finishWithError:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("finishWithError:")
-    public native void finishWithError(NSError error);
-
-    @Generated
-    @Selector("init")
-    public native AVAsynchronousVideoCompositionRequest init();
-
-    /**
-     * renderContext</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instp/AVAsynchronousVideoCompositionRequest/renderContext">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("renderContext")
-    public native AVVideoCompositionRenderContext renderContext();
-
-    /**
-     * sourceFrameByTrackID:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instm/AVAsynchronousVideoCompositionRequest/sourceFrameByTrackID:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceFrameByTrackID:")
-    public native CVBufferRef sourceFrameByTrackID(int trackID);
-
-    /**
-     * sourceTrackIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instp/AVAsynchronousVideoCompositionRequest/sourceTrackIDs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceTrackIDs")
-    public native NSArray<? extends NSNumber> sourceTrackIDs();
-
-    /**
-     * videoCompositionInstruction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instp/AVAsynchronousVideoCompositionRequest/videoCompositionInstruction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("videoCompositionInstruction")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native AVVideoCompositionInstruction videoCompositionInstruction();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -240,4 +164,80 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * compositionTime</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instp/AVAsynchronousVideoCompositionRequest/compositionTime">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("compositionTime")
+    @ByValue
+    public native CMTime compositionTime();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * finishCancelledRequest</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instm/AVAsynchronousVideoCompositionRequest/finishCancelledRequest">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("finishCancelledRequest")
+    public native void finishCancelledRequest();
+
+    /**
+     * finishWithComposedVideoFrame:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instm/AVAsynchronousVideoCompositionRequest/finishWithComposedVideoFrame:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("finishWithComposedVideoFrame:")
+    public native void finishWithComposedVideoFrame(CVBufferRef composedVideoFrame);
+
+    /**
+     * finishWithError:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instm/AVAsynchronousVideoCompositionRequest/finishWithError:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("finishWithError:")
+    public native void finishWithError(NSError error);
+
+    @Generated
+    @Selector("init")
+    public native AVAsynchronousVideoCompositionRequest init();
+
+    /**
+     * renderContext</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instp/AVAsynchronousVideoCompositionRequest/renderContext">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("renderContext")
+    public native AVVideoCompositionRenderContext renderContext();
+
+    /**
+     * sourceFrameByTrackID:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instm/AVAsynchronousVideoCompositionRequest/sourceFrameByTrackID:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceFrameByTrackID:")
+    public native CVBufferRef sourceFrameByTrackID(int trackID);
+
+    /**
+     * sourceTrackIDs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instp/AVAsynchronousVideoCompositionRequest/sourceTrackIDs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceTrackIDs")
+    public native NSArray<? extends NSNumber> sourceTrackIDs();
+
+    /**
+     * videoCompositionInstruction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/index.html#//apple_ref/occ/instp/AVAsynchronousVideoCompositionRequest/videoCompositionInstruction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("videoCompositionInstruction")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native AVVideoCompositionInstruction videoCompositionInstruction();
 }

@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSFileVersionAddingOptions {
+    @Generated @NUInt public static final long NSFileVersionAddingByMoving = 0x0000000000000001L;
+
     @Generated
     private NSFileVersionAddingOptions() {
     }
-
-    @Generated @NUInt public static final long NSFileVersionAddingByMoving = 0x0000000000000001L;
 }

@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSURLCredentialPersistence {
-    @Generated
-    private NSURLCredentialPersistence() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long ForSession = 0x0000000000000001L;
     @Generated @NUInt public static final long Permanent = 0x0000000000000002L;
     @Generated @NUInt public static final long Synchronizable = 0x0000000000000003L;
+
+    @Generated
+    private NSURLCredentialPersistence() {
+    }
 }

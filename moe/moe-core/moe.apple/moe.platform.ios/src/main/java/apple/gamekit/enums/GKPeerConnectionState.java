@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GKPeerConnectionState {
-    @Generated
-    private GKPeerConnectionState() {
-    }
-
     @Generated public static final int Available = 0x00000000;
     @Generated public static final int Unavailable = 0x00000001;
     @Generated public static final int Connected = 0x00000002;
     @Generated public static final int Disconnected = 0x00000003;
     @Generated public static final int Connecting = 0x00000004;
+
+    @Generated
+    private GKPeerConnectionState() {
+    }
 }

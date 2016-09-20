@@ -59,14 +59,6 @@ public class MPChangeLanguageOptionCommandEvent extends MPRemoteCommandEvent {
     public static native MPChangeLanguageOptionCommandEvent alloc();
 
     @Generated
-    @Selector("init")
-    public native MPChangeLanguageOptionCommandEvent init();
-
-    @Generated
-    @Selector("languageOption")
-    public native MPNowPlayingInfoLanguageOption languageOption();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -165,4 +157,12 @@ public class MPChangeLanguageOptionCommandEvent extends MPRemoteCommandEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPChangeLanguageOptionCommandEvent init();
+
+    @Generated
+    @Selector("languageOption")
+    public native MPNowPlayingInfoLanguageOption languageOption();
 }

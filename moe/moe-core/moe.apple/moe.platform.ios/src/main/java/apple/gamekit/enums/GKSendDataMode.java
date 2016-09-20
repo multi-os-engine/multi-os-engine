@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GKSendDataMode {
+    @Generated public static final int Reliable = 0x00000000;
+    @Generated public static final int Unreliable = 0x00000001;
+
     @Generated
     private GKSendDataMode() {
     }
-
-    @Generated public static final int Reliable = 0x00000000;
-    @Generated public static final int Unreliable = 0x00000001;
 }

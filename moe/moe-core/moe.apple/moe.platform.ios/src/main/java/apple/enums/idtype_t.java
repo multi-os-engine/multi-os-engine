@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class idtype_t {
-    @Generated
-    private idtype_t() {
-    }
-
     @Generated public static final int P_ALL = 0x00000000;
     @Generated public static final int P_PID = 0x00000001;
     @Generated public static final int P_PGID = 0x00000002;
+
+    @Generated
+    private idtype_t() {
+    }
 }

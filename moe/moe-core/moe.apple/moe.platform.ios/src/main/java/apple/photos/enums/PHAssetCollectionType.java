@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHAssetCollectionType {
-    @Generated
-    private PHAssetCollectionType() {
-    }
-
     @Generated @NInt public static final long Album = 0x0000000000000001L;
     @Generated @NInt public static final long SmartAlbum = 0x0000000000000002L;
     @Generated @NInt public static final long Moment = 0x0000000000000003L;
+
+    @Generated
+    private PHAssetCollectionType() {
+    }
 }

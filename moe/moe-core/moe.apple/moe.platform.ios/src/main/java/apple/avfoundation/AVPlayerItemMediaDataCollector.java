@@ -59,10 +59,6 @@ public class AVPlayerItemMediaDataCollector extends NSObject {
     public static native AVPlayerItemMediaDataCollector alloc();
 
     @Generated
-    @Selector("init")
-    public native AVPlayerItemMediaDataCollector init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class AVPlayerItemMediaDataCollector extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVPlayerItemMediaDataCollector init();
 }

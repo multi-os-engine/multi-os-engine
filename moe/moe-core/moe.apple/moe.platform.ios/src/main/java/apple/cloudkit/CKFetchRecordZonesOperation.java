@@ -71,68 +71,6 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     public static native Object fetchAllRecordZonesOperation();
 
     @Generated
-    @Selector("init")
-    public native CKFetchRecordZonesOperation init();
-
-    /**
-     * initWithRecordZoneIDs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordZonesOperation_class/index.html#//apple_ref/occ/instm/CKFetchRecordZonesOperation/initWithRecordZoneIDs:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRecordZoneIDs:")
-    public native CKFetchRecordZonesOperation initWithRecordZoneIDs(NSArray<? extends CKRecordZoneID> zoneIDs);
-
-    /**
-     * recordZoneIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordZonesOperation/recordZoneIDs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recordZoneIDs")
-    public native NSArray<? extends CKRecordZoneID> recordZoneIDs();
-
-    /**
-     * fetchRecordZonesCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordZonesOperation/fetchRecordZonesCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFetchRecordZonesCompletionBlock:")
-    public native void setFetchRecordZonesCompletionBlock(
-            @ObjCBlock(name = "call_setFetchRecordZonesCompletionBlock") Block_setFetchRecordZonesCompletionBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setFetchRecordZonesCompletionBlock {
-        @Generated
-        void call_setFetchRecordZonesCompletionBlock(
-                NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, NSError arg1);
-    }
-
-    /**
-     * recordZoneIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordZonesOperation/recordZoneIDs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRecordZoneIDs:")
-    public native void setRecordZoneIDs(NSArray<? extends CKRecordZoneID> value);
-
-    /**
-     * fetchRecordZonesCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordZonesOperation/fetchRecordZonesCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchRecordZonesCompletionBlock")
-    @ObjCBlock(name = "call_fetchRecordZonesCompletionBlock_ret")
-    public native Block_fetchRecordZonesCompletionBlock_ret fetchRecordZonesCompletionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchRecordZonesCompletionBlock_ret {
-        @Generated
-        void call_fetchRecordZonesCompletionBlock_ret(
-                NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, NSError arg1);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -231,4 +169,66 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CKFetchRecordZonesOperation init();
+
+    /**
+     * initWithRecordZoneIDs:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordZonesOperation_class/index.html#//apple_ref/occ/instm/CKFetchRecordZonesOperation/initWithRecordZoneIDs:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRecordZoneIDs:")
+    public native CKFetchRecordZonesOperation initWithRecordZoneIDs(NSArray<? extends CKRecordZoneID> zoneIDs);
+
+    /**
+     * recordZoneIDs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordZonesOperation/recordZoneIDs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recordZoneIDs")
+    public native NSArray<? extends CKRecordZoneID> recordZoneIDs();
+
+    /**
+     * fetchRecordZonesCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordZonesOperation/fetchRecordZonesCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFetchRecordZonesCompletionBlock:")
+    public native void setFetchRecordZonesCompletionBlock(
+            @ObjCBlock(name = "call_setFetchRecordZonesCompletionBlock") Block_setFetchRecordZonesCompletionBlock value);
+
+    /**
+     * recordZoneIDs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordZonesOperation/recordZoneIDs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRecordZoneIDs:")
+    public native void setRecordZoneIDs(NSArray<? extends CKRecordZoneID> value);
+
+    /**
+     * fetchRecordZonesCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordZonesOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordZonesOperation/fetchRecordZonesCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchRecordZonesCompletionBlock")
+    @ObjCBlock(name = "call_fetchRecordZonesCompletionBlock_ret")
+    public native Block_fetchRecordZonesCompletionBlock_ret fetchRecordZonesCompletionBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setFetchRecordZonesCompletionBlock {
+        @Generated
+        void call_setFetchRecordZonesCompletionBlock(
+                NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchRecordZonesCompletionBlock_ret {
+        @Generated
+        void call_fetchRecordZonesCompletionBlock_ret(
+                NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, NSError arg1);
+    }
 }

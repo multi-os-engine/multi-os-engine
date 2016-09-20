@@ -60,34 +60,10 @@ public class WKInterfaceDevice extends NSObject {
         super(peer);
     }
 
-    /**
-     * addCachedImage:name:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instm/WKInterfaceDevice/addCachedImage:name:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addCachedImage:name:")
-    public native boolean addCachedImageName(UIImage image, String name);
-
-    /**
-     * addCachedImageWithData:name:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instm/WKInterfaceDevice/addCachedImageWithData:name:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addCachedImageWithData:name:")
-    public native boolean addCachedImageWithDataName(NSData imageData, String name);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native WKInterfaceDevice alloc();
-
-    /**
-     * cachedImages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instp/WKInterfaceDevice/cachedImages">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cachedImages")
-    public native NSDictionary<String, ? extends NSNumber> cachedImages();
 
     /**
      * currentDevice</br>
@@ -96,72 +72,6 @@ public class WKInterfaceDevice extends NSObject {
     @Generated
     @Selector("currentDevice")
     public static native WKInterfaceDevice currentDevice();
-
-    @Generated
-    @Selector("init")
-    public native WKInterfaceDevice init();
-
-    /**
-     * preferredContentSizeCategory</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instp/WKInterfaceDevice/preferredContentSizeCategory">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preferredContentSizeCategory")
-    public native String preferredContentSizeCategory();
-
-    /**
-     * removeAllCachedImages</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instm/WKInterfaceDevice/removeAllCachedImages">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeAllCachedImages")
-    public native void removeAllCachedImages();
-
-    /**
-     * removeCachedImageWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instm/WKInterfaceDevice/removeCachedImageWithName:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeCachedImageWithName:")
-    public native void removeCachedImageWithName(String name);
-
-    /**
-     * screenBounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instp/WKInterfaceDevice/screenBounds">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("screenBounds")
-    @ByValue
-    public native CGRect screenBounds();
-
-    /**
-     * screenScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instp/WKInterfaceDevice/screenScale">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("screenScale")
-    @NFloat
-    public native double screenScale();
-
-    @Generated
-    @Selector("localizedModel")
-    public native String localizedModel();
-
-    @Generated
-    @Selector("model")
-    public native String model();
-
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
-    @Selector("systemName")
-    public native String systemName();
-
-    @Generated
-    @Selector("systemVersion")
-    public native String systemVersion();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -262,4 +172,94 @@ public class WKInterfaceDevice extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addCachedImage:name:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instm/WKInterfaceDevice/addCachedImage:name:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addCachedImage:name:")
+    public native boolean addCachedImageName(UIImage image, String name);
+
+    /**
+     * addCachedImageWithData:name:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instm/WKInterfaceDevice/addCachedImageWithData:name:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addCachedImageWithData:name:")
+    public native boolean addCachedImageWithDataName(NSData imageData, String name);
+
+    /**
+     * cachedImages</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instp/WKInterfaceDevice/cachedImages">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cachedImages")
+    public native NSDictionary<String, ? extends NSNumber> cachedImages();
+
+    @Generated
+    @Selector("init")
+    public native WKInterfaceDevice init();
+
+    /**
+     * preferredContentSizeCategory</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instp/WKInterfaceDevice/preferredContentSizeCategory">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preferredContentSizeCategory")
+    public native String preferredContentSizeCategory();
+
+    /**
+     * removeAllCachedImages</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instm/WKInterfaceDevice/removeAllCachedImages">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeAllCachedImages")
+    public native void removeAllCachedImages();
+
+    /**
+     * removeCachedImageWithName:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instm/WKInterfaceDevice/removeCachedImageWithName:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeCachedImageWithName:")
+    public native void removeCachedImageWithName(String name);
+
+    /**
+     * screenBounds</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instp/WKInterfaceDevice/screenBounds">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("screenBounds")
+    @ByValue
+    public native CGRect screenBounds();
+
+    /**
+     * screenScale</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKInterfaceDevice_class/index.html#//apple_ref/occ/instp/WKInterfaceDevice/screenScale">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("screenScale")
+    @NFloat
+    public native double screenScale();
+
+    @Generated
+    @Selector("localizedModel")
+    public native String localizedModel();
+
+    @Generated
+    @Selector("model")
+    public native String model();
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("systemName")
+    public native String systemName();
+
+    @Generated
+    @Selector("systemVersion")
+    public native String systemVersion();
 }

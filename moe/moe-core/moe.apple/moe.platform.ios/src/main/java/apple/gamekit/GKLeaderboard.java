@@ -64,64 +64,6 @@ public class GKLeaderboard extends NSObject {
     public static native GKLeaderboard alloc();
 
     /**
-     * category</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/category">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("category")
-    public native String category();
-
-    /**
-     * groupIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/groupIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("groupIdentifier")
-    public native String groupIdentifier();
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instm/GKLeaderboard/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native GKLeaderboard init();
-
-    /**
-     * initWithPlayerIDs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instm/GKLeaderboard/initWithPlayerIDs:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("initWithPlayerIDs:")
-    public native GKLeaderboard initWithPlayerIDs(NSArray<String> playerIDs);
-
-    /**
-     * initWithPlayers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instm/GKLeaderboard/initWithPlayers:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithPlayers:")
-    public native GKLeaderboard initWithPlayers(NSArray<? extends GKPlayer> players);
-
-    /**
-     * loading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/loading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isLoading")
-    public native boolean isLoading();
-
-    /**
      * loadCategoriesWithCompletionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/clm/GKLeaderboard/loadCategoriesWithCompletionHandler:">iOS Dev Center</a>
      */
@@ -130,29 +72,6 @@ public class GKLeaderboard extends NSObject {
     @Selector("loadCategoriesWithCompletionHandler:")
     public static native void loadCategoriesWithCompletionHandler(
             @ObjCBlock(name = "call_loadCategoriesWithCompletionHandler") Block_loadCategoriesWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadCategoriesWithCompletionHandler {
-        @Generated
-        void call_loadCategoriesWithCompletionHandler(NSArray<String> arg0, NSArray<String> arg1, NSError arg2);
-    }
-
-    /**
-     * loadImageWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instm/GKLeaderboard/loadImageWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadImageWithCompletionHandler:")
-    public native void loadImageWithCompletionHandler(
-            @ObjCBlock(name = "call_loadImageWithCompletionHandler") Block_loadImageWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadImageWithCompletionHandler {
-        @Generated
-        void call_loadImageWithCompletionHandler(UIImage arg0, NSError arg1);
-    }
 
     /**
      * loadLeaderboardsWithCompletionHandler:</br>
@@ -163,81 +82,6 @@ public class GKLeaderboard extends NSObject {
     public static native void loadLeaderboardsWithCompletionHandler(
             @ObjCBlock(name = "call_loadLeaderboardsWithCompletionHandler") Block_loadLeaderboardsWithCompletionHandler completionHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadLeaderboardsWithCompletionHandler {
-        @Generated
-        void call_loadLeaderboardsWithCompletionHandler(NSArray<? extends GKLeaderboard> arg0, NSError arg1);
-    }
-
-    /**
-     * loadScoresWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instm/GKLeaderboard/loadScoresWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loadScoresWithCompletionHandler:")
-    public native void loadScoresWithCompletionHandler(
-            @ObjCBlock(name = "call_loadScoresWithCompletionHandler") Block_loadScoresWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_loadScoresWithCompletionHandler {
-        @Generated
-        void call_loadScoresWithCompletionHandler(NSArray<? extends GKScore> arg0, NSError arg1);
-    }
-
-    /**
-     * localPlayerScore</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/localPlayerScore">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localPlayerScore")
-    public native GKScore localPlayerScore();
-
-    /**
-     * maxRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/maxRange">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maxRange")
-    @NUInt
-    public native long maxRange();
-
-    /**
-     * playerScope</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/playerScope">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("playerScope")
-    @NInt
-    public native long playerScope();
-
-    /**
-     * range</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/range">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("range")
-    @ByValue
-    public native NSRange range();
-
-    /**
-     * scores</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/scores">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("scores")
-    public native NSArray<? extends GKScore> scores();
-
-    /**
-     * category</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/category">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setCategory:")
-    public native void setCategory(String value);
-
     /**
      * setDefaultLeaderboard:withCompletionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/clm/GKLeaderboard/setDefaultLeaderboard:withCompletionHandler:">iOS Dev Center</a>
@@ -247,62 +91,6 @@ public class GKLeaderboard extends NSObject {
     @Selector("setDefaultLeaderboard:withCompletionHandler:")
     public static native void setDefaultLeaderboardWithCompletionHandler(String leaderboardIdentifier,
             @ObjCBlock(name = "call_setDefaultLeaderboardWithCompletionHandler") Block_setDefaultLeaderboardWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setDefaultLeaderboardWithCompletionHandler {
-        @Generated
-        void call_setDefaultLeaderboardWithCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
-
-    /**
-     * playerScope</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/playerScope">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPlayerScope:")
-    public native void setPlayerScope(@NInt long value);
-
-    /**
-     * range</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/range">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRange:")
-    public native void setRange(@ByValue NSRange value);
-
-    /**
-     * timeScope</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/timeScope">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTimeScope:")
-    public native void setTimeScope(@NInt long value);
-
-    /**
-     * timeScope</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/timeScope">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeScope")
-    @NInt
-    public native long timeScope();
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -403,4 +191,216 @@ public class GKLeaderboard extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * category</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/category">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("category")
+    public native String category();
+
+    /**
+     * groupIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/groupIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("groupIdentifier")
+    public native String groupIdentifier();
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instm/GKLeaderboard/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native GKLeaderboard init();
+
+    /**
+     * initWithPlayerIDs:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instm/GKLeaderboard/initWithPlayerIDs:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("initWithPlayerIDs:")
+    public native GKLeaderboard initWithPlayerIDs(NSArray<String> playerIDs);
+
+    /**
+     * initWithPlayers:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instm/GKLeaderboard/initWithPlayers:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithPlayers:")
+    public native GKLeaderboard initWithPlayers(NSArray<? extends GKPlayer> players);
+
+    /**
+     * loading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/loading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isLoading")
+    public native boolean isLoading();
+
+    /**
+     * loadImageWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instm/GKLeaderboard/loadImageWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadImageWithCompletionHandler:")
+    public native void loadImageWithCompletionHandler(
+            @ObjCBlock(name = "call_loadImageWithCompletionHandler") Block_loadImageWithCompletionHandler completionHandler);
+
+    /**
+     * loadScoresWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instm/GKLeaderboard/loadScoresWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loadScoresWithCompletionHandler:")
+    public native void loadScoresWithCompletionHandler(
+            @ObjCBlock(name = "call_loadScoresWithCompletionHandler") Block_loadScoresWithCompletionHandler completionHandler);
+
+    /**
+     * localPlayerScore</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/localPlayerScore">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localPlayerScore")
+    public native GKScore localPlayerScore();
+
+    /**
+     * maxRange</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/maxRange">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maxRange")
+    @NUInt
+    public native long maxRange();
+
+    /**
+     * playerScope</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/playerScope">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("playerScope")
+    @NInt
+    public native long playerScope();
+
+    /**
+     * range</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/range">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("range")
+    @ByValue
+    public native NSRange range();
+
+    /**
+     * scores</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/scores">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("scores")
+    public native NSArray<? extends GKScore> scores();
+
+    /**
+     * category</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/category">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setCategory:")
+    public native void setCategory(String value);
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIdentifier:")
+    public native void setIdentifier(String value);
+
+    /**
+     * playerScope</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/playerScope">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPlayerScope:")
+    public native void setPlayerScope(@NInt long value);
+
+    /**
+     * range</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/range">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRange:")
+    public native void setRange(@ByValue NSRange value);
+
+    /**
+     * timeScope</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/timeScope">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTimeScope:")
+    public native void setTimeScope(@NInt long value);
+
+    /**
+     * timeScope</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/timeScope">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeScope")
+    @NInt
+    public native long timeScope();
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKLeaderboard_Ref/index.html#//apple_ref/occ/instp/GKLeaderboard/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadCategoriesWithCompletionHandler {
+        @Generated
+        void call_loadCategoriesWithCompletionHandler(NSArray<String> arg0, NSArray<String> arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadImageWithCompletionHandler {
+        @Generated
+        void call_loadImageWithCompletionHandler(UIImage arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadLeaderboardsWithCompletionHandler {
+        @Generated
+        void call_loadLeaderboardsWithCompletionHandler(NSArray<? extends GKLeaderboard> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadScoresWithCompletionHandler {
+        @Generated
+        void call_loadScoresWithCompletionHandler(NSArray<? extends GKScore> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setDefaultLeaderboardWithCompletionHandler {
+        @Generated
+        void call_setDefaultLeaderboardWithCompletionHandler(NSError arg0);
+    }
 }

@@ -57,49 +57,6 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native NSPort alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object delegate();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NSPort init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSPort initWithCoder(NSCoder aDecoder);
-
-    /**
-     * invalidate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/invalidate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("invalidate")
-    public native void invalidate();
-
-    /**
-     * valid</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instp/NSPort/valid">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isValid")
-    public native boolean isValid();
-
     /**
      * port</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/clm/NSPort/port">iOS Dev Center</a>
@@ -107,57 +64,6 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("port")
     public static native NSPort port();
-
-    /**
-     * removeFromRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/removeFromRunLoop:forMode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeFromRunLoop:forMode:")
-    public native void removeFromRunLoopForMode(NSRunLoop runLoop, String mode);
-
-    /**
-     * reservedSpaceLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instp/NSPort/reservedSpaceLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reservedSpaceLength")
-    @NUInt
-    public native long reservedSpaceLength();
-
-    /**
-     * scheduleInRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/scheduleInRunLoop:forMode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("scheduleInRunLoop:forMode:")
-    public native void scheduleInRunLoopForMode(NSRunLoop runLoop, String mode);
-
-    /**
-     * sendBeforeDate:components:from:reserved:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/sendBeforeDate:components:from:reserved:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sendBeforeDate:components:from:reserved:")
-    public native boolean sendBeforeDateComponentsFromReserved(NSDate limitDate, NSMutableArray<?> components,
-            NSPort receivePort, @NUInt long headerSpaceReserved);
-
-    /**
-     * sendBeforeDate:msgid:components:from:reserved:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/sendBeforeDate:msgid:components:from:reserved:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sendBeforeDate:msgid:components:from:reserved:")
-    public native boolean sendBeforeDateMsgidComponentsFromReserved(NSDate limitDate, @NUInt long msgID,
-            NSMutableArray<?> components, NSPort receivePort, @NUInt long headerSpaceReserved);
-
-    /**
-     * setDelegate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/setDelegate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object anObject);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -262,4 +168,98 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object delegate();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NSPort init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSPort initWithCoder(NSCoder aDecoder);
+
+    /**
+     * invalidate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/invalidate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("invalidate")
+    public native void invalidate();
+
+    /**
+     * valid</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instp/NSPort/valid">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isValid")
+    public native boolean isValid();
+
+    /**
+     * removeFromRunLoop:forMode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/removeFromRunLoop:forMode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeFromRunLoop:forMode:")
+    public native void removeFromRunLoopForMode(NSRunLoop runLoop, String mode);
+
+    /**
+     * reservedSpaceLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instp/NSPort/reservedSpaceLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reservedSpaceLength")
+    @NUInt
+    public native long reservedSpaceLength();
+
+    /**
+     * scheduleInRunLoop:forMode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/scheduleInRunLoop:forMode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("scheduleInRunLoop:forMode:")
+    public native void scheduleInRunLoopForMode(NSRunLoop runLoop, String mode);
+
+    /**
+     * sendBeforeDate:components:from:reserved:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/sendBeforeDate:components:from:reserved:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sendBeforeDate:components:from:reserved:")
+    public native boolean sendBeforeDateComponentsFromReserved(NSDate limitDate, NSMutableArray<?> components,
+            NSPort receivePort, @NUInt long headerSpaceReserved);
+
+    /**
+     * sendBeforeDate:msgid:components:from:reserved:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/sendBeforeDate:msgid:components:from:reserved:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sendBeforeDate:msgid:components:from:reserved:")
+    public native boolean sendBeforeDateMsgidComponentsFromReserved(NSDate limitDate, @NUInt long msgID,
+            NSMutableArray<?> components, NSPort receivePort, @NUInt long headerSpaceReserved);
+
+    /**
+     * setDelegate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPort_Class/index.html#//apple_ref/occ/instm/NSPort/setDelegate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object anObject);
 }

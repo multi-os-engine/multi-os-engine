@@ -65,68 +65,6 @@ public class MKUserLocation extends NSObject implements MKAnnotation {
     public static native MKUserLocation alloc();
 
     @Generated
-    @Selector("coordinate")
-    @ByValue
-    public native CLLocationCoordinate2D coordinate();
-
-    /**
-     * heading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserLocation_Class/index.html#//apple_ref/occ/instp/MKUserLocation/heading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("heading")
-    public native CLHeading heading();
-
-    @Generated
-    @Selector("init")
-    public native MKUserLocation init();
-
-    /**
-     * updating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserLocation_Class/index.html#//apple_ref/occ/instp/MKUserLocation/updating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isUpdating")
-    public native boolean isUpdating();
-
-    /**
-     * location</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserLocation_Class/index.html#//apple_ref/occ/instp/MKUserLocation/location">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("location")
-    public native CLLocation location();
-
-    @Generated
-    @IsOptional
-    @Selector("setCoordinate:")
-    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
-
-    /**
-     * subtitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserLocation_Class/index.html#//apple_ref/occ/instp/MKUserLocation/subtitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserLocation_Class/index.html#//apple_ref/occ/instp/MKUserLocation/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTitle:")
-    public native void setTitle(String value);
-
-    @Generated
-    @Selector("subtitle")
-    public native String subtitle();
-
-    @Generated
-    @Selector("title")
-    public native String title();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -225,4 +163,66 @@ public class MKUserLocation extends NSObject implements MKAnnotation {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("coordinate")
+    @ByValue
+    public native CLLocationCoordinate2D coordinate();
+
+    /**
+     * heading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserLocation_Class/index.html#//apple_ref/occ/instp/MKUserLocation/heading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("heading")
+    public native CLHeading heading();
+
+    @Generated
+    @Selector("init")
+    public native MKUserLocation init();
+
+    /**
+     * updating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserLocation_Class/index.html#//apple_ref/occ/instp/MKUserLocation/updating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isUpdating")
+    public native boolean isUpdating();
+
+    /**
+     * location</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserLocation_Class/index.html#//apple_ref/occ/instp/MKUserLocation/location">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("location")
+    public native CLLocation location();
+
+    @Generated
+    @IsOptional
+    @Selector("setCoordinate:")
+    public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
+
+    /**
+     * subtitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserLocation_Class/index.html#//apple_ref/occ/instp/MKUserLocation/subtitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSubtitle:")
+    public native void setSubtitle(String value);
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKUserLocation_Class/index.html#//apple_ref/occ/instp/MKUserLocation/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
+
+    @Generated
+    @Selector("subtitle")
+    public native String subtitle();
+
+    @Generated
+    @Selector("title")
+    public native String title();
 }

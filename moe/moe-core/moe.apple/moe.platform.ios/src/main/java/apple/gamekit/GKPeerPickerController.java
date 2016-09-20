@@ -59,84 +59,6 @@ public class GKPeerPickerController extends NSObject {
     @Selector("alloc")
     public static native GKPeerPickerController alloc();
 
-    /**
-     * connectionTypesMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/connectionTypesMask">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connectionTypesMask")
-    @NUInt
-    public native long connectionTypesMask();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native GKPeerPickerControllerDelegate delegate();
-
-    /**
-     * dismiss</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instm/GKPeerPickerController/dismiss">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dismiss")
-    public native void dismiss();
-
-    @Generated
-    @Selector("init")
-    public native GKPeerPickerController init();
-
-    /**
-     * visible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/visible">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isVisible")
-    public native boolean isVisible();
-
-    /**
-     * connectionTypesMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/connectionTypesMask">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setConnectionTypesMask:")
-    public native void setConnectionTypesMask(@NUInt long value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * show</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instm/GKPeerPickerController/show">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("show")
-    public native void show();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -236,4 +158,82 @@ public class GKPeerPickerController extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * connectionTypesMask</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/connectionTypesMask">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connectionTypesMask")
+    @NUInt
+    public native long connectionTypesMask();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native GKPeerPickerControllerDelegate delegate();
+
+    /**
+     * dismiss</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instm/GKPeerPickerController/dismiss">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dismiss")
+    public native void dismiss();
+
+    @Generated
+    @Selector("init")
+    public native GKPeerPickerController init();
+
+    /**
+     * visible</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/visible">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isVisible")
+    public native boolean isVisible();
+
+    /**
+     * connectionTypesMask</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/connectionTypesMask">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setConnectionTypesMask:")
+    public native void setConnectionTypesMask(@NUInt long value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instp/GKPeerPickerController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * show</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKPeerPickerController_Class/index.html#//apple_ref/occ/instm/GKPeerPickerController/show">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("show")
+    public native void show();
 }

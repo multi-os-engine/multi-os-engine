@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHAssetCollectionSubtype {
-    @Generated
-    private PHAssetCollectionSubtype() {
-    }
-
     @Generated @NInt public static final long AlbumRegular = 0x0000000000000002L;
     @Generated @NInt public static final long AlbumSyncedEvent = 0x0000000000000003L;
     @Generated @NInt public static final long AlbumSyncedFaces = 0x0000000000000004L;
@@ -47,4 +43,8 @@ public final class PHAssetCollectionSubtype {
             0x000000007FFFFFFFL;
     @Generated @NInt public static final long SmartAlbumSelfPortraits = 0x00000000000000D2L;
     @Generated @NInt public static final long SmartAlbumScreenshots = 0x00000000000000D3L;
+
+    @Generated
+    private PHAssetCollectionSubtype() {
+    }
 }

@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class PKShippingType {
-    @Generated
-    private PKShippingType() {
-    }
-
     @Generated @NUInt public static final long Shipping = 0x0000000000000000L;
     @Generated @NUInt public static final long Delivery = 0x0000000000000001L;
     @Generated @NUInt public static final long StorePickup = 0x0000000000000002L;
     @Generated @NUInt public static final long ServicePickup = 0x0000000000000003L;
+
+    @Generated
+    private PKShippingType() {
+    }
 }

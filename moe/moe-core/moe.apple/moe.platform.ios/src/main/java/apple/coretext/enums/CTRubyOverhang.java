@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTRubyOverhang {
-    @Generated
-    private CTRubyOverhang() {
-    }
-
     @Generated public static final byte Invalid = -1;
     @Generated public static final byte Auto = 0;
     @Generated public static final byte Start = 1;
     @Generated public static final byte End = 2;
     @Generated public static final byte None = 3;
+
+    @Generated
+    private CTRubyOverhang() {
+    }
 }

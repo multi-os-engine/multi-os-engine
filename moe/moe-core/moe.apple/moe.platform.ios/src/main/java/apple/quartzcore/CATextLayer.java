@@ -58,148 +58,14 @@ public class CATextLayer extends CALayer {
         super(peer);
     }
 
-    /**
-     * alignmentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/alignmentMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alignmentMode")
-    public native String alignmentMode();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native CATextLayer alloc();
 
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/font">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("font")
-    public native ConstVoidPtr font();
-
-    /**
-     * fontSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/fontSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fontSize")
-    @NFloat
-    public native double fontSize();
-
-    /**
-     * foregroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/foregroundColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("foregroundColor")
-    public native CGColorRef foregroundColor();
-
-    @Generated
-    @Selector("init")
-    public native CATextLayer init();
-
-    @Generated
-    @Selector("initWithLayer:")
-    public native CATextLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
-
-    /**
-     * wrapped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/wrapped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isWrapped")
-    public native boolean isWrapped();
-
     @Generated
     @Selector("layer")
     public static native CATextLayer layer();
-
-    /**
-     * alignmentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/alignmentMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAlignmentMode:")
-    public native void setAlignmentMode(String value);
-
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/font">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFont:")
-    public native void setFont(ConstVoidPtr value);
-
-    /**
-     * fontSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/fontSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFontSize:")
-    public native void setFontSize(@NFloat double value);
-
-    /**
-     * foregroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/foregroundColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setForegroundColor:")
-    public native void setForegroundColor(CGColorRef value);
-
-    /**
-     * string</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/string">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setString:")
-    public native void setString(@Mapped(ObjCObjectMapper.class) Object value);
-
-    /**
-     * truncationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/truncationMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTruncationMode:")
-    public native void setTruncationMode(String value);
-
-    /**
-     * wrapped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/wrapped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWrapped:")
-    public native void setWrapped(boolean value);
-
-    /**
-     * string</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/string">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("string")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object string();
-
-    /**
-     * truncationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/truncationMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("truncationMode")
-    public native String truncationMode();
-
-    @Generated
-    @Selector("allowsFontSubpixelQuantization")
-    public native boolean allowsFontSubpixelQuantization();
-
-    @Generated
-    @Selector("setAllowsFontSubpixelQuantization:")
-    public native void setAllowsFontSubpixelQuantization(boolean value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CATextLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -314,4 +180,138 @@ public class CATextLayer extends CALayer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * alignmentMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/alignmentMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alignmentMode")
+    public native String alignmentMode();
+
+    /**
+     * font</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/font">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("font")
+    public native ConstVoidPtr font();
+
+    /**
+     * fontSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/fontSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fontSize")
+    @NFloat
+    public native double fontSize();
+
+    /**
+     * foregroundColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/foregroundColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("foregroundColor")
+    public native CGColorRef foregroundColor();
+
+    @Generated
+    @Selector("init")
+    public native CATextLayer init();
+
+    @Generated
+    @Selector("initWithLayer:")
+    public native CATextLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+
+    /**
+     * wrapped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/wrapped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isWrapped")
+    public native boolean isWrapped();
+
+    /**
+     * wrapped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/wrapped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWrapped:")
+    public native void setWrapped(boolean value);
+
+    /**
+     * alignmentMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/alignmentMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAlignmentMode:")
+    public native void setAlignmentMode(String value);
+
+    /**
+     * font</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/font">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFont:")
+    public native void setFont(ConstVoidPtr value);
+
+    /**
+     * fontSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/fontSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFontSize:")
+    public native void setFontSize(@NFloat double value);
+
+    /**
+     * foregroundColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/foregroundColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setForegroundColor:")
+    public native void setForegroundColor(CGColorRef value);
+
+    /**
+     * string</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/string">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setString:")
+    public native void setString(@Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * truncationMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/truncationMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTruncationMode:")
+    public native void setTruncationMode(String value);
+
+    /**
+     * string</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/string">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("string")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object string();
+
+    /**
+     * truncationMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CATextLayer_class/index.html#//apple_ref/occ/instp/CATextLayer/truncationMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("truncationMode")
+    public native String truncationMode();
+
+    @Generated
+    @Selector("allowsFontSubpixelQuantization")
+    public native boolean allowsFontSubpixelQuantization();
+
+    @Generated
+    @Selector("setAllowsFontSubpixelQuantization:")
+    public native void setAllowsFontSubpixelQuantization(boolean value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CATextLayer initWithCoder(NSCoder aDecoder);
 }

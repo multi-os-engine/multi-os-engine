@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MPEG4ObjectID {
-    @Generated
-    private MPEG4ObjectID() {
-    }
-
     @Generated @NInt public static final long AAC_Main = 0x0000000000000001L;
     @Generated @NInt public static final long AAC_LC = 0x0000000000000002L;
     @Generated @NInt public static final long AAC_SSR = 0x0000000000000003L;
@@ -34,4 +30,8 @@ public final class MPEG4ObjectID {
     @Generated @NInt public static final long TwinVQ = 0x0000000000000007L;
     @Generated @NInt public static final long CELP = 0x0000000000000008L;
     @Generated @NInt public static final long HVXC = 0x0000000000000009L;
+
+    @Generated
+    private MPEG4ObjectID() {
+    }
 }

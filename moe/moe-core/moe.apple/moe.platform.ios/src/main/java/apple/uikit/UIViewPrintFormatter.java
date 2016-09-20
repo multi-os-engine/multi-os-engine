@@ -59,18 +59,6 @@ public class UIViewPrintFormatter extends UIPrintFormatter {
     public static native UIViewPrintFormatter alloc();
 
     @Generated
-    @Selector("init")
-    public native UIViewPrintFormatter init();
-
-    /**
-     * view</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIViewPrintFormatter/view">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("view")
-    public native UIView view();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class UIViewPrintFormatter extends UIPrintFormatter {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIViewPrintFormatter init();
+
+    /**
+     * view</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewPrintFormatter_Class/index.html#//apple_ref/occ/instp/UIViewPrintFormatter/view">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("view")
+    public native UIView view();
 }

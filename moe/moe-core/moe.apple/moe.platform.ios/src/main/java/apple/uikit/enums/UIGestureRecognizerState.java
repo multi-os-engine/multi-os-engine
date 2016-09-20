@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIGestureRecognizerState {
-    @Generated
-    private UIGestureRecognizerState() {
-    }
-
     @Generated @NInt public static final long Possible = 0x0000000000000000L;
     @Generated @NInt public static final long Began = 0x0000000000000001L;
     @Generated @NInt public static final long Changed = 0x0000000000000002L;
@@ -32,4 +28,8 @@ public final class UIGestureRecognizerState {
     @Generated @NInt public static final long Cancelled = 0x0000000000000004L;
     @Generated @NInt public static final long Failed = 0x0000000000000005L;
     @Generated @NInt public static final long Recognized = 0x0000000000000003L;
+
+    @Generated
+    private UIGestureRecognizerState() {
+    }
 }

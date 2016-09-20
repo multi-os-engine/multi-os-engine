@@ -60,66 +60,6 @@ public class MKMapSnapshotter extends NSObject {
     @Selector("alloc")
     public static native MKMapSnapshotter alloc();
 
-    /**
-     * cancel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotter_class/index.html#//apple_ref/occ/instm/MKMapSnapshotter/cancel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancel")
-    public native void cancel();
-
-    @Generated
-    @Selector("init")
-    public native MKMapSnapshotter init();
-
-    /**
-     * initWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotter_class/index.html#//apple_ref/occ/instm/MKMapSnapshotter/initWithOptions:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithOptions:")
-    public native MKMapSnapshotter initWithOptions(MKMapSnapshotOptions options);
-
-    /**
-     * loading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotter_class/index.html#//apple_ref/occ/instp/MKMapSnapshotter/loading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isLoading")
-    public native boolean isLoading();
-
-    /**
-     * startWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotter_class/index.html#//apple_ref/occ/instm/MKMapSnapshotter/startWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startWithCompletionHandler:")
-    public native void startWithCompletionHandler(
-            @ObjCBlock(name = "call_startWithCompletionHandler") Block_startWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startWithCompletionHandler {
-        @Generated
-        void call_startWithCompletionHandler(MKMapSnapshot arg0, NSError arg1);
-    }
-
-    /**
-     * startWithQueue:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotter_class/index.html#//apple_ref/occ/instm/MKMapSnapshotter/startWithQueue:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startWithQueue:completionHandler:")
-    public native void startWithQueueCompletionHandler(NSObject queue,
-            @ObjCBlock(name = "call_startWithQueueCompletionHandler") Block_startWithQueueCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startWithQueueCompletionHandler {
-        @Generated
-        void call_startWithQueueCompletionHandler(MKMapSnapshot arg0, NSError arg1);
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -219,4 +159,64 @@ public class MKMapSnapshotter extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cancel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotter_class/index.html#//apple_ref/occ/instm/MKMapSnapshotter/cancel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancel")
+    public native void cancel();
+
+    @Generated
+    @Selector("init")
+    public native MKMapSnapshotter init();
+
+    /**
+     * initWithOptions:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotter_class/index.html#//apple_ref/occ/instm/MKMapSnapshotter/initWithOptions:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithOptions:")
+    public native MKMapSnapshotter initWithOptions(MKMapSnapshotOptions options);
+
+    /**
+     * loading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotter_class/index.html#//apple_ref/occ/instp/MKMapSnapshotter/loading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isLoading")
+    public native boolean isLoading();
+
+    /**
+     * startWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotter_class/index.html#//apple_ref/occ/instm/MKMapSnapshotter/startWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startWithCompletionHandler:")
+    public native void startWithCompletionHandler(
+            @ObjCBlock(name = "call_startWithCompletionHandler") Block_startWithCompletionHandler completionHandler);
+
+    /**
+     * startWithQueue:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKMapSnapshotter_class/index.html#//apple_ref/occ/instm/MKMapSnapshotter/startWithQueue:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startWithQueue:completionHandler:")
+    public native void startWithQueueCompletionHandler(NSObject queue,
+            @ObjCBlock(name = "call_startWithQueueCompletionHandler") Block_startWithQueueCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startWithCompletionHandler {
+        @Generated
+        void call_startWithCompletionHandler(MKMapSnapshot arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startWithQueueCompletionHandler {
+        @Generated
+        void call_startWithQueueCompletionHandler(MKMapSnapshot arg0, NSError arg1);
+    }
 }

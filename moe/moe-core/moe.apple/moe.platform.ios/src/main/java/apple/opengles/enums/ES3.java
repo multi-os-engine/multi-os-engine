@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class ES3 {
-    @Generated
-    private ES3() {
-    }
-
     @Generated public static final int ES_VERSION_3_0 = 0x00000001;
     @Generated public static final int ES_VERSION_2_0 = 0x00000001;
     @Generated public static final int DEPTH_BUFFER_BIT = 0x00000100;
@@ -696,4 +692,8 @@ public final class ES3 {
     @Generated public static final int COMPRESSED_RGBA_PVRTC_4BPPV1_IMG = 0x00008C02;
     @Generated public static final int COMPRESSED_RGBA_PVRTC_2BPPV1_IMG = 0x00008C03;
     @Generated public static final int FRAGMENT_SHADER_DERIVATIVE_HINT_OES = 0x00008B8B;
+
+    @Generated
+    private ES3() {
+    }
 }

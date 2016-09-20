@@ -61,63 +61,6 @@ public class CIQRCodeFeature extends CIFeature {
     @Selector("alloc")
     public static native CIQRCodeFeature alloc();
 
-    /**
-     * bottomLeft</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/bottomLeft">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bottomLeft")
-    @ByValue
-    public native CGPoint bottomLeft();
-
-    /**
-     * bottomRight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/bottomRight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bottomRight")
-    @ByValue
-    public native CGPoint bottomRight();
-
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/bounds">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bounds")
-    @ByValue
-    public native CGRect bounds();
-
-    @Generated
-    @Selector("init")
-    public native CIQRCodeFeature init();
-
-    /**
-     * messageString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/messageString">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("messageString")
-    public native String messageString();
-
-    /**
-     * topLeft</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/topLeft">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("topLeft")
-    @ByValue
-    public native CGPoint topLeft();
-
-    /**
-     * topRight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/topRight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("topRight")
-    @ByValue
-    public native CGPoint topRight();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -217,4 +160,61 @@ public class CIQRCodeFeature extends CIFeature {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bottomLeft</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/bottomLeft">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bottomLeft")
+    @ByValue
+    public native CGPoint bottomLeft();
+
+    /**
+     * bottomRight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/bottomRight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bottomRight")
+    @ByValue
+    public native CGPoint bottomRight();
+
+    /**
+     * bounds</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/bounds">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bounds")
+    @ByValue
+    public native CGRect bounds();
+
+    @Generated
+    @Selector("init")
+    public native CIQRCodeFeature init();
+
+    /**
+     * messageString</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/messageString">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("messageString")
+    public native String messageString();
+
+    /**
+     * topLeft</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/topLeft">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("topLeft")
+    @ByValue
+    public native CGPoint topLeft();
+
+    /**
+     * topRight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CIQRCodeFeature/index.html#//apple_ref/occ/instp/CIQRCodeFeature/topRight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("topRight")
+    @ByValue
+    public native CGPoint topRight();
 }

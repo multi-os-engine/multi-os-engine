@@ -63,34 +63,6 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @Selector("alloc")
     public static native NSRegularExpression alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * enumerateMatchesInString:options:range:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/enumerateMatchesInString:options:range:usingBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enumerateMatchesInString:options:range:usingBlock:")
-    public native void enumerateMatchesInStringOptionsRangeUsingBlock(String string, @NUInt long options,
-            @ByValue NSRange range,
-            @ObjCBlock(name = "call_enumerateMatchesInStringOptionsRangeUsingBlock") Block_enumerateMatchesInStringOptionsRangeUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateMatchesInStringOptionsRangeUsingBlock {
-        @Generated
-        void call_enumerateMatchesInStringOptionsRangeUsingBlock(NSTextCheckingResult arg0, @NUInt long arg1,
-                BoolPtr arg2);
-    }
-
     /**
      * escapedPatternForString:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/clm/NSRegularExpression/escapedPatternForString:">iOS Dev Center</a>
@@ -108,86 +80,6 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     public static native String escapedTemplateForString(String string);
 
     /**
-     * firstMatchInString:options:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/firstMatchInString:options:range:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("firstMatchInString:options:range:")
-    public native NSTextCheckingResult firstMatchInStringOptionsRange(String string, @NUInt long options,
-            @ByValue NSRange range);
-
-    @Generated
-    @Selector("init")
-    public native NSRegularExpression init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSRegularExpression initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithPattern:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/initWithPattern:options:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithPattern:options:error:")
-    public native NSRegularExpression initWithPatternOptionsError(String pattern, @NUInt long options,
-            Ptr<NSError> error);
-
-    /**
-     * matchesInString:options:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/matchesInString:options:range:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("matchesInString:options:range:")
-    public native NSArray<? extends NSTextCheckingResult> matchesInStringOptionsRange(String string,
-            @NUInt long options, @ByValue NSRange range);
-
-    /**
-     * numberOfCaptureGroups</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instp/NSRegularExpression/numberOfCaptureGroups">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberOfCaptureGroups")
-    @NUInt
-    public native long numberOfCaptureGroups();
-
-    /**
-     * numberOfMatchesInString:options:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/numberOfMatchesInString:options:range:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberOfMatchesInString:options:range:")
-    @NUInt
-    public native long numberOfMatchesInStringOptionsRange(String string, @NUInt long options, @ByValue NSRange range);
-
-    /**
-     * options</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instp/NSRegularExpression/options">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("options")
-    @NUInt
-    public native long options();
-
-    /**
-     * pattern</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instp/NSRegularExpression/pattern">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pattern")
-    public native String pattern();
-
-    /**
-     * rangeOfFirstMatchInString:options:range:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/rangeOfFirstMatchInString:options:range:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rangeOfFirstMatchInString:options:range:")
-    @ByValue
-    public native NSRange rangeOfFirstMatchInStringOptionsRange(String string, @NUInt long options,
-            @ByValue NSRange range);
-
-    /**
      * regularExpressionWithPattern:options:error:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/clm/NSRegularExpression/regularExpressionWithPattern:options:error:">iOS Dev Center</a>
      */
@@ -196,43 +88,9 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     public static native NSRegularExpression regularExpressionWithPatternOptionsError(String pattern,
             @NUInt long options, Ptr<NSError> error);
 
-    /**
-     * replaceMatchesInString:options:range:withTemplate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/replaceMatchesInString:options:range:withTemplate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("replaceMatchesInString:options:range:withTemplate:")
-    @NUInt
-    public native long replaceMatchesInStringOptionsRangeWithTemplate(NSMutableString string, @NUInt long options,
-            @ByValue NSRange range, String templ);
-
-    /**
-     * replacementStringForResult:inString:offset:template:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/replacementStringForResult:inString:offset:template:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("replacementStringForResult:inString:offset:template:")
-    public native String replacementStringForResultInStringOffsetTemplate(NSTextCheckingResult result, String string,
-            @NInt long offset, String templ);
-
-    /**
-     * stringByReplacingMatchesInString:options:range:withTemplate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/stringByReplacingMatchesInString:options:range:withTemplate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringByReplacingMatchesInString:options:range:withTemplate:")
-    public native String stringByReplacingMatchesInStringOptionsRangeWithTemplate(String string, @NUInt long options,
-            @ByValue NSRange range, String templ);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -333,4 +191,146 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * enumerateMatchesInString:options:range:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/enumerateMatchesInString:options:range:usingBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enumerateMatchesInString:options:range:usingBlock:")
+    public native void enumerateMatchesInStringOptionsRangeUsingBlock(String string, @NUInt long options,
+            @ByValue NSRange range,
+            @ObjCBlock(name = "call_enumerateMatchesInStringOptionsRangeUsingBlock") Block_enumerateMatchesInStringOptionsRangeUsingBlock block);
+
+    /**
+     * firstMatchInString:options:range:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/firstMatchInString:options:range:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("firstMatchInString:options:range:")
+    public native NSTextCheckingResult firstMatchInStringOptionsRange(String string, @NUInt long options,
+            @ByValue NSRange range);
+
+    @Generated
+    @Selector("init")
+    public native NSRegularExpression init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSRegularExpression initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithPattern:options:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/initWithPattern:options:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithPattern:options:error:")
+    public native NSRegularExpression initWithPatternOptionsError(String pattern, @NUInt long options,
+            Ptr<NSError> error);
+
+    /**
+     * matchesInString:options:range:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/matchesInString:options:range:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("matchesInString:options:range:")
+    public native NSArray<? extends NSTextCheckingResult> matchesInStringOptionsRange(String string,
+            @NUInt long options, @ByValue NSRange range);
+
+    /**
+     * numberOfCaptureGroups</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instp/NSRegularExpression/numberOfCaptureGroups">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberOfCaptureGroups")
+    @NUInt
+    public native long numberOfCaptureGroups();
+
+    /**
+     * numberOfMatchesInString:options:range:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/numberOfMatchesInString:options:range:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberOfMatchesInString:options:range:")
+    @NUInt
+    public native long numberOfMatchesInStringOptionsRange(String string, @NUInt long options, @ByValue NSRange range);
+
+    /**
+     * options</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instp/NSRegularExpression/options">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("options")
+    @NUInt
+    public native long options();
+
+    /**
+     * pattern</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instp/NSRegularExpression/pattern">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pattern")
+    public native String pattern();
+
+    /**
+     * rangeOfFirstMatchInString:options:range:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/rangeOfFirstMatchInString:options:range:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rangeOfFirstMatchInString:options:range:")
+    @ByValue
+    public native NSRange rangeOfFirstMatchInStringOptionsRange(String string, @NUInt long options,
+            @ByValue NSRange range);
+
+    /**
+     * replaceMatchesInString:options:range:withTemplate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/replaceMatchesInString:options:range:withTemplate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("replaceMatchesInString:options:range:withTemplate:")
+    @NUInt
+    public native long replaceMatchesInStringOptionsRangeWithTemplate(NSMutableString string, @NUInt long options,
+            @ByValue NSRange range, String templ);
+
+    /**
+     * replacementStringForResult:inString:offset:template:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/replacementStringForResult:inString:offset:template:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("replacementStringForResult:inString:offset:template:")
+    public native String replacementStringForResultInStringOffsetTemplate(NSTextCheckingResult result, String string,
+            @NInt long offset, String templ);
+
+    /**
+     * stringByReplacingMatchesInString:options:range:withTemplate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSRegularExpression_Class/index.html#//apple_ref/occ/instm/NSRegularExpression/stringByReplacingMatchesInString:options:range:withTemplate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringByReplacingMatchesInString:options:range:withTemplate:")
+    public native String stringByReplacingMatchesInStringOptionsRangeWithTemplate(String string, @NUInt long options,
+            @ByValue NSRange range, String templ);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateMatchesInStringOptionsRangeUsingBlock {
+        @Generated
+        void call_enumerateMatchesInStringOptionsRangeUsingBlock(NSTextCheckingResult arg0, @NUInt long arg1,
+                BoolPtr arg2);
+    }
 }

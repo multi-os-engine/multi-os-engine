@@ -61,265 +61,10 @@ public class UIControl extends UIView {
         super(peer);
     }
 
-    /**
-     * actionsForTarget:forControlEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/actionsForTarget:forControlEvent:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("actionsForTarget:forControlEvent:")
-    public native NSArray<String> actionsForTargetForControlEvent(@Mapped(ObjCObjectMapper.class) Object target,
-            @NUInt long controlEvent);
-
-    /**
-     * addTarget:action:forControlEvents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/addTarget:action:forControlEvents:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addTarget:action:forControlEvents:")
-    public native void addTargetActionForControlEvents(@Mapped(ObjCObjectMapper.class) Object target, SEL action,
-            @NUInt long controlEvents);
-
-    /**
-     * allControlEvents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/allControlEvents">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allControlEvents")
-    @NUInt
-    public native long allControlEvents();
-
-    /**
-     * allTargets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/allTargets">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allTargets")
-    public native NSSet<?> allTargets();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIControl alloc();
-
-    /**
-     * beginTrackingWithTouch:withEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/beginTrackingWithTouch:withEvent:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("beginTrackingWithTouch:withEvent:")
-    public native boolean beginTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
-
-    /**
-     * cancelTrackingWithEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/cancelTrackingWithEvent:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelTrackingWithEvent:")
-    public native void cancelTrackingWithEvent(UIEvent event);
-
-    /**
-     * contentHorizontalAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentHorizontalAlignment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentHorizontalAlignment")
-    @NInt
-    public native long contentHorizontalAlignment();
-
-    /**
-     * contentVerticalAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentVerticalAlignment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentVerticalAlignment")
-    @NInt
-    public native long contentVerticalAlignment();
-
-    /**
-     * continueTrackingWithTouch:withEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/continueTrackingWithTouch:withEvent:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("continueTrackingWithTouch:withEvent:")
-    public native boolean continueTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
-
-    /**
-     * endTrackingWithTouch:withEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/endTrackingWithTouch:withEvent:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("endTrackingWithTouch:withEvent:")
-    public native void endTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
-
-    @Generated
-    @Selector("init")
-    public native UIControl init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIControl initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/highlighted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isHighlighted")
-    public native boolean isHighlighted();
-
-    /**
-     * selected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/selected">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isSelected")
-    public native boolean isSelected();
-
-    /**
-     * touchInside</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/touchInside">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isTouchInside")
-    public native boolean isTouchInside();
-
-    /**
-     * tracking</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/tracking">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isTracking")
-    public native boolean isTracking();
-
-    /**
-     * removeTarget:action:forControlEvents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/removeTarget:action:forControlEvents:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeTarget:action:forControlEvents:")
-    public native void removeTargetActionForControlEvents(@Mapped(ObjCObjectMapper.class) Object target, SEL action,
-            @NUInt long controlEvents);
-
-    /**
-     * sendAction:to:forEvent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/sendAction:to:forEvent:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sendAction:to:forEvent:")
-    public native void sendActionToForEvent(SEL action, @Mapped(ObjCObjectMapper.class) Object target, UIEvent event);
-
-    /**
-     * sendActionsForControlEvents:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/sendActionsForControlEvents:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sendActionsForControlEvents:")
-    public native void sendActionsForControlEvents(@NUInt long controlEvents);
-
-    /**
-     * contentHorizontalAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentHorizontalAlignment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setContentHorizontalAlignment:")
-    public native void setContentHorizontalAlignment(@NInt long value);
-
-    /**
-     * contentVerticalAlignment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentVerticalAlignment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setContentVerticalAlignment:")
-    public native void setContentVerticalAlignment(@NInt long value);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    /**
-     * highlighted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/highlighted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHighlighted:")
-    public native void setHighlighted(boolean value);
-
-    /**
-     * selected</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/selected">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSelected:")
-    public native void setSelected(boolean value);
-
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/state">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("state")
-    @NUInt
-    public native long state();
-
-    /**
-     * <h1>Abstract:</h1>
-     * <p>Adds a action for a particular event (or events) to an internal dispatch
-     * table.</p>
-     *
-     * @param targetAction  <p>The targetAction object&mdash;that is, the object to which the action message is sent.</p>
-     * @param controlEvents <p>A bitmask specifying the control events for which the action message is sent. See
-     *                      &ldquo;Control Events&rdquo; for bitmask constants.</p>
-     * @see ITargetAction
-     */
-    public <T> void addTargetActionForControlEvents(ITargetAction<T> targetAction, @NUInt long controlEvents) {
-        if (targetAction != null) {
-            TargetActionProxy<T> proxy = new TargetActionProxy<T>(targetAction, controlEvents);
-            ObjCRuntime.associateObjCObject(this, proxy);
-            addTargetActionForControlEvents(proxy, new SEL("proxySelector::"), controlEvents);
-        }
-    }
-
-    /**
-     * <h1>Abstract:</h1>
-     * <p>Removes a targetAction for a particular event (or events) from an internal dispatch
-     * table.</p>
-     *
-     * @param targetAction  <p>The targetAction object&mdash;that is, the object to which the action message is sent.</p>
-     * @param controlEvents <p>A bitmask specifying the control events associated with
-     *                      <i>target</i> and
-     *                      <i>action</i>. See &ldquo;Control Events&rdquo;
-     *                      for bitmask constants.</p>
-     * @see ITargetAction
-     */
-    public void removeTargetActionForControlEvents(ITargetAction<?> targetAction, @NUInt long controlEvents) {
-        NSSet<?> targets = allTargets();
-        for (Object o : targets.allObjects()) {
-            if (o instanceof TargetActionProxy<?>) {
-                TargetActionProxy<?> proxy = (TargetActionProxy<?>)o;
-                if (proxy.targetAction != null && proxy.targetAction.equals(targetAction)
-                        && proxy.controlEvents == controlEvents) {
-                    removeTargetActionForControlEvents(proxy, new SEL("proxySelector::"), controlEvents);
-                    ObjCRuntime.dissociateObjCObject(this, proxy);
-                }
-            }
-        }
-    }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIControl initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -374,23 +119,9 @@ public class UIControl extends UIView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -401,27 +132,10 @@ public class UIControl extends UIView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -432,24 +146,9 @@ public class UIControl extends UIView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -647,5 +346,306 @@ public class UIControl extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * actionsForTarget:forControlEvent:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/actionsForTarget:forControlEvent:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("actionsForTarget:forControlEvent:")
+    public native NSArray<String> actionsForTargetForControlEvent(@Mapped(ObjCObjectMapper.class) Object target,
+            @NUInt long controlEvent);
+
+    /**
+     * addTarget:action:forControlEvents:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/addTarget:action:forControlEvents:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addTarget:action:forControlEvents:")
+    public native void addTargetActionForControlEvents(@Mapped(ObjCObjectMapper.class) Object target, SEL action,
+            @NUInt long controlEvents);
+
+    /**
+     * allControlEvents</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/allControlEvents">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allControlEvents")
+    @NUInt
+    public native long allControlEvents();
+
+    /**
+     * allTargets</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/allTargets">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allTargets")
+    public native NSSet<?> allTargets();
+
+    /**
+     * beginTrackingWithTouch:withEvent:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/beginTrackingWithTouch:withEvent:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("beginTrackingWithTouch:withEvent:")
+    public native boolean beginTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
+
+    /**
+     * cancelTrackingWithEvent:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/cancelTrackingWithEvent:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelTrackingWithEvent:")
+    public native void cancelTrackingWithEvent(UIEvent event);
+
+    /**
+     * contentHorizontalAlignment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentHorizontalAlignment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentHorizontalAlignment")
+    @NInt
+    public native long contentHorizontalAlignment();
+
+    /**
+     * contentVerticalAlignment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentVerticalAlignment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentVerticalAlignment")
+    @NInt
+    public native long contentVerticalAlignment();
+
+    /**
+     * continueTrackingWithTouch:withEvent:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/continueTrackingWithTouch:withEvent:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("continueTrackingWithTouch:withEvent:")
+    public native boolean continueTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
+
+    /**
+     * endTrackingWithTouch:withEvent:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/endTrackingWithTouch:withEvent:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("endTrackingWithTouch:withEvent:")
+    public native void endTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
+
+    @Generated
+    @Selector("init")
+    public native UIControl init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIControl initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    /**
+     * highlighted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/highlighted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isHighlighted")
+    public native boolean isHighlighted();
+
+    /**
+     * highlighted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/highlighted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHighlighted:")
+    public native void setHighlighted(boolean value);
+
+    /**
+     * selected</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/selected">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isSelected")
+    public native boolean isSelected();
+
+    /**
+     * selected</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/selected">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSelected:")
+    public native void setSelected(boolean value);
+
+    /**
+     * touchInside</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/touchInside">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isTouchInside")
+    public native boolean isTouchInside();
+
+    /**
+     * tracking</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/tracking">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isTracking")
+    public native boolean isTracking();
+
+    /**
+     * removeTarget:action:forControlEvents:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/removeTarget:action:forControlEvents:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeTarget:action:forControlEvents:")
+    public native void removeTargetActionForControlEvents(@Mapped(ObjCObjectMapper.class) Object target, SEL action,
+            @NUInt long controlEvents);
+
+    /**
+     * sendAction:to:forEvent:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/sendAction:to:forEvent:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sendAction:to:forEvent:")
+    public native void sendActionToForEvent(SEL action, @Mapped(ObjCObjectMapper.class) Object target, UIEvent event);
+
+    /**
+     * sendActionsForControlEvents:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instm/UIControl/sendActionsForControlEvents:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sendActionsForControlEvents:")
+    public native void sendActionsForControlEvents(@NUInt long controlEvents);
+
+    /**
+     * contentHorizontalAlignment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentHorizontalAlignment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setContentHorizontalAlignment:")
+    public native void setContentHorizontalAlignment(@NInt long value);
+
+    /**
+     * contentVerticalAlignment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/contentVerticalAlignment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setContentVerticalAlignment:")
+    public native void setContentVerticalAlignment(@NInt long value);
+
+    /**
+     * state</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIControl_Class/index.html#//apple_ref/occ/instp/UIControl/state">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("state")
+    @NUInt
+    public native long state();
+
+    /**
+     * <h1>Abstract:</h1>
+     * <p>Adds a action for a particular event (or events) to an internal dispatch
+     * table.</p>
+     *
+     * @param targetAction  <p>The targetAction object&mdash;that is, the object to which the action message is sent.</p>
+     * @param controlEvents <p>A bitmask specifying the control events for which the action message is sent. See
+     *                      &ldquo;Control Events&rdquo; for bitmask constants.</p>
+     * @see ITargetAction
+     */
+    public <T> void addTargetActionForControlEvents(ITargetAction<T> targetAction, @NUInt long controlEvents) {
+        if (targetAction != null) {
+            TargetActionProxy<T> proxy = new TargetActionProxy<T>(targetAction, controlEvents);
+            ObjCRuntime.associateObjCObject(this, proxy);
+            addTargetActionForControlEvents(proxy, new SEL("proxySelector::"), controlEvents);
+        }
+    }
+
+    /**
+     * <h1>Abstract:</h1>
+     * <p>Removes a targetAction for a particular event (or events) from an internal dispatch
+     * table.</p>
+     *
+     * @param targetAction  <p>The targetAction object&mdash;that is, the object to which the action message is sent.</p>
+     * @param controlEvents <p>A bitmask specifying the control events associated with
+     *                      <i>target</i> and
+     *                      <i>action</i>. See &ldquo;Control Events&rdquo;
+     *                      for bitmask constants.</p>
+     * @see ITargetAction
+     */
+    public void removeTargetActionForControlEvents(ITargetAction<?> targetAction, @NUInt long controlEvents) {
+        NSSet<?> targets = allTargets();
+        for (Object o : targets.allObjects()) {
+            if (o instanceof TargetActionProxy<?>) {
+                TargetActionProxy<?> proxy = (TargetActionProxy<?>)o;
+                if (proxy.targetAction != null && proxy.targetAction.equals(targetAction)
+                        && proxy.controlEvents == controlEvents) {
+                    removeTargetActionForControlEvents(proxy, new SEL("proxySelector::"), controlEvents);
+                    ObjCRuntime.dissociateObjCObject(this, proxy);
+                }
+            }
+        }
+    }
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIControl initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 
 }

@@ -62,43 +62,6 @@ public class GLKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     public static native GLKMeshBufferAllocator alloc();
 
     @Generated
-    @Selector("init")
-    public native GLKMeshBufferAllocator init();
-
-    @Generated
-    @Selector("newBuffer:type:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object newBufferType(@NUInt long length, @NUInt long type);
-
-    @Generated
-    @Selector("newBufferFromZone:data:type:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) Object zone, NSData data,
-            @NUInt long type);
-
-    @Generated
-    @Selector("newBufferFromZone:length:type:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) Object zone, @NUInt long length,
-            @NUInt long type);
-
-    @Generated
-    @Selector("newBufferWithData:type:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object newBufferWithDataType(NSData data, @NUInt long type);
-
-    @Generated
-    @Selector("newZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object newZone(@NUInt long capacity);
-
-    @Generated
-    @Selector("newZoneForBuffersWithSize:andType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object newZoneForBuffersWithSizeAndType(NSArray<? extends NSNumber> sizes,
-            NSArray<? extends NSNumber> types);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -197,4 +160,41 @@ public class GLKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GLKMeshBufferAllocator init();
+
+    @Generated
+    @Selector("newBuffer:type:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object newBufferType(@NUInt long length, @NUInt long type);
+
+    @Generated
+    @Selector("newBufferFromZone:data:type:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) Object zone, NSData data,
+            @NUInt long type);
+
+    @Generated
+    @Selector("newBufferFromZone:length:type:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) Object zone, @NUInt long length,
+            @NUInt long type);
+
+    @Generated
+    @Selector("newBufferWithData:type:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object newBufferWithDataType(NSData data, @NUInt long type);
+
+    @Generated
+    @Selector("newZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object newZone(@NUInt long capacity);
+
+    @Generated
+    @Selector("newZoneForBuffersWithSize:andType:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object newZoneForBuffersWithSizeAndType(NSArray<? extends NSNumber> sizes,
+            NSArray<? extends NSNumber> types);
 }

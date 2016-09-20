@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MDLVertexFormat {
-    @Generated
-    private MDLVertexFormat() {
-    }
-
     @Generated @NUInt public static final long Invalid = 0x0000000000000000L;
     @Generated @NUInt public static final long PackedBit = 0x0000000000001000L;
     @Generated @NUInt public static final long UCharBits = 0x0000000000010000L;
@@ -89,4 +85,8 @@ public final class MDLVertexFormat {
     @Generated @NUInt public static final long Float4 = 0x00000000000C0004L;
     @Generated @NUInt public static final long Int1010102Normalized = 0x00000000000A1004L;
     @Generated @NUInt public static final long UInt1010102Normalized = 0x0000000000091004L;
+
+    @Generated
+    private MDLVertexFormat() {
+    }
 }

@@ -54,40 +54,10 @@ public class GKEntity extends NSObject implements NSCopying {
         super(peer);
     }
 
-    /**
-     * addComponent:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instm/GKEntity/addComponent:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addComponent:")
-    public native void addComponent(GKComponent component);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native GKEntity alloc();
-
-    /**
-     * componentForClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instm/GKEntity/componentForClass:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("componentForClass:")
-    public native GKComponent componentForClass(Class componentClass);
-
-    /**
-     * components</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instp/GKEntity/components">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("components")
-    public native NSArray<? extends GKComponent> components();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
 
     /**
      * entity</br>
@@ -96,30 +66,6 @@ public class GKEntity extends NSObject implements NSCopying {
     @Generated
     @Selector("entity")
     public static native GKEntity entity();
-
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instm/GKEntity/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native GKEntity init();
-
-    /**
-     * removeComponentForClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instm/GKEntity/removeComponentForClass:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeComponentForClass:")
-    public native void removeComponentForClass(Class componentClass);
-
-    /**
-     * updateWithDeltaTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instm/GKEntity/updateWithDeltaTime:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateWithDeltaTime:")
-    public native void updateWithDeltaTime(double seconds);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -220,4 +166,58 @@ public class GKEntity extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addComponent:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instm/GKEntity/addComponent:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addComponent:")
+    public native void addComponent(GKComponent component);
+
+    /**
+     * componentForClass:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instm/GKEntity/componentForClass:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("componentForClass:")
+    public native GKComponent componentForClass(Class componentClass);
+
+    /**
+     * components</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instp/GKEntity/components">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("components")
+    public native NSArray<? extends GKComponent> components();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instm/GKEntity/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native GKEntity init();
+
+    /**
+     * removeComponentForClass:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instm/GKEntity/removeComponentForClass:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeComponentForClass:")
+    public native void removeComponentForClass(Class componentClass);
+
+    /**
+     * updateWithDeltaTime:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKEntity_Class/index.html#//apple_ref/occ/instm/GKEntity/updateWithDeltaTime:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateWithDeltaTime:")
+    public native void updateWithDeltaTime(double seconds);
 }

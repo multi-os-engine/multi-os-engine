@@ -61,42 +61,6 @@ public class CKDiscoverAllContactsOperation extends CKOperation {
     public static native CKDiscoverAllContactsOperation alloc();
 
     @Generated
-    @Selector("init")
-    public native CKDiscoverAllContactsOperation init();
-
-    /**
-     * discoverAllContactsCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverAllContactsOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverAllContactsOperation/discoverAllContactsCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDiscoverAllContactsCompletionBlock:")
-    public native void setDiscoverAllContactsCompletionBlock(
-            @ObjCBlock(name = "call_setDiscoverAllContactsCompletionBlock") Block_setDiscoverAllContactsCompletionBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setDiscoverAllContactsCompletionBlock {
-        @Generated
-        void call_setDiscoverAllContactsCompletionBlock(NSArray<? extends CKDiscoveredUserInfo> arg0, NSError arg1);
-    }
-
-    /**
-     * discoverAllContactsCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverAllContactsOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverAllContactsOperation/discoverAllContactsCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("discoverAllContactsCompletionBlock")
-    @ObjCBlock(name = "call_discoverAllContactsCompletionBlock_ret")
-    public native Block_discoverAllContactsCompletionBlock_ret discoverAllContactsCompletionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_discoverAllContactsCompletionBlock_ret {
-        @Generated
-        void call_discoverAllContactsCompletionBlock_ret(NSArray<? extends CKDiscoveredUserInfo> arg0, NSError arg1);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -195,4 +159,40 @@ public class CKDiscoverAllContactsOperation extends CKOperation {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native CKDiscoverAllContactsOperation init();
+
+    /**
+     * discoverAllContactsCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverAllContactsOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverAllContactsOperation/discoverAllContactsCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDiscoverAllContactsCompletionBlock:")
+    public native void setDiscoverAllContactsCompletionBlock(
+            @ObjCBlock(name = "call_setDiscoverAllContactsCompletionBlock") Block_setDiscoverAllContactsCompletionBlock value);
+
+    /**
+     * discoverAllContactsCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverAllContactsOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverAllContactsOperation/discoverAllContactsCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("discoverAllContactsCompletionBlock")
+    @ObjCBlock(name = "call_discoverAllContactsCompletionBlock_ret")
+    public native Block_discoverAllContactsCompletionBlock_ret discoverAllContactsCompletionBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setDiscoverAllContactsCompletionBlock {
+        @Generated
+        void call_setDiscoverAllContactsCompletionBlock(NSArray<? extends CKDiscoveredUserInfo> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_discoverAllContactsCompletionBlock_ret {
+        @Generated
+        void call_discoverAllContactsCompletionBlock_ret(NSArray<? extends CKDiscoveredUserInfo> arg0, NSError arg1);
+    }
 }

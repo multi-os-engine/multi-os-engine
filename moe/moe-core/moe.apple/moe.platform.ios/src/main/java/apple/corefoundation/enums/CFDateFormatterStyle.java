@@ -21,13 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFDateFormatterStyle {
-    @Generated
-    private CFDateFormatterStyle() {
-    }
-
     @Generated @NInt public static final long NoStyle = 0x0000000000000000L;
     @Generated @NInt public static final long ShortStyle = 0x0000000000000001L;
     @Generated @NInt public static final long MediumStyle = 0x0000000000000002L;
     @Generated @NInt public static final long LongStyle = 0x0000000000000003L;
     @Generated @NInt public static final long FullStyle = 0x0000000000000004L;
+    @Generated
+    private CFDateFormatterStyle() {
+    }
 }

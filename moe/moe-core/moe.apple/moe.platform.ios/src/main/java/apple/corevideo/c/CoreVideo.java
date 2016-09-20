@@ -223,13 +223,6 @@ public final class CoreVideo {
             @FunctionPtr(name = "call_CVPixelBufferCreateWithBytes") Function_CVPixelBufferCreateWithBytes releaseCallback,
             VoidPtr releaseRefCon, CFDictionaryRef pixelBufferAttributes, Ptr<CVBufferRef> pixelBufferOut);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CVPixelBufferCreateWithBytes {
-        @Generated
-        void call_CVPixelBufferCreateWithBytes(VoidPtr arg0, ConstVoidPtr arg1);
-    }
-
     /**
      * CVPixelBufferCreateWithPlanarBytes</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CVPixelBufferRef/index.html#//apple_ref/c/func/CVPixelBufferCreateWithPlanarBytes">iOS Dev Center</a>
@@ -241,14 +234,6 @@ public final class CoreVideo {
             Ptr<VoidPtr> planeBaseAddress, NUIntPtr planeWidth, NUIntPtr planeHeight, NUIntPtr planeBytesPerRow,
             @FunctionPtr(name = "call_CVPixelBufferCreateWithPlanarBytes") Function_CVPixelBufferCreateWithPlanarBytes releaseCallback,
             VoidPtr releaseRefCon, CFDictionaryRef pixelBufferAttributes, Ptr<CVBufferRef> pixelBufferOut);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CVPixelBufferCreateWithPlanarBytes {
-        @Generated
-        void call_CVPixelBufferCreateWithPlanarBytes(VoidPtr arg0, ConstVoidPtr arg1, @NUInt long arg2,
-                @NUInt long arg3, @ReferenceInfo(type = Void.class, depth = 2) Ptr<ConstVoidPtr> arg4);
-    }
 
     /**
      * CVPixelBufferLockBaseAddress</br>
@@ -1081,4 +1066,19 @@ public final class CoreVideo {
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatComponentRange_WideRange();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CVPixelBufferCreateWithBytes {
+        @Generated
+        void call_CVPixelBufferCreateWithBytes(VoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CVPixelBufferCreateWithPlanarBytes {
+        @Generated
+        void call_CVPixelBufferCreateWithPlanarBytes(VoidPtr arg0, ConstVoidPtr arg1, @NUInt long arg2,
+                @NUInt long arg3, @ReferenceInfo(type = Void.class, depth = 2) Ptr<ConstVoidPtr> arg4);
+    }
 }

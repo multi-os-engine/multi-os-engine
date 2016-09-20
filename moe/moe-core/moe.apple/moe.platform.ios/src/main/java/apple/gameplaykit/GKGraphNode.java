@@ -53,71 +53,10 @@ public class GKGraphNode extends NSObject {
         super(peer);
     }
 
-    /**
-     * addConnectionsToNodes:bidirectional:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/addConnectionsToNodes:bidirectional:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addConnectionsToNodes:bidirectional:")
-    public native void addConnectionsToNodesBidirectional(NSArray<? extends GKGraphNode> nodes, boolean bidirectional);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native GKGraphNode alloc();
-
-    /**
-     * connectedNodes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instp/GKGraphNode/connectedNodes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connectedNodes")
-    public native NSArray<? extends GKGraphNode> connectedNodes();
-
-    /**
-     * costToNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/costToNode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("costToNode:")
-    public native float costToNode(GKGraphNode node);
-
-    /**
-     * estimatedCostToNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/estimatedCostToNode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("estimatedCostToNode:")
-    public native float estimatedCostToNode(GKGraphNode node);
-
-    /**
-     * findPathFromNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/findPathFromNode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("findPathFromNode:")
-    public native NSArray<? extends GKGraphNode> findPathFromNode(GKGraphNode startNode);
-
-    /**
-     * findPathToNode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/findPathToNode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("findPathToNode:")
-    public native NSArray<? extends GKGraphNode> findPathToNode(GKGraphNode goalNode);
-
-    @Generated
-    @Selector("init")
-    public native GKGraphNode init();
-
-    /**
-     * removeConnectionsToNodes:bidirectional:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/removeConnectionsToNodes:bidirectional:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeConnectionsToNodes:bidirectional:")
-    public native void removeConnectionsToNodesBidirectional(NSArray<? extends GKGraphNode> nodes,
-            boolean bidirectional);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -218,4 +157,65 @@ public class GKGraphNode extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addConnectionsToNodes:bidirectional:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/addConnectionsToNodes:bidirectional:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addConnectionsToNodes:bidirectional:")
+    public native void addConnectionsToNodesBidirectional(NSArray<? extends GKGraphNode> nodes, boolean bidirectional);
+
+    /**
+     * connectedNodes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instp/GKGraphNode/connectedNodes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connectedNodes")
+    public native NSArray<? extends GKGraphNode> connectedNodes();
+
+    /**
+     * costToNode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/costToNode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("costToNode:")
+    public native float costToNode(GKGraphNode node);
+
+    /**
+     * estimatedCostToNode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/estimatedCostToNode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("estimatedCostToNode:")
+    public native float estimatedCostToNode(GKGraphNode node);
+
+    /**
+     * findPathFromNode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/findPathFromNode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("findPathFromNode:")
+    public native NSArray<? extends GKGraphNode> findPathFromNode(GKGraphNode startNode);
+
+    /**
+     * findPathToNode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/findPathToNode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("findPathToNode:")
+    public native NSArray<? extends GKGraphNode> findPathToNode(GKGraphNode goalNode);
+
+    @Generated
+    @Selector("init")
+    public native GKGraphNode init();
+
+    /**
+     * removeConnectionsToNodes:bidirectional:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKGraphNode_Class/index.html#//apple_ref/occ/instm/GKGraphNode/removeConnectionsToNodes:bidirectional:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeConnectionsToNodes:bidirectional:")
+    public native void removeConnectionsToNodesBidirectional(NSArray<? extends GKGraphNode> nodes,
+            boolean bidirectional);
 }

@@ -67,43 +67,6 @@ public class UIInputView extends UIView {
     public static native UIInputView alloc();
 
     @Generated
-    @Selector("init")
-    public native UIInputView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIInputView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * initWithFrame:inputViewStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputView_class/index.html#//apple_ref/occ/instm/UIInputView/initWithFrame:inputViewStyle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFrame:inputViewStyle:")
-    public native UIInputView initWithFrameInputViewStyle(@ByValue CGRect frame, @NInt long inputViewStyle);
-
-    /**
-     * inputViewStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputView_class/index.html#//apple_ref/occ/instp/UIInputView/inputViewStyle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("inputViewStyle")
-    @NInt
-    public native long inputViewStyle();
-
-    @Generated
-    @Selector("allowsSelfSizing")
-    public native boolean allowsSelfSizing();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIInputView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("setAllowsSelfSizing:")
-    public native void setAllowsSelfSizing(boolean value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -156,23 +119,9 @@ public class UIInputView extends UIView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -183,27 +132,10 @@ public class UIInputView extends UIView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -214,24 +146,9 @@ public class UIInputView extends UIView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -429,4 +346,87 @@ public class UIInputView extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIInputView init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIInputView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * initWithFrame:inputViewStyle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputView_class/index.html#//apple_ref/occ/instm/UIInputView/initWithFrame:inputViewStyle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFrame:inputViewStyle:")
+    public native UIInputView initWithFrameInputViewStyle(@ByValue CGRect frame, @NInt long inputViewStyle);
+
+    /**
+     * inputViewStyle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIInputView_class/index.html#//apple_ref/occ/instp/UIInputView/inputViewStyle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("inputViewStyle")
+    @NInt
+    public native long inputViewStyle();
+
+    @Generated
+    @Selector("allowsSelfSizing")
+    public native boolean allowsSelfSizing();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIInputView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("setAllowsSelfSizing:")
+    public native void setAllowsSelfSizing(boolean value);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

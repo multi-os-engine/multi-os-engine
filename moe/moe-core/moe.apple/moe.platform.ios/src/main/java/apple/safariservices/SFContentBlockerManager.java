@@ -60,10 +60,6 @@ public class SFContentBlockerManager extends NSObject {
     @Selector("alloc")
     public static native SFContentBlockerManager alloc();
 
-    @Generated
-    @Selector("init")
-    public native SFContentBlockerManager init();
-
     /**
      * reloadContentBlockerWithIdentifier:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFContentBlockerManager_Class_Ref/index.html#//apple_ref/occ/clm/SFContentBlockerManager/reloadContentBlockerWithIdentifier:completionHandler:">iOS Dev Center</a>
@@ -72,13 +68,6 @@ public class SFContentBlockerManager extends NSObject {
     @Selector("reloadContentBlockerWithIdentifier:completionHandler:")
     public static native void reloadContentBlockerWithIdentifierCompletionHandler(String identifier,
             @ObjCBlock(name = "call_reloadContentBlockerWithIdentifierCompletionHandler") Block_reloadContentBlockerWithIdentifierCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_reloadContentBlockerWithIdentifierCompletionHandler {
-        @Generated
-        void call_reloadContentBlockerWithIdentifierCompletionHandler(NSError arg0);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -179,4 +168,15 @@ public class SFContentBlockerManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SFContentBlockerManager init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_reloadContentBlockerWithIdentifierCompletionHandler {
+        @Generated
+        void call_reloadContentBlockerWithIdentifierCompletionHandler(NSError arg0);
+    }
 }

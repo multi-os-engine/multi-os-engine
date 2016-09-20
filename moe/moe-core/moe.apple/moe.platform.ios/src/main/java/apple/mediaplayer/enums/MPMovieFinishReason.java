@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MPMovieFinishReason {
-    @Generated
-    private MPMovieFinishReason() {
-    }
-
     @Generated @NInt public static final long PlaybackEnded = 0x0000000000000000L;
     @Generated @NInt public static final long PlaybackError = 0x0000000000000001L;
     @Generated @NInt public static final long UserExited = 0x0000000000000002L;
+
+    @Generated
+    private MPMovieFinishReason() {
+    }
 }

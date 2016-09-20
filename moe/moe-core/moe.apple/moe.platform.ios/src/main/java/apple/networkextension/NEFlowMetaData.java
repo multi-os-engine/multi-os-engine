@@ -60,26 +60,6 @@ public class NEFlowMetaData extends NSObject {
     public static native NEFlowMetaData alloc();
 
     @Generated
-    @Selector("init")
-    public native NEFlowMetaData init();
-
-    /**
-     * sourceAppSigningIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFlowMetaDataClassRef/index.html#//apple_ref/occ/instp/NEFlowMetaData/sourceAppSigningIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceAppSigningIdentifier")
-    public native String sourceAppSigningIdentifier();
-
-    /**
-     * sourceAppUniqueIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFlowMetaDataClassRef/index.html#//apple_ref/occ/instp/NEFlowMetaData/sourceAppUniqueIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceAppUniqueIdentifier")
-    public native NSData sourceAppUniqueIdentifier();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -178,4 +158,24 @@ public class NEFlowMetaData extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NEFlowMetaData init();
+
+    /**
+     * sourceAppSigningIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFlowMetaDataClassRef/index.html#//apple_ref/occ/instp/NEFlowMetaData/sourceAppSigningIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceAppSigningIdentifier")
+    public native String sourceAppSigningIdentifier();
+
+    /**
+     * sourceAppUniqueIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFlowMetaDataClassRef/index.html#//apple_ref/occ/instp/NEFlowMetaData/sourceAppUniqueIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceAppUniqueIdentifier")
+    public native NSData sourceAppUniqueIdentifier();
 }

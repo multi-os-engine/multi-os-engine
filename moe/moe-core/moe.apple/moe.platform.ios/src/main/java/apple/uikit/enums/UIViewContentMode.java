@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIViewContentMode {
-    @Generated
-    private UIViewContentMode() {
-    }
-
     @Generated @NInt public static final long ScaleToFill = 0x0000000000000000L;
     @Generated @NInt public static final long ScaleAspectFit = 0x0000000000000001L;
     @Generated @NInt public static final long ScaleAspectFill = 0x0000000000000002L;
@@ -38,4 +34,8 @@ public final class UIViewContentMode {
     @Generated @NInt public static final long TopRight = 0x000000000000000AL;
     @Generated @NInt public static final long BottomLeft = 0x000000000000000BL;
     @Generated @NInt public static final long BottomRight = 0x000000000000000CL;
+
+    @Generated
+    private UIViewContentMode() {
+    }
 }

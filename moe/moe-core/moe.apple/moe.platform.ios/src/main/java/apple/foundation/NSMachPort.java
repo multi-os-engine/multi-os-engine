@@ -55,43 +55,6 @@ public class NSMachPort extends NSPort {
     @Selector("alloc")
     public static native NSMachPort alloc();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object delegate();
-
-    @Generated
-    @Selector("init")
-    public native NSMachPort init();
-
-    /**
-     * initWithMachPort:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/initWithMachPort:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithMachPort:")
-    public native NSMachPort initWithMachPort(int machPort);
-
-    /**
-     * initWithMachPort:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/initWithMachPort:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithMachPort:options:")
-    public native NSMachPort initWithMachPortOptions(int machPort, @NUInt long f);
-
-    /**
-     * machPort</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instp/NSMachPort/machPort">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("machPort")
-    public native int machPort();
-
     @Generated
     @Selector("port")
     public static native NSPort port();
@@ -111,34 +74,6 @@ public class NSMachPort extends NSPort {
     @Generated
     @Selector("portWithMachPort:options:")
     public static native NSPort portWithMachPortOptions(int machPort, @NUInt long f);
-
-    /**
-     * removeFromRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/removeFromRunLoop:forMode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeFromRunLoop:forMode:")
-    public native void removeFromRunLoopForMode(NSRunLoop runLoop, String mode);
-
-    /**
-     * scheduleInRunLoop:forMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/scheduleInRunLoop:forMode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("scheduleInRunLoop:forMode:")
-    public native void scheduleInRunLoopForMode(NSRunLoop runLoop, String mode);
-
-    /**
-     * setDelegate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/setDelegate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object anObject);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSMachPort initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -239,4 +174,69 @@ public class NSMachPort extends NSPort {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object delegate();
+
+    @Generated
+    @Selector("init")
+    public native NSMachPort init();
+
+    /**
+     * initWithMachPort:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/initWithMachPort:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithMachPort:")
+    public native NSMachPort initWithMachPort(int machPort);
+
+    /**
+     * initWithMachPort:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/initWithMachPort:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithMachPort:options:")
+    public native NSMachPort initWithMachPortOptions(int machPort, @NUInt long f);
+
+    /**
+     * machPort</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instp/NSMachPort/machPort">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("machPort")
+    public native int machPort();
+
+    /**
+     * removeFromRunLoop:forMode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/removeFromRunLoop:forMode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeFromRunLoop:forMode:")
+    public native void removeFromRunLoopForMode(NSRunLoop runLoop, String mode);
+
+    /**
+     * scheduleInRunLoop:forMode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/scheduleInRunLoop:forMode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("scheduleInRunLoop:forMode:")
+    public native void scheduleInRunLoopForMode(NSRunLoop runLoop, String mode);
+
+    /**
+     * setDelegate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/index.html#//apple_ref/occ/instm/NSMachPort/setDelegate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object anObject);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSMachPort initWithCoder(NSCoder aDecoder);
 }

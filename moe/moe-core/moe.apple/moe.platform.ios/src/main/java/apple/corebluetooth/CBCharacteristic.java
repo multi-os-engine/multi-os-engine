@@ -59,60 +59,6 @@ public class CBCharacteristic extends CBAttribute {
     @Selector("alloc")
     public static native CBCharacteristic alloc();
 
-    /**
-     * descriptors</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/descriptors">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("descriptors")
-    public native NSArray<? extends CBDescriptor> descriptors();
-
-    @Generated
-    @Selector("init")
-    public native CBCharacteristic init();
-
-    /**
-     * isBroadcasted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/isBroadcasted">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("isBroadcasted")
-    public native boolean isBroadcasted();
-
-    /**
-     * isNotifying</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/isNotifying">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isNotifying")
-    public native boolean isNotifying();
-
-    /**
-     * properties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/properties">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("properties")
-    @NUInt
-    public native long properties();
-
-    /**
-     * service</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/service">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("service")
-    public native CBService service();
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    public native NSData value();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -212,4 +158,58 @@ public class CBCharacteristic extends CBAttribute {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * descriptors</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/descriptors">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("descriptors")
+    public native NSArray<? extends CBDescriptor> descriptors();
+
+    @Generated
+    @Selector("init")
+    public native CBCharacteristic init();
+
+    /**
+     * isBroadcasted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/isBroadcasted">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("isBroadcasted")
+    public native boolean isBroadcasted();
+
+    /**
+     * isNotifying</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/isNotifying">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isNotifying")
+    public native boolean isNotifying();
+
+    /**
+     * properties</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/properties">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("properties")
+    @NUInt
+    public native long properties();
+
+    /**
+     * service</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/service">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("service")
+    public native CBService service();
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCharacteristic_Class/index.html#//apple_ref/occ/instp/CBCharacteristic/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    public native NSData value();
 }

@@ -65,144 +65,10 @@ public class ADBannerView extends UIView {
         super(peer);
     }
 
-    /**
-     * adType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/adType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("adType")
-    @NInt
-    public native long adType();
-
-    /**
-     * advertisingSection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/advertisingSection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("advertisingSection")
-    public native String advertisingSection();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native ADBannerView alloc();
-
-    /**
-     * cancelBannerViewAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instm/ADBannerView/cancelBannerViewAction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelBannerViewAction")
-    public native void cancelBannerViewAction();
-
-    /**
-     * currentContentSizeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/currentContentSizeIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("currentContentSizeIdentifier")
-    public native String currentContentSizeIdentifier();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native ADBannerViewDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native ADBannerView init();
-
-    /**
-     * initWithAdType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instm/ADBannerView/initWithAdType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAdType:")
-    public native ADBannerView initWithAdType(@NInt long type);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native ADBannerView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * bannerLoaded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/bannerLoaded">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isBannerLoaded")
-    public native boolean isBannerLoaded();
-
-    /**
-     * bannerViewActionInProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/bannerViewActionInProgress">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isBannerViewActionInProgress")
-    public native boolean isBannerViewActionInProgress();
-
-    /**
-     * requiredContentSizeIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/requiredContentSizeIdentifiers">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("requiredContentSizeIdentifiers")
-    public native NSSet<?> requiredContentSizeIdentifiers();
-
-    /**
-     * advertisingSection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/advertisingSection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAdvertisingSection:")
-    public native void setAdvertisingSection(String value);
-
-    /**
-     * currentContentSizeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/currentContentSizeIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setCurrentContentSizeIdentifier:")
-    public native void setCurrentContentSizeIdentifier(String value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ADBannerViewDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) ADBannerViewDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * requiredContentSizeIdentifiers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/requiredContentSizeIdentifiers">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setRequiredContentSizeIdentifiers:")
-    public native void setRequiredContentSizeIdentifiers(NSSet<?> value);
 
     /**
      * sizeFromBannerContentSizeIdentifier:</br>
@@ -213,10 +79,6 @@ public class ADBannerView extends UIView {
     @Selector("sizeFromBannerContentSizeIdentifier:")
     @ByValue
     public static native CGSize sizeFromBannerContentSizeIdentifier(String contentSizeIdentifier);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native ADBannerView initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -271,23 +133,9 @@ public class ADBannerView extends UIView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -298,27 +146,10 @@ public class ADBannerView extends UIView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -329,24 +160,9 @@ public class ADBannerView extends UIView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -544,4 +360,188 @@ public class ADBannerView extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * adType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/adType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("adType")
+    @NInt
+    public native long adType();
+
+    /**
+     * advertisingSection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/advertisingSection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("advertisingSection")
+    public native String advertisingSection();
+
+    /**
+     * cancelBannerViewAction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instm/ADBannerView/cancelBannerViewAction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelBannerViewAction")
+    public native void cancelBannerViewAction();
+
+    /**
+     * currentContentSizeIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/currentContentSizeIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("currentContentSizeIdentifier")
+    public native String currentContentSizeIdentifier();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native ADBannerViewDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native ADBannerView init();
+
+    /**
+     * initWithAdType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instm/ADBannerView/initWithAdType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAdType:")
+    public native ADBannerView initWithAdType(@NInt long type);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native ADBannerView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * bannerLoaded</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/bannerLoaded">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isBannerLoaded")
+    public native boolean isBannerLoaded();
+
+    /**
+     * bannerViewActionInProgress</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/bannerViewActionInProgress">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isBannerViewActionInProgress")
+    public native boolean isBannerViewActionInProgress();
+
+    /**
+     * requiredContentSizeIdentifiers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/requiredContentSizeIdentifiers">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("requiredContentSizeIdentifiers")
+    public native NSSet<?> requiredContentSizeIdentifiers();
+
+    /**
+     * advertisingSection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/advertisingSection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAdvertisingSection:")
+    public native void setAdvertisingSection(String value);
+
+    /**
+     * currentContentSizeIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/currentContentSizeIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setCurrentContentSizeIdentifier:")
+    public native void setCurrentContentSizeIdentifier(String value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ADBannerViewDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) ADBannerViewDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * requiredContentSizeIdentifiers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/ADBannerView_Ref/index.html#//apple_ref/occ/instp/ADBannerView/requiredContentSizeIdentifiers">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setRequiredContentSizeIdentifiers:")
+    public native void setRequiredContentSizeIdentifiers(NSSet<?> value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ADBannerView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

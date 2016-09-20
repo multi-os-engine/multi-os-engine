@@ -31,11 +31,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class AudioOutputUnitMIDICallbacks extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public AudioOutputUnitMIDICallbacks() {
@@ -69,25 +69,9 @@ public final class AudioOutputUnitMIDICallbacks extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setMIDIEventProc(@FunctionPtr(name = "call_MIDIEventProc") Function_MIDIEventProc value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_MIDIEventProc {
-        @Generated
-        void call_MIDIEventProc(VoidPtr arg0, int arg1, int arg2, int arg3, int arg4);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMIDISysExProc(@FunctionPtr(name = "call_MIDISysExProc") Function_MIDISysExProc value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_MIDISysExProc {
-        @Generated
-        void call_MIDISysExProc(VoidPtr arg0,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-                int arg2);
-    }
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -98,4 +82,20 @@ public final class AudioOutputUnitMIDICallbacks extends StructObject {
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_MIDISysExProc")
     public native Function_MIDISysExProc MIDISysExProc();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_MIDIEventProc {
+        @Generated
+        void call_MIDIEventProc(VoidPtr arg0, int arg1, int arg2, int arg3, int arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_MIDISysExProc {
+        @Generated
+        void call_MIDISysExProc(VoidPtr arg0,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+                int arg2);
+    }
 }

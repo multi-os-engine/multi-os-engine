@@ -51,13 +51,6 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_webViewDecidePolicyForNavigationActionDecisionHandler {
-        @Generated
-        void call_webViewDecidePolicyForNavigationActionDecisionHandler(@NInt long arg0);
-    }
-
     /**
      * webView:decidePolicyForNavigationResponse:decisionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:decidePolicyForNavigationResponse:decisionHandler:">iOS Dev Center</a>
@@ -69,13 +62,6 @@ public interface WKNavigationDelegate {
             WKNavigationResponse navigationResponse,
             @ObjCBlock(name = "call_webViewDecidePolicyForNavigationResponseDecisionHandler") Block_webViewDecidePolicyForNavigationResponseDecisionHandler decisionHandler) {
         throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_webViewDecidePolicyForNavigationResponseDecisionHandler {
-        @Generated
-        void call_webViewDecidePolicyForNavigationResponseDecisionHandler(@NInt long arg0);
     }
 
     /**
@@ -136,13 +122,6 @@ public interface WKNavigationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_webViewDidReceiveAuthenticationChallengeCompletionHandler {
-        @Generated
-        void call_webViewDidReceiveAuthenticationChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
-    }
-
     /**
      * webView:didReceiveServerRedirectForProvisionalNavigation:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKNavigationDelegate_Ref/index.html#//apple_ref/occ/intfm/WKNavigationDelegate/webView:didReceiveServerRedirectForProvisionalNavigation:">iOS Dev Center</a>
@@ -170,5 +149,26 @@ public interface WKNavigationDelegate {
     @Selector("webViewWebContentProcessDidTerminate:")
     default void webViewWebContentProcessDidTerminate(WKWebView webView) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewDecidePolicyForNavigationActionDecisionHandler {
+        @Generated
+        void call_webViewDecidePolicyForNavigationActionDecisionHandler(@NInt long arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewDecidePolicyForNavigationResponseDecisionHandler {
+        @Generated
+        void call_webViewDecidePolicyForNavigationResponseDecisionHandler(@NInt long arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewDidReceiveAuthenticationChallengeCompletionHandler {
+        @Generated
+        void call_webViewDidReceiveAuthenticationChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
     }
 }

@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLSamplerAddressMode {
-    @Generated
-    private MTLSamplerAddressMode() {
-    }
-
     @Generated @NUInt public static final long ClampToEdge = 0x0000000000000000L;
     @Generated @NUInt public static final long Repeat = 0x0000000000000002L;
     @Generated @NUInt public static final long MirrorRepeat = 0x0000000000000003L;
     @Generated @NUInt public static final long ClampToZero = 0x0000000000000004L;
+
+    @Generated
+    private MTLSamplerAddressMode() {
+    }
 }

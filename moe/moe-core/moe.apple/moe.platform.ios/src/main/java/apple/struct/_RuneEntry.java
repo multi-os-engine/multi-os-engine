@@ -27,11 +27,11 @@ import org.moe.natj.general.ptr.IntPtr;
 @Generated
 @Structure()
 public final class _RuneEntry extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public _RuneEntry() {

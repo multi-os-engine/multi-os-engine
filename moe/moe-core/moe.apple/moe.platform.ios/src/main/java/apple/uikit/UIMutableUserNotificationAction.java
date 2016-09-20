@@ -56,132 +56,10 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
         super(peer);
     }
 
-    /**
-     * activationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/activationMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("activationMode")
-    @NUInt
-    public native long activationMode();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIMutableUserNotificationAction alloc();
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native UIMutableUserNotificationAction init();
-
-    /**
-     * authenticationRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/authenticationRequired">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isAuthenticationRequired")
-    public native boolean isAuthenticationRequired();
-
-    /**
-     * destructive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/destructive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isDestructive")
-    public native boolean isDestructive();
-
-    /**
-     * activationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/activationMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setActivationMode:")
-    public native void setActivationMode(@NUInt long value);
-
-    /**
-     * authenticationRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/authenticationRequired">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAuthenticationRequired:")
-    public native void setAuthenticationRequired(boolean value);
-
-    /**
-     * destructive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/destructive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDestructive:")
-    public native void setDestructive(boolean value);
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTitle:")
-    public native void setTitle(String value);
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
-
-    /**
-     * behavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/behavior">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("behavior")
-    @NUInt
-    public native long behavior();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIMutableUserNotificationAction initWithCoder(NSCoder aDecoder);
-
-    /**
-     * parameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/parameters">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("parameters")
-    public native NSDictionary<?, ?> parameters();
-
-    /**
-     * behavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/behavior">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBehavior:")
-    public native void setBehavior(@NUInt long value);
-
-    /**
-     * parameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/parameters">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setParameters:")
-    public native void setParameters(NSDictionary<?, ?> value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -283,13 +161,135 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * activationMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/activationMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("activationMode")
+    @NUInt
+    public native long activationMode();
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native UIMutableUserNotificationAction init();
+
+    /**
+     * authenticationRequired</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/authenticationRequired">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isAuthenticationRequired")
+    public native boolean isAuthenticationRequired();
+
+    /**
+     * authenticationRequired</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/authenticationRequired">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAuthenticationRequired:")
+    public native void setAuthenticationRequired(boolean value);
+
+    /**
+     * destructive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/destructive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isDestructive")
+    public native boolean isDestructive();
+
+    /**
+     * destructive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/destructive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDestructive:")
+    public native void setDestructive(boolean value);
+
+    /**
+     * activationMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/activationMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setActivationMode:")
+    public native void setActivationMode(@NUInt long value);
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIdentifier:")
+    public native void setIdentifier(String value);
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    /**
+     * behavior</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/behavior">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("behavior")
+    @NUInt
+    public native long behavior();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIMutableUserNotificationAction initWithCoder(NSCoder aDecoder);
+
+    /**
+     * parameters</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/parameters">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("parameters")
+    public native NSDictionary<?, ?> parameters();
+
+    /**
+     * behavior</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/behavior">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBehavior:")
+    public native void setBehavior(@NUInt long value);
+
+    /**
+     * parameters</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationAction/parameters">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setParameters:")
+    public native void setParameters(NSDictionary<?, ?> value);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

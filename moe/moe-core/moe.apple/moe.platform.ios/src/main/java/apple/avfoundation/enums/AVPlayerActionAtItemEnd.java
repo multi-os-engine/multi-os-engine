@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVPlayerActionAtItemEnd {
-    @Generated
-    private AVPlayerActionAtItemEnd() {
-    }
-
     @Generated @NInt public static final long Advance = 0x0000000000000000L;
     @Generated @NInt public static final long Pause = 0x0000000000000001L;
     @Generated @NInt public static final long None = 0x0000000000000002L;
+
+    @Generated
+    private AVPlayerActionAtItemEnd() {
+    }
 }

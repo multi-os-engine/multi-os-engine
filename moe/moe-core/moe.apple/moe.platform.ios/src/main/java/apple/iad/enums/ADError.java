@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class ADError {
-    @Generated
-    private ADError() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long ServerFailure = 0x0000000000000001L;
     @Generated @NInt public static final long LoadingThrottled = 0x0000000000000002L;
@@ -34,4 +30,8 @@ public final class ADError {
     @Generated @NInt public static final long ApplicationInactive = 0x0000000000000006L;
     @Generated @NInt public static final long AdUnloaded = 0x0000000000000007L;
     @Generated @NInt public static final long AssetLoadFailure = 0x0000000000000008L;
+
+    @Generated
+    private ADError() {
+    }
 }

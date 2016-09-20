@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSNumberFormatterStyle {
-    @Generated
-    private NSNumberFormatterStyle() {
-    }
-
     @Generated @NUInt public static final long NoStyle = 0x0000000000000000L;
     @Generated @NUInt public static final long DecimalStyle = 0x0000000000000001L;
     @Generated @NUInt public static final long CurrencyStyle = 0x0000000000000002L;
@@ -35,4 +31,8 @@ public final class NSNumberFormatterStyle {
     @Generated @NUInt public static final long CurrencyISOCodeStyle = 0x0000000000000008L;
     @Generated @NUInt public static final long CurrencyPluralStyle = 0x0000000000000009L;
     @Generated @NUInt public static final long CurrencyAccountingStyle = 0x000000000000000AL;
+
+    @Generated
+    private NSNumberFormatterStyle() {
+    }
 }

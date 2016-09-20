@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSStringDrawingOptions {
-    @Generated
-    private NSStringDrawingOptions() {
-    }
-
     @Generated @NInt public static final long TruncatesLastVisibleLine = 0x0000000000000020L;
     @Generated @NInt public static final long UsesLineFragmentOrigin = 0x0000000000000001L;
     @Generated @NInt public static final long UsesFontLeading = 0x0000000000000002L;
     @Generated @NInt public static final long UsesDeviceMetrics = 0x0000000000000008L;
+
+    @Generated
+    private NSStringDrawingOptions() {
+    }
 }

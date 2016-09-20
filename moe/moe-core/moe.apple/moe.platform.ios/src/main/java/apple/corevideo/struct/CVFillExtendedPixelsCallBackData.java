@@ -31,11 +31,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CVFillExtendedPixelsCallBackData extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CVFillExtendedPixelsCallBackData() {
@@ -69,13 +69,6 @@ public final class CVFillExtendedPixelsCallBackData extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setFillCallBack(@FunctionPtr(name = "call_fillCallBack") Function_fillCallBack value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_fillCallBack {
-        @Generated
-        byte call_fillCallBack(VoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr refCon();
@@ -88,4 +81,11 @@ public final class CVFillExtendedPixelsCallBackData extends StructObject {
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_fillCallBack")
     public native Function_fillCallBack fillCallBack();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_fillCallBack {
+        @Generated
+        byte call_fillCallBack(VoidPtr arg0, VoidPtr arg1);
+    }
 }

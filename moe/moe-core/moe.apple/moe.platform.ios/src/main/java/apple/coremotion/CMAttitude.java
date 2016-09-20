@@ -66,82 +66,8 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
     public static native CMAttitude alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CMAttitude init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CMAttitude initWithCoder(NSCoder aDecoder);
-
-    /**
-     * multiplyByInverseOfAttitude:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instm/CMAttitude/multiplyByInverseOfAttitude:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("multiplyByInverseOfAttitude:")
-    public native void multiplyByInverseOfAttitude(CMAttitude attitude);
-
-    /**
-     * pitch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instp/CMAttitude/pitch">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pitch")
-    public native double pitch();
-
-    /**
-     * quaternion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instp/CMAttitude/quaternion">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("quaternion")
-    @ByValue
-    public native CMQuaternion quaternion();
-
-    /**
-     * roll</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instp/CMAttitude/roll">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("roll")
-    public native double roll();
-
-    /**
-     * rotationMatrix</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instp/CMAttitude/rotationMatrix">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rotationMatrix")
-    @ByValue
-    public native CMRotationMatrix rotationMatrix();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * yaw</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instp/CMAttitude/yaw">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("yaw")
-    public native double yaw();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -242,4 +168,78 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CMAttitude init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CMAttitude initWithCoder(NSCoder aDecoder);
+
+    /**
+     * multiplyByInverseOfAttitude:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instm/CMAttitude/multiplyByInverseOfAttitude:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("multiplyByInverseOfAttitude:")
+    public native void multiplyByInverseOfAttitude(CMAttitude attitude);
+
+    /**
+     * pitch</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instp/CMAttitude/pitch">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pitch")
+    public native double pitch();
+
+    /**
+     * quaternion</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instp/CMAttitude/quaternion">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("quaternion")
+    @ByValue
+    public native CMQuaternion quaternion();
+
+    /**
+     * roll</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instp/CMAttitude/roll">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("roll")
+    public native double roll();
+
+    /**
+     * rotationMatrix</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instp/CMAttitude/rotationMatrix">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rotationMatrix")
+    @ByValue
+    public native CMRotationMatrix rotationMatrix();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * yaw</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMAttitude_Class/index.html#//apple_ref/occ/instp/CMAttitude/yaw">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("yaw")
+    public native double yaw();
 }

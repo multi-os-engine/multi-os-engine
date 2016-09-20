@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKBodyTemperatureSensorLocation {
-    @Generated
-    private HKBodyTemperatureSensorLocation() {
-    }
-
     @Generated @NInt public static final long Other = 0x0000000000000000L;
     @Generated @NInt public static final long Armpit = 0x0000000000000001L;
     @Generated @NInt public static final long Body = 0x0000000000000002L;
@@ -37,4 +33,8 @@ public final class HKBodyTemperatureSensorLocation {
     @Generated @NInt public static final long EarDrum = 0x0000000000000009L;
     @Generated @NInt public static final long TemporalArtery = 0x000000000000000AL;
     @Generated @NInt public static final long Forehead = 0x000000000000000BL;
+
+    @Generated
+    private HKBodyTemperatureSensorLocation() {
+    }
 }

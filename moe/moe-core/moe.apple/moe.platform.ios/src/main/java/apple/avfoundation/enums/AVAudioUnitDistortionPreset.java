@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVAudioUnitDistortionPreset {
-    @Generated
-    private AVAudioUnitDistortionPreset() {
-    }
-
     @Generated @NInt public static final long DrumsBitBrush = 0x0000000000000000L;
     @Generated @NInt public static final long DrumsBufferBeats = 0x0000000000000001L;
     @Generated @NInt public static final long DrumsLoFi = 0x0000000000000002L;
@@ -47,4 +43,8 @@ public final class AVAudioUnitDistortionPreset {
     @Generated @NInt public static final long SpeechGoldenPi = 0x0000000000000013L;
     @Generated @NInt public static final long SpeechRadioTower = 0x0000000000000014L;
     @Generated @NInt public static final long SpeechWaves = 0x0000000000000015L;
+
+    @Generated
+    private AVAudioUnitDistortionPreset() {
+    }
 }

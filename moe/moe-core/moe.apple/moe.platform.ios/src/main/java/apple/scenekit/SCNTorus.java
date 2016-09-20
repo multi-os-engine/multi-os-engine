@@ -71,78 +71,6 @@ public class SCNTorus extends SCNGeometry {
     public static native SCNTorus geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
             NSArray<? extends SCNGeometryElement> elements);
 
-    @Generated
-    @Selector("init")
-    public native SCNTorus init();
-
-    /**
-     * pipeRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/pipeRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pipeRadius")
-    @NFloat
-    public native double pipeRadius();
-
-    /**
-     * pipeSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/pipeSegmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pipeSegmentCount")
-    @NInt
-    public native long pipeSegmentCount();
-
-    /**
-     * ringRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/ringRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ringRadius")
-    @NFloat
-    public native double ringRadius();
-
-    /**
-     * ringSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/ringSegmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ringSegmentCount")
-    @NInt
-    public native long ringSegmentCount();
-
-    /**
-     * pipeRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/pipeRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPipeRadius:")
-    public native void setPipeRadius(@NFloat double value);
-
-    /**
-     * pipeSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/pipeSegmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPipeSegmentCount:")
-    public native void setPipeSegmentCount(@NInt long value);
-
-    /**
-     * ringRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/ringRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRingRadius:")
-    public native void setRingRadius(@NFloat double value);
-
-    /**
-     * ringSegmentCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/ringSegmentCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRingSegmentCount:")
-    public native void setRingSegmentCount(@NInt long value);
-
     /**
      * torusWithRingRadius:pipeRadius:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/clm/SCNTorus/torusWithRingRadius:pipeRadius:">iOS Dev Center</a>
@@ -154,10 +82,6 @@ public class SCNTorus extends SCNGeometry {
     @Generated
     @Selector("geometryWithMDLMesh:")
     public static native SCNTorus geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNTorus initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -259,13 +183,89 @@ public class SCNTorus extends SCNGeometry {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SCNTorus init();
+
+    /**
+     * pipeRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/pipeRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pipeRadius")
+    @NFloat
+    public native double pipeRadius();
+
+    /**
+     * pipeSegmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/pipeSegmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pipeSegmentCount")
+    @NInt
+    public native long pipeSegmentCount();
+
+    /**
+     * ringRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/ringRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ringRadius")
+    @NFloat
+    public native double ringRadius();
+
+    /**
+     * ringSegmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/ringSegmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ringSegmentCount")
+    @NInt
+    public native long ringSegmentCount();
+
+    /**
+     * pipeRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/pipeRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPipeRadius:")
+    public native void setPipeRadius(@NFloat double value);
+
+    /**
+     * pipeSegmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/pipeSegmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPipeSegmentCount:")
+    public native void setPipeSegmentCount(@NInt long value);
+
+    /**
+     * ringRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/ringRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRingRadius:")
+    public native void setRingRadius(@NFloat double value);
+
+    /**
+     * ringSegmentCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTorus_Class/index.html#//apple_ref/occ/instp/SCNTorus/ringSegmentCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRingSegmentCount:")
+    public native void setRingSegmentCount(@NInt long value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNTorus initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

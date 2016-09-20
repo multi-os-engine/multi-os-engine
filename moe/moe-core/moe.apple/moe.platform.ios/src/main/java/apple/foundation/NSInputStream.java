@@ -59,50 +59,6 @@ public class NSInputStream extends NSStream {
     public static native NSInputStream alloc();
 
     /**
-     * getBuffer:length:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instm/NSInputStream/getBuffer:length:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getBuffer:length:")
-    public native boolean getBufferLength(Ptr<BytePtr> buffer, NUIntPtr len);
-
-    /**
-     * hasBytesAvailable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instp/NSInputStream/hasBytesAvailable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hasBytesAvailable")
-    public native boolean hasBytesAvailable();
-
-    @Generated
-    @Selector("init")
-    public native NSInputStream init();
-
-    /**
-     * initWithData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instm/NSInputStream/initWithData:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithData:")
-    public native NSInputStream initWithData(NSData data);
-
-    /**
-     * initWithFileAtPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instm/NSInputStream/initWithFileAtPath:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFileAtPath:")
-    public native NSInputStream initWithFileAtPath(String path);
-
-    /**
-     * initWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instm/NSInputStream/initWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:")
-    public native NSInputStream initWithURL(NSURL url);
-
-    /**
      * inputStreamWithData:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/clm/NSInputStream/inputStreamWithData:">iOS Dev Center</a>
      */
@@ -125,15 +81,6 @@ public class NSInputStream extends NSStream {
     @Generated
     @Selector("inputStreamWithURL:")
     public static native NSInputStream inputStreamWithURL(NSURL url);
-
-    /**
-     * read:maxLength:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instm/NSInputStream/read:maxLength:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("read:maxLength:")
-    @NInt
-    public native long readMaxLength(BytePtr buffer, @NUInt long len);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -244,4 +191,57 @@ public class NSInputStream extends NSStream {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * getBuffer:length:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instm/NSInputStream/getBuffer:length:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getBuffer:length:")
+    public native boolean getBufferLength(Ptr<BytePtr> buffer, NUIntPtr len);
+
+    /**
+     * hasBytesAvailable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instp/NSInputStream/hasBytesAvailable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hasBytesAvailable")
+    public native boolean hasBytesAvailable();
+
+    @Generated
+    @Selector("init")
+    public native NSInputStream init();
+
+    /**
+     * initWithData:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instm/NSInputStream/initWithData:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithData:")
+    public native NSInputStream initWithData(NSData data);
+
+    /**
+     * initWithFileAtPath:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instm/NSInputStream/initWithFileAtPath:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFileAtPath:")
+    public native NSInputStream initWithFileAtPath(String path);
+
+    /**
+     * initWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instm/NSInputStream/initWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:")
+    public native NSInputStream initWithURL(NSURL url);
+
+    /**
+     * read:maxLength:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInputStream_Class/index.html#//apple_ref/occ/instm/NSInputStream/read:maxLength:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("read:maxLength:")
+    @NInt
+    public native long readMaxLength(BytePtr buffer, @NUInt long len);
 }

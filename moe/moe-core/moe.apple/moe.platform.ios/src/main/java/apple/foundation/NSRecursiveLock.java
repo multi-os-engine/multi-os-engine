@@ -57,50 +57,6 @@ public class NSRecursiveLock extends NSObject implements NSLocking {
     public static native NSRecursiveLock alloc();
 
     @Generated
-    @Selector("init")
-    public native NSRecursiveLock init();
-
-    @Generated
-    @Selector("lock")
-    public native void lock();
-
-    /**
-     * lockBeforeDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRecursiveLock_Class/index.html#//apple_ref/occ/instm/NSRecursiveLock/lockBeforeDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lockBeforeDate:")
-    public native boolean lockBeforeDate(NSDate limit);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRecursiveLock_Class/index.html#//apple_ref/occ/instp/NSRecursiveLock/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRecursiveLock_Class/index.html#//apple_ref/occ/instp/NSRecursiveLock/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setName:")
-    public native void setName(String value);
-
-    /**
-     * tryLock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRecursiveLock_Class/index.html#//apple_ref/occ/instm/NSRecursiveLock/tryLock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tryLock")
-    public native boolean tryLock();
-
-    @Generated
-    @Selector("unlock")
-    public native void unlock();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -199,4 +155,48 @@ public class NSRecursiveLock extends NSObject implements NSLocking {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSRecursiveLock init();
+
+    @Generated
+    @Selector("lock")
+    public native void lock();
+
+    /**
+     * lockBeforeDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRecursiveLock_Class/index.html#//apple_ref/occ/instm/NSRecursiveLock/lockBeforeDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lockBeforeDate:")
+    public native boolean lockBeforeDate(NSDate limit);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRecursiveLock_Class/index.html#//apple_ref/occ/instp/NSRecursiveLock/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRecursiveLock_Class/index.html#//apple_ref/occ/instp/NSRecursiveLock/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
+
+    /**
+     * tryLock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSRecursiveLock_Class/index.html#//apple_ref/occ/instm/NSRecursiveLock/tryLock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tryLock")
+    public native boolean tryLock();
+
+    @Generated
+    @Selector("unlock")
+    public native void unlock();
 }

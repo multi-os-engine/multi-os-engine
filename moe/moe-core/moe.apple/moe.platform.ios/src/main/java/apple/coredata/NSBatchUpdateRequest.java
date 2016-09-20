@@ -65,59 +65,6 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     public static native NSBatchUpdateRequest batchUpdateRequestWithEntityName(String entityName);
 
     @Generated
-    @Selector("entity")
-    public native NSEntityDescription entity();
-
-    @Generated
-    @Selector("entityName")
-    public native String entityName();
-
-    @Generated
-    @Selector("includesSubentities")
-    public native boolean includesSubentities();
-
-    @Generated
-    @Selector("init")
-    public native NSBatchUpdateRequest init();
-
-    @Generated
-    @Selector("initWithEntity:")
-    public native NSBatchUpdateRequest initWithEntity(NSEntityDescription entity);
-
-    @Generated
-    @Selector("initWithEntityName:")
-    public native NSBatchUpdateRequest initWithEntityName(String entityName);
-
-    @Generated
-    @Selector("predicate")
-    public native NSPredicate predicate();
-
-    @Generated
-    @Selector("propertiesToUpdate")
-    public native NSDictionary<?, ?> propertiesToUpdate();
-
-    @Generated
-    @Selector("resultType")
-    @NUInt
-    public native long resultType();
-
-    @Generated
-    @Selector("setIncludesSubentities:")
-    public native void setIncludesSubentities(boolean value);
-
-    @Generated
-    @Selector("setPredicate:")
-    public native void setPredicate(NSPredicate value);
-
-    @Generated
-    @Selector("setPropertiesToUpdate:")
-    public native void setPropertiesToUpdate(NSDictionary<?, ?> value);
-
-    @Generated
-    @Selector("setResultType:")
-    public native void setResultType(@NUInt long value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -216,4 +163,57 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("entity")
+    public native NSEntityDescription entity();
+
+    @Generated
+    @Selector("entityName")
+    public native String entityName();
+
+    @Generated
+    @Selector("includesSubentities")
+    public native boolean includesSubentities();
+
+    @Generated
+    @Selector("init")
+    public native NSBatchUpdateRequest init();
+
+    @Generated
+    @Selector("initWithEntity:")
+    public native NSBatchUpdateRequest initWithEntity(NSEntityDescription entity);
+
+    @Generated
+    @Selector("initWithEntityName:")
+    public native NSBatchUpdateRequest initWithEntityName(String entityName);
+
+    @Generated
+    @Selector("predicate")
+    public native NSPredicate predicate();
+
+    @Generated
+    @Selector("propertiesToUpdate")
+    public native NSDictionary<?, ?> propertiesToUpdate();
+
+    @Generated
+    @Selector("resultType")
+    @NUInt
+    public native long resultType();
+
+    @Generated
+    @Selector("setIncludesSubentities:")
+    public native void setIncludesSubentities(boolean value);
+
+    @Generated
+    @Selector("setPredicate:")
+    public native void setPredicate(NSPredicate value);
+
+    @Generated
+    @Selector("setPropertiesToUpdate:")
+    public native void setPropertiesToUpdate(NSDictionary<?, ?> value);
+
+    @Generated
+    @Selector("setResultType:")
+    public native void setResultType(@NUInt long value);
 }

@@ -41,13 +41,6 @@ public interface CSSearchableIndexDelegate {
     void searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler(CSSearchableIndex searchableIndex,
             @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler {
-        @Generated
-        void call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler();
-    }
-
     /**
      * searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreSpotlight/Reference/CSSearchableIndexDelegate_Protocol/index.html#//apple_ref/occ/intfm/CSSearchableIndexDelegate/searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:">iOS Dev Center</a>
@@ -57,13 +50,6 @@ public interface CSSearchableIndexDelegate {
     void searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler(CSSearchableIndex searchableIndex,
             NSArray<String> identifiers,
             @ObjCBlock(name = "call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler") Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler acknowledgementHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler {
-        @Generated
-        void call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler();
-    }
 
     @Generated
     @IsOptional
@@ -77,5 +63,19 @@ public interface CSSearchableIndexDelegate {
     @Selector("searchableIndexDidThrottle:")
     default void searchableIndexDidThrottle(CSSearchableIndex searchableIndex) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler {
+        @Generated
+        void call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler {
+        @Generated
+        void call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler();
     }
 }

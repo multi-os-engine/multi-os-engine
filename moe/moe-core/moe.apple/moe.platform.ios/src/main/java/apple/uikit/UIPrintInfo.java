@@ -62,67 +62,6 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native UIPrintInfo alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * dictionaryRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instm/UIPrintInfo/dictionaryRepresentation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dictionaryRepresentation")
-    public native NSDictionary<?, ?> dictionaryRepresentation();
-
-    /**
-     * duplex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/duplex">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("duplex")
-    @NInt
-    public native long duplex();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UIPrintInfo init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIPrintInfo initWithCoder(NSCoder aDecoder);
-
-    /**
-     * jobName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/jobName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("jobName")
-    public native String jobName();
-
-    /**
-     * orientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/orientation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("orientation")
-    @NInt
-    public native long orientation();
-
-    /**
-     * outputType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/outputType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("outputType")
-    @NInt
-    public native long outputType();
-
     /**
      * printInfo</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/clm/UIPrintInfo/printInfo">iOS Dev Center</a>
@@ -138,54 +77,6 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("printInfoWithDictionary:")
     public static native UIPrintInfo printInfoWithDictionary(NSDictionary<?, ?> dictionary);
-
-    /**
-     * printerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/printerID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("printerID")
-    public native String printerID();
-
-    /**
-     * duplex</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/duplex">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDuplex:")
-    public native void setDuplex(@NInt long value);
-
-    /**
-     * jobName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/jobName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setJobName:")
-    public native void setJobName(String value);
-
-    /**
-     * orientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/orientation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOrientation:")
-    public native void setOrientation(@NInt long value);
-
-    /**
-     * outputType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/outputType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOutputType:")
-    public native void setOutputType(@NInt long value);
-
-    /**
-     * printerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/printerID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPrinterID:")
-    public native void setPrinterID(String value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -286,4 +177,113 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * dictionaryRepresentation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instm/UIPrintInfo/dictionaryRepresentation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dictionaryRepresentation")
+    public native NSDictionary<?, ?> dictionaryRepresentation();
+
+    /**
+     * duplex</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/duplex">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("duplex")
+    @NInt
+    public native long duplex();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UIPrintInfo init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIPrintInfo initWithCoder(NSCoder aDecoder);
+
+    /**
+     * jobName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/jobName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("jobName")
+    public native String jobName();
+
+    /**
+     * orientation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/orientation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("orientation")
+    @NInt
+    public native long orientation();
+
+    /**
+     * outputType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/outputType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("outputType")
+    @NInt
+    public native long outputType();
+
+    /**
+     * printerID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/printerID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("printerID")
+    public native String printerID();
+
+    /**
+     * duplex</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/duplex">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDuplex:")
+    public native void setDuplex(@NInt long value);
+
+    /**
+     * jobName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/jobName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setJobName:")
+    public native void setJobName(String value);
+
+    /**
+     * orientation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/orientation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOrientation:")
+    public native void setOrientation(@NInt long value);
+
+    /**
+     * outputType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/outputType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOutputType:")
+    public native void setOutputType(@NInt long value);
+
+    /**
+     * printerID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintInfo_Class/index.html#//apple_ref/occ/instp/UIPrintInfo/printerID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPrinterID:")
+    public native void setPrinterID(String value);
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFURLEnumeratorOptions {
-    @Generated
-    private CFURLEnumeratorOptions() {
-    }
-
     @Generated @NUInt public static final long DefaultBehavior = 0x0000000000000000L;
     @Generated @NUInt public static final long DescendRecursively = 0x0000000000000001L;
     @Generated @NUInt public static final long SkipInvisibles = 0x0000000000000002L;
@@ -32,4 +28,7 @@ public final class CFURLEnumeratorOptions {
     @Generated @NUInt public static final long SkipPackageContents = 0x0000000000000008L;
     @Generated @NUInt public static final long IncludeDirectoriesPreOrder = 0x0000000000000010L;
     @Generated @NUInt public static final long IncludeDirectoriesPostOrder = 0x0000000000000020L;
+    @Generated
+    private CFURLEnumeratorOptions() {
+    }
 }

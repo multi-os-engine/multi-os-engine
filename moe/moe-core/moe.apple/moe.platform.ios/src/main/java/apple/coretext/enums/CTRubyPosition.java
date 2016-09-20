@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTRubyPosition {
-    @Generated
-    private CTRubyPosition() {
-    }
-
     @Generated public static final byte Before = 0;
     @Generated public static final byte After = 1;
     @Generated public static final byte InterCharacter = 2;
     @Generated public static final byte Inline = 3;
     @Generated public static final byte Count = 4;
+
+    @Generated
+    private CTRubyPosition() {
+    }
 }

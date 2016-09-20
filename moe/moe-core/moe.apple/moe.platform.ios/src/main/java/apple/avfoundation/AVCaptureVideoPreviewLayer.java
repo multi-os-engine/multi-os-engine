@@ -64,83 +64,6 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     @Selector("alloc")
     public static native AVCaptureVideoPreviewLayer alloc();
 
-    /**
-     * automaticallyAdjustsMirroring</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/automaticallyAdjustsMirroring">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("automaticallyAdjustsMirroring")
-    public native boolean automaticallyAdjustsMirroring();
-
-    /**
-     * captureDevicePointOfInterestForPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/captureDevicePointOfInterestForPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("captureDevicePointOfInterestForPoint:")
-    @ByValue
-    public native CGPoint captureDevicePointOfInterestForPoint(@ByValue CGPoint pointInLayer);
-
-    /**
-     * connection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/connection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connection")
-    public native AVCaptureConnection connection();
-
-    @Generated
-    @Selector("init")
-    public native AVCaptureVideoPreviewLayer init();
-
-    @Generated
-    @Selector("initWithLayer:")
-    public native AVCaptureVideoPreviewLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
-
-    /**
-     * initWithSession:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/initWithSession:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSession:")
-    public native AVCaptureVideoPreviewLayer initWithSession(AVCaptureSession session);
-
-    /**
-     * initWithSessionWithNoConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/initWithSessionWithNoConnection:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSessionWithNoConnection:")
-    public native AVCaptureVideoPreviewLayer initWithSessionWithNoConnection(AVCaptureSession session);
-
-    /**
-     * mirrored</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/mirrored">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("isMirrored")
-    public native boolean isMirrored();
-
-    /**
-     * mirroringSupported</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/mirroringSupported">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("isMirroringSupported")
-    public native boolean isMirroringSupported();
-
-    /**
-     * orientationSupported</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/orientationSupported">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("isOrientationSupported")
-    public native boolean isOrientationSupported();
-
     @Generated
     @Selector("layer")
     public static native AVCaptureVideoPreviewLayer layer();
@@ -160,122 +83,6 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     @Generated
     @Selector("layerWithSessionWithNoConnection:")
     public static native AVCaptureVideoPreviewLayer layerWithSessionWithNoConnection(AVCaptureSession session);
-
-    /**
-     * metadataOutputRectOfInterestForRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/metadataOutputRectOfInterestForRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("metadataOutputRectOfInterestForRect:")
-    @ByValue
-    public native CGRect metadataOutputRectOfInterestForRect(@ByValue CGRect rectInLayerCoordinates);
-
-    /**
-     * orientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/orientation">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("orientation")
-    @NInt
-    public native long orientation();
-
-    /**
-     * pointForCaptureDevicePointOfInterest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/pointForCaptureDevicePointOfInterest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pointForCaptureDevicePointOfInterest:")
-    @ByValue
-    public native CGPoint pointForCaptureDevicePointOfInterest(@ByValue CGPoint captureDevicePointOfInterest);
-
-    /**
-     * rectForMetadataOutputRectOfInterest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/rectForMetadataOutputRectOfInterest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rectForMetadataOutputRectOfInterest:")
-    @ByValue
-    public native CGRect rectForMetadataOutputRectOfInterest(@ByValue CGRect rectInMetadataOutputCoordinates);
-
-    /**
-     * session</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/session">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("session")
-    public native AVCaptureSession session();
-
-    /**
-     * automaticallyAdjustsMirroring</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/automaticallyAdjustsMirroring">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setAutomaticallyAdjustsMirroring:")
-    public native void setAutomaticallyAdjustsMirroring(boolean value);
-
-    /**
-     * mirrored</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/mirrored">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setMirrored:")
-    public native void setMirrored(boolean value);
-
-    /**
-     * orientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/orientation">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setOrientation:")
-    public native void setOrientation(@NInt long value);
-
-    /**
-     * session</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/session">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSession:")
-    public native void setSession(AVCaptureSession value);
-
-    /**
-     * setSessionWithNoConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/setSessionWithNoConnection:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSessionWithNoConnection:")
-    public native void setSessionWithNoConnection(AVCaptureSession session);
-
-    /**
-     * videoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/videoGravity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setVideoGravity:")
-    public native void setVideoGravity(String value);
-
-    /**
-     * transformedMetadataObjectForMetadataObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/transformedMetadataObjectForMetadataObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transformedMetadataObjectForMetadataObject:")
-    public native AVMetadataObject transformedMetadataObjectForMetadataObject(AVMetadataObject metadataObject);
-
-    /**
-     * videoGravity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/videoGravity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("videoGravity")
-    public native String videoGravity();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVCaptureVideoPreviewLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -390,4 +197,197 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * automaticallyAdjustsMirroring</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/automaticallyAdjustsMirroring">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("automaticallyAdjustsMirroring")
+    public native boolean automaticallyAdjustsMirroring();
+
+    /**
+     * captureDevicePointOfInterestForPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/captureDevicePointOfInterestForPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("captureDevicePointOfInterestForPoint:")
+    @ByValue
+    public native CGPoint captureDevicePointOfInterestForPoint(@ByValue CGPoint pointInLayer);
+
+    /**
+     * connection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/connection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connection")
+    public native AVCaptureConnection connection();
+
+    @Generated
+    @Selector("init")
+    public native AVCaptureVideoPreviewLayer init();
+
+    @Generated
+    @Selector("initWithLayer:")
+    public native AVCaptureVideoPreviewLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+
+    /**
+     * initWithSession:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/initWithSession:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSession:")
+    public native AVCaptureVideoPreviewLayer initWithSession(AVCaptureSession session);
+
+    /**
+     * initWithSessionWithNoConnection:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/initWithSessionWithNoConnection:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSessionWithNoConnection:")
+    public native AVCaptureVideoPreviewLayer initWithSessionWithNoConnection(AVCaptureSession session);
+
+    /**
+     * mirrored</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/mirrored">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("isMirrored")
+    public native boolean isMirrored();
+
+    /**
+     * mirrored</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/mirrored">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setMirrored:")
+    public native void setMirrored(boolean value);
+
+    /**
+     * mirroringSupported</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/mirroringSupported">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("isMirroringSupported")
+    public native boolean isMirroringSupported();
+
+    /**
+     * orientationSupported</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/orientationSupported">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("isOrientationSupported")
+    public native boolean isOrientationSupported();
+
+    /**
+     * metadataOutputRectOfInterestForRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/metadataOutputRectOfInterestForRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("metadataOutputRectOfInterestForRect:")
+    @ByValue
+    public native CGRect metadataOutputRectOfInterestForRect(@ByValue CGRect rectInLayerCoordinates);
+
+    /**
+     * orientation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/orientation">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("orientation")
+    @NInt
+    public native long orientation();
+
+    /**
+     * pointForCaptureDevicePointOfInterest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/pointForCaptureDevicePointOfInterest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pointForCaptureDevicePointOfInterest:")
+    @ByValue
+    public native CGPoint pointForCaptureDevicePointOfInterest(@ByValue CGPoint captureDevicePointOfInterest);
+
+    /**
+     * rectForMetadataOutputRectOfInterest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/rectForMetadataOutputRectOfInterest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rectForMetadataOutputRectOfInterest:")
+    @ByValue
+    public native CGRect rectForMetadataOutputRectOfInterest(@ByValue CGRect rectInMetadataOutputCoordinates);
+
+    /**
+     * session</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/session">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("session")
+    public native AVCaptureSession session();
+
+    /**
+     * automaticallyAdjustsMirroring</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/automaticallyAdjustsMirroring">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setAutomaticallyAdjustsMirroring:")
+    public native void setAutomaticallyAdjustsMirroring(boolean value);
+
+    /**
+     * orientation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/orientation">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setOrientation:")
+    public native void setOrientation(@NInt long value);
+
+    /**
+     * session</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/session">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSession:")
+    public native void setSession(AVCaptureSession value);
+
+    /**
+     * setSessionWithNoConnection:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/setSessionWithNoConnection:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSessionWithNoConnection:")
+    public native void setSessionWithNoConnection(AVCaptureSession session);
+
+    /**
+     * videoGravity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/videoGravity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setVideoGravity:")
+    public native void setVideoGravity(String value);
+
+    /**
+     * transformedMetadataObjectForMetadataObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instm/AVCaptureVideoPreviewLayer/transformedMetadataObjectForMetadataObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transformedMetadataObjectForMetadataObject:")
+    public native AVMetadataObject transformedMetadataObjectForMetadataObject(AVMetadataObject metadataObject);
+
+    /**
+     * videoGravity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/index.html#//apple_ref/occ/instp/AVCaptureVideoPreviewLayer/videoGravity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("videoGravity")
+    public native String videoGravity();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVCaptureVideoPreviewLayer initWithCoder(NSCoder aDecoder);
 }

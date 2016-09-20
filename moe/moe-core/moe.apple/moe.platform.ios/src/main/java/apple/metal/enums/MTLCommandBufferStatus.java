@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLCommandBufferStatus {
-    @Generated
-    private MTLCommandBufferStatus() {
-    }
-
     @Generated @NUInt public static final long NotEnqueued = 0x0000000000000000L;
     @Generated @NUInt public static final long Enqueued = 0x0000000000000001L;
     @Generated @NUInt public static final long Committed = 0x0000000000000002L;
     @Generated @NUInt public static final long Scheduled = 0x0000000000000003L;
     @Generated @NUInt public static final long Completed = 0x0000000000000004L;
     @Generated @NUInt public static final long Error = 0x0000000000000005L;
+
+    @Generated
+    private MTLCommandBufferStatus() {
+    }
 }

@@ -58,95 +58,14 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
         super(peer);
     }
 
-    /**
-     * action</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/action">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("action")
-    @NInt
-    public native long action();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NEEvaluateConnectionRule alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NEEvaluateConnectionRule init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEEvaluateConnectionRule initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithMatchDomains:andAction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instm/NEEvaluateConnectionRule/initWithMatchDomains:andAction:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithMatchDomains:andAction:")
-    public native NEEvaluateConnectionRule initWithMatchDomainsAndAction(NSArray<String> domains, @NInt long action);
-
-    /**
-     * matchDomains</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/matchDomains">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("matchDomains")
-    public native NSArray<String> matchDomains();
-
-    /**
-     * probeURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/probeURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("probeURL")
-    public native NSURL probeURL();
-
-    /**
-     * probeURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/probeURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProbeURL:")
-    public native void setProbeURL(NSURL value);
-
-    /**
-     * useDNSServers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/useDNSServers">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUseDNSServers:")
-    public native void setUseDNSServers(NSArray<String> value);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * useDNSServers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/useDNSServers">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("useDNSServers")
-    public native NSArray<String> useDNSServers();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -247,4 +166,85 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * action</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/action">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("action")
+    @NInt
+    public native long action();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NEEvaluateConnectionRule init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEEvaluateConnectionRule initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithMatchDomains:andAction:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instm/NEEvaluateConnectionRule/initWithMatchDomains:andAction:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithMatchDomains:andAction:")
+    public native NEEvaluateConnectionRule initWithMatchDomainsAndAction(NSArray<String> domains, @NInt long action);
+
+    /**
+     * matchDomains</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/matchDomains">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("matchDomains")
+    public native NSArray<String> matchDomains();
+
+    /**
+     * probeURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/probeURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("probeURL")
+    public native NSURL probeURL();
+
+    /**
+     * probeURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/probeURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProbeURL:")
+    public native void setProbeURL(NSURL value);
+
+    /**
+     * useDNSServers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/useDNSServers">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUseDNSServers:")
+    public native void setUseDNSServers(NSArray<String> value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * useDNSServers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEEvaluateConnectionRuleClassRef/index.html#//apple_ref/occ/instp/NEEvaluateConnectionRule/useDNSServers">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("useDNSServers")
+    public native NSArray<String> useDNSServers();
 }

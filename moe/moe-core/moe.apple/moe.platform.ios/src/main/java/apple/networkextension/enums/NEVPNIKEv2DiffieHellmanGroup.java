@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NEVPNIKEv2DiffieHellmanGroup {
-    @Generated
-    private NEVPNIKEv2DiffieHellmanGroup() {
-    }
-
     @Generated @NInt public static final long Group0 = 0x0000000000000000L;
     @Generated @NInt public static final long Group1 = 0x0000000000000001L;
     @Generated @NInt public static final long Group2 = 0x0000000000000002L;
@@ -37,4 +33,7 @@ public final class NEVPNIKEv2DiffieHellmanGroup {
     @Generated @NInt public static final long Group19 = 0x0000000000000013L;
     @Generated @NInt public static final long Group20 = 0x0000000000000014L;
     @Generated @NInt public static final long Group21 = 0x0000000000000015L;
+    @Generated
+    private NEVPNIKEv2DiffieHellmanGroup() {
+    }
 }

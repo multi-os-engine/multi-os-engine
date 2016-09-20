@@ -60,24 +60,6 @@ public class UILexicon extends NSObject implements NSCopying {
     public static native UILexicon alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * entries</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILexicon_Class/index.html#//apple_ref/occ/instp/UILexicon/entries">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("entries")
-    public native NSArray<? extends UILexiconEntry> entries();
-
-    @Generated
-    @Selector("init")
-    public native UILexicon init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -176,4 +158,22 @@ public class UILexicon extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * entries</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UILexicon_Class/index.html#//apple_ref/occ/instp/UILexicon/entries">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("entries")
+    public native NSArray<? extends UILexiconEntry> entries();
+
+    @Generated
+    @Selector("init")
+    public native UILexicon init();
 }

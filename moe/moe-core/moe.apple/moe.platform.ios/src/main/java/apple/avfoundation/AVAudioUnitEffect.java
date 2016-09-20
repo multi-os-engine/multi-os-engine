@@ -61,35 +61,6 @@ public class AVAudioUnitEffect extends AVAudioUnit {
     @Selector("alloc")
     public static native AVAudioUnitEffect alloc();
 
-    /**
-     * bypass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEffect_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEffect/bypass">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bypass")
-    public native boolean bypass();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioUnitEffect init();
-
-    /**
-     * initWithAudioComponentDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEffect_Class/index.html#//apple_ref/occ/instm/AVAudioUnitEffect/initWithAudioComponentDescription:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAudioComponentDescription:")
-    public native AVAudioUnitEffect initWithAudioComponentDescription(
-            @ByValue AudioComponentDescription audioComponentDescription);
-
-    /**
-     * bypass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEffect_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEffect/bypass">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBypass:")
-    public native void setBypass(boolean value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -195,4 +166,33 @@ public class AVAudioUnitEffect extends AVAudioUnit {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bypass</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEffect_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEffect/bypass">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bypass")
+    public native boolean bypass();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioUnitEffect init();
+
+    /**
+     * initWithAudioComponentDescription:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEffect_Class/index.html#//apple_ref/occ/instm/AVAudioUnitEffect/initWithAudioComponentDescription:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAudioComponentDescription:")
+    public native AVAudioUnitEffect initWithAudioComponentDescription(
+            @ByValue AudioComponentDescription audioComponentDescription);
+
+    /**
+     * bypass</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitEffect_Class/index.html#//apple_ref/occ/instp/AVAudioUnitEffect/bypass">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBypass:")
+    public native void setBypass(boolean value);
 }

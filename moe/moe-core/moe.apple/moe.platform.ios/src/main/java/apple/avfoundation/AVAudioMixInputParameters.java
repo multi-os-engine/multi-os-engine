@@ -65,54 +65,6 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     @Selector("alloc")
     public static native AVAudioMixInputParameters alloc();
 
-    /**
-     * audioTapProcessor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVAudioMixInputParameters/audioTapProcessor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("audioTapProcessor")
-    public native MTAudioProcessingTapRef audioTapProcessor();
-
-    /**
-     * audioTimePitchAlgorithm</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVAudioMixInputParameters/audioTimePitchAlgorithm">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("audioTimePitchAlgorithm")
-    public native String audioTimePitchAlgorithm();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * getVolumeRampForTime:startVolume:endVolume:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instm/AVAudioMixInputParameters/getVolumeRampForTime:startVolume:endVolume:timeRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getVolumeRampForTime:startVolume:endVolume:timeRange:")
-    public native boolean getVolumeRampForTimeStartVolumeEndVolumeTimeRange(@ByValue CMTime time, FloatPtr startVolume,
-            FloatPtr endVolume, CMTimeRange timeRange);
-
-    @Generated
-    @Selector("init")
-    public native AVAudioMixInputParameters init();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    /**
-     * trackID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVAudioMixInputParameters/trackID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("trackID")
-    public native int trackID();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -212,4 +164,52 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * audioTapProcessor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVAudioMixInputParameters/audioTapProcessor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("audioTapProcessor")
+    public native MTAudioProcessingTapRef audioTapProcessor();
+
+    /**
+     * audioTimePitchAlgorithm</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVAudioMixInputParameters/audioTimePitchAlgorithm">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("audioTimePitchAlgorithm")
+    public native String audioTimePitchAlgorithm();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * getVolumeRampForTime:startVolume:endVolume:timeRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instm/AVAudioMixInputParameters/getVolumeRampForTime:startVolume:endVolume:timeRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getVolumeRampForTime:startVolume:endVolume:timeRange:")
+    public native boolean getVolumeRampForTimeStartVolumeEndVolumeTimeRange(@ByValue CMTime time, FloatPtr startVolume,
+            FloatPtr endVolume, CMTimeRange timeRange);
+
+    @Generated
+    @Selector("init")
+    public native AVAudioMixInputParameters init();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    /**
+     * trackID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMixInputParameters_Class/index.html#//apple_ref/occ/instp/AVAudioMixInputParameters/trackID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("trackID")
+    public native int trackID();
 }

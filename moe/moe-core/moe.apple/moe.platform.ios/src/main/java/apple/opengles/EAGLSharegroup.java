@@ -59,18 +59,6 @@ public class EAGLSharegroup extends NSObject {
     public static native EAGLSharegroup alloc();
 
     @Generated
-    @Selector("debugLabel")
-    public native String debugLabel();
-
-    @Generated
-    @Selector("init")
-    public native EAGLSharegroup init();
-
-    @Generated
-    @Selector("setDebugLabel:")
-    public native void setDebugLabel(String value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class EAGLSharegroup extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("debugLabel")
+    public native String debugLabel();
+
+    @Generated
+    @Selector("init")
+    public native EAGLSharegroup init();
+
+    @Generated
+    @Selector("setDebugLabel:")
+    public native void setDebugLabel(String value);
 }

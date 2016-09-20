@@ -56,99 +56,6 @@ public class NSConditionLock extends NSObject implements NSLocking {
     @Selector("alloc")
     public static native NSConditionLock alloc();
 
-    /**
-     * condition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instp/NSConditionLock/condition">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("condition")
-    @NInt
-    public native long condition();
-
-    @Generated
-    @Selector("init")
-    public native NSConditionLock init();
-
-    /**
-     * initWithCondition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/initWithCondition:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithCondition:")
-    public native NSConditionLock initWithCondition(@NInt long condition);
-
-    @Generated
-    @Selector("lock")
-    public native void lock();
-
-    /**
-     * lockBeforeDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/lockBeforeDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lockBeforeDate:")
-    public native boolean lockBeforeDate(NSDate limit);
-
-    /**
-     * lockWhenCondition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/lockWhenCondition:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lockWhenCondition:")
-    public native void lockWhenCondition(@NInt long condition);
-
-    /**
-     * lockWhenCondition:beforeDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/lockWhenCondition:beforeDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lockWhenCondition:beforeDate:")
-    public native boolean lockWhenConditionBeforeDate(@NInt long condition, NSDate limit);
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instp/NSConditionLock/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instp/NSConditionLock/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setName:")
-    public native void setName(String value);
-
-    /**
-     * tryLock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/tryLock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tryLock")
-    public native boolean tryLock();
-
-    /**
-     * tryLockWhenCondition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/tryLockWhenCondition:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("tryLockWhenCondition:")
-    public native boolean tryLockWhenCondition(@NInt long condition);
-
-    @Generated
-    @Selector("unlock")
-    public native void unlock();
-
-    /**
-     * unlockWithCondition:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/unlockWithCondition:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unlockWithCondition:")
-    public native void unlockWithCondition(@NInt long condition);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -248,4 +155,97 @@ public class NSConditionLock extends NSObject implements NSLocking {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * condition</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instp/NSConditionLock/condition">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("condition")
+    @NInt
+    public native long condition();
+
+    @Generated
+    @Selector("init")
+    public native NSConditionLock init();
+
+    /**
+     * initWithCondition:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/initWithCondition:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithCondition:")
+    public native NSConditionLock initWithCondition(@NInt long condition);
+
+    @Generated
+    @Selector("lock")
+    public native void lock();
+
+    /**
+     * lockBeforeDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/lockBeforeDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lockBeforeDate:")
+    public native boolean lockBeforeDate(NSDate limit);
+
+    /**
+     * lockWhenCondition:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/lockWhenCondition:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lockWhenCondition:")
+    public native void lockWhenCondition(@NInt long condition);
+
+    /**
+     * lockWhenCondition:beforeDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/lockWhenCondition:beforeDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lockWhenCondition:beforeDate:")
+    public native boolean lockWhenConditionBeforeDate(@NInt long condition, NSDate limit);
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instp/NSConditionLock/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instp/NSConditionLock/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
+
+    /**
+     * tryLock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/tryLock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tryLock")
+    public native boolean tryLock();
+
+    /**
+     * tryLockWhenCondition:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/tryLockWhenCondition:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("tryLockWhenCondition:")
+    public native boolean tryLockWhenCondition(@NInt long condition);
+
+    @Generated
+    @Selector("unlock")
+    public native void unlock();
+
+    /**
+     * unlockWithCondition:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/index.html#//apple_ref/occ/instm/NSConditionLock/unlockWithCondition:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unlockWithCondition:")
+    public native void unlockWithCondition(@NInt long condition);
 }

@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class EKCalendarEventAvailabilityMask {
-    @Generated
-    private EKCalendarEventAvailabilityMask() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long Busy = 0x0000000000000001L;
     @Generated @NUInt public static final long Free = 0x0000000000000002L;
     @Generated @NUInt public static final long Tentative = 0x0000000000000004L;
     @Generated @NUInt public static final long Unavailable = 0x0000000000000008L;
+
+    @Generated
+    private EKCalendarEventAvailabilityMask() {
+    }
 }

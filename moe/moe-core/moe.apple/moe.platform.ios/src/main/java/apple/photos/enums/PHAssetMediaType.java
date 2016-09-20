@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHAssetMediaType {
-    @Generated
-    private PHAssetMediaType() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Image = 0x0000000000000001L;
     @Generated @NInt public static final long Video = 0x0000000000000002L;
     @Generated @NInt public static final long Audio = 0x0000000000000003L;
+
+    @Generated
+    private PHAssetMediaType() {
+    }
 }

@@ -33,11 +33,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CFRunLoopSourceContext1 extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CFRunLoopSourceContext1() {
@@ -70,79 +70,29 @@ public final class CFRunLoopSourceContext1 extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_retain {
-        @Generated
-        ConstVoidPtr call_retain(ConstVoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_release {
-        @Generated
-        void call_release(ConstVoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_copyDescription {
-        @Generated
-        VoidPtr call_copyDescription(ConstVoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setEqual(@FunctionPtr(name = "call_equal") Function_equal value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_equal {
-        @Generated
-        byte call_equal(ConstVoidPtr arg0, ConstVoidPtr arg1);
-    }
 
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setHash(@FunctionPtr(name = "call_hash") Function_hash value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_hash {
-        @Generated
-        @NUInt
-        long call_hash(ConstVoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void setGetPort(@FunctionPtr(name = "call_getPort") Function_getPort value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getPort {
-        @Generated
-        int call_getPort(VoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void setPerform(@FunctionPtr(name = "call_perform") Function_perform value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_perform {
-        @Generated
-        VoidPtr call_perform(VoidPtr arg0, @NInt long arg1, VoidPtr arg2, VoidPtr arg3);
-    }
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -178,4 +128,54 @@ public final class CFRunLoopSourceContext1 extends StructObject {
     @StructureField(order = 8, isGetter = true)
     @FunctionPtr(name = "call_perform")
     public native Function_perform perform();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_retain {
+        @Generated
+        ConstVoidPtr call_retain(ConstVoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_release {
+        @Generated
+        void call_release(ConstVoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_copyDescription {
+        @Generated
+        VoidPtr call_copyDescription(ConstVoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_equal {
+        @Generated
+        byte call_equal(ConstVoidPtr arg0, ConstVoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_hash {
+        @Generated
+        @NUInt
+        long call_hash(ConstVoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getPort {
+        @Generated
+        int call_getPort(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_perform {
+        @Generated
+        VoidPtr call_perform(VoidPtr arg0, @NInt long arg1, VoidPtr arg2, VoidPtr arg3);
+    }
 }

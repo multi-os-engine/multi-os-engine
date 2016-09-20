@@ -58,14 +58,6 @@ public class NSDataDetector extends NSRegularExpression {
     public static native NSDataDetector alloc();
 
     /**
-     * checkingTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDataDetector_Class/index.html#//apple_ref/occ/instp/NSDataDetector/checkingTypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("checkingTypes")
-    public native long checkingTypes();
-
-    /**
      * dataDetectorWithTypes:error:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDataDetector_Class/index.html#//apple_ref/occ/clm/NSDataDetector/dataDetectorWithTypes:error:">iOS Dev Center</a>
      */
@@ -74,29 +66,9 @@ public class NSDataDetector extends NSRegularExpression {
     public static native NSDataDetector dataDetectorWithTypesError(long checkingTypes, Ptr<NSError> error);
 
     @Generated
-    @Selector("init")
-    public native NSDataDetector init();
-
-    @Generated
-    @Selector("initWithPattern:options:error:")
-    public native NSDataDetector initWithPatternOptionsError(String pattern, @NUInt long options, Ptr<NSError> error);
-
-    /**
-     * initWithTypes:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDataDetector_Class/index.html#//apple_ref/occ/instm/NSDataDetector/initWithTypes:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTypes:error:")
-    public native NSDataDetector initWithTypesError(long checkingTypes, Ptr<NSError> error);
-
-    @Generated
     @Selector("regularExpressionWithPattern:options:error:")
     public static native NSRegularExpression regularExpressionWithPatternOptionsError(String pattern,
             @NUInt long options, Ptr<NSError> error);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSDataDetector initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -206,13 +178,41 @@ public class NSDataDetector extends NSRegularExpression {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * checkingTypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDataDetector_Class/index.html#//apple_ref/occ/instp/NSDataDetector/checkingTypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("checkingTypes")
+    public native long checkingTypes();
+
+    @Generated
+    @Selector("init")
+    public native NSDataDetector init();
+
+    @Generated
+    @Selector("initWithPattern:options:error:")
+    public native NSDataDetector initWithPatternOptionsError(String pattern, @NUInt long options, Ptr<NSError> error);
+
+    /**
+     * initWithTypes:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSDataDetector_Class/index.html#//apple_ref/occ/instm/NSDataDetector/initWithTypes:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTypes:error:")
+    public native NSDataDetector initWithTypesError(long checkingTypes, Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSDataDetector initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

@@ -35,11 +35,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class MIDIDriverInterface extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public MIDIDriverInterface() {
@@ -63,134 +63,45 @@ public final class MIDIDriverInterface extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setQueryInterface(@FunctionPtr(name = "call_QueryInterface") Function_QueryInterface value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_QueryInterface {
-        @Generated
-        int call_QueryInterface(VoidPtr arg0, @ByValue CFUUIDBytes arg1,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setAddRef(@FunctionPtr(name = "call_AddRef") Function_AddRef value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AddRef {
-        @Generated
-        int call_AddRef(VoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRelease(@FunctionPtr(name = "call_Release") Function_Release value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_Release {
-        @Generated
-        int call_Release(VoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setFindDevices(@FunctionPtr(name = "call_FindDevices") Function_FindDevices value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_FindDevices {
-        @Generated
-        int call_FindDevices(
-                @ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
-                int arg1);
-    }
 
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setStart(@FunctionPtr(name = "call_Start") Function_Start value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_Start {
-        @Generated
-        int call_Start(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
-                int arg1);
-    }
-
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setStop(@FunctionPtr(name = "call_Stop") Function_Stop value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_Stop {
-        @Generated
-        int call_Stop(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0);
-    }
 
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void setConfigure(@FunctionPtr(name = "call_Configure") Function_Configure value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_Configure {
-        @Generated
-        int call_Configure(
-                @ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
-                int arg1);
-    }
-
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void setSend(@FunctionPtr(name = "call_Send") Function_Send value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_Send {
-        @Generated
-        int call_Send(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg1, VoidPtr arg2,
-                VoidPtr arg3);
-    }
 
     @Generated
     @StructureField(order = 9, isGetter = false)
     public native void setEnableSource(@FunctionPtr(name = "call_EnableSource") Function_EnableSource value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_EnableSource {
-        @Generated
-        int call_EnableSource(
-                @ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
-                int arg1, byte arg2);
-    }
-
     @Generated
     @StructureField(order = 10, isGetter = false)
     public native void setFlush(@FunctionPtr(name = "call_Flush") Function_Flush value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_Flush {
-        @Generated
-        int call_Flush(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
-                int arg1, VoidPtr arg2, VoidPtr arg3);
-    }
-
     @Generated
     @StructureField(order = 11, isGetter = false)
     public native void setMonitor(@FunctionPtr(name = "call_Monitor") Function_Monitor value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_Monitor {
-        @Generated
-        int call_Monitor(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
-                int arg1, @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg2);
-    }
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -246,4 +157,93 @@ public final class MIDIDriverInterface extends StructObject {
     @StructureField(order = 11, isGetter = true)
     @FunctionPtr(name = "call_Monitor")
     public native Function_Monitor Monitor();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_QueryInterface {
+        @Generated
+        int call_QueryInterface(VoidPtr arg0, @ByValue CFUUIDBytes arg1,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AddRef {
+        @Generated
+        int call_AddRef(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_Release {
+        @Generated
+        int call_Release(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_FindDevices {
+        @Generated
+        int call_FindDevices(
+                @ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
+                int arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_Start {
+        @Generated
+        int call_Start(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
+                int arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_Stop {
+        @Generated
+        int call_Stop(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_Configure {
+        @Generated
+        int call_Configure(
+                @ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
+                int arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_Send {
+        @Generated
+        int call_Send(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg1, VoidPtr arg2,
+                VoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_EnableSource {
+        @Generated
+        int call_EnableSource(
+                @ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
+                int arg1, byte arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_Flush {
+        @Generated
+        int call_Flush(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
+                int arg1, VoidPtr arg2, VoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_Monitor {
+        @Generated
+        int call_Monitor(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
+                int arg1, @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg2);
+    }
 }

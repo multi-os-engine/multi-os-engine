@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNSceneSourceStatus {
-    @Generated
-    private SCNSceneSourceStatus() {
-    }
-
     @Generated @NInt public static final long Error = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long Parsing = 0x0000000000000004L;
     @Generated @NInt public static final long Validating = 0x0000000000000008L;
     @Generated @NInt public static final long Processing = 0x000000000000000CL;
     @Generated @NInt public static final long Complete = 0x0000000000000010L;
+
+    @Generated
+    private SCNSceneSourceStatus() {
+    }
 }

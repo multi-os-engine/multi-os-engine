@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSPointerFunctionsOptions {
-    @Generated
-    private NSPointerFunctionsOptions() {
-    }
-
     @Generated @NUInt public static final long StrongMemory = 0x0000000000000000L;
     @Generated @NUInt public static final long OpaqueMemory = 0x0000000000000002L;
     @Generated @NUInt public static final long MallocMemory = 0x0000000000000003L;
@@ -37,4 +33,8 @@ public final class NSPointerFunctionsOptions {
     @Generated @NUInt public static final long StructPersonality = 0x0000000000000400L;
     @Generated @NUInt public static final long IntegerPersonality = 0x0000000000000500L;
     @Generated @NUInt public static final long CopyIn = 0x0000000000010000L;
+
+    @Generated
+    private NSPointerFunctionsOptions() {
+    }
 }

@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSSortOptions {
+    @Generated @NUInt public static final long Concurrent = 0x0000000000000001L;
+    @Generated @NUInt public static final long Stable = 0x0000000000000010L;
+
     @Generated
     private NSSortOptions() {
     }
-
-    @Generated @NUInt public static final long Concurrent = 0x0000000000000001L;
-    @Generated @NUInt public static final long Stable = 0x0000000000000010L;
 }

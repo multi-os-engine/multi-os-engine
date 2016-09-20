@@ -61,15 +61,6 @@ public class UIFont extends NSObject implements NSCopying {
     public static native UIFont alloc();
 
     /**
-     * ascender</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/ascender">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ascender")
-    @NFloat
-    public native double ascender();
-
-    /**
      * boldSystemFontOfSize:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/clm/UIFont/boldSystemFontOfSize:">iOS Dev Center</a>
      */
@@ -87,60 +78,12 @@ public class UIFont extends NSObject implements NSCopying {
     public static native double buttonFontSize();
 
     /**
-     * capHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/capHeight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("capHeight")
-    @NFloat
-    public native double capHeight();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * descender</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/descender">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("descender")
-    @NFloat
-    public native double descender();
-
-    /**
-     * familyName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/familyName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("familyName")
-    public native String familyName();
-
-    /**
      * familyNames</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/clm/UIFont/familyNames">iOS Dev Center</a>
      */
     @Generated
     @Selector("familyNames")
     public static native NSArray<String> familyNames();
-
-    /**
-     * fontDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instm/UIFont/fontDescriptor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fontDescriptor")
-    public native UIFontDescriptor fontDescriptor();
-
-    /**
-     * fontName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/fontName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fontName")
-    public native String fontName();
 
     /**
      * fontNamesForFamilyName:</br>
@@ -167,18 +110,6 @@ public class UIFont extends NSObject implements NSCopying {
     public static native UIFont fontWithNameSize(String fontName, @NFloat double fontSize);
 
     /**
-     * fontWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instm/UIFont/fontWithSize:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fontWithSize:")
-    public native UIFont fontWithSize(@NFloat double fontSize);
-
-    @Generated
-    @Selector("init")
-    public native UIFont init();
-
-    /**
      * italicSystemFontOfSize:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/clm/UIFont/italicSystemFontOfSize:">iOS Dev Center</a>
      */
@@ -194,33 +125,6 @@ public class UIFont extends NSObject implements NSCopying {
     @Selector("labelFontSize")
     @NFloat
     public static native double labelFontSize();
-
-    /**
-     * leading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/leading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("leading")
-    @NFloat
-    public native double leading();
-
-    /**
-     * lineHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/lineHeight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lineHeight")
-    @NFloat
-    public native double lineHeight();
-
-    /**
-     * pointSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/pointSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pointSize")
-    @NFloat
-    public native double pointSize();
 
     /**
      * preferredFontForTextStyle:</br>
@@ -263,15 +167,6 @@ public class UIFont extends NSObject implements NSCopying {
     @Selector("systemFontSize")
     @NFloat
     public static native double systemFontSize();
-
-    /**
-     * xHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/xHeight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("xHeight")
-    @NFloat
-    public native double xHeight();
 
     /**
      * monospacedDigitSystemFontOfSize:weight:</br>
@@ -380,4 +275,109 @@ public class UIFont extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * ascender</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/ascender">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ascender")
+    @NFloat
+    public native double ascender();
+
+    /**
+     * capHeight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/capHeight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("capHeight")
+    @NFloat
+    public native double capHeight();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * descender</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/descender">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("descender")
+    @NFloat
+    public native double descender();
+
+    /**
+     * familyName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/familyName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("familyName")
+    public native String familyName();
+
+    /**
+     * fontDescriptor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instm/UIFont/fontDescriptor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fontDescriptor")
+    public native UIFontDescriptor fontDescriptor();
+
+    /**
+     * fontName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/fontName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fontName")
+    public native String fontName();
+
+    /**
+     * fontWithSize:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instm/UIFont/fontWithSize:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fontWithSize:")
+    public native UIFont fontWithSize(@NFloat double fontSize);
+
+    @Generated
+    @Selector("init")
+    public native UIFont init();
+
+    /**
+     * leading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/leading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("leading")
+    @NFloat
+    public native double leading();
+
+    /**
+     * lineHeight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/lineHeight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lineHeight")
+    @NFloat
+    public native double lineHeight();
+
+    /**
+     * pointSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/pointSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pointSize")
+    @NFloat
+    public native double pointSize();
+
+    /**
+     * xHeight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/index.html#//apple_ref/occ/instp/UIFont/xHeight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("xHeight")
+    @NFloat
+    public native double xHeight();
 }

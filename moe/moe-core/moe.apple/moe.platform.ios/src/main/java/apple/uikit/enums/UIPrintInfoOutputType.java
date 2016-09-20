@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPrintInfoOutputType {
-    @Generated
-    private UIPrintInfoOutputType() {
-    }
-
     @Generated @NInt public static final long General = 0x0000000000000000L;
     @Generated @NInt public static final long Photo = 0x0000000000000001L;
     @Generated @NInt public static final long Grayscale = 0x0000000000000002L;
     @Generated @NInt public static final long PhotoGrayscale = 0x0000000000000003L;
+
+    @Generated
+    private UIPrintInfoOutputType() {
+    }
 }

@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGImagePropertyOrientation {
-    @Generated
-    private CGImagePropertyOrientation() {
-    }
-
     @Generated public static final int Up = 0x00000001;
     @Generated public static final int UpMirrored = 0x00000002;
     @Generated public static final int Down = 0x00000003;
@@ -32,4 +28,8 @@ public final class CGImagePropertyOrientation {
     @Generated public static final int Right = 0x00000006;
     @Generated public static final int RightMirrored = 0x00000007;
     @Generated public static final int Left = 0x00000008;
+
+    @Generated
+    private CGImagePropertyOrientation() {
+    }
 }

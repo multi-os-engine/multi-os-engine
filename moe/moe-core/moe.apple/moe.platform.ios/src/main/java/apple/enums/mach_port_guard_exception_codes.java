@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class mach_port_guard_exception_codes {
-    @Generated
-    private mach_port_guard_exception_codes() {
-    }
-
     @Generated public static final int DESTROY = 0x00000001;
     @Generated public static final int MOD_REFS = 0x00000002;
     @Generated public static final int SET_CONTEXT = 0x00000004;
     @Generated public static final int UNGUARDED = 0x00000008;
     @Generated public static final int INCORRECT_GUARD = 0x00000010;
+
+    @Generated
+    private mach_port_guard_exception_codes() {
+    }
 }

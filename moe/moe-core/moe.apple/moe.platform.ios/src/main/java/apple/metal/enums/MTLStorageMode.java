@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLStorageMode {
+    @Generated @NUInt public static final long Shared = 0x0000000000000000L;
+    @Generated @NUInt public static final long Private = 0x0000000000000002L;
+
     @Generated
     private MTLStorageMode() {
     }
-
-    @Generated @NUInt public static final long Shared = 0x0000000000000000L;
-    @Generated @NUInt public static final long Private = 0x0000000000000002L;
 }

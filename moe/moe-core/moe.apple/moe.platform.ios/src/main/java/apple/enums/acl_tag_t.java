@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class acl_tag_t {
-    @Generated
-    private acl_tag_t() {
-    }
-
     @Generated public static final int ACL_UNDEFINED_TAG = 0x00000000;
     @Generated public static final int ACL_EXTENDED_ALLOW = 0x00000001;
     @Generated public static final int ACL_EXTENDED_DENY = 0x00000002;
+
+    @Generated
+    private acl_tag_t() {
+    }
 }

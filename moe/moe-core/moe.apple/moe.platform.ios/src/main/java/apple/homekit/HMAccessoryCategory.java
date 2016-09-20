@@ -59,18 +59,6 @@ public class HMAccessoryCategory extends NSObject {
     public static native HMAccessoryCategory alloc();
 
     @Generated
-    @Selector("categoryType")
-    public native String categoryType();
-
-    @Generated
-    @Selector("init")
-    public native HMAccessoryCategory init();
-
-    @Generated
-    @Selector("localizedDescription")
-    public native String localizedDescription();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class HMAccessoryCategory extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("categoryType")
+    public native String categoryType();
+
+    @Generated
+    @Selector("init")
+    public native HMAccessoryCategory init();
+
+    @Generated
+    @Selector("localizedDescription")
+    public native String localizedDescription();
 }

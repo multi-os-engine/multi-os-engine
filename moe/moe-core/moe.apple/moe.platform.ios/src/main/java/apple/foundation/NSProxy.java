@@ -57,6 +57,14 @@ public class NSProxy extends ObjCObject implements NSObject {
     @Selector("alloc")
     public static native NSProxy alloc();
 
+    /**
+     * respondsToSelector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProxy_Class/index.html#//apple_ref/occ/clm/NSProxy/respondsToSelector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("respondsToSelector:")
+    public static native boolean respondsToSelector_static(SEL aSelector);
+
     @Generated
     @Selector("class")
     public native Class class_objc();
@@ -137,14 +145,6 @@ public class NSProxy extends ObjCObject implements NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object performSelectorWithObjectWithObject(SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object object1, @Mapped(ObjCObjectMapper.class) Object object2);
-
-    /**
-     * respondsToSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSProxy_Class/index.html#//apple_ref/occ/clm/NSProxy/respondsToSelector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("respondsToSelector:")
-    public static native boolean respondsToSelector_static(SEL aSelector);
 
     @Generated
     @Selector("respondsToSelector:")

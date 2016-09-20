@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSGlyphProperty {
-    @Generated
-    private NSGlyphProperty() {
-    }
-
     @Generated @NInt public static final long Null = 0x0000000000000001L;
     @Generated @NInt public static final long ControlCharacter = 0x0000000000000002L;
     @Generated @NInt public static final long Elastic = 0x0000000000000004L;
     @Generated @NInt public static final long NonBaseCharacter = 0x0000000000000008L;
+
+    @Generated
+    private NSGlyphProperty() {
+    }
 }

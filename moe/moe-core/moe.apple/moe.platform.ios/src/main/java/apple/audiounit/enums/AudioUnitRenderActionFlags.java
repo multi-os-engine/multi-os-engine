@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioUnitRenderActionFlags {
-    @Generated
-    private AudioUnitRenderActionFlags() {
-    }
-
     @Generated public static final int UnitRenderAction_PreRender = 0x00000004;
     @Generated public static final int UnitRenderAction_PostRender = 0x00000008;
     @Generated public static final int UnitRenderAction_OutputIsSilence = 0x00000010;
@@ -32,4 +28,8 @@ public final class AudioUnitRenderActionFlags {
     @Generated public static final int OfflineUnitRenderAction_Complete = 0x00000080;
     @Generated public static final int UnitRenderAction_PostRenderError = 0x00000100;
     @Generated public static final int UnitRenderAction_DoNotCheckRenderArgs = 0x00000200;
+
+    @Generated
+    private AudioUnitRenderActionFlags() {
+    }
 }

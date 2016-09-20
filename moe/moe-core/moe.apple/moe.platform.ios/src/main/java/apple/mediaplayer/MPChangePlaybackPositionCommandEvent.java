@@ -59,14 +59,6 @@ public class MPChangePlaybackPositionCommandEvent extends MPRemoteCommandEvent {
     public static native MPChangePlaybackPositionCommandEvent alloc();
 
     @Generated
-    @Selector("init")
-    public native MPChangePlaybackPositionCommandEvent init();
-
-    @Generated
-    @Selector("positionTime")
-    public native double positionTime();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -165,4 +157,12 @@ public class MPChangePlaybackPositionCommandEvent extends MPRemoteCommandEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPChangePlaybackPositionCommandEvent init();
+
+    @Generated
+    @Selector("positionTime")
+    public native double positionTime();
 }

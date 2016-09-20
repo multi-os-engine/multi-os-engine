@@ -56,82 +56,10 @@ public class HMZone extends NSObject {
         super(peer);
     }
 
-    /**
-     * addRoom:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instm/HMZone/addRoom:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addRoom:completionHandler:")
-    public native void addRoomCompletionHandler(HMRoom room,
-            @ObjCBlock(name = "call_addRoomCompletionHandler") Block_addRoomCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addRoomCompletionHandler {
-        @Generated
-        void call_addRoomCompletionHandler(NSError arg0);
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native HMZone alloc();
-
-    @Generated
-    @Selector("init")
-    public native HMZone init();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instp/HMZone/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * removeRoom:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instm/HMZone/removeRoom:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeRoom:completionHandler:")
-    public native void removeRoomCompletionHandler(HMRoom room,
-            @ObjCBlock(name = "call_removeRoomCompletionHandler") Block_removeRoomCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_removeRoomCompletionHandler {
-        @Generated
-        void call_removeRoomCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * rooms</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instp/HMZone/rooms">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rooms")
-    public native NSArray<? extends HMRoom> rooms();
-
-    /**
-     * updateName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instm/HMZone/updateName:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updateNameCompletionHandler {
-        @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
-    }
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -232,4 +160,76 @@ public class HMZone extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addRoom:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instm/HMZone/addRoom:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addRoom:completionHandler:")
+    public native void addRoomCompletionHandler(HMRoom room,
+            @ObjCBlock(name = "call_addRoomCompletionHandler") Block_addRoomCompletionHandler completion);
+
+    @Generated
+    @Selector("init")
+    public native HMZone init();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instp/HMZone/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * removeRoom:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instm/HMZone/removeRoom:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeRoom:completionHandler:")
+    public native void removeRoomCompletionHandler(HMRoom room,
+            @ObjCBlock(name = "call_removeRoomCompletionHandler") Block_removeRoomCompletionHandler completion);
+
+    /**
+     * rooms</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instp/HMZone/rooms">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rooms")
+    public native NSArray<? extends HMRoom> rooms();
+
+    /**
+     * updateName:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/instm/HMZone/updateName:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updateName:completionHandler:")
+    public native void updateNameCompletionHandler(String name,
+            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+
+    @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addRoomCompletionHandler {
+        @Generated
+        void call_addRoomCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeRoomCompletionHandler {
+        @Generated
+        void call_removeRoomCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateNameCompletionHandler {
+        @Generated
+        void call_updateNameCompletionHandler(NSError arg0);
+    }
 }

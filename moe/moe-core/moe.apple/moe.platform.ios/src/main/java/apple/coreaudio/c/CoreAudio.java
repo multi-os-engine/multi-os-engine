@@ -28,6 +28,8 @@ import org.moe.natj.general.ann.Runtime;
 @Library("CoreAudio")
 @Runtime(CRuntime.class)
 public final class CoreAudio {
+    @Generated public static final double kAudioStreamAnyRate = 0x0000000000000000L;
+
     static {
         NatJ.register();
     }
@@ -40,6 +42,4 @@ public final class CoreAudio {
     @Inline
     @CFunction
     public static native int AudioChannelLayoutTag_GetNumberOfChannels(int inLayoutTag);
-
-    @Generated public static final double kAudioStreamAnyRate = 0x0000000000000000L;
 }

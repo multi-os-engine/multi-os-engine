@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIInterpolatingMotionEffectType {
+    @Generated @NInt public static final long HorizontalAxis = 0x0000000000000000L;
+    @Generated @NInt public static final long VerticalAxis = 0x0000000000000001L;
+
     @Generated
     private UIInterpolatingMotionEffectType() {
     }
-
-    @Generated @NInt public static final long HorizontalAxis = 0x0000000000000000L;
-    @Generated @NInt public static final long VerticalAxis = 0x0000000000000001L;
 }

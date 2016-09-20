@@ -54,22 +54,6 @@ public class SKPaymentQueue extends NSObject {
         super(peer);
     }
 
-    /**
-     * addPayment:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/addPayment:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addPayment:")
-    public native void addPayment(SKPayment payment);
-
-    /**
-     * addTransactionObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/addTransactionObserver:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addTransactionObserver:")
-    public native void addTransactionObserver(@Mapped(ObjCObjectMapper.class) SKPaymentTransactionObserver observer);
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -84,14 +68,6 @@ public class SKPaymentQueue extends NSObject {
     public static native boolean canMakePayments();
 
     /**
-     * cancelDownloads:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelDownloads:")
-    public native void cancelDownloads(NSArray<? extends SKDownload> downloads);
-
-    /**
      * defaultQueue</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/clm/SKPaymentQueue/defaultQueue">iOS Dev Center</a>
      */
@@ -99,74 +75,6 @@ public class SKPaymentQueue extends NSObject {
     @Selector("defaultQueue")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object defaultQueue();
-
-    /**
-     * finishTransaction:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/finishTransaction:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("finishTransaction:")
-    public native void finishTransaction(SKPaymentTransaction transaction);
-
-    @Generated
-    @Selector("init")
-    public native SKPaymentQueue init();
-
-    /**
-     * pauseDownloads:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/pauseDownloads:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pauseDownloads:")
-    public native void pauseDownloads(NSArray<? extends SKDownload> downloads);
-
-    /**
-     * removeTransactionObserver:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/removeTransactionObserver:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeTransactionObserver:")
-    public native void removeTransactionObserver(@Mapped(ObjCObjectMapper.class) SKPaymentTransactionObserver observer);
-
-    /**
-     * restoreCompletedTransactions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/restoreCompletedTransactions">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("restoreCompletedTransactions")
-    public native void restoreCompletedTransactions();
-
-    /**
-     * restoreCompletedTransactionsWithApplicationUsername:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/restoreCompletedTransactionsWithApplicationUsername:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("restoreCompletedTransactionsWithApplicationUsername:")
-    public native void restoreCompletedTransactionsWithApplicationUsername(String username);
-
-    /**
-     * resumeDownloads:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/resumeDownloads:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resumeDownloads:")
-    public native void resumeDownloads(NSArray<? extends SKDownload> downloads);
-
-    /**
-     * startDownloads:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/startDownloads:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startDownloads:")
-    public native void startDownloads(NSArray<? extends SKDownload> downloads);
-
-    /**
-     * transactions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instp/SKPaymentQueue/transactions">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transactions")
-    public native NSArray<? extends SKPaymentTransaction> transactions();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -267,4 +175,96 @@ public class SKPaymentQueue extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addPayment:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/addPayment:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addPayment:")
+    public native void addPayment(SKPayment payment);
+
+    /**
+     * addTransactionObserver:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/addTransactionObserver:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addTransactionObserver:")
+    public native void addTransactionObserver(@Mapped(ObjCObjectMapper.class) SKPaymentTransactionObserver observer);
+
+    /**
+     * cancelDownloads:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelDownloads:")
+    public native void cancelDownloads(NSArray<? extends SKDownload> downloads);
+
+    /**
+     * finishTransaction:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/finishTransaction:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("finishTransaction:")
+    public native void finishTransaction(SKPaymentTransaction transaction);
+
+    @Generated
+    @Selector("init")
+    public native SKPaymentQueue init();
+
+    /**
+     * pauseDownloads:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/pauseDownloads:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pauseDownloads:")
+    public native void pauseDownloads(NSArray<? extends SKDownload> downloads);
+
+    /**
+     * removeTransactionObserver:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/removeTransactionObserver:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeTransactionObserver:")
+    public native void removeTransactionObserver(@Mapped(ObjCObjectMapper.class) SKPaymentTransactionObserver observer);
+
+    /**
+     * restoreCompletedTransactions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/restoreCompletedTransactions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("restoreCompletedTransactions")
+    public native void restoreCompletedTransactions();
+
+    /**
+     * restoreCompletedTransactionsWithApplicationUsername:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/restoreCompletedTransactionsWithApplicationUsername:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("restoreCompletedTransactionsWithApplicationUsername:")
+    public native void restoreCompletedTransactionsWithApplicationUsername(String username);
+
+    /**
+     * resumeDownloads:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/resumeDownloads:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resumeDownloads:")
+    public native void resumeDownloads(NSArray<? extends SKDownload> downloads);
+
+    /**
+     * startDownloads:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instm/SKPaymentQueue/startDownloads:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startDownloads:")
+    public native void startDownloads(NSArray<? extends SKDownload> downloads);
+
+    /**
+     * transactions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/index.html#//apple_ref/occ/instp/SKPaymentQueue/transactions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transactions")
+    public native NSArray<? extends SKPaymentTransaction> transactions();
 }

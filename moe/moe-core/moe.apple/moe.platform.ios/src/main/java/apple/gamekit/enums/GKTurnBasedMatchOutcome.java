@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class GKTurnBasedMatchOutcome {
-    @Generated
-    private GKTurnBasedMatchOutcome() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Quit = 0x0000000000000001L;
     @Generated @NInt public static final long Won = 0x0000000000000002L;
@@ -36,4 +32,8 @@ public final class GKTurnBasedMatchOutcome {
     @Generated @NInt public static final long Third = 0x0000000000000008L;
     @Generated @NInt public static final long Fourth = 0x0000000000000009L;
     @Generated @NInt public static final long CustomRange = 0x0000000000FF0000L;
+
+    @Generated
+    private GKTurnBasedMatchOutcome() {
+    }
 }

@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGPathElementType {
-    @Generated
-    private CGPathElementType() {
-    }
-
     @Generated public static final int MoveToPoint = 0x00000000;
     @Generated public static final int AddLineToPoint = 0x00000001;
     @Generated public static final int AddQuadCurveToPoint = 0x00000002;
     @Generated public static final int AddCurveToPoint = 0x00000003;
     @Generated public static final int CloseSubpath = 0x00000004;
+
+    @Generated
+    private CGPathElementType() {
+    }
 }

@@ -49,6 +49,20 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Library("Foundation")
 @Runtime(CRuntime.class)
 public final class Foundation {
+    @Generated @NInt public static final long NSNotFound = org.moe.natj.general.NatJ.is64Bit() ?
+            0x7FFFFFFFFFFFFFFFL :
+            0x000000007FFFFFFFL;
+    @Generated @NUInt public static final long NSHashTableStrongMemory = 0x0000000000000000L;
+    @Generated @NUInt public static final long NSHashTableCopyIn = 0x0000000000010000L;
+    @Generated @NUInt public static final long NSHashTableObjectPointerPersonality = 0x0000000000000200L;
+    @Generated @NUInt public static final long NSHashTableWeakMemory = 0x0000000000000005L;
+    @Generated @NUInt public static final long NSMapTableStrongMemory = 0x0000000000000000L;
+    @Generated @NUInt public static final long NSMapTableCopyIn = 0x0000000000010000L;
+    @Generated @NUInt public static final long NSMapTableObjectPointerPersonality = 0x0000000000000200L;
+    @Generated @NUInt public static final long NSMapTableWeakMemory = 0x0000000000000005L;
+    @Generated @NInt public static final long NSOperationQueueDefaultMaxConcurrentOperationCount = 0xFFFFFFFFFFFFFFFFL;
+    @Generated @NUInt public static final long NSUndoCloseGroupingRunLoopOrdering = 0x0000000000055730L;
+
     static {
         NatJ.register();
     }
@@ -804,13 +818,6 @@ public final class Foundation {
     @CFunction
     public static native void NSSetUncaughtExceptionHandler(
             @FunctionPtr(name = "call_NSSetUncaughtExceptionHandler") Function_NSSetUncaughtExceptionHandler arg1);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_NSSetUncaughtExceptionHandler {
-        @Generated
-        void call_NSSetUncaughtExceptionHandler(NSException arg0);
-    }
 
     /**
      * NSUserName</br>
@@ -3234,13 +3241,6 @@ public final class Foundation {
     @FunctionPtr(name = "call_NSGetUncaughtExceptionHandler_ret")
     public static native Function_NSGetUncaughtExceptionHandler_ret NSGetUncaughtExceptionHandler();
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_NSGetUncaughtExceptionHandler_ret {
-        @Generated
-        void call_NSGetUncaughtExceptionHandler_ret(NSException arg0);
-    }
-
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3405,20 +3405,6 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLFileProtectionCompleteUntilFirstUserAuthentication();
 
-    @Generated @NInt public static final long NSNotFound = org.moe.natj.general.NatJ.is64Bit() ?
-            0x7FFFFFFFFFFFFFFFL :
-            0x000000007FFFFFFFL;
-    @Generated @NUInt public static final long NSHashTableStrongMemory = 0x0000000000000000L;
-    @Generated @NUInt public static final long NSHashTableCopyIn = 0x0000000000010000L;
-    @Generated @NUInt public static final long NSHashTableObjectPointerPersonality = 0x0000000000000200L;
-    @Generated @NUInt public static final long NSHashTableWeakMemory = 0x0000000000000005L;
-    @Generated @NUInt public static final long NSMapTableStrongMemory = 0x0000000000000000L;
-    @Generated @NUInt public static final long NSMapTableCopyIn = 0x0000000000010000L;
-    @Generated @NUInt public static final long NSMapTableObjectPointerPersonality = 0x0000000000000200L;
-    @Generated @NUInt public static final long NSMapTableWeakMemory = 0x0000000000000005L;
-    @Generated @NInt public static final long NSOperationQueueDefaultMaxConcurrentOperationCount = 0xFFFFFFFFFFFFFFFFL;
-    @Generated @NUInt public static final long NSUndoCloseGroupingRunLoopOrdering = 0x0000000000055730L;
-
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3433,4 +3419,18 @@ public final class Foundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUbiquitousUserDefaultsCompletedInitialSyncNotification();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_NSSetUncaughtExceptionHandler {
+        @Generated
+        void call_NSSetUncaughtExceptionHandler(NSException arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_NSGetUncaughtExceptionHandler_ret {
+        @Generated
+        void call_NSGetUncaughtExceptionHandler_ret(NSException arg0);
+    }
 }

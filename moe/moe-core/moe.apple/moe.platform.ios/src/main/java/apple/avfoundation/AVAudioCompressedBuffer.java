@@ -60,44 +60,6 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
     public static native AVAudioCompressedBuffer alloc();
 
     @Generated
-    @Selector("data")
-    public native VoidPtr data();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioCompressedBuffer init();
-
-    @Generated
-    @Selector("initWithFormat:packetCapacity:")
-    public native AVAudioCompressedBuffer initWithFormatPacketCapacity(AVAudioFormat format, int packetCapacity);
-
-    @Generated
-    @Selector("initWithFormat:packetCapacity:maximumPacketSize:")
-    public native AVAudioCompressedBuffer initWithFormatPacketCapacityMaximumPacketSize(AVAudioFormat format,
-            int packetCapacity, @NInt long maximumPacketSize);
-
-    @Generated
-    @Selector("maximumPacketSize")
-    @NInt
-    public native long maximumPacketSize();
-
-    @Generated
-    @Selector("packetCapacity")
-    public native int packetCapacity();
-
-    @Generated
-    @Selector("packetCount")
-    public native int packetCount();
-
-    @Generated
-    @Selector("packetDescriptions")
-    public native AudioStreamPacketDescription packetDescriptions();
-
-    @Generated
-    @Selector("setPacketCount:")
-    public native void setPacketCount(int value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -196,4 +158,42 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("data")
+    public native VoidPtr data();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioCompressedBuffer init();
+
+    @Generated
+    @Selector("initWithFormat:packetCapacity:")
+    public native AVAudioCompressedBuffer initWithFormatPacketCapacity(AVAudioFormat format, int packetCapacity);
+
+    @Generated
+    @Selector("initWithFormat:packetCapacity:maximumPacketSize:")
+    public native AVAudioCompressedBuffer initWithFormatPacketCapacityMaximumPacketSize(AVAudioFormat format,
+            int packetCapacity, @NInt long maximumPacketSize);
+
+    @Generated
+    @Selector("maximumPacketSize")
+    @NInt
+    public native long maximumPacketSize();
+
+    @Generated
+    @Selector("packetCapacity")
+    public native int packetCapacity();
+
+    @Generated
+    @Selector("packetCount")
+    public native int packetCount();
+
+    @Generated
+    @Selector("packetDescriptions")
+    public native AudioStreamPacketDescription packetDescriptions();
+
+    @Generated
+    @Selector("setPacketCount:")
+    public native void setPacketCount(int value);
 }

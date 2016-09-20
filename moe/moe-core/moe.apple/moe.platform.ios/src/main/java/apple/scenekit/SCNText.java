@@ -61,70 +61,10 @@ public class SCNText extends SCNGeometry {
         super(peer);
     }
 
-    /**
-     * alignmentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/alignmentMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("alignmentMode")
-    public native String alignmentMode();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native SCNText alloc();
-
-    /**
-     * chamferProfile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/chamferProfile">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("chamferProfile")
-    public native UIBezierPath chamferProfile();
-
-    /**
-     * chamferRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/chamferRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("chamferRadius")
-    @NFloat
-    public native double chamferRadius();
-
-    /**
-     * containerFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/containerFrame">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containerFrame")
-    @ByValue
-    public native CGRect containerFrame();
-
-    /**
-     * extrusionDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/extrusionDepth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("extrusionDepth")
-    @NFloat
-    public native double extrusionDepth();
-
-    /**
-     * flatness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/flatness">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("flatness")
-    @NFloat
-    public native double flatness();
-
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/font">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("font")
-    public native UIFont font();
 
     @Generated
     @Selector("geometry")
@@ -135,107 +75,6 @@ public class SCNText extends SCNGeometry {
     public static native SCNText geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
             NSArray<? extends SCNGeometryElement> elements);
 
-    @Generated
-    @Selector("init")
-    public native SCNText init();
-
-    /**
-     * wrapped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/wrapped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isWrapped")
-    public native boolean isWrapped();
-
-    /**
-     * alignmentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/alignmentMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAlignmentMode:")
-    public native void setAlignmentMode(String value);
-
-    /**
-     * chamferProfile</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/chamferProfile">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setChamferProfile:")
-    public native void setChamferProfile(UIBezierPath value);
-
-    /**
-     * chamferRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/chamferRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setChamferRadius:")
-    public native void setChamferRadius(@NFloat double value);
-
-    /**
-     * containerFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/containerFrame">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setContainerFrame:")
-    public native void setContainerFrame(@ByValue CGRect value);
-
-    /**
-     * extrusionDepth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/extrusionDepth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setExtrusionDepth:")
-    public native void setExtrusionDepth(@NFloat double value);
-
-    /**
-     * flatness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/flatness">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFlatness:")
-    public native void setFlatness(@NFloat double value);
-
-    /**
-     * font</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/font">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFont:")
-    public native void setFont(UIFont value);
-
-    /**
-     * string</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/string">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setString:")
-    public native void setString(@Mapped(ObjCObjectMapper.class) Object value);
-
-    /**
-     * truncationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/truncationMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTruncationMode:")
-    public native void setTruncationMode(String value);
-
-    /**
-     * wrapped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/wrapped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWrapped:")
-    public native void setWrapped(boolean value);
-
-    /**
-     * string</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/string">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("string")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object string();
-
     /**
      * textWithString:extrusionDepth:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/clm/SCNText/textWithString:extrusionDepth:">iOS Dev Center</a>
@@ -245,21 +84,9 @@ public class SCNText extends SCNGeometry {
     public static native SCNText textWithStringExtrusionDepth(@Mapped(ObjCObjectMapper.class) Object string,
             @NFloat double extrusionDepth);
 
-    /**
-     * truncationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/truncationMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("truncationMode")
-    public native String truncationMode();
-
     @Generated
     @Selector("geometryWithMDLMesh:")
     public static native SCNText geometryWithMDLMesh(MDLMesh mdlMesh);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNText initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -361,13 +188,186 @@ public class SCNText extends SCNGeometry {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * alignmentMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/alignmentMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("alignmentMode")
+    public native String alignmentMode();
+
+    /**
+     * chamferProfile</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/chamferProfile">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("chamferProfile")
+    public native UIBezierPath chamferProfile();
+
+    /**
+     * chamferRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/chamferRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("chamferRadius")
+    @NFloat
+    public native double chamferRadius();
+
+    /**
+     * containerFrame</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/containerFrame">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containerFrame")
+    @ByValue
+    public native CGRect containerFrame();
+
+    /**
+     * extrusionDepth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/extrusionDepth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("extrusionDepth")
+    @NFloat
+    public native double extrusionDepth();
+
+    /**
+     * flatness</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/flatness">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("flatness")
+    @NFloat
+    public native double flatness();
+
+    /**
+     * font</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/font">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("font")
+    public native UIFont font();
+
+    @Generated
+    @Selector("init")
+    public native SCNText init();
+
+    /**
+     * wrapped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/wrapped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isWrapped")
+    public native boolean isWrapped();
+
+    /**
+     * wrapped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/wrapped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWrapped:")
+    public native void setWrapped(boolean value);
+
+    /**
+     * alignmentMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/alignmentMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAlignmentMode:")
+    public native void setAlignmentMode(String value);
+
+    /**
+     * chamferProfile</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/chamferProfile">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setChamferProfile:")
+    public native void setChamferProfile(UIBezierPath value);
+
+    /**
+     * chamferRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/chamferRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setChamferRadius:")
+    public native void setChamferRadius(@NFloat double value);
+
+    /**
+     * containerFrame</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/containerFrame">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setContainerFrame:")
+    public native void setContainerFrame(@ByValue CGRect value);
+
+    /**
+     * extrusionDepth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/extrusionDepth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setExtrusionDepth:")
+    public native void setExtrusionDepth(@NFloat double value);
+
+    /**
+     * flatness</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/flatness">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFlatness:")
+    public native void setFlatness(@NFloat double value);
+
+    /**
+     * font</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/font">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFont:")
+    public native void setFont(UIFont value);
+
+    /**
+     * string</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/string">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setString:")
+    public native void setString(@Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * truncationMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/truncationMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTruncationMode:")
+    public native void setTruncationMode(String value);
+
+    /**
+     * string</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/string">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("string")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object string();
+
+    /**
+     * truncationMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNText_Class/index.html#//apple_ref/occ/instp/SCNText/truncationMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("truncationMode")
+    public native String truncationMode();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNText initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

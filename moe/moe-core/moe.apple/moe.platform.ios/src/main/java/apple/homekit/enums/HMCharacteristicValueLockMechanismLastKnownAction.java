@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HMCharacteristicValueLockMechanismLastKnownAction {
-    @Generated
-    private HMCharacteristicValueLockMechanismLastKnownAction() {
-    }
-
     @Generated @NInt public static final long SecuredUsingPhysicalMovementInterior = 0x0000000000000000L;
     @Generated @NInt public static final long UnsecuredUsingPhysicalMovementInterior = 0x0000000000000001L;
     @Generated @NInt public static final long SecuredUsingPhysicalMovementExterior = 0x0000000000000002L;
@@ -36,4 +32,8 @@ public final class HMCharacteristicValueLockMechanismLastKnownAction {
     @Generated @NInt public static final long SecuredWithAutomaticSecureTimeout = 0x0000000000000008L;
     @Generated @NInt public static final long SecuredUsingPhysicalMovement = 0x0000000000000009L;
     @Generated @NInt public static final long UnsecuredUsingPhysicalMovement = 0x000000000000000AL;
+
+    @Generated
+    private HMCharacteristicValueLockMechanismLastKnownAction() {
+    }
 }

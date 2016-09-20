@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIUserInterfaceSizeClass {
-    @Generated
-    private UIUserInterfaceSizeClass() {
-    }
-
     @Generated @NInt public static final long Unspecified = 0x0000000000000000L;
     @Generated @NInt public static final long Compact = 0x0000000000000001L;
     @Generated @NInt public static final long Regular = 0x0000000000000002L;
+
+    @Generated
+    private UIUserInterfaceSizeClass() {
+    }
 }

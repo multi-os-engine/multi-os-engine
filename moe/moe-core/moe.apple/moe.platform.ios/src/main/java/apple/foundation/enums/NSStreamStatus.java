@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSStreamStatus {
-    @Generated
-    private NSStreamStatus() {
-    }
-
     @Generated @NUInt public static final long NotOpen = 0x0000000000000000L;
     @Generated @NUInt public static final long Opening = 0x0000000000000001L;
     @Generated @NUInt public static final long Open = 0x0000000000000002L;
@@ -33,4 +29,8 @@ public final class NSStreamStatus {
     @Generated @NUInt public static final long AtEnd = 0x0000000000000005L;
     @Generated @NUInt public static final long Closed = 0x0000000000000006L;
     @Generated @NUInt public static final long Error = 0x0000000000000007L;
+
+    @Generated
+    private NSStreamStatus() {
+    }
 }

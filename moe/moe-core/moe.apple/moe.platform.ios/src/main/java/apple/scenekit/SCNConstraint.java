@@ -61,90 +61,13 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     }
 
     @Generated
-    @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNConstraint alloc();
 
     @Generated
-    @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
-
-    @Generated
-    @Selector("animationKeys")
-    public native NSArray<String> animationKeys();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * influenceFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNConstraint_Class/index.html#//apple_ref/occ/instp/SCNConstraint/influenceFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("influenceFactor")
-    @NFloat
-    public native double influenceFactor();
-
-    @Generated
-    @Selector("init")
-    public native SCNConstraint init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNConstraint initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
-
-    @Generated
-    @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
-
-    @Generated
-    @Selector("removeAllAnimations")
-    public native void removeAllAnimations();
-
-    @Generated
-    @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
-
-    @Generated
-    @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
-
-    @Generated
-    @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
-
-    /**
-     * influenceFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNConstraint_Class/index.html#//apple_ref/occ/instp/SCNConstraint/influenceFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setInfluenceFactor:")
-    public native void setInfluenceFactor(@NFloat double value);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -245,4 +168,81 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("addAnimation:forKey:")
+    public native void addAnimationForKey(CAAnimation animation, String key);
+
+    @Generated
+    @Selector("animationForKey:")
+    public native CAAnimation animationForKey(String key);
+
+    @Generated
+    @Selector("animationKeys")
+    public native NSArray<String> animationKeys();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * influenceFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNConstraint_Class/index.html#//apple_ref/occ/instp/SCNConstraint/influenceFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("influenceFactor")
+    @NFloat
+    public native double influenceFactor();
+
+    @Generated
+    @Selector("init")
+    public native SCNConstraint init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNConstraint initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("isAnimationForKeyPaused:")
+    public native boolean isAnimationForKeyPaused(String key);
+
+    @Generated
+    @Selector("pauseAnimationForKey:")
+    public native void pauseAnimationForKey(String key);
+
+    @Generated
+    @Selector("removeAllAnimations")
+    public native void removeAllAnimations();
+
+    @Generated
+    @Selector("removeAnimationForKey:")
+    public native void removeAnimationForKey(String key);
+
+    @Generated
+    @Selector("removeAnimationForKey:fadeOutDuration:")
+    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("resumeAnimationForKey:")
+    public native void resumeAnimationForKey(String key);
+
+    /**
+     * influenceFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNConstraint_Class/index.html#//apple_ref/occ/instp/SCNConstraint/influenceFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setInfluenceFactor:")
+    public native void setInfluenceFactor(@NFloat double value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

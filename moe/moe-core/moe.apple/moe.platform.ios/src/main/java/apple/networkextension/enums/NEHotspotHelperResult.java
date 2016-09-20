@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NEHotspotHelperResult {
-    @Generated
-    private NEHotspotHelperResult() {
-    }
-
     @Generated @NInt public static final long Success = 0x0000000000000000L;
     @Generated @NInt public static final long Failure = 0x0000000000000001L;
     @Generated @NInt public static final long UIRequired = 0x0000000000000002L;
@@ -32,4 +28,7 @@ public final class NEHotspotHelperResult {
     @Generated @NInt public static final long AuthenticationRequired = 0x0000000000000004L;
     @Generated @NInt public static final long UnsupportedNetwork = 0x0000000000000005L;
     @Generated @NInt public static final long TemporaryFailure = 0x0000000000000006L;
+    @Generated
+    private NEHotspotHelperResult() {
+    }
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class ALAssetOrientation {
-    @Generated
-    private ALAssetOrientation() {
-    }
-
     @Generated @NInt public static final long Up = 0x0000000000000000L;
     @Generated @NInt public static final long Down = 0x0000000000000001L;
     @Generated @NInt public static final long Left = 0x0000000000000002L;
@@ -33,4 +29,8 @@ public final class ALAssetOrientation {
     @Generated @NInt public static final long DownMirrored = 0x0000000000000005L;
     @Generated @NInt public static final long LeftMirrored = 0x0000000000000006L;
     @Generated @NInt public static final long RightMirrored = 0x0000000000000007L;
+
+    @Generated
+    private ALAssetOrientation() {
+    }
 }

@@ -62,22 +62,6 @@ public class GKScoreChallenge extends GKChallenge {
     public static native GKScoreChallenge alloc();
 
     @Generated
-    @Selector("init")
-    public native GKScoreChallenge init();
-
-    /**
-     * score</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScoreChallenge_Ref/index.html#//apple_ref/occ/instp/GKScoreChallenge/score">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("score")
-    public native GKScore score();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKScoreChallenge initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -182,13 +166,29 @@ public class GKScoreChallenge extends GKChallenge {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GKScoreChallenge init();
+
+    /**
+     * score</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKScoreChallenge_Ref/index.html#//apple_ref/occ/instp/GKScoreChallenge/score">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("score")
+    public native GKScore score();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKScoreChallenge initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

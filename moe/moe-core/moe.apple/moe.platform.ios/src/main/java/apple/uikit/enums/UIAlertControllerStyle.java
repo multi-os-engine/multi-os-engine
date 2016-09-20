@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIAlertControllerStyle {
+    @Generated @NInt public static final long ActionSheet = 0x0000000000000000L;
+    @Generated @NInt public static final long Alert = 0x0000000000000001L;
+
     @Generated
     private UIAlertControllerStyle() {
     }
-
-    @Generated @NInt public static final long ActionSheet = 0x0000000000000000L;
-    @Generated @NInt public static final long Alert = 0x0000000000000001L;
 }

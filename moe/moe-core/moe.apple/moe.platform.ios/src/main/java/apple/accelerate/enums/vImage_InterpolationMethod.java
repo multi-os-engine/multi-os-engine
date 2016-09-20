@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class vImage_InterpolationMethod {
-    @Generated
-    private vImage_InterpolationMethod() {
-    }
-
     @Generated public static final int kvImageNoInterpolation = 0x00000000;
     @Generated public static final int kvImageFullInterpolation = 0x00000001;
     @Generated public static final int kvImageHalfInterpolation = 0x00000002;
+
+    @Generated
+    private vImage_InterpolationMethod() {
+    }
 }

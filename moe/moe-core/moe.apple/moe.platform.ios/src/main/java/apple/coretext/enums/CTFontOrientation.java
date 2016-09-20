@@ -20,14 +20,14 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTFontOrientation {
-    @Generated
-    private CTFontOrientation() {
-    }
-
     @Generated public static final int OrientationDefault = 0x00000000;
     @Generated public static final int OrientationHorizontal = 0x00000001;
     @Generated public static final int OrientationVertical = 0x00000002;
     @Generated public static final int DefaultOrientation = 0x00000000;
     @Generated public static final int HorizontalOrientation = 0x00000001;
     @Generated public static final int VerticalOrientation = 0x00000002;
+
+    @Generated
+    private CTFontOrientation() {
+    }
 }

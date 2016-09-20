@@ -63,97 +63,13 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     }
 
     @Generated
-    @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native SCNTechnique alloc();
 
     @Generated
-    @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
-
-    @Generated
-    @Selector("animationKeys")
-    public native NSArray<String> animationKeys();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * dictionaryRepresentation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instp/SCNTechnique/dictionaryRepresentation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dictionaryRepresentation")
-    public native NSDictionary<String, ?> dictionaryRepresentation();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * handleBindingOfSymbol:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instm/SCNTechnique/handleBindingOfSymbol:usingBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handleBindingOfSymbol:usingBlock:")
-    public native void handleBindingOfSymbolUsingBlock(String symbol,
-            @ObjCBlock(name = "call_handleBindingOfSymbolUsingBlock") Block_handleBindingOfSymbolUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_handleBindingOfSymbolUsingBlock {
-        @Generated
-        void call_handleBindingOfSymbolUsingBlock(int arg0, int arg1, SCNNode arg2, SCNRenderer arg3);
-    }
-
-    @Generated
-    @Selector("init")
-    public native SCNTechnique init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNTechnique initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
-
-    @Generated
-    @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
-
-    @Generated
-    @Selector("removeAllAnimations")
-    public native void removeAllAnimations();
-
-    @Generated
-    @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
-
-    @Generated
-    @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
-
-    @Generated
-    @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     /**
      * techniqueBySequencingTechniques:</br>
@@ -170,24 +86,6 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Generated
     @Selector("techniqueWithDictionary:")
     public static native SCNTechnique techniqueWithDictionary(NSDictionary<String, ?> dictionary);
-
-    /**
-     * objectForKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instm/SCNTechnique/objectForKeyedSubscript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objectForKeyedSubscript:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
-
-    /**
-     * setObject:forKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instm/SCNTechnique/setObject:forKeyedSubscript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object obj,
-            @Mapped(ObjCObjectMapper.class) Object key);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -288,4 +186,106 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("addAnimation:forKey:")
+    public native void addAnimationForKey(CAAnimation animation, String key);
+
+    @Generated
+    @Selector("animationForKey:")
+    public native CAAnimation animationForKey(String key);
+
+    @Generated
+    @Selector("animationKeys")
+    public native NSArray<String> animationKeys();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * dictionaryRepresentation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instp/SCNTechnique/dictionaryRepresentation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dictionaryRepresentation")
+    public native NSDictionary<String, ?> dictionaryRepresentation();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * handleBindingOfSymbol:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instm/SCNTechnique/handleBindingOfSymbol:usingBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handleBindingOfSymbol:usingBlock:")
+    public native void handleBindingOfSymbolUsingBlock(String symbol,
+            @ObjCBlock(name = "call_handleBindingOfSymbolUsingBlock") Block_handleBindingOfSymbolUsingBlock block);
+
+    @Generated
+    @Selector("init")
+    public native SCNTechnique init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNTechnique initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("isAnimationForKeyPaused:")
+    public native boolean isAnimationForKeyPaused(String key);
+
+    @Generated
+    @Selector("pauseAnimationForKey:")
+    public native void pauseAnimationForKey(String key);
+
+    @Generated
+    @Selector("removeAllAnimations")
+    public native void removeAllAnimations();
+
+    @Generated
+    @Selector("removeAnimationForKey:")
+    public native void removeAnimationForKey(String key);
+
+    @Generated
+    @Selector("removeAnimationForKey:fadeOutDuration:")
+    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("resumeAnimationForKey:")
+    public native void resumeAnimationForKey(String key);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * objectForKeyedSubscript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instm/SCNTechnique/objectForKeyedSubscript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objectForKeyedSubscript:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
+
+    /**
+     * setObject:forKeyedSubscript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNTechnique_Class/index.html#//apple_ref/occ/instm/SCNTechnique/setObject:forKeyedSubscript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setObject:forKeyedSubscript:")
+    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object obj,
+            @Mapped(ObjCObjectMapper.class) Object key);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_handleBindingOfSymbolUsingBlock {
+        @Generated
+        void call_handleBindingOfSymbolUsingBlock(int arg0, int arg1, SCNNode arg2, SCNRenderer arg3);
+    }
 }

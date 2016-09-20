@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CKSubscriptionOptions {
-    @Generated
-    private CKSubscriptionOptions() {
-    }
-
     @Generated @NUInt public static final long OnRecordCreation = 0x0000000000000001L;
     @Generated @NUInt public static final long OnRecordUpdate = 0x0000000000000002L;
     @Generated @NUInt public static final long OnRecordDeletion = 0x0000000000000004L;
     @Generated @NUInt public static final long Once = 0x0000000000000008L;
+
+    @Generated
+    private CKSubscriptionOptions() {
+    }
 }

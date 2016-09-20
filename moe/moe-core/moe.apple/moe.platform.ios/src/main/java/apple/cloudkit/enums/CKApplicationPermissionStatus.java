@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CKApplicationPermissionStatus {
-    @Generated
-    private CKApplicationPermissionStatus() {
-    }
-
     @Generated @NInt public static final long InitialState = 0x0000000000000000L;
     @Generated @NInt public static final long CouldNotComplete = 0x0000000000000001L;
     @Generated @NInt public static final long Denied = 0x0000000000000002L;
     @Generated @NInt public static final long Granted = 0x0000000000000003L;
+
+    @Generated
+    private CKApplicationPermissionStatus() {
+    }
 }

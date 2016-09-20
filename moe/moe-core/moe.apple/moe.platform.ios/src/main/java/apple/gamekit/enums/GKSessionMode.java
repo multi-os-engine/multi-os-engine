@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GKSessionMode {
-    @Generated
-    private GKSessionMode() {
-    }
-
     @Generated public static final int Server = 0x00000000;
     @Generated public static final int Client = 0x00000001;
     @Generated public static final int Peer = 0x00000002;
+
+    @Generated
+    private GKSessionMode() {
+    }
 }

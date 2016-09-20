@@ -55,42 +55,10 @@ public class CKContainer extends NSObject {
         super(peer);
     }
 
-    /**
-     * accountStatusWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/accountStatusWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accountStatusWithCompletionHandler:")
-    public native void accountStatusWithCompletionHandler(
-            @ObjCBlock(name = "call_accountStatusWithCompletionHandler") Block_accountStatusWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_accountStatusWithCompletionHandler {
-        @Generated
-        void call_accountStatusWithCompletionHandler(@NInt long arg0, NSError arg1);
-    }
-
-    /**
-     * addOperation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/addOperation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addOperation:")
-    public native void addOperation(CKOperation operation);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native CKContainer alloc();
-
-    /**
-     * containerIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instp/CKContainer/containerIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containerIdentifier")
-    public native String containerIdentifier();
 
     /**
      * containerWithIdentifier:</br>
@@ -107,155 +75,6 @@ public class CKContainer extends NSObject {
     @Generated
     @Selector("defaultContainer")
     public static native CKContainer defaultContainer();
-
-    /**
-     * discoverAllContactUserInfosWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/discoverAllContactUserInfosWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("discoverAllContactUserInfosWithCompletionHandler:")
-    public native void discoverAllContactUserInfosWithCompletionHandler(
-            @ObjCBlock(name = "call_discoverAllContactUserInfosWithCompletionHandler") Block_discoverAllContactUserInfosWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_discoverAllContactUserInfosWithCompletionHandler {
-        @Generated
-        void call_discoverAllContactUserInfosWithCompletionHandler(NSArray<? extends CKDiscoveredUserInfo> arg0,
-                NSError arg1);
-    }
-
-    /**
-     * discoverUserInfoWithEmailAddress:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/discoverUserInfoWithEmailAddress:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("discoverUserInfoWithEmailAddress:completionHandler:")
-    public native void discoverUserInfoWithEmailAddressCompletionHandler(String email,
-            @ObjCBlock(name = "call_discoverUserInfoWithEmailAddressCompletionHandler") Block_discoverUserInfoWithEmailAddressCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_discoverUserInfoWithEmailAddressCompletionHandler {
-        @Generated
-        void call_discoverUserInfoWithEmailAddressCompletionHandler(CKDiscoveredUserInfo arg0, NSError arg1);
-    }
-
-    /**
-     * discoverUserInfoWithUserRecordID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/discoverUserInfoWithUserRecordID:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("discoverUserInfoWithUserRecordID:completionHandler:")
-    public native void discoverUserInfoWithUserRecordIDCompletionHandler(CKRecordID userRecordID,
-            @ObjCBlock(name = "call_discoverUserInfoWithUserRecordIDCompletionHandler") Block_discoverUserInfoWithUserRecordIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_discoverUserInfoWithUserRecordIDCompletionHandler {
-        @Generated
-        void call_discoverUserInfoWithUserRecordIDCompletionHandler(CKDiscoveredUserInfo arg0, NSError arg1);
-    }
-
-    /**
-     * fetchUserRecordIDWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/fetchUserRecordIDWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchUserRecordIDWithCompletionHandler:")
-    public native void fetchUserRecordIDWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchUserRecordIDWithCompletionHandler") Block_fetchUserRecordIDWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchUserRecordIDWithCompletionHandler {
-        @Generated
-        void call_fetchUserRecordIDWithCompletionHandler(CKRecordID arg0, NSError arg1);
-    }
-
-    @Generated
-    @Selector("init")
-    public native CKContainer init();
-
-    /**
-     * privateCloudDatabase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instp/CKContainer/privateCloudDatabase">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("privateCloudDatabase")
-    public native CKDatabase privateCloudDatabase();
-
-    /**
-     * publicCloudDatabase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instp/CKContainer/publicCloudDatabase">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("publicCloudDatabase")
-    public native CKDatabase publicCloudDatabase();
-
-    /**
-     * requestApplicationPermission:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/requestApplicationPermission:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestApplicationPermission:completionHandler:")
-    public native void requestApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
-            @ObjCBlock(name = "call_requestApplicationPermissionCompletionHandler") Block_requestApplicationPermissionCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestApplicationPermissionCompletionHandler {
-        @Generated
-        void call_requestApplicationPermissionCompletionHandler(@NInt long arg0, NSError arg1);
-    }
-
-    /**
-     * statusForApplicationPermission:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/statusForApplicationPermission:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("statusForApplicationPermission:completionHandler:")
-    public native void statusForApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
-            @ObjCBlock(name = "call_statusForApplicationPermissionCompletionHandler") Block_statusForApplicationPermissionCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_statusForApplicationPermissionCompletionHandler {
-        @Generated
-        void call_statusForApplicationPermissionCompletionHandler(@NInt long arg0, NSError arg1);
-    }
-
-    /**
-     * fetchAllLongLivedOperationIDsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/fetchAllLongLivedOperationIDsWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchAllLongLivedOperationIDsWithCompletionHandler:")
-    public native void fetchAllLongLivedOperationIDsWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchAllLongLivedOperationIDsWithCompletionHandler") Block_fetchAllLongLivedOperationIDsWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchAllLongLivedOperationIDsWithCompletionHandler {
-        @Generated
-        void call_fetchAllLongLivedOperationIDsWithCompletionHandler(NSArray<String> arg0, NSError arg1);
-    }
-
-    /**
-     * fetchLongLivedOperationWithID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/fetchLongLivedOperationWithID:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchLongLivedOperationWithID:completionHandler:")
-    public native void fetchLongLivedOperationWithIDCompletionHandler(String operationID,
-            @ObjCBlock(name = "call_fetchLongLivedOperationWithIDCompletionHandler") Block_fetchLongLivedOperationWithIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchLongLivedOperationWithIDCompletionHandler {
-        @Generated
-        void call_fetchLongLivedOperationWithIDCompletionHandler(CKOperation arg0, NSError arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -356,4 +175,185 @@ public class CKContainer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * accountStatusWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/accountStatusWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accountStatusWithCompletionHandler:")
+    public native void accountStatusWithCompletionHandler(
+            @ObjCBlock(name = "call_accountStatusWithCompletionHandler") Block_accountStatusWithCompletionHandler completionHandler);
+
+    /**
+     * addOperation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/addOperation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addOperation:")
+    public native void addOperation(CKOperation operation);
+
+    /**
+     * containerIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instp/CKContainer/containerIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containerIdentifier")
+    public native String containerIdentifier();
+
+    /**
+     * discoverAllContactUserInfosWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/discoverAllContactUserInfosWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("discoverAllContactUserInfosWithCompletionHandler:")
+    public native void discoverAllContactUserInfosWithCompletionHandler(
+            @ObjCBlock(name = "call_discoverAllContactUserInfosWithCompletionHandler") Block_discoverAllContactUserInfosWithCompletionHandler completionHandler);
+
+    /**
+     * discoverUserInfoWithEmailAddress:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/discoverUserInfoWithEmailAddress:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("discoverUserInfoWithEmailAddress:completionHandler:")
+    public native void discoverUserInfoWithEmailAddressCompletionHandler(String email,
+            @ObjCBlock(name = "call_discoverUserInfoWithEmailAddressCompletionHandler") Block_discoverUserInfoWithEmailAddressCompletionHandler completionHandler);
+
+    /**
+     * discoverUserInfoWithUserRecordID:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/discoverUserInfoWithUserRecordID:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("discoverUserInfoWithUserRecordID:completionHandler:")
+    public native void discoverUserInfoWithUserRecordIDCompletionHandler(CKRecordID userRecordID,
+            @ObjCBlock(name = "call_discoverUserInfoWithUserRecordIDCompletionHandler") Block_discoverUserInfoWithUserRecordIDCompletionHandler completionHandler);
+
+    /**
+     * fetchUserRecordIDWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/fetchUserRecordIDWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchUserRecordIDWithCompletionHandler:")
+    public native void fetchUserRecordIDWithCompletionHandler(
+            @ObjCBlock(name = "call_fetchUserRecordIDWithCompletionHandler") Block_fetchUserRecordIDWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("init")
+    public native CKContainer init();
+
+    /**
+     * privateCloudDatabase</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instp/CKContainer/privateCloudDatabase">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("privateCloudDatabase")
+    public native CKDatabase privateCloudDatabase();
+
+    /**
+     * publicCloudDatabase</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instp/CKContainer/publicCloudDatabase">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("publicCloudDatabase")
+    public native CKDatabase publicCloudDatabase();
+
+    /**
+     * requestApplicationPermission:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/requestApplicationPermission:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestApplicationPermission:completionHandler:")
+    public native void requestApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
+            @ObjCBlock(name = "call_requestApplicationPermissionCompletionHandler") Block_requestApplicationPermissionCompletionHandler completionHandler);
+
+    /**
+     * statusForApplicationPermission:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/statusForApplicationPermission:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("statusForApplicationPermission:completionHandler:")
+    public native void statusForApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
+            @ObjCBlock(name = "call_statusForApplicationPermissionCompletionHandler") Block_statusForApplicationPermissionCompletionHandler completionHandler);
+
+    /**
+     * fetchAllLongLivedOperationIDsWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/fetchAllLongLivedOperationIDsWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchAllLongLivedOperationIDsWithCompletionHandler:")
+    public native void fetchAllLongLivedOperationIDsWithCompletionHandler(
+            @ObjCBlock(name = "call_fetchAllLongLivedOperationIDsWithCompletionHandler") Block_fetchAllLongLivedOperationIDsWithCompletionHandler completionHandler);
+
+    /**
+     * fetchLongLivedOperationWithID:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKContainer_class/index.html#//apple_ref/occ/instm/CKContainer/fetchLongLivedOperationWithID:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchLongLivedOperationWithID:completionHandler:")
+    public native void fetchLongLivedOperationWithIDCompletionHandler(String operationID,
+            @ObjCBlock(name = "call_fetchLongLivedOperationWithIDCompletionHandler") Block_fetchLongLivedOperationWithIDCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accountStatusWithCompletionHandler {
+        @Generated
+        void call_accountStatusWithCompletionHandler(@NInt long arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_discoverAllContactUserInfosWithCompletionHandler {
+        @Generated
+        void call_discoverAllContactUserInfosWithCompletionHandler(NSArray<? extends CKDiscoveredUserInfo> arg0,
+                NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_discoverUserInfoWithEmailAddressCompletionHandler {
+        @Generated
+        void call_discoverUserInfoWithEmailAddressCompletionHandler(CKDiscoveredUserInfo arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_discoverUserInfoWithUserRecordIDCompletionHandler {
+        @Generated
+        void call_discoverUserInfoWithUserRecordIDCompletionHandler(CKDiscoveredUserInfo arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchUserRecordIDWithCompletionHandler {
+        @Generated
+        void call_fetchUserRecordIDWithCompletionHandler(CKRecordID arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestApplicationPermissionCompletionHandler {
+        @Generated
+        void call_requestApplicationPermissionCompletionHandler(@NInt long arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_statusForApplicationPermissionCompletionHandler {
+        @Generated
+        void call_statusForApplicationPermissionCompletionHandler(@NInt long arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchAllLongLivedOperationIDsWithCompletionHandler {
+        @Generated
+        void call_fetchAllLongLivedOperationIDsWithCompletionHandler(NSArray<String> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchLongLivedOperationWithIDCompletionHandler {
+        @Generated
+        void call_fetchLongLivedOperationWithIDCompletionHandler(CKOperation arg0, NSError arg1);
+    }
 }

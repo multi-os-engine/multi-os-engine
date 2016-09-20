@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MKDirectionsTransportType {
-    @Generated
-    private MKDirectionsTransportType() {
-    }
-
     @Generated @NUInt public static final long Automobile = 0x0000000000000001L;
     @Generated @NUInt public static final long Walking = 0x0000000000000002L;
     @Generated @NUInt public static final long Any = 0x000000000FFFFFFFL;
     @Generated @NUInt public static final long Transit = 0x0000000000000004L;
+
+    @Generated
+    private MKDirectionsTransportType() {
+    }
 }

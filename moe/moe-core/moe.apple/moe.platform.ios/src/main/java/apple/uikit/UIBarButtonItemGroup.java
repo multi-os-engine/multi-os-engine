@@ -60,67 +60,6 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @Selector("alloc")
     public static native UIBarButtonItemGroup alloc();
 
-    /**
-     * barButtonItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instp/UIBarButtonItemGroup/barButtonItems">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("barButtonItems")
-    public native NSArray<? extends UIBarButtonItem> barButtonItems();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UIBarButtonItemGroup init();
-
-    /**
-     * initWithBarButtonItems:representativeItem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instm/UIBarButtonItemGroup/initWithBarButtonItems:representativeItem:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithBarButtonItems:representativeItem:")
-    public native UIBarButtonItemGroup initWithBarButtonItemsRepresentativeItem(
-            NSArray<? extends UIBarButtonItem> barButtonItems, UIBarButtonItem representativeItem);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIBarButtonItemGroup initWithCoder(NSCoder aDecoder);
-
-    /**
-     * displayingRepresentativeItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instp/UIBarButtonItemGroup/displayingRepresentativeItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isDisplayingRepresentativeItem")
-    public native boolean isDisplayingRepresentativeItem();
-
-    /**
-     * representativeItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instp/UIBarButtonItemGroup/representativeItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("representativeItem")
-    public native UIBarButtonItem representativeItem();
-
-    /**
-     * barButtonItems</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instp/UIBarButtonItemGroup/barButtonItems">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBarButtonItems:")
-    public native void setBarButtonItems(NSArray<? extends UIBarButtonItem> value);
-
-    /**
-     * representativeItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instp/UIBarButtonItemGroup/representativeItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRepresentativeItem:")
-    public native void setRepresentativeItem(UIBarButtonItem value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -220,4 +159,65 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * barButtonItems</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instp/UIBarButtonItemGroup/barButtonItems">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("barButtonItems")
+    public native NSArray<? extends UIBarButtonItem> barButtonItems();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UIBarButtonItemGroup init();
+
+    /**
+     * initWithBarButtonItems:representativeItem:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instm/UIBarButtonItemGroup/initWithBarButtonItems:representativeItem:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithBarButtonItems:representativeItem:")
+    public native UIBarButtonItemGroup initWithBarButtonItemsRepresentativeItem(
+            NSArray<? extends UIBarButtonItem> barButtonItems, UIBarButtonItem representativeItem);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIBarButtonItemGroup initWithCoder(NSCoder aDecoder);
+
+    /**
+     * displayingRepresentativeItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instp/UIBarButtonItemGroup/displayingRepresentativeItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isDisplayingRepresentativeItem")
+    public native boolean isDisplayingRepresentativeItem();
+
+    /**
+     * representativeItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instp/UIBarButtonItemGroup/representativeItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("representativeItem")
+    public native UIBarButtonItem representativeItem();
+
+    /**
+     * barButtonItems</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instp/UIBarButtonItemGroup/barButtonItems">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBarButtonItems:")
+    public native void setBarButtonItems(NSArray<? extends UIBarButtonItem> value);
+
+    /**
+     * representativeItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBarButtonItemGroup_class/index.html#//apple_ref/occ/instp/UIBarButtonItemGroup/representativeItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRepresentativeItem:")
+    public native void setRepresentativeItem(UIBarButtonItem value);
 }

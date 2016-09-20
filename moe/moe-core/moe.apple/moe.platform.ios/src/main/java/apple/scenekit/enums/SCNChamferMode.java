@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNChamferMode {
-    @Generated
-    private SCNChamferMode() {
-    }
-
     @Generated @NInt public static final long Both = 0x0000000000000000L;
     @Generated @NInt public static final long Front = 0x0000000000000001L;
     @Generated @NInt public static final long Back = 0x0000000000000002L;
+
+    @Generated
+    private SCNChamferMode() {
+    }
 }

@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UILineBreakMode {
-    @Generated
-    private UILineBreakMode() {
-    }
-
     @Generated @NInt public static final long WordWrap = 0x0000000000000000L;
     @Generated @NInt public static final long CharacterWrap = 0x0000000000000001L;
     @Generated @NInt public static final long Clip = 0x0000000000000002L;
     @Generated @NInt public static final long HeadTruncation = 0x0000000000000003L;
     @Generated @NInt public static final long TailTruncation = 0x0000000000000004L;
     @Generated @NInt public static final long MiddleTruncation = 0x0000000000000005L;
+
+    @Generated
+    private UILineBreakMode() {
+    }
 }

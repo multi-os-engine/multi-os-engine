@@ -53,13 +53,6 @@ public interface AVPlayerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler {
-        @Generated
-        void call_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(boolean arg0);
-    }
-
     /**
      * playerViewControllerDidStartPictureInPicture:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVKit/Reference/AVPlayerViewControllerDelegate_Protocol/index.html#//apple_ref/occ/intfm/AVPlayerViewControllerDelegate/playerViewControllerDidStartPictureInPicture:">iOS Dev Center</a>
@@ -114,5 +107,12 @@ public interface AVPlayerViewControllerDelegate {
     @Selector("playerViewControllerWillStopPictureInPicture:")
     default void playerViewControllerWillStopPictureInPicture(AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler {
+        @Generated
+        void call_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(boolean arg0);
     }
 }

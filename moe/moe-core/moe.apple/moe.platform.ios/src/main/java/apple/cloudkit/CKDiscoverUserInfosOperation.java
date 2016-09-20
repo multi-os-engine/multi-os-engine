@@ -61,85 +61,6 @@ public class CKDiscoverUserInfosOperation extends CKOperation {
     @Selector("alloc")
     public static native CKDiscoverUserInfosOperation alloc();
 
-    /**
-     * emailAddresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/emailAddresses">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("emailAddresses")
-    public native NSArray<String> emailAddresses();
-
-    @Generated
-    @Selector("init")
-    public native CKDiscoverUserInfosOperation init();
-
-    /**
-     * initWithEmailAddresses:userRecordIDs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instm/CKDiscoverUserInfosOperation/initWithEmailAddresses:userRecordIDs:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithEmailAddresses:userRecordIDs:")
-    public native CKDiscoverUserInfosOperation initWithEmailAddressesUserRecordIDs(NSArray<String> emailAddresses,
-            NSArray<? extends CKRecordID> userRecordIDs);
-
-    /**
-     * discoverUserInfosCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/discoverUserInfosCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDiscoverUserInfosCompletionBlock:")
-    public native void setDiscoverUserInfosCompletionBlock(
-            @ObjCBlock(name = "call_setDiscoverUserInfosCompletionBlock") Block_setDiscoverUserInfosCompletionBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setDiscoverUserInfosCompletionBlock {
-        @Generated
-        void call_setDiscoverUserInfosCompletionBlock(NSDictionary<String, ? extends CKDiscoveredUserInfo> arg0,
-                NSDictionary<? extends CKRecordID, ? extends CKDiscoveredUserInfo> arg1, NSError arg2);
-    }
-
-    /**
-     * emailAddresses</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/emailAddresses">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEmailAddresses:")
-    public native void setEmailAddresses(NSArray<String> value);
-
-    /**
-     * userRecordIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/userRecordIDs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUserRecordIDs:")
-    public native void setUserRecordIDs(NSArray<? extends CKRecordID> value);
-
-    /**
-     * userRecordIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/userRecordIDs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userRecordIDs")
-    public native NSArray<? extends CKRecordID> userRecordIDs();
-
-    /**
-     * discoverUserInfosCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/discoverUserInfosCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("discoverUserInfosCompletionBlock")
-    @ObjCBlock(name = "call_discoverUserInfosCompletionBlock_ret")
-    public native Block_discoverUserInfosCompletionBlock_ret discoverUserInfosCompletionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_discoverUserInfosCompletionBlock_ret {
-        @Generated
-        void call_discoverUserInfosCompletionBlock_ret(NSDictionary<String, ? extends CKDiscoveredUserInfo> arg0,
-                NSDictionary<? extends CKRecordID, ? extends CKDiscoveredUserInfo> arg1, NSError arg2);
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -239,4 +160,83 @@ public class CKDiscoverUserInfosOperation extends CKOperation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * emailAddresses</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/emailAddresses">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("emailAddresses")
+    public native NSArray<String> emailAddresses();
+
+    @Generated
+    @Selector("init")
+    public native CKDiscoverUserInfosOperation init();
+
+    /**
+     * initWithEmailAddresses:userRecordIDs:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instm/CKDiscoverUserInfosOperation/initWithEmailAddresses:userRecordIDs:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithEmailAddresses:userRecordIDs:")
+    public native CKDiscoverUserInfosOperation initWithEmailAddressesUserRecordIDs(NSArray<String> emailAddresses,
+            NSArray<? extends CKRecordID> userRecordIDs);
+
+    /**
+     * discoverUserInfosCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/discoverUserInfosCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDiscoverUserInfosCompletionBlock:")
+    public native void setDiscoverUserInfosCompletionBlock(
+            @ObjCBlock(name = "call_setDiscoverUserInfosCompletionBlock") Block_setDiscoverUserInfosCompletionBlock value);
+
+    /**
+     * emailAddresses</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/emailAddresses">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEmailAddresses:")
+    public native void setEmailAddresses(NSArray<String> value);
+
+    /**
+     * userRecordIDs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/userRecordIDs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUserRecordIDs:")
+    public native void setUserRecordIDs(NSArray<? extends CKRecordID> value);
+
+    /**
+     * userRecordIDs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/userRecordIDs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userRecordIDs")
+    public native NSArray<? extends CKRecordID> userRecordIDs();
+
+    /**
+     * discoverUserInfosCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDiscoverUserInfosOperation_class/index.html#//apple_ref/occ/instp/CKDiscoverUserInfosOperation/discoverUserInfosCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("discoverUserInfosCompletionBlock")
+    @ObjCBlock(name = "call_discoverUserInfosCompletionBlock_ret")
+    public native Block_discoverUserInfosCompletionBlock_ret discoverUserInfosCompletionBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setDiscoverUserInfosCompletionBlock {
+        @Generated
+        void call_setDiscoverUserInfosCompletionBlock(NSDictionary<String, ? extends CKDiscoveredUserInfo> arg0,
+                NSDictionary<? extends CKRecordID, ? extends CKDiscoveredUserInfo> arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_discoverUserInfosCompletionBlock_ret {
+        @Generated
+        void call_discoverUserInfosCompletionBlock_ret(NSDictionary<String, ? extends CKDiscoveredUserInfo> arg0,
+                NSDictionary<? extends CKRecordID, ? extends CKDiscoveredUserInfo> arg1, NSError arg2);
+    }
 }

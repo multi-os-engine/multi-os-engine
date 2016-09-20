@@ -60,32 +60,6 @@ public class PHCollectionList extends PHCollection {
     public static native PHCollectionList alloc();
 
     /**
-     * collectionListSubtype</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/instp/PHCollectionList/collectionListSubtype">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("collectionListSubtype")
-    @NInt
-    public native long collectionListSubtype();
-
-    /**
-     * collectionListType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/instp/PHCollectionList/collectionListType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("collectionListType")
-    @NInt
-    public native long collectionListType();
-
-    /**
-     * endDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/instp/PHCollectionList/endDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("endDate")
-    public native NSDate endDate();
-
-    /**
      * fetchCollectionListsContainingCollection:options:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/clm/PHCollectionList/fetchCollectionListsContainingCollection:options:">iOS Dev Center</a>
      */
@@ -129,26 +103,6 @@ public class PHCollectionList extends PHCollection {
     @Selector("fetchMomentListsWithSubtype:options:")
     public static native PHFetchResult<PHCollectionList> fetchMomentListsWithSubtypeOptions(
             @NInt long momentListSubtype, PHFetchOptions options);
-
-    @Generated
-    @Selector("init")
-    public native PHCollectionList init();
-
-    /**
-     * localizedLocationNames</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/instp/PHCollectionList/localizedLocationNames">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedLocationNames")
-    public native NSArray<String> localizedLocationNames();
-
-    /**
-     * startDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/instp/PHCollectionList/startDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startDate")
-    public native NSDate startDate();
 
     /**
      * transientCollectionListWithCollections:title:</br>
@@ -276,4 +230,50 @@ public class PHCollectionList extends PHCollection {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * collectionListSubtype</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/instp/PHCollectionList/collectionListSubtype">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("collectionListSubtype")
+    @NInt
+    public native long collectionListSubtype();
+
+    /**
+     * collectionListType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/instp/PHCollectionList/collectionListType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("collectionListType")
+    @NInt
+    public native long collectionListType();
+
+    /**
+     * endDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/instp/PHCollectionList/endDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("endDate")
+    public native NSDate endDate();
+
+    @Generated
+    @Selector("init")
+    public native PHCollectionList init();
+
+    /**
+     * localizedLocationNames</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/instp/PHCollectionList/localizedLocationNames">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedLocationNames")
+    public native NSArray<String> localizedLocationNames();
+
+    /**
+     * startDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHCollectionList_Class/index.html#//apple_ref/occ/instp/PHCollectionList/startDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startDate")
+    public native NSDate startDate();
 }

@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GLKViewDrawableStencilFormat {
+    @Generated public static final int FormatNone = 0x00000000;
+    @Generated public static final int Format8 = 0x00000001;
+
     @Generated
     private GLKViewDrawableStencilFormat() {
     }
-
-    @Generated public static final int FormatNone = 0x00000000;
-    @Generated public static final int Format8 = 0x00000001;
 }

@@ -60,92 +60,6 @@ public class MCNearbyServiceAdvertiser extends NSObject {
     @Selector("alloc")
     public static native MCNearbyServiceAdvertiser alloc();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MCNearbyServiceAdvertiserDelegate delegate();
-
-    /**
-     * discoveryInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/discoveryInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("discoveryInfo")
-    public native NSDictionary<String, String> discoveryInfo();
-
-    @Generated
-    @Selector("init")
-    public native MCNearbyServiceAdvertiser init();
-
-    /**
-     * initWithPeer:discoveryInfo:serviceType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instm/MCNearbyServiceAdvertiser/initWithPeer:discoveryInfo:serviceType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithPeer:discoveryInfo:serviceType:")
-    public native MCNearbyServiceAdvertiser initWithPeerDiscoveryInfoServiceType(MCPeerID myPeerID,
-            NSDictionary<String, String> info, String serviceType);
-
-    /**
-     * myPeerID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/myPeerID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("myPeerID")
-    public native MCPeerID myPeerID();
-
-    /**
-     * serviceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/serviceType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("serviceType")
-    public native String serviceType();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCNearbyServiceAdvertiserDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MCNearbyServiceAdvertiserDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * startAdvertisingPeer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instm/MCNearbyServiceAdvertiser/startAdvertisingPeer">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startAdvertisingPeer")
-    public native void startAdvertisingPeer();
-
-    /**
-     * stopAdvertisingPeer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instm/MCNearbyServiceAdvertiser/stopAdvertisingPeer">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopAdvertisingPeer")
-    public native void stopAdvertisingPeer();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -245,4 +159,90 @@ public class MCNearbyServiceAdvertiser extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MCNearbyServiceAdvertiserDelegate delegate();
+
+    /**
+     * discoveryInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/discoveryInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("discoveryInfo")
+    public native NSDictionary<String, String> discoveryInfo();
+
+    @Generated
+    @Selector("init")
+    public native MCNearbyServiceAdvertiser init();
+
+    /**
+     * initWithPeer:discoveryInfo:serviceType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instm/MCNearbyServiceAdvertiser/initWithPeer:discoveryInfo:serviceType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithPeer:discoveryInfo:serviceType:")
+    public native MCNearbyServiceAdvertiser initWithPeerDiscoveryInfoServiceType(MCPeerID myPeerID,
+            NSDictionary<String, String> info, String serviceType);
+
+    /**
+     * myPeerID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/myPeerID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("myPeerID")
+    public native MCPeerID myPeerID();
+
+    /**
+     * serviceType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/serviceType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("serviceType")
+    public native String serviceType();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCNearbyServiceAdvertiserDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instp/MCNearbyServiceAdvertiser/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) MCNearbyServiceAdvertiserDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * startAdvertisingPeer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instm/MCNearbyServiceAdvertiser/startAdvertisingPeer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startAdvertisingPeer")
+    public native void startAdvertisingPeer();
+
+    /**
+     * stopAdvertisingPeer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MCNearbyServiceAdvertiserClassRef/index.html#//apple_ref/occ/instm/MCNearbyServiceAdvertiser/stopAdvertisingPeer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopAdvertisingPeer")
+    public native void stopAdvertisingPeer();
 }

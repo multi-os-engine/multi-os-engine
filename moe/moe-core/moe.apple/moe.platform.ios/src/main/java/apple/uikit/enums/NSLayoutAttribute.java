@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSLayoutAttribute {
-    @Generated
-    private NSLayoutAttribute() {
-    }
-
     @Generated @NInt public static final long Left = 0x0000000000000001L;
     @Generated @NInt public static final long Right = 0x0000000000000002L;
     @Generated @NInt public static final long Top = 0x0000000000000003L;
@@ -47,4 +43,8 @@ public final class NSLayoutAttribute {
     @Generated @NInt public static final long CenterXWithinMargins = 0x0000000000000013L;
     @Generated @NInt public static final long CenterYWithinMargins = 0x0000000000000014L;
     @Generated @NInt public static final long NotAnAttribute = 0x0000000000000000L;
+
+    @Generated
+    private NSLayoutAttribute() {
+    }
 }

@@ -99,13 +99,6 @@ public final class VideoToolbox {
             @FunctionPtr(name = "call_VTCompressionSessionCreate") Function_VTCompressionSessionCreate outputCallback,
             VoidPtr outputCallbackRefCon, Ptr<VTCompressionSessionRef> compressionSessionOut);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_VTCompressionSessionCreate {
-        @Generated
-        void call_VTCompressionSessionCreate(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, VoidPtr arg4);
-    }
-
     @Generated
     @CFunction
     public static native void VTCompressionSessionInvalidate(VTCompressionSessionRef session);
@@ -218,25 +211,11 @@ public final class VideoToolbox {
             @ByValue CMTimeRange timeRange, VoidPtr callbackInfo,
             @FunctionPtr(name = "call_VTFrameSiloCallFunctionForEachSampleBuffer") Function_VTFrameSiloCallFunctionForEachSampleBuffer callback);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_VTFrameSiloCallFunctionForEachSampleBuffer {
-        @Generated
-        int call_VTFrameSiloCallFunctionForEachSampleBuffer(VoidPtr arg0, VoidPtr arg1);
-    }
-
     @Generated
     @CFunction
     public static native int VTFrameSiloCallBlockForEachSampleBuffer(VTFrameSiloRef silo,
             @ByValue CMTimeRange timeRange,
             @ObjCBlock(name = "call_VTFrameSiloCallBlockForEachSampleBuffer") Block_VTFrameSiloCallBlockForEachSampleBuffer handler);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_VTFrameSiloCallBlockForEachSampleBuffer {
-        @Generated
-        int call_VTFrameSiloCallBlockForEachSampleBuffer(CMSampleBufferRef arg0);
-    }
 
     @Generated
     @CFunction
@@ -807,18 +786,44 @@ public final class VideoToolbox {
             CFDictionaryRef frameProperties, IntPtr infoFlagsOut,
             @ObjCBlock(name = "call_VTCompressionSessionEncodeFrameWithOutputHandler") Block_VTCompressionSessionEncodeFrameWithOutputHandler outputHandler);
 
+    @Generated
+    @CFunction
+    public static native int VTDecompressionSessionDecodeFrameWithOutputHandler(VTDecompressionSessionRef session,
+            CMSampleBufferRef sampleBuffer, int decodeFlags, IntPtr infoFlagsOut,
+            @ObjCBlock(name = "call_VTDecompressionSessionDecodeFrameWithOutputHandler") Block_VTDecompressionSessionDecodeFrameWithOutputHandler outputHandler);
+
+    @Generated
+    @CFunction
+    public static native int VTCreateCGImageFromCVPixelBuffer(CVBufferRef pixelBuffer, CFDictionaryRef options,
+            Ptr<CGImageRef> imageOut);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_VTCompressionSessionCreate {
+        @Generated
+        void call_VTCompressionSessionCreate(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, VoidPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_VTFrameSiloCallFunctionForEachSampleBuffer {
+        @Generated
+        int call_VTFrameSiloCallFunctionForEachSampleBuffer(VoidPtr arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_VTFrameSiloCallBlockForEachSampleBuffer {
+        @Generated
+        int call_VTFrameSiloCallBlockForEachSampleBuffer(CMSampleBufferRef arg0);
+    }
+
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_VTCompressionSessionEncodeFrameWithOutputHandler {
         @Generated
         void call_VTCompressionSessionEncodeFrameWithOutputHandler(int arg0, int arg1, CMSampleBufferRef arg2);
     }
-
-    @Generated
-    @CFunction
-    public static native int VTDecompressionSessionDecodeFrameWithOutputHandler(VTDecompressionSessionRef session,
-            CMSampleBufferRef sampleBuffer, int decodeFlags, IntPtr infoFlagsOut,
-            @ObjCBlock(name = "call_VTDecompressionSessionDecodeFrameWithOutputHandler") Block_VTDecompressionSessionDecodeFrameWithOutputHandler outputHandler);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -827,9 +832,4 @@ public final class VideoToolbox {
         void call_VTDecompressionSessionDecodeFrameWithOutputHandler(int arg0, int arg1, CVBufferRef arg2,
                 @ByValue CMTime arg3, @ByValue CMTime arg4);
     }
-
-    @Generated
-    @CFunction
-    public static native int VTCreateCGImageFromCVPixelBuffer(CVBufferRef pixelBuffer, CFDictionaryRef options,
-            Ptr<CGImageRef> imageOut);
 }

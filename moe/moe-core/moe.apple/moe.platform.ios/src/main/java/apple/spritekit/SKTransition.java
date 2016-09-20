@@ -141,10 +141,6 @@ public class SKTransition extends NSObject implements NSCopying {
     @Selector("flipVerticalWithDuration:")
     public static native SKTransition flipVerticalWithDuration(double sec);
 
-    @Generated
-    @Selector("init")
-    public native SKTransition init();
-
     /**
      * moveInWithDirection:duration:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/moveInWithDirection:duration:">iOS Dev Center</a>
@@ -152,22 +148,6 @@ public class SKTransition extends NSObject implements NSCopying {
     @Generated
     @Selector("moveInWithDirection:duration:")
     public static native SKTransition moveInWithDirectionDuration(@NInt long direction, double sec);
-
-    /**
-     * pausesIncomingScene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesIncomingScene">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pausesIncomingScene")
-    public native boolean pausesIncomingScene();
-
-    /**
-     * pausesOutgoingScene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesOutgoingScene">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pausesOutgoingScene")
-    public native boolean pausesOutgoingScene();
 
     /**
      * pushWithDirection:duration:</br>
@@ -186,34 +166,12 @@ public class SKTransition extends NSObject implements NSCopying {
     public static native SKTransition revealWithDirectionDuration(@NInt long direction, double sec);
 
     /**
-     * pausesIncomingScene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesIncomingScene">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPausesIncomingScene:")
-    public native void setPausesIncomingScene(boolean value);
-
-    /**
-     * pausesOutgoingScene</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesOutgoingScene">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPausesOutgoingScene:")
-    public native void setPausesOutgoingScene(boolean value);
-
-    /**
      * transitionWithCIFilter:duration:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/clm/SKTransition/transitionWithCIFilter:duration:">iOS Dev Center</a>
      */
     @Generated
     @Selector("transitionWithCIFilter:duration:")
     public static native SKTransition transitionWithCIFilterDuration(CIFilter filter, double sec);
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -314,4 +272,46 @@ public class SKTransition extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native SKTransition init();
+
+    /**
+     * pausesIncomingScene</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesIncomingScene">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pausesIncomingScene")
+    public native boolean pausesIncomingScene();
+
+    /**
+     * pausesOutgoingScene</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesOutgoingScene">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pausesOutgoingScene")
+    public native boolean pausesOutgoingScene();
+
+    /**
+     * pausesIncomingScene</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesIncomingScene">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPausesIncomingScene:")
+    public native void setPausesIncomingScene(boolean value);
+
+    /**
+     * pausesOutgoingScene</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKTransition_Ref/index.html#//apple_ref/occ/instp/SKTransition/pausesOutgoingScene">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPausesOutgoingScene:")
+    public native void setPausesOutgoingScene(boolean value);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 }

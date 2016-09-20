@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CKAccountStatus {
-    @Generated
-    private CKAccountStatus() {
-    }
-
     @Generated @NInt public static final long CouldNotDetermine = 0x0000000000000000L;
     @Generated @NInt public static final long Available = 0x0000000000000001L;
     @Generated @NInt public static final long Restricted = 0x0000000000000002L;
     @Generated @NInt public static final long NoAccount = 0x0000000000000003L;
+
+    @Generated
+    private CKAccountStatus() {
+    }
 }

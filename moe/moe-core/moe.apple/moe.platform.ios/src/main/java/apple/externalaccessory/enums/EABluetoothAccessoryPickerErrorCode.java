@@ -21,12 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EABluetoothAccessoryPickerErrorCode {
-    @Generated
-    private EABluetoothAccessoryPickerErrorCode() {
-    }
-
     @Generated @NInt public static final long AlreadyConnected = 0x0000000000000000L;
     @Generated @NInt public static final long ResultNotFound = 0x0000000000000001L;
     @Generated @NInt public static final long ResultCancelled = 0x0000000000000002L;
     @Generated @NInt public static final long ResultFailed = 0x0000000000000003L;
+    @Generated
+    private EABluetoothAccessoryPickerErrorCode() {
+    }
 }

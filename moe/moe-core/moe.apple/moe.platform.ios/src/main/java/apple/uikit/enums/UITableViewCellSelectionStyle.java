@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITableViewCellSelectionStyle {
-    @Generated
-    private UITableViewCellSelectionStyle() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Blue = 0x0000000000000001L;
     @Generated @NInt public static final long Gray = 0x0000000000000002L;
     @Generated @NInt public static final long Default = 0x0000000000000003L;
+
+    @Generated
+    private UITableViewCellSelectionStyle() {
+    }
 }

@@ -67,63 +67,9 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     @Selector("alloc")
     public static native UIVisualEffectView alloc();
 
-    /**
-     * contentView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instp/UIVisualEffectView/contentView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contentView")
-    public native UIView contentView();
-
-    /**
-     * effect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instp/UIVisualEffectView/effect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("effect")
-    public native UIVisualEffect effect();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UIVisualEffectView init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIVisualEffectView initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithEffect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instm/UIVisualEffectView/initWithEffect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithEffect:")
-    public native UIVisualEffectView initWithEffect(UIVisualEffect effect);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIVisualEffectView initWithFrame(@ByValue CGRect frame);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * effect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instp/UIVisualEffectView/effect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEffect:")
-    public native void setEffect(UIVisualEffect value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -178,23 +124,9 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -205,27 +137,10 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -236,24 +151,9 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -451,4 +351,104 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * contentView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instp/UIVisualEffectView/contentView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contentView")
+    public native UIView contentView();
+
+    /**
+     * effect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instp/UIVisualEffectView/effect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("effect")
+    public native UIVisualEffect effect();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UIVisualEffectView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIVisualEffectView initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithEffect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instm/UIVisualEffectView/initWithEffect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithEffect:")
+    public native UIVisualEffectView initWithEffect(UIVisualEffect effect);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIVisualEffectView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * effect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIVisualEffectView/index.html#//apple_ref/occ/instp/UIVisualEffectView/effect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEffect:")
+    public native void setEffect(UIVisualEffect value);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

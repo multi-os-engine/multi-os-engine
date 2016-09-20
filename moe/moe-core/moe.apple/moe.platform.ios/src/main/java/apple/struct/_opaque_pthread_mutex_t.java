@@ -27,11 +27,11 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 @Structure()
 public final class _opaque_pthread_mutex_t extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public _opaque_pthread_mutex_t() {

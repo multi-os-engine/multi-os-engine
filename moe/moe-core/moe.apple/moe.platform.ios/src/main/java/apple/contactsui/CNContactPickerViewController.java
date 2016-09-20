@@ -63,115 +63,6 @@ public class CNContactPickerViewController extends UIViewController {
     @Selector("alloc")
     public static native CNContactPickerViewController alloc();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native CNContactPickerDelegate delegate();
-
-    /**
-     * displayedPropertyKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/displayedPropertyKeys">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("displayedPropertyKeys")
-    public native NSArray<String> displayedPropertyKeys();
-
-    @Generated
-    @Selector("init")
-    public native CNContactPickerViewController init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNContactPickerViewController initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native CNContactPickerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    /**
-     * predicateForEnablingContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForEnablingContact">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("predicateForEnablingContact")
-    public native NSPredicate predicateForEnablingContact();
-
-    /**
-     * predicateForSelectionOfContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForSelectionOfContact">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("predicateForSelectionOfContact")
-    public native NSPredicate predicateForSelectionOfContact();
-
-    /**
-     * predicateForSelectionOfProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForSelectionOfProperty">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("predicateForSelectionOfProperty")
-    public native NSPredicate predicateForSelectionOfProperty();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CNContactPickerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CNContactPickerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * displayedPropertyKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/displayedPropertyKeys">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDisplayedPropertyKeys:")
-    public native void setDisplayedPropertyKeys(NSArray<String> value);
-
-    /**
-     * predicateForEnablingContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForEnablingContact">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPredicateForEnablingContact:")
-    public native void setPredicateForEnablingContact(NSPredicate value);
-
-    /**
-     * predicateForSelectionOfContact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForSelectionOfContact">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPredicateForSelectionOfContact:")
-    public native void setPredicateForSelectionOfContact(NSPredicate value);
-
-    /**
-     * predicateForSelectionOfProperty</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForSelectionOfProperty">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPredicateForSelectionOfProperty:")
-    public native void setPredicateForSelectionOfProperty(NSPredicate value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -283,4 +174,113 @@ public class CNContactPickerViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native CNContactPickerDelegate delegate();
+
+    /**
+     * displayedPropertyKeys</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/displayedPropertyKeys">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("displayedPropertyKeys")
+    public native NSArray<String> displayedPropertyKeys();
+
+    @Generated
+    @Selector("init")
+    public native CNContactPickerViewController init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNContactPickerViewController initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native CNContactPickerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    /**
+     * predicateForEnablingContact</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForEnablingContact">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("predicateForEnablingContact")
+    public native NSPredicate predicateForEnablingContact();
+
+    /**
+     * predicateForSelectionOfContact</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForSelectionOfContact">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("predicateForSelectionOfContact")
+    public native NSPredicate predicateForSelectionOfContact();
+
+    /**
+     * predicateForSelectionOfProperty</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForSelectionOfProperty">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("predicateForSelectionOfProperty")
+    public native NSPredicate predicateForSelectionOfProperty();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CNContactPickerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) CNContactPickerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * displayedPropertyKeys</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/displayedPropertyKeys">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDisplayedPropertyKeys:")
+    public native void setDisplayedPropertyKeys(NSArray<String> value);
+
+    /**
+     * predicateForEnablingContact</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForEnablingContact">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPredicateForEnablingContact:")
+    public native void setPredicateForEnablingContact(NSPredicate value);
+
+    /**
+     * predicateForSelectionOfContact</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForSelectionOfContact">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPredicateForSelectionOfContact:")
+    public native void setPredicateForSelectionOfContact(NSPredicate value);
+
+    /**
+     * predicateForSelectionOfProperty</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ContactsUI/Reference/CNContactPickerViewController_Class/index.html#//apple_ref/occ/instp/CNContactPickerViewController/predicateForSelectionOfProperty">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPredicateForSelectionOfProperty:")
+    public native void setPredicateForSelectionOfProperty(NSPredicate value);
 }

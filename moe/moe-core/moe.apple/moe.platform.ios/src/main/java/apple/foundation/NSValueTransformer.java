@@ -63,19 +63,6 @@ public class NSValueTransformer extends NSObject {
     @Selector("allowsReverseTransformation")
     public static native boolean allowsReverseTransformation();
 
-    @Generated
-    @Selector("init")
-    public native NSValueTransformer init();
-
-    /**
-     * reverseTransformedValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValueTransformer_Class/index.html#//apple_ref/occ/instm/NSValueTransformer/reverseTransformedValue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reverseTransformedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object reverseTransformedValue(@Mapped(ObjCObjectMapper.class) Object value);
-
     /**
      * setValueTransformer:forName:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValueTransformer_Class/index.html#//apple_ref/occ/clm/NSValueTransformer/setValueTransformer:forName:">iOS Dev Center</a>
@@ -83,15 +70,6 @@ public class NSValueTransformer extends NSObject {
     @Generated
     @Selector("setValueTransformer:forName:")
     public static native void setValueTransformerForName(NSValueTransformer transformer, String name);
-
-    /**
-     * transformedValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValueTransformer_Class/index.html#//apple_ref/occ/instm/NSValueTransformer/transformedValue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transformedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object transformedValue(@Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * transformedValueClass</br>
@@ -216,4 +194,26 @@ public class NSValueTransformer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSValueTransformer init();
+
+    /**
+     * reverseTransformedValue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValueTransformer_Class/index.html#//apple_ref/occ/instm/NSValueTransformer/reverseTransformedValue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reverseTransformedValue:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object reverseTransformedValue(@Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * transformedValue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSValueTransformer_Class/index.html#//apple_ref/occ/instm/NSValueTransformer/transformedValue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transformedValue:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object transformedValue(@Mapped(ObjCObjectMapper.class) Object value);
 }

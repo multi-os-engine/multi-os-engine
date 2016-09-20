@@ -63,51 +63,6 @@ public class HKWorkout extends HKSample {
     public static native HKWorkout alloc();
 
     /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/duration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("duration")
-    public native double duration();
-
-    @Generated
-    @Selector("init")
-    public native HKWorkout init();
-
-    /**
-     * totalDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/totalDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("totalDistance")
-    public native HKQuantity totalDistance();
-
-    /**
-     * totalEnergyBurned</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/totalEnergyBurned">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("totalEnergyBurned")
-    public native HKQuantity totalEnergyBurned();
-
-    /**
-     * workoutActivityType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/workoutActivityType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("workoutActivityType")
-    @NUInt
-    public native long workoutActivityType();
-
-    /**
-     * workoutEvents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/workoutEvents">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("workoutEvents")
-    public native NSArray<? extends HKWorkoutEvent> workoutEvents();
-
-    /**
      * workoutWithActivityType:startDate:endDate:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/clm/HKWorkout/workoutWithActivityType:startDate:endDate:">iOS Dev Center</a>
      */
@@ -157,10 +112,6 @@ public class HKWorkout extends HKSample {
             @NUInt long workoutActivityType, NSDate startDate, NSDate endDate,
             NSArray<? extends HKWorkoutEvent> workoutEvents, HKQuantity totalEnergyBurned, HKQuantity totalDistance,
             HKDevice device, NSDictionary<String, ?> metadata);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKWorkout initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -262,13 +213,62 @@ public class HKWorkout extends HKSample {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version();
+
+    /**
+     * duration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/duration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("duration")
+    public native double duration();
+
+    @Generated
+    @Selector("init")
+    public native HKWorkout init();
+
+    /**
+     * totalDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/totalDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("totalDistance")
+    public native HKQuantity totalDistance();
+
+    /**
+     * totalEnergyBurned</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/totalEnergyBurned">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("totalEnergyBurned")
+    public native HKQuantity totalEnergyBurned();
+
+    /**
+     * workoutActivityType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/workoutActivityType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("workoutActivityType")
+    @NUInt
+    public native long workoutActivityType();
+
+    /**
+     * workoutEvents</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html#//apple_ref/occ/instp/HKWorkout/workoutEvents">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("workoutEvents")
+    public native NSArray<? extends HKWorkoutEvent> workoutEvents();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKWorkout initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
 }

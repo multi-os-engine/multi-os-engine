@@ -58,26 +58,6 @@ public class AVCaptureAudioChannel extends NSObject {
     @Selector("alloc")
     public static native AVCaptureAudioChannel alloc();
 
-    /**
-     * averagePowerLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioChannel_Class/index.html#//apple_ref/occ/instp/AVCaptureAudioChannel/averagePowerLevel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("averagePowerLevel")
-    public native float averagePowerLevel();
-
-    @Generated
-    @Selector("init")
-    public native AVCaptureAudioChannel init();
-
-    /**
-     * peakHoldLevel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioChannel_Class/index.html#//apple_ref/occ/instp/AVCaptureAudioChannel/peakHoldLevel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("peakHoldLevel")
-    public native float peakHoldLevel();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -177,4 +157,24 @@ public class AVCaptureAudioChannel extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * averagePowerLevel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioChannel_Class/index.html#//apple_ref/occ/instp/AVCaptureAudioChannel/averagePowerLevel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("averagePowerLevel")
+    public native float averagePowerLevel();
+
+    @Generated
+    @Selector("init")
+    public native AVCaptureAudioChannel init();
+
+    /**
+     * peakHoldLevel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioChannel_Class/index.html#//apple_ref/occ/instp/AVCaptureAudioChannel/peakHoldLevel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("peakHoldLevel")
+    public native float peakHoldLevel();
 }

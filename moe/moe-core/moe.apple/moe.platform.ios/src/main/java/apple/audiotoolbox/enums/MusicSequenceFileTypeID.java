@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class MusicSequenceFileTypeID {
-    @Generated
-    private MusicSequenceFileTypeID() {
-    }
-
     @Generated public static final int _AnyType = 0x00000000;
     @Generated public static final int _MIDIType = 0x6D696469;
     @Generated public static final int _iMelodyType = 0x696D656C;
+
+    @Generated
+    private MusicSequenceFileTypeID() {
+    }
 }

@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIImagePickerControllerSourceType {
-    @Generated
-    private UIImagePickerControllerSourceType() {
-    }
-
     @Generated @NInt public static final long PhotoLibrary = 0x0000000000000000L;
     @Generated @NInt public static final long Camera = 0x0000000000000001L;
     @Generated @NInt public static final long SavedPhotosAlbum = 0x0000000000000002L;
+
+    @Generated
+    private UIImagePickerControllerSourceType() {
+    }
 }

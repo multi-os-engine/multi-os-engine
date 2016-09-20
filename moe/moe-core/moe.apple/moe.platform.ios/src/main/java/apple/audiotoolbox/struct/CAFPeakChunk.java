@@ -27,11 +27,11 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure(alignment = 1)
 public final class CAFPeakChunk extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CAFPeakChunk() {

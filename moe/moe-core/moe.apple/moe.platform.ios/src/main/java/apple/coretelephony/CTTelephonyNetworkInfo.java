@@ -60,54 +60,6 @@ public class CTTelephonyNetworkInfo extends NSObject {
     public static native CTTelephonyNetworkInfo alloc();
 
     @Generated
-    @Selector("currentRadioAccessTechnology")
-    public native String currentRadioAccessTechnology();
-
-    @Generated
-    @Selector("init")
-    public native CTTelephonyNetworkInfo init();
-
-    /**
-     * subscriberCellularProviderDidUpdateNotifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTTelephonyNetworkInfo/index.html#//apple_ref/occ/instp/CTTelephonyNetworkInfo/subscriberCellularProviderDidUpdateNotifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSubscriberCellularProviderDidUpdateNotifier:")
-    public native void setSubscriberCellularProviderDidUpdateNotifier(
-            @ObjCBlock(name = "call_setSubscriberCellularProviderDidUpdateNotifier") Block_setSubscriberCellularProviderDidUpdateNotifier value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setSubscriberCellularProviderDidUpdateNotifier {
-        @Generated
-        void call_setSubscriberCellularProviderDidUpdateNotifier(CTCarrier arg0);
-    }
-
-    /**
-     * subscriberCellularProvider</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTTelephonyNetworkInfo/index.html#//apple_ref/occ/instp/CTTelephonyNetworkInfo/subscriberCellularProvider">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subscriberCellularProvider")
-    public native CTCarrier subscriberCellularProvider();
-
-    /**
-     * subscriberCellularProviderDidUpdateNotifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTTelephonyNetworkInfo/index.html#//apple_ref/occ/instp/CTTelephonyNetworkInfo/subscriberCellularProviderDidUpdateNotifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subscriberCellularProviderDidUpdateNotifier")
-    @ObjCBlock(name = "call_subscriberCellularProviderDidUpdateNotifier_ret")
-    public native Block_subscriberCellularProviderDidUpdateNotifier_ret subscriberCellularProviderDidUpdateNotifier();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_subscriberCellularProviderDidUpdateNotifier_ret {
-        @Generated
-        void call_subscriberCellularProviderDidUpdateNotifier_ret(CTCarrier arg0);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -206,4 +158,52 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("currentRadioAccessTechnology")
+    public native String currentRadioAccessTechnology();
+
+    @Generated
+    @Selector("init")
+    public native CTTelephonyNetworkInfo init();
+
+    /**
+     * subscriberCellularProviderDidUpdateNotifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTTelephonyNetworkInfo/index.html#//apple_ref/occ/instp/CTTelephonyNetworkInfo/subscriberCellularProviderDidUpdateNotifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSubscriberCellularProviderDidUpdateNotifier:")
+    public native void setSubscriberCellularProviderDidUpdateNotifier(
+            @ObjCBlock(name = "call_setSubscriberCellularProviderDidUpdateNotifier") Block_setSubscriberCellularProviderDidUpdateNotifier value);
+
+    /**
+     * subscriberCellularProvider</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTTelephonyNetworkInfo/index.html#//apple_ref/occ/instp/CTTelephonyNetworkInfo/subscriberCellularProvider">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subscriberCellularProvider")
+    public native CTCarrier subscriberCellularProvider();
+
+    /**
+     * subscriberCellularProviderDidUpdateNotifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTTelephonyNetworkInfo/index.html#//apple_ref/occ/instp/CTTelephonyNetworkInfo/subscriberCellularProviderDidUpdateNotifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subscriberCellularProviderDidUpdateNotifier")
+    @ObjCBlock(name = "call_subscriberCellularProviderDidUpdateNotifier_ret")
+    public native Block_subscriberCellularProviderDidUpdateNotifier_ret subscriberCellularProviderDidUpdateNotifier();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setSubscriberCellularProviderDidUpdateNotifier {
+        @Generated
+        void call_setSubscriberCellularProviderDidUpdateNotifier(CTCarrier arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_subscriberCellularProviderDidUpdateNotifier_ret {
+        @Generated
+        void call_subscriberCellularProviderDidUpdateNotifier_ret(CTCarrier arg0);
+    }
 }

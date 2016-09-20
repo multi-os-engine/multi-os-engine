@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class AVAudioSessionInterruptionOptions {
+    @Generated @NUInt public static final long AVAudioSessionInterruptionOptionShouldResume = 0x0000000000000001L;
+
     @Generated
     private AVAudioSessionInterruptionOptions() {
     }
-
-    @Generated @NUInt public static final long AVAudioSessionInterruptionOptionShouldResume = 0x0000000000000001L;
 }

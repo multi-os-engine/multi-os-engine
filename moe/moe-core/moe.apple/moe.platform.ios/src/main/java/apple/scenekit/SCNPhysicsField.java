@@ -67,21 +67,6 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native SCNPhysicsField alloc();
 
     /**
-     * categoryBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/categoryBitMask">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("categoryBitMask")
-    @NUInt
-    public native long categoryBitMask();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
      * customFieldWithEvaluationBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/clm/SCNPhysicsField/customFieldWithEvaluationBlock:">iOS Dev Center</a>
      */
@@ -89,24 +74,6 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("customFieldWithEvaluationBlock:")
     public static native SCNPhysicsField customFieldWithEvaluationBlock(
             @ObjCBlock(name = "call_customFieldWithEvaluationBlock") Block_customFieldWithEvaluationBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_customFieldWithEvaluationBlock {
-        @Generated
-        @ByValue
-        SCNVector3 call_customFieldWithEvaluationBlock(@ByValue SCNVector3 arg0, @ByValue SCNVector3 arg1, float arg2,
-                float arg3, double arg4);
-    }
-
-    /**
-     * direction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/direction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("direction")
-    @ByValue
-    public native SCNVector3 direction();
 
     /**
      * dragField</br>
@@ -123,52 +90,6 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Selector("electricField")
     public static native SCNPhysicsField electricField();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * falloffExponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/falloffExponent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("falloffExponent")
-    @NFloat
-    public native double falloffExponent();
-
-    /**
-     * halfExtent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/halfExtent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("halfExtent")
-    @ByValue
-    public native SCNVector3 halfExtent();
-
-    @Generated
-    @Selector("init")
-    public native SCNPhysicsField init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPhysicsField initWithCoder(NSCoder aDecoder);
-
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/active">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isActive")
-    public native boolean isActive();
-
-    /**
-     * exclusive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/exclusive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isExclusive")
-    public native boolean isExclusive();
 
     /**
      * linearGravityField</br>
@@ -187,15 +108,6 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native SCNPhysicsField magneticField();
 
     /**
-     * minimumDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/minimumDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumDistance")
-    @NFloat
-    public native double minimumDistance();
-
-    /**
      * noiseFieldWithSmoothness:animationSpeed:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/clm/SCNPhysicsField/noiseFieldWithSmoothness:animationSpeed:">iOS Dev Center</a>
      */
@@ -203,15 +115,6 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("noiseFieldWithSmoothness:animationSpeed:")
     public static native SCNPhysicsField noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
             @NFloat double speed);
-
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/offset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("offset")
-    @ByValue
-    public native SCNVector3 offset();
 
     /**
      * radialGravityField</br>
@@ -222,103 +125,6 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native SCNPhysicsField radialGravityField();
 
     /**
-     * scope</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/scope">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("scope")
-    @NInt
-    public native long scope();
-
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/active">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setActive:")
-    public native void setActive(boolean value);
-
-    /**
-     * categoryBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/categoryBitMask">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCategoryBitMask:")
-    public native void setCategoryBitMask(@NUInt long value);
-
-    /**
-     * direction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/direction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDirection:")
-    public native void setDirection(@ByValue SCNVector3 value);
-
-    /**
-     * exclusive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/exclusive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setExclusive:")
-    public native void setExclusive(boolean value);
-
-    /**
-     * falloffExponent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/falloffExponent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFalloffExponent:")
-    public native void setFalloffExponent(@NFloat double value);
-
-    /**
-     * halfExtent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/halfExtent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHalfExtent:")
-    public native void setHalfExtent(@ByValue SCNVector3 value);
-
-    /**
-     * minimumDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/minimumDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumDistance:")
-    public native void setMinimumDistance(@NFloat double value);
-
-    /**
-     * offset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/offset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOffset:")
-    public native void setOffset(@ByValue SCNVector3 value);
-
-    /**
-     * scope</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/scope">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setScope:")
-    public native void setScope(@NInt long value);
-
-    /**
-     * strength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/strength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setStrength:")
-    public native void setStrength(@NFloat double value);
-
-    /**
-     * usesEllipsoidalExtent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/usesEllipsoidalExtent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUsesEllipsoidalExtent:")
-    public native void setUsesEllipsoidalExtent(boolean value);
-
-    /**
      * springField</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/clm/SCNPhysicsField/springField">iOS Dev Center</a>
      */
@@ -326,24 +132,9 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("springField")
     public static native SCNPhysicsField springField();
 
-    /**
-     * strength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/strength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("strength")
-    @NFloat
-    public native double strength();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     /**
      * turbulenceFieldWithSmoothness:animationSpeed:</br>
@@ -353,14 +144,6 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
     public static native SCNPhysicsField turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
             @NFloat double speed);
-
-    /**
-     * usesEllipsoidalExtent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/usesEllipsoidalExtent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("usesEllipsoidalExtent")
-    public native boolean usesEllipsoidalExtent();
 
     /**
      * vortexField</br>
@@ -469,4 +252,221 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * categoryBitMask</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/categoryBitMask">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("categoryBitMask")
+    @NUInt
+    public native long categoryBitMask();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * direction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/direction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("direction")
+    @ByValue
+    public native SCNVector3 direction();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * falloffExponent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/falloffExponent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("falloffExponent")
+    @NFloat
+    public native double falloffExponent();
+
+    /**
+     * halfExtent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/halfExtent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("halfExtent")
+    @ByValue
+    public native SCNVector3 halfExtent();
+
+    @Generated
+    @Selector("init")
+    public native SCNPhysicsField init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNPhysicsField initWithCoder(NSCoder aDecoder);
+
+    /**
+     * active</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/active">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isActive")
+    public native boolean isActive();
+
+    /**
+     * active</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/active">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setActive:")
+    public native void setActive(boolean value);
+
+    /**
+     * exclusive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/exclusive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isExclusive")
+    public native boolean isExclusive();
+
+    /**
+     * exclusive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/exclusive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setExclusive:")
+    public native void setExclusive(boolean value);
+
+    /**
+     * minimumDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/minimumDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumDistance")
+    @NFloat
+    public native double minimumDistance();
+
+    /**
+     * offset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/offset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("offset")
+    @ByValue
+    public native SCNVector3 offset();
+
+    /**
+     * scope</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/scope">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("scope")
+    @NInt
+    public native long scope();
+
+    /**
+     * categoryBitMask</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/categoryBitMask">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCategoryBitMask:")
+    public native void setCategoryBitMask(@NUInt long value);
+
+    /**
+     * direction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/direction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDirection:")
+    public native void setDirection(@ByValue SCNVector3 value);
+
+    /**
+     * falloffExponent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/falloffExponent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFalloffExponent:")
+    public native void setFalloffExponent(@NFloat double value);
+
+    /**
+     * halfExtent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/halfExtent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHalfExtent:")
+    public native void setHalfExtent(@ByValue SCNVector3 value);
+
+    /**
+     * minimumDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/minimumDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumDistance:")
+    public native void setMinimumDistance(@NFloat double value);
+
+    /**
+     * offset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/offset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOffset:")
+    public native void setOffset(@ByValue SCNVector3 value);
+
+    /**
+     * scope</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/scope">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setScope:")
+    public native void setScope(@NInt long value);
+
+    /**
+     * strength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/strength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setStrength:")
+    public native void setStrength(@NFloat double value);
+
+    /**
+     * usesEllipsoidalExtent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/usesEllipsoidalExtent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUsesEllipsoidalExtent:")
+    public native void setUsesEllipsoidalExtent(boolean value);
+
+    /**
+     * strength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/strength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("strength")
+    @NFloat
+    public native double strength();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * usesEllipsoidalExtent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNPhysicsField_Class/index.html#//apple_ref/occ/instp/SCNPhysicsField/usesEllipsoidalExtent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("usesEllipsoidalExtent")
+    public native boolean usesEllipsoidalExtent();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_customFieldWithEvaluationBlock {
+        @Generated
+        @ByValue
+        SCNVector3 call_customFieldWithEvaluationBlock(@ByValue SCNVector3 arg0, @ByValue SCNVector3 arg1, float arg2,
+                float arg3, double arg4);
+    }
 }

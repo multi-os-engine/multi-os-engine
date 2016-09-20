@@ -98,80 +98,6 @@ public class GKBehavior extends NSObject implements NSFastEnumeration {
             NSDictionary<? extends GKGoal, ? extends NSNumber> weightedGoals);
 
     @Generated
-    @Selector("countByEnumeratingWithState:objects:count:")
-    @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
-
-    /**
-     * goalCount</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instp/GKBehavior/goalCount">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("goalCount")
-    @NInt
-    public native long goalCount();
-
-    @Generated
-    @Selector("init")
-    public native GKBehavior init();
-
-    /**
-     * objectAtIndexedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/objectAtIndexedSubscript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objectAtIndexedSubscript:")
-    public native GKGoal objectAtIndexedSubscript(@NUInt long idx);
-
-    /**
-     * objectForKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/objectForKeyedSubscript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objectForKeyedSubscript:")
-    public native NSNumber objectForKeyedSubscript(GKGoal goal);
-
-    /**
-     * removeAllGoals</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/removeAllGoals">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeAllGoals")
-    public native void removeAllGoals();
-
-    /**
-     * removeGoal:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/removeGoal:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeGoal:")
-    public native void removeGoal(GKGoal goal);
-
-    /**
-     * setObject:forKeyedSubscript:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/setObject:forKeyedSubscript:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(NSNumber weight, GKGoal goal);
-
-    /**
-     * setWeight:forGoal:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/setWeight:forGoal:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWeight:forGoal:")
-    public native void setWeightForGoal(float weight, GKGoal goal);
-
-    /**
-     * weightForGoal:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/weightForGoal:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("weightForGoal:")
-    public native float weightForGoal(GKGoal goal);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -270,4 +196,78 @@ public class GKBehavior extends NSObject implements NSFastEnumeration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("countByEnumeratingWithState:objects:count:")
+    @NUInt
+    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, Ptr<ObjCObject> buffer, @NUInt long len);
+
+    /**
+     * goalCount</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instp/GKBehavior/goalCount">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("goalCount")
+    @NInt
+    public native long goalCount();
+
+    @Generated
+    @Selector("init")
+    public native GKBehavior init();
+
+    /**
+     * objectAtIndexedSubscript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/objectAtIndexedSubscript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objectAtIndexedSubscript:")
+    public native GKGoal objectAtIndexedSubscript(@NUInt long idx);
+
+    /**
+     * objectForKeyedSubscript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/objectForKeyedSubscript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objectForKeyedSubscript:")
+    public native NSNumber objectForKeyedSubscript(GKGoal goal);
+
+    /**
+     * removeAllGoals</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/removeAllGoals">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeAllGoals")
+    public native void removeAllGoals();
+
+    /**
+     * removeGoal:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/removeGoal:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeGoal:")
+    public native void removeGoal(GKGoal goal);
+
+    /**
+     * setObject:forKeyedSubscript:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/setObject:forKeyedSubscript:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setObject:forKeyedSubscript:")
+    public native void setObjectForKeyedSubscript(NSNumber weight, GKGoal goal);
+
+    /**
+     * setWeight:forGoal:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/setWeight:forGoal:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWeight:forGoal:")
+    public native void setWeightForGoal(float weight, GKGoal goal);
+
+    /**
+     * weightForGoal:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKBehavior_Class/index.html#//apple_ref/occ/instm/GKBehavior/weightForGoal:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("weightForGoal:")
+    public native float weightForGoal(GKGoal goal);
 }

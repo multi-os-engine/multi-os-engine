@@ -52,6 +52,214 @@ public class NSBundle extends NSObject {
     }
 
     /**
+     * URLForResource:withExtension:subdirectory:inBundleWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/URLForResource:withExtension:subdirectory:inBundleWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLForResource:withExtension:subdirectory:inBundleWithURL:")
+    public static native NSURL URLForResourceWithExtensionSubdirectoryInBundleWithURL(String name, String ext,
+            String subpath, NSURL bundleURL);
+
+    /**
+     * URLsForResourcesWithExtension:subdirectory:inBundleWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/URLsForResourcesWithExtension:subdirectory:inBundleWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLsForResourcesWithExtension:subdirectory:inBundleWithURL:")
+    public static native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectoryInBundleWithURL(String ext,
+            String subpath, NSURL bundleURL);
+
+    /**
+     * allBundles</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/allBundles">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allBundles")
+    public static native NSArray<? extends NSBundle> allBundles();
+
+    /**
+     * allFrameworks</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/allFrameworks">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allFrameworks")
+    public static native NSArray<? extends NSBundle> allFrameworks();
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSBundle alloc();
+
+    /**
+     * bundleForClass:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/bundleForClass:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bundleForClass:")
+    public static native NSBundle bundleForClass(Class aClass);
+
+    /**
+     * bundleWithIdentifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/bundleWithIdentifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bundleWithIdentifier:")
+    public static native NSBundle bundleWithIdentifier(String identifier);
+
+    /**
+     * bundleWithPath:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/bundleWithPath:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bundleWithPath:")
+    public static native NSBundle bundleWithPath(String path);
+
+    /**
+     * bundleWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/bundleWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bundleWithURL:")
+    public static native NSBundle bundleWithURL(NSURL url);
+
+    /**
+     * mainBundle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/mainBundle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mainBundle")
+    public static native NSBundle mainBundle();
+
+    /**
+     * pathForResource:ofType:inDirectory:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/pathForResource:ofType:inDirectory:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pathForResource:ofType:inDirectory:")
+    public static native String pathForResourceOfTypeInDirectory_static(String name, String ext, String bundlePath);
+
+    /**
+     * pathsForResourcesOfType:inDirectory:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/pathsForResourcesOfType:inDirectory:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pathsForResourcesOfType:inDirectory:")
+    public static native NSArray<String> pathsForResourcesOfTypeInDirectory_static(String ext, String bundlePath);
+
+    /**
+     * preferredLocalizationsFromArray:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/preferredLocalizationsFromArray:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preferredLocalizationsFromArray:")
+    public static native NSArray<String> preferredLocalizationsFromArray(NSArray<String> localizationsArray);
+
+    /**
+     * preferredLocalizationsFromArray:forPreferences:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/preferredLocalizationsFromArray:forPreferences:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preferredLocalizationsFromArray:forPreferences:")
+    public static native NSArray<String> preferredLocalizationsFromArrayForPreferences(
+            NSArray<String> localizationsArray, NSArray<String> preferencesArray);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
      * URLForAuxiliaryExecutable:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/URLForAuxiliaryExecutable:">iOS Dev Center</a>
      */
@@ -76,15 +284,6 @@ public class NSBundle extends NSObject {
     public native NSURL URLForResourceWithExtensionSubdirectory(String name, String ext, String subpath);
 
     /**
-     * URLForResource:withExtension:subdirectory:inBundleWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/URLForResource:withExtension:subdirectory:inBundleWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLForResource:withExtension:subdirectory:inBundleWithURL:")
-    public static native NSURL URLForResourceWithExtensionSubdirectoryInBundleWithURL(String name, String ext,
-            String subpath, NSURL bundleURL);
-
-    /**
      * URLForResource:withExtension:subdirectory:localization:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/URLForResource:withExtension:subdirectory:localization:">iOS Dev Center</a>
      */
@@ -102,15 +301,6 @@ public class NSBundle extends NSObject {
     public native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectory(String ext, String subpath);
 
     /**
-     * URLsForResourcesWithExtension:subdirectory:inBundleWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/URLsForResourcesWithExtension:subdirectory:inBundleWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLsForResourcesWithExtension:subdirectory:inBundleWithURL:")
-    public static native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectoryInBundleWithURL(String ext,
-            String subpath, NSURL bundleURL);
-
-    /**
      * URLsForResourcesWithExtension:subdirectory:localization:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/URLsForResourcesWithExtension:subdirectory:localization:">iOS Dev Center</a>
      */
@@ -118,27 +308,6 @@ public class NSBundle extends NSObject {
     @Selector("URLsForResourcesWithExtension:subdirectory:localization:")
     public native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectoryLocalization(String ext,
             String subpath, String localizationName);
-
-    /**
-     * allBundles</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/allBundles">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allBundles")
-    public static native NSArray<? extends NSBundle> allBundles();
-
-    /**
-     * allFrameworks</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/allFrameworks">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allFrameworks")
-    public static native NSArray<? extends NSBundle> allFrameworks();
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSBundle alloc();
 
     /**
      * appStoreReceiptURL</br>
@@ -165,14 +334,6 @@ public class NSBundle extends NSObject {
     public native NSURL builtInPlugInsURL();
 
     /**
-     * bundleForClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/bundleForClass:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bundleForClass:")
-    public static native NSBundle bundleForClass(Class aClass);
-
-    /**
      * bundleIdentifier</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instp/NSBundle/bundleIdentifier">iOS Dev Center</a>
      */
@@ -195,30 +356,6 @@ public class NSBundle extends NSObject {
     @Generated
     @Selector("bundleURL")
     public native NSURL bundleURL();
-
-    /**
-     * bundleWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/bundleWithIdentifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bundleWithIdentifier:")
-    public static native NSBundle bundleWithIdentifier(String identifier);
-
-    /**
-     * bundleWithPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/bundleWithPath:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bundleWithPath:")
-    public static native NSBundle bundleWithPath(String path);
-
-    /**
-     * bundleWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/bundleWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bundleWithURL:")
-    public static native NSBundle bundleWithURL(NSURL url);
 
     /**
      * classNamed:</br>
@@ -346,14 +483,6 @@ public class NSBundle extends NSObject {
     public native String localizedStringForKeyValueTable(String key, String value, String tableName);
 
     /**
-     * mainBundle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/mainBundle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mainBundle")
-    public static native NSBundle mainBundle();
-
-    /**
      * objectForInfoDictionaryKey:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/objectForInfoDictionaryKey:">iOS Dev Center</a>
      */
@@ -380,14 +509,6 @@ public class NSBundle extends NSObject {
 
     /**
      * pathForResource:ofType:inDirectory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/pathForResource:ofType:inDirectory:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pathForResource:ofType:inDirectory:")
-    public static native String pathForResourceOfTypeInDirectory_static(String name, String ext, String bundlePath);
-
-    /**
-     * pathForResource:ofType:inDirectory:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/instm/NSBundle/pathForResource:ofType:inDirectory:">iOS Dev Center</a>
      */
     @Generated
@@ -402,14 +523,6 @@ public class NSBundle extends NSObject {
     @Selector("pathForResource:ofType:inDirectory:forLocalization:")
     public native String pathForResourceOfTypeInDirectoryForLocalization(String name, String ext, String subpath,
             String localizationName);
-
-    /**
-     * pathsForResourcesOfType:inDirectory:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/pathsForResourcesOfType:inDirectory:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pathsForResourcesOfType:inDirectory:")
-    public static native NSArray<String> pathsForResourcesOfTypeInDirectory_static(String ext, String bundlePath);
 
     /**
      * pathsForResourcesOfType:inDirectory:</br>
@@ -435,23 +548,6 @@ public class NSBundle extends NSObject {
     @Generated
     @Selector("preferredLocalizations")
     public native NSArray<String> preferredLocalizations();
-
-    /**
-     * preferredLocalizationsFromArray:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/preferredLocalizationsFromArray:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preferredLocalizationsFromArray:")
-    public static native NSArray<String> preferredLocalizationsFromArray(NSArray<String> localizationsArray);
-
-    /**
-     * preferredLocalizationsFromArray:forPreferences:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/clm/NSBundle/preferredLocalizationsFromArray:forPreferences:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preferredLocalizationsFromArray:forPreferences:")
-    public static native NSArray<String> preferredLocalizationsFromArrayForPreferences(
-            NSArray<String> localizationsArray, NSArray<String> preferencesArray);
 
     /**
      * preflightAndReturnError:</br>
@@ -556,100 +652,4 @@ public class NSBundle extends NSObject {
     @Generated
     @Selector("setPreservationPriority:forTags:")
     public native void setPreservationPriorityForTags(double priority, NSSet<String> tags);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

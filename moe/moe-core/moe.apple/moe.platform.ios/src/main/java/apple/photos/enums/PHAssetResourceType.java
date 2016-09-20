@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHAssetResourceType {
-    @Generated
-    private PHAssetResourceType() {
-    }
-
     @Generated @NInt public static final long Photo = 0x0000000000000001L;
     @Generated @NInt public static final long Video = 0x0000000000000002L;
     @Generated @NInt public static final long Audio = 0x0000000000000003L;
@@ -34,4 +30,8 @@ public final class PHAssetResourceType {
     @Generated @NInt public static final long AdjustmentData = 0x0000000000000007L;
     @Generated @NInt public static final long AdjustmentBasePhoto = 0x0000000000000008L;
     @Generated @NInt public static final long PairedVideo = 0x0000000000000009L;
+
+    @Generated
+    private PHAssetResourceType() {
+    }
 }

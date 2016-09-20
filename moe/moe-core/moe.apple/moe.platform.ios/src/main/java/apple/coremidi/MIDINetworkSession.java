@@ -53,51 +53,10 @@ public class MIDINetworkSession extends NSObject {
         super(peer);
     }
 
-    /**
-     * addConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/addConnection:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addConnection:")
-    public native boolean addConnection(MIDINetworkConnection connection);
-
-    /**
-     * addContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/addContact:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addContact:")
-    public native boolean addContact(MIDINetworkHost contact);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native MIDINetworkSession alloc();
-
-    /**
-     * connectionPolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/connectionPolicy">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connectionPolicy")
-    @NUInt
-    public native long connectionPolicy();
-
-    /**
-     * connections</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/connections">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connections")
-    public native NSSet<? extends MIDINetworkConnection> connections();
-
-    /**
-     * contacts</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/contacts">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contacts")
-    public native NSSet<? extends MIDINetworkHost> contacts();
 
     /**
      * defaultSession</br>
@@ -106,91 +65,6 @@ public class MIDINetworkSession extends NSObject {
     @Generated
     @Selector("defaultSession")
     public static native MIDINetworkSession defaultSession();
-
-    /**
-     * destinationEndpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/destinationEndpoint">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("destinationEndpoint")
-    public native int destinationEndpoint();
-
-    @Generated
-    @Selector("init")
-    public native MIDINetworkSession init();
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * localName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/localName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localName")
-    public native String localName();
-
-    /**
-     * networkName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/networkName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("networkName")
-    public native String networkName();
-
-    /**
-     * networkPort</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/networkPort">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("networkPort")
-    @NUInt
-    public native long networkPort();
-
-    /**
-     * removeConnection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/removeConnection:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeConnection:")
-    public native boolean removeConnection(MIDINetworkConnection connection);
-
-    /**
-     * removeContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/removeContact:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeContact:")
-    public native boolean removeContact(MIDINetworkHost contact);
-
-    /**
-     * connectionPolicy</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/connectionPolicy">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setConnectionPolicy:")
-    public native void setConnectionPolicy(@NUInt long value);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    /**
-     * sourceEndpoint</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/sourceEndpoint">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceEndpoint")
-    public native int sourceEndpoint();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -291,4 +165,130 @@ public class MIDINetworkSession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addConnection:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/addConnection:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addConnection:")
+    public native boolean addConnection(MIDINetworkConnection connection);
+
+    /**
+     * addContact:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/addContact:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addContact:")
+    public native boolean addContact(MIDINetworkHost contact);
+
+    /**
+     * connectionPolicy</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/connectionPolicy">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connectionPolicy")
+    @NUInt
+    public native long connectionPolicy();
+
+    /**
+     * connections</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/connections">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connections")
+    public native NSSet<? extends MIDINetworkConnection> connections();
+
+    /**
+     * contacts</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/contacts">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contacts")
+    public native NSSet<? extends MIDINetworkHost> contacts();
+
+    /**
+     * destinationEndpoint</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/destinationEndpoint">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("destinationEndpoint")
+    public native int destinationEndpoint();
+
+    @Generated
+    @Selector("init")
+    public native MIDINetworkSession init();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    /**
+     * localName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/localName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localName")
+    public native String localName();
+
+    /**
+     * networkName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/networkName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("networkName")
+    public native String networkName();
+
+    /**
+     * networkPort</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/networkPort">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("networkPort")
+    @NUInt
+    public native long networkPort();
+
+    /**
+     * removeConnection:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/removeConnection:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeConnection:")
+    public native boolean removeConnection(MIDINetworkConnection connection);
+
+    /**
+     * removeContact:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/removeContact:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeContact:")
+    public native boolean removeContact(MIDINetworkHost contact);
+
+    /**
+     * connectionPolicy</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instp/MIDINetworkSession/connectionPolicy">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setConnectionPolicy:")
+    public native void setConnectionPolicy(@NUInt long value);
+
+    /**
+     * sourceEndpoint</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMidi/Reference/MIDINetworkSession_ClassReference/index.html#//apple_ref/occ/instm/MIDINetworkSession/sourceEndpoint">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceEndpoint")
+    public native int sourceEndpoint();
 }

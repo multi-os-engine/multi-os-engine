@@ -68,26 +68,6 @@ public class MPNowPlayingInfoCenter extends NSObject {
     public static native MPNowPlayingInfoCenter defaultCenter();
 
     @Generated
-    @Selector("init")
-    public native MPNowPlayingInfoCenter init();
-
-    /**
-     * nowPlayingInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPNowPlayingInfoCenter_Class/index.html#//apple_ref/occ/instp/MPNowPlayingInfoCenter/nowPlayingInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("nowPlayingInfo")
-    public native NSDictionary<String, ?> nowPlayingInfo();
-
-    /**
-     * nowPlayingInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPNowPlayingInfoCenter_Class/index.html#//apple_ref/occ/instp/MPNowPlayingInfoCenter/nowPlayingInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNowPlayingInfo:")
-    public native void setNowPlayingInfo(NSDictionary<String, ?> value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -186,4 +166,24 @@ public class MPNowPlayingInfoCenter extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPNowPlayingInfoCenter init();
+
+    /**
+     * nowPlayingInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPNowPlayingInfoCenter_Class/index.html#//apple_ref/occ/instp/MPNowPlayingInfoCenter/nowPlayingInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("nowPlayingInfo")
+    public native NSDictionary<String, ?> nowPlayingInfo();
+
+    /**
+     * nowPlayingInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPNowPlayingInfoCenter_Class/index.html#//apple_ref/occ/instp/MPNowPlayingInfoCenter/nowPlayingInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNowPlayingInfo:")
+    public native void setNowPlayingInfo(NSDictionary<String, ?> value);
 }

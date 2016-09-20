@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CTFontOptions {
-    @Generated
-    private CTFontOptions() {
-    }
-
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     @Generated @NUInt public static final long PreventAutoActivation = 0x0000000000000001L;
     @Generated @NUInt public static final long PreferSystemFont = 0x0000000000000004L;
+
+    @Generated
+    private CTFontOptions() {
+    }
 }

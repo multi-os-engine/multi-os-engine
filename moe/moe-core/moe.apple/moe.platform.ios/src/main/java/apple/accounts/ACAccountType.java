@@ -53,38 +53,10 @@ public class ACAccountType extends NSObject {
         super(peer);
     }
 
-    /**
-     * accessGranted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountTypeClassRef/index.html#//apple_ref/occ/instp/ACAccountType/accessGranted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accessGranted")
-    public native boolean accessGranted();
-
-    /**
-     * accountTypeDescription</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountTypeClassRef/index.html#//apple_ref/occ/instp/ACAccountType/accountTypeDescription">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("accountTypeDescription")
-    public native String accountTypeDescription();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native ACAccountType alloc();
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountTypeClassRef/index.html#//apple_ref/occ/instp/ACAccountType/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native ACAccountType init();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -185,4 +157,32 @@ public class ACAccountType extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * accessGranted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountTypeClassRef/index.html#//apple_ref/occ/instp/ACAccountType/accessGranted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accessGranted")
+    public native boolean accessGranted();
+
+    /**
+     * accountTypeDescription</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountTypeClassRef/index.html#//apple_ref/occ/instp/ACAccountType/accountTypeDescription">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("accountTypeDescription")
+    public native String accountTypeDescription();
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Accounts/Reference/ACAccountTypeClassRef/index.html#//apple_ref/occ/instp/ACAccountType/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native ACAccountType init();
 }

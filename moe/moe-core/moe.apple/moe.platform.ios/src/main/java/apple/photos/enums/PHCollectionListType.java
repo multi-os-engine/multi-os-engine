@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHCollectionListType {
-    @Generated
-    private PHCollectionListType() {
-    }
-
     @Generated @NInt public static final long MomentList = 0x0000000000000001L;
     @Generated @NInt public static final long Folder = 0x0000000000000002L;
     @Generated @NInt public static final long SmartFolder = 0x0000000000000003L;
+
+    @Generated
+    private PHCollectionListType() {
+    }
 }

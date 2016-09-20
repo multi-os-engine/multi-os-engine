@@ -56,10 +56,6 @@ public class NSURLSessionUploadTask extends NSURLSessionDataTask {
     public static native NSURLSessionUploadTask alloc();
 
     @Generated
-    @Selector("init")
-    public native NSURLSessionUploadTask init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -158,4 +154,8 @@ public class NSURLSessionUploadTask extends NSURLSessionDataTask {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSURLSessionUploadTask init();
 }

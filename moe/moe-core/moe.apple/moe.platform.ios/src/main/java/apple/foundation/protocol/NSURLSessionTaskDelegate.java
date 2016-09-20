@@ -63,13 +63,6 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_URLSessionTaskDidReceiveChallengeCompletionHandler {
-        @Generated
-        void call_URLSessionTaskDidReceiveChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
-    }
-
     /**
      * URLSession:task:didSendBodyData:totalBytesSent:totalBytesExpectedToSend:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTaskDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionTaskDelegate/URLSession:task:didSendBodyData:totalBytesSent:totalBytesExpectedToSend:">iOS Dev Center</a>
@@ -94,13 +87,6 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_URLSessionTaskNeedNewBodyStream {
-        @Generated
-        void call_URLSessionTaskNeedNewBodyStream(NSInputStream arg0);
-    }
-
     /**
      * URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionTaskDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionTaskDelegate/URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:">iOS Dev Center</a>
@@ -112,6 +98,20 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
             NSURLSessionTask task, NSHTTPURLResponse response, NSURLRequest request,
             @ObjCBlock(name = "call_URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler") Block_URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_URLSessionTaskDidReceiveChallengeCompletionHandler {
+        @Generated
+        void call_URLSessionTaskDidReceiveChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_URLSessionTaskNeedNewBodyStream {
+        @Generated
+        void call_URLSessionTaskNeedNewBodyStream(NSInputStream arg0);
     }
 
     @Runtime(ObjCRuntime.class)

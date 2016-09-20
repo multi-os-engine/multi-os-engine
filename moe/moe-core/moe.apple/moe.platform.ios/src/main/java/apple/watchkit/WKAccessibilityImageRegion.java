@@ -60,43 +60,6 @@ public class WKAccessibilityImageRegion extends NSObject {
     @Selector("alloc")
     public static native WKAccessibilityImageRegion alloc();
 
-    /**
-     * frame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKAccessibilityImageRegion_class/index.html#//apple_ref/occ/instp/WKAccessibilityImageRegion/frame">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("frame")
-    @ByValue
-    public native CGRect frame();
-
-    @Generated
-    @Selector("init")
-    public native WKAccessibilityImageRegion init();
-
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKAccessibilityImageRegion_class/index.html#//apple_ref/occ/instp/WKAccessibilityImageRegion/label">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("label")
-    public native String label();
-
-    /**
-     * frame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKAccessibilityImageRegion_class/index.html#//apple_ref/occ/instp/WKAccessibilityImageRegion/frame">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFrame:")
-    public native void setFrame(@ByValue CGRect value);
-
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKAccessibilityImageRegion_class/index.html#//apple_ref/occ/instp/WKAccessibilityImageRegion/label">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLabel:")
-    public native void setLabel(String value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -196,4 +159,41 @@ public class WKAccessibilityImageRegion extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * frame</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKAccessibilityImageRegion_class/index.html#//apple_ref/occ/instp/WKAccessibilityImageRegion/frame">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("frame")
+    @ByValue
+    public native CGRect frame();
+
+    @Generated
+    @Selector("init")
+    public native WKAccessibilityImageRegion init();
+
+    /**
+     * label</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKAccessibilityImageRegion_class/index.html#//apple_ref/occ/instp/WKAccessibilityImageRegion/label">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("label")
+    public native String label();
+
+    /**
+     * frame</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKAccessibilityImageRegion_class/index.html#//apple_ref/occ/instp/WKAccessibilityImageRegion/frame">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFrame:")
+    public native void setFrame(@ByValue CGRect value);
+
+    /**
+     * label</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKAccessibilityImageRegion_class/index.html#//apple_ref/occ/instp/WKAccessibilityImageRegion/label">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLabel:")
+    public native void setLabel(String value);
 }

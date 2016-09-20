@@ -68,26 +68,6 @@ public class CIDetector extends NSObject {
     public static native CIDetector detectorOfTypeContextOptions(String type, CIContext context,
             NSDictionary<String, ?> options);
 
-    /**
-     * featuresInImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIDetector_Ref/index.html#//apple_ref/occ/instm/CIDetector/featuresInImage:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("featuresInImage:")
-    public native NSArray<? extends CIFeature> featuresInImage(CIImage image);
-
-    /**
-     * featuresInImage:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIDetector_Ref/index.html#//apple_ref/occ/instm/CIDetector/featuresInImage:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("featuresInImage:options:")
-    public native NSArray<? extends CIFeature> featuresInImageOptions(CIImage image, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("init")
-    public native CIDetector init();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -187,4 +167,24 @@ public class CIDetector extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * featuresInImage:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIDetector_Ref/index.html#//apple_ref/occ/instm/CIDetector/featuresInImage:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("featuresInImage:")
+    public native NSArray<? extends CIFeature> featuresInImage(CIImage image);
+
+    /**
+     * featuresInImage:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreImage/Reference/CIDetector_Ref/index.html#//apple_ref/occ/instm/CIDetector/featuresInImage:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("featuresInImage:options:")
+    public native NSArray<? extends CIFeature> featuresInImageOptions(CIImage image, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("init")
+    public native CIDetector init();
 }

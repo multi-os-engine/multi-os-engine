@@ -67,71 +67,9 @@ public class UIBezierPath extends NSObject implements NSCopying, NSCoding {
     }
 
     @Generated
-    @Selector("CGPath")
-    public native CGPathRef CGPath();
-
-    /**
-     * addArcWithCenter:radius:startAngle:endAngle:clockwise:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/addArcWithCenter:radius:startAngle:endAngle:clockwise:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addArcWithCenter:radius:startAngle:endAngle:clockwise:")
-    public native void addArcWithCenterRadiusStartAngleEndAngleClockwise(@ByValue CGPoint center, @NFloat double radius,
-            @NFloat double startAngle, @NFloat double endAngle, boolean clockwise);
-
-    /**
-     * addClip</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/addClip">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addClip")
-    public native void addClip();
-
-    /**
-     * addCurveToPoint:controlPoint1:controlPoint2:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/addCurveToPoint:controlPoint1:controlPoint2:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addCurveToPoint:controlPoint1:controlPoint2:")
-    public native void addCurveToPointControlPoint1ControlPoint2(@ByValue CGPoint endPoint,
-            @ByValue CGPoint controlPoint1, @ByValue CGPoint controlPoint2);
-
-    /**
-     * addLineToPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/addLineToPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addLineToPoint:")
-    public native void addLineToPoint(@ByValue CGPoint point);
-
-    /**
-     * addQuadCurveToPoint:controlPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/addQuadCurveToPoint:controlPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addQuadCurveToPoint:controlPoint:")
-    public native void addQuadCurveToPointControlPoint(@ByValue CGPoint endPoint, @ByValue CGPoint controlPoint);
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native UIBezierPath alloc();
-
-    /**
-     * appendPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/appendPath:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("appendPath:")
-    public native void appendPath(UIBezierPath bezierPath);
-
-    /**
-     * applyTransform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/applyTransform:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applyTransform:")
-    public native void applyTransform(@ByValue CGAffineTransform transform);
 
     /**
      * bezierPath</br>
@@ -140,14 +78,6 @@ public class UIBezierPath extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("bezierPath")
     public static native UIBezierPath bezierPath();
-
-    /**
-     * bezierPathByReversingPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/bezierPathByReversingPath">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bezierPathByReversingPath")
-    public native UIBezierPath bezierPathByReversingPath();
 
     /**
      * bezierPathWithArcCenter:radius:startAngle:endAngle:clockwise:</br>
@@ -199,6 +129,176 @@ public class UIBezierPath extends NSObject implements NSCopying, NSCoding {
     @Selector("bezierPathWithRoundedRect:cornerRadius:")
     public static native UIBezierPath bezierPathWithRoundedRectCornerRadius(@ByValue CGRect rect,
             @NFloat double cornerRadius);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("CGPath")
+    public native CGPathRef CGPath();
+
+    /**
+     * addArcWithCenter:radius:startAngle:endAngle:clockwise:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/addArcWithCenter:radius:startAngle:endAngle:clockwise:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addArcWithCenter:radius:startAngle:endAngle:clockwise:")
+    public native void addArcWithCenterRadiusStartAngleEndAngleClockwise(@ByValue CGPoint center, @NFloat double radius,
+            @NFloat double startAngle, @NFloat double endAngle, boolean clockwise);
+
+    /**
+     * addClip</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/addClip">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addClip")
+    public native void addClip();
+
+    /**
+     * addCurveToPoint:controlPoint1:controlPoint2:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/addCurveToPoint:controlPoint1:controlPoint2:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addCurveToPoint:controlPoint1:controlPoint2:")
+    public native void addCurveToPointControlPoint1ControlPoint2(@ByValue CGPoint endPoint,
+            @ByValue CGPoint controlPoint1, @ByValue CGPoint controlPoint2);
+
+    /**
+     * addLineToPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/addLineToPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addLineToPoint:")
+    public native void addLineToPoint(@ByValue CGPoint point);
+
+    /**
+     * addQuadCurveToPoint:controlPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/addQuadCurveToPoint:controlPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addQuadCurveToPoint:controlPoint:")
+    public native void addQuadCurveToPointControlPoint(@ByValue CGPoint endPoint, @ByValue CGPoint controlPoint);
+
+    /**
+     * appendPath:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/appendPath:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("appendPath:")
+    public native void appendPath(UIBezierPath bezierPath);
+
+    /**
+     * applyTransform:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/applyTransform:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applyTransform:")
+    public native void applyTransform(@ByValue CGAffineTransform transform);
+
+    /**
+     * bezierPathByReversingPath</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIBezierPath_class/index.html#//apple_ref/occ/instm/UIBezierPath/bezierPathByReversingPath">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bezierPathByReversingPath")
+    public native UIBezierPath bezierPathByReversingPath();
 
     /**
      * bounds</br>
@@ -430,104 +530,4 @@ public class UIBezierPath extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("usesEvenOddFillRule")
     public native boolean usesEvenOddFillRule();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

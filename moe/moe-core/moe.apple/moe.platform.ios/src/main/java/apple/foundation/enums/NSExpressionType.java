@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSExpressionType {
-    @Generated
-    private NSExpressionType() {
-    }
-
     @Generated @NUInt public static final long ConstantValueExpressionType = 0x0000000000000000L;
     @Generated @NUInt public static final long EvaluatedObjectExpressionType = 0x0000000000000001L;
     @Generated @NUInt public static final long VariableExpressionType = 0x0000000000000002L;
@@ -38,4 +34,8 @@ public final class NSExpressionType {
     @Generated @NUInt public static final long AnyKeyExpressionType = 0x000000000000000FL;
     @Generated @NUInt public static final long BlockExpressionType = 0x0000000000000013L;
     @Generated @NUInt public static final long ConditionalExpressionType = 0x0000000000000014L;
+
+    @Generated
+    private NSExpressionType() {
+    }
 }

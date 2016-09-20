@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGPDFObjectType {
-    @Generated
-    private CGPDFObjectType() {
-    }
-
     @Generated public static final int Null = 0x00000001;
     @Generated public static final int Boolean = 0x00000002;
     @Generated public static final int Integer = 0x00000003;
@@ -33,4 +29,8 @@ public final class CGPDFObjectType {
     @Generated public static final int Array = 0x00000007;
     @Generated public static final int Dictionary = 0x00000008;
     @Generated public static final int Stream = 0x00000009;
+
+    @Generated
+    private CGPDFObjectType() {
+    }
 }

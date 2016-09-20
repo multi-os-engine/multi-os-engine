@@ -62,32 +62,6 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     public static native UITableViewRowAction alloc();
 
     /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/backgroundColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backgroundColor")
-    public native UIColor backgroundColor();
-
-    /**
-     * backgroundEffect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/backgroundEffect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backgroundEffect")
-    public native UIVisualEffect backgroundEffect();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native UITableViewRowAction init();
-
-    /**
      * rowActionWithStyle:title:handler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/clm/UITableViewRowAction/rowActionWithStyle:title:handler:">iOS Dev Center</a>
      */
@@ -95,54 +69,6 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     @Selector("rowActionWithStyle:title:handler:")
     public static native UITableViewRowAction rowActionWithStyleTitleHandler(@NInt long style, String title,
             @ObjCBlock(name = "call_rowActionWithStyleTitleHandler") Block_rowActionWithStyleTitleHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_rowActionWithStyleTitleHandler {
-        @Generated
-        void call_rowActionWithStyleTitleHandler(UITableViewRowAction arg0, NSIndexPath arg1);
-    }
-
-    /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/backgroundColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
-
-    /**
-     * backgroundEffect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/backgroundEffect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackgroundEffect:")
-    public native void setBackgroundEffect(UIVisualEffect value);
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTitle:")
-    public native void setTitle(String value);
-
-    /**
-     * style</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/style">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("style")
-    @NInt
-    public native long style();
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -243,4 +169,78 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * backgroundColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/backgroundColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backgroundColor")
+    public native UIColor backgroundColor();
+
+    /**
+     * backgroundEffect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/backgroundEffect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backgroundEffect")
+    public native UIVisualEffect backgroundEffect();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native UITableViewRowAction init();
+
+    /**
+     * backgroundColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/backgroundColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackgroundColor:")
+    public native void setBackgroundColor(UIColor value);
+
+    /**
+     * backgroundEffect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/backgroundEffect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackgroundEffect:")
+    public native void setBackgroundEffect(UIVisualEffect value);
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
+
+    /**
+     * style</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/style">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("style")
+    @NInt
+    public native long style();
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/index.html#//apple_ref/occ/instp/UITableViewRowAction/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_rowActionWithStyleTitleHandler {
+        @Generated
+        void call_rowActionWithStyleTitleHandler(UITableViewRowAction arg0, NSIndexPath arg1);
+    }
 }

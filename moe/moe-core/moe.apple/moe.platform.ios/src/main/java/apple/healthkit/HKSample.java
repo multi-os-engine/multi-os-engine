@@ -61,38 +61,6 @@ public class HKSample extends HKObject {
     @Selector("alloc")
     public static native HKSample alloc();
 
-    /**
-     * endDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSample_Class/index.html#//apple_ref/occ/instp/HKSample/endDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("endDate")
-    public native NSDate endDate();
-
-    @Generated
-    @Selector("init")
-    public native HKSample init();
-
-    /**
-     * sampleType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSample_Class/index.html#//apple_ref/occ/instp/HKSample/sampleType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sampleType")
-    public native HKSampleType sampleType();
-
-    /**
-     * startDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSample_Class/index.html#//apple_ref/occ/instp/HKSample/startDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startDate")
-    public native NSDate startDate();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKSample initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -193,13 +161,45 @@ public class HKSample extends HKObject {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version();
+
+    /**
+     * endDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSample_Class/index.html#//apple_ref/occ/instp/HKSample/endDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("endDate")
+    public native NSDate endDate();
+
+    @Generated
+    @Selector("init")
+    public native HKSample init();
+
+    /**
+     * sampleType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSample_Class/index.html#//apple_ref/occ/instp/HKSample/sampleType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sampleType")
+    public native HKSampleType sampleType();
+
+    /**
+     * startDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSample_Class/index.html#//apple_ref/occ/instp/HKSample/startDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startDate")
+    public native NSDate startDate();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKSample initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
 }

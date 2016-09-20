@@ -66,24 +66,6 @@ public class SKRegion extends NSObject implements NSCopying, NSCoding {
     public static native SKRegion alloc();
 
     /**
-     * containsPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/containsPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containsPoint:")
-    public native boolean containsPoint(@ByValue CGPoint point);
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
      * infiniteRegion</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/clm/SKRegion/infiniteRegion">iOS Dev Center</a>
      */
@@ -91,82 +73,6 @@ public class SKRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("infiniteRegion")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object infiniteRegion();
-
-    @Generated
-    @Selector("init")
-    public native SKRegion init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKRegion initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithPath:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/initWithPath:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithPath:")
-    public native SKRegion initWithPath(CGPathRef path);
-
-    /**
-     * initWithRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/initWithRadius:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRadius:")
-    public native SKRegion initWithRadius(float radius);
-
-    /**
-     * initWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/initWithSize:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSize:")
-    public native SKRegion initWithSize(@ByValue CGSize size);
-
-    /**
-     * inverseRegion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/inverseRegion">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("inverseRegion")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object inverseRegion();
-
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instp/SKRegion/path">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("path")
-    public native CGPathRef path();
-
-    /**
-     * regionByDifferenceFromRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/regionByDifferenceFromRegion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("regionByDifferenceFromRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByDifferenceFromRegion(SKRegion region);
-
-    /**
-     * regionByIntersectionWithRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/regionByIntersectionWithRegion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("regionByIntersectionWithRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByIntersectionWithRegion(SKRegion region);
-
-    /**
-     * regionByUnionWithRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/regionByUnionWithRegion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("regionByUnionWithRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByUnionWithRegion(SKRegion region);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -267,4 +173,98 @@ public class SKRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * containsPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/containsPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containsPoint:")
+    public native boolean containsPoint(@ByValue CGPoint point);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SKRegion init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKRegion initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithPath:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/initWithPath:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithPath:")
+    public native SKRegion initWithPath(CGPathRef path);
+
+    /**
+     * initWithRadius:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/initWithRadius:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRadius:")
+    public native SKRegion initWithRadius(float radius);
+
+    /**
+     * initWithSize:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/initWithSize:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSize:")
+    public native SKRegion initWithSize(@ByValue CGSize size);
+
+    /**
+     * inverseRegion</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/inverseRegion">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("inverseRegion")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object inverseRegion();
+
+    /**
+     * path</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instp/SKRegion/path">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("path")
+    public native CGPathRef path();
+
+    /**
+     * regionByDifferenceFromRegion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/regionByDifferenceFromRegion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("regionByDifferenceFromRegion:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object regionByDifferenceFromRegion(SKRegion region);
+
+    /**
+     * regionByIntersectionWithRegion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/regionByIntersectionWithRegion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("regionByIntersectionWithRegion:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object regionByIntersectionWithRegion(SKRegion region);
+
+    /**
+     * regionByUnionWithRegion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRegion_Ref/index.html#//apple_ref/occ/instm/SKRegion/regionByUnionWithRegion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("regionByUnionWithRegion:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object regionByUnionWithRegion(SKRegion region);
 }

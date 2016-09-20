@@ -58,38 +58,9 @@ public class HMEventTrigger extends HMTrigger {
     }
 
     @Generated
-    @Selector("addEvent:completionHandler:")
-    public native void addEventCompletionHandler(HMEvent event,
-            @ObjCBlock(name = "call_addEventCompletionHandler") Block_addEventCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addEventCompletionHandler {
-        @Generated
-        void call_addEventCompletionHandler(NSError arg0);
-    }
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native HMEventTrigger alloc();
-
-    @Generated
-    @Selector("events")
-    public native NSArray<? extends HMEvent> events();
-
-    @Generated
-    @Selector("init")
-    public native HMEventTrigger init();
-
-    @Generated
-    @Selector("initWithName:events:predicate:")
-    public native HMEventTrigger initWithNameEventsPredicate(String name, NSArray<? extends HMEvent> events,
-            NSPredicate predicate);
-
-    @Generated
-    @Selector("predicate")
-    public native NSPredicate predicate();
 
     @Generated
     @Selector("predicateForEvaluatingTriggerOccurringAfterDateWithComponents:")
@@ -120,30 +91,6 @@ public class HMEventTrigger extends HMTrigger {
     @Selector("predicateForEvaluatingTriggerWithCharacteristic:relatedBy:toValue:")
     public static native NSPredicate predicateForEvaluatingTriggerWithCharacteristicRelatedByToValue(
             HMCharacteristic characteristic, @NUInt long operatorType, @Mapped(ObjCObjectMapper.class) Object value);
-
-    @Generated
-    @Selector("removeEvent:completionHandler:")
-    public native void removeEventCompletionHandler(HMEvent event,
-            @ObjCBlock(name = "call_removeEventCompletionHandler") Block_removeEventCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_removeEventCompletionHandler {
-        @Generated
-        void call_removeEventCompletionHandler(NSError arg0);
-    }
-
-    @Generated
-    @Selector("updatePredicate:completionHandler:")
-    public native void updatePredicateCompletionHandler(NSPredicate predicate,
-            @ObjCBlock(name = "call_updatePredicateCompletionHandler") Block_updatePredicateCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updatePredicateCompletionHandler {
-        @Generated
-        void call_updatePredicateCompletionHandler(NSError arg0);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -244,4 +191,57 @@ public class HMEventTrigger extends HMTrigger {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("addEvent:completionHandler:")
+    public native void addEventCompletionHandler(HMEvent event,
+            @ObjCBlock(name = "call_addEventCompletionHandler") Block_addEventCompletionHandler completion);
+
+    @Generated
+    @Selector("events")
+    public native NSArray<? extends HMEvent> events();
+
+    @Generated
+    @Selector("init")
+    public native HMEventTrigger init();
+
+    @Generated
+    @Selector("initWithName:events:predicate:")
+    public native HMEventTrigger initWithNameEventsPredicate(String name, NSArray<? extends HMEvent> events,
+            NSPredicate predicate);
+
+    @Generated
+    @Selector("predicate")
+    public native NSPredicate predicate();
+
+    @Generated
+    @Selector("removeEvent:completionHandler:")
+    public native void removeEventCompletionHandler(HMEvent event,
+            @ObjCBlock(name = "call_removeEventCompletionHandler") Block_removeEventCompletionHandler completion);
+
+    @Generated
+    @Selector("updatePredicate:completionHandler:")
+    public native void updatePredicateCompletionHandler(NSPredicate predicate,
+            @ObjCBlock(name = "call_updatePredicateCompletionHandler") Block_updatePredicateCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addEventCompletionHandler {
+        @Generated
+        void call_addEventCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeEventCompletionHandler {
+        @Generated
+        void call_removeEventCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updatePredicateCompletionHandler {
+        @Generated
+        void call_updatePredicateCompletionHandler(NSError arg0);
+    }
 }

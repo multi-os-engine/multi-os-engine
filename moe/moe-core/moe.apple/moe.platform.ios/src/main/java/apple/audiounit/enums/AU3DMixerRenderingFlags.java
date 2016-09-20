@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AU3DMixerRenderingFlags {
-    @Generated
-    private AU3DMixerRenderingFlags() {
-    }
-
     @Generated public static final int InterAuralDelay = 0x00000001;
     @Generated public static final int DopplerShift = 0x00000002;
     @Generated public static final int DistanceAttenuation = 0x00000004;
@@ -31,4 +27,8 @@ public final class AU3DMixerRenderingFlags {
     @Generated public static final int DistanceDiffusion = 0x00000010;
     @Generated public static final int LinearDistanceAttenuation = 0x00000020;
     @Generated public static final int ConstantReverbBlend = 0x00000040;
+
+    @Generated
+    private AU3DMixerRenderingFlags() {
+    }
 }

@@ -68,6 +68,145 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native CALayer alloc();
+
+    /**
+     * defaultActionForKey:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/clm/CALayer/defaultActionForKey:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultActionForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native CAAction defaultActionForKey(String event);
+
+    /**
+     * defaultValueForKey:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/clm/CALayer/defaultValueForKey:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultValueForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object defaultValueForKey(String key);
+
+    /**
+     * layer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/clm/CALayer/layer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("layer")
+    public static native CALayer layer();
+
+    /**
+     * needsDisplayForKey:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/clm/CALayer/needsDisplayForKey:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("needsDisplayForKey:")
+    public static native boolean needsDisplayForKey(String key);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * actionForKey:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instm/CALayer/actionForKey:">iOS Dev Center</a>
@@ -109,11 +248,6 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     @Selector("affineTransform")
     @ByValue
     public native CGAffineTransform affineTransform();
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native CALayer alloc();
 
     /**
      * allowsEdgeAntialiasing</br>
@@ -346,24 +480,6 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     public native double cornerRadius();
 
     /**
-     * defaultActionForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/clm/CALayer/defaultActionForKey:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultActionForKey:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
-
-    /**
-     * defaultValueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/clm/CALayer/defaultValueForKey:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultValueForKey:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
-
-    /**
      * delegate</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/delegate">iOS Dev Center</a>
      */
@@ -502,12 +618,28 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     public native boolean isDoubleSided();
 
     /**
+     * doubleSided</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/doubleSided">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDoubleSided:")
+    public native void setDoubleSided(boolean value);
+
+    /**
      * geometryFlipped</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/geometryFlipped">iOS Dev Center</a>
      */
     @Generated
     @Selector("isGeometryFlipped")
     public native boolean isGeometryFlipped();
+
+    /**
+     * geometryFlipped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/geometryFlipped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setGeometryFlipped:")
+    public native void setGeometryFlipped(boolean value);
 
     /**
      * hidden</br>
@@ -518,6 +650,14 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     public native boolean isHidden();
 
     /**
+     * hidden</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/hidden">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHidden:")
+    public native void setHidden(boolean value);
+
+    /**
      * opaque</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/opaque">iOS Dev Center</a>
      */
@@ -526,12 +666,12 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     public native boolean isOpaque();
 
     /**
-     * layer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/clm/CALayer/layer">iOS Dev Center</a>
+     * opaque</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/opaque">iOS Dev Center</a>
      */
     @Generated
-    @Selector("layer")
-    public static native CALayer layer();
+    @Selector("setOpaque:")
+    public native void setOpaque(boolean value);
 
     /**
      * layoutIfNeeded</br>
@@ -613,14 +753,6 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     @Generated
     @Selector("needsDisplay")
     public native boolean needsDisplay();
-
-    /**
-     * needsDisplayForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/clm/CALayer/needsDisplayForKey:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
 
     /**
      * needsDisplayOnBoundsChange</br>
@@ -923,14 +1055,6 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     }
 
     /**
-     * doubleSided</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/doubleSided">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDoubleSided:")
-    public native void setDoubleSided(boolean value);
-
-    /**
      * drawsAsynchronously</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/drawsAsynchronously">iOS Dev Center</a>
      */
@@ -969,22 +1093,6 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     @Generated
     @Selector("setFrame:")
     public native void setFrame(@ByValue CGRect value);
-
-    /**
-     * geometryFlipped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/geometryFlipped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setGeometryFlipped:")
-    public native void setGeometryFlipped(boolean value);
-
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/hidden">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHidden:")
-    public native void setHidden(boolean value);
 
     /**
      * magnificationFilter</br>
@@ -1073,14 +1181,6 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     @Generated
     @Selector("setOpacity:")
     public native void setOpacity(float value);
-
-    /**
-     * opaque</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CALayer_class/index.html#//apple_ref/occ/instp/CALayer/opaque">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOpaque:")
-    public native void setOpaque(boolean value);
 
     /**
      * position</br>
@@ -1327,104 +1427,4 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     @Selector("zPosition")
     @NFloat
     public native double zPosition();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

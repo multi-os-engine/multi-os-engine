@@ -57,219 +57,10 @@ public class UIGestureRecognizer extends NSObject {
         super(peer);
     }
 
-    /**
-     * addTarget:action:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/addTarget:action:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addTarget:action:")
-    public native void addTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIGestureRecognizer alloc();
-
-    /**
-     * cancelsTouchesInView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/cancelsTouchesInView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelsTouchesInView")
-    public native boolean cancelsTouchesInView();
-
-    /**
-     * delaysTouchesBegan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delaysTouchesBegan">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delaysTouchesBegan")
-    public native boolean delaysTouchesBegan();
-
-    /**
-     * delaysTouchesEnded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delaysTouchesEnded">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delaysTouchesEnded")
-    public native boolean delaysTouchesEnded();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UIGestureRecognizerDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native UIGestureRecognizer init();
-
-    /**
-     * initWithTarget:action:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/initWithTarget:action:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithTarget:action:")
-    public native UIGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * locationInView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/locationInView:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("locationInView:")
-    @ByValue
-    public native CGPoint locationInView(UIView view);
-
-    /**
-     * locationOfTouch:inView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/locationOfTouch:inView:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("locationOfTouch:inView:")
-    @ByValue
-    public native CGPoint locationOfTouchInView(@NUInt long touchIndex, UIView view);
-
-    /**
-     * numberOfTouches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/numberOfTouches">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberOfTouches")
-    @NUInt
-    public native long numberOfTouches();
-
-    /**
-     * removeTarget:action:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/removeTarget:action:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeTarget:action:")
-    public native void removeTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
-
-    /**
-     * requireGestureRecognizerToFail:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/requireGestureRecognizerToFail:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requireGestureRecognizerToFail:")
-    public native void requireGestureRecognizerToFail(UIGestureRecognizer otherGestureRecognizer);
-
-    /**
-     * cancelsTouchesInView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/cancelsTouchesInView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCancelsTouchesInView:")
-    public native void setCancelsTouchesInView(boolean value);
-
-    /**
-     * delaysTouchesBegan</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delaysTouchesBegan">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelaysTouchesBegan:")
-    public native void setDelaysTouchesBegan(boolean value);
-
-    /**
-     * delaysTouchesEnded</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delaysTouchesEnded">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelaysTouchesEnded:")
-    public native void setDelaysTouchesEnded(boolean value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIGestureRecognizerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIGestureRecognizerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/state">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("state")
-    @NInt
-    public native long state();
-
-    /**
-     * view</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/view">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("view")
-    public native UIView view();
-
-    /**
-     * allowedPressTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/allowedPressTypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allowedPressTypes")
-    public native NSArray<? extends NSNumber> allowedPressTypes();
-
-    /**
-     * allowedTouchTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/allowedTouchTypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allowedTouchTypes")
-    public native NSArray<? extends NSNumber> allowedTouchTypes();
-
-    /**
-     * allowedPressTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/allowedPressTypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAllowedPressTypes:")
-    public native void setAllowedPressTypes(NSArray<? extends NSNumber> value);
-
-    /**
-     * allowedTouchTypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/allowedTouchTypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAllowedTouchTypes:")
-    public native void setAllowedTouchTypes(NSArray<? extends NSNumber> value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -370,4 +161,213 @@ public class UIGestureRecognizer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * addTarget:action:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/addTarget:action:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addTarget:action:")
+    public native void addTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
+
+    /**
+     * cancelsTouchesInView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/cancelsTouchesInView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelsTouchesInView")
+    public native boolean cancelsTouchesInView();
+
+    /**
+     * delaysTouchesBegan</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delaysTouchesBegan">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delaysTouchesBegan")
+    public native boolean delaysTouchesBegan();
+
+    /**
+     * delaysTouchesEnded</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delaysTouchesEnded">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delaysTouchesEnded")
+    public native boolean delaysTouchesEnded();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIGestureRecognizerDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native UIGestureRecognizer init();
+
+    /**
+     * initWithTarget:action:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/initWithTarget:action:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithTarget:action:")
+    public native UIGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    /**
+     * locationInView:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/locationInView:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("locationInView:")
+    @ByValue
+    public native CGPoint locationInView(UIView view);
+
+    /**
+     * locationOfTouch:inView:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/locationOfTouch:inView:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("locationOfTouch:inView:")
+    @ByValue
+    public native CGPoint locationOfTouchInView(@NUInt long touchIndex, UIView view);
+
+    /**
+     * numberOfTouches</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/numberOfTouches">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberOfTouches")
+    @NUInt
+    public native long numberOfTouches();
+
+    /**
+     * removeTarget:action:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/removeTarget:action:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeTarget:action:")
+    public native void removeTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
+
+    /**
+     * requireGestureRecognizerToFail:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIGestureRecognizer/requireGestureRecognizerToFail:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requireGestureRecognizerToFail:")
+    public native void requireGestureRecognizerToFail(UIGestureRecognizer otherGestureRecognizer);
+
+    /**
+     * cancelsTouchesInView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/cancelsTouchesInView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCancelsTouchesInView:")
+    public native void setCancelsTouchesInView(boolean value);
+
+    /**
+     * delaysTouchesBegan</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delaysTouchesBegan">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelaysTouchesBegan:")
+    public native void setDelaysTouchesBegan(boolean value);
+
+    /**
+     * delaysTouchesEnded</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delaysTouchesEnded">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelaysTouchesEnded:")
+    public native void setDelaysTouchesEnded(boolean value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIGestureRecognizerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIGestureRecognizerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * state</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/state">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("state")
+    @NInt
+    public native long state();
+
+    /**
+     * view</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/view">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("view")
+    public native UIView view();
+
+    /**
+     * allowedPressTypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/allowedPressTypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allowedPressTypes")
+    public native NSArray<? extends NSNumber> allowedPressTypes();
+
+    /**
+     * allowedTouchTypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/allowedTouchTypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allowedTouchTypes")
+    public native NSArray<? extends NSNumber> allowedTouchTypes();
+
+    /**
+     * allowedPressTypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/allowedPressTypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAllowedPressTypes:")
+    public native void setAllowedPressTypes(NSArray<? extends NSNumber> value);
+
+    /**
+     * allowedTouchTypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIGestureRecognizer/allowedTouchTypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAllowedTouchTypes:")
+    public native void setAllowedTouchTypes(NSArray<? extends NSNumber> value);
 }

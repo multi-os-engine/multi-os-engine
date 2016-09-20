@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKErrorCode {
-    @Generated
-    private EKErrorCode() {
-    }
-
     @NInt @Generated public static final long EventNotMutable = 0x0000000000000000L;
     @NInt @Generated public static final long NoCalendar = 0x0000000000000001L;
     @NInt @Generated public static final long NoStartDate = 0x0000000000000002L;
@@ -57,4 +53,8 @@ public final class EKErrorCode {
     @Generated @NInt public static final long ProcedureAlarmsNotMutable = 0x000000000000001CL;
     @Generated @NInt public static final long EventStoreNotAuthorized = 0x000000000000001DL;
     @Generated @NInt public static final long OSNotSupported = 0x000000000000001EL;
+
+    @Generated
+    private EKErrorCode() {
+    }
 }

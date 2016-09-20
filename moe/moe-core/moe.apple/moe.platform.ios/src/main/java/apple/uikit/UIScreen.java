@@ -66,80 +66,6 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public static native UIScreen alloc();
 
     /**
-     * applicationFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/applicationFrame">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("applicationFrame")
-    @ByValue
-    public native CGRect applicationFrame();
-
-    /**
-     * availableModes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/availableModes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("availableModes")
-    public native NSArray<? extends UIScreenMode> availableModes();
-
-    /**
-     * bounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/bounds">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bounds")
-    @ByValue
-    public native CGRect bounds();
-
-    /**
-     * brightness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/brightness">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("brightness")
-    @NFloat
-    public native double brightness();
-
-    /**
-     * coordinateSpace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/coordinateSpace">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("coordinateSpace")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UICoordinateSpace coordinateSpace();
-
-    /**
-     * currentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/currentMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentMode")
-    public native UIScreenMode currentMode();
-
-    /**
-     * displayLinkWithTarget:selector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instm/UIScreen/displayLinkWithTarget:selector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("displayLinkWithTarget:selector:")
-    public native CADisplayLink displayLinkWithTargetSelector(@Mapped(ObjCObjectMapper.class) Object target, SEL sel);
-
-    /**
-     * fixedCoordinateSpace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/fixedCoordinateSpace">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fixedCoordinateSpace")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UICoordinateSpace fixedCoordinateSpace();
-
-    @Generated
-    @Selector("init")
-    public native UIScreen init();
-
-    /**
      * mainScreen</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/clm/UIScreen/mainScreen">iOS Dev Center</a>
      */
@@ -148,145 +74,12 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public static native UIScreen mainScreen();
 
     /**
-     * mirroredScreen</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/mirroredScreen">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mirroredScreen")
-    public native UIScreen mirroredScreen();
-
-    /**
-     * nativeBounds</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/nativeBounds">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("nativeBounds")
-    @ByValue
-    public native CGRect nativeBounds();
-
-    /**
-     * nativeScale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/nativeScale">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("nativeScale")
-    @NFloat
-    public native double nativeScale();
-
-    /**
-     * overscanCompensation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/overscanCompensation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("overscanCompensation")
-    @NInt
-    public native long overscanCompensation();
-
-    /**
-     * preferredMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/preferredMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("preferredMode")
-    public native UIScreenMode preferredMode();
-
-    /**
-     * scale</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/scale">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("scale")
-    @NFloat
-    public native double scale();
-
-    /**
      * screens</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/clm/UIScreen/screens">iOS Dev Center</a>
      */
     @Generated
     @Selector("screens")
     public static native NSArray<? extends UIScreen> screens();
-
-    /**
-     * brightness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/brightness">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBrightness:")
-    public native void setBrightness(@NFloat double value);
-
-    /**
-     * currentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/currentMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCurrentMode:")
-    public native void setCurrentMode(UIScreenMode value);
-
-    /**
-     * overscanCompensation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/overscanCompensation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOverscanCompensation:")
-    public native void setOverscanCompensation(@NInt long value);
-
-    /**
-     * wantsSoftwareDimming</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/wantsSoftwareDimming">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setWantsSoftwareDimming:")
-    public native void setWantsSoftwareDimming(boolean value);
-
-    /**
-     * snapshotViewAfterScreenUpdates:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instm/UIScreen/snapshotViewAfterScreenUpdates:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("snapshotViewAfterScreenUpdates:")
-    public native UIView snapshotViewAfterScreenUpdates(boolean afterUpdates);
-
-    @Generated
-    @Selector("traitCollection")
-    public native UITraitCollection traitCollection();
-
-    @Generated
-    @Selector("traitCollectionDidChange:")
-    public native void traitCollectionDidChange(UITraitCollection previousTraitCollection);
-
-    /**
-     * wantsSoftwareDimming</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/wantsSoftwareDimming">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("wantsSoftwareDimming")
-    public native boolean wantsSoftwareDimming();
-
-    /**
-     * overscanCompensationInsets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/overscanCompensationInsets">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("overscanCompensationInsets")
-    @ByValue
-    public native UIEdgeInsets overscanCompensationInsets();
-
-    /**
-     * focusedView</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/focusedView">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("focusedView")
-    public native UIView focusedView();
-
-    /**
-     * supportsFocus</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/supportsFocus">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("supportsFocus")
-    public native boolean supportsFocus();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -387,4 +180,211 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * applicationFrame</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/applicationFrame">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("applicationFrame")
+    @ByValue
+    public native CGRect applicationFrame();
+
+    /**
+     * availableModes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/availableModes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("availableModes")
+    public native NSArray<? extends UIScreenMode> availableModes();
+
+    /**
+     * bounds</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/bounds">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bounds")
+    @ByValue
+    public native CGRect bounds();
+
+    /**
+     * brightness</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/brightness">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("brightness")
+    @NFloat
+    public native double brightness();
+
+    /**
+     * coordinateSpace</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/coordinateSpace">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("coordinateSpace")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UICoordinateSpace coordinateSpace();
+
+    /**
+     * currentMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/currentMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentMode")
+    public native UIScreenMode currentMode();
+
+    /**
+     * displayLinkWithTarget:selector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instm/UIScreen/displayLinkWithTarget:selector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("displayLinkWithTarget:selector:")
+    public native CADisplayLink displayLinkWithTargetSelector(@Mapped(ObjCObjectMapper.class) Object target, SEL sel);
+
+    /**
+     * fixedCoordinateSpace</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/fixedCoordinateSpace">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fixedCoordinateSpace")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UICoordinateSpace fixedCoordinateSpace();
+
+    @Generated
+    @Selector("init")
+    public native UIScreen init();
+
+    /**
+     * mirroredScreen</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/mirroredScreen">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mirroredScreen")
+    public native UIScreen mirroredScreen();
+
+    /**
+     * nativeBounds</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/nativeBounds">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("nativeBounds")
+    @ByValue
+    public native CGRect nativeBounds();
+
+    /**
+     * nativeScale</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/nativeScale">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("nativeScale")
+    @NFloat
+    public native double nativeScale();
+
+    /**
+     * overscanCompensation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/overscanCompensation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("overscanCompensation")
+    @NInt
+    public native long overscanCompensation();
+
+    /**
+     * preferredMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/preferredMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("preferredMode")
+    public native UIScreenMode preferredMode();
+
+    /**
+     * scale</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/scale">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("scale")
+    @NFloat
+    public native double scale();
+
+    /**
+     * brightness</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/brightness">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBrightness:")
+    public native void setBrightness(@NFloat double value);
+
+    /**
+     * currentMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/currentMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCurrentMode:")
+    public native void setCurrentMode(UIScreenMode value);
+
+    /**
+     * overscanCompensation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/overscanCompensation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOverscanCompensation:")
+    public native void setOverscanCompensation(@NInt long value);
+
+    /**
+     * wantsSoftwareDimming</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/wantsSoftwareDimming">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setWantsSoftwareDimming:")
+    public native void setWantsSoftwareDimming(boolean value);
+
+    /**
+     * snapshotViewAfterScreenUpdates:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instm/UIScreen/snapshotViewAfterScreenUpdates:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("snapshotViewAfterScreenUpdates:")
+    public native UIView snapshotViewAfterScreenUpdates(boolean afterUpdates);
+
+    @Generated
+    @Selector("traitCollection")
+    public native UITraitCollection traitCollection();
+
+    @Generated
+    @Selector("traitCollectionDidChange:")
+    public native void traitCollectionDidChange(UITraitCollection previousTraitCollection);
+
+    /**
+     * wantsSoftwareDimming</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/wantsSoftwareDimming">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("wantsSoftwareDimming")
+    public native boolean wantsSoftwareDimming();
+
+    /**
+     * overscanCompensationInsets</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/overscanCompensationInsets">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("overscanCompensationInsets")
+    @ByValue
+    public native UIEdgeInsets overscanCompensationInsets();
+
+    /**
+     * focusedView</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/focusedView">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("focusedView")
+    public native UIView focusedView();
+
+    /**
+     * supportsFocus</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreen_Class/index.html#//apple_ref/occ/instp/UIScreen/supportsFocus">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("supportsFocus")
+    public native boolean supportsFocus();
 }

@@ -29,11 +29,11 @@ import org.moe.natj.general.ptr.Ptr;
 @Generated
 @Structure()
 public final class CGPathElement extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CGPathElement() {

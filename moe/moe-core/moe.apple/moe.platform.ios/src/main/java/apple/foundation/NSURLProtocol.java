@@ -57,14 +57,6 @@ public class NSURLProtocol extends NSObject {
     public static native NSURLProtocol alloc();
 
     /**
-     * cachedResponse</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instp/NSURLProtocol/cachedResponse">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cachedResponse")
-    public native NSCachedURLResponse cachedResponse();
-
-    /**
      * canInitWithRequest:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/clm/NSURLProtocol/canInitWithRequest:">iOS Dev Center</a>
      */
@@ -83,33 +75,6 @@ public class NSURLProtocol extends NSObject {
     @Generated
     @Selector("canonicalRequestForRequest:")
     public static native NSURLRequest canonicalRequestForRequest(NSURLRequest request);
-
-    /**
-     * client</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instp/NSURLProtocol/client">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("client")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native NSURLProtocolClient client();
-
-    @Generated
-    @Selector("init")
-    public native NSURLProtocol init();
-
-    /**
-     * initWithRequest:cachedResponse:client:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instm/NSURLProtocol/initWithRequest:cachedResponse:client:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRequest:cachedResponse:client:")
-    public native NSURLProtocol initWithRequestCachedResponseClient(NSURLRequest request,
-            NSCachedURLResponse cachedResponse, @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
-
-    @Generated
-    @Selector("initWithTask:cachedResponse:client:")
-    public native NSURLProtocol initWithTaskCachedResponseClient(NSURLSessionTask task,
-            NSCachedURLResponse cachedResponse, @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
 
     /**
      * propertyForKey:inRequest:</br>
@@ -137,14 +102,6 @@ public class NSURLProtocol extends NSObject {
     public static native void removePropertyForKeyInRequest(String key, NSMutableURLRequest request);
 
     /**
-     * request</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instp/NSURLProtocol/request">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("request")
-    public native NSURLRequest request();
-
-    /**
      * requestIsCacheEquivalent:toRequest:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/clm/NSURLProtocol/requestIsCacheEquivalent:toRequest:">iOS Dev Center</a>
      */
@@ -160,26 +117,6 @@ public class NSURLProtocol extends NSObject {
     @Selector("setProperty:forKey:inRequest:")
     public static native void setPropertyForKeyInRequest(@Mapped(ObjCObjectMapper.class) Object value, String key,
             NSMutableURLRequest request);
-
-    /**
-     * startLoading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instm/NSURLProtocol/startLoading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startLoading")
-    public native void startLoading();
-
-    /**
-     * stopLoading</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instm/NSURLProtocol/stopLoading">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopLoading")
-    public native void stopLoading();
-
-    @Generated
-    @Selector("task")
-    public native NSURLSessionTask task();
 
     /**
      * unregisterClass:</br>
@@ -288,4 +225,67 @@ public class NSURLProtocol extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cachedResponse</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instp/NSURLProtocol/cachedResponse">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cachedResponse")
+    public native NSCachedURLResponse cachedResponse();
+
+    /**
+     * client</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instp/NSURLProtocol/client">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("client")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native NSURLProtocolClient client();
+
+    @Generated
+    @Selector("init")
+    public native NSURLProtocol init();
+
+    /**
+     * initWithRequest:cachedResponse:client:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instm/NSURLProtocol/initWithRequest:cachedResponse:client:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRequest:cachedResponse:client:")
+    public native NSURLProtocol initWithRequestCachedResponseClient(NSURLRequest request,
+            NSCachedURLResponse cachedResponse, @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
+
+    @Generated
+    @Selector("initWithTask:cachedResponse:client:")
+    public native NSURLProtocol initWithTaskCachedResponseClient(NSURLSessionTask task,
+            NSCachedURLResponse cachedResponse, @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
+
+    /**
+     * request</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instp/NSURLProtocol/request">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("request")
+    public native NSURLRequest request();
+
+    /**
+     * startLoading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instm/NSURLProtocol/startLoading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startLoading")
+    public native void startLoading();
+
+    /**
+     * stopLoading</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLProtocol_Class/index.html#//apple_ref/occ/instm/NSURLProtocol/stopLoading">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopLoading")
+    public native void stopLoading();
+
+    @Generated
+    @Selector("task")
+    public native NSURLSessionTask task();
 }

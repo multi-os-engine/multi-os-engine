@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIStackViewAlignment {
-    @Generated
-    private UIStackViewAlignment() {
-    }
-
     @Generated @NInt public static final long Fill = 0x0000000000000000L;
     @Generated @NInt public static final long Leading = 0x0000000000000001L;
     @Generated @NInt public static final long Top = 0x0000000000000001L;
@@ -33,4 +29,8 @@ public final class UIStackViewAlignment {
     @Generated @NInt public static final long Trailing = 0x0000000000000004L;
     @Generated @NInt public static final long Bottom = 0x0000000000000004L;
     @Generated @NInt public static final long LastBaseline = 0x0000000000000005L;
+
+    @Generated
+    private UIStackViewAlignment() {
+    }
 }

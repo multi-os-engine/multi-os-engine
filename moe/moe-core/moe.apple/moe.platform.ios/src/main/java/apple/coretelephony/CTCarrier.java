@@ -58,50 +58,6 @@ public class CTCarrier extends NSObject {
     @Selector("alloc")
     public static native CTCarrier alloc();
 
-    /**
-     * allowsVOIP</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/index.html#//apple_ref/occ/instp/CTCarrier/allowsVOIP">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allowsVOIP")
-    public native boolean allowsVOIP();
-
-    /**
-     * carrierName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/index.html#//apple_ref/occ/instp/CTCarrier/carrierName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("carrierName")
-    public native String carrierName();
-
-    @Generated
-    @Selector("init")
-    public native CTCarrier init();
-
-    /**
-     * isoCountryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/index.html#//apple_ref/occ/instp/CTCarrier/isoCountryCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isoCountryCode")
-    public native String isoCountryCode();
-
-    /**
-     * mobileCountryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/index.html#//apple_ref/occ/instp/CTCarrier/mobileCountryCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mobileCountryCode")
-    public native String mobileCountryCode();
-
-    /**
-     * mobileNetworkCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/index.html#//apple_ref/occ/instp/CTCarrier/mobileNetworkCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mobileNetworkCode")
-    public native String mobileNetworkCode();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -201,4 +157,48 @@ public class CTCarrier extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allowsVOIP</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/index.html#//apple_ref/occ/instp/CTCarrier/allowsVOIP">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allowsVOIP")
+    public native boolean allowsVOIP();
+
+    /**
+     * carrierName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/index.html#//apple_ref/occ/instp/CTCarrier/carrierName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("carrierName")
+    public native String carrierName();
+
+    @Generated
+    @Selector("init")
+    public native CTCarrier init();
+
+    /**
+     * isoCountryCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/index.html#//apple_ref/occ/instp/CTCarrier/isoCountryCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isoCountryCode")
+    public native String isoCountryCode();
+
+    /**
+     * mobileCountryCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/index.html#//apple_ref/occ/instp/CTCarrier/mobileCountryCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mobileCountryCode")
+    public native String mobileCountryCode();
+
+    /**
+     * mobileNetworkCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Reference/CTCarrier/index.html#//apple_ref/occ/instp/CTCarrier/mobileNetworkCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mobileNetworkCode")
+    public native String mobileNetworkCode();
 }

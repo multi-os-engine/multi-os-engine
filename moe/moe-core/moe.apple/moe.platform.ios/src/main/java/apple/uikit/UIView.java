@@ -77,6 +77,408 @@ public class UIView extends UIResponder
         super(peer);
     }
 
+    /**
+     * addKeyframeWithRelativeStartTime:relativeDuration:animations:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/addKeyframeWithRelativeStartTime:relativeDuration:animations:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
+    public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
+            double frameDuration,
+            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native UIView alloc();
+
+    /**
+     * animateKeyframesWithDuration:delay:options:animations:completion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/animateKeyframesWithDuration:delay:options:animations:completion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
+    public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
+            double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+
+    /**
+     * animateWithDuration:animations:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/animateWithDuration:animations:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("animateWithDuration:animations:")
+    public static native void animateWithDurationAnimations(double duration,
+            @ObjCBlock(name = "call_animateWithDurationAnimations") Block_animateWithDurationAnimations animations);
+
+    /**
+     * animateWithDuration:animations:completion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/animateWithDuration:animations:completion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("animateWithDuration:animations:completion:")
+    public static native void animateWithDurationAnimationsCompletion(double duration,
+            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") Block_animateWithDurationAnimationsCompletion_1 animations,
+            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") Block_animateWithDurationAnimationsCompletion_2 completion);
+
+    /**
+     * animateWithDuration:delay:options:animations:completion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/animateWithDuration:delay:options:animations:completion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("animateWithDuration:delay:options:animations:completion:")
+    public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
+            @NUInt long options,
+            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+
+    /**
+     * animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
+    public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
+            double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+
+    @Generated
+    @Selector("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object appearance();
+
+    @Generated
+    @Selector("appearanceForTraitCollection:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+
+    @Deprecated
+    @Generated
+    @Variadic()
+    @Selector("appearanceForTraitCollection:whenContainedIn:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+
+    @Deprecated
+    @Generated
+    @Variadic()
+    @Selector("appearanceWhenContainedIn:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
+            Object... varargs);
+
+    /**
+     * areAnimationsEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/areAnimationsEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("areAnimationsEnabled")
+    public static native boolean areAnimationsEnabled();
+
+    /**
+     * beginAnimations:context:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/beginAnimations:context:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("beginAnimations:context:")
+    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+
+    /**
+     * commitAnimations</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/commitAnimations">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("commitAnimations")
+    public static native void commitAnimations();
+
+    /**
+     * layerClass</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/layerClass">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("layerClass")
+    public static native Class layerClass();
+
+    /**
+     * performSystemAnimation:onViews:options:animations:completion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/performSystemAnimation:onViews:options:animations:completion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("performSystemAnimation:onViews:options:animations:completion:")
+    public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
+            NSArray<? extends UIView> views, @NUInt long options,
+            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+
+    /**
+     * performWithoutAnimation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/performWithoutAnimation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("performWithoutAnimation:")
+    public static native void performWithoutAnimation(
+            @ObjCBlock(name = "call_performWithoutAnimation") Block_performWithoutAnimation actionsWithoutAnimation);
+
+    /**
+     * requiresConstraintBasedLayout</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/requiresConstraintBasedLayout">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requiresConstraintBasedLayout")
+    public static native boolean requiresConstraintBasedLayout();
+
+    /**
+     * setAnimationBeginsFromCurrentState:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationBeginsFromCurrentState:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationBeginsFromCurrentState:")
+    public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
+
+    /**
+     * setAnimationCurve:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationCurve:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationCurve:")
+    public static native void setAnimationCurve(@NInt long curve);
+
+    /**
+     * setAnimationDelay:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationDelay:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationDelay:")
+    public static native void setAnimationDelay(double delay);
+
+    /**
+     * setAnimationDelegate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationDelegate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationDelegate:")
+    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+
+    /**
+     * setAnimationDidStopSelector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationDidStopSelector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationDidStopSelector:")
+    public static native void setAnimationDidStopSelector(SEL selector);
+
+    /**
+     * setAnimationDuration:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationDuration:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationDuration:")
+    public static native void setAnimationDuration_static(double duration);
+
+    /**
+     * setAnimationRepeatAutoreverses:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationRepeatAutoreverses:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationRepeatAutoreverses:")
+    public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
+
+    /**
+     * setAnimationRepeatCount:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationRepeatCount:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationRepeatCount:")
+    public static native void setAnimationRepeatCount_static(float repeatCount);
+
+    /**
+     * setAnimationStartDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationStartDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationStartDate:")
+    public static native void setAnimationStartDate(NSDate startDate);
+
+    /**
+     * setAnimationTransition:forView:cache:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationTransition:forView:cache:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationTransition:forView:cache:")
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+
+    /**
+     * setAnimationWillStartSelector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationWillStartSelector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationWillStartSelector:")
+    public static native void setAnimationWillStartSelector(SEL selector);
+
+    /**
+     * setAnimationsEnabled:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationsEnabled:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationsEnabled:")
+    public static native void setAnimationsEnabled(boolean enabled);
+
+    /**
+     * transitionFromView:toView:duration:options:completion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/transitionFromView:toView:duration:options:completion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transitionFromView:toView:duration:options:completion:")
+    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
+            double duration, @NUInt long options,
+            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") Block_transitionFromViewToViewDurationOptionsCompletion completion);
+
+    /**
+     * transitionWithView:duration:options:animations:completion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/transitionWithView:duration:options:animations:completion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transitionWithView:duration:options:animations:completion:")
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
+            @NUInt long options,
+            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+
+    @Generated
+    @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes);
+
+    @Generated
+    @Selector("appearanceWhenContainedInInstancesOfClasses:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+
+    /**
+     * inheritedAnimationDuration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/inheritedAnimationDuration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("inheritedAnimationDuration")
+    public static native double inheritedAnimationDuration();
+
+    /**
+     * userInterfaceLayoutDirectionForSemanticContentAttribute:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/userInterfaceLayoutDirectionForSemanticContentAttribute:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
+    @NInt
+    public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("clearTextInputContextIdentifier:")
+    public static native void clearTextInputContextIdentifier(String identifier);
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version();
+
     @Generated
     @Selector("accessibilityIdentifier")
     public native String accessibilityIdentifier();
@@ -104,23 +506,6 @@ public class UIView extends UIResponder
     @Generated
     @Selector("addGestureRecognizer:")
     public native void addGestureRecognizer(UIGestureRecognizer gestureRecognizer);
-
-    /**
-     * addKeyframeWithRelativeStartTime:relativeDuration:animations:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/addKeyframeWithRelativeStartTime:relativeDuration:animations:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
-    public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
-            double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations {
-        @Generated
-        void call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations();
-    }
 
     /**
      * addMotionEffect:</br>
@@ -156,11 +541,6 @@ public class UIView extends UIResponder
     @ByValue
     public native UIEdgeInsets alignmentRectInsets();
 
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native UIView alloc();
-
     /**
      * alpha</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/alpha">iOS Dev Center</a>
@@ -170,127 +550,6 @@ public class UIView extends UIResponder
     @NFloat
     public native double alpha();
 
-    /**
-     * animateKeyframesWithDuration:delay:options:animations:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/animateKeyframesWithDuration:delay:options:animations:completion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
-    public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
-            double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 {
-        @Generated
-        void call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 {
-        @Generated
-        void call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4(boolean arg0);
-    }
-
-    /**
-     * animateWithDuration:animations:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/animateWithDuration:animations:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("animateWithDuration:animations:")
-    public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") Block_animateWithDurationAnimations animations);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_animateWithDurationAnimations {
-        @Generated
-        void call_animateWithDurationAnimations();
-    }
-
-    /**
-     * animateWithDuration:animations:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/animateWithDuration:animations:completion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("animateWithDuration:animations:completion:")
-    public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") Block_animateWithDurationAnimationsCompletion_2 completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_animateWithDurationAnimationsCompletion_1 {
-        @Generated
-        void call_animateWithDurationAnimationsCompletion_1();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_animateWithDurationAnimationsCompletion_2 {
-        @Generated
-        void call_animateWithDurationAnimationsCompletion_2(boolean arg0);
-    }
-
-    /**
-     * animateWithDuration:delay:options:animations:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/animateWithDuration:delay:options:animations:completion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("animateWithDuration:delay:options:animations:completion:")
-    public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
-            @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_animateWithDurationDelayOptionsAnimationsCompletion_3 {
-        @Generated
-        void call_animateWithDurationDelayOptionsAnimationsCompletion_3();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_animateWithDurationDelayOptionsAnimationsCompletion_4 {
-        @Generated
-        void call_animateWithDurationDelayOptionsAnimationsCompletion_4(boolean arg0);
-    }
-
-    /**
-     * animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
-    public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
-            double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 {
-        @Generated
-        void call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 {
-        @Generated
-        void call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6(
-                boolean arg0);
-    }
-
-    @Generated
-    @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
-
     @Generated
     @ProtocolClassMethod("appearance")
     @MappedReturn(ObjCObjectMapper.class)
@@ -299,24 +558,11 @@ public class UIView extends UIResponder
     }
 
     @Generated
-    @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
-
-    @Deprecated
-    @Generated
-    @Variadic()
-    @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Deprecated
     @Generated
@@ -329,27 +575,11 @@ public class UIView extends UIResponder
 
     @Deprecated
     @Generated
-    @Variadic()
-    @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
-
-    @Deprecated
-    @Generated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
-
-    /**
-     * areAnimationsEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/areAnimationsEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("areAnimationsEnabled")
-    public static native boolean areAnimationsEnabled();
 
     /**
      * autoresizesSubviews</br>
@@ -375,14 +605,6 @@ public class UIView extends UIResponder
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
-
-    /**
-     * beginAnimations:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/beginAnimations:context:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
 
     @Generated
     @Selector("bounds")
@@ -417,14 +639,6 @@ public class UIView extends UIResponder
     @Generated
     @Selector("clipsToBounds")
     public native boolean clipsToBounds();
-
-    /**
-     * commitAnimations</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/commitAnimations">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("commitAnimations")
-    public static native void commitAnimations();
 
     /**
      * constraints</br>
@@ -762,12 +976,28 @@ public class UIView extends UIResponder
     public native boolean isExclusiveTouch();
 
     /**
+     * exclusiveTouch</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/exclusiveTouch">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setExclusiveTouch:")
+    public native void setExclusiveTouch(boolean value);
+
+    /**
      * hidden</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/hidden">iOS Dev Center</a>
      */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
+
+    /**
+     * hidden</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/hidden">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHidden:")
+    public native void setHidden(boolean value);
 
     /**
      * multipleTouchEnabled</br>
@@ -778,12 +1008,28 @@ public class UIView extends UIResponder
     public native boolean isMultipleTouchEnabled();
 
     /**
+     * multipleTouchEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/multipleTouchEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMultipleTouchEnabled:")
+    public native void setMultipleTouchEnabled(boolean value);
+
+    /**
      * opaque</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/opaque">iOS Dev Center</a>
      */
     @Generated
     @Selector("isOpaque")
     public native boolean isOpaque();
+
+    /**
+     * opaque</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/opaque">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOpaque:")
+    public native void setOpaque(boolean value);
 
     /**
      * userInteractionEnabled</br>
@@ -794,20 +1040,20 @@ public class UIView extends UIResponder
     public native boolean isUserInteractionEnabled();
 
     /**
+     * userInteractionEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/userInteractionEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUserInteractionEnabled:")
+    public native void setUserInteractionEnabled(boolean value);
+
+    /**
      * layer</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/layer">iOS Dev Center</a>
      */
     @Generated
     @Selector("layer")
     public native CALayer layer();
-
-    /**
-     * layerClass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/layerClass">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("layerClass")
-    public static native Class layerClass();
 
     /**
      * layoutIfNeeded</br>
@@ -867,47 +1113,6 @@ public class UIView extends UIResponder
     public native boolean needsUpdateConstraints();
 
     /**
-     * performSystemAnimation:onViews:options:animations:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/performSystemAnimation:onViews:options:animations:completion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("performSystemAnimation:onViews:options:animations:completion:")
-    public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 {
-        @Generated
-        void call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 {
-        @Generated
-        void call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4(boolean arg0);
-    }
-
-    /**
-     * performWithoutAnimation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/performWithoutAnimation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("performWithoutAnimation:")
-    public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") Block_performWithoutAnimation actionsWithoutAnimation);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performWithoutAnimation {
-        @Generated
-        void call_performWithoutAnimation();
-    }
-
-    /**
      * pointInside:withEvent:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instm/UIView/pointInside:withEvent:">iOS Dev Center</a>
      */
@@ -964,14 +1169,6 @@ public class UIView extends UIResponder
     public native void removeMotionEffect(UIMotionEffect effect);
 
     /**
-     * requiresConstraintBasedLayout</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/requiresConstraintBasedLayout">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requiresConstraintBasedLayout")
-    public static native boolean requiresConstraintBasedLayout();
-
-    /**
      * resizableSnapshotViewFromRect:afterScreenUpdates:withCapInsets:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instm/UIView/resizableSnapshotViewFromRect:afterScreenUpdates:withCapInsets:">iOS Dev Center</a>
      */
@@ -1007,102 +1204,6 @@ public class UIView extends UIResponder
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(@NFloat double value);
-
-    /**
-     * setAnimationBeginsFromCurrentState:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationBeginsFromCurrentState:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationBeginsFromCurrentState:")
-    public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
-
-    /**
-     * setAnimationCurve:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationCurve:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationCurve:")
-    public static native void setAnimationCurve(@NInt long curve);
-
-    /**
-     * setAnimationDelay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationDelay:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationDelay:")
-    public static native void setAnimationDelay(double delay);
-
-    /**
-     * setAnimationDelegate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationDelegate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
-
-    /**
-     * setAnimationDidStopSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationDidStopSelector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
-
-    /**
-     * setAnimationDuration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationDuration:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationDuration:")
-    public static native void setAnimationDuration_static(double duration);
-
-    /**
-     * setAnimationRepeatAutoreverses:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationRepeatAutoreverses:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationRepeatAutoreverses:")
-    public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
-
-    /**
-     * setAnimationRepeatCount:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationRepeatCount:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationRepeatCount:")
-    public static native void setAnimationRepeatCount_static(float repeatCount);
-
-    /**
-     * setAnimationStartDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationStartDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
-
-    /**
-     * setAnimationTransition:forView:cache:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationTransition:forView:cache:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
-
-    /**
-     * setAnimationWillStartSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationWillStartSelector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
-
-    /**
-     * setAnimationsEnabled:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/setAnimationsEnabled:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationsEnabled:")
-    public static native void setAnimationsEnabled(boolean enabled);
 
     /**
      * autoresizesSubviews</br>
@@ -1198,14 +1299,6 @@ public class UIView extends UIResponder
     public native void setContentStretch(@ByValue CGRect value);
 
     /**
-     * exclusiveTouch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/exclusiveTouch">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setExclusiveTouch:")
-    public native void setExclusiveTouch(boolean value);
-
-    /**
      * frame</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/frame">iOS Dev Center</a>
      */
@@ -1220,14 +1313,6 @@ public class UIView extends UIResponder
     @Generated
     @Selector("setGestureRecognizers:")
     public native void setGestureRecognizers(NSArray<? extends UIGestureRecognizer> value);
-
-    /**
-     * hidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/hidden">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHidden:")
-    public native void setHidden(boolean value);
 
     /**
      * layoutMargins</br>
@@ -1252,14 +1337,6 @@ public class UIView extends UIResponder
     @Generated
     @Selector("setMotionEffects:")
     public native void setMotionEffects(NSArray<? extends UIMotionEffect> value);
-
-    /**
-     * multipleTouchEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/multipleTouchEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMultipleTouchEnabled:")
-    public native void setMultipleTouchEnabled(boolean value);
 
     /**
      * setNeedsDisplay</br>
@@ -1292,14 +1369,6 @@ public class UIView extends UIResponder
     @Generated
     @Selector("setNeedsUpdateConstraints")
     public native void setNeedsUpdateConstraints();
-
-    /**
-     * opaque</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/opaque">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOpaque:")
-    public native void setOpaque(boolean value);
 
     /**
      * preservesSuperviewLayoutMargins</br>
@@ -1352,14 +1421,6 @@ public class UIView extends UIResponder
     @Generated
     @Selector("setTranslatesAutoresizingMaskIntoConstraints:")
     public native void setTranslatesAutoresizingMaskIntoConstraints(boolean value);
-
-    /**
-     * userInteractionEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/userInteractionEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUserInteractionEnabled:")
-    public native void setUserInteractionEnabled(boolean value);
 
     /**
      * sizeThatFits:</br>
@@ -1469,48 +1530,6 @@ public class UIView extends UIResponder
     public native CGAffineTransform transform();
 
     /**
-     * transitionFromView:toView:duration:options:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/transitionFromView:toView:duration:options:completion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") Block_transitionFromViewToViewDurationOptionsCompletion completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_transitionFromViewToViewDurationOptionsCompletion {
-        @Generated
-        void call_transitionFromViewToViewDurationOptionsCompletion(boolean arg0);
-    }
-
-    /**
-     * transitionWithView:duration:options:animations:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/transitionWithView:duration:options:animations:completion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_transitionWithViewDurationOptionsAnimationsCompletion_3 {
-        @Generated
-        void call_transitionWithViewDurationOptionsAnimationsCompletion_3();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_transitionWithViewDurationOptionsAnimationsCompletion_4 {
-        @Generated
-        void call_transitionWithViewDurationOptionsAnimationsCompletion_4(boolean arg0);
-    }
-
-    /**
      * translatesAutoresizingMaskIntoConstraints</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/translatesAutoresizingMaskIntoConstraints">iOS Dev Center</a>
      */
@@ -1600,23 +1619,12 @@ public class UIView extends UIResponder
     public native void addLayoutGuide(UILayoutGuide layoutGuide);
 
     @Generated
-    @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes);
-
-    @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
-
-    @Generated
-    @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
@@ -1675,14 +1683,6 @@ public class UIView extends UIResponder
     @Generated
     @Selector("heightAnchor")
     public native NSLayoutDimension heightAnchor();
-
-    /**
-     * inheritedAnimationDuration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/inheritedAnimationDuration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("inheritedAnimationDuration")
-    public static native double inheritedAnimationDuration();
 
     /**
      * lastBaselineAnchor</br>
@@ -1782,15 +1782,6 @@ public class UIView extends UIResponder
     public native NSLayoutXAxisAnchor trailingAnchor();
 
     /**
-     * userInterfaceLayoutDirectionForSemanticContentAttribute:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/clm/UIView/userInterfaceLayoutDirectionForSemanticContentAttribute:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
-    @NInt
-    public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
-
-    /**
      * viewForFirstBaselineLayout</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/instp/UIView/viewForFirstBaselineLayout">iOS Dev Center</a>
      */
@@ -1851,107 +1842,116 @@ public class UIView extends UIResponder
     @Selector("updateFocusIfNeeded")
     public native void updateFocusIfNeeded();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations {
+        @Generated
+        void call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 {
+        @Generated
+        void call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public interface Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 {
+        @Generated
+        void call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public interface Block_animateWithDurationAnimations {
+        @Generated
+        void call_animateWithDurationAnimations();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+    public interface Block_animateWithDurationAnimationsCompletion_1 {
+        @Generated
+        void call_animateWithDurationAnimationsCompletion_1();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
+    public interface Block_animateWithDurationAnimationsCompletion_2 {
+        @Generated
+        void call_animateWithDurationAnimationsCompletion_2(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
+    public interface Block_animateWithDurationDelayOptionsAnimationsCompletion_3 {
+        @Generated
+        void call_animateWithDurationDelayOptionsAnimationsCompletion_3();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public interface Block_animateWithDurationDelayOptionsAnimationsCompletion_4 {
+        @Generated
+        void call_animateWithDurationDelayOptionsAnimationsCompletion_4(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
+    public interface Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 {
+        @Generated
+        void call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("description")
-    public static native String description_static();
+    public interface Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 {
+        @Generated
+        void call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6(
+                boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
+    public interface Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 {
+        @Generated
+        void call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
+    public interface Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 {
+        @Generated
+        void call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+    public interface Block_performWithoutAnimation {
+        @Generated
+        void call_performWithoutAnimation();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+    public interface Block_transitionFromViewToViewDurationOptionsCompletion {
+        @Generated
+        void call_transitionFromViewToViewDurationOptionsCompletion(boolean arg0);
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
+    public interface Block_transitionWithViewDurationOptionsAnimationsCompletion_3 {
+        @Generated
+        void call_transitionWithViewDurationOptionsAnimationsCompletion_3();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version();
+    public interface Block_transitionWithViewDurationOptionsAnimationsCompletion_4 {
+        @Generated
+        void call_transitionWithViewDurationOptionsAnimationsCompletion_4(boolean arg0);
+    }
 }

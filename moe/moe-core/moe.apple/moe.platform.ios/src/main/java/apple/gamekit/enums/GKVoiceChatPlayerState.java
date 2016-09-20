@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class GKVoiceChatPlayerState {
-    @Generated
-    private GKVoiceChatPlayerState() {
-    }
-
     @Generated @NInt public static final long Connected = 0x0000000000000000L;
     @Generated @NInt public static final long Disconnected = 0x0000000000000001L;
     @Generated @NInt public static final long Speaking = 0x0000000000000002L;
     @Generated @NInt public static final long Silent = 0x0000000000000003L;
     @Generated @NInt public static final long Connecting = 0x0000000000000004L;
+
+    @Generated
+    private GKVoiceChatPlayerState() {
+    }
 }

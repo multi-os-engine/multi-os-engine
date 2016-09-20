@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKTextureFilteringMode {
+    @Generated @NInt public static final long Nearest = 0x0000000000000000L;
+    @Generated @NInt public static final long Linear = 0x0000000000000001L;
+
     @Generated
     private SKTextureFilteringMode() {
     }
-
-    @Generated @NInt public static final long Nearest = 0x0000000000000000L;
-    @Generated @NInt public static final long Linear = 0x0000000000000001L;
 }

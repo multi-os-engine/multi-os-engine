@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGFontPostScriptFormat {
-    @Generated
-    private CGFontPostScriptFormat() {
-    }
-
     @Generated public static final int Type1 = 0x00000001;
     @Generated public static final int Type3 = 0x00000003;
     @Generated public static final int Type42 = 0x0000002A;
+
+    @Generated
+    private CGFontPostScriptFormat() {
+    }
 }

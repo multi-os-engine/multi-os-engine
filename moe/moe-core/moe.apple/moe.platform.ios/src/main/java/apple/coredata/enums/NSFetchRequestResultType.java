@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSFetchRequestResultType {
-    @Generated
-    private NSFetchRequestResultType() {
-    }
-
     @Generated @NUInt public static final long ManagedObjectResultType = 0x0000000000000000L;
     @Generated @NUInt public static final long ManagedObjectIDResultType = 0x0000000000000001L;
     @Generated @NUInt public static final long DictionaryResultType = 0x0000000000000002L;
     @Generated @NUInt public static final long CountResultType = 0x0000000000000004L;
+
+    @Generated
+    private NSFetchRequestResultType() {
+    }
 }

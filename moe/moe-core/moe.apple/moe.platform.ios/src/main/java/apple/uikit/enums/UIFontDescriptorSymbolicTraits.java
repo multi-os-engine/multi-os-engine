@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class UIFontDescriptorSymbolicTraits {
-    @Generated
-    private UIFontDescriptorSymbolicTraits() {
-    }
-
     @Generated public static final int TraitItalic = 0x00000001;
     @Generated public static final int TraitBold = 0x00000002;
     @Generated public static final int TraitExpanded = 0x00000020;
@@ -45,4 +41,8 @@ public final class UIFontDescriptorSymbolicTraits {
     @Generated public static final int ClassOrnamentals = 0x90000000;
     @Generated public static final int ClassScripts = 0xA0000000;
     @Generated public static final int ClassSymbolic = 0xC0000000;
+
+    @Generated
+    private UIFontDescriptorSymbolicTraits() {
+    }
 }

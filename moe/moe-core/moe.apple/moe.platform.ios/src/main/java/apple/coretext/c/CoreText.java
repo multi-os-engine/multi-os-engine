@@ -209,13 +209,6 @@ public final class CoreText {
             CFSetRef mandatoryAttributes,
             @ObjCBlock(name = "call_CTFontDescriptorMatchFontDescriptorsWithProgressHandler") Block_CTFontDescriptorMatchFontDescriptorsWithProgressHandler progressBlock);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Block_CTFontDescriptorMatchFontDescriptorsWithProgressHandler {
-        @Generated
-        boolean call_CTFontDescriptorMatchFontDescriptorsWithProgressHandler(int arg0, CFDictionaryRef arg1);
-    }
-
     /**
      * CTFontDescriptorCopyAttributes</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Carbon/Reference/CTFontDescriptorRef/index.html#//apple_ref/c/func/CTFontDescriptorCopyAttributes">iOS Dev Center</a>
@@ -763,15 +756,6 @@ public final class CoreText {
             CTFontCollectionRef collection,
             @FunctionPtr(name = "call_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback") Function_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback sortCallback,
             VoidPtr refCon);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback {
-        @Generated
-        @NInt
-        long call_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback(VoidPtr arg0, VoidPtr arg1,
-                VoidPtr arg2);
-    }
 
     /**
      * CTFontManagerCreateFontDescriptorsFromURL</br>
@@ -1911,6 +1895,22 @@ public final class CoreText {
     @CFunction
     public static native void CTLineEnumerateCaretOffsets(CTLineRef line,
             @ObjCBlock(name = "call_CTLineEnumerateCaretOffsets") Block_CTLineEnumerateCaretOffsets block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CTFontDescriptorMatchFontDescriptorsWithProgressHandler {
+        @Generated
+        boolean call_CTFontDescriptorMatchFontDescriptorsWithProgressHandler(int arg0, CFDictionaryRef arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback {
+        @Generated
+        @NInt
+        long call_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback(VoidPtr arg0, VoidPtr arg1,
+                VoidPtr arg2);
+    }
 
     @Runtime(CRuntime.class)
     @Generated

@@ -61,20 +61,6 @@ public class CBPeer extends NSObject implements NSCopying {
     public static native CBPeer alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("identifier")
-    public native NSUUID identifier();
-
-    @Generated
-    @Selector("init")
-    public native CBPeer init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -173,4 +159,18 @@ public class CBPeer extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("identifier")
+    public native NSUUID identifier();
+
+    @Generated
+    @Selector("init")
+    public native CBPeer init();
 }

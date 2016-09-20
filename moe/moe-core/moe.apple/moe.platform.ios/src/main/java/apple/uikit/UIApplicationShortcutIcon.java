@@ -60,12 +60,6 @@ public class UIApplicationShortcutIcon extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIApplicationShortcutIcon alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
     /**
      * iconWithContact:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/index.html#//apple_ref/occ/clm/UIApplicationShortcutIcon/iconWithContact:">iOS Dev Center</a>
@@ -89,10 +83,6 @@ public class UIApplicationShortcutIcon extends NSObject implements NSCopying {
     @Generated
     @Selector("iconWithType:")
     public static native UIApplicationShortcutIcon iconWithType(@NInt long type);
-
-    @Generated
-    @Selector("init")
-    public native UIApplicationShortcutIcon init();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -193,4 +183,14 @@ public class UIApplicationShortcutIcon extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native UIApplicationShortcutIcon init();
 }

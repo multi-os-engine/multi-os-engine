@@ -59,42 +59,6 @@ public class UICollectionViewFlowLayoutInvalidationContext extends UICollectionV
     public static native UICollectionViewFlowLayoutInvalidationContext alloc();
 
     @Generated
-    @Selector("init")
-    public native UICollectionViewFlowLayoutInvalidationContext init();
-
-    /**
-     * invalidateFlowLayoutAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayoutInvalidationContext/invalidateFlowLayoutAttributes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("invalidateFlowLayoutAttributes")
-    public native boolean invalidateFlowLayoutAttributes();
-
-    /**
-     * invalidateFlowLayoutDelegateMetrics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayoutInvalidationContext/invalidateFlowLayoutDelegateMetrics">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("invalidateFlowLayoutDelegateMetrics")
-    public native boolean invalidateFlowLayoutDelegateMetrics();
-
-    /**
-     * invalidateFlowLayoutAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayoutInvalidationContext/invalidateFlowLayoutAttributes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setInvalidateFlowLayoutAttributes:")
-    public native void setInvalidateFlowLayoutAttributes(boolean value);
-
-    /**
-     * invalidateFlowLayoutDelegateMetrics</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayoutInvalidationContext/invalidateFlowLayoutDelegateMetrics">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setInvalidateFlowLayoutDelegateMetrics:")
-    public native void setInvalidateFlowLayoutDelegateMetrics(boolean value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -193,4 +157,40 @@ public class UICollectionViewFlowLayoutInvalidationContext extends UICollectionV
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UICollectionViewFlowLayoutInvalidationContext init();
+
+    /**
+     * invalidateFlowLayoutAttributes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayoutInvalidationContext/invalidateFlowLayoutAttributes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("invalidateFlowLayoutAttributes")
+    public native boolean invalidateFlowLayoutAttributes();
+
+    /**
+     * invalidateFlowLayoutDelegateMetrics</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayoutInvalidationContext/invalidateFlowLayoutDelegateMetrics">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("invalidateFlowLayoutDelegateMetrics")
+    public native boolean invalidateFlowLayoutDelegateMetrics();
+
+    /**
+     * invalidateFlowLayoutAttributes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayoutInvalidationContext/invalidateFlowLayoutAttributes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setInvalidateFlowLayoutAttributes:")
+    public native void setInvalidateFlowLayoutAttributes(boolean value);
+
+    /**
+     * invalidateFlowLayoutDelegateMetrics</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionViewFlowLayoutInvalidationContext_class/index.html#//apple_ref/occ/instp/UICollectionViewFlowLayoutInvalidationContext/invalidateFlowLayoutDelegateMetrics">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setInvalidateFlowLayoutDelegateMetrics:")
+    public native void setInvalidateFlowLayoutDelegateMetrics(boolean value);
 }

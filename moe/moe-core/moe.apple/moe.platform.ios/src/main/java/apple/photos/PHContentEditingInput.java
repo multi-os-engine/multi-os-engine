@@ -58,105 +58,10 @@ public class PHContentEditingInput extends NSObject {
         super(peer);
     }
 
-    /**
-     * adjustmentData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/adjustmentData">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("adjustmentData")
-    public native PHAdjustmentData adjustmentData();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native PHContentEditingInput alloc();
-
-    /**
-     * avAsset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/avAsset">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("avAsset")
-    public native AVAsset avAsset();
-
-    /**
-     * creationDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/creationDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("creationDate")
-    public native NSDate creationDate();
-
-    /**
-     * displaySizeImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/displaySizeImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("displaySizeImage")
-    public native UIImage displaySizeImage();
-
-    /**
-     * fullSizeImageOrientation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/fullSizeImageOrientation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fullSizeImageOrientation")
-    public native int fullSizeImageOrientation();
-
-    /**
-     * fullSizeImageURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/fullSizeImageURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fullSizeImageURL")
-    public native NSURL fullSizeImageURL();
-
-    @Generated
-    @Selector("init")
-    public native PHContentEditingInput init();
-
-    /**
-     * location</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/location">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("location")
-    public native CLLocation location();
-
-    /**
-     * mediaSubtypes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/mediaSubtypes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mediaSubtypes")
-    @NUInt
-    public native long mediaSubtypes();
-
-    /**
-     * mediaType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/mediaType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("mediaType")
-    @NInt
-    public native long mediaType();
-
-    /**
-     * uniformTypeIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/uniformTypeIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("uniformTypeIdentifier")
-    public native String uniformTypeIdentifier();
-
-    /**
-     * audiovisualAsset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/audiovisualAsset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("audiovisualAsset")
-    public native AVAsset audiovisualAsset();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -257,4 +162,99 @@ public class PHContentEditingInput extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * adjustmentData</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/adjustmentData">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("adjustmentData")
+    public native PHAdjustmentData adjustmentData();
+
+    /**
+     * avAsset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/avAsset">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("avAsset")
+    public native AVAsset avAsset();
+
+    /**
+     * creationDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/creationDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("creationDate")
+    public native NSDate creationDate();
+
+    /**
+     * displaySizeImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/displaySizeImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("displaySizeImage")
+    public native UIImage displaySizeImage();
+
+    /**
+     * fullSizeImageOrientation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/fullSizeImageOrientation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fullSizeImageOrientation")
+    public native int fullSizeImageOrientation();
+
+    /**
+     * fullSizeImageURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/fullSizeImageURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fullSizeImageURL")
+    public native NSURL fullSizeImageURL();
+
+    @Generated
+    @Selector("init")
+    public native PHContentEditingInput init();
+
+    /**
+     * location</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/location">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("location")
+    public native CLLocation location();
+
+    /**
+     * mediaSubtypes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/mediaSubtypes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mediaSubtypes")
+    @NUInt
+    public native long mediaSubtypes();
+
+    /**
+     * mediaType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/mediaType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("mediaType")
+    @NInt
+    public native long mediaType();
+
+    /**
+     * uniformTypeIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/uniformTypeIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("uniformTypeIdentifier")
+    public native String uniformTypeIdentifier();
+
+    /**
+     * audiovisualAsset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHContentEditingInput_Class/index.html#//apple_ref/occ/instp/PHContentEditingInput/audiovisualAsset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("audiovisualAsset")
+    public native AVAsset audiovisualAsset();
 }

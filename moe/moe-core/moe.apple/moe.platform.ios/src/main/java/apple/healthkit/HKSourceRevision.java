@@ -63,56 +63,8 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     public static native HKSourceRevision alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native HKSourceRevision init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKSourceRevision initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithSource:version:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceRevision_ClassReference/index.html#//apple_ref/occ/instm/HKSourceRevision/initWithSource:version:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSource:version:")
-    public native HKSourceRevision initWithSourceVersion(HKSource source, String version);
-
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceRevision_ClassReference/index.html#//apple_ref/occ/instp/HKSourceRevision/source">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("source")
-    public native HKSource source();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceRevision_ClassReference/index.html#//apple_ref/occ/instp/HKSourceRevision/version">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("version")
-    public native String version();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -208,4 +160,52 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native HKSourceRevision init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKSourceRevision initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithSource:version:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceRevision_ClassReference/index.html#//apple_ref/occ/instm/HKSourceRevision/initWithSource:version:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSource:version:")
+    public native HKSourceRevision initWithSourceVersion(HKSource source, String version);
+
+    /**
+     * source</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceRevision_ClassReference/index.html#//apple_ref/occ/instp/HKSourceRevision/source">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("source")
+    public native HKSource source();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * version</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceRevision_ClassReference/index.html#//apple_ref/occ/instp/HKSourceRevision/version">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("version")
+    public native String version();
 }

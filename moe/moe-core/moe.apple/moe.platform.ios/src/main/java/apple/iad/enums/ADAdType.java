@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class ADAdType {
+    @Generated @NInt public static final long Banner = 0x0000000000000000L;
+    @Generated @NInt public static final long MediumRectangle = 0x0000000000000001L;
+
     @Generated
     private ADAdType() {
     }
-
-    @Generated @NInt public static final long Banner = 0x0000000000000000L;
-    @Generated @NInt public static final long MediumRectangle = 0x0000000000000001L;
 }

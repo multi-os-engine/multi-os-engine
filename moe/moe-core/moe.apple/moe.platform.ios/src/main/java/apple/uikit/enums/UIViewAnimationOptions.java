@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIViewAnimationOptions {
-    @Generated
-    private UIViewAnimationOptions() {
-    }
-
     @Generated @NUInt public static final long LayoutSubviews = 0x0000000000000001L;
     @Generated @NUInt public static final long AllowUserInteraction = 0x0000000000000002L;
     @Generated @NUInt public static final long BeginFromCurrentState = 0x0000000000000004L;
@@ -47,4 +43,8 @@ public final class UIViewAnimationOptions {
     @Generated @NUInt public static final long TransitionCrossDissolve = 0x0000000000500000L;
     @Generated @NUInt public static final long TransitionFlipFromTop = 0x0000000000600000L;
     @Generated @NUInt public static final long TransitionFlipFromBottom = 0x0000000000700000L;
+
+    @Generated
+    private UIViewAnimationOptions() {
+    }
 }

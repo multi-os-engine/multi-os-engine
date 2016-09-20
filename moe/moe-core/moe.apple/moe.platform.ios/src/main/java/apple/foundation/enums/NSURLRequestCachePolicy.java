@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSURLRequestCachePolicy {
-    @Generated
-    private NSURLRequestCachePolicy() {
-    }
-
     @Generated @NUInt public static final long UseProtocolCachePolicy = 0x0000000000000000L;
     @Generated @NUInt public static final long ReloadIgnoringLocalCacheData = 0x0000000000000001L;
     @Generated @NUInt public static final long ReloadIgnoringLocalAndRemoteCacheData = 0x0000000000000004L;
@@ -32,4 +28,8 @@ public final class NSURLRequestCachePolicy {
     @Generated @NUInt public static final long ReturnCacheDataElseLoad = 0x0000000000000002L;
     @Generated @NUInt public static final long ReturnCacheDataDontLoad = 0x0000000000000003L;
     @Generated @NUInt public static final long ReloadRevalidatingCacheData = 0x0000000000000005L;
+
+    @Generated
+    private NSURLRequestCachePolicy() {
+    }
 }

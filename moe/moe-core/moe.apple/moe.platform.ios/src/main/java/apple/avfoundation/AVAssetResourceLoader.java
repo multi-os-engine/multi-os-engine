@@ -59,44 +59,6 @@ public class AVAssetResourceLoader extends NSObject {
     @Selector("alloc")
     public static native AVAssetResourceLoader alloc();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoader_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoader/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native AVAssetResourceLoaderDelegate delegate();
-
-    /**
-     * delegateQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoader_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoader/delegateQueue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegateQueue")
-    public native NSObject delegateQueue();
-
-    @Generated
-    @Selector("init")
-    public native AVAssetResourceLoader init();
-
-    /**
-     * setDelegate:queue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoader_Class/index.html#//apple_ref/occ/instm/AVAssetResourceLoader/setDelegate:queue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:queue:")
-    public native void setDelegateQueue(@Mapped(ObjCObjectMapper.class) AVAssetResourceLoaderDelegate delegate,
-            NSObject delegateQueue);
-
-    @Generated
-    @Selector("preloadsEligibleContentKeys")
-    public native boolean preloadsEligibleContentKeys();
-
-    @Generated
-    @Selector("setPreloadsEligibleContentKeys:")
-    public native void setPreloadsEligibleContentKeys(boolean value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -196,4 +158,42 @@ public class AVAssetResourceLoader extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoader_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoader/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native AVAssetResourceLoaderDelegate delegate();
+
+    /**
+     * delegateQueue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoader_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoader/delegateQueue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegateQueue")
+    public native NSObject delegateQueue();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetResourceLoader init();
+
+    /**
+     * setDelegate:queue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoader_Class/index.html#//apple_ref/occ/instm/AVAssetResourceLoader/setDelegate:queue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:queue:")
+    public native void setDelegateQueue(@Mapped(ObjCObjectMapper.class) AVAssetResourceLoaderDelegate delegate,
+            NSObject delegateQueue);
+
+    @Generated
+    @Selector("preloadsEligibleContentKeys")
+    public native boolean preloadsEligibleContentKeys();
+
+    @Generated
+    @Selector("setPreloadsEligibleContentKeys:")
+    public native void setPreloadsEligibleContentKeys(boolean value);
 }

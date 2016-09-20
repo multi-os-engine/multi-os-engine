@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class sparse_status {
-    @Generated
-    private sparse_status() {
-    }
-
     @Generated public static final int SPARSE_SUCCESS = 0x00000000;
     @Generated public static final int SPARSE_ILLEGAL_PARAMETER = 0xFFFFFC18;
     @Generated public static final int SPARSE_CANNOT_SET_PROPERTY = 0xFFFFFC17;
     @Generated public static final int SPARSE_SYSTEM_ERROR = 0xFFFFFC16;
+
+    @Generated
+    private sparse_status() {
+    }
 }

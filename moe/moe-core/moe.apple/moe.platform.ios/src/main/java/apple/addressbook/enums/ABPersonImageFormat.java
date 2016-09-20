@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class ABPersonImageFormat {
+    @Generated public static final int kABPersonImageFormatThumbnail = 0x00000000;
+    @Generated public static final int kABPersonImageFormatOriginalSize = 0x00000002;
+
     @Generated
     private ABPersonImageFormat() {
     }
-
-    @Generated public static final int kABPersonImageFormatThumbnail = 0x00000000;
-    @Generated public static final int kABPersonImageFormatOriginalSize = 0x00000002;
 }

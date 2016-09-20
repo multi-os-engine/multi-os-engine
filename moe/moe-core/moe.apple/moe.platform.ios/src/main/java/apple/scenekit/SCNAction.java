@@ -67,12 +67,6 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SCNAction alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
     /**
      * customActionWithDuration:actionBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/customActionWithDuration:actionBlock:">iOS Dev Center</a>
@@ -81,25 +75,6 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("customActionWithDuration:actionBlock:")
     public static native SCNAction customActionWithDurationActionBlock(double seconds,
             @ObjCBlock(name = "call_customActionWithDurationActionBlock") Block_customActionWithDurationActionBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_customActionWithDurationActionBlock {
-        @Generated
-        void call_customActionWithDurationActionBlock(SCNNode arg0, @NFloat double arg1);
-    }
-
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/duration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("duration")
-    public native double duration();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
 
     /**
      * fadeInWithDuration:</br>
@@ -140,14 +115,6 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("group:")
     public static native SCNAction group(NSArray<? extends SCNAction> actions);
-
-    @Generated
-    @Selector("init")
-    public native SCNAction init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNAction initWithCoder(NSCoder aDecoder);
 
     /**
      * javaScriptActionWithScript:duration:</br>
@@ -207,14 +174,6 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     public static native SCNAction repeatActionForever(SCNAction action);
 
     /**
-     * reversedAction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instm/SCNAction/reversedAction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reversedAction")
-    public native SCNAction reversedAction();
-
-    /**
      * rotateByAngle:aroundAxis:duration:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/rotateByAngle:aroundAxis:duration:">iOS Dev Center</a>
      */
@@ -266,13 +225,6 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("runBlock:")
     public static native SCNAction runBlock(@ObjCBlock(name = "call_runBlock") Block_runBlock block);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_runBlock {
-        @Generated
-        void call_runBlock(SCNNode arg0);
-    }
-
     /**
      * runBlock:queue:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/clm/SCNAction/runBlock:queue:">iOS Dev Center</a>
@@ -281,13 +233,6 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("runBlock:queue:")
     public static native SCNAction runBlockQueue(@ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block,
             NSObject queue);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_runBlockQueue {
-        @Generated
-        void call_runBlockQueue(SCNNode arg0);
-    }
 
     /**
      * scaleBy:duration:</br>
@@ -313,72 +258,9 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("sequence:")
     public static native SCNAction sequence(NSArray<? extends SCNAction> actions);
 
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/duration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDuration:")
-    public native void setDuration(double value);
-
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/speed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSpeed:")
-    public native void setSpeed(@NFloat double value);
-
-    /**
-     * timingFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTimingFunction:")
-    public native void setTimingFunction(@ObjCBlock(name = "call_setTimingFunction") Block_setTimingFunction value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setTimingFunction {
-        @Generated
-        float call_setTimingFunction(float arg0);
-    }
-
-    /**
-     * timingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTimingMode:")
-    public native void setTimingMode(@NInt long value);
-
-    /**
-     * speed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/speed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("speed")
-    @NFloat
-    public native double speed();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * timingMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timingMode")
-    @NInt
-    public native long timingMode();
 
     /**
      * waitForDuration:</br>
@@ -395,22 +277,6 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("waitForDuration:withRange:")
     public static native SCNAction waitForDurationWithRange(double sec, double durationRange);
-
-    /**
-     * timingFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timingFunction")
-    @ObjCBlock(name = "call_timingFunction_ret")
-    public native Block_timingFunction_ret timingFunction();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_timingFunction_ret {
-        @Generated
-        float call_timingFunction_ret(float arg0);
-    }
 
     /**
      * hide</br>
@@ -535,4 +401,138 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * duration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/duration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("duration")
+    public native double duration();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SCNAction init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNAction initWithCoder(NSCoder aDecoder);
+
+    /**
+     * reversedAction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instm/SCNAction/reversedAction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reversedAction")
+    public native SCNAction reversedAction();
+
+    /**
+     * duration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/duration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDuration:")
+    public native void setDuration(double value);
+
+    /**
+     * speed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/speed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSpeed:")
+    public native void setSpeed(@NFloat double value);
+
+    /**
+     * timingFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTimingFunction:")
+    public native void setTimingFunction(@ObjCBlock(name = "call_setTimingFunction") Block_setTimingFunction value);
+
+    /**
+     * timingMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTimingMode:")
+    public native void setTimingMode(@NInt long value);
+
+    /**
+     * speed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/speed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("speed")
+    @NFloat
+    public native double speed();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * timingMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timingMode")
+    @NInt
+    public native long timingMode();
+
+    /**
+     * timingFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAction_Class/index.html#//apple_ref/occ/instp/SCNAction/timingFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timingFunction")
+    @ObjCBlock(name = "call_timingFunction_ret")
+    public native Block_timingFunction_ret timingFunction();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_customActionWithDurationActionBlock {
+        @Generated
+        void call_customActionWithDurationActionBlock(SCNNode arg0, @NFloat double arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_runBlock {
+        @Generated
+        void call_runBlock(SCNNode arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_runBlockQueue {
+        @Generated
+        void call_runBlockQueue(SCNNode arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setTimingFunction {
+        @Generated
+        float call_setTimingFunction(float arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_timingFunction_ret {
+        @Generated
+        float call_timingFunction_ret(float arg0);
+    }
 }

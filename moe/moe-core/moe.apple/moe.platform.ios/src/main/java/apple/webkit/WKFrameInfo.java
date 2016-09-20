@@ -61,40 +61,6 @@ public class WKFrameInfo extends NSObject implements NSCopying {
     public static native WKFrameInfo alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native WKFrameInfo init();
-
-    /**
-     * mainFrame</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKFrameInfo_Ref/index.html#//apple_ref/occ/instp/WKFrameInfo/mainFrame">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isMainFrame")
-    public native boolean isMainFrame();
-
-    /**
-     * request</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKFrameInfo_Ref/index.html#//apple_ref/occ/instp/WKFrameInfo/request">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("request")
-    public native NSURLRequest request();
-
-    /**
-     * securityOrigin</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKFrameInfo_Ref/index.html#//apple_ref/occ/instp/WKFrameInfo/securityOrigin">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("securityOrigin")
-    public native WKSecurityOrigin securityOrigin();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -193,4 +159,38 @@ public class WKFrameInfo extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native WKFrameInfo init();
+
+    /**
+     * mainFrame</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKFrameInfo_Ref/index.html#//apple_ref/occ/instp/WKFrameInfo/mainFrame">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isMainFrame")
+    public native boolean isMainFrame();
+
+    /**
+     * request</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKFrameInfo_Ref/index.html#//apple_ref/occ/instp/WKFrameInfo/request">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("request")
+    public native NSURLRequest request();
+
+    /**
+     * securityOrigin</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKFrameInfo_Ref/index.html#//apple_ref/occ/instp/WKFrameInfo/securityOrigin">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("securityOrigin")
+    public native WKSecurityOrigin securityOrigin();
 }

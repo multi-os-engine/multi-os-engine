@@ -20,14 +20,14 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CMTimeFlags {
-    @Generated
-    private CMTimeFlags() {
-    }
-
     @Generated public static final int Valid = 0x00000001;
     @Generated public static final int HasBeenRounded = 0x00000002;
     @Generated public static final int PositiveInfinity = 0x00000004;
     @Generated public static final int NegativeInfinity = 0x00000008;
     @Generated public static final int Indefinite = 0x00000010;
     @Generated public static final int ImpliedValueFlagsMask = 0x0000001C;
+
+    @Generated
+    private CMTimeFlags() {
+    }
 }

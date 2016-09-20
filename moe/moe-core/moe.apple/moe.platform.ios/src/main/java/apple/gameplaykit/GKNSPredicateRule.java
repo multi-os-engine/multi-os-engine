@@ -60,34 +60,6 @@ public class GKNSPredicateRule extends GKRule {
     @Selector("alloc")
     public static native GKNSPredicateRule alloc();
 
-    /**
-     * evaluatePredicateWithSystem:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKNSPredicateRule_Class/index.html#//apple_ref/occ/instm/GKNSPredicateRule/evaluatePredicateWithSystem:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("evaluatePredicateWithSystem:")
-    public native boolean evaluatePredicateWithSystem(GKRuleSystem system);
-
-    @Generated
-    @Selector("init")
-    public native GKNSPredicateRule init();
-
-    /**
-     * initWithPredicate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKNSPredicateRule_Class/index.html#//apple_ref/occ/instm/GKNSPredicateRule/initWithPredicate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithPredicate:")
-    public native GKNSPredicateRule initWithPredicate(NSPredicate predicate);
-
-    /**
-     * predicate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKNSPredicateRule_Class/index.html#//apple_ref/occ/instp/GKNSPredicateRule/predicate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("predicate")
-    public native NSPredicate predicate();
-
     @Generated
     @Selector("ruleWithBlockPredicate:action:")
     public static native GKNSPredicateRule ruleWithBlockPredicateAction(
@@ -203,4 +175,32 @@ public class GKNSPredicateRule extends GKRule {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * evaluatePredicateWithSystem:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKNSPredicateRule_Class/index.html#//apple_ref/occ/instm/GKNSPredicateRule/evaluatePredicateWithSystem:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("evaluatePredicateWithSystem:")
+    public native boolean evaluatePredicateWithSystem(GKRuleSystem system);
+
+    @Generated
+    @Selector("init")
+    public native GKNSPredicateRule init();
+
+    /**
+     * initWithPredicate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKNSPredicateRule_Class/index.html#//apple_ref/occ/instm/GKNSPredicateRule/initWithPredicate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithPredicate:")
+    public native GKNSPredicateRule initWithPredicate(NSPredicate predicate);
+
+    /**
+     * predicate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKNSPredicateRule_Class/index.html#//apple_ref/occ/instp/GKNSPredicateRule/predicate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("predicate")
+    public native NSPredicate predicate();
 }

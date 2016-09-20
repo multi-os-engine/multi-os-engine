@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CBError {
-    @Generated
-    private CBError() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long InvalidParameters = 0x0000000000000001L;
     @Generated @NInt public static final long InvalidHandle = 0x0000000000000002L;
@@ -37,4 +33,8 @@ public final class CBError {
     @Generated @NInt public static final long AlreadyAdvertising = 0x0000000000000009L;
     @Generated @NInt public static final long ConnectionFailed = 0x000000000000000AL;
     @Generated @NInt public static final long ConnectionLimitReached = 0x000000000000000BL;
+
+    @Generated
+    private CBError() {
+    }
 }

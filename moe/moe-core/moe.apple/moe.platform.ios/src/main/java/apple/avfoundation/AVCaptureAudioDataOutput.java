@@ -61,45 +61,6 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
     public static native AVCaptureAudioDataOutput alloc();
 
     @Generated
-    @Selector("init")
-    public native AVCaptureAudioDataOutput init();
-
-    /**
-     * recommendedAudioSettingsForAssetWriterWithOutputFileType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureAudioDataOutput/recommendedAudioSettingsForAssetWriterWithOutputFileType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recommendedAudioSettingsForAssetWriterWithOutputFileType:")
-    public native NSDictionary<?, ?> recommendedAudioSettingsForAssetWriterWithOutputFileType(String outputFileType);
-
-    /**
-     * sampleBufferCallbackQueue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureAudioDataOutput/sampleBufferCallbackQueue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sampleBufferCallbackQueue")
-    public native NSObject sampleBufferCallbackQueue();
-
-    /**
-     * sampleBufferDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureAudioDataOutput/sampleBufferDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sampleBufferDelegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native AVCaptureAudioDataOutputSampleBufferDelegate sampleBufferDelegate();
-
-    /**
-     * setSampleBufferDelegate:queue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureAudioDataOutput/setSampleBufferDelegate:queue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSampleBufferDelegate:queue:")
-    public native void setSampleBufferDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) AVCaptureAudioDataOutputSampleBufferDelegate sampleBufferDelegate,
-            NSObject sampleBufferCallbackQueue);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -198,4 +159,43 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVCaptureAudioDataOutput init();
+
+    /**
+     * recommendedAudioSettingsForAssetWriterWithOutputFileType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureAudioDataOutput/recommendedAudioSettingsForAssetWriterWithOutputFileType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recommendedAudioSettingsForAssetWriterWithOutputFileType:")
+    public native NSDictionary<?, ?> recommendedAudioSettingsForAssetWriterWithOutputFileType(String outputFileType);
+
+    /**
+     * sampleBufferCallbackQueue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureAudioDataOutput/sampleBufferCallbackQueue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sampleBufferCallbackQueue")
+    public native NSObject sampleBufferCallbackQueue();
+
+    /**
+     * sampleBufferDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureAudioDataOutput/sampleBufferDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sampleBufferDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native AVCaptureAudioDataOutputSampleBufferDelegate sampleBufferDelegate();
+
+    /**
+     * setSampleBufferDelegate:queue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureAudioDataOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureAudioDataOutput/setSampleBufferDelegate:queue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSampleBufferDelegate:queue:")
+    public native void setSampleBufferDelegateQueue(
+            @Mapped(ObjCObjectMapper.class) AVCaptureAudioDataOutputSampleBufferDelegate sampleBufferDelegate,
+            NSObject sampleBufferCallbackQueue);
 }

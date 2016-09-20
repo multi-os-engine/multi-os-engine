@@ -62,29 +62,6 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     public static native SKPayment alloc();
 
     /**
-     * applicationUsername</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/instp/SKPayment/applicationUsername">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("applicationUsername")
-    public native String applicationUsername();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native SKPayment init();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    /**
      * paymentWithProduct:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/clm/SKPayment/paymentWithProduct:">iOS Dev Center</a>
      */
@@ -100,39 +77,6 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     @Deprecated
     @Selector("paymentWithProductIdentifier:")
     public static native SKPayment paymentWithProductIdentifier(String identifier);
-
-    /**
-     * productIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/instp/SKPayment/productIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("productIdentifier")
-    public native String productIdentifier();
-
-    /**
-     * quantity</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/instp/SKPayment/quantity">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("quantity")
-    @NInt
-    public native long quantity();
-
-    /**
-     * requestData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/instp/SKPayment/requestData">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestData")
-    public native NSData requestData();
-
-    /**
-     * simulatesAskToBuyInSandbox</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/instp/SKPayment/simulatesAskToBuyInSandbox">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("simulatesAskToBuyInSandbox")
-    public native boolean simulatesAskToBuyInSandbox();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -233,4 +177,60 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * applicationUsername</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/instp/SKPayment/applicationUsername">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("applicationUsername")
+    public native String applicationUsername();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native SKPayment init();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    /**
+     * productIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/instp/SKPayment/productIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("productIdentifier")
+    public native String productIdentifier();
+
+    /**
+     * quantity</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/instp/SKPayment/quantity">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("quantity")
+    @NInt
+    public native long quantity();
+
+    /**
+     * requestData</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/instp/SKPayment/requestData">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestData")
+    public native NSData requestData();
+
+    /**
+     * simulatesAskToBuyInSandbox</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKPaymentRequest_Class/index.html#//apple_ref/occ/instp/SKPayment/simulatesAskToBuyInSandbox">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("simulatesAskToBuyInSandbox")
+    public native boolean simulatesAskToBuyInSandbox();
 }

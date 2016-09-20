@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kAudioChannelLayoutTag_UseChannelDescriptions = 0x00000000;
     @Generated public static final int kAudioChannelLayoutTag_UseChannelBitmap = 0x00010000;
     @Generated public static final int kAudioChannelLayoutTag_Mono = 0x00640001;
@@ -285,4 +281,8 @@ public final class Enums {
     @Generated public static final int kAudio_ParamError = 0xFFFFFFCE;
     @Generated public static final int kAudio_MemFullError = 0xFFFFFF94;
     @Generated public static final int kAudioFormatEnhancedAC3 = 0x65632D33;
+
+    @Generated
+    private Enums() {
+    }
 }

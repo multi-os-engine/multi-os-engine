@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SCNetworkReachabilityFlags {
-    @Generated
-    private SCNetworkReachabilityFlags() {
-    }
-
     @Generated public static final int TransientConnection = 0x00000001;
     @Generated public static final int Reachable = 0x00000002;
     @Generated public static final int ConnectionRequired = 0x00000004;
@@ -34,4 +30,7 @@ public final class SCNetworkReachabilityFlags {
     @Generated public static final int IsDirect = 0x00020000;
     @Generated public static final int IsWWAN = 0x00040000;
     @Generated public static final int ConnectionAutomatic = 0x00000008;
+    @Generated
+    private SCNetworkReachabilityFlags() {
+    }
 }

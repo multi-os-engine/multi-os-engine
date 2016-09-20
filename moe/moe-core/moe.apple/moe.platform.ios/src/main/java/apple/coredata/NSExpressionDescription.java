@@ -60,47 +60,6 @@ public class NSExpressionDescription extends NSPropertyDescription {
     @Selector("alloc")
     public static native NSExpressionDescription alloc();
 
-    /**
-     * expression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSExpressionDescription_Class/index.html#//apple_ref/occ/instp/NSExpressionDescription/expression">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expression")
-    public native NSExpression expression();
-
-    /**
-     * expressionResultType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSExpressionDescription_Class/index.html#//apple_ref/occ/instp/NSExpressionDescription/expressionResultType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expressionResultType")
-    @NUInt
-    public native long expressionResultType();
-
-    @Generated
-    @Selector("init")
-    public native NSExpressionDescription init();
-
-    /**
-     * expression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSExpressionDescription_Class/index.html#//apple_ref/occ/instp/NSExpressionDescription/expression">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setExpression:")
-    public native void setExpression(NSExpression value);
-
-    /**
-     * expressionResultType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSExpressionDescription_Class/index.html#//apple_ref/occ/instp/NSExpressionDescription/expressionResultType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setExpressionResultType:")
-    public native void setExpressionResultType(@NUInt long value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSExpressionDescription initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -200,4 +159,45 @@ public class NSExpressionDescription extends NSPropertyDescription {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * expression</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSExpressionDescription_Class/index.html#//apple_ref/occ/instp/NSExpressionDescription/expression">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expression")
+    public native NSExpression expression();
+
+    /**
+     * expressionResultType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSExpressionDescription_Class/index.html#//apple_ref/occ/instp/NSExpressionDescription/expressionResultType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expressionResultType")
+    @NUInt
+    public native long expressionResultType();
+
+    @Generated
+    @Selector("init")
+    public native NSExpressionDescription init();
+
+    /**
+     * expression</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSExpressionDescription_Class/index.html#//apple_ref/occ/instp/NSExpressionDescription/expression">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setExpression:")
+    public native void setExpression(NSExpression value);
+
+    /**
+     * expressionResultType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSExpressionDescription_Class/index.html#//apple_ref/occ/instp/NSExpressionDescription/expressionResultType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setExpressionResultType:")
+    public native void setExpressionResultType(@NUInt long value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSExpressionDescription initWithCoder(NSCoder aDecoder);
 }

@@ -71,68 +71,6 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     public static native Object fetchAllSubscriptionsOperation();
 
     @Generated
-    @Selector("init")
-    public native CKFetchSubscriptionsOperation init();
-
-    /**
-     * initWithSubscriptionIDs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instm/CKFetchSubscriptionsOperation/initWithSubscriptionIDs:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSubscriptionIDs:")
-    public native CKFetchSubscriptionsOperation initWithSubscriptionIDs(NSArray<String> subscriptionIDs);
-
-    /**
-     * fetchSubscriptionCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/fetchSubscriptionCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFetchSubscriptionCompletionBlock:")
-    public native void setFetchSubscriptionCompletionBlock(
-            @ObjCBlock(name = "call_setFetchSubscriptionCompletionBlock") Block_setFetchSubscriptionCompletionBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setFetchSubscriptionCompletionBlock {
-        @Generated
-        void call_setFetchSubscriptionCompletionBlock(NSDictionary<String, ? extends CKSubscription> arg0,
-                NSError arg1);
-    }
-
-    /**
-     * subscriptionIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/subscriptionIDs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSubscriptionIDs:")
-    public native void setSubscriptionIDs(NSArray<String> value);
-
-    /**
-     * subscriptionIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/subscriptionIDs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("subscriptionIDs")
-    public native NSArray<String> subscriptionIDs();
-
-    /**
-     * fetchSubscriptionCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/fetchSubscriptionCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchSubscriptionCompletionBlock")
-    @ObjCBlock(name = "call_fetchSubscriptionCompletionBlock_ret")
-    public native Block_fetchSubscriptionCompletionBlock_ret fetchSubscriptionCompletionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchSubscriptionCompletionBlock_ret {
-        @Generated
-        void call_fetchSubscriptionCompletionBlock_ret(NSDictionary<String, ? extends CKSubscription> arg0,
-                NSError arg1);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -231,4 +169,66 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CKFetchSubscriptionsOperation init();
+
+    /**
+     * initWithSubscriptionIDs:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instm/CKFetchSubscriptionsOperation/initWithSubscriptionIDs:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSubscriptionIDs:")
+    public native CKFetchSubscriptionsOperation initWithSubscriptionIDs(NSArray<String> subscriptionIDs);
+
+    /**
+     * fetchSubscriptionCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/fetchSubscriptionCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFetchSubscriptionCompletionBlock:")
+    public native void setFetchSubscriptionCompletionBlock(
+            @ObjCBlock(name = "call_setFetchSubscriptionCompletionBlock") Block_setFetchSubscriptionCompletionBlock value);
+
+    /**
+     * subscriptionIDs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/subscriptionIDs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSubscriptionIDs:")
+    public native void setSubscriptionIDs(NSArray<String> value);
+
+    /**
+     * subscriptionIDs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/subscriptionIDs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("subscriptionIDs")
+    public native NSArray<String> subscriptionIDs();
+
+    /**
+     * fetchSubscriptionCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchSubscriptionsOperation_class/index.html#//apple_ref/occ/instp/CKFetchSubscriptionsOperation/fetchSubscriptionCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchSubscriptionCompletionBlock")
+    @ObjCBlock(name = "call_fetchSubscriptionCompletionBlock_ret")
+    public native Block_fetchSubscriptionCompletionBlock_ret fetchSubscriptionCompletionBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setFetchSubscriptionCompletionBlock {
+        @Generated
+        void call_setFetchSubscriptionCompletionBlock(NSDictionary<String, ? extends CKSubscription> arg0,
+                NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchSubscriptionCompletionBlock_ret {
+        @Generated
+        void call_fetchSubscriptionCompletionBlock_ret(NSDictionary<String, ? extends CKSubscription> arg0,
+                NSError arg1);
+    }
 }

@@ -60,14 +60,6 @@ public class HMAction extends NSObject {
     public static native HMAction alloc();
 
     @Generated
-    @Selector("init")
-    public native HMAction init();
-
-    @Generated
-    @Selector("uniqueIdentifier")
-    public native NSUUID uniqueIdentifier();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -166,4 +158,12 @@ public class HMAction extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native HMAction init();
+
+    @Generated
+    @Selector("uniqueIdentifier")
+    public native NSUUID uniqueIdentifier();
 }

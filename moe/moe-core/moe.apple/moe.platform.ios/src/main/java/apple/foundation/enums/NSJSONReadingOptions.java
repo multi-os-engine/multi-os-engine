@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSJSONReadingOptions {
-    @Generated
-    private NSJSONReadingOptions() {
-    }
-
     @Generated @NUInt public static final long MutableContainers = 0x0000000000000001L;
     @Generated @NUInt public static final long MutableLeaves = 0x0000000000000002L;
     @Generated @NUInt public static final long AllowFragments = 0x0000000000000004L;
+
+    @Generated
+    private NSJSONReadingOptions() {
+    }
 }

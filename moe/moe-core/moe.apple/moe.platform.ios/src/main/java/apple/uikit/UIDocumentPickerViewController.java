@@ -62,77 +62,6 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Selector("alloc")
     public static native UIDocumentPickerViewController alloc();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native UIDocumentPickerDelegate delegate();
-
-    /**
-     * documentPickerMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerViewController/documentPickerMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("documentPickerMode")
-    @NUInt
-    public native long documentPickerMode();
-
-    @Generated
-    @Selector("init")
-    public native UIDocumentPickerViewController init();
-
-    /**
-     * initWithDocumentTypes:inMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instm/UIDocumentPickerViewController/initWithDocumentTypes:inMode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDocumentTypes:inMode:")
-    public native UIDocumentPickerViewController initWithDocumentTypesInMode(NSArray<String> allowedUTIs,
-            @NUInt long mode);
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native UIDocumentPickerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
-
-    /**
-     * initWithURL:inMode:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instm/UIDocumentPickerViewController/initWithURL:inMode:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:inMode:")
-    public native UIDocumentPickerViewController initWithURLInMode(NSURL url, @NUInt long mode);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIDocumentPickerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerViewController/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIDocumentPickerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIDocumentPickerViewController initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -244,4 +173,75 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIDocumentPickerDelegate delegate();
+
+    /**
+     * documentPickerMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerViewController/documentPickerMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("documentPickerMode")
+    @NUInt
+    public native long documentPickerMode();
+
+    @Generated
+    @Selector("init")
+    public native UIDocumentPickerViewController init();
+
+    /**
+     * initWithDocumentTypes:inMode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instm/UIDocumentPickerViewController/initWithDocumentTypes:inMode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDocumentTypes:inMode:")
+    public native UIDocumentPickerViewController initWithDocumentTypesInMode(NSArray<String> allowedUTIs,
+            @NUInt long mode);
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native UIDocumentPickerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+
+    /**
+     * initWithURL:inMode:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instm/UIDocumentPickerViewController/initWithURL:inMode:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:inMode:")
+    public native UIDocumentPickerViewController initWithURLInMode(NSURL url, @NUInt long mode);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIDocumentPickerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDocumentPickerViewController_Class/index.html#//apple_ref/occ/instp/UIDocumentPickerViewController/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIDocumentPickerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIDocumentPickerViewController initWithCoder(NSCoder aDecoder);
 }

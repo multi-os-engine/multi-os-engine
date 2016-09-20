@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGInterpolationQuality {
-    @Generated
-    private CGInterpolationQuality() {
-    }
-
     @Generated public static final int Default = 0x00000000;
     @Generated public static final int None = 0x00000001;
     @Generated public static final int Low = 0x00000002;
     @Generated public static final int Medium = 0x00000004;
     @Generated public static final int High = 0x00000003;
+
+    @Generated
+    private CGInterpolationQuality() {
+    }
 }

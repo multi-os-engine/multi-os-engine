@@ -69,151 +69,6 @@ public class UIProgressView extends UIView implements NSCoding {
     public static native UIProgressView alloc();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native UIProgressView init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIProgressView initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIProgressView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * initWithProgressViewStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instm/UIProgressView/initWithProgressViewStyle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithProgressViewStyle:")
-    public native UIProgressView initWithProgressViewStyle(@NInt long style);
-
-    /**
-     * progress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progress">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("progress")
-    public native float progress();
-
-    /**
-     * progressImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("progressImage")
-    public native UIImage progressImage();
-
-    /**
-     * progressTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("progressTintColor")
-    public native UIColor progressTintColor();
-
-    /**
-     * progressViewStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressViewStyle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("progressViewStyle")
-    @NInt
-    public native long progressViewStyle();
-
-    /**
-     * progress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progress">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProgress:")
-    public native void setProgress(float value);
-
-    /**
-     * setProgress:animated:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instm/UIProgressView/setProgress:animated:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProgress:animated:")
-    public native void setProgressAnimated(float progress, boolean animated);
-
-    /**
-     * progressImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProgressImage:")
-    public native void setProgressImage(UIImage value);
-
-    /**
-     * progressTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProgressTintColor:")
-    public native void setProgressTintColor(UIColor value);
-
-    /**
-     * progressViewStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressViewStyle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProgressViewStyle:")
-    public native void setProgressViewStyle(@NInt long value);
-
-    /**
-     * trackImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/trackImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTrackImage:")
-    public native void setTrackImage(UIImage value);
-
-    /**
-     * trackTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/trackTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTrackTintColor:")
-    public native void setTrackTintColor(UIColor value);
-
-    /**
-     * trackImage</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/trackImage">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("trackImage")
-    public native UIImage trackImage();
-
-    /**
-     * trackTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/trackTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("trackTintColor")
-    public native UIColor trackTintColor();
-
-    /**
-     * observedProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/observedProgress">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("observedProgress")
-    public native NSProgress observedProgress();
-
-    /**
-     * observedProgress</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/observedProgress">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setObservedProgress:")
-    public native void setObservedProgress(NSProgress value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -266,23 +121,9 @@ public class UIProgressView extends UIView implements NSCoding {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -293,27 +134,10 @@ public class UIProgressView extends UIView implements NSCoding {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -324,24 +148,9 @@ public class UIProgressView extends UIView implements NSCoding {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -539,4 +348,195 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UIProgressView init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIProgressView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIProgressView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * initWithProgressViewStyle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instm/UIProgressView/initWithProgressViewStyle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithProgressViewStyle:")
+    public native UIProgressView initWithProgressViewStyle(@NInt long style);
+
+    /**
+     * progress</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progress">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("progress")
+    public native float progress();
+
+    /**
+     * progressImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("progressImage")
+    public native UIImage progressImage();
+
+    /**
+     * progressTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("progressTintColor")
+    public native UIColor progressTintColor();
+
+    /**
+     * progressViewStyle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressViewStyle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("progressViewStyle")
+    @NInt
+    public native long progressViewStyle();
+
+    /**
+     * progress</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progress">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProgress:")
+    public native void setProgress(float value);
+
+    /**
+     * setProgress:animated:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instm/UIProgressView/setProgress:animated:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProgress:animated:")
+    public native void setProgressAnimated(float progress, boolean animated);
+
+    /**
+     * progressImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProgressImage:")
+    public native void setProgressImage(UIImage value);
+
+    /**
+     * progressTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProgressTintColor:")
+    public native void setProgressTintColor(UIColor value);
+
+    /**
+     * progressViewStyle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/progressViewStyle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProgressViewStyle:")
+    public native void setProgressViewStyle(@NInt long value);
+
+    /**
+     * trackImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/trackImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTrackImage:")
+    public native void setTrackImage(UIImage value);
+
+    /**
+     * trackTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/trackTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTrackTintColor:")
+    public native void setTrackTintColor(UIColor value);
+
+    /**
+     * trackImage</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/trackImage">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("trackImage")
+    public native UIImage trackImage();
+
+    /**
+     * trackTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/trackTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("trackTintColor")
+    public native UIColor trackTintColor();
+
+    /**
+     * observedProgress</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/observedProgress">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("observedProgress")
+    public native NSProgress observedProgress();
+
+    /**
+     * observedProgress</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIProgressView_Class/index.html#//apple_ref/occ/instp/UIProgressView/observedProgress">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setObservedProgress:")
+    public native void setObservedProgress(NSProgress value);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

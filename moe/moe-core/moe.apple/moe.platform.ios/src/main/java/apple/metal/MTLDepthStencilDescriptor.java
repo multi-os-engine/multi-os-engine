@@ -59,97 +59,6 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLDepthStencilDescriptor alloc();
 
-    /**
-     * backFaceStencil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/backFaceStencil">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backFaceStencil")
-    public native MTLStencilDescriptor backFaceStencil();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * depthCompareFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/depthCompareFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("depthCompareFunction")
-    @NUInt
-    public native long depthCompareFunction();
-
-    /**
-     * frontFaceStencil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/frontFaceStencil">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("frontFaceStencil")
-    public native MTLStencilDescriptor frontFaceStencil();
-
-    @Generated
-    @Selector("init")
-    public native MTLDepthStencilDescriptor init();
-
-    /**
-     * depthWriteEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/depthWriteEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isDepthWriteEnabled")
-    public native boolean isDepthWriteEnabled();
-
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/label">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("label")
-    public native String label();
-
-    /**
-     * backFaceStencil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/backFaceStencil">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackFaceStencil:")
-    public native void setBackFaceStencil(MTLStencilDescriptor value);
-
-    /**
-     * depthCompareFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/depthCompareFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDepthCompareFunction:")
-    public native void setDepthCompareFunction(@NUInt long value);
-
-    /**
-     * depthWriteEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/depthWriteEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDepthWriteEnabled:")
-    public native void setDepthWriteEnabled(boolean value);
-
-    /**
-     * frontFaceStencil</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/frontFaceStencil">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFrontFaceStencil:")
-    public native void setFrontFaceStencil(MTLStencilDescriptor value);
-
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/label">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLabel:")
-    public native void setLabel(String value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -249,4 +158,95 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * backFaceStencil</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/backFaceStencil">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backFaceStencil")
+    public native MTLStencilDescriptor backFaceStencil();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * depthCompareFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/depthCompareFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("depthCompareFunction")
+    @NUInt
+    public native long depthCompareFunction();
+
+    /**
+     * frontFaceStencil</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/frontFaceStencil">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("frontFaceStencil")
+    public native MTLStencilDescriptor frontFaceStencil();
+
+    @Generated
+    @Selector("init")
+    public native MTLDepthStencilDescriptor init();
+
+    /**
+     * depthWriteEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/depthWriteEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isDepthWriteEnabled")
+    public native boolean isDepthWriteEnabled();
+
+    /**
+     * depthWriteEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/depthWriteEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDepthWriteEnabled:")
+    public native void setDepthWriteEnabled(boolean value);
+
+    /**
+     * label</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/label">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("label")
+    public native String label();
+
+    /**
+     * backFaceStencil</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/backFaceStencil">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackFaceStencil:")
+    public native void setBackFaceStencil(MTLStencilDescriptor value);
+
+    /**
+     * depthCompareFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/depthCompareFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDepthCompareFunction:")
+    public native void setDepthCompareFunction(@NUInt long value);
+
+    /**
+     * frontFaceStencil</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/frontFaceStencil">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFrontFaceStencil:")
+    public native void setFrontFaceStencil(MTLStencilDescriptor value);
+
+    /**
+     * label</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Metal/Reference/MTLDepthStencilDescriptor_Ref/index.html#//apple_ref/occ/instp/MTLDepthStencilDescriptor/label">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLabel:")
+    public native void setLabel(String value);
 }

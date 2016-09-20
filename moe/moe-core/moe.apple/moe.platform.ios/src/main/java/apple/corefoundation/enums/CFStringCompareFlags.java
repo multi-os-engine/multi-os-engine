@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFStringCompareFlags {
-    @Generated
-    private CFStringCompareFlags() {
-    }
-
     @Generated @NUInt public static final long CaseInsensitive = 0x0000000000000001L;
     @Generated @NUInt public static final long Backwards = 0x0000000000000004L;
     @Generated @NUInt public static final long Anchored = 0x0000000000000008L;
@@ -34,4 +30,7 @@ public final class CFStringCompareFlags {
     @Generated @NUInt public static final long DiacriticInsensitive = 0x0000000000000080L;
     @Generated @NUInt public static final long WidthInsensitive = 0x0000000000000100L;
     @Generated @NUInt public static final long ForcedOrdering = 0x0000000000000200L;
+    @Generated
+    private CFStringCompareFlags() {
+    }
 }

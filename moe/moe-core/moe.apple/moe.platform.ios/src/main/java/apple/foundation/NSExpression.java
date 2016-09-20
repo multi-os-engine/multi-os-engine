@@ -62,50 +62,6 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public static native NSExpression alloc();
 
     /**
-     * allowEvaluation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instm/NSExpression/allowEvaluation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allowEvaluation")
-    public native void allowEvaluation();
-
-    /**
-     * arguments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/arguments">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("arguments")
-    public native NSArray<? extends NSExpression> arguments();
-
-    /**
-     * collection</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/collection">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("collection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object collection();
-
-    /**
-     * constantValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/constantValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("constantValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object constantValue();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
      * expressionForAggregate:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/clm/NSExpression/expressionForAggregate:">iOS Dev Center</a>
      */
@@ -130,15 +86,6 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public static native NSExpression expressionForBlockArguments(
             @ObjCBlock(name = "call_expressionForBlockArguments") Block_expressionForBlockArguments block,
             NSArray<? extends NSExpression> arguments);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_expressionForBlockArguments {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        Object call_expressionForBlockArguments(@Mapped(ObjCObjectMapper.class) Object arg0, NSArray<?> arg1,
-                NSMutableDictionary<?, ?> arg2);
-    }
 
     /**
      * expressionForConstantValue:</br>
@@ -223,25 +170,6 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public static native NSExpression expressionForVariable(String string);
 
     /**
-     * expressionType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/expressionType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expressionType")
-    @NUInt
-    public native long expressionType();
-
-    /**
-     * expressionValueWithObject:context:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instm/NSExpression/expressionValueWithObject:context:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expressionValueWithObject:context:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object expressionValueWithObjectContext(@Mapped(ObjCObjectMapper.class) Object object,
-            NSMutableDictionary<?, ?> context);
-
-    /**
      * expressionWithFormat:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/clm/NSExpression/expressionWithFormat:">iOS Dev Center</a>
      */
@@ -266,118 +194,14 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("expressionWithFormat:arguments:")
     public static native NSExpression expressionWithFormatArguments(String expressionFormat, BytePtr argList);
 
-    /**
-     * function</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/function">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("function")
-    public native String function();
-
-    @Generated
-    @Selector("init")
-    public native NSExpression init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSExpression initWithCoder(NSCoder coder);
-
-    /**
-     * initWithExpressionType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instm/NSExpression/initWithExpressionType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithExpressionType:")
-    public native NSExpression initWithExpressionType(@NUInt long type);
-
-    /**
-     * keyPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/keyPath">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("keyPath")
-    public native String keyPath();
-
-    /**
-     * leftExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/leftExpression">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("leftExpression")
-    public native NSExpression leftExpression();
-
-    /**
-     * operand</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/operand">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("operand")
-    public native NSExpression operand();
-
-    /**
-     * predicate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/predicate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("predicate")
-    public native NSPredicate predicate();
-
-    /**
-     * rightExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/rightExpression">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rightExpression")
-    public native NSExpression rightExpression();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
     @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * variable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/variable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("variable")
-    public native String variable();
-
-    /**
-     * expressionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/expressionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expressionBlock")
-    @ObjCBlock(name = "call_expressionBlock_ret")
-    public native Block_expressionBlock_ret expressionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_expressionBlock_ret {
-        @Generated
-        @MappedReturn(ObjCObjectMapper.class)
-        Object call_expressionBlock_ret(@Mapped(ObjCObjectMapper.class) Object arg0, NSArray<?> arg1,
-                NSMutableDictionary<?, ?> arg2);
-    }
-
-    @Generated
     @Selector("expressionForConditional:trueExpression:falseExpression:")
     public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(NSPredicate predicate,
             NSExpression trueExpression, NSExpression falseExpression);
-
-    @Generated
-    @Selector("falseExpression")
-    public native NSExpression falseExpression();
-
-    @Generated
-    @Selector("trueExpression")
-    public native NSExpression trueExpression();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -478,4 +302,180 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allowEvaluation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instm/NSExpression/allowEvaluation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allowEvaluation")
+    public native void allowEvaluation();
+
+    /**
+     * arguments</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/arguments">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("arguments")
+    public native NSArray<? extends NSExpression> arguments();
+
+    /**
+     * collection</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/collection">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("collection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object collection();
+
+    /**
+     * constantValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/constantValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("constantValue")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object constantValue();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * expressionType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/expressionType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expressionType")
+    @NUInt
+    public native long expressionType();
+
+    /**
+     * expressionValueWithObject:context:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instm/NSExpression/expressionValueWithObject:context:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expressionValueWithObject:context:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object expressionValueWithObjectContext(@Mapped(ObjCObjectMapper.class) Object object,
+            NSMutableDictionary<?, ?> context);
+
+    /**
+     * function</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/function">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("function")
+    public native String function();
+
+    @Generated
+    @Selector("init")
+    public native NSExpression init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSExpression initWithCoder(NSCoder coder);
+
+    /**
+     * initWithExpressionType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instm/NSExpression/initWithExpressionType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithExpressionType:")
+    public native NSExpression initWithExpressionType(@NUInt long type);
+
+    /**
+     * keyPath</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/keyPath">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("keyPath")
+    public native String keyPath();
+
+    /**
+     * leftExpression</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/leftExpression">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("leftExpression")
+    public native NSExpression leftExpression();
+
+    /**
+     * operand</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/operand">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("operand")
+    public native NSExpression operand();
+
+    /**
+     * predicate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/predicate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("predicate")
+    public native NSPredicate predicate();
+
+    /**
+     * rightExpression</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/rightExpression">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rightExpression")
+    public native NSExpression rightExpression();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * variable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/variable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("variable")
+    public native String variable();
+
+    /**
+     * expressionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/index.html#//apple_ref/occ/instp/NSExpression/expressionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expressionBlock")
+    @ObjCBlock(name = "call_expressionBlock_ret")
+    public native Block_expressionBlock_ret expressionBlock();
+
+    @Generated
+    @Selector("falseExpression")
+    public native NSExpression falseExpression();
+
+    @Generated
+    @Selector("trueExpression")
+    public native NSExpression trueExpression();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_expressionForBlockArguments {
+        @Generated
+        @MappedReturn(ObjCObjectMapper.class)
+        Object call_expressionForBlockArguments(@Mapped(ObjCObjectMapper.class) Object arg0, NSArray<?> arg1,
+                NSMutableDictionary<?, ?> arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_expressionBlock_ret {
+        @Generated
+        @MappedReturn(ObjCObjectMapper.class)
+        Object call_expressionBlock_ret(@Mapped(ObjCObjectMapper.class) Object arg0, NSArray<?> arg1,
+                NSMutableDictionary<?, ?> arg2);
+    }
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MDLLightType {
-    @Generated
-    private MDLLightType() {
-    }
-
     @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NUInt public static final long Ambient = 0x0000000000000001L;
     @Generated @NUInt public static final long Directional = 0x0000000000000002L;
@@ -37,4 +33,8 @@ public final class MDLLightType {
     @Generated @NUInt public static final long Photometric = 0x0000000000000009L;
     @Generated @NUInt public static final long Probe = 0x000000000000000AL;
     @Generated @NUInt public static final long Environment = 0x000000000000000BL;
+
+    @Generated
+    private MDLLightType() {
+    }
 }

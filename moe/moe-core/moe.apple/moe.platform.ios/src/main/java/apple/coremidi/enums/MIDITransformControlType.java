@@ -20,14 +20,14 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class MIDITransformControlType {
-    @Generated
-    private MIDITransformControlType() {
-    }
-
     @Generated public static final byte _7Bit = 0;
     @Generated public static final byte _14Bit = 1;
     @Generated public static final byte _7BitRPN = 2;
     @Generated public static final byte _14BitRPN = 3;
     @Generated public static final byte _7BitNRPN = 4;
     @Generated public static final byte _14BitNRPN = 5;
+
+    @Generated
+    private MIDITransformControlType() {
+    }
 }

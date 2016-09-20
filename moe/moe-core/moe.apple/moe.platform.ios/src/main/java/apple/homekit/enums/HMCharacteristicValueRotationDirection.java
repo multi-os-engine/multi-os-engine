@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HMCharacteristicValueRotationDirection {
+    @Generated @NInt public static final long Clockwise = 0x0000000000000000L;
+    @Generated @NInt public static final long CounterClockwise = 0x0000000000000001L;
+
     @Generated
     private HMCharacteristicValueRotationDirection() {
     }
-
-    @Generated @NInt public static final long Clockwise = 0x0000000000000000L;
-    @Generated @NInt public static final long CounterClockwise = 0x0000000000000001L;
 }

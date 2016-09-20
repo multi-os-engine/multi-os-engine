@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class PKPaymentSummaryItemType {
+    @Generated @NUInt public static final long Final = 0x0000000000000000L;
+    @Generated @NUInt public static final long Pending = 0x0000000000000001L;
+
     @Generated
     private PKPaymentSummaryItemType() {
     }
-
-    @Generated @NUInt public static final long Final = 0x0000000000000000L;
-    @Generated @NUInt public static final long Pending = 0x0000000000000001L;
 }

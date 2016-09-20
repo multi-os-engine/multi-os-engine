@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKAlarmProximity {
-    @Generated
-    private EKAlarmProximity() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Enter = 0x0000000000000001L;
     @Generated @NInt public static final long Leave = 0x0000000000000002L;
+
+    @Generated
+    private EKAlarmProximity() {
+    }
 }

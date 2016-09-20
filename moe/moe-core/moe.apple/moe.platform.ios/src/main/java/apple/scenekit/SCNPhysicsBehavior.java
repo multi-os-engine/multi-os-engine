@@ -62,26 +62,8 @@ public class SCNPhysicsBehavior extends NSObject implements NSSecureCoding {
     public static native SCNPhysicsBehavior alloc();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native SCNPhysicsBehavior init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNPhysicsBehavior initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -182,4 +164,22 @@ public class SCNPhysicsBehavior extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SCNPhysicsBehavior init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNPhysicsBehavior initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

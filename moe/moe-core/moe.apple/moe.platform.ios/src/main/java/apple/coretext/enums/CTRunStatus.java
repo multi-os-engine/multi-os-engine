@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTRunStatus {
-    @Generated
-    private CTRunStatus() {
-    }
-
     @Generated public static final int NoStatus = 0x00000000;
     @Generated public static final int RightToLeft = 0x00000001;
     @Generated public static final int NonMonotonic = 0x00000002;
     @Generated public static final int HasNonIdentityMatrix = 0x00000004;
+
+    @Generated
+    private CTRunStatus() {
+    }
 }

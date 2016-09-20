@@ -66,56 +66,8 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
     public static native NEFilterBrowserFlow alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NEFilterBrowserFlow init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEFilterBrowserFlow initWithCoder(NSCoder aDecoder);
-
-    /**
-     * parentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterBrowserFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterBrowserFlow/parentURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("parentURL")
-    public native NSURL parentURL();
-
-    /**
-     * request</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterBrowserFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterBrowserFlow/request">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("request")
-    public native NSURLRequest request();
-
-    /**
-     * response</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterBrowserFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterBrowserFlow/response">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("response")
-    public native NSURLResponse response();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -216,4 +168,52 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NEFilterBrowserFlow init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEFilterBrowserFlow initWithCoder(NSCoder aDecoder);
+
+    /**
+     * parentURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterBrowserFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterBrowserFlow/parentURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("parentURL")
+    public native NSURL parentURL();
+
+    /**
+     * request</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterBrowserFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterBrowserFlow/request">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("request")
+    public native NSURLRequest request();
+
+    /**
+     * response</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterBrowserFlowClassRef/index.html#//apple_ref/occ/instp/NEFilterBrowserFlow/response">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("response")
+    public native NSURLResponse response();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -62,18 +62,6 @@ public class HKQuery extends NSObject {
     @Selector("alloc")
     public static native HKQuery alloc();
 
-    @Generated
-    @Selector("init")
-    public native HKQuery init();
-
-    /**
-     * predicate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/instp/HKQuery/predicate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("predicate")
-    public native NSPredicate predicate();
-
     /**
      * predicateForCategorySamplesWithOperatorType:value:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForCategorySamplesWithOperatorType:value:">iOS Dev Center</a>
@@ -211,14 +199,6 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForWorkoutsWithWorkoutActivityType(@NUInt long workoutActivityType);
 
     /**
-     * sampleType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/instp/HKQuery/sampleType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sampleType")
-    public native HKSampleType sampleType();
-
-    /**
      * predicateForObjectsFromDevices:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/clm/HKQuery/predicateForObjectsFromDevices:">iOS Dev Center</a>
      */
@@ -243,14 +223,6 @@ public class HKQuery extends NSObject {
     @Selector("predicateForObjectsWithDeviceProperty:allowedValues:")
     public static native NSPredicate predicateForObjectsWithDevicePropertyAllowedValues(String key,
             NSSet<String> allowedValues);
-
-    /**
-     * objectType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/instp/HKQuery/objectType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objectType")
-    public native HKObjectType objectType();
 
     /**
      * predicateForActivitySummariesBetweenStartDateComponents:endDateComponents:</br>
@@ -368,4 +340,32 @@ public class HKQuery extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native HKQuery init();
+
+    /**
+     * predicate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/instp/HKQuery/predicate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("predicate")
+    public native NSPredicate predicate();
+
+    /**
+     * sampleType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/instp/HKQuery/sampleType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sampleType")
+    public native HKSampleType sampleType();
+
+    /**
+     * objectType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKQuery_Class/index.html#//apple_ref/occ/instp/HKQuery/objectType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objectType")
+    public native HKObjectType objectType();
 }

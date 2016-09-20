@@ -62,63 +62,6 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
     public static native AVAudioUnitTimePitch alloc();
 
     @Generated
-    @Selector("init")
-    public native AVAudioUnitTimePitch init();
-
-    @Generated
-    @Selector("initWithAudioComponentDescription:")
-    public native AVAudioUnitTimePitch initWithAudioComponentDescription(
-            @ByValue AudioComponentDescription audioComponentDescription);
-
-    /**
-     * overlap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/overlap">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("overlap")
-    public native float overlap();
-
-    /**
-     * pitch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/pitch">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pitch")
-    public native float pitch();
-
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/rate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rate")
-    public native float rate();
-
-    /**
-     * overlap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/overlap">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setOverlap:")
-    public native void setOverlap(float value);
-
-    /**
-     * pitch</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/pitch">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPitch:")
-    public native void setPitch(float value);
-
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/rate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRate:")
-    public native void setRate(float value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -223,4 +166,61 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioUnitTimePitch init();
+
+    @Generated
+    @Selector("initWithAudioComponentDescription:")
+    public native AVAudioUnitTimePitch initWithAudioComponentDescription(
+            @ByValue AudioComponentDescription audioComponentDescription);
+
+    /**
+     * overlap</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/overlap">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("overlap")
+    public native float overlap();
+
+    /**
+     * pitch</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/pitch">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pitch")
+    public native float pitch();
+
+    /**
+     * rate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/rate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rate")
+    public native float rate();
+
+    /**
+     * overlap</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/overlap">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setOverlap:")
+    public native void setOverlap(float value);
+
+    /**
+     * pitch</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/pitch">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPitch:")
+    public native void setPitch(float value);
+
+    /**
+     * rate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitTimePitch_Class/index.html#//apple_ref/occ/instp/AVAudioUnitTimePitch/rate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRate:")
+    public native void setRate(float value);
 }

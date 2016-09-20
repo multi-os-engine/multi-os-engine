@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPrinterJobTypes {
-    @Generated
-    private UIPrinterJobTypes() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long Document = 0x0000000000000001L;
     @Generated @NInt public static final long Envelope = 0x0000000000000002L;
@@ -34,4 +30,8 @@ public final class UIPrinterJobTypes {
     @Generated @NInt public static final long Roll = 0x0000000000000020L;
     @Generated @NInt public static final long LargeFormat = 0x0000000000000040L;
     @Generated @NInt public static final long Postcard = 0x0000000000000080L;
+
+    @Generated
+    private UIPrinterJobTypes() {
+    }
 }

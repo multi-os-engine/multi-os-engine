@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIAttachmentBehaviorType {
+    @Generated @NInt public static final long Items = 0x0000000000000000L;
+    @Generated @NInt public static final long Anchor = 0x0000000000000001L;
+
     @Generated
     private UIAttachmentBehaviorType() {
     }
-
-    @Generated @NInt public static final long Items = 0x0000000000000000L;
-    @Generated @NInt public static final long Anchor = 0x0000000000000001L;
 }

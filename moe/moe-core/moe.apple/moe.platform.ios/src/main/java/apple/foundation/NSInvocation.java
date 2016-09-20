@@ -56,137 +56,12 @@ public class NSInvocation extends NSObject {
     public static native NSInvocation alloc();
 
     /**
-     * argumentsRetained</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/argumentsRetained">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("argumentsRetained")
-    public native boolean argumentsRetained();
-
-    /**
-     * getArgument:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/getArgument:atIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getArgument:atIndex:")
-    public native void getArgumentAtIndex(VoidPtr argumentLocation, @NInt long idx);
-
-    /**
-     * getReturnValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/getReturnValue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("getReturnValue:")
-    public native void getReturnValue(VoidPtr retLoc);
-
-    @Generated
-    @Selector("init")
-    public native NSInvocation init();
-
-    /**
      * invocationWithMethodSignature:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/clm/NSInvocation/invocationWithMethodSignature:">iOS Dev Center</a>
      */
     @Generated
     @Selector("invocationWithMethodSignature:")
     public static native NSInvocation invocationWithMethodSignature(NSMethodSignature sig);
-
-    /**
-     * invoke</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/invoke">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("invoke")
-    public native void invoke();
-
-    /**
-     * invokeWithTarget:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/invokeWithTarget:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("invokeWithTarget:")
-    public native void invokeWithTarget(@Mapped(ObjCObjectMapper.class) Object target);
-
-    /**
-     * methodSignature</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/methodSignature">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("methodSignature")
-    public native NSMethodSignature methodSignature();
-
-    /**
-     * retainArguments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/retainArguments">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("retainArguments")
-    public native void retainArguments();
-
-    /**
-     * selector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/selector">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("selector")
-    public native SEL selector();
-
-    /**
-     * setArgument:atIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/setArgument:atIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setArgument:atIndex:")
-    public native void setArgumentAtIndex(VoidPtr argumentLocation, @NInt long idx);
-
-    /**
-     * setReturnValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/setReturnValue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setReturnValue:")
-    public native void setReturnValue(VoidPtr retLoc);
-
-    /**
-     * selector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/selector">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSelector:")
-    public native void setSelector(SEL value);
-
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/target">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTarget:")
-    public native void setTarget_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
-
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/target">iOS Dev Center</a>
-     */
-    @Generated
-    public void setTarget(@Mapped(ObjCObjectMapper.class) Object value) {
-        Object __old = target();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setTarget_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * target</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/target">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("target")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object target();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -287,4 +162,129 @@ public class NSInvocation extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * argumentsRetained</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/argumentsRetained">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("argumentsRetained")
+    public native boolean argumentsRetained();
+
+    /**
+     * getArgument:atIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/getArgument:atIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getArgument:atIndex:")
+    public native void getArgumentAtIndex(VoidPtr argumentLocation, @NInt long idx);
+
+    /**
+     * getReturnValue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/getReturnValue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("getReturnValue:")
+    public native void getReturnValue(VoidPtr retLoc);
+
+    @Generated
+    @Selector("init")
+    public native NSInvocation init();
+
+    /**
+     * invoke</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/invoke">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("invoke")
+    public native void invoke();
+
+    /**
+     * invokeWithTarget:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/invokeWithTarget:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("invokeWithTarget:")
+    public native void invokeWithTarget(@Mapped(ObjCObjectMapper.class) Object target);
+
+    /**
+     * methodSignature</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/methodSignature">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("methodSignature")
+    public native NSMethodSignature methodSignature();
+
+    /**
+     * retainArguments</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/retainArguments">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("retainArguments")
+    public native void retainArguments();
+
+    /**
+     * selector</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/selector">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("selector")
+    public native SEL selector();
+
+    /**
+     * setArgument:atIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/setArgument:atIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setArgument:atIndex:")
+    public native void setArgumentAtIndex(VoidPtr argumentLocation, @NInt long idx);
+
+    /**
+     * setReturnValue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instm/NSInvocation/setReturnValue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setReturnValue:")
+    public native void setReturnValue(VoidPtr retLoc);
+
+    /**
+     * selector</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/selector">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSelector:")
+    public native void setSelector(SEL value);
+
+    /**
+     * target</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/target">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTarget:")
+    public native void setTarget_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * target</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/target">iOS Dev Center</a>
+     */
+    @Generated
+    public void setTarget(@Mapped(ObjCObjectMapper.class) Object value) {
+        Object __old = target();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setTarget_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * target</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSInvocation_Class/index.html#//apple_ref/occ/instp/NSInvocation/target">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("target")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object target();
 }

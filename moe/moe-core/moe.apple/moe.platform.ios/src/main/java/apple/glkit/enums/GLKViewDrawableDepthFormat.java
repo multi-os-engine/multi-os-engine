@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GLKViewDrawableDepthFormat {
-    @Generated
-    private GLKViewDrawableDepthFormat() {
-    }
-
     @Generated public static final int FormatNone = 0x00000000;
     @Generated public static final int Format16 = 0x00000001;
     @Generated public static final int Format24 = 0x00000002;
+
+    @Generated
+    private GLKViewDrawableDepthFormat() {
+    }
 }

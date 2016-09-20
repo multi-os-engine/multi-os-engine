@@ -60,26 +60,6 @@ public class WCSessionFile extends NSObject {
     @Selector("alloc")
     public static native WCSessionFile alloc();
 
-    /**
-     * fileURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFile_class/index.html#//apple_ref/occ/instp/WCSessionFile/fileURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fileURL")
-    public native NSURL fileURL();
-
-    @Generated
-    @Selector("init")
-    public native WCSessionFile init();
-
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFile_class/index.html#//apple_ref/occ/instp/WCSessionFile/metadata">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("metadata")
-    public native NSDictionary<String, ?> metadata();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -179,4 +159,24 @@ public class WCSessionFile extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * fileURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFile_class/index.html#//apple_ref/occ/instp/WCSessionFile/fileURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fileURL")
+    public native NSURL fileURL();
+
+    @Generated
+    @Selector("init")
+    public native WCSessionFile init();
+
+    /**
+     * metadata</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchConnectivity/Reference/WCSessionFile_class/index.html#//apple_ref/occ/instp/WCSessionFile/metadata">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("metadata")
+    public native NSDictionary<String, ?> metadata();
 }

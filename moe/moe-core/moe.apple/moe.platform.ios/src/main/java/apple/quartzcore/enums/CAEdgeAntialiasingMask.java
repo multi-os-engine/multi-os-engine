@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CAEdgeAntialiasingMask {
-    @Generated
-    private CAEdgeAntialiasingMask() {
-    }
-
     @Generated public static final int LeftEdge = 0x00000001;
     @Generated public static final int RightEdge = 0x00000002;
     @Generated public static final int BottomEdge = 0x00000004;
     @Generated public static final int TopEdge = 0x00000008;
+
+    @Generated
+    private CAEdgeAntialiasingMask() {
+    }
 }

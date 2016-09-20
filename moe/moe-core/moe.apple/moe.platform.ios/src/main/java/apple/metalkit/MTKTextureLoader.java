@@ -68,110 +68,6 @@ public class MTKTextureLoader extends NSObject {
     @Selector("alloc")
     public static native MTKTextureLoader alloc();
 
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instp/MTKTextureLoader/device">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("device")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLDevice device();
-
-    @Generated
-    @Selector("init")
-    public native MTKTextureLoader init();
-
-    /**
-     * initWithDevice:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/initWithDevice:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDevice:")
-    public native MTKTextureLoader initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * newTextureWithCGImage:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithCGImage:options:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newTextureWithCGImage:options:completionHandler:")
-    public native void newTextureWithCGImageOptionsCompletionHandler(CGImageRef cgImage,
-            NSDictionary<String, ? extends NSNumber> options,
-            @ObjCBlock(name = "call_newTextureWithCGImageOptionsCompletionHandler") Block_newTextureWithCGImageOptionsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newTextureWithCGImageOptionsCompletionHandler {
-        @Generated
-        void call_newTextureWithCGImageOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
-    }
-
-    /**
-     * newTextureWithCGImage:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithCGImage:options:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newTextureWithCGImage:options:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture newTextureWithCGImageOptionsError(CGImageRef cgImage,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> error);
-
-    /**
-     * newTextureWithContentsOfURL:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithContentsOfURL:options:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newTextureWithContentsOfURL:options:completionHandler:")
-    public native void newTextureWithContentsOfURLOptionsCompletionHandler(NSURL URL,
-            NSDictionary<String, ? extends NSNumber> options,
-            @ObjCBlock(name = "call_newTextureWithContentsOfURLOptionsCompletionHandler") Block_newTextureWithContentsOfURLOptionsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newTextureWithContentsOfURLOptionsCompletionHandler {
-        @Generated
-        void call_newTextureWithContentsOfURLOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
-    }
-
-    /**
-     * newTextureWithContentsOfURL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithContentsOfURL:options:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newTextureWithContentsOfURL:options:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture newTextureWithContentsOfURLOptionsError(NSURL URL,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> error);
-
-    /**
-     * newTextureWithData:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithData:options:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newTextureWithData:options:completionHandler:")
-    public native void newTextureWithDataOptionsCompletionHandler(NSData data,
-            NSDictionary<String, ? extends NSNumber> options,
-            @ObjCBlock(name = "call_newTextureWithDataOptionsCompletionHandler") Block_newTextureWithDataOptionsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_newTextureWithDataOptionsCompletionHandler {
-        @Generated
-        void call_newTextureWithDataOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
-    }
-
-    /**
-     * newTextureWithData:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithData:options:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newTextureWithData:options:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture newTextureWithDataOptionsError(NSData data,
-            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> error);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -271,4 +167,108 @@ public class MTKTextureLoader extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * device</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instp/MTKTextureLoader/device">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("device")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLDevice device();
+
+    @Generated
+    @Selector("init")
+    public native MTKTextureLoader init();
+
+    /**
+     * initWithDevice:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/initWithDevice:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDevice:")
+    public native MTKTextureLoader initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * newTextureWithCGImage:options:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithCGImage:options:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newTextureWithCGImage:options:completionHandler:")
+    public native void newTextureWithCGImageOptionsCompletionHandler(CGImageRef cgImage,
+            NSDictionary<String, ? extends NSNumber> options,
+            @ObjCBlock(name = "call_newTextureWithCGImageOptionsCompletionHandler") Block_newTextureWithCGImageOptionsCompletionHandler completionHandler);
+
+    /**
+     * newTextureWithCGImage:options:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithCGImage:options:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newTextureWithCGImage:options:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLTexture newTextureWithCGImageOptionsError(CGImageRef cgImage,
+            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> error);
+
+    /**
+     * newTextureWithContentsOfURL:options:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithContentsOfURL:options:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newTextureWithContentsOfURL:options:completionHandler:")
+    public native void newTextureWithContentsOfURLOptionsCompletionHandler(NSURL URL,
+            NSDictionary<String, ? extends NSNumber> options,
+            @ObjCBlock(name = "call_newTextureWithContentsOfURLOptionsCompletionHandler") Block_newTextureWithContentsOfURLOptionsCompletionHandler completionHandler);
+
+    /**
+     * newTextureWithContentsOfURL:options:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithContentsOfURL:options:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newTextureWithContentsOfURL:options:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLTexture newTextureWithContentsOfURLOptionsError(NSURL URL,
+            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> error);
+
+    /**
+     * newTextureWithData:options:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithData:options:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newTextureWithData:options:completionHandler:")
+    public native void newTextureWithDataOptionsCompletionHandler(NSData data,
+            NSDictionary<String, ? extends NSNumber> options,
+            @ObjCBlock(name = "call_newTextureWithDataOptionsCompletionHandler") Block_newTextureWithDataOptionsCompletionHandler completionHandler);
+
+    /**
+     * newTextureWithData:options:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalKit/Reference/MTKTextureLoader_ClassReference/index.html#//apple_ref/occ/instm/MTKTextureLoader/newTextureWithData:options:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newTextureWithData:options:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLTexture newTextureWithDataOptionsError(NSData data,
+            NSDictionary<String, ? extends NSNumber> options, Ptr<NSError> error);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newTextureWithCGImageOptionsCompletionHandler {
+        @Generated
+        void call_newTextureWithCGImageOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
+                NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newTextureWithContentsOfURLOptionsCompletionHandler {
+        @Generated
+        void call_newTextureWithContentsOfURLOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
+                NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newTextureWithDataOptionsCompletionHandler {
+        @Generated
+        void call_newTextureWithDataOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+    }
 }

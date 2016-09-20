@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class GKInviteRecipientResponse {
-    @Generated
-    private GKInviteRecipientResponse() {
-    }
-
     @Generated @NInt public static final long InviteRecipientResponseAccepted = 0x0000000000000000L;
     @Generated @NInt public static final long InviteRecipientResponseDeclined = 0x0000000000000001L;
     @Generated @NInt public static final long InviteRecipientResponseFailed = 0x0000000000000002L;
@@ -37,4 +33,8 @@ public final class GKInviteRecipientResponse {
     @Generated @NInt public static final long InviteeResponseIncompatible = 0x0000000000000003L;
     @Generated @NInt public static final long InviteeResponseUnableToConnect = 0x0000000000000004L;
     @Generated @NInt public static final long InviteeResponseNoAnswer = 0x0000000000000005L;
+
+    @Generated
+    private GKInviteRecipientResponse() {
+    }
 }

@@ -63,82 +63,6 @@ public class SKLabelNode extends SKNode {
     public static native SKLabelNode alloc();
 
     /**
-     * blendMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/blendMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("blendMode")
-    @NInt
-    public native long blendMode();
-
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/color">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("color")
-    public native UIColor color();
-
-    /**
-     * colorBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/colorBlendFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("colorBlendFactor")
-    @NFloat
-    public native double colorBlendFactor();
-
-    /**
-     * fontColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fontColor")
-    public native UIColor fontColor();
-
-    /**
-     * fontName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fontName")
-    public native String fontName();
-
-    /**
-     * fontSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fontSize")
-    @NFloat
-    public native double fontSize();
-
-    /**
-     * horizontalAlignmentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/horizontalAlignmentMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("horizontalAlignmentMode")
-    @NInt
-    public native long horizontalAlignmentMode();
-
-    @Generated
-    @Selector("init")
-    public native SKLabelNode init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKLabelNode initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithFontNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instm/SKLabelNode/initWithFontNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFontNamed:")
-    public native SKLabelNode initWithFontNamed(String fontName);
-
-    /**
      * labelNodeWithFontNamed:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/clm/SKLabelNode/labelNodeWithFontNamed:">iOS Dev Center</a>
      */
@@ -161,95 +85,6 @@ public class SKLabelNode extends SKNode {
     @Generated
     @Selector("nodeWithFileNamed:")
     public static native SKLabelNode nodeWithFileNamed(String filename);
-
-    /**
-     * blendMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/blendMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBlendMode:")
-    public native void setBlendMode(@NInt long value);
-
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/color">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setColor:")
-    public native void setColor(UIColor value);
-
-    /**
-     * colorBlendFactor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/colorBlendFactor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setColorBlendFactor:")
-    public native void setColorBlendFactor(@NFloat double value);
-
-    /**
-     * fontColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFontColor:")
-    public native void setFontColor(UIColor value);
-
-    /**
-     * fontName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFontName:")
-    public native void setFontName(String value);
-
-    /**
-     * fontSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFontSize:")
-    public native void setFontSize(@NFloat double value);
-
-    /**
-     * horizontalAlignmentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/horizontalAlignmentMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHorizontalAlignmentMode:")
-    public native void setHorizontalAlignmentMode(@NInt long value);
-
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/text">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setText:")
-    public native void setText(String value);
-
-    /**
-     * verticalAlignmentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/verticalAlignmentMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setVerticalAlignmentMode:")
-    public native void setVerticalAlignmentMode(@NInt long value);
-
-    /**
-     * text</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/text">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("text")
-    public native String text();
-
-    /**
-     * verticalAlignmentMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/verticalAlignmentMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("verticalAlignmentMode")
-    @NInt
-    public native long verticalAlignmentMode();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -368,4 +203,169 @@ public class SKLabelNode extends SKNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * blendMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/blendMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("blendMode")
+    @NInt
+    public native long blendMode();
+
+    /**
+     * color</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/color">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("color")
+    public native UIColor color();
+
+    /**
+     * colorBlendFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/colorBlendFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("colorBlendFactor")
+    @NFloat
+    public native double colorBlendFactor();
+
+    /**
+     * fontColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fontColor")
+    public native UIColor fontColor();
+
+    /**
+     * fontName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fontName")
+    public native String fontName();
+
+    /**
+     * fontSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fontSize")
+    @NFloat
+    public native double fontSize();
+
+    /**
+     * horizontalAlignmentMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/horizontalAlignmentMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("horizontalAlignmentMode")
+    @NInt
+    public native long horizontalAlignmentMode();
+
+    @Generated
+    @Selector("init")
+    public native SKLabelNode init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKLabelNode initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithFontNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instm/SKLabelNode/initWithFontNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFontNamed:")
+    public native SKLabelNode initWithFontNamed(String fontName);
+
+    /**
+     * blendMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/blendMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBlendMode:")
+    public native void setBlendMode(@NInt long value);
+
+    /**
+     * color</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/color">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setColor:")
+    public native void setColor(UIColor value);
+
+    /**
+     * colorBlendFactor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/colorBlendFactor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setColorBlendFactor:")
+    public native void setColorBlendFactor(@NFloat double value);
+
+    /**
+     * fontColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFontColor:")
+    public native void setFontColor(UIColor value);
+
+    /**
+     * fontName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFontName:")
+    public native void setFontName(String value);
+
+    /**
+     * fontSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/fontSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFontSize:")
+    public native void setFontSize(@NFloat double value);
+
+    /**
+     * horizontalAlignmentMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/horizontalAlignmentMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHorizontalAlignmentMode:")
+    public native void setHorizontalAlignmentMode(@NInt long value);
+
+    /**
+     * text</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/text">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setText:")
+    public native void setText(String value);
+
+    /**
+     * verticalAlignmentMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/verticalAlignmentMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setVerticalAlignmentMode:")
+    public native void setVerticalAlignmentMode(@NInt long value);
+
+    /**
+     * text</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/text">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("text")
+    public native String text();
+
+    /**
+     * verticalAlignmentMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKLabelNode_Ref/index.html#//apple_ref/occ/instp/SKLabelNode/verticalAlignmentMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("verticalAlignmentMode")
+    @NInt
+    public native long verticalAlignmentMode();
 }

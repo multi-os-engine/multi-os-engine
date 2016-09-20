@@ -59,10 +59,6 @@ public class PKObject extends NSObject {
     public static native PKObject alloc();
 
     @Generated
-    @Selector("init")
-    public native PKObject init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class PKObject extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("init")
+    public native PKObject init();
 }

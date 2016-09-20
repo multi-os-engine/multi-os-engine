@@ -62,22 +62,6 @@ public class SKFieldNode extends SKNode {
     public static native SKFieldNode alloc();
 
     /**
-     * animationSpeed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/animationSpeed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("animationSpeed")
-    public native float animationSpeed();
-
-    /**
-     * categoryBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/categoryBitMask">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("categoryBitMask")
-    public native int categoryBitMask();
-
-    /**
      * dragField</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/clm/SKFieldNode/dragField">iOS Dev Center</a>
      */
@@ -94,52 +78,12 @@ public class SKFieldNode extends SKNode {
     public static native SKFieldNode electricField();
 
     /**
-     * falloff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/falloff">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("falloff")
-    public native float falloff();
-
-    @Generated
-    @Selector("init")
-    public native SKFieldNode init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKFieldNode initWithCoder(NSCoder aDecoder);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    /**
-     * exclusive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/exclusive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isExclusive")
-    public native boolean isExclusive();
-
-    /**
      * magneticField</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/clm/SKFieldNode/magneticField">iOS Dev Center</a>
      */
     @Generated
     @Selector("magneticField")
     public static native SKFieldNode magneticField();
-
-    /**
-     * minimumRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/minimumRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumRadius")
-    public native float minimumRadius();
 
     @Generated
     @Selector("node")
@@ -167,124 +111,12 @@ public class SKFieldNode extends SKNode {
     public static native SKFieldNode radialGravityField();
 
     /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/region">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("region")
-    public native SKRegion region();
-
-    /**
-     * animationSpeed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/animationSpeed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimationSpeed:")
-    public native void setAnimationSpeed(float value);
-
-    /**
-     * categoryBitMask</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/categoryBitMask">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCategoryBitMask:")
-    public native void setCategoryBitMask(int value);
-
-    /**
-     * enabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/enabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    /**
-     * exclusive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/exclusive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setExclusive:")
-    public native void setExclusive(boolean value);
-
-    /**
-     * falloff</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/falloff">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFalloff:")
-    public native void setFalloff(float value);
-
-    /**
-     * minimumRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/minimumRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumRadius:")
-    public native void setMinimumRadius(float value);
-
-    /**
-     * region</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/region">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRegion:")
-    public native void setRegion(SKRegion value);
-
-    /**
-     * smoothness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/smoothness">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSmoothness:")
-    public native void setSmoothness(float value);
-
-    /**
-     * strength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/strength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setStrength:")
-    public native void setStrength(float value);
-
-    /**
-     * texture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/texture">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTexture:")
-    public native void setTexture(SKTexture value);
-
-    /**
-     * smoothness</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/smoothness">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("smoothness")
-    public native float smoothness();
-
-    /**
      * springField</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/clm/SKFieldNode/springField">iOS Dev Center</a>
      */
     @Generated
     @Selector("springField")
     public static native SKFieldNode springField();
-
-    /**
-     * strength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/strength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("strength")
-    public native float strength();
-
-    /**
-     * texture</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/texture">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("texture")
-    public native SKTexture texture();
 
     /**
      * turbulenceFieldWithSmoothness:animationSpeed:</br>
@@ -428,4 +260,172 @@ public class SKFieldNode extends SKNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * animationSpeed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/animationSpeed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("animationSpeed")
+    public native float animationSpeed();
+
+    /**
+     * categoryBitMask</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/categoryBitMask">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("categoryBitMask")
+    public native int categoryBitMask();
+
+    /**
+     * falloff</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/falloff">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("falloff")
+    public native float falloff();
+
+    @Generated
+    @Selector("init")
+    public native SKFieldNode init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKFieldNode initWithCoder(NSCoder aDecoder);
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    /**
+     * enabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/enabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    /**
+     * exclusive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/exclusive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isExclusive")
+    public native boolean isExclusive();
+
+    /**
+     * exclusive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/exclusive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setExclusive:")
+    public native void setExclusive(boolean value);
+
+    /**
+     * minimumRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/minimumRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumRadius")
+    public native float minimumRadius();
+
+    /**
+     * region</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/region">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("region")
+    public native SKRegion region();
+
+    /**
+     * animationSpeed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/animationSpeed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimationSpeed:")
+    public native void setAnimationSpeed(float value);
+
+    /**
+     * categoryBitMask</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/categoryBitMask">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCategoryBitMask:")
+    public native void setCategoryBitMask(int value);
+
+    /**
+     * falloff</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/falloff">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFalloff:")
+    public native void setFalloff(float value);
+
+    /**
+     * minimumRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/minimumRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumRadius:")
+    public native void setMinimumRadius(float value);
+
+    /**
+     * region</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/region">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRegion:")
+    public native void setRegion(SKRegion value);
+
+    /**
+     * smoothness</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/smoothness">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSmoothness:")
+    public native void setSmoothness(float value);
+
+    /**
+     * strength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/strength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setStrength:")
+    public native void setStrength(float value);
+
+    /**
+     * texture</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/texture">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTexture:")
+    public native void setTexture(SKTexture value);
+
+    /**
+     * smoothness</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/smoothness">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("smoothness")
+    public native float smoothness();
+
+    /**
+     * strength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/strength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("strength")
+    public native float strength();
+
+    /**
+     * texture</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKFieldNode_Ref/index.html#//apple_ref/occ/instp/SKFieldNode/texture">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("texture")
+    public native SKTexture texture();
 }

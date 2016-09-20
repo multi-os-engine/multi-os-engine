@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioUnitRemoteControlEvent {
-    @Generated
-    private AudioUnitRemoteControlEvent() {
-    }
-
     @Generated public static final int TogglePlayPause = 0x00000001;
     @Generated public static final int ToggleRecord = 0x00000002;
     @Generated public static final int Rewind = 0x00000003;
+
+    @Generated
+    private AudioUnitRemoteControlEvent() {
+    }
 }

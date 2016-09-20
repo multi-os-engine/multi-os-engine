@@ -64,99 +64,6 @@ public class AVAudioSequencer extends NSObject {
     public static native AVAudioSequencer alloc();
 
     @Generated
-    @Selector("beatsForHostTime:error:")
-    public native double beatsForHostTimeError(long inHostTime, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("beatsForSeconds:")
-    public native double beatsForSeconds(double seconds);
-
-    @Generated
-    @Selector("currentPositionInBeats")
-    public native double currentPositionInBeats();
-
-    @Generated
-    @Selector("currentPositionInSeconds")
-    public native double currentPositionInSeconds();
-
-    @Generated
-    @Selector("dataWithSMPTEResolution:error:")
-    public native NSData dataWithSMPTEResolutionError(@NInt long SMPTEResolution, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("hostTimeForBeats:error:")
-    public native long hostTimeForBeatsError(double inBeats, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("init")
-    public native AVAudioSequencer init();
-
-    @Generated
-    @Selector("initWithAudioEngine:")
-    public native AVAudioSequencer initWithAudioEngine(AVAudioEngine engine);
-
-    @Generated
-    @Selector("isPlaying")
-    public native boolean isPlaying();
-
-    @Generated
-    @Selector("loadFromData:options:error:")
-    public native boolean loadFromDataOptionsError(NSData data, @NUInt long options, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("loadFromURL:options:error:")
-    public native boolean loadFromURLOptionsError(NSURL fileURL, @NUInt long options, Ptr<NSError> outError);
-
-    @Generated
-    @Selector("prepareToPlay")
-    public native void prepareToPlay();
-
-    @Generated
-    @Selector("rate")
-    public native float rate();
-
-    @Generated
-    @Selector("secondsForBeats:")
-    public native double secondsForBeats(double beats);
-
-    @Generated
-    @Selector("setCurrentPositionInBeats:")
-    public native void setCurrentPositionInBeats(double value);
-
-    @Generated
-    @Selector("setCurrentPositionInSeconds:")
-    public native void setCurrentPositionInSeconds(double value);
-
-    @Generated
-    @Selector("setRate:")
-    public native void setRate(float value);
-
-    @Generated
-    @Selector("startAndReturnError:")
-    public native boolean startAndReturnError(Ptr<NSError> outError);
-
-    @Generated
-    @Selector("stop")
-    public native void stop();
-
-    @Generated
-    @Selector("tempoTrack")
-    public native AVMusicTrack tempoTrack();
-
-    @Generated
-    @Selector("tracks")
-    public native NSArray<? extends AVMusicTrack> tracks();
-
-    @Generated
-    @Selector("userInfo")
-    public native NSDictionary<String, ?> userInfo();
-
-    @Generated
-    @Selector("writeToURL:SMPTEResolution:replaceExisting:error:")
-    public native boolean writeToURLSMPTEResolutionReplaceExistingError(NSURL fileURL, @NInt long resolution,
-            boolean replace, Ptr<NSError> outError);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -255,4 +162,97 @@ public class AVAudioSequencer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("beatsForHostTime:error:")
+    public native double beatsForHostTimeError(long inHostTime, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("beatsForSeconds:")
+    public native double beatsForSeconds(double seconds);
+
+    @Generated
+    @Selector("currentPositionInBeats")
+    public native double currentPositionInBeats();
+
+    @Generated
+    @Selector("currentPositionInSeconds")
+    public native double currentPositionInSeconds();
+
+    @Generated
+    @Selector("dataWithSMPTEResolution:error:")
+    public native NSData dataWithSMPTEResolutionError(@NInt long SMPTEResolution, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("hostTimeForBeats:error:")
+    public native long hostTimeForBeatsError(double inBeats, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("init")
+    public native AVAudioSequencer init();
+
+    @Generated
+    @Selector("initWithAudioEngine:")
+    public native AVAudioSequencer initWithAudioEngine(AVAudioEngine engine);
+
+    @Generated
+    @Selector("isPlaying")
+    public native boolean isPlaying();
+
+    @Generated
+    @Selector("loadFromData:options:error:")
+    public native boolean loadFromDataOptionsError(NSData data, @NUInt long options, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("loadFromURL:options:error:")
+    public native boolean loadFromURLOptionsError(NSURL fileURL, @NUInt long options, Ptr<NSError> outError);
+
+    @Generated
+    @Selector("prepareToPlay")
+    public native void prepareToPlay();
+
+    @Generated
+    @Selector("rate")
+    public native float rate();
+
+    @Generated
+    @Selector("secondsForBeats:")
+    public native double secondsForBeats(double beats);
+
+    @Generated
+    @Selector("setCurrentPositionInBeats:")
+    public native void setCurrentPositionInBeats(double value);
+
+    @Generated
+    @Selector("setCurrentPositionInSeconds:")
+    public native void setCurrentPositionInSeconds(double value);
+
+    @Generated
+    @Selector("setRate:")
+    public native void setRate(float value);
+
+    @Generated
+    @Selector("startAndReturnError:")
+    public native boolean startAndReturnError(Ptr<NSError> outError);
+
+    @Generated
+    @Selector("stop")
+    public native void stop();
+
+    @Generated
+    @Selector("tempoTrack")
+    public native AVMusicTrack tempoTrack();
+
+    @Generated
+    @Selector("tracks")
+    public native NSArray<? extends AVMusicTrack> tracks();
+
+    @Generated
+    @Selector("userInfo")
+    public native NSDictionary<String, ?> userInfo();
+
+    @Generated
+    @Selector("writeToURL:SMPTEResolution:replaceExisting:error:")
+    public native boolean writeToURLSMPTEResolutionReplaceExistingError(NSURL fileURL, @NInt long resolution,
+            boolean replace, Ptr<NSError> outError);
 }

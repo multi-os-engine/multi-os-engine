@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDataReadingOptions {
-    @Generated
-    private NSDataReadingOptions() {
-    }
-
     @Generated @NUInt public static final long DataReadingMappedIfSafe = 0x0000000000000001L;
     @Generated @NUInt public static final long DataReadingUncached = 0x0000000000000002L;
     @Generated @NUInt public static final long DataReadingMappedAlways = 0x0000000000000008L;
     @Generated @NUInt public static final long DataReadingMapped = 0x0000000000000001L;
     @Generated @NUInt public static final long MappedRead = 0x0000000000000001L;
     @Generated @NUInt public static final long UncachedRead = 0x0000000000000002L;
+
+    @Generated
+    private NSDataReadingOptions() {
+    }
 }

@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class VTCompressionSessionOptionFlags {
+    @Generated public static final int kVTCompressionSessionBeginFinalPass = 0x00000001;
+
     @Generated
     private VTCompressionSessionOptionFlags() {
     }
-
-    @Generated public static final int kVTCompressionSessionBeginFinalPass = 0x00000001;
 }

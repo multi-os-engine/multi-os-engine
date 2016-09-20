@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class WKMenuItemIcon {
-    @Generated
-    private WKMenuItemIcon() {
-    }
-
     @Generated @NInt public static final long Accept = 0x0000000000000000L;
     @Generated @NInt public static final long Add = 0x0000000000000001L;
     @Generated @NInt public static final long Block = 0x0000000000000002L;
@@ -41,4 +37,8 @@ public final class WKMenuItemIcon {
     @Generated @NInt public static final long Shuffle = 0x000000000000000DL;
     @Generated @NInt public static final long Speaker = 0x000000000000000EL;
     @Generated @NInt public static final long Trash = 0x000000000000000FL;
+
+    @Generated
+    private WKMenuItemIcon() {
+    }
 }

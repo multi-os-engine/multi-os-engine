@@ -64,113 +64,9 @@ public class CAMetalLayer extends CALayer {
     @Selector("alloc")
     public static native CAMetalLayer alloc();
 
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/device">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("device")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MTLDevice device();
-
-    /**
-     * drawableSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/drawableSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("drawableSize")
-    @ByValue
-    public native CGSize drawableSize();
-
-    /**
-     * framebufferOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/framebufferOnly">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("framebufferOnly")
-    public native boolean framebufferOnly();
-
-    @Generated
-    @Selector("init")
-    public native CAMetalLayer init();
-
-    @Generated
-    @Selector("initWithLayer:")
-    public native CAMetalLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
-
     @Generated
     @Selector("layer")
     public static native CAMetalLayer layer();
-
-    /**
-     * nextDrawable</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instm/CAMetalLayer/nextDrawable">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("nextDrawable")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native CAMetalDrawable nextDrawable();
-
-    /**
-     * pixelFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/pixelFormat">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pixelFormat")
-    @NUInt
-    public native long pixelFormat();
-
-    /**
-     * presentsWithTransaction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/presentsWithTransaction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("presentsWithTransaction")
-    public native boolean presentsWithTransaction();
-
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/device">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDevice:")
-    public native void setDevice(@Mapped(ObjCObjectMapper.class) MTLDevice value);
-
-    /**
-     * drawableSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/drawableSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDrawableSize:")
-    public native void setDrawableSize(@ByValue CGSize value);
-
-    /**
-     * framebufferOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/framebufferOnly">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFramebufferOnly:")
-    public native void setFramebufferOnly(boolean value);
-
-    /**
-     * pixelFormat</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/pixelFormat">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPixelFormat:")
-    public native void setPixelFormat(@NUInt long value);
-
-    /**
-     * presentsWithTransaction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/presentsWithTransaction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPresentsWithTransaction:")
-    public native void setPresentsWithTransaction(boolean value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAMetalLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -285,4 +181,108 @@ public class CAMetalLayer extends CALayer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * device</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/device">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("device")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLDevice device();
+
+    /**
+     * drawableSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/drawableSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("drawableSize")
+    @ByValue
+    public native CGSize drawableSize();
+
+    /**
+     * framebufferOnly</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/framebufferOnly">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("framebufferOnly")
+    public native boolean framebufferOnly();
+
+    @Generated
+    @Selector("init")
+    public native CAMetalLayer init();
+
+    @Generated
+    @Selector("initWithLayer:")
+    public native CAMetalLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+
+    /**
+     * nextDrawable</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instm/CAMetalLayer/nextDrawable">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("nextDrawable")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native CAMetalDrawable nextDrawable();
+
+    /**
+     * pixelFormat</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/pixelFormat">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pixelFormat")
+    @NUInt
+    public native long pixelFormat();
+
+    /**
+     * presentsWithTransaction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/presentsWithTransaction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("presentsWithTransaction")
+    public native boolean presentsWithTransaction();
+
+    /**
+     * device</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/device">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDevice:")
+    public native void setDevice(@Mapped(ObjCObjectMapper.class) MTLDevice value);
+
+    /**
+     * drawableSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/drawableSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDrawableSize:")
+    public native void setDrawableSize(@ByValue CGSize value);
+
+    /**
+     * framebufferOnly</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/framebufferOnly">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFramebufferOnly:")
+    public native void setFramebufferOnly(boolean value);
+
+    /**
+     * pixelFormat</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/pixelFormat">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPixelFormat:")
+    public native void setPixelFormat(@NUInt long value);
+
+    /**
+     * presentsWithTransaction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Animation/Reference/CAMetalLayer_Ref/index.html#//apple_ref/occ/instp/CAMetalLayer/presentsWithTransaction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPresentsWithTransaction:")
+    public native void setPresentsWithTransaction(boolean value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAMetalLayer initWithCoder(NSCoder aDecoder);
 }

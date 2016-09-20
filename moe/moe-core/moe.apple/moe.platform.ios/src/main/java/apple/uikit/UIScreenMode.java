@@ -62,28 +62,6 @@ public class UIScreenMode extends NSObject {
     public static native UIScreenMode alloc();
 
     @Generated
-    @Selector("init")
-    public native UIScreenMode init();
-
-    /**
-     * pixelAspectRatio</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreenMode_class/index.html#//apple_ref/occ/instp/UIScreenMode/pixelAspectRatio">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pixelAspectRatio")
-    @NFloat
-    public native double pixelAspectRatio();
-
-    /**
-     * size</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreenMode_class/index.html#//apple_ref/occ/instp/UIScreenMode/size">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("size")
-    @ByValue
-    public native CGSize size();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -182,4 +160,26 @@ public class UIScreenMode extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIScreenMode init();
+
+    /**
+     * pixelAspectRatio</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreenMode_class/index.html#//apple_ref/occ/instp/UIScreenMode/pixelAspectRatio">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pixelAspectRatio")
+    @NFloat
+    public native double pixelAspectRatio();
+
+    /**
+     * size</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScreenMode_class/index.html#//apple_ref/occ/instp/UIScreenMode/size">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("size")
+    @ByValue
+    public native CGSize size();
 }

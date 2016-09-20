@@ -66,15 +66,6 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     public static native AVAssetDownloadURLSession alloc();
 
     @Generated
-    @Selector("assetDownloadTaskWithURLAsset:destinationURL:options:")
-    public native AVAssetDownloadTask assetDownloadTaskWithURLAssetDestinationURLOptions(AVURLAsset URLAsset,
-            NSURL destinationURL, NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("init")
-    public native AVAssetDownloadURLSession init();
-
-    @Generated
     @Selector("sessionWithConfiguration:")
     public static native NSURLSession sessionWithConfiguration(NSURLSessionConfiguration configuration);
 
@@ -193,4 +184,13 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("assetDownloadTaskWithURLAsset:destinationURL:options:")
+    public native AVAssetDownloadTask assetDownloadTaskWithURLAssetDestinationURLOptions(AVURLAsset URLAsset,
+            NSURL destinationURL, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("init")
+    public native AVAssetDownloadURLSession init();
 }

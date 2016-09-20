@@ -62,14 +62,6 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     public static native CKFetchRecordsOperation alloc();
 
     /**
-     * desiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/desiredKeys">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("desiredKeys")
-    public native NSArray<String> desiredKeys();
-
-    /**
      * fetchCurrentUserRecordOperation</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/clm/CKFetchRecordsOperation/fetchCurrentUserRecordOperation">iOS Dev Center</a>
      */
@@ -77,140 +69,6 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     @Selector("fetchCurrentUserRecordOperation")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object fetchCurrentUserRecordOperation();
-
-    @Generated
-    @Selector("init")
-    public native CKFetchRecordsOperation init();
-
-    /**
-     * initWithRecordIDs:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instm/CKFetchRecordsOperation/initWithRecordIDs:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRecordIDs:")
-    public native CKFetchRecordsOperation initWithRecordIDs(NSArray<? extends CKRecordID> recordIDs);
-
-    /**
-     * recordIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/recordIDs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("recordIDs")
-    public native NSArray<? extends CKRecordID> recordIDs();
-
-    /**
-     * desiredKeys</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/desiredKeys">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDesiredKeys:")
-    public native void setDesiredKeys(NSArray<String> value);
-
-    /**
-     * fetchRecordsCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/fetchRecordsCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFetchRecordsCompletionBlock:")
-    public native void setFetchRecordsCompletionBlock(
-            @ObjCBlock(name = "call_setFetchRecordsCompletionBlock") Block_setFetchRecordsCompletionBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setFetchRecordsCompletionBlock {
-        @Generated
-        void call_setFetchRecordsCompletionBlock(NSDictionary<? extends CKRecordID, ? extends CKRecord> arg0,
-                NSError arg1);
-    }
-
-    /**
-     * perRecordCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/perRecordCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPerRecordCompletionBlock:")
-    public native void setPerRecordCompletionBlock(
-            @ObjCBlock(name = "call_setPerRecordCompletionBlock") Block_setPerRecordCompletionBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setPerRecordCompletionBlock {
-        @Generated
-        void call_setPerRecordCompletionBlock(CKRecord arg0, CKRecordID arg1, NSError arg2);
-    }
-
-    /**
-     * perRecordProgressBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/perRecordProgressBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPerRecordProgressBlock:")
-    public native void setPerRecordProgressBlock(
-            @ObjCBlock(name = "call_setPerRecordProgressBlock") Block_setPerRecordProgressBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setPerRecordProgressBlock {
-        @Generated
-        void call_setPerRecordProgressBlock(CKRecordID arg0, double arg1);
-    }
-
-    /**
-     * recordIDs</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/recordIDs">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRecordIDs:")
-    public native void setRecordIDs(NSArray<? extends CKRecordID> value);
-
-    /**
-     * fetchRecordsCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/fetchRecordsCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchRecordsCompletionBlock")
-    @ObjCBlock(name = "call_fetchRecordsCompletionBlock_ret")
-    public native Block_fetchRecordsCompletionBlock_ret fetchRecordsCompletionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchRecordsCompletionBlock_ret {
-        @Generated
-        void call_fetchRecordsCompletionBlock_ret(NSDictionary<? extends CKRecordID, ? extends CKRecord> arg0,
-                NSError arg1);
-    }
-
-    /**
-     * perRecordCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/perRecordCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("perRecordCompletionBlock")
-    @ObjCBlock(name = "call_perRecordCompletionBlock_ret")
-    public native Block_perRecordCompletionBlock_ret perRecordCompletionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_perRecordCompletionBlock_ret {
-        @Generated
-        void call_perRecordCompletionBlock_ret(CKRecord arg0, CKRecordID arg1, NSError arg2);
-    }
-
-    /**
-     * perRecordProgressBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/perRecordProgressBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("perRecordProgressBlock")
-    @ObjCBlock(name = "call_perRecordProgressBlock_ret")
-    public native Block_perRecordProgressBlock_ret perRecordProgressBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_perRecordProgressBlock_ret {
-        @Generated
-        void call_perRecordProgressBlock_ret(CKRecordID arg0, double arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -311,4 +169,146 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * desiredKeys</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/desiredKeys">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("desiredKeys")
+    public native NSArray<String> desiredKeys();
+
+    @Generated
+    @Selector("init")
+    public native CKFetchRecordsOperation init();
+
+    /**
+     * initWithRecordIDs:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instm/CKFetchRecordsOperation/initWithRecordIDs:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRecordIDs:")
+    public native CKFetchRecordsOperation initWithRecordIDs(NSArray<? extends CKRecordID> recordIDs);
+
+    /**
+     * recordIDs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/recordIDs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("recordIDs")
+    public native NSArray<? extends CKRecordID> recordIDs();
+
+    /**
+     * desiredKeys</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/desiredKeys">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDesiredKeys:")
+    public native void setDesiredKeys(NSArray<String> value);
+
+    /**
+     * fetchRecordsCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/fetchRecordsCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFetchRecordsCompletionBlock:")
+    public native void setFetchRecordsCompletionBlock(
+            @ObjCBlock(name = "call_setFetchRecordsCompletionBlock") Block_setFetchRecordsCompletionBlock value);
+
+    /**
+     * perRecordCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/perRecordCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPerRecordCompletionBlock:")
+    public native void setPerRecordCompletionBlock(
+            @ObjCBlock(name = "call_setPerRecordCompletionBlock") Block_setPerRecordCompletionBlock value);
+
+    /**
+     * perRecordProgressBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/perRecordProgressBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPerRecordProgressBlock:")
+    public native void setPerRecordProgressBlock(
+            @ObjCBlock(name = "call_setPerRecordProgressBlock") Block_setPerRecordProgressBlock value);
+
+    /**
+     * recordIDs</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/recordIDs">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRecordIDs:")
+    public native void setRecordIDs(NSArray<? extends CKRecordID> value);
+
+    /**
+     * fetchRecordsCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/fetchRecordsCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchRecordsCompletionBlock")
+    @ObjCBlock(name = "call_fetchRecordsCompletionBlock_ret")
+    public native Block_fetchRecordsCompletionBlock_ret fetchRecordsCompletionBlock();
+
+    /**
+     * perRecordCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/perRecordCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("perRecordCompletionBlock")
+    @ObjCBlock(name = "call_perRecordCompletionBlock_ret")
+    public native Block_perRecordCompletionBlock_ret perRecordCompletionBlock();
+
+    /**
+     * perRecordProgressBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchRecordsOperation_class/index.html#//apple_ref/occ/instp/CKFetchRecordsOperation/perRecordProgressBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("perRecordProgressBlock")
+    @ObjCBlock(name = "call_perRecordProgressBlock_ret")
+    public native Block_perRecordProgressBlock_ret perRecordProgressBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setFetchRecordsCompletionBlock {
+        @Generated
+        void call_setFetchRecordsCompletionBlock(NSDictionary<? extends CKRecordID, ? extends CKRecord> arg0,
+                NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPerRecordCompletionBlock {
+        @Generated
+        void call_setPerRecordCompletionBlock(CKRecord arg0, CKRecordID arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPerRecordProgressBlock {
+        @Generated
+        void call_setPerRecordProgressBlock(CKRecordID arg0, double arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchRecordsCompletionBlock_ret {
+        @Generated
+        void call_fetchRecordsCompletionBlock_ret(NSDictionary<? extends CKRecordID, ? extends CKRecord> arg0,
+                NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_perRecordCompletionBlock_ret {
+        @Generated
+        void call_perRecordCompletionBlock_ret(CKRecord arg0, CKRecordID arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_perRecordProgressBlock_ret {
+        @Generated
+        void call_perRecordProgressBlock_ret(CKRecordID arg0, double arg1);
+    }
 }

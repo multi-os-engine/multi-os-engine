@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVKitError {
+    @Generated @NInt public static final long Unknown = 0xFFFFFFFFFFFFFC18L;
+    @Generated @NInt public static final long PictureInPictureStartFailed = 0xFFFFFFFFFFFFFC17L;
+
     @Generated
     private AVKitError() {
     }
-
-    @Generated @NInt public static final long Unknown = 0xFFFFFFFFFFFFFC18L;
-    @Generated @NInt public static final long PictureInPictureStartFailed = 0xFFFFFFFFFFFFFC17L;
 }

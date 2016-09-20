@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GLKVertexAttrib {
-    @Generated
-    private GLKVertexAttrib() {
-    }
-
     @Generated public static final int Position = 0x00000000;
     @Generated public static final int Normal = 0x00000001;
     @Generated public static final int Color = 0x00000002;
     @Generated public static final int TexCoord0 = 0x00000003;
     @Generated public static final int TexCoord1 = 0x00000004;
+
+    @Generated
+    private GLKVertexAttrib() {
+    }
 }

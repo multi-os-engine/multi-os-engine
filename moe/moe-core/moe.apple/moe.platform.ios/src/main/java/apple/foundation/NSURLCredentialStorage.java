@@ -51,114 +51,10 @@ public class NSURLCredentialStorage extends NSObject {
         super(peer);
     }
 
-    /**
-     * allCredentials</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instp/NSURLCredentialStorage/allCredentials">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allCredentials")
-    public native NSDictionary<? extends NSURLProtectionSpace, ? extends NSDictionary<String, ? extends NSURLCredential>> allCredentials();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSURLCredentialStorage alloc();
-
-    /**
-     * credentialsForProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/credentialsForProtectionSpace:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("credentialsForProtectionSpace:")
-    public native NSDictionary<String, ? extends NSURLCredential> credentialsForProtectionSpace(
-            NSURLProtectionSpace space);
-
-    /**
-     * defaultCredentialForProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/defaultCredentialForProtectionSpace:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultCredentialForProtectionSpace:")
-    public native NSURLCredential defaultCredentialForProtectionSpace(NSURLProtectionSpace space);
-
-    @Generated
-    @Selector("getCredentialsForProtectionSpace:task:completionHandler:")
-    public native void getCredentialsForProtectionSpaceTaskCompletionHandler(NSURLProtectionSpace protectionSpace,
-            NSURLSessionTask task,
-            @ObjCBlock(name = "call_getCredentialsForProtectionSpaceTaskCompletionHandler") Block_getCredentialsForProtectionSpaceTaskCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_getCredentialsForProtectionSpaceTaskCompletionHandler {
-        @Generated
-        void call_getCredentialsForProtectionSpaceTaskCompletionHandler(
-                NSDictionary<String, ? extends NSURLCredential> arg0);
-    }
-
-    @Generated
-    @Selector("getDefaultCredentialForProtectionSpace:task:completionHandler:")
-    public native void getDefaultCredentialForProtectionSpaceTaskCompletionHandler(NSURLProtectionSpace space,
-            NSURLSessionTask task,
-            @ObjCBlock(name = "call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler") Block_getDefaultCredentialForProtectionSpaceTaskCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_getDefaultCredentialForProtectionSpaceTaskCompletionHandler {
-        @Generated
-        void call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler(NSURLCredential arg0);
-    }
-
-    @Generated
-    @Selector("init")
-    public native NSURLCredentialStorage init();
-
-    /**
-     * removeCredential:forProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/removeCredential:forProtectionSpace:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeCredential:forProtectionSpace:")
-    public native void removeCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
-
-    /**
-     * removeCredential:forProtectionSpace:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/removeCredential:forProtectionSpace:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeCredential:forProtectionSpace:options:")
-    public native void removeCredentialForProtectionSpaceOptions(NSURLCredential credential, NSURLProtectionSpace space,
-            NSDictionary<String, ?> options);
-
-    @Generated
-    @Selector("removeCredential:forProtectionSpace:options:task:")
-    public native void removeCredentialForProtectionSpaceOptionsTask(NSURLCredential credential,
-            NSURLProtectionSpace protectionSpace, NSDictionary<String, ?> options, NSURLSessionTask task);
-
-    /**
-     * setCredential:forProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/setCredential:forProtectionSpace:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCredential:forProtectionSpace:")
-    public native void setCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
-
-    @Generated
-    @Selector("setCredential:forProtectionSpace:task:")
-    public native void setCredentialForProtectionSpaceTask(NSURLCredential credential,
-            NSURLProtectionSpace protectionSpace, NSURLSessionTask task);
-
-    /**
-     * setDefaultCredential:forProtectionSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/setDefaultCredential:forProtectionSpace:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDefaultCredential:forProtectionSpace:")
-    public native void setDefaultCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
-
-    @Generated
-    @Selector("setDefaultCredential:forProtectionSpace:task:")
-    public native void setDefaultCredentialForProtectionSpaceTask(NSURLCredential credential,
-            NSURLProtectionSpace protectionSpace, NSURLSessionTask task);
 
     /**
      * sharedCredentialStorage</br>
@@ -267,4 +163,108 @@ public class NSURLCredentialStorage extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allCredentials</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instp/NSURLCredentialStorage/allCredentials">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allCredentials")
+    public native NSDictionary<? extends NSURLProtectionSpace, ? extends NSDictionary<String, ? extends NSURLCredential>> allCredentials();
+
+    /**
+     * credentialsForProtectionSpace:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/credentialsForProtectionSpace:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("credentialsForProtectionSpace:")
+    public native NSDictionary<String, ? extends NSURLCredential> credentialsForProtectionSpace(
+            NSURLProtectionSpace space);
+
+    /**
+     * defaultCredentialForProtectionSpace:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/defaultCredentialForProtectionSpace:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultCredentialForProtectionSpace:")
+    public native NSURLCredential defaultCredentialForProtectionSpace(NSURLProtectionSpace space);
+
+    @Generated
+    @Selector("getCredentialsForProtectionSpace:task:completionHandler:")
+    public native void getCredentialsForProtectionSpaceTaskCompletionHandler(NSURLProtectionSpace protectionSpace,
+            NSURLSessionTask task,
+            @ObjCBlock(name = "call_getCredentialsForProtectionSpaceTaskCompletionHandler") Block_getCredentialsForProtectionSpaceTaskCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("getDefaultCredentialForProtectionSpace:task:completionHandler:")
+    public native void getDefaultCredentialForProtectionSpaceTaskCompletionHandler(NSURLProtectionSpace space,
+            NSURLSessionTask task,
+            @ObjCBlock(name = "call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler") Block_getDefaultCredentialForProtectionSpaceTaskCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("init")
+    public native NSURLCredentialStorage init();
+
+    /**
+     * removeCredential:forProtectionSpace:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/removeCredential:forProtectionSpace:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeCredential:forProtectionSpace:")
+    public native void removeCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
+
+    /**
+     * removeCredential:forProtectionSpace:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/removeCredential:forProtectionSpace:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeCredential:forProtectionSpace:options:")
+    public native void removeCredentialForProtectionSpaceOptions(NSURLCredential credential, NSURLProtectionSpace space,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("removeCredential:forProtectionSpace:options:task:")
+    public native void removeCredentialForProtectionSpaceOptionsTask(NSURLCredential credential,
+            NSURLProtectionSpace protectionSpace, NSDictionary<String, ?> options, NSURLSessionTask task);
+
+    /**
+     * setCredential:forProtectionSpace:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/setCredential:forProtectionSpace:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCredential:forProtectionSpace:")
+    public native void setCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
+
+    @Generated
+    @Selector("setCredential:forProtectionSpace:task:")
+    public native void setCredentialForProtectionSpaceTask(NSURLCredential credential,
+            NSURLProtectionSpace protectionSpace, NSURLSessionTask task);
+
+    /**
+     * setDefaultCredential:forProtectionSpace:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLCredentialStorage_Class/index.html#//apple_ref/occ/instm/NSURLCredentialStorage/setDefaultCredential:forProtectionSpace:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDefaultCredential:forProtectionSpace:")
+    public native void setDefaultCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
+
+    @Generated
+    @Selector("setDefaultCredential:forProtectionSpace:task:")
+    public native void setDefaultCredentialForProtectionSpaceTask(NSURLCredential credential,
+            NSURLProtectionSpace protectionSpace, NSURLSessionTask task);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getCredentialsForProtectionSpaceTaskCompletionHandler {
+        @Generated
+        void call_getCredentialsForProtectionSpaceTaskCompletionHandler(
+                NSDictionary<String, ? extends NSURLCredential> arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getDefaultCredentialForProtectionSpaceTaskCompletionHandler {
+        @Generated
+        void call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler(NSURLCredential arg0);
+    }
 }

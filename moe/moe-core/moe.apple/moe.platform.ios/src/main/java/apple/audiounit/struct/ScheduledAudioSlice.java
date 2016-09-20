@@ -35,11 +35,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class ScheduledAudioSlice extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public ScheduledAudioSlice() {
@@ -63,14 +63,6 @@ public final class ScheduledAudioSlice extends StructObject {
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setMCompletionProc(@FunctionPtr(name = "call_mCompletionProc") Function_mCompletionProc value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_mCompletionProc {
-        @Generated
-        void call_mCompletionProc(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") ScheduledAudioSlice arg1);
-    }
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -125,4 +117,12 @@ public final class ScheduledAudioSlice extends StructObject {
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_mCompletionProc")
     public native Function_mCompletionProc mCompletionProc();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_mCompletionProc {
+        @Generated
+        void call_mCompletionProc(VoidPtr arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") ScheduledAudioSlice arg1);
+    }
 }

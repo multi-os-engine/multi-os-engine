@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioFileStreamParseFlags {
+    @Generated public static final int kAudioFileStreamParseFlag_Discontinuity = 0x00000001;
+
     @Generated
     private AudioFileStreamParseFlags() {
     }
-
-    @Generated public static final int kAudioFileStreamParseFlag_Discontinuity = 0x00000001;
 }

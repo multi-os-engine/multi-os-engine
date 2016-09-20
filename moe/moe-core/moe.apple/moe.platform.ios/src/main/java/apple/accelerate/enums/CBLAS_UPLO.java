@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CBLAS_UPLO {
+    @Generated public static final int Upper = 0x00000079;
+    @Generated public static final int Lower = 0x0000007A;
+
     @Generated
     private CBLAS_UPLO() {
     }
-
-    @Generated public static final int Upper = 0x00000079;
-    @Generated public static final int Lower = 0x0000007A;
 }

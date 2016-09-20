@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class WatchKitErrorCode {
-    @Generated
-    private WatchKitErrorCode() {
-    }
-
     @Generated @NInt public static final long UnknownError = 0x0000000000000001L;
     @Generated @NInt public static final long ApplicationDelegateWatchKitRequestReplyNotCalledError = 0x0000000000000002L;
     @Generated @NInt public static final long InvalidArgumentError = 0x0000000000000003L;
     @Generated @NInt public static final long MediaPlayerError = 0x0000000000000004L;
     @Generated @NInt public static final long DownloadError = 0x0000000000000005L;
     @Generated @NInt public static final long RecordingFailedError = 0x0000000000000006L;
+
+    @Generated
+    private WatchKitErrorCode() {
+    }
 }

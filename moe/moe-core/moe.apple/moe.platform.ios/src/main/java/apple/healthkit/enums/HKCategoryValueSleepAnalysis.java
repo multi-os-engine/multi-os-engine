@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKCategoryValueSleepAnalysis {
+    @Generated @NInt public static final long InBed = 0x0000000000000000L;
+    @Generated @NInt public static final long Asleep = 0x0000000000000001L;
+
     @Generated
     private HKCategoryValueSleepAnalysis() {
     }
-
-    @Generated @NInt public static final long InBed = 0x0000000000000000L;
-    @Generated @NInt public static final long Asleep = 0x0000000000000001L;
 }

@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class MIDIObjectType {
-    @Generated
-    private MIDIObjectType() {
-    }
-
     @Generated public static final int Other = 0xFFFFFFFF;
     @Generated public static final int Device = 0x00000000;
     @Generated public static final int Entity = 0x00000001;
@@ -33,4 +29,8 @@ public final class MIDIObjectType {
     @Generated public static final int ExternalEntity = 0x00000011;
     @Generated public static final int ExternalSource = 0x00000012;
     @Generated public static final int ExternalDestination = 0x00000013;
+
+    @Generated
+    private MIDIObjectType() {
+    }
 }

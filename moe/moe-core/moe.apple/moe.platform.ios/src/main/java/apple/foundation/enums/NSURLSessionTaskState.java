@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSURLSessionTaskState {
-    @Generated
-    private NSURLSessionTaskState() {
-    }
-
     @Generated @NInt public static final long Running = 0x0000000000000000L;
     @Generated @NInt public static final long Suspended = 0x0000000000000001L;
     @Generated @NInt public static final long Canceling = 0x0000000000000002L;
     @Generated @NInt public static final long Completed = 0x0000000000000003L;
+
+    @Generated
+    private NSURLSessionTaskState() {
+    }
 }

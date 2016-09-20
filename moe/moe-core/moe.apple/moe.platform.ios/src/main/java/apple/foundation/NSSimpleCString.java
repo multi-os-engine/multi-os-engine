@@ -67,112 +67,6 @@ public class NSSimpleCString extends NSString {
     public static native NSSimpleCString alloc();
 
     @Generated
-    @Selector("init")
-    public native NSSimpleCString init();
-
-    @Generated
-    @Selector("initWithBytes:length:encoding:")
-    public native NSSimpleCString initWithBytesLengthEncoding(ConstVoidPtr bytes, @NUInt long len,
-            @NUInt long encoding);
-
-    @Generated
-    @Selector("initWithBytesNoCopy:length:encoding:freeWhenDone:")
-    public native NSSimpleCString initWithBytesNoCopyLengthEncodingFreeWhenDone(VoidPtr bytes, @NUInt long len,
-            @NUInt long encoding, boolean freeBuffer);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithCString:")
-    public native NSSimpleCString initWithCString(ConstBytePtr bytes);
-
-    @Generated
-    @Selector("initWithCString:encoding:")
-    public native NSSimpleCString initWithCStringEncoding(ConstBytePtr nullTerminatedCString, @NUInt long encoding);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithCString:length:")
-    public native NSSimpleCString initWithCStringLength(ConstBytePtr bytes, @NUInt long length);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithCStringNoCopy:length:freeWhenDone:")
-    public native NSSimpleCString initWithCStringNoCopyLengthFreeWhenDone(BytePtr bytes, @NUInt long length,
-            boolean freeBuffer);
-
-    @Generated
-    @Selector("initWithCharacters:length:")
-    public native NSSimpleCString initWithCharactersLength(ConstCharPtr characters, @NUInt long length);
-
-    @Generated
-    @Selector("initWithCharactersNoCopy:length:freeWhenDone:")
-    public native NSSimpleCString initWithCharactersNoCopyLengthFreeWhenDone(CharPtr characters, @NUInt long length,
-            boolean freeBuffer);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSSimpleCString initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithContentsOfFile:")
-    public native NSSimpleCString initWithContentsOfFile(String path);
-
-    @Generated
-    @Selector("initWithContentsOfFile:encoding:error:")
-    public native NSSimpleCString initWithContentsOfFileEncodingError(String path, @NUInt long enc, Ptr<NSError> error);
-
-    @Generated
-    @Selector("initWithContentsOfFile:usedEncoding:error:")
-    public native NSSimpleCString initWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            Ptr<NSError> error);
-
-    @Generated
-    @Deprecated
-    @Selector("initWithContentsOfURL:")
-    public native NSSimpleCString initWithContentsOfURL(NSURL url);
-
-    @Generated
-    @Selector("initWithContentsOfURL:encoding:error:")
-    public native NSSimpleCString initWithContentsOfURLEncodingError(NSURL url, @NUInt long enc, Ptr<NSError> error);
-
-    @Generated
-    @Selector("initWithContentsOfURL:usedEncoding:error:")
-    public native NSSimpleCString initWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc, Ptr<NSError> error);
-
-    @Generated
-    @Selector("initWithData:encoding:")
-    public native NSSimpleCString initWithDataEncoding(NSData data, @NUInt long encoding);
-
-    @Generated
-    @Variadic()
-    @Selector("initWithFormat:")
-    public native NSSimpleCString initWithFormat(String format, Object... varargs);
-
-    @Generated
-    @Selector("initWithFormat:arguments:")
-    public native NSSimpleCString initWithFormatArguments(String format, BytePtr argList);
-
-    @Generated
-    @Variadic()
-    @Selector("initWithFormat:locale:")
-    public native NSSimpleCString initWithFormatLocale(String format, @Mapped(ObjCObjectMapper.class) Object locale,
-            Object... varargs);
-
-    @Generated
-    @Selector("initWithFormat:locale:arguments:")
-    public native NSSimpleCString initWithFormatLocaleArguments(String format,
-            @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList);
-
-    @Generated
-    @Selector("initWithString:")
-    public native NSSimpleCString initWithString(String aString);
-
-    @Generated
-    @Selector("initWithUTF8String:")
-    public native NSSimpleCString initWithUTF8String(ConstBytePtr nullTerminatedCString);
-
-    @Generated
     @Selector("string")
     public static native NSSimpleCString string();
 
@@ -366,13 +260,119 @@ public class NSSimpleCString extends NSString {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NSSimpleCString init();
+
+    @Generated
+    @Selector("initWithBytes:length:encoding:")
+    public native NSSimpleCString initWithBytesLengthEncoding(ConstVoidPtr bytes, @NUInt long len,
+            @NUInt long encoding);
+
+    @Generated
+    @Selector("initWithBytesNoCopy:length:encoding:freeWhenDone:")
+    public native NSSimpleCString initWithBytesNoCopyLengthEncodingFreeWhenDone(VoidPtr bytes, @NUInt long len,
+            @NUInt long encoding, boolean freeBuffer);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithCString:")
+    public native NSSimpleCString initWithCString(ConstBytePtr bytes);
+
+    @Generated
+    @Selector("initWithCString:encoding:")
+    public native NSSimpleCString initWithCStringEncoding(ConstBytePtr nullTerminatedCString, @NUInt long encoding);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithCString:length:")
+    public native NSSimpleCString initWithCStringLength(ConstBytePtr bytes, @NUInt long length);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithCStringNoCopy:length:freeWhenDone:")
+    public native NSSimpleCString initWithCStringNoCopyLengthFreeWhenDone(BytePtr bytes, @NUInt long length,
+            boolean freeBuffer);
+
+    @Generated
+    @Selector("initWithCharacters:length:")
+    public native NSSimpleCString initWithCharactersLength(ConstCharPtr characters, @NUInt long length);
+
+    @Generated
+    @Selector("initWithCharactersNoCopy:length:freeWhenDone:")
+    public native NSSimpleCString initWithCharactersNoCopyLengthFreeWhenDone(CharPtr characters, @NUInt long length,
+            boolean freeBuffer);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSSimpleCString initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithContentsOfFile:")
+    public native NSSimpleCString initWithContentsOfFile(String path);
+
+    @Generated
+    @Selector("initWithContentsOfFile:encoding:error:")
+    public native NSSimpleCString initWithContentsOfFileEncodingError(String path, @NUInt long enc, Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithContentsOfFile:usedEncoding:error:")
+    public native NSSimpleCString initWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
+            Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("initWithContentsOfURL:")
+    public native NSSimpleCString initWithContentsOfURL(NSURL url);
+
+    @Generated
+    @Selector("initWithContentsOfURL:encoding:error:")
+    public native NSSimpleCString initWithContentsOfURLEncodingError(NSURL url, @NUInt long enc, Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithContentsOfURL:usedEncoding:error:")
+    public native NSSimpleCString initWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc, Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithData:encoding:")
+    public native NSSimpleCString initWithDataEncoding(NSData data, @NUInt long encoding);
+
+    @Generated
+    @Variadic()
+    @Selector("initWithFormat:")
+    public native NSSimpleCString initWithFormat(String format, Object... varargs);
+
+    @Generated
+    @Selector("initWithFormat:arguments:")
+    public native NSSimpleCString initWithFormatArguments(String format, BytePtr argList);
+
+    @Generated
+    @Variadic()
+    @Selector("initWithFormat:locale:")
+    public native NSSimpleCString initWithFormatLocale(String format, @Mapped(ObjCObjectMapper.class) Object locale,
+            Object... varargs);
+
+    @Generated
+    @Selector("initWithFormat:locale:arguments:")
+    public native NSSimpleCString initWithFormatLocaleArguments(String format,
+            @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList);
+
+    @Generated
+    @Selector("initWithString:")
+    public native NSSimpleCString initWithString(String aString);
+
+    @Generated
+    @Selector("initWithUTF8String:")
+    public native NSSimpleCString initWithUTF8String(ConstBytePtr nullTerminatedCString);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

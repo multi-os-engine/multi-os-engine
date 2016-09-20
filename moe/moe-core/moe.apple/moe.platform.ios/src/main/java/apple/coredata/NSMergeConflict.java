@@ -59,70 +59,6 @@ public class NSMergeConflict extends NSObject {
     @Selector("alloc")
     public static native NSMergeConflict alloc();
 
-    /**
-     * cachedSnapshot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/cachedSnapshot">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cachedSnapshot")
-    public native NSDictionary<String, ?> cachedSnapshot();
-
-    @Generated
-    @Selector("init")
-    public native NSMergeConflict init();
-
-    /**
-     * initWithSource:newVersion:oldVersion:cachedSnapshot:persistedSnapshot:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instm/NSMergeConflict/initWithSource:newVersion:oldVersion:cachedSnapshot:persistedSnapshot:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSource:newVersion:oldVersion:cachedSnapshot:persistedSnapshot:")
-    public native NSMergeConflict initWithSourceNewVersionOldVersionCachedSnapshotPersistedSnapshot(
-            NSManagedObject srcObject, @NUInt long newvers, @NUInt long oldvers, NSDictionary<String, ?> cachesnap,
-            NSDictionary<String, ?> persnap);
-
-    /**
-     * newVersionNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/newVersionNumber">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("newVersionNumber")
-    @NUInt
-    public native long newVersionNumber();
-
-    /**
-     * objectSnapshot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/objectSnapshot">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("objectSnapshot")
-    public native NSDictionary<String, ?> objectSnapshot();
-
-    /**
-     * oldVersionNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/oldVersionNumber">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("oldVersionNumber")
-    @NUInt
-    public native long oldVersionNumber();
-
-    /**
-     * persistedSnapshot</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/persistedSnapshot">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("persistedSnapshot")
-    public native NSDictionary<String, ?> persistedSnapshot();
-
-    /**
-     * sourceObject</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/sourceObject">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceObject")
-    public native NSManagedObject sourceObject();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -222,4 +158,68 @@ public class NSMergeConflict extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cachedSnapshot</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/cachedSnapshot">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cachedSnapshot")
+    public native NSDictionary<String, ?> cachedSnapshot();
+
+    @Generated
+    @Selector("init")
+    public native NSMergeConflict init();
+
+    /**
+     * initWithSource:newVersion:oldVersion:cachedSnapshot:persistedSnapshot:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instm/NSMergeConflict/initWithSource:newVersion:oldVersion:cachedSnapshot:persistedSnapshot:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSource:newVersion:oldVersion:cachedSnapshot:persistedSnapshot:")
+    public native NSMergeConflict initWithSourceNewVersionOldVersionCachedSnapshotPersistedSnapshot(
+            NSManagedObject srcObject, @NUInt long newvers, @NUInt long oldvers, NSDictionary<String, ?> cachesnap,
+            NSDictionary<String, ?> persnap);
+
+    /**
+     * newVersionNumber</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/newVersionNumber">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("newVersionNumber")
+    @NUInt
+    public native long newVersionNumber();
+
+    /**
+     * objectSnapshot</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/objectSnapshot">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("objectSnapshot")
+    public native NSDictionary<String, ?> objectSnapshot();
+
+    /**
+     * oldVersionNumber</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/oldVersionNumber">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("oldVersionNumber")
+    @NUInt
+    public native long oldVersionNumber();
+
+    /**
+     * persistedSnapshot</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/persistedSnapshot">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("persistedSnapshot")
+    public native NSDictionary<String, ?> persistedSnapshot();
+
+    /**
+     * sourceObject</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSMergeConflict_Class/index.html#//apple_ref/occ/instp/NSMergeConflict/sourceObject">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceObject")
+    public native NSManagedObject sourceObject();
 }

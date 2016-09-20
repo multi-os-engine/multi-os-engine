@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class MPMovieSourceType {
-    @Generated
-    private MPMovieSourceType() {
-    }
-
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NInt public static final long File = 0x0000000000000001L;
     @Generated @NInt public static final long Streaming = 0x0000000000000002L;
+
+    @Generated
+    private MPMovieSourceType() {
+    }
 }

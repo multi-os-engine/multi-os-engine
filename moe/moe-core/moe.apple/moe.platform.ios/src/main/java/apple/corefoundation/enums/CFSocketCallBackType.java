@@ -21,14 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFSocketCallBackType {
-    @Generated
-    private CFSocketCallBackType() {
-    }
-
     @Generated @NUInt public static final long NoCallBack = 0x0000000000000000L;
     @Generated @NUInt public static final long ReadCallBack = 0x0000000000000001L;
     @Generated @NUInt public static final long AcceptCallBack = 0x0000000000000002L;
     @Generated @NUInt public static final long DataCallBack = 0x0000000000000003L;
     @Generated @NUInt public static final long ConnectCallBack = 0x0000000000000004L;
     @Generated @NUInt public static final long WriteCallBack = 0x0000000000000008L;
+    @Generated
+    private CFSocketCallBackType() {
+    }
 }

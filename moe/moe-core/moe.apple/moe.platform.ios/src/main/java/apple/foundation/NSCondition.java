@@ -56,66 +56,6 @@ public class NSCondition extends NSObject implements NSLocking {
     @Selector("alloc")
     public static native NSCondition alloc();
 
-    /**
-     * broadcast</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instm/NSCondition/broadcast">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("broadcast")
-    public native void broadcast();
-
-    @Generated
-    @Selector("init")
-    public native NSCondition init();
-
-    @Generated
-    @Selector("lock")
-    public native void lock();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instp/NSCondition/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instp/NSCondition/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setName:")
-    public native void setName(String value);
-
-    /**
-     * signal</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instm/NSCondition/signal">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("signal")
-    public native void signal();
-
-    @Generated
-    @Selector("unlock")
-    public native void unlock();
-
-    /**
-     * wait</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instm/NSCondition/wait">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("wait")
-    public native void wait_objc();
-
-    /**
-     * waitUntilDate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instm/NSCondition/waitUntilDate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("waitUntilDate:")
-    public native boolean waitUntilDate(NSDate limit);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -215,4 +155,64 @@ public class NSCondition extends NSObject implements NSLocking {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * broadcast</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instm/NSCondition/broadcast">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("broadcast")
+    public native void broadcast();
+
+    @Generated
+    @Selector("init")
+    public native NSCondition init();
+
+    @Generated
+    @Selector("lock")
+    public native void lock();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instp/NSCondition/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instp/NSCondition/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
+
+    /**
+     * signal</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instm/NSCondition/signal">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("signal")
+    public native void signal();
+
+    @Generated
+    @Selector("unlock")
+    public native void unlock();
+
+    /**
+     * wait</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instm/NSCondition/wait">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("wait")
+    public native void wait_objc();
+
+    /**
+     * waitUntilDate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCondition_class/index.html#//apple_ref/occ/instm/NSCondition/waitUntilDate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("waitUntilDate:")
+    public native boolean waitUntilDate(NSDate limit);
 }

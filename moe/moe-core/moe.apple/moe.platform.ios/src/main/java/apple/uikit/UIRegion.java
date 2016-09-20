@@ -66,24 +66,6 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     public static native UIRegion alloc();
 
     /**
-     * containsPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/containsPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containsPoint:")
-    public native boolean containsPoint(@ByValue CGPoint point);
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
      * infiniteRegion</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/clm/UIRegion/infiniteRegion">iOS Dev Center</a>
      */
@@ -91,66 +73,6 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("infiniteRegion")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object infiniteRegion();
-
-    @Generated
-    @Selector("init")
-    public native UIRegion init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIRegion initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithRadius:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/initWithRadius:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithRadius:")
-    public native UIRegion initWithRadius(@NFloat double radius);
-
-    /**
-     * initWithSize:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/initWithSize:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSize:")
-    public native UIRegion initWithSize(@ByValue CGSize size);
-
-    /**
-     * inverseRegion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/inverseRegion">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("inverseRegion")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object inverseRegion();
-
-    /**
-     * regionByDifferenceFromRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/regionByDifferenceFromRegion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("regionByDifferenceFromRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByDifferenceFromRegion(UIRegion region);
-
-    /**
-     * regionByIntersectionWithRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/regionByIntersectionWithRegion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("regionByIntersectionWithRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByIntersectionWithRegion(UIRegion region);
-
-    /**
-     * regionByUnionWithRegion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/regionByUnionWithRegion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("regionByUnionWithRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByUnionWithRegion(UIRegion region);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -251,4 +173,82 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * containsPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/containsPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containsPoint:")
+    public native boolean containsPoint(@ByValue CGPoint point);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native UIRegion init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIRegion initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithRadius:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/initWithRadius:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithRadius:")
+    public native UIRegion initWithRadius(@NFloat double radius);
+
+    /**
+     * initWithSize:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/initWithSize:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSize:")
+    public native UIRegion initWithSize(@ByValue CGSize size);
+
+    /**
+     * inverseRegion</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/inverseRegion">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("inverseRegion")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object inverseRegion();
+
+    /**
+     * regionByDifferenceFromRegion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/regionByDifferenceFromRegion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("regionByDifferenceFromRegion:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object regionByDifferenceFromRegion(UIRegion region);
+
+    /**
+     * regionByIntersectionWithRegion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/regionByIntersectionWithRegion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("regionByIntersectionWithRegion:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object regionByIntersectionWithRegion(UIRegion region);
+
+    /**
+     * regionByUnionWithRegion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRegion_class/index.html#//apple_ref/occ/instm/UIRegion/regionByUnionWithRegion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("regionByUnionWithRegion:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object regionByUnionWithRegion(UIRegion region);
 }

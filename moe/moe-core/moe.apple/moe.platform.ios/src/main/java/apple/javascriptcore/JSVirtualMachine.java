@@ -53,36 +53,10 @@ public class JSVirtualMachine extends NSObject {
         super(peer);
     }
 
-    /**
-     * addManagedReference:withOwner:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSVirtualMachine_Ref/index.html#//apple_ref/occ/instm/JSVirtualMachine/addManagedReference:withOwner:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addManagedReference:withOwner:")
-    public native void addManagedReferenceWithOwner(@Mapped(ObjCObjectMapper.class) Object object,
-            @Mapped(ObjCObjectMapper.class) Object owner);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native JSVirtualMachine alloc();
-
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSVirtualMachine_Ref/index.html#//apple_ref/occ/instm/JSVirtualMachine/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native JSVirtualMachine init();
-
-    /**
-     * removeManagedReference:withOwner:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSVirtualMachine_Ref/index.html#//apple_ref/occ/instm/JSVirtualMachine/removeManagedReference:withOwner:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeManagedReference:withOwner:")
-    public native void removeManagedReferenceWithOwner(@Mapped(ObjCObjectMapper.class) Object object,
-            @Mapped(ObjCObjectMapper.class) Object owner);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -183,4 +157,30 @@ public class JSVirtualMachine extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addManagedReference:withOwner:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSVirtualMachine_Ref/index.html#//apple_ref/occ/instm/JSVirtualMachine/addManagedReference:withOwner:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addManagedReference:withOwner:")
+    public native void addManagedReferenceWithOwner(@Mapped(ObjCObjectMapper.class) Object object,
+            @Mapped(ObjCObjectMapper.class) Object owner);
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSVirtualMachine_Ref/index.html#//apple_ref/occ/instm/JSVirtualMachine/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native JSVirtualMachine init();
+
+    /**
+     * removeManagedReference:withOwner:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSVirtualMachine_Ref/index.html#//apple_ref/occ/instm/JSVirtualMachine/removeManagedReference:withOwner:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeManagedReference:withOwner:")
+    public native void removeManagedReferenceWithOwner(@Mapped(ObjCObjectMapper.class) Object object,
+            @Mapped(ObjCObjectMapper.class) Object owner);
 }

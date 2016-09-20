@@ -59,26 +59,6 @@ public class AVAudioIONode extends AVAudioNode {
     @Selector("alloc")
     public static native AVAudioIONode alloc();
 
-    /**
-     * audioUnit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioIONode_Class/index.html#//apple_ref/occ/instp/AVAudioIONode/audioUnit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("audioUnit")
-    public native AudioComponentInstance audioUnit();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioIONode init();
-
-    /**
-     * presentationLatency</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioIONode_Class/index.html#//apple_ref/occ/instp/AVAudioIONode/presentationLatency">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("presentationLatency")
-    public native double presentationLatency();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -178,4 +158,24 @@ public class AVAudioIONode extends AVAudioNode {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * audioUnit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioIONode_Class/index.html#//apple_ref/occ/instp/AVAudioIONode/audioUnit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("audioUnit")
+    public native AudioComponentInstance audioUnit();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioIONode init();
+
+    /**
+     * presentationLatency</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioIONode_Class/index.html#//apple_ref/occ/instp/AVAudioIONode/presentationLatency">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("presentationLatency")
+    public native double presentationLatency();
 }

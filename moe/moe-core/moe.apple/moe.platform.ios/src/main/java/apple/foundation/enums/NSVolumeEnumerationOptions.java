@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSVolumeEnumerationOptions {
+    @Generated @NUInt public static final long SkipHiddenVolumes = 0x0000000000000002L;
+    @Generated @NUInt public static final long ProduceFileReferenceURLs = 0x0000000000000004L;
+
     @Generated
     private NSVolumeEnumerationOptions() {
     }
-
-    @Generated @NUInt public static final long SkipHiddenVolumes = 0x0000000000000002L;
-    @Generated @NUInt public static final long ProduceFileReferenceURLs = 0x0000000000000004L;
 }

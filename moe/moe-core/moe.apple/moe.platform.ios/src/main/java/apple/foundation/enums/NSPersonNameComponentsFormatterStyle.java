@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSPersonNameComponentsFormatterStyle {
-    @Generated
-    private NSPersonNameComponentsFormatterStyle() {
-    }
-
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     @Generated @NInt public static final long Short = 0x0000000000000001L;
     @Generated @NInt public static final long Medium = 0x0000000000000002L;
     @Generated @NInt public static final long Long = 0x0000000000000003L;
     @Generated @NInt public static final long Abbreviated = 0x0000000000000004L;
+
+    @Generated
+    private NSPersonNameComponentsFormatterStyle() {
+    }
 }

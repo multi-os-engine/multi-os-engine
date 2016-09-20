@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIWebPaginationBreakingMode {
+    @Generated @NInt public static final long Page = 0x0000000000000000L;
+    @Generated @NInt public static final long Column = 0x0000000000000001L;
+
     @Generated
     private UIWebPaginationBreakingMode() {
     }
-
-    @Generated @NInt public static final long Page = 0x0000000000000000L;
-    @Generated @NInt public static final long Column = 0x0000000000000001L;
 }

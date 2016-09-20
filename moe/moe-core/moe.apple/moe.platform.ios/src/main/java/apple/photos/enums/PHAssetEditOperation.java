@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class PHAssetEditOperation {
-    @Generated
-    private PHAssetEditOperation() {
-    }
-
     @Generated @NInt public static final long Delete = 0x0000000000000001L;
     @Generated @NInt public static final long Content = 0x0000000000000002L;
     @Generated @NInt public static final long Properties = 0x0000000000000003L;
+
+    @Generated
+    private PHAssetEditOperation() {
+    }
 }

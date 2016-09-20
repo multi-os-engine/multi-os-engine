@@ -62,10 +62,6 @@ public class CMStepCounter extends NSObject {
     @Selector("alloc")
     public static native CMStepCounter alloc();
 
-    @Generated
-    @Selector("init")
-    public native CMStepCounter init();
-
     /**
      * isStepCountingAvailable</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/clm/CMStepCounter/isStepCountingAvailable">iOS Dev Center</a>
@@ -73,46 +69,6 @@ public class CMStepCounter extends NSObject {
     @Generated
     @Selector("isStepCountingAvailable")
     public static native boolean isStepCountingAvailable();
-
-    /**
-     * queryStepCountStartingFrom:to:toQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/instm/CMStepCounter/queryStepCountStartingFrom:to:toQueue:withHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("queryStepCountStartingFrom:to:toQueue:withHandler:")
-    public native void queryStepCountStartingFromToToQueueWithHandler(NSDate start, NSDate end, NSOperationQueue queue,
-            @ObjCBlock(name = "call_queryStepCountStartingFromToToQueueWithHandler") Block_queryStepCountStartingFromToToQueueWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_queryStepCountStartingFromToToQueueWithHandler {
-        @Generated
-        void call_queryStepCountStartingFromToToQueueWithHandler(@NInt long arg0, NSError arg1);
-    }
-
-    /**
-     * startStepCountingUpdatesToQueue:updateOn:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/instm/CMStepCounter/startStepCountingUpdatesToQueue:updateOn:withHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startStepCountingUpdatesToQueue:updateOn:withHandler:")
-    public native void startStepCountingUpdatesToQueueUpdateOnWithHandler(NSOperationQueue queue, @NInt long stepCounts,
-            @ObjCBlock(name = "call_startStepCountingUpdatesToQueueUpdateOnWithHandler") Block_startStepCountingUpdatesToQueueUpdateOnWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startStepCountingUpdatesToQueueUpdateOnWithHandler {
-        @Generated
-        void call_startStepCountingUpdatesToQueueUpdateOnWithHandler(@NInt long arg0, NSDate arg1, NSError arg2);
-    }
-
-    /**
-     * stopStepCountingUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/instm/CMStepCounter/stopStepCountingUpdates">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopStepCountingUpdates")
-    public native void stopStepCountingUpdates();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -213,4 +169,48 @@ public class CMStepCounter extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CMStepCounter init();
+
+    /**
+     * queryStepCountStartingFrom:to:toQueue:withHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/instm/CMStepCounter/queryStepCountStartingFrom:to:toQueue:withHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("queryStepCountStartingFrom:to:toQueue:withHandler:")
+    public native void queryStepCountStartingFromToToQueueWithHandler(NSDate start, NSDate end, NSOperationQueue queue,
+            @ObjCBlock(name = "call_queryStepCountStartingFromToToQueueWithHandler") Block_queryStepCountStartingFromToToQueueWithHandler handler);
+
+    /**
+     * startStepCountingUpdatesToQueue:updateOn:withHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/instm/CMStepCounter/startStepCountingUpdatesToQueue:updateOn:withHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startStepCountingUpdatesToQueue:updateOn:withHandler:")
+    public native void startStepCountingUpdatesToQueueUpdateOnWithHandler(NSOperationQueue queue, @NInt long stepCounts,
+            @ObjCBlock(name = "call_startStepCountingUpdatesToQueueUpdateOnWithHandler") Block_startStepCountingUpdatesToQueueUpdateOnWithHandler handler);
+
+    /**
+     * stopStepCountingUpdates</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMStepCounter_class/index.html#//apple_ref/occ/instm/CMStepCounter/stopStepCountingUpdates">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopStepCountingUpdates")
+    public native void stopStepCountingUpdates();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_queryStepCountStartingFromToToQueueWithHandler {
+        @Generated
+        void call_queryStepCountStartingFromToToQueueWithHandler(@NInt long arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startStepCountingUpdatesToQueueUpdateOnWithHandler {
+        @Generated
+        void call_startStepCountingUpdatesToQueueUpdateOnWithHandler(@NInt long arg0, NSDate arg1, NSError arg2);
+    }
 }

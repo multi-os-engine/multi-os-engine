@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class VTDecodeFrameFlags {
-    @Generated
-    private VTDecodeFrameFlags() {
-    }
-
     @Generated public static final int _EnableAsynchronousDecompression = 0x00000001;
     @Generated public static final int _DoNotOutputFrame = 0x00000002;
     @Generated public static final int _1xRealTimePlayback = 0x00000004;
     @Generated public static final int _EnableTemporalProcessing = 0x00000008;
+
+    @Generated
+    private VTDecodeFrameFlags() {
+    }
 }

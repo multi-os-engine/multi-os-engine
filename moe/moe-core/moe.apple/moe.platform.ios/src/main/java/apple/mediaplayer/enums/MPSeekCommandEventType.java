@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MPSeekCommandEventType {
+    @Generated @NUInt public static final long BeginSeeking = 0x0000000000000000L;
+    @Generated @NUInt public static final long EndSeeking = 0x0000000000000001L;
+
     @Generated
     private MPSeekCommandEventType() {
     }
-
-    @Generated @NUInt public static final long BeginSeeking = 0x0000000000000000L;
-    @Generated @NUInt public static final long EndSeeking = 0x0000000000000001L;
 }

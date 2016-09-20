@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITextStorageDirection {
+    @Generated @NInt public static final long Forward = 0x0000000000000000L;
+    @Generated @NInt public static final long Backward = 0x0000000000000001L;
+
     @Generated
     private UITextStorageDirection() {
     }
-
-    @Generated @NInt public static final long Forward = 0x0000000000000000L;
-    @Generated @NInt public static final long Backward = 0x0000000000000001L;
 }

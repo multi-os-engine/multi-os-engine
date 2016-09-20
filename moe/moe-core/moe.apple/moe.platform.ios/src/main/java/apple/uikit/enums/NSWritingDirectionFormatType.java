@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class NSWritingDirectionFormatType {
+    @Generated @NInt public static final long Embedding = 0x0000000000000000L;
+    @Generated @NInt public static final long Override = 0x0000000000000002L;
+
     @Generated
     private NSWritingDirectionFormatType() {
     }
-
-    @Generated @NInt public static final long Embedding = 0x0000000000000000L;
-    @Generated @NInt public static final long Override = 0x0000000000000002L;
 }

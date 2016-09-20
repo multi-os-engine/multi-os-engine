@@ -64,85 +64,12 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     public static native AVMutableVideoCompositionInstruction alloc();
 
     /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/backgroundColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backgroundColor")
-    public native CGColorRef backgroundColor();
-
-    /**
-     * enablePostProcessing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/enablePostProcessing">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enablePostProcessing")
-    public native boolean enablePostProcessing();
-
-    @Generated
-    @Selector("init")
-    public native AVMutableVideoCompositionInstruction init();
-
-    /**
-     * layerInstructions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/layerInstructions">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("layerInstructions")
-    public native NSArray<? extends AVVideoCompositionLayerInstruction> layerInstructions();
-
-    /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/backgroundColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(CGColorRef value);
-
-    /**
-     * enablePostProcessing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/enablePostProcessing">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEnablePostProcessing:")
-    public native void setEnablePostProcessing(boolean value);
-
-    /**
-     * layerInstructions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/layerInstructions">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLayerInstructions:")
-    public native void setLayerInstructions(NSArray<? extends AVVideoCompositionLayerInstruction> value);
-
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/timeRange">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTimeRange:")
-    public native void setTimeRange(@ByValue CMTimeRange value);
-
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/timeRange">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeRange")
-    @ByValue
-    public native CMTimeRange timeRange();
-
-    /**
      * videoCompositionInstruction</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/clm/AVMutableVideoCompositionInstruction/videoCompositionInstruction">iOS Dev Center</a>
      */
     @Generated
     @Selector("videoCompositionInstruction")
     public static native AVMutableVideoCompositionInstruction videoCompositionInstruction();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVMutableVideoCompositionInstruction initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -244,13 +171,86 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * backgroundColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/backgroundColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backgroundColor")
+    public native CGColorRef backgroundColor();
+
+    /**
+     * enablePostProcessing</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/enablePostProcessing">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enablePostProcessing")
+    public native boolean enablePostProcessing();
+
+    @Generated
+    @Selector("init")
+    public native AVMutableVideoCompositionInstruction init();
+
+    /**
+     * layerInstructions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/layerInstructions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("layerInstructions")
+    public native NSArray<? extends AVVideoCompositionLayerInstruction> layerInstructions();
+
+    /**
+     * backgroundColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/backgroundColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBackgroundColor:")
+    public native void setBackgroundColor(CGColorRef value);
+
+    /**
+     * enablePostProcessing</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/enablePostProcessing">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEnablePostProcessing:")
+    public native void setEnablePostProcessing(boolean value);
+
+    /**
+     * layerInstructions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/layerInstructions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLayerInstructions:")
+    public native void setLayerInstructions(NSArray<? extends AVVideoCompositionLayerInstruction> value);
+
+    /**
+     * timeRange</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/timeRange">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTimeRange:")
+    public native void setTimeRange(@ByValue CMTimeRange value);
+
+    /**
+     * timeRange</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVMutableVideoCompositionInstruction/timeRange">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeRange")
+    @ByValue
+    public native CMTimeRange timeRange();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVMutableVideoCompositionInstruction initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

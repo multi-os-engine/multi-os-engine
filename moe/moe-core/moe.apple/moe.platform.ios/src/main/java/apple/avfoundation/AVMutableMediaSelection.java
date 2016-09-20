@@ -59,15 +59,6 @@ public class AVMutableMediaSelection extends AVMediaSelection {
     public static native AVMutableMediaSelection alloc();
 
     @Generated
-    @Selector("init")
-    public native AVMutableMediaSelection init();
-
-    @Generated
-    @Selector("selectMediaOption:inMediaSelectionGroup:")
-    public native void selectMediaOptionInMediaSelectionGroup(AVMediaSelectionOption mediaSelectionOption,
-            AVMediaSelectionGroup mediaSelectionGroup);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -166,4 +157,13 @@ public class AVMutableMediaSelection extends AVMediaSelection {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVMutableMediaSelection init();
+
+    @Generated
+    @Selector("selectMediaOption:inMediaSelectionGroup:")
+    public native void selectMediaOptionInMediaSelectionGroup(AVMediaSelectionOption mediaSelectionOption,
+            AVMediaSelectionGroup mediaSelectionGroup);
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SecAccessControlCreateFlags {
-    @Generated
-    private SecAccessControlCreateFlags() {
-    }
-
     @Generated @NInt public static final long UserPresence = 0x0000000000000001L;
     @Generated @NInt public static final long TouchIDAny = 0x0000000000000002L;
     @Generated @NInt public static final long TouchIDCurrentSet = 0x0000000000000008L;
@@ -33,4 +29,8 @@ public final class SecAccessControlCreateFlags {
     @Generated @NInt public static final long And = 0x0000000000008000L;
     @Generated @NInt public static final long PrivateKeyUsage = 0x0000000040000000L;
     @Generated @NInt public static final long ApplicationPassword = 0xFFFFFFFF80000000L;
+
+    @Generated
+    private SecAccessControlCreateFlags() {
+    }
 }

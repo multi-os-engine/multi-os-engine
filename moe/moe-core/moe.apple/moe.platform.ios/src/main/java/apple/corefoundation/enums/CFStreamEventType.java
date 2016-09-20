@@ -21,14 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFStreamEventType {
-    @Generated
-    private CFStreamEventType() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long OpenCompleted = 0x0000000000000001L;
     @Generated @NUInt public static final long HasBytesAvailable = 0x0000000000000002L;
     @Generated @NUInt public static final long CanAcceptBytes = 0x0000000000000004L;
     @Generated @NUInt public static final long ErrorOccurred = 0x0000000000000008L;
     @Generated @NUInt public static final long EndEncountered = 0x0000000000000010L;
+    @Generated
+    private CFStreamEventType() {
+    }
 }

@@ -59,10 +59,6 @@ public class GKGridGraphNode extends GKGraphNode {
     public static native GKGridGraphNode alloc();
 
     @Generated
-    @Selector("init")
-    public native GKGridGraphNode init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class GKGridGraphNode extends GKGraphNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GKGridGraphNode init();
 }

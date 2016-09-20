@@ -59,42 +59,6 @@ public class MPRatingCommand extends MPRemoteCommand {
     public static native MPRatingCommand alloc();
 
     @Generated
-    @Selector("init")
-    public native MPRatingCommand init();
-
-    /**
-     * maximumRating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommand_Ref/index.html#//apple_ref/occ/instp/MPRatingCommand/maximumRating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumRating")
-    public native float maximumRating();
-
-    /**
-     * minimumRating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommand_Ref/index.html#//apple_ref/occ/instp/MPRatingCommand/minimumRating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumRating")
-    public native float minimumRating();
-
-    /**
-     * maximumRating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommand_Ref/index.html#//apple_ref/occ/instp/MPRatingCommand/maximumRating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumRating:")
-    public native void setMaximumRating(float value);
-
-    /**
-     * minimumRating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommand_Ref/index.html#//apple_ref/occ/instp/MPRatingCommand/minimumRating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumRating:")
-    public native void setMinimumRating(float value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -193,4 +157,40 @@ public class MPRatingCommand extends MPRemoteCommand {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPRatingCommand init();
+
+    /**
+     * maximumRating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommand_Ref/index.html#//apple_ref/occ/instp/MPRatingCommand/maximumRating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumRating")
+    public native float maximumRating();
+
+    /**
+     * minimumRating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommand_Ref/index.html#//apple_ref/occ/instp/MPRatingCommand/minimumRating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumRating")
+    public native float minimumRating();
+
+    /**
+     * maximumRating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommand_Ref/index.html#//apple_ref/occ/instp/MPRatingCommand/maximumRating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumRating:")
+    public native void setMaximumRating(float value);
+
+    /**
+     * minimumRating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPRatingCommand_Ref/index.html#//apple_ref/occ/instp/MPRatingCommand/minimumRating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumRating:")
+    public native void setMinimumRating(float value);
 }

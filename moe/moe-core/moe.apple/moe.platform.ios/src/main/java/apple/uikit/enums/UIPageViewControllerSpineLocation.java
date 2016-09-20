@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPageViewControllerSpineLocation {
-    @Generated
-    private UIPageViewControllerSpineLocation() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Min = 0x0000000000000001L;
     @Generated @NInt public static final long Mid = 0x0000000000000002L;
     @Generated @NInt public static final long Max = 0x0000000000000003L;
+
+    @Generated
+    private UIPageViewControllerSpineLocation() {
+    }
 }

@@ -63,6 +63,188 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native CIVector alloc();
+
+    /**
+     * vectorWithCGAffineTransform:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithCGAffineTransform:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vectorWithCGAffineTransform:")
+    public static native CIVector vectorWithCGAffineTransform(@ByValue CGAffineTransform t);
+
+    /**
+     * vectorWithCGPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithCGPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vectorWithCGPoint:")
+    public static native CIVector vectorWithCGPoint(@ByValue CGPoint p);
+
+    /**
+     * vectorWithCGRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithCGRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vectorWithCGRect:")
+    public static native CIVector vectorWithCGRect(@ByValue CGRect r);
+
+    /**
+     * vectorWithString:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithString:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vectorWithString:")
+    public static native CIVector vectorWithString(String representation);
+
+    /**
+     * vectorWithValues:count:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithValues:count:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vectorWithValues:count:")
+    public static native CIVector vectorWithValuesCount(ConstNFloatPtr values, @NUInt long count);
+
+    /**
+     * vectorWithX:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithX:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vectorWithX:")
+    public static native CIVector vectorWithX(@NFloat double x);
+
+    /**
+     * vectorWithX:Y:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithX:Y:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vectorWithX:Y:")
+    public static native CIVector vectorWithXY(@NFloat double x, @NFloat double y);
+
+    /**
+     * vectorWithX:Y:Z:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithX:Y:Z:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vectorWithX:Y:Z:")
+    public static native CIVector vectorWithXYZ(@NFloat double x, @NFloat double y, @NFloat double z);
+
+    /**
+     * vectorWithX:Y:Z:W:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithX:Y:Z:W:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("vectorWithX:Y:Z:W:")
+    public static native CIVector vectorWithXYZW(@NFloat double x, @NFloat double y, @NFloat double z,
+            @NFloat double w);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * CGAffineTransformValue</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/instp/CIVector/CGAffineTransformValue">iOS Dev Center</a>
@@ -125,11 +307,6 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("Z")
     @NFloat
     public native double Z();
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native CIVector alloc();
 
     @Generated
     @Owned
@@ -247,186 +424,9 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @NFloat
     public native double valueAtIndex(@NUInt long index);
 
-    /**
-     * vectorWithCGAffineTransform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithCGAffineTransform:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vectorWithCGAffineTransform:")
-    public static native CIVector vectorWithCGAffineTransform(@ByValue CGAffineTransform t);
-
-    /**
-     * vectorWithCGPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithCGPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vectorWithCGPoint:")
-    public static native CIVector vectorWithCGPoint(@ByValue CGPoint p);
-
-    /**
-     * vectorWithCGRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithCGRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vectorWithCGRect:")
-    public static native CIVector vectorWithCGRect(@ByValue CGRect r);
-
-    /**
-     * vectorWithString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithString:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vectorWithString:")
-    public static native CIVector vectorWithString(String representation);
-
-    /**
-     * vectorWithValues:count:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithValues:count:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vectorWithValues:count:")
-    public static native CIVector vectorWithValuesCount(ConstNFloatPtr values, @NUInt long count);
-
-    /**
-     * vectorWithX:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithX:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vectorWithX:")
-    public static native CIVector vectorWithX(@NFloat double x);
-
-    /**
-     * vectorWithX:Y:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithX:Y:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vectorWithX:Y:")
-    public static native CIVector vectorWithXY(@NFloat double x, @NFloat double y);
-
-    /**
-     * vectorWithX:Y:Z:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithX:Y:Z:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vectorWithX:Y:Z:")
-    public static native CIVector vectorWithXYZ(@NFloat double x, @NFloat double y, @NFloat double z);
-
-    /**
-     * vectorWithX:Y:Z:W:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/index.html#//apple_ref/occ/clm/CIVector/vectorWithX:Y:Z:W:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("vectorWithX:Y:Z:W:")
-    public static native CIVector vectorWithXYZW(@NFloat double x, @NFloat double y, @NFloat double z,
-            @NFloat double w);
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKCategoryValueCervicalMucusQuality {
-    @Generated
-    private HKCategoryValueCervicalMucusQuality() {
-    }
-
     @Generated @NInt public static final long Dry = 0x0000000000000001L;
     @Generated @NInt public static final long Sticky = 0x0000000000000002L;
     @Generated @NInt public static final long Creamy = 0x0000000000000003L;
     @Generated @NInt public static final long Watery = 0x0000000000000004L;
     @Generated @NInt public static final long EggWhite = 0x0000000000000005L;
+
+    @Generated
+    private HKCategoryValueCervicalMucusQuality() {
+    }
 }

@@ -82,6 +82,191 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
+     * alloc</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/alloc">iOS Dev Center</a>
+     */
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSObject alloc();
+
+    /**
+     * allocWithZone:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/allocWithZone:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    /**
+     * automaticallyNotifiesObserversForKey:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSKeyValueObserving_Protocol/index.html#//apple_ref/occ/clm/NSObject/automaticallyNotifiesObserversForKey:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    /**
+     * cancelPreviousPerformRequestsWithTarget:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/cancelPreviousPerformRequestsWithTarget:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    /**
+     * cancelPreviousPerformRequestsWithTarget:selector:object:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/cancelPreviousPerformRequestsWithTarget:selector:object:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    /**
+     * classFallbacksForKeyedArchiver</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/classFallbacksForKeyedArchiver">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    /**
+     * classForKeyedUnarchiver</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/classForKeyedUnarchiver">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    /**
+     * description</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/description">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    /**
+     * initialize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/initialize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    /**
+     * instanceMethodSignatureForSelector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/instanceMethodSignatureForSelector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    /**
+     * instancesRespondToSelector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/instancesRespondToSelector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    /**
+     * isSubclassOfClass:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/isSubclassOfClass:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    /**
+     * keyPathsForValuesAffectingValueForKey:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSKeyValueObserving_Protocol/index.html#//apple_ref/occ/clm/NSObject/keyPathsForValuesAffectingValueForKey:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    /**
+     * load</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/load">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    /**
+     * new</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/new">iOS Dev Center</a>
+     */
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    /**
+     * resolveClassMethod:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/resolveClassMethod:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    /**
+     * resolveInstanceMethod:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/resolveInstanceMethod:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    /**
+     * setVersion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/setVersion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    /**
+     * superclass</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/superclass">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    /**
+     * version</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/version">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * instanceMethodForSelector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/instanceMethodForSelector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    /**
      * accessibilityActivate</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibilityAction_Protocol/index.html#//apple_ref/occ/instm/NSObject/accessibilityActivate">iOS Dev Center</a>
      */
@@ -297,24 +482,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
             VoidPtr context);
 
     /**
-     * alloc</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/alloc">iOS Dev Center</a>
-     */
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSObject alloc();
-
-    /**
-     * allocWithZone:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/allocWithZone:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    /**
      * animationDidStart:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/CAAnimation_class/index.html#//apple_ref/occ/instm/NSObject/animationDidStart:">iOS Dev Center</a>
      */
@@ -358,14 +525,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native Object autoContentAccessingProxy();
 
     /**
-     * automaticallyNotifiesObserversForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSKeyValueObserving_Protocol/index.html#//apple_ref/occ/clm/NSObject/automaticallyNotifiesObserversForKey:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    /**
      * awakeAfterUsingCoder:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/instm/NSObject/awakeAfterUsingCoder:">iOS Dev Center</a>
      */
@@ -382,35 +541,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("awakeFromNib")
     public native void awakeFromNib();
 
-    /**
-     * cancelPreviousPerformRequestsWithTarget:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/cancelPreviousPerformRequestsWithTarget:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    /**
-     * cancelPreviousPerformRequestsWithTarget:selector:object:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/cancelPreviousPerformRequestsWithTarget:selector:object:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
     @Generated
     @Selector("class")
     public native Class class_objc();
-
-    /**
-     * classFallbacksForKeyedArchiver</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/classFallbacksForKeyedArchiver">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
 
     /**
      * classForCoder</br>
@@ -427,14 +560,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("classForKeyedArchiver")
     public native Class classForKeyedArchiver();
-
-    /**
-     * classForKeyedUnarchiver</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/classForKeyedUnarchiver">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
 
     /**
      * copy</br>
@@ -471,10 +596,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void dealloc();
 
     @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
     @IsOptional
     @Selector("debugDescription")
     public native String debugDescription();
@@ -494,14 +615,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("delete:")
     public native void delete(@Mapped(ObjCObjectMapper.class) Object sender);
-
-    /**
-     * description</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/description">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("description")
-    public static native String description_static();
 
     @Generated
     @Selector("description")
@@ -610,11 +723,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("hash")
     @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
     public native long hash();
 
     /**
@@ -643,30 +751,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native NSObject init();
 
     /**
-     * initialize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/initialize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    /**
-     * instanceMethodSignatureForSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/instanceMethodSignatureForSelector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    /**
-     * instancesRespondToSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/instancesRespondToSelector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    /**
      * isAccessibilityElement</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibility_Protocol/index.html#//apple_ref/occ/instp/NSObject/isAccessibilityElement">iOS Dev Center</a>
      */
@@ -691,36 +775,12 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native boolean isProxy();
 
     /**
-     * isSubclassOfClass:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/isSubclassOfClass:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    /**
-     * keyPathsForValuesAffectingValueForKey:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSKeyValueObserving_Protocol/index.html#//apple_ref/occ/clm/NSObject/keyPathsForValuesAffectingValueForKey:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    /**
      * layoutSublayersOfLayer:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/QuartzCore/Reference/CALayerDelegate_protocol/index.html#//apple_ref/occ/instm/NSObject/layoutSublayersOfLayer:">iOS Dev Center</a>
      */
     @Generated
     @Selector("layoutSublayersOfLayer:")
     public native void layoutSublayersOfLayer(CALayer layer);
-
-    /**
-     * load</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/load">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     /**
      * makeTextWritingDirectionLeftToRight:</br>
@@ -802,16 +862,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("mutableSetValueForKeyPath:")
     public native NSMutableSet<?> mutableSetValueForKeyPath(String keyPath);
-
-    /**
-     * new</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/new">iOS Dev Center</a>
-     */
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
 
     @Generated
     @Selector("observationInfo")
@@ -953,22 +1003,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("replacementObjectForKeyedArchiver:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object replacementObjectForKeyedArchiver(NSKeyedArchiver archiver);
-
-    /**
-     * resolveClassMethod:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/resolveClassMethod:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    /**
-     * resolveInstanceMethod:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/resolveInstanceMethod:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
     @Selector("respondsToSelector:")
@@ -1160,28 +1194,12 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void setValuesForKeysWithDictionary(NSDictionary<String, ?> keyedValues);
 
     /**
-     * setVersion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/setVersion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    /**
      * shouldGroupAccessibilityChildren</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAccessibility_Protocol/index.html#//apple_ref/occ/instp/NSObject/shouldGroupAccessibilityChildren">iOS Dev Center</a>
      */
     @Generated
     @Selector("shouldGroupAccessibilityChildren")
     public native boolean shouldGroupAccessibilityChildren();
-
-    /**
-     * superclass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/superclass">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
 
     @Generated
     @Selector("superclass")
@@ -1256,15 +1274,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native Object valueForUndefinedKey(String key);
 
     /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/version">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
-
-    /**
      * willChange:valuesAtIndexes:forKey:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Protocols/NSKeyValueObserving_Protocol/index.html#//apple_ref/occ/instm/NSObject/willChange:valuesAtIndexes:forKey:">iOS Dev Center</a>
      */
@@ -1294,22 +1303,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native NSSet<String> accessibilityAssistiveTechnologyFocusedIdentifiers();
 
     /**
-     * instanceMethodForSelector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/clm/NSObject/instanceMethodForSelector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Function_instanceMethodForSelector_ret {
-        @Generated
-        void call_instanceMethodForSelector_ret();
-    }
-
-    /**
      * methodForSelector:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/index.html#//apple_ref/occ/instm/NSObject/methodForSelector:">iOS Dev Center</a>
      */
@@ -1317,13 +1310,6 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("methodForSelector:")
     @FunctionPtr(name = "call_methodForSelector_ret")
     public native Function_methodForSelector_ret methodForSelector(SEL aSelector);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Function_methodForSelector_ret {
-        @Generated
-        void call_methodForSelector_ret();
-    }
 
     /**
      * provideImageData:bytesPerRow:origin::size::userInfo:</br>
@@ -1334,4 +1320,18 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void provideImageDataBytesPerRowOrigin_Size_UserInfo(VoidPtr data, @NUInt long rowbytes,
             @NUInt long x, @NUInt long y, @NUInt long width, @NUInt long height,
             @Mapped(ObjCObjectMapper.class) Object info);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_instanceMethodForSelector_ret {
+        @Generated
+        void call_instanceMethodForSelector_ret();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_methodForSelector_ret {
+        @Generated
+        void call_methodForSelector_ret();
+    }
 }

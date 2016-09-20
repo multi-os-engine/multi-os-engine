@@ -62,41 +62,6 @@ public class SKRange extends NSObject implements NSCoding, NSCopying {
     @Selector("alloc")
     public static native SKRange alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native SKRange init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKRange initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithLowerLimit:upperLimit:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/instm/SKRange/initWithLowerLimit:upperLimit:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithLowerLimit:upperLimit:")
-    public native SKRange initWithLowerLimitUpperLimit(@NFloat double lower, @NFloat double upper);
-
-    /**
-     * lowerLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/instp/SKRange/lowerLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lowerLimit")
-    @NFloat
-    public native double lowerLimit();
-
     /**
      * rangeWithConstantValue:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/clm/SKRange/rangeWithConstantValue:">iOS Dev Center</a>
@@ -144,31 +109,6 @@ public class SKRange extends NSObject implements NSCoding, NSCopying {
     @Generated
     @Selector("rangeWithValue:variance:")
     public static native SKRange rangeWithValueVariance(@NFloat double value, @NFloat double variance);
-
-    /**
-     * lowerLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/instp/SKRange/lowerLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLowerLimit:")
-    public native void setLowerLimit(@NFloat double value);
-
-    /**
-     * upperLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/instp/SKRange/upperLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUpperLimit:")
-    public native void setUpperLimit(@NFloat double value);
-
-    /**
-     * upperLimit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/instp/SKRange/upperLimit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("upperLimit")
-    @NFloat
-    public native double upperLimit();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -269,4 +209,64 @@ public class SKRange extends NSObject implements NSCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SKRange init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKRange initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithLowerLimit:upperLimit:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/instm/SKRange/initWithLowerLimit:upperLimit:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithLowerLimit:upperLimit:")
+    public native SKRange initWithLowerLimitUpperLimit(@NFloat double lower, @NFloat double upper);
+
+    /**
+     * lowerLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/instp/SKRange/lowerLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lowerLimit")
+    @NFloat
+    public native double lowerLimit();
+
+    /**
+     * lowerLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/instp/SKRange/lowerLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLowerLimit:")
+    public native void setLowerLimit(@NFloat double value);
+
+    /**
+     * upperLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/instp/SKRange/upperLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUpperLimit:")
+    public native void setUpperLimit(@NFloat double value);
+
+    /**
+     * upperLimit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKRange_Ref/index.html#//apple_ref/occ/instp/SKRange/upperLimit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("upperLimit")
+    @NFloat
+    public native double upperLimit();
 }

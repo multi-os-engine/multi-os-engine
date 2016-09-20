@@ -62,107 +62,10 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
         super(peer);
     }
 
-    /**
-     * activityIndicatorViewStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/activityIndicatorViewStyle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("activityIndicatorViewStyle")
-    @NInt
-    public native long activityIndicatorViewStyle();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIActivityIndicatorView alloc();
-
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/color">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("color")
-    public native UIColor color();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * hidesWhenStopped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/hidesWhenStopped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hidesWhenStopped")
-    public native boolean hidesWhenStopped();
-
-    @Generated
-    @Selector("init")
-    public native UIActivityIndicatorView init();
-
-    /**
-     * initWithActivityIndicatorStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/initWithActivityIndicatorStyle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithActivityIndicatorStyle:")
-    public native UIActivityIndicatorView initWithActivityIndicatorStyle(@NInt long style);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIActivityIndicatorView initWithCoder(NSCoder coder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native UIActivityIndicatorView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * isAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/isAnimating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isAnimating")
-    public native boolean isAnimating();
-
-    /**
-     * activityIndicatorViewStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/activityIndicatorViewStyle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setActivityIndicatorViewStyle:")
-    public native void setActivityIndicatorViewStyle(@NInt long value);
-
-    /**
-     * color</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/color">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setColor:")
-    public native void setColor(UIColor value);
-
-    /**
-     * hidesWhenStopped</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/hidesWhenStopped">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setHidesWhenStopped:")
-    public native void setHidesWhenStopped(boolean value);
-
-    /**
-     * startAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/startAnimating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startAnimating")
-    public native void startAnimating();
-
-    /**
-     * stopAnimating</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/stopAnimating">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopAnimating")
-    public native void stopAnimating();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -217,23 +120,9 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -244,27 +133,10 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -275,24 +147,9 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -490,4 +347,147 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * activityIndicatorViewStyle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/activityIndicatorViewStyle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("activityIndicatorViewStyle")
+    @NInt
+    public native long activityIndicatorViewStyle();
+
+    /**
+     * color</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/color">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("color")
+    public native UIColor color();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * hidesWhenStopped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/hidesWhenStopped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hidesWhenStopped")
+    public native boolean hidesWhenStopped();
+
+    @Generated
+    @Selector("init")
+    public native UIActivityIndicatorView init();
+
+    /**
+     * initWithActivityIndicatorStyle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/initWithActivityIndicatorStyle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithActivityIndicatorStyle:")
+    public native UIActivityIndicatorView initWithActivityIndicatorStyle(@NInt long style);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIActivityIndicatorView initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native UIActivityIndicatorView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * isAnimating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/isAnimating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isAnimating")
+    public native boolean isAnimating();
+
+    /**
+     * activityIndicatorViewStyle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/activityIndicatorViewStyle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setActivityIndicatorViewStyle:")
+    public native void setActivityIndicatorViewStyle(@NInt long value);
+
+    /**
+     * color</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/color">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setColor:")
+    public native void setColor(UIColor value);
+
+    /**
+     * hidesWhenStopped</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instp/UIActivityIndicatorView/hidesWhenStopped">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setHidesWhenStopped:")
+    public native void setHidesWhenStopped(boolean value);
+
+    /**
+     * startAnimating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/startAnimating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startAnimating")
+    public native void startAnimating();
+
+    /**
+     * stopAnimating</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIActivityIndicatorView_Class/index.html#//apple_ref/occ/instm/UIActivityIndicatorView/stopAnimating">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopAnimating")
+    public native void stopAnimating();
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

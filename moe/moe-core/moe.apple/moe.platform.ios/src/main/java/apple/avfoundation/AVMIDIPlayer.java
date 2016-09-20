@@ -63,106 +63,6 @@ public class AVMIDIPlayer extends NSObject {
     @Selector("alloc")
     public static native AVMIDIPlayer alloc();
 
-    /**
-     * currentPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/currentPosition">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentPosition")
-    public native double currentPosition();
-
-    /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/duration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("duration")
-    public native double duration();
-
-    @Generated
-    @Selector("init")
-    public native AVMIDIPlayer init();
-
-    /**
-     * initWithContentsOfURL:soundBankURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instm/AVMIDIPlayer/initWithContentsOfURL:soundBankURL:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithContentsOfURL:soundBankURL:error:")
-    public native AVMIDIPlayer initWithContentsOfURLSoundBankURLError(NSURL inURL, NSURL bankURL,
-            Ptr<NSError> outError);
-
-    /**
-     * initWithData:soundBankURL:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instm/AVMIDIPlayer/initWithData:soundBankURL:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithData:soundBankURL:error:")
-    public native AVMIDIPlayer initWithDataSoundBankURLError(NSData data, NSURL bankURL, Ptr<NSError> outError);
-
-    /**
-     * playing</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/playing">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPlaying")
-    public native boolean isPlaying();
-
-    /**
-     * play:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instm/AVMIDIPlayer/play:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("play:")
-    public native void play(@ObjCBlock(name = "call_play") Block_play completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_play {
-        @Generated
-        void call_play();
-    }
-
-    /**
-     * prepareToPlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instm/AVMIDIPlayer/prepareToPlay">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("prepareToPlay")
-    public native void prepareToPlay();
-
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/rate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rate")
-    public native float rate();
-
-    /**
-     * currentPosition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/currentPosition">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCurrentPosition:")
-    public native void setCurrentPosition(double value);
-
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/rate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRate:")
-    public native void setRate(float value);
-
-    /**
-     * stop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instm/AVMIDIPlayer/stop">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stop")
-    public native void stop();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -262,4 +162,104 @@ public class AVMIDIPlayer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * currentPosition</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/currentPosition">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentPosition")
+    public native double currentPosition();
+
+    /**
+     * duration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/duration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("duration")
+    public native double duration();
+
+    @Generated
+    @Selector("init")
+    public native AVMIDIPlayer init();
+
+    /**
+     * initWithContentsOfURL:soundBankURL:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instm/AVMIDIPlayer/initWithContentsOfURL:soundBankURL:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithContentsOfURL:soundBankURL:error:")
+    public native AVMIDIPlayer initWithContentsOfURLSoundBankURLError(NSURL inURL, NSURL bankURL,
+            Ptr<NSError> outError);
+
+    /**
+     * initWithData:soundBankURL:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instm/AVMIDIPlayer/initWithData:soundBankURL:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithData:soundBankURL:error:")
+    public native AVMIDIPlayer initWithDataSoundBankURLError(NSData data, NSURL bankURL, Ptr<NSError> outError);
+
+    /**
+     * playing</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/playing">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPlaying")
+    public native boolean isPlaying();
+
+    /**
+     * play:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instm/AVMIDIPlayer/play:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("play:")
+    public native void play(@ObjCBlock(name = "call_play") Block_play completionHandler);
+
+    /**
+     * prepareToPlay</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instm/AVMIDIPlayer/prepareToPlay">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("prepareToPlay")
+    public native void prepareToPlay();
+
+    /**
+     * rate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/rate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rate")
+    public native float rate();
+
+    /**
+     * currentPosition</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/currentPosition">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCurrentPosition:")
+    public native void setCurrentPosition(double value);
+
+    /**
+     * rate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instp/AVMIDIPlayer/rate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRate:")
+    public native void setRate(float value);
+
+    /**
+     * stop</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMIDIPlayer_Class/index.html#//apple_ref/occ/instm/AVMIDIPlayer/stop">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stop")
+    public native void stop();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_play {
+        @Generated
+        void call_play();
+    }
 }

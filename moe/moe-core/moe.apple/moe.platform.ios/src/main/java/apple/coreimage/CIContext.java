@@ -97,88 +97,6 @@ public class CIContext extends NSObject {
     public static native CIContext contextWithOptions(NSDictionary<String, ?> options);
 
     /**
-     * createCGImage:fromRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/createCGImage:fromRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("createCGImage:fromRect:")
-    public native CGImageRef createCGImageFromRect(CIImage image, @ByValue CGRect fromRect);
-
-    /**
-     * createCGImage:fromRect:format:colorSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/createCGImage:fromRect:format:colorSpace:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("createCGImage:fromRect:format:colorSpace:")
-    public native CGImageRef createCGImageFromRectFormatColorSpace(CIImage image, @ByValue CGRect fromRect, int format,
-            CGColorSpaceRef colorSpace);
-
-    /**
-     * drawImage:atPoint:fromRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/drawImage:atPoint:fromRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("drawImage:atPoint:fromRect:")
-    public native void drawImageAtPointFromRect(CIImage image, @ByValue CGPoint atPoint, @ByValue CGRect fromRect);
-
-    /**
-     * drawImage:inRect:fromRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/drawImage:inRect:fromRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("drawImage:inRect:fromRect:")
-    public native void drawImageInRectFromRect(CIImage image, @ByValue CGRect inRect, @ByValue CGRect fromRect);
-
-    @Generated
-    @Selector("init")
-    public native CIContext init();
-
-    /**
-     * inputImageMaximumSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/inputImageMaximumSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("inputImageMaximumSize")
-    @ByValue
-    public native CGSize inputImageMaximumSize();
-
-    /**
-     * outputImageMaximumSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/outputImageMaximumSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("outputImageMaximumSize")
-    @ByValue
-    public native CGSize outputImageMaximumSize();
-
-    /**
-     * render:toBitmap:rowBytes:bounds:format:colorSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/render:toBitmap:rowBytes:bounds:format:colorSpace:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("render:toBitmap:rowBytes:bounds:format:colorSpace:")
-    public native void renderToBitmapRowBytesBoundsFormatColorSpace(CIImage image, VoidPtr data, @NInt long rowBytes,
-            @ByValue CGRect bounds, int format, CGColorSpaceRef colorSpace);
-
-    /**
-     * render:toCVPixelBuffer:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/render:toCVPixelBuffer:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("render:toCVPixelBuffer:")
-    public native void renderToCVPixelBuffer(CIImage image, CVBufferRef buffer);
-
-    /**
-     * render:toCVPixelBuffer:bounds:colorSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/render:toCVPixelBuffer:bounds:colorSpace:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("render:toCVPixelBuffer:bounds:colorSpace:")
-    public native void renderToCVPixelBufferBoundsColorSpace(CIImage image, CVBufferRef buffer, @ByValue CGRect bounds,
-            CGColorSpaceRef colorSpace);
-
-    /**
      * contextWithCGContext:options:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/clm/CIContext/contextWithCGContext:options:">iOS Dev Center</a>
      */
@@ -202,25 +120,6 @@ public class CIContext extends NSObject {
     @Selector("contextWithMTLDevice:options:")
     public static native CIContext contextWithMTLDeviceOptions(@Mapped(ObjCObjectMapper.class) MTLDevice device,
             NSDictionary<String, ?> options);
-
-    /**
-     * render:toMTLTexture:commandBuffer:bounds:colorSpace:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/render:toMTLTexture:commandBuffer:bounds:colorSpace:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("render:toMTLTexture:commandBuffer:bounds:colorSpace:")
-    public native void renderToMTLTextureCommandBufferBoundsColorSpace(CIImage image,
-            @Mapped(ObjCObjectMapper.class) MTLTexture texture,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @ByValue CGRect bounds,
-            CGColorSpaceRef colorSpace);
-
-    /**
-     * workingColorSpace</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instp/CIContext/workingColorSpace">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("workingColorSpace")
-    public native CGColorSpaceRef workingColorSpace();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -321,4 +220,105 @@ public class CIContext extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * createCGImage:fromRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/createCGImage:fromRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("createCGImage:fromRect:")
+    public native CGImageRef createCGImageFromRect(CIImage image, @ByValue CGRect fromRect);
+
+    /**
+     * createCGImage:fromRect:format:colorSpace:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/createCGImage:fromRect:format:colorSpace:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("createCGImage:fromRect:format:colorSpace:")
+    public native CGImageRef createCGImageFromRectFormatColorSpace(CIImage image, @ByValue CGRect fromRect, int format,
+            CGColorSpaceRef colorSpace);
+
+    /**
+     * drawImage:atPoint:fromRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/drawImage:atPoint:fromRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("drawImage:atPoint:fromRect:")
+    public native void drawImageAtPointFromRect(CIImage image, @ByValue CGPoint atPoint, @ByValue CGRect fromRect);
+
+    /**
+     * drawImage:inRect:fromRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/drawImage:inRect:fromRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("drawImage:inRect:fromRect:")
+    public native void drawImageInRectFromRect(CIImage image, @ByValue CGRect inRect, @ByValue CGRect fromRect);
+
+    @Generated
+    @Selector("init")
+    public native CIContext init();
+
+    /**
+     * inputImageMaximumSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/inputImageMaximumSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("inputImageMaximumSize")
+    @ByValue
+    public native CGSize inputImageMaximumSize();
+
+    /**
+     * outputImageMaximumSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/outputImageMaximumSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("outputImageMaximumSize")
+    @ByValue
+    public native CGSize outputImageMaximumSize();
+
+    /**
+     * render:toBitmap:rowBytes:bounds:format:colorSpace:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/render:toBitmap:rowBytes:bounds:format:colorSpace:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("render:toBitmap:rowBytes:bounds:format:colorSpace:")
+    public native void renderToBitmapRowBytesBoundsFormatColorSpace(CIImage image, VoidPtr data, @NInt long rowBytes,
+            @ByValue CGRect bounds, int format, CGColorSpaceRef colorSpace);
+
+    /**
+     * render:toCVPixelBuffer:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/render:toCVPixelBuffer:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("render:toCVPixelBuffer:")
+    public native void renderToCVPixelBuffer(CIImage image, CVBufferRef buffer);
+
+    /**
+     * render:toCVPixelBuffer:bounds:colorSpace:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/render:toCVPixelBuffer:bounds:colorSpace:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("render:toCVPixelBuffer:bounds:colorSpace:")
+    public native void renderToCVPixelBufferBoundsColorSpace(CIImage image, CVBufferRef buffer, @ByValue CGRect bounds,
+            CGColorSpaceRef colorSpace);
+
+    /**
+     * render:toMTLTexture:commandBuffer:bounds:colorSpace:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instm/CIContext/render:toMTLTexture:commandBuffer:bounds:colorSpace:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("render:toMTLTexture:commandBuffer:bounds:colorSpace:")
+    public native void renderToMTLTextureCommandBufferBoundsColorSpace(CIImage image,
+            @Mapped(ObjCObjectMapper.class) MTLTexture texture,
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @ByValue CGRect bounds,
+            CGColorSpaceRef colorSpace);
+
+    /**
+     * workingColorSpace</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/index.html#//apple_ref/occ/instp/CIContext/workingColorSpace">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("workingColorSpace")
+    public native CGColorSpaceRef workingColorSpace();
 }

@@ -67,35 +67,6 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
     public static native AVAssetReaderOutputMetadataAdaptor assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput(
             AVAssetReaderTrackOutput trackOutput);
 
-    /**
-     * assetReaderTrackOutput</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutputMetadataAdaptor_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutputMetadataAdaptor/assetReaderTrackOutput">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("assetReaderTrackOutput")
-    public native AVAssetReaderTrackOutput assetReaderTrackOutput();
-
-    @Generated
-    @Selector("init")
-    public native AVAssetReaderOutputMetadataAdaptor init();
-
-    /**
-     * initWithAssetReaderTrackOutput:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutputMetadataAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutputMetadataAdaptor/initWithAssetReaderTrackOutput:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAssetReaderTrackOutput:")
-    public native AVAssetReaderOutputMetadataAdaptor initWithAssetReaderTrackOutput(
-            AVAssetReaderTrackOutput trackOutput);
-
-    /**
-     * nextTimedMetadataGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutputMetadataAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutputMetadataAdaptor/nextTimedMetadataGroup">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("nextTimedMetadataGroup")
-    public native AVTimedMetadataGroup nextTimedMetadataGroup();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -195,4 +166,33 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * assetReaderTrackOutput</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutputMetadataAdaptor_Class/index.html#//apple_ref/occ/instp/AVAssetReaderOutputMetadataAdaptor/assetReaderTrackOutput">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("assetReaderTrackOutput")
+    public native AVAssetReaderTrackOutput assetReaderTrackOutput();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetReaderOutputMetadataAdaptor init();
+
+    /**
+     * initWithAssetReaderTrackOutput:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutputMetadataAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutputMetadataAdaptor/initWithAssetReaderTrackOutput:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAssetReaderTrackOutput:")
+    public native AVAssetReaderOutputMetadataAdaptor initWithAssetReaderTrackOutput(
+            AVAssetReaderTrackOutput trackOutput);
+
+    /**
+     * nextTimedMetadataGroup</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetReaderOutputMetadataAdaptor_Class/index.html#//apple_ref/occ/instm/AVAssetReaderOutputMetadataAdaptor/nextTimedMetadataGroup">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("nextTimedMetadataGroup")
+    public native AVTimedMetadataGroup nextTimedMetadataGroup();
 }

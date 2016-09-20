@@ -51,36 +51,10 @@ public class NSHTTPURLResponse extends NSURLResponse {
         super(peer);
     }
 
-    /**
-     * allHeaderFields</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPURLResponse_Class/index.html#//apple_ref/occ/instp/NSHTTPURLResponse/allHeaderFields">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allHeaderFields")
-    public native NSDictionary<?, ?> allHeaderFields();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSHTTPURLResponse alloc();
-
-    @Generated
-    @Selector("init")
-    public native NSHTTPURLResponse init();
-
-    @Generated
-    @Selector("initWithURL:MIMEType:expectedContentLength:textEncodingName:")
-    public native NSHTTPURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(NSURL URL, String MIMEType,
-            @NInt long length, String name);
-
-    /**
-     * initWithURL:statusCode:HTTPVersion:headerFields:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPURLResponse_Class/index.html#//apple_ref/occ/instm/NSHTTPURLResponse/initWithURL:statusCode:HTTPVersion:headerFields:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:statusCode:HTTPVersion:headerFields:")
-    public native NSHTTPURLResponse initWithURLStatusCodeHTTPVersionHeaderFields(NSURL url, @NInt long statusCode,
-            String HTTPVersion, NSDictionary<String, String> headerFields);
 
     /**
      * localizedStringForStatusCode:</br>
@@ -89,19 +63,6 @@ public class NSHTTPURLResponse extends NSURLResponse {
     @Generated
     @Selector("localizedStringForStatusCode:")
     public static native String localizedStringForStatusCode(@NInt long statusCode);
-
-    /**
-     * statusCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPURLResponse_Class/index.html#//apple_ref/occ/instp/NSHTTPURLResponse/statusCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("statusCode")
-    @NInt
-    public native long statusCode();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSHTTPURLResponse initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -203,13 +164,52 @@ public class NSHTTPURLResponse extends NSURLResponse {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * allHeaderFields</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPURLResponse_Class/index.html#//apple_ref/occ/instp/NSHTTPURLResponse/allHeaderFields">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allHeaderFields")
+    public native NSDictionary<?, ?> allHeaderFields();
+
+    @Generated
+    @Selector("init")
+    public native NSHTTPURLResponse init();
+
+    @Generated
+    @Selector("initWithURL:MIMEType:expectedContentLength:textEncodingName:")
+    public native NSHTTPURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(NSURL URL, String MIMEType,
+            @NInt long length, String name);
+
+    /**
+     * initWithURL:statusCode:HTTPVersion:headerFields:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPURLResponse_Class/index.html#//apple_ref/occ/instm/NSHTTPURLResponse/initWithURL:statusCode:HTTPVersion:headerFields:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:statusCode:HTTPVersion:headerFields:")
+    public native NSHTTPURLResponse initWithURLStatusCodeHTTPVersionHeaderFields(NSURL url, @NInt long statusCode,
+            String HTTPVersion, NSDictionary<String, String> headerFields);
+
+    /**
+     * statusCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPURLResponse_Class/index.html#//apple_ref/occ/instp/NSHTTPURLResponse/statusCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("statusCode")
+    @NInt
+    public native long statusCode();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSHTTPURLResponse initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

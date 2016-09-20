@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CBAttributePermissions {
-    @Generated
-    private CBAttributePermissions() {
-    }
-
     @Generated @NUInt public static final long Readable = 0x0000000000000001L;
     @Generated @NUInt public static final long Writeable = 0x0000000000000002L;
     @Generated @NUInt public static final long ReadEncryptionRequired = 0x0000000000000004L;
     @Generated @NUInt public static final long WriteEncryptionRequired = 0x0000000000000008L;
+
+    @Generated
+    private CBAttributePermissions() {
+    }
 }

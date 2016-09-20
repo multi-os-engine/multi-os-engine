@@ -54,70 +54,10 @@ public class NKLibrary extends NSObject {
         super(peer);
     }
 
-    /**
-     * addIssueWithName:date:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instm/NKLibrary/addIssueWithName:date:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addIssueWithName:date:")
-    public native NKIssue addIssueWithNameDate(String name, NSDate date);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NKLibrary alloc();
-
-    /**
-     * currentlyReadingIssue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instp/NKLibrary/currentlyReadingIssue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentlyReadingIssue")
-    public native NKIssue currentlyReadingIssue();
-
-    /**
-     * downloadingAssets</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instp/NKLibrary/downloadingAssets">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("downloadingAssets")
-    public native NSArray<? extends NKAssetDownload> downloadingAssets();
-
-    @Generated
-    @Selector("init")
-    public native NKLibrary init();
-
-    /**
-     * issueWithName:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instm/NKLibrary/issueWithName:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("issueWithName:")
-    public native NKIssue issueWithName(String name);
-
-    /**
-     * issues</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instp/NKLibrary/issues">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("issues")
-    public native NSArray<? extends NKIssue> issues();
-
-    /**
-     * removeIssue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instm/NKLibrary/removeIssue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeIssue:")
-    public native void removeIssue(NKIssue issue);
-
-    /**
-     * currentlyReadingIssue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instp/NKLibrary/currentlyReadingIssue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCurrentlyReadingIssue:")
-    public native void setCurrentlyReadingIssue(NKIssue value);
 
     /**
      * sharedLibrary</br>
@@ -226,4 +166,64 @@ public class NKLibrary extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addIssueWithName:date:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instm/NKLibrary/addIssueWithName:date:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addIssueWithName:date:")
+    public native NKIssue addIssueWithNameDate(String name, NSDate date);
+
+    /**
+     * currentlyReadingIssue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instp/NKLibrary/currentlyReadingIssue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentlyReadingIssue")
+    public native NKIssue currentlyReadingIssue();
+
+    /**
+     * downloadingAssets</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instp/NKLibrary/downloadingAssets">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("downloadingAssets")
+    public native NSArray<? extends NKAssetDownload> downloadingAssets();
+
+    @Generated
+    @Selector("init")
+    public native NKLibrary init();
+
+    /**
+     * issueWithName:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instm/NKLibrary/issueWithName:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("issueWithName:")
+    public native NKIssue issueWithName(String name);
+
+    /**
+     * issues</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instp/NKLibrary/issues">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("issues")
+    public native NSArray<? extends NKIssue> issues();
+
+    /**
+     * removeIssue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instm/NKLibrary/removeIssue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeIssue:")
+    public native void removeIssue(NKIssue issue);
+
+    /**
+     * currentlyReadingIssue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/NKLibrary_Class/index.html#//apple_ref/occ/instp/NKLibrary/currentlyReadingIssue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCurrentlyReadingIssue:")
+    public native void setCurrentlyReadingIssue(NKIssue value);
 }

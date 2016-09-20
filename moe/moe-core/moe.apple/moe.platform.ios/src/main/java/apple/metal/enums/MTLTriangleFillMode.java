@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLTriangleFillMode {
+    @Generated @NUInt public static final long Fill = 0x0000000000000000L;
+    @Generated @NUInt public static final long Lines = 0x0000000000000001L;
+
     @Generated
     private MTLTriangleFillMode() {
     }
-
-    @Generated @NUInt public static final long Fill = 0x0000000000000000L;
-    @Generated @NUInt public static final long Lines = 0x0000000000000001L;
 }

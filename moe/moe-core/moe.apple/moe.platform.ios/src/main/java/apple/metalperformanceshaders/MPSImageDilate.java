@@ -61,42 +61,6 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
     public static native MPSImageDilate alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSImageDilate init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageDilate initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * initWithDevice:kernelWidth:kernelHeight:values:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageDilate_ClassReference/index.html#//apple_ref/occ/instm/MPSImageDilate/initWithDevice:kernelWidth:kernelHeight:values:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDevice:kernelWidth:kernelHeight:values:")
-    public native MPSImageDilate initWithDeviceKernelWidthKernelHeightValues(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            ConstFloatPtr values);
-
-    /**
-     * kernelHeight</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageDilate_ClassReference/index.html#//apple_ref/occ/instp/MPSImageDilate/kernelHeight">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("kernelHeight")
-    @NUInt
-    public native long kernelHeight();
-
-    /**
-     * kernelWidth</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageDilate_ClassReference/index.html#//apple_ref/occ/instp/MPSImageDilate/kernelWidth">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("kernelWidth")
-    @NUInt
-    public native long kernelWidth();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -195,4 +159,40 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageDilate init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageDilate initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * initWithDevice:kernelWidth:kernelHeight:values:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageDilate_ClassReference/index.html#//apple_ref/occ/instm/MPSImageDilate/initWithDevice:kernelWidth:kernelHeight:values:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDevice:kernelWidth:kernelHeight:values:")
+    public native MPSImageDilate initWithDeviceKernelWidthKernelHeightValues(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
+            ConstFloatPtr values);
+
+    /**
+     * kernelHeight</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageDilate_ClassReference/index.html#//apple_ref/occ/instp/MPSImageDilate/kernelHeight">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("kernelHeight")
+    @NUInt
+    public native long kernelHeight();
+
+    /**
+     * kernelWidth</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageDilate_ClassReference/index.html#//apple_ref/occ/instp/MPSImageDilate/kernelWidth">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("kernelWidth")
+    @NUInt
+    public native long kernelWidth();
 }

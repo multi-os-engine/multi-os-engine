@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GKSessionError {
-    @Generated
-    private GKSessionError() {
-    }
-
     @Generated public static final int InvalidParameterError = 0x00007724;
     @Generated public static final int PeerNotFoundError = 0x00007725;
     @Generated public static final int DeclinedError = 0x00007726;
@@ -40,4 +36,8 @@ public final class GKSessionError {
     @Generated public static final int InternalError = 0x000075FB;
     @Generated public static final int UnknownError = 0x000075FC;
     @Generated public static final int SystemError = 0x000075FD;
+
+    @Generated
+    private GKSessionError() {
+    }
 }

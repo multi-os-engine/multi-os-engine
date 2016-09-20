@@ -59,52 +59,6 @@ public class GKInvite extends NSObject {
     public static native GKInvite alloc();
 
     @Generated
-    @Selector("init")
-    public native GKInvite init();
-
-    /**
-     * inviter</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInvite_Ref/index.html#//apple_ref/occ/instp/GKInvite/inviter">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("inviter")
-    public native String inviter();
-
-    /**
-     * hosted</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInvite_Ref/index.html#//apple_ref/occ/instp/GKInvite/hosted">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isHosted")
-    public native boolean isHosted();
-
-    /**
-     * playerAttributes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInvite_Ref/index.html#//apple_ref/occ/instp/GKInvite/playerAttributes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("playerAttributes")
-    public native int playerAttributes();
-
-    /**
-     * playerGroup</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInvite_Ref/index.html#//apple_ref/occ/instp/GKInvite/playerGroup">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("playerGroup")
-    @NUInt
-    public native long playerGroup();
-
-    /**
-     * sender</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInvite_Ref/index.html#//apple_ref/occ/instp/GKInvite/sender">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sender")
-    public native GKPlayer sender();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -203,4 +157,50 @@ public class GKInvite extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GKInvite init();
+
+    /**
+     * inviter</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInvite_Ref/index.html#//apple_ref/occ/instp/GKInvite/inviter">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("inviter")
+    public native String inviter();
+
+    /**
+     * hosted</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInvite_Ref/index.html#//apple_ref/occ/instp/GKInvite/hosted">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isHosted")
+    public native boolean isHosted();
+
+    /**
+     * playerAttributes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInvite_Ref/index.html#//apple_ref/occ/instp/GKInvite/playerAttributes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("playerAttributes")
+    public native int playerAttributes();
+
+    /**
+     * playerGroup</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInvite_Ref/index.html#//apple_ref/occ/instp/GKInvite/playerGroup">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("playerGroup")
+    @NUInt
+    public native long playerGroup();
+
+    /**
+     * sender</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKInvite_Ref/index.html#//apple_ref/occ/instp/GKInvite/sender">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sender")
+    public native GKPlayer sender();
 }

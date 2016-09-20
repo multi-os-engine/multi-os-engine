@@ -27,6 +27,9 @@ import org.moe.natj.general.ann.Runtime;
 @Library("GameplayKit")
 @Runtime(CRuntime.class)
 public final class GameplayKit {
+    @Generated @NInt public static final long GKGameModelMaxScore = 0x0000000001000000L;
+    @Generated @NInt public static final long GKGameModelMinScore = 0xFFFFFFFFFF000000L;
+
     static {
         NatJ.register();
     }
@@ -34,7 +37,4 @@ public final class GameplayKit {
     @Generated
     private GameplayKit() {
     }
-
-    @Generated @NInt public static final long GKGameModelMaxScore = 0x0000000001000000L;
-    @Generated @NInt public static final long GKGameModelMinScore = 0xFFFFFFFFFF000000L;
 }

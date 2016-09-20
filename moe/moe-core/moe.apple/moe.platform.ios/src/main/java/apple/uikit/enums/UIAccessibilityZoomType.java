@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIAccessibilityZoomType {
+    @Generated @NInt public static final long UIAccessibilityZoomTypeInsertionPoint = 0x0000000000000000L;
+
     @Generated
     private UIAccessibilityZoomType() {
     }
-
-    @Generated @NInt public static final long UIAccessibilityZoomTypeInsertionPoint = 0x0000000000000000L;
 }

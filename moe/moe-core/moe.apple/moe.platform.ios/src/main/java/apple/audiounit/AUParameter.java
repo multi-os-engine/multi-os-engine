@@ -58,144 +58,14 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
         super(peer);
     }
 
-    /**
-     * address</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/address">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("address")
-    public native long address();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native AUParameter alloc();
 
-    /**
-     * dependentParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/dependentParameters">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dependentParameters")
-    public native NSArray<? extends NSNumber> dependentParameters();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * flags</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/flags">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("flags")
-    public native int flags();
-
-    @Generated
-    @Selector("init")
-    public native AUParameter init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AUParameter initWithCoder(NSCoder aDecoder);
-
-    /**
-     * maxValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/maxValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maxValue")
-    public native float maxValue();
-
-    /**
-     * minValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/minValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minValue")
-    public native float minValue();
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setValue:")
-    public native void setValue(float value);
-
-    /**
-     * setValue:originator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instm/AUParameter/setValue:originator:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setValue:originator:")
-    public native void setValueOriginator(float value, VoidPtr originator);
-
-    /**
-     * setValue:originator:atHostTime:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instm/AUParameter/setValue:originator:atHostTime:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setValue:originator:atHostTime:")
-    public native void setValueOriginatorAtHostTime(float value, VoidPtr originator, long hostTime);
-
-    /**
-     * stringFromValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instm/AUParameter/stringFromValue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringFromValue:")
-    public native String stringFromValue(ConstFloatPtr value);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * unit</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/unit">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unit")
-    public native int unit();
-
-    /**
-     * unitName</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/unitName">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unitName")
-    public native String unitName();
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    public native float value();
-
-    /**
-     * valueFromString:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instm/AUParameter/valueFromString:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueFromString:")
-    public native float valueFromString(String string);
-
-    /**
-     * valueStrings</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/valueStrings">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("valueStrings")
-    public native NSArray<String> valueStrings();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -296,4 +166,134 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * address</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/address">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("address")
+    public native long address();
+
+    /**
+     * dependentParameters</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/dependentParameters">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dependentParameters")
+    public native NSArray<? extends NSNumber> dependentParameters();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * flags</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/flags">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("flags")
+    public native int flags();
+
+    @Generated
+    @Selector("init")
+    public native AUParameter init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AUParameter initWithCoder(NSCoder aDecoder);
+
+    /**
+     * maxValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/maxValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maxValue")
+    public native float maxValue();
+
+    /**
+     * minValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/minValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minValue")
+    public native float minValue();
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setValue:")
+    public native void setValue(float value);
+
+    /**
+     * setValue:originator:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instm/AUParameter/setValue:originator:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setValue:originator:")
+    public native void setValueOriginator(float value, VoidPtr originator);
+
+    /**
+     * setValue:originator:atHostTime:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instm/AUParameter/setValue:originator:atHostTime:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setValue:originator:atHostTime:")
+    public native void setValueOriginatorAtHostTime(float value, VoidPtr originator, long hostTime);
+
+    /**
+     * stringFromValue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instm/AUParameter/stringFromValue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringFromValue:")
+    public native String stringFromValue(ConstFloatPtr value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * unit</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/unit">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unit")
+    public native int unit();
+
+    /**
+     * unitName</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/unitName">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unitName")
+    public native String unitName();
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    public native float value();
+
+    /**
+     * valueFromString:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instm/AUParameter/valueFromString:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueFromString:")
+    public native float valueFromString(String string);
+
+    /**
+     * valueStrings</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AUParameter_ClassReference/index.html#//apple_ref/occ/instp/AUParameter/valueStrings">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("valueStrings")
+    public native NSArray<String> valueStrings();
 }

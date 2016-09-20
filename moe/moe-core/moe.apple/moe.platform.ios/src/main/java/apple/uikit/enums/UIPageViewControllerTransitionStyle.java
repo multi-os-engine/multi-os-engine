@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIPageViewControllerTransitionStyle {
+    @Generated @NInt public static final long PageCurl = 0x0000000000000000L;
+    @Generated @NInt public static final long Scroll = 0x0000000000000001L;
+
     @Generated
     private UIPageViewControllerTransitionStyle() {
     }
-
-    @Generated @NInt public static final long PageCurl = 0x0000000000000000L;
-    @Generated @NInt public static final long Scroll = 0x0000000000000001L;
 }

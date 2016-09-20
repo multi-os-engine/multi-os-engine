@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AUSpatialMixerRenderingFlags {
+    @Generated public static final int InterAuralDelay = 0x00000001;
+    @Generated public static final int DistanceAttenuation = 0x00000004;
+
     @Generated
     private AUSpatialMixerRenderingFlags() {
     }
-
-    @Generated public static final int InterAuralDelay = 0x00000001;
-    @Generated public static final int DistanceAttenuation = 0x00000004;
 }

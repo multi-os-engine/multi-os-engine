@@ -58,52 +58,10 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
         super(peer);
     }
 
-    /**
-     * ISOCountryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/ISOCountryCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ISOCountryCode")
-    public native String ISOCountryCode();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native CNPostalAddress alloc();
-
-    /**
-     * city</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/city">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("city")
-    public native String city();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * country</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/country">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("country")
-    public native String country();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native CNPostalAddress init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNPostalAddress initWithCoder(NSCoder aDecoder);
 
     /**
      * localizedStringForKey:</br>
@@ -114,43 +72,8 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     public static native String localizedStringForKey(String key);
 
     @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    /**
-     * postalCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/postalCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("postalCode")
-    public native String postalCode();
-
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/state">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("state")
-    public native String state();
-
-    /**
-     * street</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/street">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("street")
-    public native String street();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -251,4 +174,81 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * ISOCountryCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/ISOCountryCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ISOCountryCode")
+    public native String ISOCountryCode();
+
+    /**
+     * city</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/city">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("city")
+    public native String city();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * country</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/country">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("country")
+    public native String country();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native CNPostalAddress init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNPostalAddress initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    /**
+     * postalCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/postalCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("postalCode")
+    public native String postalCode();
+
+    /**
+     * state</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/state">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("state")
+    public native String state();
+
+    /**
+     * street</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddress_Class/index.html#//apple_ref/occ/instp/CNPostalAddress/street">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("street")
+    public native String street();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

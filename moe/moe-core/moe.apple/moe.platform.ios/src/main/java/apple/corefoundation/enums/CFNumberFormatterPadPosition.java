@@ -21,12 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CFNumberFormatterPadPosition {
-    @Generated
-    private CFNumberFormatterPadPosition() {
-    }
-
     @Generated @NInt public static final long BeforePrefix = 0x0000000000000000L;
     @Generated @NInt public static final long AfterPrefix = 0x0000000000000001L;
     @Generated @NInt public static final long BeforeSuffix = 0x0000000000000002L;
     @Generated @NInt public static final long AfterSuffix = 0x0000000000000003L;
+    @Generated
+    private CFNumberFormatterPadPosition() {
+    }
 }

@@ -57,14 +57,6 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     }
 
     /**
-     * URL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/URL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URL")
-    public native NSURL URL();
-
-    /**
      * addressCheckingResultWithRange:components:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/clm/NSTextCheckingResult/addressCheckingResultWithRange:components:">iOS Dev Center</a>
      */
@@ -73,36 +65,10 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public static native NSTextCheckingResult addressCheckingResultWithRangeComponents(@ByValue NSRange range,
             NSDictionary<String, String> components);
 
-    /**
-     * addressComponents</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/addressComponents">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addressComponents")
-    public native NSDictionary<String, String> addressComponents();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSTextCheckingResult alloc();
-
-    @Generated
-    @Selector("alternativeStrings")
-    public native NSArray<String> alternativeStrings();
-
-    /**
-     * components</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/components">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("components")
-    public native NSDictionary<String, String> components();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
 
     /**
      * correctionCheckingResultWithRange:replacementString:</br>
@@ -128,14 +94,6 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
             String replacementString);
 
     /**
-     * date</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/date">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("date")
-    public native NSDate date();
-
-    /**
      * dateCheckingResultWithRange:date:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/clm/NSTextCheckingResult/dateCheckingResultWithRange:date:">iOS Dev Center</a>
      */
@@ -153,18 +111,6 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
             NSDate date, NSTimeZone timeZone, double duration);
 
     /**
-     * duration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/duration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("duration")
-    public native double duration();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
      * grammarCheckingResultWithRange:details:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/clm/NSTextCheckingResult/grammarCheckingResultWithRange:details:">iOS Dev Center</a>
      */
@@ -172,22 +118,6 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("grammarCheckingResultWithRange:details:")
     public static native NSTextCheckingResult grammarCheckingResultWithRangeDetails(@ByValue NSRange range,
             NSArray<String> details);
-
-    /**
-     * grammarDetails</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/grammarDetails">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("grammarDetails")
-    public native NSArray<String> grammarDetails();
-
-    @Generated
-    @Selector("init")
-    public native NSTextCheckingResult init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSTextCheckingResult initWithCoder(NSCoder aDecoder);
 
     /**
      * linkCheckingResultWithRange:URL:</br>
@@ -198,23 +128,6 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public static native NSTextCheckingResult linkCheckingResultWithRangeURL(@ByValue NSRange range, NSURL url);
 
     /**
-     * numberOfRanges</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/numberOfRanges">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("numberOfRanges")
-    @NUInt
-    public native long numberOfRanges();
-
-    /**
-     * orthography</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/orthography">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("orthography")
-    public native NSOrthography orthography();
-
-    /**
      * orthographyCheckingResultWithRange:orthography:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/clm/NSTextCheckingResult/orthographyCheckingResultWithRange:orthography:">iOS Dev Center</a>
      */
@@ -222,14 +135,6 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("orthographyCheckingResultWithRange:orthography:")
     public static native NSTextCheckingResult orthographyCheckingResultWithRangeOrthography(@ByValue NSRange range,
             NSOrthography orthography);
-
-    /**
-     * phoneNumber</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/phoneNumber">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("phoneNumber")
-    public native String phoneNumber();
 
     /**
      * phoneNumberCheckingResultWithRange:phoneNumber:</br>
@@ -250,32 +155,6 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
             String replacementString);
 
     /**
-     * range</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/range">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("range")
-    @ByValue
-    public native NSRange range();
-
-    /**
-     * rangeAtIndex:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instm/NSTextCheckingResult/rangeAtIndex:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rangeAtIndex:")
-    @ByValue
-    public native NSRange rangeAtIndex(@NUInt long idx);
-
-    /**
-     * regularExpression</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/regularExpression">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("regularExpression")
-    public native NSRegularExpression regularExpression();
-
-    /**
      * regularExpressionCheckingResultWithRanges:count:regularExpression:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/clm/NSTextCheckingResult/regularExpressionCheckingResultWithRanges:count:regularExpression:">iOS Dev Center</a>
      */
@@ -294,44 +173,12 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
             @ByValue NSRange range, String replacementString);
 
     /**
-     * replacementString</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/replacementString">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("replacementString")
-    public native String replacementString();
-
-    /**
-     * resultByAdjustingRangesWithOffset:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instm/NSTextCheckingResult/resultByAdjustingRangesWithOffset:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resultByAdjustingRangesWithOffset:")
-    public native NSTextCheckingResult resultByAdjustingRangesWithOffset(@NInt long offset);
-
-    /**
-     * resultType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/resultType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("resultType")
-    public native long resultType();
-
-    /**
      * spellCheckingResultWithRange:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/clm/NSTextCheckingResult/spellCheckingResultWithRange:">iOS Dev Center</a>
      */
     @Generated
     @Selector("spellCheckingResultWithRange:")
     public static native NSTextCheckingResult spellCheckingResultWithRange(@ByValue NSRange range);
-
-    /**
-     * timeZone</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/timeZone">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeZone")
-    public native NSTimeZone timeZone();
 
     /**
      * transitInformationCheckingResultWithRange:components:</br>
@@ -345,12 +192,6 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -451,4 +292,163 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/URL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URL")
+    public native NSURL URL();
+
+    /**
+     * addressComponents</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/addressComponents">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addressComponents")
+    public native NSDictionary<String, String> addressComponents();
+
+    @Generated
+    @Selector("alternativeStrings")
+    public native NSArray<String> alternativeStrings();
+
+    /**
+     * components</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/components">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("components")
+    public native NSDictionary<String, String> components();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * date</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/date">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("date")
+    public native NSDate date();
+
+    /**
+     * duration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/duration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("duration")
+    public native double duration();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * grammarDetails</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/grammarDetails">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("grammarDetails")
+    public native NSArray<String> grammarDetails();
+
+    @Generated
+    @Selector("init")
+    public native NSTextCheckingResult init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSTextCheckingResult initWithCoder(NSCoder aDecoder);
+
+    /**
+     * numberOfRanges</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/numberOfRanges">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("numberOfRanges")
+    @NUInt
+    public native long numberOfRanges();
+
+    /**
+     * orthography</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/orthography">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("orthography")
+    public native NSOrthography orthography();
+
+    /**
+     * phoneNumber</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/phoneNumber">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("phoneNumber")
+    public native String phoneNumber();
+
+    /**
+     * range</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/range">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("range")
+    @ByValue
+    public native NSRange range();
+
+    /**
+     * rangeAtIndex:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instm/NSTextCheckingResult/rangeAtIndex:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rangeAtIndex:")
+    @ByValue
+    public native NSRange rangeAtIndex(@NUInt long idx);
+
+    /**
+     * regularExpression</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/regularExpression">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("regularExpression")
+    public native NSRegularExpression regularExpression();
+
+    /**
+     * replacementString</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/replacementString">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("replacementString")
+    public native String replacementString();
+
+    /**
+     * resultByAdjustingRangesWithOffset:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instm/NSTextCheckingResult/resultByAdjustingRangesWithOffset:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resultByAdjustingRangesWithOffset:")
+    public native NSTextCheckingResult resultByAdjustingRangesWithOffset(@NInt long offset);
+
+    /**
+     * resultType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/resultType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("resultType")
+    public native long resultType();
+
+    /**
+     * timeZone</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSTextCheckingResult_Class/index.html#//apple_ref/occ/instp/NSTextCheckingResult/timeZone">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeZone")
+    public native NSTimeZone timeZone();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

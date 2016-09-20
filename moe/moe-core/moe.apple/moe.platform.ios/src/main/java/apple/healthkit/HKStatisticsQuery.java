@@ -65,28 +65,6 @@ public class HKStatisticsQuery extends HKQuery {
     public static native HKStatisticsQuery alloc();
 
     @Generated
-    @Selector("init")
-    public native HKStatisticsQuery init();
-
-    /**
-     * initWithQuantityType:quantitySamplePredicate:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsQuery_Class/index.html#//apple_ref/occ/instm/HKStatisticsQuery/initWithQuantityType:quantitySamplePredicate:options:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithQuantityType:quantitySamplePredicate:options:completionHandler:")
-    public native HKStatisticsQuery initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler(
-            HKQuantityType quantityType, NSPredicate quantitySamplePredicate, @NUInt long options,
-            @ObjCBlock(name = "call_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler") Block_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler {
-        @Generated
-        void call_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler(HKStatisticsQuery arg0,
-                HKStatistics arg1, NSError arg2);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -280,4 +258,26 @@ public class HKStatisticsQuery extends HKQuery {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native HKStatisticsQuery init();
+
+    /**
+     * initWithQuantityType:quantitySamplePredicate:options:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKStatisticsQuery_Class/index.html#//apple_ref/occ/instm/HKStatisticsQuery/initWithQuantityType:quantitySamplePredicate:options:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithQuantityType:quantitySamplePredicate:options:completionHandler:")
+    public native HKStatisticsQuery initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler(
+            HKQuantityType quantityType, NSPredicate quantitySamplePredicate, @NUInt long options,
+            @ObjCBlock(name = "call_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler") Block_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler {
+        @Generated
+        void call_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler(HKStatisticsQuery arg0,
+                HKStatistics arg1, NSError arg2);
+    }
 }

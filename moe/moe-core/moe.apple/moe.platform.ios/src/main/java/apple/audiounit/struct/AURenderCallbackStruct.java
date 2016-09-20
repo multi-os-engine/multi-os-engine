@@ -34,11 +34,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class AURenderCallbackStruct extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public AURenderCallbackStruct() {
@@ -62,15 +62,6 @@ public final class AURenderCallbackStruct extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setInputProc(@FunctionPtr(name = "call_inputProc") Function_inputProc value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_inputProc {
-        @Generated
-        int call_inputProc(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
-    }
-
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr inputProcRefCon();
@@ -83,4 +74,13 @@ public final class AURenderCallbackStruct extends StructObject {
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_inputProc")
     public native Function_inputProc inputProc();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_inputProc {
+        @Generated
+        int call_inputProc(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
+                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+    }
 }

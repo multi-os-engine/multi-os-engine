@@ -61,46 +61,6 @@ public class WKUserNotificationInterfaceController extends WKInterfaceController
     @Selector("alloc")
     public static native WKUserNotificationInterfaceController alloc();
 
-    /**
-     * didReceiveLocalNotification:withCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKUserNotificationInterfaceController_class/index.html#//apple_ref/occ/instm/WKUserNotificationInterfaceController/didReceiveLocalNotification:withCompletion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("didReceiveLocalNotification:withCompletion:")
-    public native void didReceiveLocalNotificationWithCompletion(UILocalNotification localNotification,
-            @ObjCBlock(name = "call_didReceiveLocalNotificationWithCompletion") Block_didReceiveLocalNotificationWithCompletion completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_didReceiveLocalNotificationWithCompletion {
-        @Generated
-        void call_didReceiveLocalNotificationWithCompletion(@NInt long arg0);
-    }
-
-    /**
-     * didReceiveRemoteNotification:withCompletion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKUserNotificationInterfaceController_class/index.html#//apple_ref/occ/instm/WKUserNotificationInterfaceController/didReceiveRemoteNotification:withCompletion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("didReceiveRemoteNotification:withCompletion:")
-    public native void didReceiveRemoteNotificationWithCompletion(NSDictionary<?, ?> remoteNotification,
-            @ObjCBlock(name = "call_didReceiveRemoteNotificationWithCompletion") Block_didReceiveRemoteNotificationWithCompletion completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_didReceiveRemoteNotificationWithCompletion {
-        @Generated
-        void call_didReceiveRemoteNotificationWithCompletion(@NInt long arg0);
-    }
-
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKUserNotificationInterfaceController_class/index.html#//apple_ref/occ/instm/WKUserNotificationInterfaceController/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native WKUserNotificationInterfaceController init();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -209,4 +169,44 @@ public class WKUserNotificationInterfaceController extends WKInterfaceController
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * didReceiveLocalNotification:withCompletion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKUserNotificationInterfaceController_class/index.html#//apple_ref/occ/instm/WKUserNotificationInterfaceController/didReceiveLocalNotification:withCompletion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("didReceiveLocalNotification:withCompletion:")
+    public native void didReceiveLocalNotificationWithCompletion(UILocalNotification localNotification,
+            @ObjCBlock(name = "call_didReceiveLocalNotificationWithCompletion") Block_didReceiveLocalNotificationWithCompletion completionHandler);
+
+    /**
+     * didReceiveRemoteNotification:withCompletion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKUserNotificationInterfaceController_class/index.html#//apple_ref/occ/instm/WKUserNotificationInterfaceController/didReceiveRemoteNotification:withCompletion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("didReceiveRemoteNotification:withCompletion:")
+    public native void didReceiveRemoteNotificationWithCompletion(NSDictionary<?, ?> remoteNotification,
+            @ObjCBlock(name = "call_didReceiveRemoteNotificationWithCompletion") Block_didReceiveRemoteNotificationWithCompletion completionHandler);
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WatchKit/Reference/WKUserNotificationInterfaceController_class/index.html#//apple_ref/occ/instm/WKUserNotificationInterfaceController/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native WKUserNotificationInterfaceController init();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_didReceiveLocalNotificationWithCompletion {
+        @Generated
+        void call_didReceiveLocalNotificationWithCompletion(@NInt long arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_didReceiveRemoteNotificationWithCompletion {
+        @Generated
+        void call_didReceiveRemoteNotificationWithCompletion(@NInt long arg0);
+    }
 }

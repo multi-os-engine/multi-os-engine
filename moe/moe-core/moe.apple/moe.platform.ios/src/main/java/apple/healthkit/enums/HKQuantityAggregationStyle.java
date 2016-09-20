@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class HKQuantityAggregationStyle {
+    @Generated @NInt public static final long Cumulative = 0x0000000000000000L;
+    @Generated @NInt public static final long Discrete = 0x0000000000000001L;
+
     @Generated
     private HKQuantityAggregationStyle() {
     }
-
-    @Generated @NInt public static final long Cumulative = 0x0000000000000000L;
-    @Generated @NInt public static final long Discrete = 0x0000000000000001L;
 }

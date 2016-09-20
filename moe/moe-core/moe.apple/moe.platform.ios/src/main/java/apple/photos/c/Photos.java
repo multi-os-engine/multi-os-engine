@@ -31,6 +31,10 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Library("Photos")
 @Runtime(CRuntime.class)
 public final class Photos {
+    @Generated public static final int PHInvalidImageRequestID = 0x00000000;
+    @Generated public static final int PHInvalidAssetResourceDataRequestID = 0x00000000;
+    @Generated public static final int PHLivePhotoRequestIDInvalid = 0x00000000;
+
     static {
         NatJ.register();
     }
@@ -83,10 +87,6 @@ public final class Photos {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PHImageErrorKey();
-
-    @Generated public static final int PHInvalidImageRequestID = 0x00000000;
-    @Generated public static final int PHInvalidAssetResourceDataRequestID = 0x00000000;
-    @Generated public static final int PHLivePhotoRequestIDInvalid = 0x00000000;
 
     @Generated
     @CVariable()

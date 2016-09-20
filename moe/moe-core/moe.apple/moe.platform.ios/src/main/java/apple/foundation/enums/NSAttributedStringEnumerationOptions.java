@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSAttributedStringEnumerationOptions {
+    @Generated @NUInt public static final long Reverse = 0x0000000000000002L;
+    @Generated @NUInt public static final long LongestEffectiveRangeNotRequired = 0x0000000000100000L;
+
     @Generated
     private NSAttributedStringEnumerationOptions() {
     }
-
-    @Generated @NUInt public static final long Reverse = 0x0000000000000002L;
-    @Generated @NUInt public static final long LongestEffectiveRangeNotRequired = 0x0000000000100000L;
 }

@@ -69,15 +69,6 @@ public class NSLayoutConstraint extends NSObject {
     public static native NSLayoutConstraint alloc();
 
     /**
-     * constant</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/constant">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("constant")
-    @NFloat
-    public native double constant();
-
-    /**
      * constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/clm/NSLayoutConstraint/constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:">iOS Dev Center</a>
      */
@@ -104,136 +95,6 @@ public class NSLayoutConstraint extends NSObject {
     @Generated
     @Selector("deactivateConstraints:")
     public static native void deactivateConstraints(NSArray<? extends NSLayoutConstraint> constraints);
-
-    /**
-     * firstAttribute</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/firstAttribute">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("firstAttribute")
-    @NInt
-    public native long firstAttribute();
-
-    /**
-     * firstItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/firstItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("firstItem")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object firstItem();
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native NSLayoutConstraint init();
-
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/active">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isActive")
-    public native boolean isActive();
-
-    /**
-     * multiplier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/multiplier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("multiplier")
-    @NFloat
-    public native double multiplier();
-
-    /**
-     * priority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/priority">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("priority")
-    public native float priority();
-
-    /**
-     * relation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/relation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("relation")
-    @NInt
-    public native long relation();
-
-    /**
-     * secondAttribute</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/secondAttribute">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("secondAttribute")
-    @NInt
-    public native long secondAttribute();
-
-    /**
-     * secondItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/secondItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("secondItem")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object secondItem();
-
-    /**
-     * active</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/active">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setActive:")
-    public native void setActive(boolean value);
-
-    /**
-     * constant</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/constant">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setConstant:")
-    public native void setConstant(@NFloat double value);
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
-
-    /**
-     * priority</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/priority">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPriority:")
-    public native void setPriority(float value);
-
-    /**
-     * shouldBeArchived</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/shouldBeArchived">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShouldBeArchived:")
-    public native void setShouldBeArchived(boolean value);
-
-    /**
-     * shouldBeArchived</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/shouldBeArchived">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shouldBeArchived")
-    public native boolean shouldBeArchived();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -334,4 +195,143 @@ public class NSLayoutConstraint extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * constant</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/constant">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("constant")
+    @NFloat
+    public native double constant();
+
+    /**
+     * firstAttribute</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/firstAttribute">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("firstAttribute")
+    @NInt
+    public native long firstAttribute();
+
+    /**
+     * firstItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/firstItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("firstItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object firstItem();
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native NSLayoutConstraint init();
+
+    /**
+     * active</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/active">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isActive")
+    public native boolean isActive();
+
+    /**
+     * active</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/active">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setActive:")
+    public native void setActive(boolean value);
+
+    /**
+     * multiplier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/multiplier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("multiplier")
+    @NFloat
+    public native double multiplier();
+
+    /**
+     * priority</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/priority">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("priority")
+    public native float priority();
+
+    /**
+     * relation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/relation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("relation")
+    @NInt
+    public native long relation();
+
+    /**
+     * secondAttribute</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/secondAttribute">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("secondAttribute")
+    @NInt
+    public native long secondAttribute();
+
+    /**
+     * secondItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/secondItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("secondItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object secondItem();
+
+    /**
+     * constant</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/constant">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setConstant:")
+    public native void setConstant(@NFloat double value);
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIdentifier:")
+    public native void setIdentifier(String value);
+
+    /**
+     * priority</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/priority">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPriority:")
+    public native void setPriority(float value);
+
+    /**
+     * shouldBeArchived</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/shouldBeArchived">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShouldBeArchived:")
+    public native void setShouldBeArchived(boolean value);
+
+    /**
+     * shouldBeArchived</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AppKit/Reference/NSLayoutConstraint_Class/index.html#//apple_ref/occ/instp/NSLayoutConstraint/shouldBeArchived">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shouldBeArchived")
+    public native boolean shouldBeArchived();
 }

@@ -60,19 +60,6 @@ public class MPSImageAreaMin extends MPSImageAreaMax {
     public static native MPSImageAreaMin alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSImageAreaMin init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageAreaMin initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    @Generated
-    @Selector("initWithDevice:kernelWidth:kernelHeight:")
-    public native MPSImageAreaMin initWithDeviceKernelWidthKernelHeight(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -171,4 +158,17 @@ public class MPSImageAreaMin extends MPSImageAreaMax {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageAreaMin init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageAreaMin initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    @Generated
+    @Selector("initWithDevice:kernelWidth:kernelHeight:")
+    public native MPSImageAreaMin initWithDeviceKernelWidthKernelHeight(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 }

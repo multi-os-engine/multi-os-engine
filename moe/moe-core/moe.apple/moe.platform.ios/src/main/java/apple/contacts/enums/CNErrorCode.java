@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CNErrorCode {
-    @Generated
-    private CNErrorCode() {
-    }
-
     @Generated @NInt public static final long CommunicationError = 0x0000000000000001L;
     @Generated @NInt public static final long DataAccessError = 0x0000000000000002L;
     @Generated @NInt public static final long AuthorizationDenied = 0x0000000000000064L;
@@ -38,4 +34,8 @@ public final class CNErrorCode {
     @Generated @NInt public static final long ValidationConfigurationError = 0x000000000000012EL;
     @Generated @NInt public static final long PredicateInvalid = 0x0000000000000190L;
     @Generated @NInt public static final long PolicyViolation = 0x00000000000001F4L;
+
+    @Generated
+    private CNErrorCode() {
+    }
 }

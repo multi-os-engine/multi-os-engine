@@ -63,59 +63,6 @@ public class CISampler extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native CISampler alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * definition</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/instp/CISampler/definition">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("definition")
-    public native CIFilterShape definition();
-
-    /**
-     * extent</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/instp/CISampler/extent">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("extent")
-    @ByValue
-    public native CGRect extent();
-
-    @Generated
-    @Selector("init")
-    public native CISampler init();
-
-    /**
-     * initWithImage:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/instm/CISampler/initWithImage:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithImage:")
-    public native CISampler initWithImage(CIImage im);
-
-    /**
-     * initWithImage:keysAndValues:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/instm/CISampler/initWithImage:keysAndValues:">iOS Dev Center</a>
-     */
-    @Generated
-    @Variadic()
-    @Selector("initWithImage:keysAndValues:")
-    public native CISampler initWithImageKeysAndValues(CIImage im, @Mapped(ObjCObjectMapper.class) Object key0,
-            Object... varargs);
-
-    /**
-     * initWithImage:options:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/instm/CISampler/initWithImage:options:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithImage:options:")
-    public native CISampler initWithImageOptions(CIImage im, NSDictionary<?, ?> dict);
-
     /**
      * samplerWithImage:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/clm/CISampler/samplerWithImage:">iOS Dev Center</a>
@@ -241,4 +188,57 @@ public class CISampler extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * definition</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/instp/CISampler/definition">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("definition")
+    public native CIFilterShape definition();
+
+    /**
+     * extent</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/instp/CISampler/extent">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("extent")
+    @ByValue
+    public native CGRect extent();
+
+    @Generated
+    @Selector("init")
+    public native CISampler init();
+
+    /**
+     * initWithImage:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/instm/CISampler/initWithImage:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithImage:")
+    public native CISampler initWithImage(CIImage im);
+
+    /**
+     * initWithImage:keysAndValues:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/instm/CISampler/initWithImage:keysAndValues:">iOS Dev Center</a>
+     */
+    @Generated
+    @Variadic()
+    @Selector("initWithImage:keysAndValues:")
+    public native CISampler initWithImageKeysAndValues(CIImage im, @Mapped(ObjCObjectMapper.class) Object key0,
+            Object... varargs);
+
+    /**
+     * initWithImage:options:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/index.html#//apple_ref/occ/instm/CISampler/initWithImage:options:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithImage:options:")
+    public native CISampler initWithImageOptions(CIImage im, NSDictionary<?, ?> dict);
 }

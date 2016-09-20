@@ -55,87 +55,10 @@ public class NEFilterControlProvider extends NEFilterProvider {
         super(peer);
     }
 
-    /**
-     * URLAppendStringMap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instp/NEFilterControlProvider/URLAppendStringMap">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLAppendStringMap")
-    public native NSDictionary<String, String> URLAppendStringMap();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NEFilterControlProvider alloc();
-
-    /**
-     * handleNewFlow:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterControlProvider/handleNewFlow:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handleNewFlow:completionHandler:")
-    public native void handleNewFlowCompletionHandler(NEFilterFlow flow,
-            @ObjCBlock(name = "call_handleNewFlowCompletionHandler") Block_handleNewFlowCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_handleNewFlowCompletionHandler {
-        @Generated
-        void call_handleNewFlowCompletionHandler(NEFilterControlVerdict arg0);
-    }
-
-    /**
-     * handleRemediationForFlow:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterControlProvider/handleRemediationForFlow:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("handleRemediationForFlow:completionHandler:")
-    public native void handleRemediationForFlowCompletionHandler(NEFilterFlow flow,
-            @ObjCBlock(name = "call_handleRemediationForFlowCompletionHandler") Block_handleRemediationForFlowCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_handleRemediationForFlowCompletionHandler {
-        @Generated
-        void call_handleRemediationForFlowCompletionHandler(NEFilterControlVerdict arg0);
-    }
-
-    @Generated
-    @Selector("init")
-    public native NEFilterControlProvider init();
-
-    /**
-     * notifyRulesChanged</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterControlProvider/notifyRulesChanged">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("notifyRulesChanged")
-    public native void notifyRulesChanged();
-
-    /**
-     * remediationMap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instp/NEFilterControlProvider/remediationMap">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("remediationMap")
-    public native NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> remediationMap();
-
-    /**
-     * remediationMap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instp/NEFilterControlProvider/remediationMap">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRemediationMap:")
-    public native void setRemediationMap(
-            NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> value);
-
-    /**
-     * URLAppendStringMap</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instp/NEFilterControlProvider/URLAppendStringMap">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setURLAppendStringMap:")
-    public native void setURLAppendStringMap(NSDictionary<String, String> value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -236,4 +159,81 @@ public class NEFilterControlProvider extends NEFilterProvider {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URLAppendStringMap</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instp/NEFilterControlProvider/URLAppendStringMap">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLAppendStringMap")
+    public native NSDictionary<String, String> URLAppendStringMap();
+
+    /**
+     * handleNewFlow:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterControlProvider/handleNewFlow:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handleNewFlow:completionHandler:")
+    public native void handleNewFlowCompletionHandler(NEFilterFlow flow,
+            @ObjCBlock(name = "call_handleNewFlowCompletionHandler") Block_handleNewFlowCompletionHandler completionHandler);
+
+    /**
+     * handleRemediationForFlow:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterControlProvider/handleRemediationForFlow:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("handleRemediationForFlow:completionHandler:")
+    public native void handleRemediationForFlowCompletionHandler(NEFilterFlow flow,
+            @ObjCBlock(name = "call_handleRemediationForFlowCompletionHandler") Block_handleRemediationForFlowCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("init")
+    public native NEFilterControlProvider init();
+
+    /**
+     * notifyRulesChanged</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instm/NEFilterControlProvider/notifyRulesChanged">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("notifyRulesChanged")
+    public native void notifyRulesChanged();
+
+    /**
+     * remediationMap</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instp/NEFilterControlProvider/remediationMap">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("remediationMap")
+    public native NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> remediationMap();
+
+    /**
+     * remediationMap</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instp/NEFilterControlProvider/remediationMap">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRemediationMap:")
+    public native void setRemediationMap(
+            NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> value);
+
+    /**
+     * URLAppendStringMap</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlProviderClassRef/index.html#//apple_ref/occ/instp/NEFilterControlProvider/URLAppendStringMap">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setURLAppendStringMap:")
+    public native void setURLAppendStringMap(NSDictionary<String, String> value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_handleNewFlowCompletionHandler {
+        @Generated
+        void call_handleNewFlowCompletionHandler(NEFilterControlVerdict arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_handleRemediationForFlowCompletionHandler {
+        @Generated
+        void call_handleRemediationForFlowCompletionHandler(NEFilterControlVerdict arg0);
+    }
 }

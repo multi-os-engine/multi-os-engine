@@ -72,152 +72,8 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     public static native SCNAudioSource audioSourceNamed(String fileName);
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native SCNAudioSource init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNAudioSource initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithFileNamed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instm/SCNAudioSource/initWithFileNamed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithFileNamed:")
-    public native SCNAudioSource initWithFileNamed(String name);
-
-    /**
-     * initWithURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instm/SCNAudioSource/initWithURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithURL:")
-    public native SCNAudioSource initWithURL(NSURL url);
-
-    /**
-     * positional</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/positional">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isPositional")
-    public native boolean isPositional();
-
-    /**
-     * load</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instm/SCNAudioSource/load">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("load")
-    public native void load_objc();
-
-    /**
-     * loops</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/loops">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("loops")
-    public native boolean loops();
-
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/rate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rate")
-    public native float rate();
-
-    /**
-     * reverbBlend</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/reverbBlend">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reverbBlend")
-    public native float reverbBlend();
-
-    /**
-     * loops</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/loops">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLoops:")
-    public native void setLoops(boolean value);
-
-    /**
-     * positional</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/positional">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPositional:")
-    public native void setPositional(boolean value);
-
-    /**
-     * rate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/rate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRate:")
-    public native void setRate(float value);
-
-    /**
-     * reverbBlend</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/reverbBlend">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setReverbBlend:")
-    public native void setReverbBlend(float value);
-
-    /**
-     * shouldStream</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/shouldStream">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShouldStream:")
-    public native void setShouldStream(boolean value);
-
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/volume">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setVolume:")
-    public native void setVolume(float value);
-
-    /**
-     * shouldStream</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/shouldStream">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shouldStream")
-    public native boolean shouldStream();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * volume</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/volume">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("volume")
-    public native float volume();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -314,4 +170,148 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SCNAudioSource init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNAudioSource initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithFileNamed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instm/SCNAudioSource/initWithFileNamed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithFileNamed:")
+    public native SCNAudioSource initWithFileNamed(String name);
+
+    /**
+     * initWithURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instm/SCNAudioSource/initWithURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithURL:")
+    public native SCNAudioSource initWithURL(NSURL url);
+
+    /**
+     * positional</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/positional">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isPositional")
+    public native boolean isPositional();
+
+    /**
+     * positional</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/positional">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPositional:")
+    public native void setPositional(boolean value);
+
+    /**
+     * load</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instm/SCNAudioSource/load">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("load")
+    public native void load_objc();
+
+    /**
+     * loops</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/loops">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("loops")
+    public native boolean loops();
+
+    /**
+     * rate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/rate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rate")
+    public native float rate();
+
+    /**
+     * reverbBlend</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/reverbBlend">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reverbBlend")
+    public native float reverbBlend();
+
+    /**
+     * loops</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/loops">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLoops:")
+    public native void setLoops(boolean value);
+
+    /**
+     * rate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/rate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRate:")
+    public native void setRate(float value);
+
+    /**
+     * reverbBlend</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/reverbBlend">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setReverbBlend:")
+    public native void setReverbBlend(float value);
+
+    /**
+     * shouldStream</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/shouldStream">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShouldStream:")
+    public native void setShouldStream(boolean value);
+
+    /**
+     * volume</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/volume">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setVolume:")
+    public native void setVolume(float value);
+
+    /**
+     * shouldStream</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/shouldStream">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shouldStream")
+    public native boolean shouldStream();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * volume</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNAudioSource_Class/index.html#//apple_ref/occ/instp/SCNAudioSource/volume">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("volume")
+    public native float volume();
 }

@@ -70,12 +70,6 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     @Selector("allowVerdictWithUpdateRules:")
     public static native NEFilterControlVerdict allowVerdictWithUpdateRules(boolean updateRules);
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
     /**
      * dropVerdictWithUpdateRules:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterControlVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterControlVerdict/dropVerdictWithUpdateRules:">iOS Dev Center</a>
@@ -85,26 +79,8 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     public static native NEFilterControlVerdict dropVerdictWithUpdateRules(boolean updateRules);
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NEFilterControlVerdict init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEFilterControlVerdict initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     /**
      * updateRules</br>
@@ -239,4 +215,28 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NEFilterControlVerdict init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEFilterControlVerdict initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTFontUIFontType {
-    @Generated
-    private CTFontUIFontType() {
-    }
-
     @Generated public static final int UIFontNone = 0xFFFFFFFF;
     @Generated public static final int UIFontUser = 0x00000000;
     @Generated public static final int UIFontUserFixedPitch = 0x00000001;
@@ -80,4 +76,8 @@ public final class CTFontUIFontType {
     @Generated public static final int PaletteFontType = 0x00000018;
     @Generated public static final int ToolTipFontType = 0x00000019;
     @Generated public static final int ControlContentFontType = 0x0000001A;
+
+    @Generated
+    private CTFontUIFontType() {
+    }
 }

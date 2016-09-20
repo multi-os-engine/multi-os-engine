@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLArgumentAccess {
-    @Generated
-    private MTLArgumentAccess() {
-    }
-
     @Generated @NUInt public static final long ReadOnly = 0x0000000000000000L;
     @Generated @NUInt public static final long ReadWrite = 0x0000000000000001L;
     @Generated @NUInt public static final long WriteOnly = 0x0000000000000002L;
+
+    @Generated
+    private MTLArgumentAccess() {
+    }
 }

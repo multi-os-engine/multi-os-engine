@@ -58,52 +58,6 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     @Selector("alloc")
     public static native NSSaveChangesRequest alloc();
 
-    /**
-     * deletedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSSaveChangesRequest_Class/index.html#//apple_ref/occ/instp/NSSaveChangesRequest/deletedObjects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deletedObjects")
-    public native NSSet<? extends NSManagedObject> deletedObjects();
-
-    @Generated
-    @Selector("init")
-    public native NSSaveChangesRequest init();
-
-    /**
-     * initWithInsertedObjects:updatedObjects:deletedObjects:lockedObjects:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSSaveChangesRequest_Class/index.html#//apple_ref/occ/instm/NSSaveChangesRequest/initWithInsertedObjects:updatedObjects:deletedObjects:lockedObjects:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithInsertedObjects:updatedObjects:deletedObjects:lockedObjects:")
-    public native NSSaveChangesRequest initWithInsertedObjectsUpdatedObjectsDeletedObjectsLockedObjects(
-            NSSet<? extends NSManagedObject> insertedObjects, NSSet<? extends NSManagedObject> updatedObjects,
-            NSSet<? extends NSManagedObject> deletedObjects, NSSet<? extends NSManagedObject> lockedObjects);
-
-    /**
-     * insertedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSSaveChangesRequest_Class/index.html#//apple_ref/occ/instp/NSSaveChangesRequest/insertedObjects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("insertedObjects")
-    public native NSSet<? extends NSManagedObject> insertedObjects();
-
-    /**
-     * lockedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSSaveChangesRequest_Class/index.html#//apple_ref/occ/instp/NSSaveChangesRequest/lockedObjects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("lockedObjects")
-    public native NSSet<? extends NSManagedObject> lockedObjects();
-
-    /**
-     * updatedObjects</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSSaveChangesRequest_Class/index.html#//apple_ref/occ/instp/NSSaveChangesRequest/updatedObjects">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updatedObjects")
-    public native NSSet<? extends NSManagedObject> updatedObjects();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -203,4 +157,50 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * deletedObjects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSSaveChangesRequest_Class/index.html#//apple_ref/occ/instp/NSSaveChangesRequest/deletedObjects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deletedObjects")
+    public native NSSet<? extends NSManagedObject> deletedObjects();
+
+    @Generated
+    @Selector("init")
+    public native NSSaveChangesRequest init();
+
+    /**
+     * initWithInsertedObjects:updatedObjects:deletedObjects:lockedObjects:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSSaveChangesRequest_Class/index.html#//apple_ref/occ/instm/NSSaveChangesRequest/initWithInsertedObjects:updatedObjects:deletedObjects:lockedObjects:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithInsertedObjects:updatedObjects:deletedObjects:lockedObjects:")
+    public native NSSaveChangesRequest initWithInsertedObjectsUpdatedObjectsDeletedObjectsLockedObjects(
+            NSSet<? extends NSManagedObject> insertedObjects, NSSet<? extends NSManagedObject> updatedObjects,
+            NSSet<? extends NSManagedObject> deletedObjects, NSSet<? extends NSManagedObject> lockedObjects);
+
+    /**
+     * insertedObjects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSSaveChangesRequest_Class/index.html#//apple_ref/occ/instp/NSSaveChangesRequest/insertedObjects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("insertedObjects")
+    public native NSSet<? extends NSManagedObject> insertedObjects();
+
+    /**
+     * lockedObjects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSSaveChangesRequest_Class/index.html#//apple_ref/occ/instp/NSSaveChangesRequest/lockedObjects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("lockedObjects")
+    public native NSSet<? extends NSManagedObject> lockedObjects();
+
+    /**
+     * updatedObjects</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreData/Reference/NSSaveChangesRequest_Class/index.html#//apple_ref/occ/instp/NSSaveChangesRequest/updatedObjects">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updatedObjects")
+    public native NSSet<? extends NSManagedObject> updatedObjects();
 }

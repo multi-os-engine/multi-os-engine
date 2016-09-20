@@ -56,111 +56,10 @@ public class HMHomeManager extends NSObject {
         super(peer);
     }
 
-    /**
-     * addHomeWithName:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instm/HMHomeManager/addHomeWithName:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addHomeWithName:completionHandler:")
-    public native void addHomeWithNameCompletionHandler(String homeName,
-            @ObjCBlock(name = "call_addHomeWithNameCompletionHandler") Block_addHomeWithNameCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addHomeWithNameCompletionHandler {
-        @Generated
-        void call_addHomeWithNameCompletionHandler(HMHome arg0, NSError arg1);
-    }
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native HMHomeManager alloc();
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instp/HMHomeManager/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native HMHomeManagerDelegate delegate();
-
-    /**
-     * homes</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instp/HMHomeManager/homes">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("homes")
-    public native NSArray<? extends HMHome> homes();
-
-    @Generated
-    @Selector("init")
-    public native HMHomeManager init();
-
-    /**
-     * primaryHome</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instp/HMHomeManager/primaryHome">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("primaryHome")
-    public native HMHome primaryHome();
-
-    /**
-     * removeHome:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instm/HMHomeManager/removeHome:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removeHome:completionHandler:")
-    public native void removeHomeCompletionHandler(HMHome home,
-            @ObjCBlock(name = "call_removeHomeCompletionHandler") Block_removeHomeCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_removeHomeCompletionHandler {
-        @Generated
-        void call_removeHomeCompletionHandler(NSError arg0);
-    }
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instp/HMHomeManager/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instp/HMHomeManager/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * updatePrimaryHome:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instm/HMHomeManager/updatePrimaryHome:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("updatePrimaryHome:completionHandler:")
-    public native void updatePrimaryHomeCompletionHandler(HMHome home,
-            @ObjCBlock(name = "call_updatePrimaryHomeCompletionHandler") Block_updatePrimaryHomeCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_updatePrimaryHomeCompletionHandler {
-        @Generated
-        void call_updatePrimaryHomeCompletionHandler(NSError arg0);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -261,4 +160,105 @@ public class HMHomeManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addHomeWithName:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instm/HMHomeManager/addHomeWithName:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addHomeWithName:completionHandler:")
+    public native void addHomeWithNameCompletionHandler(String homeName,
+            @ObjCBlock(name = "call_addHomeWithNameCompletionHandler") Block_addHomeWithNameCompletionHandler completion);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instp/HMHomeManager/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native HMHomeManagerDelegate delegate();
+
+    /**
+     * homes</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instp/HMHomeManager/homes">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("homes")
+    public native NSArray<? extends HMHome> homes();
+
+    @Generated
+    @Selector("init")
+    public native HMHomeManager init();
+
+    /**
+     * primaryHome</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instp/HMHomeManager/primaryHome">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("primaryHome")
+    public native HMHome primaryHome();
+
+    /**
+     * removeHome:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instm/HMHomeManager/removeHome:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removeHome:completionHandler:")
+    public native void removeHomeCompletionHandler(HMHome home,
+            @ObjCBlock(name = "call_removeHomeCompletionHandler") Block_removeHomeCompletionHandler completion);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instp/HMHomeManager/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instp/HMHomeManager/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * updatePrimaryHome:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HomeKit/Reference/HMHomeManager_Class/index.html#//apple_ref/occ/instm/HMHomeManager/updatePrimaryHome:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("updatePrimaryHome:completionHandler:")
+    public native void updatePrimaryHomeCompletionHandler(HMHome home,
+            @ObjCBlock(name = "call_updatePrimaryHomeCompletionHandler") Block_updatePrimaryHomeCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addHomeWithNameCompletionHandler {
+        @Generated
+        void call_addHomeWithNameCompletionHandler(HMHome arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeHomeCompletionHandler {
+        @Generated
+        void call_removeHomeCompletionHandler(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updatePrimaryHomeCompletionHandler {
+        @Generated
+        void call_updatePrimaryHomeCompletionHandler(NSError arg0);
+    }
 }

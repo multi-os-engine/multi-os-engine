@@ -72,90 +72,6 @@ public class CAInterAppAudioTransportView extends UIView {
     public static native CAInterAppAudioTransportView alloc();
 
     @Generated
-    @Selector("currentTimeLabelFont")
-    public native UIFont currentTimeLabelFont();
-
-    @Generated
-    @Selector("init")
-    public native CAInterAppAudioTransportView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native CAInterAppAudioTransportView initWithFrame(@ByValue CGRect frame);
-
-    @Generated
-    @Selector("isConnected")
-    public native boolean isConnected();
-
-    @Generated
-    @Selector("isEnabled")
-    public native boolean isEnabled();
-
-    @Generated
-    @Selector("isPlaying")
-    public native boolean isPlaying();
-
-    @Generated
-    @Selector("isRecording")
-    public native boolean isRecording();
-
-    @Generated
-    @Selector("labelColor")
-    public native UIColor labelColor();
-
-    @Generated
-    @Selector("pauseButtonColor")
-    public native UIColor pauseButtonColor();
-
-    @Generated
-    @Selector("playButtonColor")
-    public native UIColor playButtonColor();
-
-    @Generated
-    @Selector("recordButtonColor")
-    public native UIColor recordButtonColor();
-
-    @Generated
-    @Selector("rewindButtonColor")
-    public native UIColor rewindButtonColor();
-
-    @Generated
-    @Selector("setCurrentTimeLabelFont:")
-    public native void setCurrentTimeLabelFont(UIFont value);
-
-    @Generated
-    @Selector("setEnabled:")
-    public native void setEnabled(boolean value);
-
-    @Generated
-    @Selector("setLabelColor:")
-    public native void setLabelColor(UIColor value);
-
-    @Generated
-    @Selector("setOutputAudioUnit:")
-    public native void setOutputAudioUnit(AudioComponentInstance au);
-
-    @Generated
-    @Selector("setPauseButtonColor:")
-    public native void setPauseButtonColor(UIColor value);
-
-    @Generated
-    @Selector("setPlayButtonColor:")
-    public native void setPlayButtonColor(UIColor value);
-
-    @Generated
-    @Selector("setRecordButtonColor:")
-    public native void setRecordButtonColor(UIColor value);
-
-    @Generated
-    @Selector("setRewindButtonColor:")
-    public native void setRewindButtonColor(UIColor value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CAInterAppAudioTransportView initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -208,23 +124,9 @@ public class CAInterAppAudioTransportView extends UIView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -235,27 +137,10 @@ public class CAInterAppAudioTransportView extends UIView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -266,24 +151,9 @@ public class CAInterAppAudioTransportView extends UIView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -481,4 +351,134 @@ public class CAInterAppAudioTransportView extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("currentTimeLabelFont")
+    public native UIFont currentTimeLabelFont();
+
+    @Generated
+    @Selector("init")
+    public native CAInterAppAudioTransportView init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native CAInterAppAudioTransportView initWithFrame(@ByValue CGRect frame);
+
+    @Generated
+    @Selector("isConnected")
+    public native boolean isConnected();
+
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    @Generated
+    @Selector("isPlaying")
+    public native boolean isPlaying();
+
+    @Generated
+    @Selector("isRecording")
+    public native boolean isRecording();
+
+    @Generated
+    @Selector("labelColor")
+    public native UIColor labelColor();
+
+    @Generated
+    @Selector("pauseButtonColor")
+    public native UIColor pauseButtonColor();
+
+    @Generated
+    @Selector("playButtonColor")
+    public native UIColor playButtonColor();
+
+    @Generated
+    @Selector("recordButtonColor")
+    public native UIColor recordButtonColor();
+
+    @Generated
+    @Selector("rewindButtonColor")
+    public native UIColor rewindButtonColor();
+
+    @Generated
+    @Selector("setCurrentTimeLabelFont:")
+    public native void setCurrentTimeLabelFont(UIFont value);
+
+    @Generated
+    @Selector("setLabelColor:")
+    public native void setLabelColor(UIColor value);
+
+    @Generated
+    @Selector("setOutputAudioUnit:")
+    public native void setOutputAudioUnit(AudioComponentInstance au);
+
+    @Generated
+    @Selector("setPauseButtonColor:")
+    public native void setPauseButtonColor(UIColor value);
+
+    @Generated
+    @Selector("setPlayButtonColor:")
+    public native void setPlayButtonColor(UIColor value);
+
+    @Generated
+    @Selector("setRecordButtonColor:")
+    public native void setRecordButtonColor(UIColor value);
+
+    @Generated
+    @Selector("setRewindButtonColor:")
+    public native void setRewindButtonColor(UIColor value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAInterAppAudioTransportView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

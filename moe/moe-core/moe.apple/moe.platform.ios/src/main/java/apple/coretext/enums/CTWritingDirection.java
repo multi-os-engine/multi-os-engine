@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTWritingDirection {
-    @Generated
-    private CTWritingDirection() {
-    }
-
     @Generated public static final byte Natural = -1;
     @Generated public static final byte LeftToRight = 0;
     @Generated public static final byte RightToLeft = 1;
+
+    @Generated
+    private CTWritingDirection() {
+    }
 }

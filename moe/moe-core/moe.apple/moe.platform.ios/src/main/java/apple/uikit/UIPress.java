@@ -59,69 +59,6 @@ public class UIPress extends NSObject {
     @Selector("alloc")
     public static native UIPress alloc();
 
-    /**
-     * force</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/force">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("force")
-    @NFloat
-    public native double force();
-
-    /**
-     * gestureRecognizers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/gestureRecognizers">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("gestureRecognizers")
-    public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
-
-    @Generated
-    @Selector("init")
-    public native UIPress init();
-
-    /**
-     * phase</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/phase">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("phase")
-    @NInt
-    public native long phase();
-
-    /**
-     * responder</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/responder">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("responder")
-    public native UIResponder responder();
-
-    /**
-     * timestamp</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/timestamp">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timestamp")
-    public native double timestamp();
-
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/type">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("type")
-    @NInt
-    public native long type();
-
-    /**
-     * window</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/window">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("window")
-    public native UIWindow window();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -221,4 +158,67 @@ public class UIPress extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * force</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/force">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("force")
+    @NFloat
+    public native double force();
+
+    /**
+     * gestureRecognizers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/gestureRecognizers">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("gestureRecognizers")
+    public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
+
+    @Generated
+    @Selector("init")
+    public native UIPress init();
+
+    /**
+     * phase</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/phase">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("phase")
+    @NInt
+    public native long phase();
+
+    /**
+     * responder</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/responder">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("responder")
+    public native UIResponder responder();
+
+    /**
+     * timestamp</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/timestamp">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timestamp")
+    public native double timestamp();
+
+    /**
+     * type</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/type">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("type")
+    @NInt
+    public native long type();
+
+    /**
+     * window</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPress_Class/index.html#//apple_ref/occ/instp/UIPress/window">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("window")
+    public native UIWindow window();
 }

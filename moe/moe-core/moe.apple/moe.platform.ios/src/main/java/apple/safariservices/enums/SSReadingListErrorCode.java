@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SSReadingListErrorCode {
+    @Generated @NInt public static final long SSReadingListErrorURLSchemeNotAllowed = 0x0000000000000001L;
+
     @Generated
     private SSReadingListErrorCode() {
     }
-
-    @Generated @NInt public static final long SSReadingListErrorURLSchemeNotAllowed = 0x0000000000000001L;
 }

@@ -55,214 +55,10 @@ public class CKDatabase extends NSObject {
         super(peer);
     }
 
-    /**
-     * addOperation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/addOperation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addOperation:")
-    public native void addOperation(CKDatabaseOperation operation);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native CKDatabase alloc();
-
-    /**
-     * deleteRecordWithID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/deleteRecordWithID:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deleteRecordWithID:completionHandler:")
-    public native void deleteRecordWithIDCompletionHandler(CKRecordID recordID,
-            @ObjCBlock(name = "call_deleteRecordWithIDCompletionHandler") Block_deleteRecordWithIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_deleteRecordWithIDCompletionHandler {
-        @Generated
-        void call_deleteRecordWithIDCompletionHandler(CKRecordID arg0, NSError arg1);
-    }
-
-    /**
-     * deleteRecordZoneWithID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/deleteRecordZoneWithID:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deleteRecordZoneWithID:completionHandler:")
-    public native void deleteRecordZoneWithIDCompletionHandler(CKRecordZoneID zoneID,
-            @ObjCBlock(name = "call_deleteRecordZoneWithIDCompletionHandler") Block_deleteRecordZoneWithIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_deleteRecordZoneWithIDCompletionHandler {
-        @Generated
-        void call_deleteRecordZoneWithIDCompletionHandler(CKRecordZoneID arg0, NSError arg1);
-    }
-
-    /**
-     * deleteSubscriptionWithID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/deleteSubscriptionWithID:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("deleteSubscriptionWithID:completionHandler:")
-    public native void deleteSubscriptionWithIDCompletionHandler(String subscriptionID,
-            @ObjCBlock(name = "call_deleteSubscriptionWithIDCompletionHandler") Block_deleteSubscriptionWithIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_deleteSubscriptionWithIDCompletionHandler {
-        @Generated
-        void call_deleteSubscriptionWithIDCompletionHandler(String arg0, NSError arg1);
-    }
-
-    /**
-     * fetchAllRecordZonesWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/fetchAllRecordZonesWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchAllRecordZonesWithCompletionHandler:")
-    public native void fetchAllRecordZonesWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchAllRecordZonesWithCompletionHandler") Block_fetchAllRecordZonesWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchAllRecordZonesWithCompletionHandler {
-        @Generated
-        void call_fetchAllRecordZonesWithCompletionHandler(NSArray<? extends CKRecordZone> arg0, NSError arg1);
-    }
-
-    /**
-     * fetchAllSubscriptionsWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/fetchAllSubscriptionsWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchAllSubscriptionsWithCompletionHandler:")
-    public native void fetchAllSubscriptionsWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchAllSubscriptionsWithCompletionHandler") Block_fetchAllSubscriptionsWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchAllSubscriptionsWithCompletionHandler {
-        @Generated
-        void call_fetchAllSubscriptionsWithCompletionHandler(NSArray<? extends CKSubscription> arg0, NSError arg1);
-    }
-
-    /**
-     * fetchRecordWithID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/fetchRecordWithID:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchRecordWithID:completionHandler:")
-    public native void fetchRecordWithIDCompletionHandler(CKRecordID recordID,
-            @ObjCBlock(name = "call_fetchRecordWithIDCompletionHandler") Block_fetchRecordWithIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchRecordWithIDCompletionHandler {
-        @Generated
-        void call_fetchRecordWithIDCompletionHandler(CKRecord arg0, NSError arg1);
-    }
-
-    /**
-     * fetchRecordZoneWithID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/fetchRecordZoneWithID:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchRecordZoneWithID:completionHandler:")
-    public native void fetchRecordZoneWithIDCompletionHandler(CKRecordZoneID zoneID,
-            @ObjCBlock(name = "call_fetchRecordZoneWithIDCompletionHandler") Block_fetchRecordZoneWithIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchRecordZoneWithIDCompletionHandler {
-        @Generated
-        void call_fetchRecordZoneWithIDCompletionHandler(CKRecordZone arg0, NSError arg1);
-    }
-
-    /**
-     * fetchSubscriptionWithID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/fetchSubscriptionWithID:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchSubscriptionWithID:completionHandler:")
-    public native void fetchSubscriptionWithIDCompletionHandler(String subscriptionID,
-            @ObjCBlock(name = "call_fetchSubscriptionWithIDCompletionHandler") Block_fetchSubscriptionWithIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchSubscriptionWithIDCompletionHandler {
-        @Generated
-        void call_fetchSubscriptionWithIDCompletionHandler(CKSubscription arg0, NSError arg1);
-    }
-
-    @Generated
-    @Selector("init")
-    public native CKDatabase init();
-
-    /**
-     * performQuery:inZoneWithID:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/performQuery:inZoneWithID:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("performQuery:inZoneWithID:completionHandler:")
-    public native void performQueryInZoneWithIDCompletionHandler(CKQuery query, CKRecordZoneID zoneID,
-            @ObjCBlock(name = "call_performQueryInZoneWithIDCompletionHandler") Block_performQueryInZoneWithIDCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performQueryInZoneWithIDCompletionHandler {
-        @Generated
-        void call_performQueryInZoneWithIDCompletionHandler(NSArray<? extends CKRecord> arg0, NSError arg1);
-    }
-
-    /**
-     * saveRecord:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/saveRecord:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("saveRecord:completionHandler:")
-    public native void saveRecordCompletionHandler(CKRecord record,
-            @ObjCBlock(name = "call_saveRecordCompletionHandler") Block_saveRecordCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_saveRecordCompletionHandler {
-        @Generated
-        void call_saveRecordCompletionHandler(CKRecord arg0, NSError arg1);
-    }
-
-    /**
-     * saveRecordZone:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/saveRecordZone:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("saveRecordZone:completionHandler:")
-    public native void saveRecordZoneCompletionHandler(CKRecordZone zone,
-            @ObjCBlock(name = "call_saveRecordZoneCompletionHandler") Block_saveRecordZoneCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_saveRecordZoneCompletionHandler {
-        @Generated
-        void call_saveRecordZoneCompletionHandler(CKRecordZone arg0, NSError arg1);
-    }
-
-    /**
-     * saveSubscription:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/saveSubscription:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("saveSubscription:completionHandler:")
-    public native void saveSubscriptionCompletionHandler(CKSubscription subscription,
-            @ObjCBlock(name = "call_saveSubscriptionCompletionHandler") Block_saveSubscriptionCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_saveSubscriptionCompletionHandler {
-        @Generated
-        void call_saveSubscriptionCompletionHandler(CKSubscription arg0, NSError arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -363,4 +159,208 @@ public class CKDatabase extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addOperation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/addOperation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addOperation:")
+    public native void addOperation(CKDatabaseOperation operation);
+
+    /**
+     * deleteRecordWithID:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/deleteRecordWithID:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deleteRecordWithID:completionHandler:")
+    public native void deleteRecordWithIDCompletionHandler(CKRecordID recordID,
+            @ObjCBlock(name = "call_deleteRecordWithIDCompletionHandler") Block_deleteRecordWithIDCompletionHandler completionHandler);
+
+    /**
+     * deleteRecordZoneWithID:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/deleteRecordZoneWithID:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deleteRecordZoneWithID:completionHandler:")
+    public native void deleteRecordZoneWithIDCompletionHandler(CKRecordZoneID zoneID,
+            @ObjCBlock(name = "call_deleteRecordZoneWithIDCompletionHandler") Block_deleteRecordZoneWithIDCompletionHandler completionHandler);
+
+    /**
+     * deleteSubscriptionWithID:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/deleteSubscriptionWithID:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("deleteSubscriptionWithID:completionHandler:")
+    public native void deleteSubscriptionWithIDCompletionHandler(String subscriptionID,
+            @ObjCBlock(name = "call_deleteSubscriptionWithIDCompletionHandler") Block_deleteSubscriptionWithIDCompletionHandler completionHandler);
+
+    /**
+     * fetchAllRecordZonesWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/fetchAllRecordZonesWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchAllRecordZonesWithCompletionHandler:")
+    public native void fetchAllRecordZonesWithCompletionHandler(
+            @ObjCBlock(name = "call_fetchAllRecordZonesWithCompletionHandler") Block_fetchAllRecordZonesWithCompletionHandler completionHandler);
+
+    /**
+     * fetchAllSubscriptionsWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/fetchAllSubscriptionsWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchAllSubscriptionsWithCompletionHandler:")
+    public native void fetchAllSubscriptionsWithCompletionHandler(
+            @ObjCBlock(name = "call_fetchAllSubscriptionsWithCompletionHandler") Block_fetchAllSubscriptionsWithCompletionHandler completionHandler);
+
+    /**
+     * fetchRecordWithID:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/fetchRecordWithID:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchRecordWithID:completionHandler:")
+    public native void fetchRecordWithIDCompletionHandler(CKRecordID recordID,
+            @ObjCBlock(name = "call_fetchRecordWithIDCompletionHandler") Block_fetchRecordWithIDCompletionHandler completionHandler);
+
+    /**
+     * fetchRecordZoneWithID:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/fetchRecordZoneWithID:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchRecordZoneWithID:completionHandler:")
+    public native void fetchRecordZoneWithIDCompletionHandler(CKRecordZoneID zoneID,
+            @ObjCBlock(name = "call_fetchRecordZoneWithIDCompletionHandler") Block_fetchRecordZoneWithIDCompletionHandler completionHandler);
+
+    /**
+     * fetchSubscriptionWithID:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/fetchSubscriptionWithID:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchSubscriptionWithID:completionHandler:")
+    public native void fetchSubscriptionWithIDCompletionHandler(String subscriptionID,
+            @ObjCBlock(name = "call_fetchSubscriptionWithIDCompletionHandler") Block_fetchSubscriptionWithIDCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("init")
+    public native CKDatabase init();
+
+    /**
+     * performQuery:inZoneWithID:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/performQuery:inZoneWithID:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("performQuery:inZoneWithID:completionHandler:")
+    public native void performQueryInZoneWithIDCompletionHandler(CKQuery query, CKRecordZoneID zoneID,
+            @ObjCBlock(name = "call_performQueryInZoneWithIDCompletionHandler") Block_performQueryInZoneWithIDCompletionHandler completionHandler);
+
+    /**
+     * saveRecord:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/saveRecord:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("saveRecord:completionHandler:")
+    public native void saveRecordCompletionHandler(CKRecord record,
+            @ObjCBlock(name = "call_saveRecordCompletionHandler") Block_saveRecordCompletionHandler completionHandler);
+
+    /**
+     * saveRecordZone:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/saveRecordZone:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("saveRecordZone:completionHandler:")
+    public native void saveRecordZoneCompletionHandler(CKRecordZone zone,
+            @ObjCBlock(name = "call_saveRecordZoneCompletionHandler") Block_saveRecordZoneCompletionHandler completionHandler);
+
+    /**
+     * saveSubscription:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKDatabase_class/index.html#//apple_ref/occ/instm/CKDatabase/saveSubscription:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("saveSubscription:completionHandler:")
+    public native void saveSubscriptionCompletionHandler(CKSubscription subscription,
+            @ObjCBlock(name = "call_saveSubscriptionCompletionHandler") Block_saveSubscriptionCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deleteRecordWithIDCompletionHandler {
+        @Generated
+        void call_deleteRecordWithIDCompletionHandler(CKRecordID arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deleteRecordZoneWithIDCompletionHandler {
+        @Generated
+        void call_deleteRecordZoneWithIDCompletionHandler(CKRecordZoneID arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deleteSubscriptionWithIDCompletionHandler {
+        @Generated
+        void call_deleteSubscriptionWithIDCompletionHandler(String arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchAllRecordZonesWithCompletionHandler {
+        @Generated
+        void call_fetchAllRecordZonesWithCompletionHandler(NSArray<? extends CKRecordZone> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchAllSubscriptionsWithCompletionHandler {
+        @Generated
+        void call_fetchAllSubscriptionsWithCompletionHandler(NSArray<? extends CKSubscription> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchRecordWithIDCompletionHandler {
+        @Generated
+        void call_fetchRecordWithIDCompletionHandler(CKRecord arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchRecordZoneWithIDCompletionHandler {
+        @Generated
+        void call_fetchRecordZoneWithIDCompletionHandler(CKRecordZone arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchSubscriptionWithIDCompletionHandler {
+        @Generated
+        void call_fetchSubscriptionWithIDCompletionHandler(CKSubscription arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performQueryInZoneWithIDCompletionHandler {
+        @Generated
+        void call_performQueryInZoneWithIDCompletionHandler(NSArray<? extends CKRecord> arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_saveRecordCompletionHandler {
+        @Generated
+        void call_saveRecordCompletionHandler(CKRecord arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_saveRecordZoneCompletionHandler {
+        @Generated
+        void call_saveRecordZoneCompletionHandler(CKRecordZone arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_saveSubscriptionCompletionHandler {
+        @Generated
+        void call_saveSubscriptionCompletionHandler(CKSubscription arg0, NSError arg1);
+    }
 }

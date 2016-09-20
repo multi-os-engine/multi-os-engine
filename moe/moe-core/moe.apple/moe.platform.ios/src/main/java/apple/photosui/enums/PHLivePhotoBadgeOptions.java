@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class PHLivePhotoBadgeOptions {
+    @Generated @NUInt public static final long OverContent = 0x0000000000000001L;
+    @Generated @NUInt public static final long LiveOff = 0x0000000000000002L;
+
     @Generated
     private PHLivePhotoBadgeOptions() {
     }
-
-    @Generated @NUInt public static final long OverContent = 0x0000000000000001L;
-    @Generated @NUInt public static final long LiveOff = 0x0000000000000002L;
 }

@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVError {
-    @Generated
-    private AVError() {
-    }
-
     @Generated @NInt public static final long Unknown = 0xFFFFFFFFFFFFD1E8L;
     @Generated @NInt public static final long OutOfMemory = 0xFFFFFFFFFFFFD1E7L;
     @Generated @NInt public static final long SessionNotRunning = 0xFFFFFFFFFFFFD1E5L;
@@ -82,4 +78,8 @@ public final class AVError {
     @Generated @NInt public static final long AirPlayReceiverRequiresInternet = 0xFFFFFFFFFFFFD1AFL;
     @Generated @NInt public static final long VideoCompositorFailed = 0xFFFFFFFFFFFFD1AEL;
     @Generated @NInt public static final long RecordingAlreadyInProgress = 0xFFFFFFFFFFFFD1ADL;
+
+    @Generated
+    private AVError() {
+    }
 }

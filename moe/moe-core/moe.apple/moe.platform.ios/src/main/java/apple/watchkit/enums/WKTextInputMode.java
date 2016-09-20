@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class WKTextInputMode {
-    @Generated
-    private WKTextInputMode() {
-    }
-
     @Generated @NInt public static final long Plain = 0x0000000000000000L;
     @Generated @NInt public static final long AllowEmoji = 0x0000000000000001L;
     @Generated @NInt public static final long AllowAnimatedEmoji = 0x0000000000000002L;
+
+    @Generated
+    private WKTextInputMode() {
+    }
 }

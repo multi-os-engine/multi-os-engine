@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSKeyValueSetMutationKind {
-    @Generated
-    private NSKeyValueSetMutationKind() {
-    }
-
     @Generated @NUInt public static final long UnionSetMutation = 0x0000000000000001L;
     @Generated @NUInt public static final long MinusSetMutation = 0x0000000000000002L;
     @Generated @NUInt public static final long IntersectSetMutation = 0x0000000000000003L;
     @Generated @NUInt public static final long SetSetMutation = 0x0000000000000004L;
+
+    @Generated
+    private NSKeyValueSetMutationKind() {
+    }
 }

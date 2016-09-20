@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVAssetImageGeneratorResult {
-    @Generated
-    private AVAssetImageGeneratorResult() {
-    }
-
     @Generated @NInt public static final long Succeeded = 0x0000000000000000L;
     @Generated @NInt public static final long Failed = 0x0000000000000001L;
     @Generated @NInt public static final long Cancelled = 0x0000000000000002L;
+
+    @Generated
+    private AVAssetImageGeneratorResult() {
+    }
 }

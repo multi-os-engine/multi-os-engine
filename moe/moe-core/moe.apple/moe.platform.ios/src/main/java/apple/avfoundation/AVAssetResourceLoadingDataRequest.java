@@ -59,47 +59,6 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
     @Selector("alloc")
     public static native AVAssetResourceLoadingDataRequest alloc();
 
-    /**
-     * currentOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingDataRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingDataRequest/currentOffset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("currentOffset")
-    public native long currentOffset();
-
-    @Generated
-    @Selector("init")
-    public native AVAssetResourceLoadingDataRequest init();
-
-    /**
-     * requestedLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingDataRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingDataRequest/requestedLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestedLength")
-    @NInt
-    public native long requestedLength();
-
-    /**
-     * requestedOffset</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingDataRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingDataRequest/requestedOffset">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestedOffset")
-    public native long requestedOffset();
-
-    /**
-     * respondWithData:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingDataRequest_Class/index.html#//apple_ref/occ/instm/AVAssetResourceLoadingDataRequest/respondWithData:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("respondWithData:")
-    public native void respondWithData(NSData data);
-
-    @Generated
-    @Selector("requestsAllDataToEndOfResource")
-    public native boolean requestsAllDataToEndOfResource();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -199,4 +158,45 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * currentOffset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingDataRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingDataRequest/currentOffset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("currentOffset")
+    public native long currentOffset();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetResourceLoadingDataRequest init();
+
+    /**
+     * requestedLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingDataRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingDataRequest/requestedLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestedLength")
+    @NInt
+    public native long requestedLength();
+
+    /**
+     * requestedOffset</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingDataRequest_Class/index.html#//apple_ref/occ/instp/AVAssetResourceLoadingDataRequest/requestedOffset">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestedOffset")
+    public native long requestedOffset();
+
+    /**
+     * respondWithData:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAssetResourceLoadingDataRequest_Class/index.html#//apple_ref/occ/instm/AVAssetResourceLoadingDataRequest/respondWithData:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("respondWithData:")
+    public native void respondWithData(NSData data);
+
+    @Generated
+    @Selector("requestsAllDataToEndOfResource")
+    public native boolean requestsAllDataToEndOfResource();
 }

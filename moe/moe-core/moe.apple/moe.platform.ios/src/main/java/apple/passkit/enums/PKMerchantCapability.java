@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class PKMerchantCapability {
-    @Generated
-    private PKMerchantCapability() {
-    }
-
     @Generated @NUInt public static final long Capability3DS = 0x0000000000000001L;
     @Generated @NUInt public static final long CapabilityEMV = 0x0000000000000002L;
     @Generated @NUInt public static final long CapabilityCredit = 0x0000000000000004L;
     @Generated @NUInt public static final long CapabilityDebit = 0x0000000000000008L;
+
+    @Generated
+    private PKMerchantCapability() {
+    }
 }

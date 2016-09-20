@@ -56,15 +56,6 @@ public class SSReadingList extends NSObject {
         super(peer);
     }
 
-    /**
-     * addReadingListItemWithURL:title:previewText:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/SSReadingList_Ref/index.html#//apple_ref/occ/instm/SSReadingList/addReadingListItemWithURL:title:previewText:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addReadingListItemWithURL:title:previewText:error:")
-    public native boolean addReadingListItemWithURLTitlePreviewTextError(NSURL URL, String title, String previewText,
-            Ptr<NSError> error);
-
     @Generated
     @Owned
     @Selector("alloc")
@@ -77,10 +68,6 @@ public class SSReadingList extends NSObject {
     @Generated
     @Selector("defaultReadingList")
     public static native SSReadingList defaultReadingList();
-
-    @Generated
-    @Selector("init")
-    public native SSReadingList init();
 
     /**
      * supportsURL:</br>
@@ -189,4 +176,17 @@ public class SSReadingList extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addReadingListItemWithURL:title:previewText:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Reference/SSReadingList_Ref/index.html#//apple_ref/occ/instm/SSReadingList/addReadingListItemWithURL:title:previewText:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addReadingListItemWithURL:title:previewText:error:")
+    public native boolean addReadingListItemWithURLTitlePreviewTextError(NSURL URL, String title, String previewText,
+            Ptr<NSError> error);
+
+    @Generated
+    @Selector("init")
+    public native SSReadingList init();
 }

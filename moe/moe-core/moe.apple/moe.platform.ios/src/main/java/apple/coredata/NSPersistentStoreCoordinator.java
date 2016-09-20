@@ -60,78 +60,10 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
         super(peer);
     }
 
-    /**
-     * URLForPersistentStore:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/URLForPersistentStore:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("URLForPersistentStore:")
-    public native NSURL URLForPersistentStore(NSPersistentStore store);
-
-    /**
-     * addPersistentStoreWithType:configuration:URL:options:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/addPersistentStoreWithType:configuration:URL:options:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addPersistentStoreWithType:configuration:URL:options:error:")
-    public native NSPersistentStore addPersistentStoreWithTypeConfigurationURLOptionsError(String storeType,
-            String configuration, NSURL storeURL, NSDictionary<?, ?> options, Ptr<NSError> error);
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native NSPersistentStoreCoordinator alloc();
-
-    /**
-     * executeRequest:withContext:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/executeRequest:withContext:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("executeRequest:withContext:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object executeRequestWithContextError(NSPersistentStoreRequest request,
-            NSManagedObjectContext context, Ptr<NSError> error);
-
-    @Generated
-    @Selector("init")
-    public native NSPersistentStoreCoordinator init();
-
-    /**
-     * initWithManagedObjectModel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/initWithManagedObjectModel:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithManagedObjectModel:")
-    public native NSPersistentStoreCoordinator initWithManagedObjectModel(NSManagedObjectModel model);
-
-    @Generated
-    @Deprecated
-    @Selector("lock")
-    public native void lock();
-
-    /**
-     * managedObjectIDForURIRepresentation:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/managedObjectIDForURIRepresentation:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("managedObjectIDForURIRepresentation:")
-    public native NSManagedObjectID managedObjectIDForURIRepresentation(NSURL url);
-
-    /**
-     * managedObjectModel</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreCoordinator/managedObjectModel">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("managedObjectModel")
-    public native NSManagedObjectModel managedObjectModel();
-
-    /**
-     * metadataForPersistentStore:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/metadataForPersistentStore:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("metadataForPersistentStore:")
-    public native NSDictionary<String, ?> metadataForPersistentStore(NSPersistentStore store);
 
     /**
      * metadataForPersistentStoreOfType:URL:error:</br>
@@ -142,58 +74,6 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("metadataForPersistentStoreOfType:URL:error:")
     public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLError(String storeType, NSURL url,
             Ptr<NSError> error);
-
-    /**
-     * migratePersistentStore:toURL:options:withType:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/migratePersistentStore:toURL:options:withType:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("migratePersistentStore:toURL:options:withType:error:")
-    public native NSPersistentStore migratePersistentStoreToURLOptionsWithTypeError(NSPersistentStore store, NSURL URL,
-            NSDictionary<?, ?> options, String storeType, Ptr<NSError> error);
-
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    @Generated
-    @Selector("performBlock:")
-    public native void performBlock(@ObjCBlock(name = "call_performBlock") Block_performBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performBlock {
-        @Generated
-        void call_performBlock();
-    }
-
-    @Generated
-    @Selector("performBlockAndWait:")
-    public native void performBlockAndWait(
-            @ObjCBlock(name = "call_performBlockAndWait") Block_performBlockAndWait block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_performBlockAndWait {
-        @Generated
-        void call_performBlockAndWait();
-    }
-
-    /**
-     * persistentStoreForURL:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/persistentStoreForURL:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("persistentStoreForURL:")
-    public native NSPersistentStore persistentStoreForURL(NSURL URL);
-
-    /**
-     * persistentStores</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreCoordinator/persistentStores">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("persistentStores")
-    public native NSArray<? extends NSPersistentStore> persistentStores();
 
     /**
      * registerStoreClass:forStoreType:</br>
@@ -212,14 +92,6 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     public static native NSDictionary<String, ? extends NSValue> registeredStoreTypes();
 
     /**
-     * removePersistentStore:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/removePersistentStore:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("removePersistentStore:error:")
-    public native boolean removePersistentStoreError(NSPersistentStore store, Ptr<NSError> error);
-
-    /**
      * removeUbiquitousContentAndPersistentStoreAtURL:options:error:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/clm/NSPersistentStoreCoordinator/removeUbiquitousContentAndPersistentStoreAtURL:options:error:">iOS Dev Center</a>
      */
@@ -227,14 +99,6 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("removeUbiquitousContentAndPersistentStoreAtURL:options:error:")
     public static native boolean removeUbiquitousContentAndPersistentStoreAtURLOptionsError(NSURL storeURL,
             NSDictionary<?, ?> options, Ptr<NSError> error);
-
-    /**
-     * setMetadata:forPersistentStore:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/setMetadata:forPersistentStore:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMetadata:forPersistentStore:")
-    public native void setMetadataForPersistentStore(NSDictionary<String, ?> metadata, NSPersistentStore store);
 
     /**
      * setMetadata:forPersistentStoreOfType:URL:error:</br>
@@ -247,46 +111,9 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
             String storeType, NSURL url, Ptr<NSError> error);
 
     @Generated
-    @Selector("setName:")
-    public native void setName(String value);
-
-    /**
-     * setURL:forPersistentStore:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/setURL:forPersistentStore:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setURL:forPersistentStore:")
-    public native boolean setURLForPersistentStore(NSURL url, NSPersistentStore store);
-
-    /**
-     * tryLock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/tryLock">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("tryLock")
-    public native boolean tryLock();
-
-    @Generated
-    @Deprecated
-    @Selector("unlock")
-    public native void unlock();
-
-    @Generated
-    @Selector("destroyPersistentStoreAtURL:withType:options:error:")
-    public native boolean destroyPersistentStoreAtURLWithTypeOptionsError(NSURL url, String storeType,
-            NSDictionary<?, ?> options, Ptr<NSError> error);
-
-    @Generated
     @Selector("metadataForPersistentStoreOfType:URL:options:error:")
     public static native NSDictionary<String, ?> metadataForPersistentStoreOfTypeURLOptionsError(String storeType,
             NSURL url, NSDictionary<?, ?> options, Ptr<NSError> error);
-
-    @Generated
-    @Selector("replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:")
-    public native boolean replacePersistentStoreAtURLDestinationOptionsWithPersistentStoreFromURLSourceOptionsStoreTypeError(
-            NSURL destinationURL, NSDictionary<?, ?> destinationOptions, NSURL sourceURL,
-            NSDictionary<?, ?> sourceOptions, String storeType, Ptr<NSError> error);
 
     @Generated
     @Selector("setMetadata:forPersistentStoreOfType:URL:options:error:")
@@ -392,4 +219,177 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * URLForPersistentStore:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/URLForPersistentStore:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("URLForPersistentStore:")
+    public native NSURL URLForPersistentStore(NSPersistentStore store);
+
+    /**
+     * addPersistentStoreWithType:configuration:URL:options:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/addPersistentStoreWithType:configuration:URL:options:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addPersistentStoreWithType:configuration:URL:options:error:")
+    public native NSPersistentStore addPersistentStoreWithTypeConfigurationURLOptionsError(String storeType,
+            String configuration, NSURL storeURL, NSDictionary<?, ?> options, Ptr<NSError> error);
+
+    /**
+     * executeRequest:withContext:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/executeRequest:withContext:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("executeRequest:withContext:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object executeRequestWithContextError(NSPersistentStoreRequest request,
+            NSManagedObjectContext context, Ptr<NSError> error);
+
+    @Generated
+    @Selector("init")
+    public native NSPersistentStoreCoordinator init();
+
+    /**
+     * initWithManagedObjectModel:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/initWithManagedObjectModel:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithManagedObjectModel:")
+    public native NSPersistentStoreCoordinator initWithManagedObjectModel(NSManagedObjectModel model);
+
+    @Generated
+    @Deprecated
+    @Selector("lock")
+    public native void lock();
+
+    /**
+     * managedObjectIDForURIRepresentation:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/managedObjectIDForURIRepresentation:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("managedObjectIDForURIRepresentation:")
+    public native NSManagedObjectID managedObjectIDForURIRepresentation(NSURL url);
+
+    /**
+     * managedObjectModel</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreCoordinator/managedObjectModel">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("managedObjectModel")
+    public native NSManagedObjectModel managedObjectModel();
+
+    /**
+     * metadataForPersistentStore:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/metadataForPersistentStore:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("metadataForPersistentStore:")
+    public native NSDictionary<String, ?> metadataForPersistentStore(NSPersistentStore store);
+
+    /**
+     * migratePersistentStore:toURL:options:withType:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/migratePersistentStore:toURL:options:withType:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("migratePersistentStore:toURL:options:withType:error:")
+    public native NSPersistentStore migratePersistentStoreToURLOptionsWithTypeError(NSPersistentStore store, NSURL URL,
+            NSDictionary<?, ?> options, String storeType, Ptr<NSError> error);
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("performBlock:")
+    public native void performBlock(@ObjCBlock(name = "call_performBlock") Block_performBlock block);
+
+    @Generated
+    @Selector("performBlockAndWait:")
+    public native void performBlockAndWait(
+            @ObjCBlock(name = "call_performBlockAndWait") Block_performBlockAndWait block);
+
+    /**
+     * persistentStoreForURL:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/persistentStoreForURL:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("persistentStoreForURL:")
+    public native NSPersistentStore persistentStoreForURL(NSURL URL);
+
+    /**
+     * persistentStores</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instp/NSPersistentStoreCoordinator/persistentStores">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("persistentStores")
+    public native NSArray<? extends NSPersistentStore> persistentStores();
+
+    /**
+     * removePersistentStore:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/removePersistentStore:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("removePersistentStore:error:")
+    public native boolean removePersistentStoreError(NSPersistentStore store, Ptr<NSError> error);
+
+    /**
+     * setMetadata:forPersistentStore:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/setMetadata:forPersistentStore:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMetadata:forPersistentStore:")
+    public native void setMetadataForPersistentStore(NSDictionary<String, ?> metadata, NSPersistentStore store);
+
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
+
+    /**
+     * setURL:forPersistentStore:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/setURL:forPersistentStore:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setURL:forPersistentStore:")
+    public native boolean setURLForPersistentStore(NSURL url, NSPersistentStore store);
+
+    /**
+     * tryLock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/index.html#//apple_ref/occ/instm/NSPersistentStoreCoordinator/tryLock">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("tryLock")
+    public native boolean tryLock();
+
+    @Generated
+    @Deprecated
+    @Selector("unlock")
+    public native void unlock();
+
+    @Generated
+    @Selector("destroyPersistentStoreAtURL:withType:options:error:")
+    public native boolean destroyPersistentStoreAtURLWithTypeOptionsError(NSURL url, String storeType,
+            NSDictionary<?, ?> options, Ptr<NSError> error);
+
+    @Generated
+    @Selector("replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:")
+    public native boolean replacePersistentStoreAtURLDestinationOptionsWithPersistentStoreFromURLSourceOptionsStoreTypeError(
+            NSURL destinationURL, NSDictionary<?, ?> destinationOptions, NSURL sourceURL,
+            NSDictionary<?, ?> sourceOptions, String storeType, Ptr<NSError> error);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performBlock {
+        @Generated
+        void call_performBlock();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performBlockAndWait {
+        @Generated
+        void call_performBlockAndWait();
+    }
 }

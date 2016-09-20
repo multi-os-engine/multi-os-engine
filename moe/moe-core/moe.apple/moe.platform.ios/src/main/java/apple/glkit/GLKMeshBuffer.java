@@ -63,52 +63,6 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     public static native GLKMeshBuffer alloc();
 
     @Generated
-    @Selector("allocator")
-    public native GLKMeshBufferAllocator allocator();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("fillData:offset:")
-    public native void fillDataOffset(NSData data, @NUInt long offset);
-
-    @Generated
-    @Selector("glBufferName")
-    public native int glBufferName();
-
-    @Generated
-    @Selector("init")
-    public native GLKMeshBuffer init();
-
-    @Generated
-    @Selector("length")
-    @NUInt
-    public native long length();
-
-    @Generated
-    @Selector("map")
-    public native MDLMeshBufferMap map();
-
-    @Generated
-    @Selector("offset")
-    @NUInt
-    public native long offset();
-
-    @Generated
-    @Selector("type")
-    @NUInt
-    public native long type();
-
-    @Generated
-    @Selector("zone")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MDLMeshBufferZone zone();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -207,4 +161,50 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("allocator")
+    public native GLKMeshBufferAllocator allocator();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("fillData:offset:")
+    public native void fillDataOffset(NSData data, @NUInt long offset);
+
+    @Generated
+    @Selector("glBufferName")
+    public native int glBufferName();
+
+    @Generated
+    @Selector("init")
+    public native GLKMeshBuffer init();
+
+    @Generated
+    @Selector("length")
+    @NUInt
+    public native long length();
+
+    @Generated
+    @Selector("map")
+    public native MDLMeshBufferMap map();
+
+    @Generated
+    @Selector("offset")
+    @NUInt
+    public native long offset();
+
+    @Generated
+    @Selector("type")
+    @NUInt
+    public native long type();
+
+    @Generated
+    @Selector("zone")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MDLMeshBufferZone zone();
 }

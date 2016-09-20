@@ -57,62 +57,10 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
         super(peer);
     }
 
-    /**
-     * UDIDeviceIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/UDIDeviceIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("UDIDeviceIdentifier")
-    public native String UDIDeviceIdentifier();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native HKDevice alloc();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * firmwareVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/firmwareVersion">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("firmwareVersion")
-    public native String firmwareVersion();
-
-    /**
-     * hardwareVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/hardwareVersion">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("hardwareVersion")
-    public native String hardwareVersion();
-
-    @Generated
-    @Selector("init")
-    public native HKDevice init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKDevice initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instm/HKDevice/initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:")
-    public native HKDevice initWithNameManufacturerModelHardwareVersionFirmwareVersionSoftwareVersionLocalIdentifierUDIDeviceIdentifier(
-            String name, String manufacturer, String model, String hardwareVersion, String firmwareVersion,
-            String softwareVersion, String localIdentifier, String UDIDeviceIdentifier);
 
     /**
      * localDevice</br>
@@ -122,55 +70,9 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("localDevice")
     public static native HKDevice localDevice();
 
-    /**
-     * localIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/localIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localIdentifier")
-    public native String localIdentifier();
-
-    /**
-     * manufacturer</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/manufacturer">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("manufacturer")
-    public native String manufacturer();
-
-    /**
-     * model</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/model">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("model")
-    public native String model();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * softwareVersion</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/softwareVersion">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("softwareVersion")
-    public native String softwareVersion();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -271,4 +173,102 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * UDIDeviceIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/UDIDeviceIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("UDIDeviceIdentifier")
+    public native String UDIDeviceIdentifier();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * firmwareVersion</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/firmwareVersion">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("firmwareVersion")
+    public native String firmwareVersion();
+
+    /**
+     * hardwareVersion</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/hardwareVersion">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("hardwareVersion")
+    public native String hardwareVersion();
+
+    @Generated
+    @Selector("init")
+    public native HKDevice init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKDevice initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instm/HKDevice/initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:")
+    public native HKDevice initWithNameManufacturerModelHardwareVersionFirmwareVersionSoftwareVersionLocalIdentifierUDIDeviceIdentifier(
+            String name, String manufacturer, String model, String hardwareVersion, String firmwareVersion,
+            String softwareVersion, String localIdentifier, String UDIDeviceIdentifier);
+
+    /**
+     * localIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/localIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localIdentifier")
+    public native String localIdentifier();
+
+    /**
+     * manufacturer</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/manufacturer">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("manufacturer")
+    public native String manufacturer();
+
+    /**
+     * model</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/model">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("model")
+    public native String model();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * softwareVersion</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKDevice_ClassReference/index.html#//apple_ref/occ/instp/HKDevice/softwareVersion">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("softwareVersion")
+    public native String softwareVersion();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

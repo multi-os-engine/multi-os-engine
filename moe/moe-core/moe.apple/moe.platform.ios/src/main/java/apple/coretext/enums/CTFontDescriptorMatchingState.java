@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CTFontDescriptorMatchingState {
-    @Generated
-    private CTFontDescriptorMatchingState() {
-    }
-
     @Generated public static final int DidBegin = 0x00000000;
     @Generated public static final int DidFinish = 0x00000001;
     @Generated public static final int WillBeginQuerying = 0x00000002;
@@ -33,4 +29,8 @@ public final class CTFontDescriptorMatchingState {
     @Generated public static final int DidFinishDownloading = 0x00000006;
     @Generated public static final int DidMatch = 0x00000007;
     @Generated public static final int DidFailWithError = 0x00000008;
+
+    @Generated
+    private CTFontDescriptorMatchingState() {
+    }
 }

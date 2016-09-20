@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVMusicTrackLoopCount {
+    @Generated @NInt public static final long AVMusicTrackLoopCountForever = 0xFFFFFFFFFFFFFFFFL;
+
     @Generated
     private AVMusicTrackLoopCount() {
     }
-
-    @Generated @NInt public static final long AVMusicTrackLoopCountForever = 0xFFFFFFFFFFFFFFFFL;
 }

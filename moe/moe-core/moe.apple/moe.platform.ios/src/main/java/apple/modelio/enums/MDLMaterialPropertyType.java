@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MDLMaterialPropertyType {
-    @Generated
-    private MDLMaterialPropertyType() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long String = 0x0000000000000001L;
     @Generated @NUInt public static final long URL = 0x0000000000000002L;
@@ -35,4 +31,8 @@ public final class MDLMaterialPropertyType {
     @Generated @NUInt public static final long Float3 = 0x0000000000000007L;
     @Generated @NUInt public static final long Float4 = 0x0000000000000008L;
     @Generated @NUInt public static final long Matrix44 = 0x0000000000000009L;
+
+    @Generated
+    private MDLMaterialPropertyType() {
+    }
 }

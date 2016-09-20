@@ -62,46 +62,6 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
     public static native NETunnelProviderProtocol alloc();
 
     @Generated
-    @Selector("init")
-    public native NETunnelProviderProtocol init();
-
-    /**
-     * providerBundleIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderProtocolClassRef/index.html#//apple_ref/occ/instp/NETunnelProviderProtocol/providerBundleIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("providerBundleIdentifier")
-    public native String providerBundleIdentifier();
-
-    /**
-     * providerConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderProtocolClassRef/index.html#//apple_ref/occ/instp/NETunnelProviderProtocol/providerConfiguration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("providerConfiguration")
-    public native NSDictionary<String, ?> providerConfiguration();
-
-    /**
-     * providerBundleIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderProtocolClassRef/index.html#//apple_ref/occ/instp/NETunnelProviderProtocol/providerBundleIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProviderBundleIdentifier:")
-    public native void setProviderBundleIdentifier(String value);
-
-    /**
-     * providerConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderProtocolClassRef/index.html#//apple_ref/occ/instp/NETunnelProviderProtocol/providerConfiguration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setProviderConfiguration:")
-    public native void setProviderConfiguration(NSDictionary<String, ?> value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NETunnelProviderProtocol initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -201,13 +161,53 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native NETunnelProviderProtocol init();
+
+    /**
+     * providerBundleIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderProtocolClassRef/index.html#//apple_ref/occ/instp/NETunnelProviderProtocol/providerBundleIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("providerBundleIdentifier")
+    public native String providerBundleIdentifier();
+
+    /**
+     * providerConfiguration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderProtocolClassRef/index.html#//apple_ref/occ/instp/NETunnelProviderProtocol/providerConfiguration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("providerConfiguration")
+    public native NSDictionary<String, ?> providerConfiguration();
+
+    /**
+     * providerBundleIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderProtocolClassRef/index.html#//apple_ref/occ/instp/NETunnelProviderProtocol/providerBundleIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProviderBundleIdentifier:")
+    public native void setProviderBundleIdentifier(String value);
+
+    /**
+     * providerConfiguration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NETunnelProviderProtocolClassRef/index.html#//apple_ref/occ/instp/NETunnelProviderProtocol/providerConfiguration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setProviderConfiguration:")
+    public native void setProviderConfiguration(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NETunnelProviderProtocol initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

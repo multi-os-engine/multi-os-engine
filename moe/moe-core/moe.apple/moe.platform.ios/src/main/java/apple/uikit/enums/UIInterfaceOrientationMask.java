@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class UIInterfaceOrientationMask {
-    @Generated
-    private UIInterfaceOrientationMask() {
-    }
-
     @Generated @NUInt public static final long Portrait = 0x0000000000000002L;
     @Generated @NUInt public static final long LandscapeLeft = 0x0000000000000010L;
     @Generated @NUInt public static final long LandscapeRight = 0x0000000000000008L;
@@ -32,4 +28,8 @@ public final class UIInterfaceOrientationMask {
     @Generated @NUInt public static final long Landscape = 0x0000000000000018L;
     @Generated @NUInt public static final long All = 0x000000000000001EL;
     @Generated @NUInt public static final long AllButUpsideDown = 0x000000000000001AL;
+
+    @Generated
+    private UIInterfaceOrientationMask() {
+    }
 }

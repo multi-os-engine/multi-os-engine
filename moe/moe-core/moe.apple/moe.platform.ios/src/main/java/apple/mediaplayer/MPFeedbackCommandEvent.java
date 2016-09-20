@@ -59,18 +59,6 @@ public class MPFeedbackCommandEvent extends MPRemoteCommandEvent {
     public static native MPFeedbackCommandEvent alloc();
 
     @Generated
-    @Selector("init")
-    public native MPFeedbackCommandEvent init();
-
-    /**
-     * negative</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPFeedbackCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPFeedbackCommandEvent/negative">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isNegative")
-    public native boolean isNegative();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class MPFeedbackCommandEvent extends MPRemoteCommandEvent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPFeedbackCommandEvent init();
+
+    /**
+     * negative</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPFeedbackCommandEvent_Ref/index.html#//apple_ref/occ/instp/MPFeedbackCommandEvent/negative">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isNegative")
+    public native boolean isNegative();
 }

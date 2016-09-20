@@ -73,114 +73,6 @@ public class MKOverlayView extends UIView {
     @Selector("alloc")
     public static native MKOverlayView alloc();
 
-    /**
-     * canDrawMapRect:zoomScale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/canDrawMapRect:zoomScale:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("canDrawMapRect:zoomScale:")
-    public native boolean canDrawMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
-
-    /**
-     * drawMapRect:zoomScale:inContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/drawMapRect:zoomScale:inContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("drawMapRect:zoomScale:inContext:")
-    public native void drawMapRectZoomScaleInContext(@ByValue MKMapRect mapRect, @NFloat double zoomScale,
-            CGContextRef context);
-
-    @Generated
-    @Selector("init")
-    public native MKOverlayView init();
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native MKOverlayView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * initWithOverlay:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/initWithOverlay:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("initWithOverlay:")
-    public native MKOverlayView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
-
-    /**
-     * mapPointForPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/mapPointForPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("mapPointForPoint:")
-    @ByValue
-    public native MKMapPoint mapPointForPoint(@ByValue CGPoint point);
-
-    /**
-     * mapRectForRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/mapRectForRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("mapRectForRect:")
-    @ByValue
-    public native MKMapRect mapRectForRect(@ByValue CGRect rect);
-
-    /**
-     * overlay</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instp/MKOverlayView/overlay">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("overlay")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native MKOverlay overlay();
-
-    /**
-     * pointForMapPoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/pointForMapPoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("pointForMapPoint:")
-    @ByValue
-    public native CGPoint pointForMapPoint(@ByValue MKMapPoint mapPoint);
-
-    /**
-     * rectForMapRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/rectForMapRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("rectForMapRect:")
-    @ByValue
-    public native CGRect rectForMapRect(@ByValue MKMapRect mapRect);
-
-    /**
-     * setNeedsDisplayInMapRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/setNeedsDisplayInMapRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setNeedsDisplayInMapRect:")
-    public native void setNeedsDisplayInMapRect(@ByValue MKMapRect mapRect);
-
-    /**
-     * setNeedsDisplayInMapRect:zoomScale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/setNeedsDisplayInMapRect:zoomScale:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setNeedsDisplayInMapRect:zoomScale:")
-    public native void setNeedsDisplayInMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKOverlayView initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -234,23 +126,9 @@ public class MKOverlayView extends UIView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -261,27 +139,10 @@ public class MKOverlayView extends UIView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -292,24 +153,9 @@ public class MKOverlayView extends UIView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -507,4 +353,158 @@ public class MKOverlayView extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * canDrawMapRect:zoomScale:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/canDrawMapRect:zoomScale:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("canDrawMapRect:zoomScale:")
+    public native boolean canDrawMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
+
+    /**
+     * drawMapRect:zoomScale:inContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/drawMapRect:zoomScale:inContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("drawMapRect:zoomScale:inContext:")
+    public native void drawMapRectZoomScaleInContext(@ByValue MKMapRect mapRect, @NFloat double zoomScale,
+            CGContextRef context);
+
+    @Generated
+    @Selector("init")
+    public native MKOverlayView init();
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native MKOverlayView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * initWithOverlay:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/initWithOverlay:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("initWithOverlay:")
+    public native MKOverlayView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
+
+    /**
+     * mapPointForPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/mapPointForPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("mapPointForPoint:")
+    @ByValue
+    public native MKMapPoint mapPointForPoint(@ByValue CGPoint point);
+
+    /**
+     * mapRectForRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/mapRectForRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("mapRectForRect:")
+    @ByValue
+    public native MKMapRect mapRectForRect(@ByValue CGRect rect);
+
+    /**
+     * overlay</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instp/MKOverlayView/overlay">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("overlay")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MKOverlay overlay();
+
+    /**
+     * pointForMapPoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/pointForMapPoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("pointForMapPoint:")
+    @ByValue
+    public native CGPoint pointForMapPoint(@ByValue MKMapPoint mapPoint);
+
+    /**
+     * rectForMapRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/rectForMapRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("rectForMapRect:")
+    @ByValue
+    public native CGRect rectForMapRect(@ByValue MKMapRect mapRect);
+
+    /**
+     * setNeedsDisplayInMapRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/setNeedsDisplayInMapRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setNeedsDisplayInMapRect:")
+    public native void setNeedsDisplayInMapRect(@ByValue MKMapRect mapRect);
+
+    /**
+     * setNeedsDisplayInMapRect:zoomScale:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKOverlayView_class/index.html#//apple_ref/occ/instm/MKOverlayView/setNeedsDisplayInMapRect:zoomScale:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setNeedsDisplayInMapRect:zoomScale:")
+    public native void setNeedsDisplayInMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MKOverlayView initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

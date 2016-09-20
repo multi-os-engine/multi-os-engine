@@ -59,18 +59,6 @@ public class AVCompositionTrack extends AVAssetTrack {
     public static native AVCompositionTrack alloc();
 
     @Generated
-    @Selector("init")
-    public native AVCompositionTrack init();
-
-    /**
-     * segments</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVCompositionTrack/segments">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("segments")
-    public native NSArray<? extends AVCompositionTrackSegment> segments();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -169,4 +157,16 @@ public class AVCompositionTrack extends AVAssetTrack {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVCompositionTrack init();
+
+    /**
+     * segments</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCompositionTrack_Class/index.html#//apple_ref/occ/instp/AVCompositionTrack/segments">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("segments")
+    public native NSArray<? extends AVCompositionTrackSegment> segments();
 }

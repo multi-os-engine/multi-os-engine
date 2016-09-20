@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLStoreAction {
-    @Generated
-    private MTLStoreAction() {
-    }
-
     @Generated @NUInt public static final long DontCare = 0x0000000000000000L;
     @Generated @NUInt public static final long Store = 0x0000000000000001L;
     @Generated @NUInt public static final long MultisampleResolve = 0x0000000000000002L;
+
+    @Generated
+    private MTLStoreAction() {
+    }
 }

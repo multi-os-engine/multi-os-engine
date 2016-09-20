@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MKAnnotationViewDragState {
-    @Generated
-    private MKAnnotationViewDragState() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long Starting = 0x0000000000000001L;
     @Generated @NUInt public static final long Dragging = 0x0000000000000002L;
     @Generated @NUInt public static final long Canceling = 0x0000000000000003L;
     @Generated @NUInt public static final long Ending = 0x0000000000000004L;
+
+    @Generated
+    private MKAnnotationViewDragState() {
+    }
 }

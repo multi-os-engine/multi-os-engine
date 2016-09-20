@@ -58,29 +58,9 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     }
 
     @Generated
-    @Selector("URLAsset")
-    public native AVURLAsset URLAsset();
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native AVAssetDownloadTask alloc();
-
-    @Generated
-    @Selector("destinationURL")
-    public native NSURL destinationURL();
-
-    @Generated
-    @Selector("init")
-    public native AVAssetDownloadTask init();
-
-    @Generated
-    @Selector("loadedTimeRanges")
-    public native NSArray<? extends NSValue> loadedTimeRanges();
-
-    @Generated
-    @Selector("options")
-    public native NSDictionary<String, ?> options();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -181,4 +161,24 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("URLAsset")
+    public native AVURLAsset URLAsset();
+
+    @Generated
+    @Selector("destinationURL")
+    public native NSURL destinationURL();
+
+    @Generated
+    @Selector("init")
+    public native AVAssetDownloadTask init();
+
+    @Generated
+    @Selector("loadedTimeRanges")
+    public native NSArray<? extends NSValue> loadedTimeRanges();
+
+    @Generated
+    @Selector("options")
+    public native NSDictionary<String, ?> options();
 }

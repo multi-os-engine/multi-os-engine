@@ -61,24 +61,6 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
     @Selector("alloc")
     public static native EKStructuredLocation alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * geoLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/geoLocation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("geoLocation")
-    public native CLLocation geoLocation();
-
-    @Generated
-    @Selector("init")
-    public native EKStructuredLocation init();
-
     /**
      * locationWithTitle:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/clm/EKStructuredLocation/locationWithTitle:">iOS Dev Center</a>
@@ -86,46 +68,6 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
     @Generated
     @Selector("locationWithTitle:")
     public static native EKStructuredLocation locationWithTitle(String title);
-
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/radius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("radius")
-    public native double radius();
-
-    /**
-     * geoLocation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/geoLocation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setGeoLocation:")
-    public native void setGeoLocation(CLLocation value);
-
-    /**
-     * radius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/radius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setRadius:")
-    public native void setRadius(double value);
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTitle:")
-    public native void setTitle(String value);
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
 
     @Generated
     @Selector("locationWithMapItem:")
@@ -230,4 +172,62 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * geoLocation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/geoLocation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("geoLocation")
+    public native CLLocation geoLocation();
+
+    @Generated
+    @Selector("init")
+    public native EKStructuredLocation init();
+
+    /**
+     * radius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/radius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("radius")
+    public native double radius();
+
+    /**
+     * geoLocation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/geoLocation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setGeoLocation:")
+    public native void setGeoLocation(CLLocation value);
+
+    /**
+     * radius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/radius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setRadius:")
+    public native void setRadius(double value);
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKStructuredLocationClassRef/index.html#//apple_ref/occ/instp/EKStructuredLocation/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
 }

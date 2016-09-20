@@ -58,52 +58,6 @@ public class EKSource extends EKObject {
     @Selector("alloc")
     public static native EKSource alloc();
 
-    /**
-     * calendars</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKSourceClassRef/index.html#//apple_ref/occ/instp/EKSource/calendars">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("calendars")
-    public native NSSet<? extends EKCalendar> calendars();
-
-    /**
-     * calendarsForEntityType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKSourceClassRef/index.html#//apple_ref/occ/instm/EKSource/calendarsForEntityType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("calendarsForEntityType:")
-    public native NSSet<? extends EKCalendar> calendarsForEntityType(@NUInt long entityType);
-
-    @Generated
-    @Selector("init")
-    public native EKSource init();
-
-    /**
-     * sourceIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKSourceClassRef/index.html#//apple_ref/occ/instp/EKSource/sourceIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceIdentifier")
-    public native String sourceIdentifier();
-
-    /**
-     * sourceType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKSourceClassRef/index.html#//apple_ref/occ/instp/EKSource/sourceType">iOS Dev Center</a>
-     */
-    @NInt
-    @Generated
-    @Selector("sourceType")
-    public native long sourceType();
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKSourceClassRef/index.html#//apple_ref/occ/instp/EKSource/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -203,4 +157,50 @@ public class EKSource extends EKObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * calendars</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKSourceClassRef/index.html#//apple_ref/occ/instp/EKSource/calendars">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("calendars")
+    public native NSSet<? extends EKCalendar> calendars();
+
+    /**
+     * calendarsForEntityType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKSourceClassRef/index.html#//apple_ref/occ/instm/EKSource/calendarsForEntityType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("calendarsForEntityType:")
+    public native NSSet<? extends EKCalendar> calendarsForEntityType(@NUInt long entityType);
+
+    @Generated
+    @Selector("init")
+    public native EKSource init();
+
+    /**
+     * sourceIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKSourceClassRef/index.html#//apple_ref/occ/instp/EKSource/sourceIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceIdentifier")
+    public native String sourceIdentifier();
+
+    /**
+     * sourceType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKSourceClassRef/index.html#//apple_ref/occ/instp/EKSource/sourceType">iOS Dev Center</a>
+     */
+    @NInt
+    @Generated
+    @Selector("sourceType")
+    public native long sourceType();
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/EventKit/Reference/EKSourceClassRef/index.html#//apple_ref/occ/instp/EKSource/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
 }

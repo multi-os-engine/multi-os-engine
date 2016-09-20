@@ -54,17 +54,9 @@ public class CBAttribute extends NSObject {
     }
 
     @Generated
-    @Selector("UUID")
-    public native CBUUID UUID();
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native CBAttribute alloc();
-
-    @Generated
-    @Selector("init")
-    public native CBAttribute init();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -165,4 +157,12 @@ public class CBAttribute extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Selector("UUID")
+    public native CBUUID UUID();
+
+    @Generated
+    @Selector("init")
+    public native CBAttribute init();
 }

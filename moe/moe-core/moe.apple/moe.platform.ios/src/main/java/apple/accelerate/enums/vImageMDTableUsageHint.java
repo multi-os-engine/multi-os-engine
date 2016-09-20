@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class vImageMDTableUsageHint {
+    @Generated public static final int kvImageMDTableHint_16Q12 = 0x00000001;
+    @Generated public static final int kvImageMDTableHint_Float = 0x00000002;
+
     @Generated
     private vImageMDTableUsageHint() {
     }
-
-    @Generated public static final int kvImageMDTableHint_16Q12 = 0x00000001;
-    @Generated public static final int kvImageMDTableHint_Float = 0x00000002;
 }

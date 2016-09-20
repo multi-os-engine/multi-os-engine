@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CMTimeRoundingMethod {
-    @Generated
-    private CMTimeRoundingMethod() {
-    }
-
     @Generated public static final int RoundHalfAwayFromZero = 0x00000001;
     @Generated public static final int RoundTowardZero = 0x00000002;
     @Generated public static final int RoundAwayFromZero = 0x00000003;
@@ -31,4 +27,8 @@ public final class CMTimeRoundingMethod {
     @Generated public static final int RoundTowardPositiveInfinity = 0x00000005;
     @Generated public static final int RoundTowardNegativeInfinity = 0x00000006;
     @Generated public static final int Default = 0x00000001;
+
+    @Generated
+    private CMTimeRoundingMethod() {
+    }
 }

@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MDLMaterialTextureWrapMode {
-    @Generated
-    private MDLMaterialTextureWrapMode() {
-    }
-
     @Generated @NUInt public static final long Clamp = 0x0000000000000000L;
     @Generated @NUInt public static final long Repeat = 0x0000000000000001L;
     @Generated @NUInt public static final long Mirror = 0x0000000000000002L;
+
+    @Generated
+    private MDLMaterialTextureWrapMode() {
+    }
 }

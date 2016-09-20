@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIActivityCategory {
+    @Generated @NInt public static final long Action = 0x0000000000000000L;
+    @Generated @NInt public static final long Share = 0x0000000000000001L;
+
     @Generated
     private UIActivityCategory() {
     }
-
-    @Generated @NInt public static final long Action = 0x0000000000000000L;
-    @Generated @NInt public static final long Share = 0x0000000000000001L;
 }

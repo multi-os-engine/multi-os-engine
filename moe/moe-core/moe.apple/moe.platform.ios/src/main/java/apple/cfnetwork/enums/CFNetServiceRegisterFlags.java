@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFNetServiceRegisterFlags {
+    @Generated @NUInt public static final long kCFNetServiceFlagNoAutoRename = 0x0000000000000001L;
+
     @Generated
     private CFNetServiceRegisterFlags() {
     }
-
-    @Generated @NUInt public static final long kCFNetServiceFlagNoAutoRename = 0x0000000000000001L;
 }

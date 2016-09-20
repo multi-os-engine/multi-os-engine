@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kDesignLevel1Selector = 0x00000000;
     @Generated public static final int kDesignLevel2Selector = 0x00000001;
     @Generated public static final int kDesignLevel3Selector = 0x00000002;
@@ -792,4 +788,8 @@ public final class Enums {
     @Generated public static final int kSFNTLookupSingleTable = 0x00000006;
     @Generated public static final int kSFNTLookupTrimmedArray = 0x00000008;
     @Generated public static final int kMORXCoverLogicalOrder = 0x10000000;
+
+    @Generated
+    private Enums() {
+    }
 }

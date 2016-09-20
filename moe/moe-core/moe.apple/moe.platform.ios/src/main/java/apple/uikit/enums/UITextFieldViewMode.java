@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UITextFieldViewMode {
-    @Generated
-    private UITextFieldViewMode() {
-    }
-
     @Generated @NInt public static final long Never = 0x0000000000000000L;
     @Generated @NInt public static final long WhileEditing = 0x0000000000000001L;
     @Generated @NInt public static final long UnlessEditing = 0x0000000000000002L;
     @Generated @NInt public static final long Always = 0x0000000000000003L;
+
+    @Generated
+    private UITextFieldViewMode() {
+    }
 }

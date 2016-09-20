@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLPixelFormat {
-    @Generated
-    private MTLPixelFormat() {
-    }
-
     @Generated @NUInt public static final long Invalid = 0x0000000000000000L;
     @Generated @NUInt public static final long A8Unorm = 0x0000000000000001L;
     @Generated @NUInt public static final long R8Unorm = 0x000000000000000AL;
@@ -127,4 +123,8 @@ public final class MTLPixelFormat {
     @Generated @NUInt public static final long Stencil8 = 0x00000000000000FDL;
     @Generated @NUInt public static final long BGR5A1Unorm = 0x000000000000002BL;
     @Generated @NUInt public static final long Depth32Float_Stencil8 = 0x0000000000000104L;
+
+    @Generated
+    private MTLPixelFormat() {
+    }
 }

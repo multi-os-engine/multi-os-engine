@@ -20,10 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SCPreferencesNotification {
+    @Generated public static final int Commit = 0x00000001;
+    @Generated public static final int Apply = 0x00000002;
     @Generated
     private SCPreferencesNotification() {
     }
-
-    @Generated public static final int Commit = 0x00000001;
-    @Generated public static final int Apply = 0x00000002;
 }

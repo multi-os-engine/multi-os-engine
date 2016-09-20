@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int kCMBufferQueueError_AllocationFailed = 0xFFFFCE28;
     @Generated public static final int kCMBufferQueueError_RequiredParameterMissing = 0xFFFFCE27;
     @Generated public static final int kCMBufferQueueError_InvalidCMBufferCallbacksStruct = 0xFFFFCE26;
@@ -259,4 +255,8 @@ public final class Enums {
     @Generated public static final int kCMSubtitleFormatType_WebVTT = 0x77767474;
     @Generated public static final int kCMVideoCodecType_HEVC = 0x68766331;
     @Generated public static final int kCMBufferQueueTrigger_WhenDurationBecomesGreaterThanOrEqualToAndBufferCountBecomesGreaterThan = 0x0000000C;
+
+    @Generated
+    private Enums() {
+    }
 }

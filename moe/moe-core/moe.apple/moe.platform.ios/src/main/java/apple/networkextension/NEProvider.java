@@ -59,60 +59,6 @@ public class NEProvider extends NSObject {
     @Selector("alloc")
     public static native NEProvider alloc();
 
-    /**
-     * createTCPConnectionToEndpoint:enableTLS:TLSParameters:delegate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProviderClassRef/index.html#//apple_ref/occ/instm/NEProvider/createTCPConnectionToEndpoint:enableTLS:TLSParameters:delegate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("createTCPConnectionToEndpoint:enableTLS:TLSParameters:delegate:")
-    public native NWTCPConnection createTCPConnectionToEndpointEnableTLSTLSParametersDelegate(NWEndpoint remoteEndpoint,
-            boolean enableTLS, NWTLSParameters TLSParameters, @Mapped(ObjCObjectMapper.class) Object delegate);
-
-    /**
-     * createUDPSessionToEndpoint:fromEndpoint:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProviderClassRef/index.html#//apple_ref/occ/instm/NEProvider/createUDPSessionToEndpoint:fromEndpoint:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("createUDPSessionToEndpoint:fromEndpoint:")
-    public native NWUDPSession createUDPSessionToEndpointFromEndpoint(NWEndpoint remoteEndpoint,
-            NWHostEndpoint localEndpoint);
-
-    /**
-     * defaultPath</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProviderClassRef/index.html#//apple_ref/occ/instp/NEProvider/defaultPath">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultPath")
-    public native NWPath defaultPath();
-
-    @Generated
-    @Selector("init")
-    public native NEProvider init();
-
-    /**
-     * sleepWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProviderClassRef/index.html#//apple_ref/occ/instm/NEProvider/sleepWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sleepWithCompletionHandler:")
-    public native void sleepWithCompletionHandler(
-            @ObjCBlock(name = "call_sleepWithCompletionHandler") Block_sleepWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sleepWithCompletionHandler {
-        @Generated
-        void call_sleepWithCompletionHandler();
-    }
-
-    /**
-     * wake</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProviderClassRef/index.html#//apple_ref/occ/instm/NEProvider/wake">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("wake")
-    public native void wake();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -212,4 +158,58 @@ public class NEProvider extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * createTCPConnectionToEndpoint:enableTLS:TLSParameters:delegate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProviderClassRef/index.html#//apple_ref/occ/instm/NEProvider/createTCPConnectionToEndpoint:enableTLS:TLSParameters:delegate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("createTCPConnectionToEndpoint:enableTLS:TLSParameters:delegate:")
+    public native NWTCPConnection createTCPConnectionToEndpointEnableTLSTLSParametersDelegate(NWEndpoint remoteEndpoint,
+            boolean enableTLS, NWTLSParameters TLSParameters, @Mapped(ObjCObjectMapper.class) Object delegate);
+
+    /**
+     * createUDPSessionToEndpoint:fromEndpoint:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProviderClassRef/index.html#//apple_ref/occ/instm/NEProvider/createUDPSessionToEndpoint:fromEndpoint:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("createUDPSessionToEndpoint:fromEndpoint:")
+    public native NWUDPSession createUDPSessionToEndpointFromEndpoint(NWEndpoint remoteEndpoint,
+            NWHostEndpoint localEndpoint);
+
+    /**
+     * defaultPath</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProviderClassRef/index.html#//apple_ref/occ/instp/NEProvider/defaultPath">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultPath")
+    public native NWPath defaultPath();
+
+    @Generated
+    @Selector("init")
+    public native NEProvider init();
+
+    /**
+     * sleepWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProviderClassRef/index.html#//apple_ref/occ/instm/NEProvider/sleepWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sleepWithCompletionHandler:")
+    public native void sleepWithCompletionHandler(
+            @ObjCBlock(name = "call_sleepWithCompletionHandler") Block_sleepWithCompletionHandler completionHandler);
+
+    /**
+     * wake</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEProviderClassRef/index.html#//apple_ref/occ/instm/NEProvider/wake">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("wake")
+    public native void wake();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sleepWithCompletionHandler {
+        @Generated
+        void call_sleepWithCompletionHandler();
+    }
 }

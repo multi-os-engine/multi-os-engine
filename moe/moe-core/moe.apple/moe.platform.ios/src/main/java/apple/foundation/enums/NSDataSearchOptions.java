@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDataSearchOptions {
+    @Generated @NUInt public static final long Backwards = 0x0000000000000001L;
+    @Generated @NUInt public static final long Anchored = 0x0000000000000002L;
+
     @Generated
     private NSDataSearchOptions() {
     }
-
-    @Generated @NUInt public static final long Backwards = 0x0000000000000001L;
-    @Generated @NUInt public static final long Anchored = 0x0000000000000002L;
 }

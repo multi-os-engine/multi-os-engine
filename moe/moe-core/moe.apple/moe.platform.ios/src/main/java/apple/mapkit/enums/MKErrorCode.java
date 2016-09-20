@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MKErrorCode {
-    @Generated
-    private MKErrorCode() {
-    }
-
     @Generated @NUInt public static final long Unknown = 0x0000000000000001L;
     @Generated @NUInt public static final long ServerFailure = 0x0000000000000002L;
     @Generated @NUInt public static final long LoadingThrottled = 0x0000000000000003L;
     @Generated @NUInt public static final long PlacemarkNotFound = 0x0000000000000004L;
     @Generated @NUInt public static final long DirectionsNotFound = 0x0000000000000005L;
+
+    @Generated
+    private MKErrorCode() {
+    }
 }

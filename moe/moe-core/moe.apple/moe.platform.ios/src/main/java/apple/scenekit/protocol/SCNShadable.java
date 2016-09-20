@@ -46,13 +46,6 @@ public interface SCNShadable {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_handleBindingOfSymbolUsingBlock {
-        @Generated
-        void call_handleBindingOfSymbolUsingBlock(int arg0, int arg1, SCNNode arg2, SCNRenderer arg3);
-    }
-
     /**
      * handleUnbindingOfSymbol:usingBlock:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNShadable_Protocol/index.html#//apple_ref/occ/intfm/SCNShadable/handleUnbindingOfSymbol:usingBlock:">iOS Dev Center</a>
@@ -63,13 +56,6 @@ public interface SCNShadable {
     default void handleUnbindingOfSymbolUsingBlock(String symbol,
             @ObjCBlock(name = "call_handleUnbindingOfSymbolUsingBlock") Block_handleUnbindingOfSymbolUsingBlock block) {
         throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_handleUnbindingOfSymbolUsingBlock {
-        @Generated
-        void call_handleUnbindingOfSymbolUsingBlock(int arg0, int arg1, SCNNode arg2, SCNRenderer arg3);
     }
 
     /**
@@ -114,5 +100,19 @@ public interface SCNShadable {
     @Selector("shaderModifiers")
     default NSDictionary<String, String> shaderModifiers() {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_handleBindingOfSymbolUsingBlock {
+        @Generated
+        void call_handleBindingOfSymbolUsingBlock(int arg0, int arg1, SCNNode arg2, SCNRenderer arg3);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_handleUnbindingOfSymbolUsingBlock {
+        @Generated
+        void call_handleUnbindingOfSymbolUsingBlock(int arg0, int arg1, SCNNode arg2, SCNRenderer arg3);
     }
 }

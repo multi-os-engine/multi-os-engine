@@ -60,38 +60,6 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
     @Selector("alloc")
     public static native UIMutableUserNotificationCategory alloc();
 
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationCategory_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationCategory/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native UIMutableUserNotificationCategory init();
-
-    /**
-     * setActions:forContext:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationCategory_class/index.html#//apple_ref/occ/instm/UIMutableUserNotificationCategory/setActions:forContext:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setActions:forContext:")
-    public native void setActionsForContext(NSArray<? extends UIUserNotificationAction> actions, @NUInt long context);
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationCategory_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationCategory/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIMutableUserNotificationCategory initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -192,13 +160,45 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationCategory_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationCategory/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native UIMutableUserNotificationCategory init();
+
+    /**
+     * setActions:forContext:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationCategory_class/index.html#//apple_ref/occ/instm/UIMutableUserNotificationCategory/setActions:forContext:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setActions:forContext:")
+    public native void setActionsForContext(NSArray<? extends UIUserNotificationAction> actions, @NUInt long context);
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIMutableUserNotificationCategory_class/index.html#//apple_ref/occ/instp/UIMutableUserNotificationCategory/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIdentifier:")
+    public native void setIdentifier(String value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIMutableUserNotificationCategory initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

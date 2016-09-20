@@ -65,60 +65,6 @@ public class UIDynamicItemGroup extends NSObject implements UIDynamicItem {
     public static native UIDynamicItemGroup alloc();
 
     @Generated
-    @Selector("bounds")
-    @ByValue
-    public native CGRect bounds();
-
-    @Generated
-    @Selector("center")
-    @ByValue
-    public native CGPoint center();
-
-    @Generated
-    @IsOptional
-    @Selector("collisionBoundingPath")
-    public native UIBezierPath collisionBoundingPath();
-
-    @Generated
-    @IsOptional
-    @Selector("collisionBoundsType")
-    @NUInt
-    public native long collisionBoundsType();
-
-    @Generated
-    @Selector("init")
-    public native UIDynamicItemGroup init();
-
-    /**
-     * initWithItems:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemGroup_class/index.html#//apple_ref/occ/instm/UIDynamicItemGroup/initWithItems:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithItems:")
-    public native UIDynamicItemGroup initWithItems(NSArray<?> items);
-
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemGroup_class/index.html#//apple_ref/occ/instp/UIDynamicItemGroup/items">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("items")
-    public native NSArray<?> items();
-
-    @Generated
-    @Selector("setCenter:")
-    public native void setCenter(@ByValue CGPoint value);
-
-    @Generated
-    @Selector("setTransform:")
-    public native void setTransform(@ByValue CGAffineTransform value);
-
-    @Generated
-    @Selector("transform")
-    @ByValue
-    public native CGAffineTransform transform();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -217,4 +163,58 @@ public class UIDynamicItemGroup extends NSObject implements UIDynamicItem {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("bounds")
+    @ByValue
+    public native CGRect bounds();
+
+    @Generated
+    @Selector("center")
+    @ByValue
+    public native CGPoint center();
+
+    @Generated
+    @IsOptional
+    @Selector("collisionBoundingPath")
+    public native UIBezierPath collisionBoundingPath();
+
+    @Generated
+    @IsOptional
+    @Selector("collisionBoundsType")
+    @NUInt
+    public native long collisionBoundsType();
+
+    @Generated
+    @Selector("init")
+    public native UIDynamicItemGroup init();
+
+    /**
+     * initWithItems:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemGroup_class/index.html#//apple_ref/occ/instm/UIDynamicItemGroup/initWithItems:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithItems:")
+    public native UIDynamicItemGroup initWithItems(NSArray<?> items);
+
+    /**
+     * items</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDynamicItemGroup_class/index.html#//apple_ref/occ/instp/UIDynamicItemGroup/items">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("items")
+    public native NSArray<?> items();
+
+    @Generated
+    @Selector("setCenter:")
+    public native void setCenter(@ByValue CGPoint value);
+
+    @Generated
+    @Selector("setTransform:")
+    public native void setTransform(@ByValue CGAffineTransform value);
+
+    @Generated
+    @Selector("transform")
+    @ByValue
+    public native CGAffineTransform transform();
 }

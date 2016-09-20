@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SCNParticleBirthLocation {
-    @Generated
-    private SCNParticleBirthLocation() {
-    }
-
     @Generated @NInt public static final long Surface = 0x0000000000000000L;
     @Generated @NInt public static final long Volume = 0x0000000000000001L;
     @Generated @NInt public static final long Vertex = 0x0000000000000002L;
+
+    @Generated
+    private SCNParticleBirthLocation() {
+    }
 }

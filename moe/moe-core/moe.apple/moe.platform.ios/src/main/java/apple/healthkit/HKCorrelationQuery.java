@@ -65,44 +65,6 @@ public class HKCorrelationQuery extends HKQuery {
     @Selector("alloc")
     public static native HKCorrelationQuery alloc();
 
-    /**
-     * correlationType</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelationQuery_Class/index.html#//apple_ref/occ/instp/HKCorrelationQuery/correlationType">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("correlationType")
-    public native HKCorrelationType correlationType();
-
-    @Generated
-    @Selector("init")
-    public native HKCorrelationQuery init();
-
-    /**
-     * initWithType:predicate:samplePredicates:completion:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelationQuery_Class/index.html#//apple_ref/occ/instm/HKCorrelationQuery/initWithType:predicate:samplePredicates:completion:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithType:predicate:samplePredicates:completion:")
-    public native HKCorrelationQuery initWithTypePredicateSamplePredicatesCompletion(HKCorrelationType correlationType,
-            NSPredicate predicate, NSDictionary<? extends HKSampleType, ? extends NSPredicate> samplePredicates,
-            @ObjCBlock(name = "call_initWithTypePredicateSamplePredicatesCompletion") Block_initWithTypePredicateSamplePredicatesCompletion completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithTypePredicateSamplePredicatesCompletion {
-        @Generated
-        void call_initWithTypePredicateSamplePredicatesCompletion(HKCorrelationQuery arg0,
-                NSArray<? extends HKCorrelation> arg1, NSError arg2);
-    }
-
-    /**
-     * samplePredicates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelationQuery_Class/index.html#//apple_ref/occ/instp/HKCorrelationQuery/samplePredicates">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("samplePredicates")
-    public native NSDictionary<? extends HKSampleType, ? extends NSPredicate> samplePredicates();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -297,4 +259,42 @@ public class HKCorrelationQuery extends HKQuery {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * correlationType</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelationQuery_Class/index.html#//apple_ref/occ/instp/HKCorrelationQuery/correlationType">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("correlationType")
+    public native HKCorrelationType correlationType();
+
+    @Generated
+    @Selector("init")
+    public native HKCorrelationQuery init();
+
+    /**
+     * initWithType:predicate:samplePredicates:completion:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelationQuery_Class/index.html#//apple_ref/occ/instm/HKCorrelationQuery/initWithType:predicate:samplePredicates:completion:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithType:predicate:samplePredicates:completion:")
+    public native HKCorrelationQuery initWithTypePredicateSamplePredicatesCompletion(HKCorrelationType correlationType,
+            NSPredicate predicate, NSDictionary<? extends HKSampleType, ? extends NSPredicate> samplePredicates,
+            @ObjCBlock(name = "call_initWithTypePredicateSamplePredicatesCompletion") Block_initWithTypePredicateSamplePredicatesCompletion completion);
+
+    /**
+     * samplePredicates</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelationQuery_Class/index.html#//apple_ref/occ/instp/HKCorrelationQuery/samplePredicates">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("samplePredicates")
+    public native NSDictionary<? extends HKSampleType, ? extends NSPredicate> samplePredicates();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithTypePredicateSamplePredicatesCompletion {
+        @Generated
+        void call_initWithTypePredicateSamplePredicatesCompletion(HKCorrelationQuery arg0,
+                NSArray<? extends HKCorrelation> arg1, NSError arg2);
+    }
 }

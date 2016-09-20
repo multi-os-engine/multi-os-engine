@@ -55,114 +55,10 @@ public class CNMutablePostalAddress extends CNPostalAddress {
         super(peer);
     }
 
-    /**
-     * ISOCountryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/ISOCountryCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ISOCountryCode")
-    public native String ISOCountryCode();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native CNMutablePostalAddress alloc();
-
-    /**
-     * city</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/city">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("city")
-    public native String city();
-
-    /**
-     * country</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/country">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("country")
-    public native String country();
-
-    @Generated
-    @Selector("init")
-    public native CNMutablePostalAddress init();
-
-    /**
-     * postalCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/postalCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("postalCode")
-    public native String postalCode();
-
-    /**
-     * city</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/city">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCity:")
-    public native void setCity(String value);
-
-    /**
-     * country</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/country">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setCountry:")
-    public native void setCountry(String value);
-
-    /**
-     * ISOCountryCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/ISOCountryCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setISOCountryCode:")
-    public native void setISOCountryCode(String value);
-
-    /**
-     * postalCode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/postalCode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPostalCode:")
-    public native void setPostalCode(String value);
-
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/state">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setState:")
-    public native void setState(String value);
-
-    /**
-     * street</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/street">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setStreet:")
-    public native void setStreet(String value);
-
-    /**
-     * state</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/state">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("state")
-    public native String state();
-
-    /**
-     * street</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/street">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("street")
-    public native String street();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNMutablePostalAddress initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -268,13 +164,117 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * ISOCountryCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/ISOCountryCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ISOCountryCode")
+    public native String ISOCountryCode();
+
+    /**
+     * city</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/city">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("city")
+    public native String city();
+
+    /**
+     * country</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/country">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("country")
+    public native String country();
+
+    @Generated
+    @Selector("init")
+    public native CNMutablePostalAddress init();
+
+    /**
+     * postalCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/postalCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("postalCode")
+    public native String postalCode();
+
+    /**
+     * city</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/city">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCity:")
+    public native void setCity(String value);
+
+    /**
+     * country</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/country">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setCountry:")
+    public native void setCountry(String value);
+
+    /**
+     * ISOCountryCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/ISOCountryCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setISOCountryCode:")
+    public native void setISOCountryCode(String value);
+
+    /**
+     * postalCode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/postalCode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPostalCode:")
+    public native void setPostalCode(String value);
+
+    /**
+     * state</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/state">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setState:")
+    public native void setState(String value);
+
+    /**
+     * street</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/street">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setStreet:")
+    public native void setStreet(String value);
+
+    /**
+     * state</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/state">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("state")
+    public native String state();
+
+    /**
+     * street</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNMutablePostalAddress_Class/index.html#//apple_ref/occ/instp/CNMutablePostalAddress/street">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("street")
+    public native String street();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNMutablePostalAddress initWithCoder(NSCoder aDecoder);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

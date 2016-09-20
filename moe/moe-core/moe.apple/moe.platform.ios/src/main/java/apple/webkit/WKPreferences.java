@@ -60,59 +60,6 @@ public class WKPreferences extends NSObject {
     public static native WKPreferences alloc();
 
     @Generated
-    @Selector("init")
-    public native WKPreferences init();
-
-    /**
-     * javaScriptCanOpenWindowsAutomatically</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/javaScriptCanOpenWindowsAutomatically">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("javaScriptCanOpenWindowsAutomatically")
-    public native boolean javaScriptCanOpenWindowsAutomatically();
-
-    /**
-     * javaScriptEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/javaScriptEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("javaScriptEnabled")
-    public native boolean javaScriptEnabled();
-
-    /**
-     * minimumFontSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/minimumFontSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumFontSize")
-    @NFloat
-    public native double minimumFontSize();
-
-    /**
-     * javaScriptCanOpenWindowsAutomatically</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/javaScriptCanOpenWindowsAutomatically">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setJavaScriptCanOpenWindowsAutomatically:")
-    public native void setJavaScriptCanOpenWindowsAutomatically(boolean value);
-
-    /**
-     * javaScriptEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/javaScriptEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setJavaScriptEnabled:")
-    public native void setJavaScriptEnabled(boolean value);
-
-    /**
-     * minimumFontSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/minimumFontSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumFontSize:")
-    public native void setMinimumFontSize(@NFloat double value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -211,4 +158,57 @@ public class WKPreferences extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native WKPreferences init();
+
+    /**
+     * javaScriptCanOpenWindowsAutomatically</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/javaScriptCanOpenWindowsAutomatically">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("javaScriptCanOpenWindowsAutomatically")
+    public native boolean javaScriptCanOpenWindowsAutomatically();
+
+    /**
+     * javaScriptEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/javaScriptEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("javaScriptEnabled")
+    public native boolean javaScriptEnabled();
+
+    /**
+     * minimumFontSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/minimumFontSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumFontSize")
+    @NFloat
+    public native double minimumFontSize();
+
+    /**
+     * javaScriptCanOpenWindowsAutomatically</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/javaScriptCanOpenWindowsAutomatically">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setJavaScriptCanOpenWindowsAutomatically:")
+    public native void setJavaScriptCanOpenWindowsAutomatically(boolean value);
+
+    /**
+     * javaScriptEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/javaScriptEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setJavaScriptEnabled:")
+    public native void setJavaScriptEnabled(boolean value);
+
+    /**
+     * minimumFontSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/WebKit/Reference/WKPreferences_Ref/index.html#//apple_ref/occ/instp/WKPreferences/minimumFontSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumFontSize:")
+    public native void setMinimumFontSize(@NFloat double value);
 }

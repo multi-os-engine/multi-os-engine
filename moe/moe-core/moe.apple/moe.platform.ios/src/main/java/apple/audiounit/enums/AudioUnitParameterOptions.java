@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class AudioUnitParameterOptions {
-    @Generated
-    private AudioUnitParameterOptions() {
-    }
-
     @Generated public static final int CFNameRelease = 0x00000010;
     @Generated public static final int OmitFromPresets = 0x00002000;
     @Generated public static final int PlotHistory = 0x00004000;
@@ -46,4 +42,8 @@ public final class AudioUnitParameterOptions {
     @Generated public static final int IsElementMeta = 0x20000000;
     @Generated public static final int IsReadable = 0x40000000;
     @Generated public static final int IsWritable = 0x80000000;
+
+    @Generated
+    private AudioUnitParameterOptions() {
+    }
 }

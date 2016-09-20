@@ -60,109 +60,6 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     public static native NSSortDescriptor alloc();
 
     /**
-     * allowEvaluation</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instm/NSSortDescriptor/allowEvaluation">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("allowEvaluation")
-    public native void allowEvaluation();
-
-    /**
-     * ascending</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instp/NSSortDescriptor/ascending">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ascending")
-    public native boolean ascending();
-
-    /**
-     * compareObject:toObject:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instm/NSSortDescriptor/compareObject:toObject:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("compareObject:toObject:")
-    @NInt
-    public native long compareObjectToObject(@Mapped(ObjCObjectMapper.class) Object object1,
-            @Mapped(ObjCObjectMapper.class) Object object2);
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native NSSortDescriptor init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSSortDescriptor initWithCoder(NSCoder coder);
-
-    /**
-     * initWithKey:ascending:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instm/NSSortDescriptor/initWithKey:ascending:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithKey:ascending:")
-    public native NSSortDescriptor initWithKeyAscending(String key, boolean ascending);
-
-    /**
-     * initWithKey:ascending:comparator:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instm/NSSortDescriptor/initWithKey:ascending:comparator:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithKey:ascending:comparator:")
-    public native NSSortDescriptor initWithKeyAscendingComparator(String key, boolean ascending,
-            @ObjCBlock(name = "call_initWithKeyAscendingComparator") Block_initWithKeyAscendingComparator cmptr);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithKeyAscendingComparator {
-        @Generated
-        @NInt
-        long call_initWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
-
-    /**
-     * initWithKey:ascending:selector:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instm/NSSortDescriptor/initWithKey:ascending:selector:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithKey:ascending:selector:")
-    public native NSSortDescriptor initWithKeyAscendingSelector(String key, boolean ascending, SEL selector);
-
-    /**
-     * key</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instp/NSSortDescriptor/key">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("key")
-    public native String key();
-
-    /**
-     * reversedSortDescriptor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instp/NSSortDescriptor/reversedSortDescriptor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reversedSortDescriptor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object reversedSortDescriptor();
-
-    /**
-     * selector</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instp/NSSortDescriptor/selector">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("selector")
-    public native SEL selector();
-
-    /**
      * sortDescriptorWithKey:ascending:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/clm/NSSortDescriptor/sortDescriptorWithKey:ascending:">iOS Dev Center</a>
      */
@@ -179,15 +76,6 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     public static native NSSortDescriptor sortDescriptorWithKeyAscendingComparator(String key, boolean ascending,
             @ObjCBlock(name = "call_sortDescriptorWithKeyAscendingComparator") Block_sortDescriptorWithKeyAscendingComparator cmptr);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sortDescriptorWithKeyAscendingComparator {
-        @Generated
-        @NInt
-        long call_sortDescriptorWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
-
     /**
      * sortDescriptorWithKey:ascending:selector:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/clm/NSSortDescriptor/sortDescriptorWithKey:ascending:selector:">iOS Dev Center</a>
@@ -200,30 +88,6 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * comparator</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instp/NSSortDescriptor/comparator">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("comparator")
-    @ObjCBlock(name = "call_comparator_ret")
-    public native Block_comparator_ret comparator();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_comparator_ret {
-        @Generated
-        @NInt
-        long call_comparator_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -324,4 +188,140 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * allowEvaluation</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instm/NSSortDescriptor/allowEvaluation">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("allowEvaluation")
+    public native void allowEvaluation();
+
+    /**
+     * ascending</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instp/NSSortDescriptor/ascending">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ascending")
+    public native boolean ascending();
+
+    /**
+     * compareObject:toObject:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instm/NSSortDescriptor/compareObject:toObject:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("compareObject:toObject:")
+    @NInt
+    public native long compareObjectToObject(@Mapped(ObjCObjectMapper.class) Object object1,
+            @Mapped(ObjCObjectMapper.class) Object object2);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NSSortDescriptor init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSSortDescriptor initWithCoder(NSCoder coder);
+
+    /**
+     * initWithKey:ascending:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instm/NSSortDescriptor/initWithKey:ascending:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithKey:ascending:")
+    public native NSSortDescriptor initWithKeyAscending(String key, boolean ascending);
+
+    /**
+     * initWithKey:ascending:comparator:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instm/NSSortDescriptor/initWithKey:ascending:comparator:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithKey:ascending:comparator:")
+    public native NSSortDescriptor initWithKeyAscendingComparator(String key, boolean ascending,
+            @ObjCBlock(name = "call_initWithKeyAscendingComparator") Block_initWithKeyAscendingComparator cmptr);
+
+    /**
+     * initWithKey:ascending:selector:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instm/NSSortDescriptor/initWithKey:ascending:selector:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithKey:ascending:selector:")
+    public native NSSortDescriptor initWithKeyAscendingSelector(String key, boolean ascending, SEL selector);
+
+    /**
+     * key</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instp/NSSortDescriptor/key">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("key")
+    public native String key();
+
+    /**
+     * reversedSortDescriptor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instp/NSSortDescriptor/reversedSortDescriptor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reversedSortDescriptor")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object reversedSortDescriptor();
+
+    /**
+     * selector</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instp/NSSortDescriptor/selector">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("selector")
+    public native SEL selector();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * comparator</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/index.html#//apple_ref/occ/instp/NSSortDescriptor/comparator">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("comparator")
+    @ObjCBlock(name = "call_comparator_ret")
+    public native Block_comparator_ret comparator();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithKeyAscendingComparator {
+        @Generated
+        @NInt
+        long call_initWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sortDescriptorWithKeyAscendingComparator {
+        @Generated
+        @NInt
+        long call_sortDescriptorWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_comparator_ret {
+        @Generated
+        @NInt
+        long call_comparator_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
 }

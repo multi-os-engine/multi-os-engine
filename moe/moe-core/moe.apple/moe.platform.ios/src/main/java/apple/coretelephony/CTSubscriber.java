@@ -59,18 +59,6 @@ public class CTSubscriber extends NSObject {
     @Selector("alloc")
     public static native CTSubscriber alloc();
 
-    /**
-     * carrierToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreTelephony/Reference/CTSubscriber/index.html#//apple_ref/occ/instp/CTSubscriber/carrierToken">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("carrierToken")
-    public native NSData carrierToken();
-
-    @Generated
-    @Selector("init")
-    public native CTSubscriber init();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -170,4 +158,16 @@ public class CTSubscriber extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * carrierToken</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreTelephony/Reference/CTSubscriber/index.html#//apple_ref/occ/instp/CTSubscriber/carrierToken">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("carrierToken")
+    public native NSData carrierToken();
+
+    @Generated
+    @Selector("init")
+    public native CTSubscriber init();
 }

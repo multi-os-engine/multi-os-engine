@@ -29,11 +29,11 @@ import org.moe.natj.general.ann.Runtime;
 @Generated
 @Structure()
 public final class sigvec extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public sigvec() {
@@ -57,13 +57,6 @@ public final class sigvec extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setSv_handler(@FunctionPtr(name = "call_sv_handler") Function_sv_handler value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_sv_handler {
-        @Generated
-        void call_sv_handler(int arg0);
-    }
-
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int sv_mask();
@@ -84,4 +77,11 @@ public final class sigvec extends StructObject {
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_sv_handler")
     public native Function_sv_handler sv_handler();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_sv_handler {
+        @Generated
+        void call_sv_handler(int arg0);
+    }
 }

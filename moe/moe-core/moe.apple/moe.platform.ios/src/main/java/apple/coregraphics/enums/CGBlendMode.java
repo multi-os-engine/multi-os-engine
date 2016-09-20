@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CGBlendMode {
-    @Generated
-    private CGBlendMode() {
-    }
-
     @Generated public static final int Normal = 0x00000000;
     @Generated public static final int Multiply = 0x00000001;
     @Generated public static final int Screen = 0x00000002;
@@ -52,4 +48,8 @@ public final class CGBlendMode {
     @Generated public static final int XOR = 0x00000019;
     @Generated public static final int PlusDarker = 0x0000001A;
     @Generated public static final int PlusLighter = 0x0000001B;
+
+    @Generated
+    private CGBlendMode() {
+    }
 }

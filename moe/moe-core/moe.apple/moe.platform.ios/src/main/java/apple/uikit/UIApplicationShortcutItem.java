@@ -62,79 +62,6 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     public static native UIApplicationShortcutItem alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * icon</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIApplicationShortcutItem/icon">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("icon")
-    public native UIApplicationShortcutIcon icon();
-
-    @Generated
-    @Selector("init")
-    public native UIApplicationShortcutItem init();
-
-    /**
-     * initWithType:localizedTitle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instm/UIApplicationShortcutItem/initWithType:localizedTitle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithType:localizedTitle:")
-    public native UIApplicationShortcutItem initWithTypeLocalizedTitle(String type, String localizedTitle);
-
-    /**
-     * initWithType:localizedTitle:localizedSubtitle:icon:userInfo:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instm/UIApplicationShortcutItem/initWithType:localizedTitle:localizedSubtitle:icon:userInfo:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithType:localizedTitle:localizedSubtitle:icon:userInfo:")
-    public native UIApplicationShortcutItem initWithTypeLocalizedTitleLocalizedSubtitleIconUserInfo(String type,
-            String localizedTitle, String localizedSubtitle, UIApplicationShortcutIcon icon,
-            NSDictionary<?, ?> userInfo);
-
-    /**
-     * localizedSubtitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIApplicationShortcutItem/localizedSubtitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedSubtitle")
-    public native String localizedSubtitle();
-
-    /**
-     * localizedTitle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIApplicationShortcutItem/localizedTitle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedTitle")
-    public native String localizedTitle();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIApplicationShortcutItem/type">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("type")
-    public native String type();
-
-    /**
-     * userInfo</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIApplicationShortcutItem/userInfo">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("userInfo")
-    public native NSDictionary<String, ?> userInfo();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -233,4 +160,77 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * icon</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIApplicationShortcutItem/icon">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("icon")
+    public native UIApplicationShortcutIcon icon();
+
+    @Generated
+    @Selector("init")
+    public native UIApplicationShortcutItem init();
+
+    /**
+     * initWithType:localizedTitle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instm/UIApplicationShortcutItem/initWithType:localizedTitle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithType:localizedTitle:")
+    public native UIApplicationShortcutItem initWithTypeLocalizedTitle(String type, String localizedTitle);
+
+    /**
+     * initWithType:localizedTitle:localizedSubtitle:icon:userInfo:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instm/UIApplicationShortcutItem/initWithType:localizedTitle:localizedSubtitle:icon:userInfo:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithType:localizedTitle:localizedSubtitle:icon:userInfo:")
+    public native UIApplicationShortcutItem initWithTypeLocalizedTitleLocalizedSubtitleIconUserInfo(String type,
+            String localizedTitle, String localizedSubtitle, UIApplicationShortcutIcon icon,
+            NSDictionary<?, ?> userInfo);
+
+    /**
+     * localizedSubtitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIApplicationShortcutItem/localizedSubtitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedSubtitle")
+    public native String localizedSubtitle();
+
+    /**
+     * localizedTitle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIApplicationShortcutItem/localizedTitle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedTitle")
+    public native String localizedTitle();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    /**
+     * type</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIApplicationShortcutItem/type">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("type")
+    public native String type();
+
+    /**
+     * userInfo</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/index.html#//apple_ref/occ/instp/UIApplicationShortcutItem/userInfo">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("userInfo")
+    public native NSDictionary<String, ?> userInfo();
 }

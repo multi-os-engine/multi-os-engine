@@ -61,86 +61,6 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     @Selector("alloc")
     public static native EAWiFiUnconfiguredAccessoryBrowser alloc();
 
-    /**
-     * configureAccessory:withConfigurationUIOnViewController:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instm/EAWiFiUnconfiguredAccessoryBrowser/configureAccessory:withConfigurationUIOnViewController:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("configureAccessory:withConfigurationUIOnViewController:")
-    public native void configureAccessoryWithConfigurationUIOnViewController(EAWiFiUnconfiguredAccessory accessory,
-            UIViewController viewController);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessoryBrowser/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native EAWiFiUnconfiguredAccessoryBrowserDelegate delegate();
-
-    @Generated
-    @Selector("init")
-    public native EAWiFiUnconfiguredAccessoryBrowser init();
-
-    /**
-     * initWithDelegate:queue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instm/EAWiFiUnconfiguredAccessoryBrowser/initWithDelegate:queue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDelegate:queue:")
-    public native EAWiFiUnconfiguredAccessoryBrowser initWithDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate delegate, NSObject queue);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessoryBrowser/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessoryBrowser/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * startSearchingForUnconfiguredAccessoriesMatchingPredicate:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instm/EAWiFiUnconfiguredAccessoryBrowser/startSearchingForUnconfiguredAccessoriesMatchingPredicate:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startSearchingForUnconfiguredAccessoriesMatchingPredicate:")
-    public native void startSearchingForUnconfiguredAccessoriesMatchingPredicate(NSPredicate predicate);
-
-    /**
-     * stopSearchingForUnconfiguredAccessories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instm/EAWiFiUnconfiguredAccessoryBrowser/stopSearchingForUnconfiguredAccessories">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopSearchingForUnconfiguredAccessories")
-    public native void stopSearchingForUnconfiguredAccessories();
-
-    /**
-     * unconfiguredAccessories</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessoryBrowser/unconfiguredAccessories">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unconfiguredAccessories")
-    public native NSSet<? extends EAWiFiUnconfiguredAccessory> unconfiguredAccessories();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -240,4 +160,84 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * configureAccessory:withConfigurationUIOnViewController:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instm/EAWiFiUnconfiguredAccessoryBrowser/configureAccessory:withConfigurationUIOnViewController:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("configureAccessory:withConfigurationUIOnViewController:")
+    public native void configureAccessoryWithConfigurationUIOnViewController(EAWiFiUnconfiguredAccessory accessory,
+            UIViewController viewController);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessoryBrowser/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native EAWiFiUnconfiguredAccessoryBrowserDelegate delegate();
+
+    @Generated
+    @Selector("init")
+    public native EAWiFiUnconfiguredAccessoryBrowser init();
+
+    /**
+     * initWithDelegate:queue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instm/EAWiFiUnconfiguredAccessoryBrowser/initWithDelegate:queue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDelegate:queue:")
+    public native EAWiFiUnconfiguredAccessoryBrowser initWithDelegateQueue(
+            @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate delegate, NSObject queue);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessoryBrowser/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(
+            @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessoryBrowser/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * startSearchingForUnconfiguredAccessoriesMatchingPredicate:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instm/EAWiFiUnconfiguredAccessoryBrowser/startSearchingForUnconfiguredAccessoriesMatchingPredicate:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startSearchingForUnconfiguredAccessoriesMatchingPredicate:")
+    public native void startSearchingForUnconfiguredAccessoriesMatchingPredicate(NSPredicate predicate);
+
+    /**
+     * stopSearchingForUnconfiguredAccessories</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instm/EAWiFiUnconfiguredAccessoryBrowser/stopSearchingForUnconfiguredAccessories">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopSearchingForUnconfiguredAccessories")
+    public native void stopSearchingForUnconfiguredAccessories();
+
+    /**
+     * unconfiguredAccessories</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/ExternalAccessory/Reference/EAWiFiUnconfiguredAccessoryBrowser_Class/index.html#//apple_ref/occ/instp/EAWiFiUnconfiguredAccessoryBrowser/unconfiguredAccessories">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unconfiguredAccessories")
+    public native NSSet<? extends EAWiFiUnconfiguredAccessory> unconfiguredAccessories();
 }

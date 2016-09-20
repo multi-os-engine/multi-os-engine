@@ -61,39 +61,6 @@ public class MPSImageThresholdTruncate extends MPSUnaryImageKernel {
     public static native MPSImageThresholdTruncate alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSImageThresholdTruncate init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageThresholdTruncate initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    /**
-     * initWithDevice:thresholdValue:linearGrayColorTransform:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdTruncate_ClassReference/index.html#//apple_ref/occ/instm/MPSImageThresholdTruncate/initWithDevice:thresholdValue:linearGrayColorTransform:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithDevice:thresholdValue:linearGrayColorTransform:")
-    public native MPSImageThresholdTruncate initWithDeviceThresholdValueLinearGrayColorTransform(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, float thresholdValue, ConstFloatPtr transform);
-
-    /**
-     * thresholdValue</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdTruncate_ClassReference/index.html#//apple_ref/occ/instp/MPSImageThresholdTruncate/thresholdValue">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("thresholdValue")
-    public native float thresholdValue();
-
-    /**
-     * transform</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdTruncate_ClassReference/index.html#//apple_ref/occ/instp/MPSImageThresholdTruncate/transform">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transform")
-    public native ConstFloatPtr transform();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -192,4 +159,37 @@ public class MPSImageThresholdTruncate extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageThresholdTruncate init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageThresholdTruncate initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+
+    /**
+     * initWithDevice:thresholdValue:linearGrayColorTransform:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdTruncate_ClassReference/index.html#//apple_ref/occ/instm/MPSImageThresholdTruncate/initWithDevice:thresholdValue:linearGrayColorTransform:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithDevice:thresholdValue:linearGrayColorTransform:")
+    public native MPSImageThresholdTruncate initWithDeviceThresholdValueLinearGrayColorTransform(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, float thresholdValue, ConstFloatPtr transform);
+
+    /**
+     * thresholdValue</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdTruncate_ClassReference/index.html#//apple_ref/occ/instp/MPSImageThresholdTruncate/thresholdValue">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("thresholdValue")
+    public native float thresholdValue();
+
+    /**
+     * transform</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MetalPerformanceShaders/Reference/MPSImageThresholdTruncate_ClassReference/index.html#//apple_ref/occ/instp/MPSImageThresholdTruncate/transform">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transform")
+    public native ConstFloatPtr transform();
 }

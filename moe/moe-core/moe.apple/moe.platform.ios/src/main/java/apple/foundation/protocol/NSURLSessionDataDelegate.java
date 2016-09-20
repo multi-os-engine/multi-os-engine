@@ -74,13 +74,6 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_URLSessionDataTaskDidReceiveResponseCompletionHandler {
-        @Generated
-        void call_URLSessionDataTaskDidReceiveResponseCompletionHandler(@NInt long arg0);
-    }
-
     /**
      * URLSession:dataTask:willCacheResponse:completionHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDataDelegate/URLSession:dataTask:willCacheResponse:completionHandler:">iOS Dev Center</a>
@@ -94,13 +87,6 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_URLSessionDataTaskWillCacheResponseCompletionHandler {
-        @Generated
-        void call_URLSessionDataTaskWillCacheResponseCompletionHandler(NSCachedURLResponse arg0);
-    }
-
     /**
      * URLSession:dataTask:didBecomeStreamTask:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionDataDelegate_protocol/index.html#//apple_ref/occ/intfm/NSURLSessionDataDelegate/URLSession:dataTask:didBecomeStreamTask:">iOS Dev Center</a>
@@ -111,5 +97,19 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     default void URLSessionDataTaskDidBecomeStreamTask(NSURLSession session, NSURLSessionDataTask dataTask,
             NSURLSessionStreamTask streamTask) {
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_URLSessionDataTaskDidReceiveResponseCompletionHandler {
+        @Generated
+        void call_URLSessionDataTaskDidReceiveResponseCompletionHandler(@NInt long arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_URLSessionDataTaskWillCacheResponseCompletionHandler {
+        @Generated
+        void call_URLSessionDataTaskWillCacheResponseCompletionHandler(NSCachedURLResponse arg0);
     }
 }

@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSFetchedResultsChangeType {
-    @Generated
-    private NSFetchedResultsChangeType() {
-    }
-
     @Generated @NUInt public static final long Insert = 0x0000000000000001L;
     @Generated @NUInt public static final long Delete = 0x0000000000000002L;
     @Generated @NUInt public static final long Move = 0x0000000000000003L;
     @Generated @NUInt public static final long Update = 0x0000000000000004L;
+
+    @Generated
+    private NSFetchedResultsChangeType() {
+    }
 }

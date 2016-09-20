@@ -56,22 +56,6 @@ public class NSHTTPCookie extends NSObject {
     public static native NSHTTPCookie alloc();
 
     /**
-     * comment</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/comment">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("comment")
-    public native String comment();
-
-    /**
-     * commentURL</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/commentURL">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("commentURL")
-    public native NSURL commentURL();
-
-    /**
      * cookieWithProperties:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/clm/NSHTTPCookie/cookieWithProperties:">iOS Dev Center</a>
      */
@@ -89,90 +73,6 @@ public class NSHTTPCookie extends NSObject {
             NSDictionary<String, String> headerFields, NSURL URL);
 
     /**
-     * domain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/domain">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("domain")
-    public native String domain();
-
-    /**
-     * expiresDate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/expiresDate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("expiresDate")
-    public native NSDate expiresDate();
-
-    @Generated
-    @Selector("init")
-    public native NSHTTPCookie init();
-
-    /**
-     * initWithProperties:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instm/NSHTTPCookie/initWithProperties:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithProperties:")
-    public native NSHTTPCookie initWithProperties(NSDictionary<String, ?> properties);
-
-    /**
-     * HTTPOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/HTTPOnly">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isHTTPOnly")
-    public native boolean isHTTPOnly();
-
-    /**
-     * secure</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/secure">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isSecure")
-    public native boolean isSecure();
-
-    /**
-     * sessionOnly</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/sessionOnly">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isSessionOnly")
-    public native boolean isSessionOnly();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * path</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/path">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("path")
-    public native String path();
-
-    /**
-     * portList</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/portList">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("portList")
-    public native NSArray<? extends NSNumber> portList();
-
-    /**
-     * properties</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/properties">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("properties")
-    public native NSDictionary<String, ?> properties();
-
-    /**
      * requestHeaderFieldsWithCookies:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/clm/NSHTTPCookie/requestHeaderFieldsWithCookies:">iOS Dev Center</a>
      */
@@ -180,23 +80,6 @@ public class NSHTTPCookie extends NSObject {
     @Selector("requestHeaderFieldsWithCookies:")
     public static native NSDictionary<String, String> requestHeaderFieldsWithCookies(
             NSArray<? extends NSHTTPCookie> cookies);
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    public native String value();
-
-    /**
-     * version</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/version">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("version")
-    @NUInt
-    public native long version();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -292,4 +175,121 @@ public class NSHTTPCookie extends NSObject {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    /**
+     * comment</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/comment">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("comment")
+    public native String comment();
+
+    /**
+     * commentURL</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/commentURL">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("commentURL")
+    public native NSURL commentURL();
+
+    /**
+     * domain</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/domain">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("domain")
+    public native String domain();
+
+    /**
+     * expiresDate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/expiresDate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("expiresDate")
+    public native NSDate expiresDate();
+
+    @Generated
+    @Selector("init")
+    public native NSHTTPCookie init();
+
+    /**
+     * initWithProperties:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instm/NSHTTPCookie/initWithProperties:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithProperties:")
+    public native NSHTTPCookie initWithProperties(NSDictionary<String, ?> properties);
+
+    /**
+     * HTTPOnly</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/HTTPOnly">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isHTTPOnly")
+    public native boolean isHTTPOnly();
+
+    /**
+     * secure</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/secure">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isSecure")
+    public native boolean isSecure();
+
+    /**
+     * sessionOnly</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/sessionOnly">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isSessionOnly")
+    public native boolean isSessionOnly();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * path</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/path">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("path")
+    public native String path();
+
+    /**
+     * portList</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/portList">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("portList")
+    public native NSArray<? extends NSNumber> portList();
+
+    /**
+     * properties</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/properties">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("properties")
+    public native NSDictionary<String, ?> properties();
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    public native String value();
+
+    /**
+     * version</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/index.html#//apple_ref/occ/instp/NSHTTPCookie/version">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("version")
+    @NUInt
+    public native long version();
 }

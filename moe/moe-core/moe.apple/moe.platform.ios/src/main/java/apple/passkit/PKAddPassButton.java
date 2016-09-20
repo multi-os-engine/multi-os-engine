@@ -65,15 +65,6 @@ public class PKAddPassButton extends UIButton {
     }
 
     /**
-     * addPassButtonStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/instp/PKAddPassButton/addPassButtonStyle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("addPassButtonStyle")
-    @NInt
-    public native long addPassButtonStyle();
-
-    /**
      * addPassButtonWithStyle:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/clm/PKAddPassButton/addPassButtonWithStyle:">iOS Dev Center</a>
      */
@@ -89,34 +80,6 @@ public class PKAddPassButton extends UIButton {
     @Generated
     @Selector("buttonWithType:")
     public static native PKAddPassButton buttonWithType(@NInt long buttonType);
-
-    @Generated
-    @Selector("init")
-    public native PKAddPassButton init();
-
-    /**
-     * initWithAddPassButtonStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/instm/PKAddPassButton/initWithAddPassButtonStyle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAddPassButtonStyle:")
-    public native PKAddPassButton initWithAddPassButtonStyle(@NInt long style);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native PKAddPassButton initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native PKAddPassButton initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * addPassButtonStyle</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/instp/PKAddPassButton/addPassButtonStyle">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAddPassButtonStyle:")
-    public native void setAddPassButtonStyle(@NInt long value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -171,23 +134,9 @@ public class PKAddPassButton extends UIButton {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -198,27 +147,10 @@ public class PKAddPassButton extends UIButton {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -229,24 +161,9 @@ public class PKAddPassButton extends UIButton {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -444,4 +361,87 @@ public class PKAddPassButton extends UIButton {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * addPassButtonStyle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/instp/PKAddPassButton/addPassButtonStyle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("addPassButtonStyle")
+    @NInt
+    public native long addPassButtonStyle();
+
+    @Generated
+    @Selector("init")
+    public native PKAddPassButton init();
+
+    /**
+     * initWithAddPassButtonStyle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/instm/PKAddPassButton/initWithAddPassButtonStyle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAddPassButtonStyle:")
+    public native PKAddPassButton initWithAddPassButtonStyle(@NInt long style);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native PKAddPassButton initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native PKAddPassButton initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * addPassButtonStyle</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKAddPassButton_Class/index.html#//apple_ref/occ/instp/PKAddPassButton/addPassButtonStyle">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAddPassButtonStyle:")
+    public native void setAddPassButtonStyle(@NInt long value);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

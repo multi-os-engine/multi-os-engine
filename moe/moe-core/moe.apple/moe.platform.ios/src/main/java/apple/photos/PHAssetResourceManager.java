@@ -63,66 +63,12 @@ public class PHAssetResourceManager extends NSObject {
     public static native PHAssetResourceManager alloc();
 
     /**
-     * cancelDataRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceManager_Class/index.html#//apple_ref/occ/instm/PHAssetResourceManager/cancelDataRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("cancelDataRequest:")
-    public native void cancelDataRequest(int requestID);
-
-    /**
      * defaultManager</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceManager_Class/index.html#//apple_ref/occ/clm/PHAssetResourceManager/defaultManager">iOS Dev Center</a>
      */
     @Generated
     @Selector("defaultManager")
     public static native PHAssetResourceManager defaultManager();
-
-    @Generated
-    @Selector("init")
-    public native PHAssetResourceManager init();
-
-    /**
-     * requestDataForAssetResource:options:dataReceivedHandler:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceManager_Class/index.html#//apple_ref/occ/instm/PHAssetResourceManager/requestDataForAssetResource:options:dataReceivedHandler:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestDataForAssetResource:options:dataReceivedHandler:completionHandler:")
-    public native int requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler(PHAssetResource resource,
-            PHAssetResourceRequestOptions options,
-            @ObjCBlock(name = "call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2") Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2 handler,
-            @ObjCBlock(name = "call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3") Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3 completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2 {
-        @Generated
-        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2(NSData arg0);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3 {
-        @Generated
-        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3(NSError arg0);
-    }
-
-    /**
-     * writeDataForAssetResource:toFile:options:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceManager_Class/index.html#//apple_ref/occ/instm/PHAssetResourceManager/writeDataForAssetResource:toFile:options:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("writeDataForAssetResource:toFile:options:completionHandler:")
-    public native void writeDataForAssetResourceToFileOptionsCompletionHandler(PHAssetResource resource, NSURL fileURL,
-            PHAssetResourceRequestOptions options,
-            @ObjCBlock(name = "call_writeDataForAssetResourceToFileOptionsCompletionHandler") Block_writeDataForAssetResourceToFileOptionsCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_writeDataForAssetResourceToFileOptionsCompletionHandler {
-        @Generated
-        void call_writeDataForAssetResourceToFileOptionsCompletionHandler(NSError arg0);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -223,4 +169,58 @@ public class PHAssetResourceManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * cancelDataRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceManager_Class/index.html#//apple_ref/occ/instm/PHAssetResourceManager/cancelDataRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("cancelDataRequest:")
+    public native void cancelDataRequest(int requestID);
+
+    @Generated
+    @Selector("init")
+    public native PHAssetResourceManager init();
+
+    /**
+     * requestDataForAssetResource:options:dataReceivedHandler:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceManager_Class/index.html#//apple_ref/occ/instm/PHAssetResourceManager/requestDataForAssetResource:options:dataReceivedHandler:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestDataForAssetResource:options:dataReceivedHandler:completionHandler:")
+    public native int requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler(PHAssetResource resource,
+            PHAssetResourceRequestOptions options,
+            @ObjCBlock(name = "call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2") Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2 handler,
+            @ObjCBlock(name = "call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3") Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3 completionHandler);
+
+    /**
+     * writeDataForAssetResource:toFile:options:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Photos/Reference/PHAssetResourceManager_Class/index.html#//apple_ref/occ/instm/PHAssetResourceManager/writeDataForAssetResource:toFile:options:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("writeDataForAssetResource:toFile:options:completionHandler:")
+    public native void writeDataForAssetResourceToFileOptionsCompletionHandler(PHAssetResource resource, NSURL fileURL,
+            PHAssetResourceRequestOptions options,
+            @ObjCBlock(name = "call_writeDataForAssetResourceToFileOptionsCompletionHandler") Block_writeDataForAssetResourceToFileOptionsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2 {
+        @Generated
+        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2(NSData arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3 {
+        @Generated
+        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3(NSError arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeDataForAssetResourceToFileOptionsCompletionHandler {
+        @Generated
+        void call_writeDataForAssetResourceToFileOptionsCompletionHandler(NSError arg0);
+    }
 }

@@ -53,6 +53,145 @@ public class NSDateFormatter extends NSFormatter {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSDateFormatter alloc();
+
+    /**
+     * dateFormatFromTemplate:options:locale:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/clm/NSDateFormatter/dateFormatFromTemplate:options:locale:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("dateFormatFromTemplate:options:locale:")
+    public static native String dateFormatFromTemplateOptionsLocale(String tmplate, @NUInt long opts, NSLocale locale);
+
+    /**
+     * defaultFormatterBehavior</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/clm/NSDateFormatter/defaultFormatterBehavior">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultFormatterBehavior")
+    @NUInt
+    public static native long defaultFormatterBehavior();
+
+    /**
+     * localizedStringFromDate:dateStyle:timeStyle:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/clm/NSDateFormatter/localizedStringFromDate:dateStyle:timeStyle:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("localizedStringFromDate:dateStyle:timeStyle:")
+    public static native String localizedStringFromDateDateStyleTimeStyle(NSDate date, @NUInt long dstyle,
+            @NUInt long tstyle);
+
+    /**
+     * setDefaultFormatterBehavior:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/clm/NSDateFormatter/setDefaultFormatterBehavior:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDefaultFormatterBehavior:")
+    public static native void setDefaultFormatterBehavior(@NUInt long behavior);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * AMSymbol</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/instp/NSDateFormatter/AMSymbol">iOS Dev Center</a>
@@ -69,11 +208,6 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("PMSymbol")
     public native String PMSymbol();
 
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSDateFormatter alloc();
-
     /**
      * calendar</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/instp/NSDateFormatter/calendar">iOS Dev Center</a>
@@ -89,14 +223,6 @@ public class NSDateFormatter extends NSFormatter {
     @Generated
     @Selector("dateFormat")
     public native String dateFormat();
-
-    /**
-     * dateFormatFromTemplate:options:locale:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/clm/NSDateFormatter/dateFormatFromTemplate:options:locale:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("dateFormatFromTemplate:options:locale:")
-    public static native String dateFormatFromTemplateOptionsLocale(String tmplate, @NUInt long opts, NSLocale locale);
 
     /**
      * dateFromString:</br>
@@ -122,15 +248,6 @@ public class NSDateFormatter extends NSFormatter {
     @Generated
     @Selector("defaultDate")
     public native NSDate defaultDate();
-
-    /**
-     * defaultFormatterBehavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/clm/NSDateFormatter/defaultFormatterBehavior">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultFormatterBehavior")
-    @NUInt
-    public static native long defaultFormatterBehavior();
 
     /**
      * doesRelativeDateFormatting</br>
@@ -200,21 +317,20 @@ public class NSDateFormatter extends NSFormatter {
     public native boolean isLenient();
 
     /**
+     * lenient</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/instp/NSDateFormatter/lenient">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setLenient:")
+    public native void setLenient(boolean value);
+
+    /**
      * locale</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/instp/NSDateFormatter/locale">iOS Dev Center</a>
      */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
-
-    /**
-     * localizedStringFromDate:dateStyle:timeStyle:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/clm/NSDateFormatter/localizedStringFromDate:dateStyle:timeStyle:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("localizedStringFromDate:dateStyle:timeStyle:")
-    public static native String localizedStringFromDateDateStyleTimeStyle(NSDate date, @NUInt long dstyle,
-            @NUInt long tstyle);
 
     /**
      * longEraSymbols</br>
@@ -281,14 +397,6 @@ public class NSDateFormatter extends NSFormatter {
     public native void setDefaultDate(NSDate value);
 
     /**
-     * setDefaultFormatterBehavior:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/clm/NSDateFormatter/setDefaultFormatterBehavior:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDefaultFormatterBehavior:")
-    public static native void setDefaultFormatterBehavior(@NUInt long behavior);
-
-    /**
      * doesRelativeDateFormatting</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/instp/NSDateFormatter/doesRelativeDateFormatting">iOS Dev Center</a>
      */
@@ -331,14 +439,6 @@ public class NSDateFormatter extends NSFormatter {
     @Generated
     @Selector("setGregorianStartDate:")
     public native void setGregorianStartDate(NSDate value);
-
-    /**
-     * lenient</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/index.html#//apple_ref/occ/instp/NSDateFormatter/lenient">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setLenient:")
-    public native void setLenient(boolean value);
 
     /**
      * locale</br>
@@ -672,104 +772,4 @@ public class NSDateFormatter extends NSFormatter {
     @Generated
     @Selector("initWithCoder:")
     public native NSDateFormatter initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

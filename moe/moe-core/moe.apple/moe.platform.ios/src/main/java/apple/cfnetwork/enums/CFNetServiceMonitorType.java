@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CFNetServiceMonitorType {
+    @Generated public static final int kCFNetServiceMonitorTXT = 0x00000001;
+
     @Generated
     private CFNetServiceMonitorType() {
     }
-
-    @Generated public static final int kCFNetServiceMonitorTXT = 0x00000001;
 }

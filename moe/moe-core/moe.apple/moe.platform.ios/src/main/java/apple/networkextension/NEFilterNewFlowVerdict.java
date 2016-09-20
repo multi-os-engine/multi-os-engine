@@ -78,12 +78,6 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Selector("allowVerdict")
     public static native NEFilterNewFlowVerdict allowVerdict();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
     /**
      * dropVerdict</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NEFilterNewFlowVerdictClassRef/index.html#//apple_ref/occ/clm/NEFilterNewFlowVerdict/dropVerdict">iOS Dev Center</a>
@@ -91,10 +85,6 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterNewFlowVerdict dropVerdict();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
 
     /**
      * filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:</br>
@@ -104,14 +94,6 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Selector("filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:")
     public static native NEFilterNewFlowVerdict filterDataVerdictWithFilterInboundPeekInboundBytesFilterOutboundPeekOutboundBytes(
             boolean filterInbound, @NUInt long peekInboundBytes, boolean filterOutbound, @NUInt long peekOutboundBytes);
-
-    @Generated
-    @Selector("init")
-    public native NEFilterNewFlowVerdict init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NEFilterNewFlowVerdict initWithCoder(NSCoder aDecoder);
 
     /**
      * needRulesVerdict</br>
@@ -133,12 +115,6 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -239,4 +215,28 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Selector("version")
     @NInt
     public static native long version();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native NEFilterNewFlowVerdict init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NEFilterNewFlowVerdict initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

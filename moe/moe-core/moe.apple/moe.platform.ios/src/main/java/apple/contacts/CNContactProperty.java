@@ -62,74 +62,9 @@ public class CNContactProperty extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native CNContactProperty alloc();
 
-    /**
-     * contact</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/contact">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("contact")
-    public native CNContact contact();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native CNContactProperty init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNContactProperty initWithCoder(NSCoder aDecoder);
-
-    /**
-     * key</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/key">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("key")
-    public native String key();
-
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/label">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("label")
-    public native String label();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object value();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -230,4 +165,69 @@ public class CNContactProperty extends NSObject implements NSCopying, NSSecureCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * contact</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/contact">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("contact")
+    public native CNContact contact();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native CNContactProperty init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNContactProperty initWithCoder(NSCoder aDecoder);
+
+    /**
+     * key</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/key">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("key")
+    public native String key();
+
+    /**
+     * label</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/label">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("label")
+    public native String label();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactProperty_Class/index.html#//apple_ref/occ/instp/CNContactProperty/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object value();
 }

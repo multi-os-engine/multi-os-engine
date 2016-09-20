@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class Enums {
-    @Generated
-    private Enums() {
-    }
-
     @Generated public static final int TWTweetComposeViewControllerResultCancelled = 0x00000000;
     @Generated public static final int TWTweetComposeViewControllerResultDone = 0x00000001;
     @Generated public static final int TWRequestMethodGET = 0x00000000;
     @Generated public static final int TWRequestMethodPOST = 0x00000001;
     @Generated public static final int TWRequestMethodDELETE = 0x00000002;
+
+    @Generated
+    private Enums() {
+    }
 }

@@ -64,15 +64,6 @@ public class CNContactFormatter extends NSFormatter {
     public static native CNContactFormatter alloc();
 
     /**
-     * attributedStringFromContact:defaultAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/instm/CNContactFormatter/attributedStringFromContact:defaultAttributes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attributedStringFromContact:defaultAttributes:")
-    public native NSAttributedString attributedStringFromContactDefaultAttributes(CNContact contact,
-            NSDictionary<?, ?> attributes);
-
-    /**
      * attributedStringFromContact:style:defaultAttributes:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/clm/CNContactFormatter/attributedStringFromContact:style:defaultAttributes:">iOS Dev Center</a>
      */
@@ -98,10 +89,6 @@ public class CNContactFormatter extends NSFormatter {
     @MappedReturn(ObjCObjectMapper.class)
     public static native CNKeyDescriptor descriptorForRequiredKeysForStyle(@NInt long style);
 
-    @Generated
-    @Selector("init")
-    public native CNContactFormatter init();
-
     /**
      * nameOrderForContact:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/clm/CNContactFormatter/nameOrderForContact:">iOS Dev Center</a>
@@ -112,41 +99,12 @@ public class CNContactFormatter extends NSFormatter {
     public static native long nameOrderForContact(CNContact contact);
 
     /**
-     * style</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/instp/CNContactFormatter/style">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setStyle:")
-    public native void setStyle(@NInt long value);
-
-    /**
-     * stringFromContact:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/instm/CNContactFormatter/stringFromContact:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringFromContact:")
-    public native String stringFromContact(CNContact contact);
-
-    /**
      * stringFromContact:style:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/clm/CNContactFormatter/stringFromContact:style:">iOS Dev Center</a>
      */
     @Generated
     @Selector("stringFromContact:style:")
     public static native String stringFromContactStyle(CNContact contact, @NInt long style);
-
-    /**
-     * style</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/instp/CNContactFormatter/style">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("style")
-    @NInt
-    public native long style();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNContactFormatter initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -247,4 +205,46 @@ public class CNContactFormatter extends NSFormatter {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * attributedStringFromContact:defaultAttributes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/instm/CNContactFormatter/attributedStringFromContact:defaultAttributes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attributedStringFromContact:defaultAttributes:")
+    public native NSAttributedString attributedStringFromContactDefaultAttributes(CNContact contact,
+            NSDictionary<?, ?> attributes);
+
+    @Generated
+    @Selector("init")
+    public native CNContactFormatter init();
+
+    /**
+     * style</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/instp/CNContactFormatter/style">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setStyle:")
+    public native void setStyle(@NInt long value);
+
+    /**
+     * stringFromContact:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/instm/CNContactFormatter/stringFromContact:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringFromContact:")
+    public native String stringFromContact(CNContact contact);
+
+    /**
+     * style</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactFormatter_Class/index.html#//apple_ref/occ/instp/CNContactFormatter/style">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("style")
+    @NInt
+    public native long style();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNContactFormatter initWithCoder(NSCoder aDecoder);
 }

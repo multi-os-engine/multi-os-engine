@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIImagePickerControllerQualityType {
-    @Generated
-    private UIImagePickerControllerQualityType() {
-    }
-
     @Generated @NInt public static final long TypeHigh = 0x0000000000000000L;
     @Generated @NInt public static final long TypeMedium = 0x0000000000000001L;
     @Generated @NInt public static final long TypeLow = 0x0000000000000002L;
     @Generated @NInt public static final long Type640x480 = 0x0000000000000003L;
     @Generated @NInt public static final long TypeIFrame1280x720 = 0x0000000000000004L;
     @Generated @NInt public static final long TypeIFrame960x540 = 0x0000000000000005L;
+
+    @Generated
+    private UIImagePickerControllerQualityType() {
+    }
 }

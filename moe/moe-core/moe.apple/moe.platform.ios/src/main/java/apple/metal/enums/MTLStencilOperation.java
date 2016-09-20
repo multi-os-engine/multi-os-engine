@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MTLStencilOperation {
-    @Generated
-    private MTLStencilOperation() {
-    }
-
     @Generated @NUInt public static final long Keep = 0x0000000000000000L;
     @Generated @NUInt public static final long Zero = 0x0000000000000001L;
     @Generated @NUInt public static final long Replace = 0x0000000000000002L;
@@ -33,4 +29,8 @@ public final class MTLStencilOperation {
     @Generated @NUInt public static final long Invert = 0x0000000000000005L;
     @Generated @NUInt public static final long IncrementWrap = 0x0000000000000006L;
     @Generated @NUInt public static final long DecrementWrap = 0x0000000000000007L;
+
+    @Generated
+    private MTLStencilOperation() {
+    }
 }

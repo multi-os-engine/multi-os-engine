@@ -61,41 +61,6 @@ public class AVPlayerItemErrorLog extends NSObject implements NSCopying {
     public static native AVPlayerItemErrorLog alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * events</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemErrorLog_Class/index.html#//apple_ref/occ/instp/AVPlayerItemErrorLog/events">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("events")
-    public native NSArray<? extends AVPlayerItemErrorLogEvent> events();
-
-    /**
-     * extendedLogData</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemErrorLog_Class/index.html#//apple_ref/occ/instm/AVPlayerItemErrorLog/extendedLogData">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("extendedLogData")
-    public native NSData extendedLogData();
-
-    /**
-     * extendedLogDataStringEncoding</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemErrorLog_Class/index.html#//apple_ref/occ/instp/AVPlayerItemErrorLog/extendedLogDataStringEncoding">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("extendedLogDataStringEncoding")
-    @NUInt
-    public native long extendedLogDataStringEncoding();
-
-    @Generated
-    @Selector("init")
-    public native AVPlayerItemErrorLog init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -194,4 +159,39 @@ public class AVPlayerItemErrorLog extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * events</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemErrorLog_Class/index.html#//apple_ref/occ/instp/AVPlayerItemErrorLog/events">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("events")
+    public native NSArray<? extends AVPlayerItemErrorLogEvent> events();
+
+    /**
+     * extendedLogData</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemErrorLog_Class/index.html#//apple_ref/occ/instm/AVPlayerItemErrorLog/extendedLogData">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("extendedLogData")
+    public native NSData extendedLogData();
+
+    /**
+     * extendedLogDataStringEncoding</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayerItemErrorLog_Class/index.html#//apple_ref/occ/instp/AVPlayerItemErrorLog/extendedLogDataStringEncoding">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("extendedLogDataStringEncoding")
+    @NUInt
+    public native long extendedLogDataStringEncoding();
+
+    @Generated
+    @Selector("init")
+    public native AVPlayerItemErrorLog init();
 }

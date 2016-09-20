@@ -62,10 +62,6 @@ public class SKPhysicsJointLimit extends SKPhysicsJoint {
     @Selector("alloc")
     public static native SKPhysicsJointLimit alloc();
 
-    @Generated
-    @Selector("init")
-    public native SKPhysicsJointLimit init();
-
     /**
      * jointWithBodyA:bodyB:anchorA:anchorB:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointLimit/index.html#//apple_ref/occ/clm/SKPhysicsJointLimit/jointWithBodyA:bodyB:anchorA:anchorB:">iOS Dev Center</a>
@@ -74,27 +70,6 @@ public class SKPhysicsJointLimit extends SKPhysicsJoint {
     @Selector("jointWithBodyA:bodyB:anchorA:anchorB:")
     public static native SKPhysicsJointLimit jointWithBodyABodyBAnchorAAnchorB(SKPhysicsBody bodyA, SKPhysicsBody bodyB,
             @ByValue CGPoint anchorA, @ByValue CGPoint anchorB);
-
-    /**
-     * maxLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointLimit/index.html#//apple_ref/occ/instp/SKPhysicsJointLimit/maxLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maxLength")
-    @NFloat
-    public native double maxLength();
-
-    /**
-     * maxLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointLimit/index.html#//apple_ref/occ/instp/SKPhysicsJointLimit/maxLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaxLength:")
-    public native void setMaxLength(@NFloat double value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKPhysicsJointLimit initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -195,4 +170,29 @@ public class SKPhysicsJointLimit extends SKPhysicsJoint {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SKPhysicsJointLimit init();
+
+    /**
+     * maxLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointLimit/index.html#//apple_ref/occ/instp/SKPhysicsJointLimit/maxLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maxLength")
+    @NFloat
+    public native double maxLength();
+
+    /**
+     * maxLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJointLimit/index.html#//apple_ref/occ/instp/SKPhysicsJointLimit/maxLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaxLength:")
+    public native void setMaxLength(@NFloat double value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKPhysicsJointLimit initWithCoder(NSCoder aDecoder);
 }

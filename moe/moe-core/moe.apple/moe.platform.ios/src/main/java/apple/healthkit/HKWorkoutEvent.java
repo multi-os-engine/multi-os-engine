@@ -62,44 +62,9 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native HKWorkoutEvent alloc();
 
-    /**
-     * date</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkoutEvent_Class/index.html#//apple_ref/occ/instp/HKWorkoutEvent/date">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("date")
-    public native NSDate date();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native HKWorkoutEvent init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKWorkoutEvent initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkoutEvent_Class/index.html#//apple_ref/occ/instp/HKWorkoutEvent/type">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("type")
-    @NInt
-    public native long type();
 
     /**
      * workoutEventWithType:date:</br>
@@ -208,4 +173,39 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * date</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkoutEvent_Class/index.html#//apple_ref/occ/instp/HKWorkoutEvent/date">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("date")
+    public native NSDate date();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native HKWorkoutEvent init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKWorkoutEvent initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * type</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkoutEvent_Class/index.html#//apple_ref/occ/instp/HKWorkoutEvent/type">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("type")
+    @NInt
+    public native long type();
 }

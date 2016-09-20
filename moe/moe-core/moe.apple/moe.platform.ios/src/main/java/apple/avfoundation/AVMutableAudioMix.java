@@ -67,26 +67,6 @@ public class AVMutableAudioMix extends AVAudioMix {
     public static native AVMutableAudioMix audioMix();
 
     @Generated
-    @Selector("init")
-    public native AVMutableAudioMix init();
-
-    /**
-     * inputParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMix_Class/index.html#//apple_ref/occ/instp/AVMutableAudioMix/inputParameters">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("inputParameters")
-    public native NSArray<? extends AVAudioMixInputParameters> inputParameters();
-
-    /**
-     * inputParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMix_Class/index.html#//apple_ref/occ/instp/AVMutableAudioMix/inputParameters">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setInputParameters:")
-    public native void setInputParameters(NSArray<? extends AVAudioMixInputParameters> value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -185,4 +165,24 @@ public class AVMutableAudioMix extends AVAudioMix {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVMutableAudioMix init();
+
+    /**
+     * inputParameters</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMix_Class/index.html#//apple_ref/occ/instp/AVMutableAudioMix/inputParameters">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("inputParameters")
+    public native NSArray<? extends AVAudioMixInputParameters> inputParameters();
+
+    /**
+     * inputParameters</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMutableAudioMix_Class/index.html#//apple_ref/occ/instp/AVMutableAudioMix/inputParameters">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setInputParameters:")
+    public native void setInputParameters(NSArray<? extends AVAudioMixInputParameters> value);
 }

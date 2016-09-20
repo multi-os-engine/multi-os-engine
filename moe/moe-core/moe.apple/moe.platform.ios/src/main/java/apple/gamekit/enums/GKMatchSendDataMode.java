@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class GKMatchSendDataMode {
+    @Generated @NInt public static final long Reliable = 0x0000000000000000L;
+    @Generated @NInt public static final long Unreliable = 0x0000000000000001L;
+
     @Generated
     private GKMatchSendDataMode() {
     }
-
-    @Generated @NInt public static final long Reliable = 0x0000000000000000L;
-    @Generated @NInt public static final long Unreliable = 0x0000000000000001L;
 }

@@ -68,75 +68,9 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
     @Selector("alloc")
     public static native AVVideoCompositionInstruction alloc();
 
-    /**
-     * backgroundColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionInstruction/backgroundColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backgroundColor")
-    public native CGColorRef backgroundColor();
-
-    @Generated
-    @Selector("containsTweening")
-    public native boolean containsTweening();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("enablePostProcessing")
-    public native boolean enablePostProcessing();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native AVVideoCompositionInstruction init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVVideoCompositionInstruction initWithCoder(NSCoder aDecoder);
-
-    /**
-     * layerInstructions</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionInstruction/layerInstructions">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("layerInstructions")
-    public native NSArray<? extends AVVideoCompositionLayerInstruction> layerInstructions();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("passthroughTrackID")
-    public native int passthroughTrackID();
-
-    @Generated
-    @Selector("requiredSourceTrackIDs")
-    public native NSArray<? extends NSValue> requiredSourceTrackIDs();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    @Generated
-    @Selector("timeRange")
-    @ByValue
-    public native CMTimeRange timeRange();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -237,4 +171,70 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * backgroundColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionInstruction/backgroundColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backgroundColor")
+    public native CGColorRef backgroundColor();
+
+    @Generated
+    @Selector("containsTweening")
+    public native boolean containsTweening();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("enablePostProcessing")
+    public native boolean enablePostProcessing();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native AVVideoCompositionInstruction init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVVideoCompositionInstruction initWithCoder(NSCoder aDecoder);
+
+    /**
+     * layerInstructions</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVVideoCompositionInstruction_Class/index.html#//apple_ref/occ/instp/AVVideoCompositionInstruction/layerInstructions">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("layerInstructions")
+    public native NSArray<? extends AVVideoCompositionLayerInstruction> layerInstructions();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("passthroughTrackID")
+    public native int passthroughTrackID();
+
+    @Generated
+    @Selector("requiredSourceTrackIDs")
+    public native NSArray<? extends NSValue> requiredSourceTrackIDs();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
+    @Selector("timeRange")
+    @ByValue
+    public native CMTimeRange timeRange();
 }

@@ -60,94 +60,6 @@ public class GLKEffectPropertyMaterial extends GLKEffectProperty {
     @Selector("alloc")
     public static native GLKEffectPropertyMaterial alloc();
 
-    /**
-     * ambientColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/ambientColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ambientColor")
-    @ByValue
-    public native GLKVector4 ambientColor();
-
-    /**
-     * diffuseColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/diffuseColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("diffuseColor")
-    @ByValue
-    public native GLKVector4 diffuseColor();
-
-    /**
-     * emissiveColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/emissiveColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("emissiveColor")
-    @ByValue
-    public native GLKVector4 emissiveColor();
-
-    @Generated
-    @Selector("init")
-    public native GLKEffectPropertyMaterial init();
-
-    /**
-     * ambientColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/ambientColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAmbientColor:")
-    public native void setAmbientColor(@ByValue GLKVector4 value);
-
-    /**
-     * diffuseColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/diffuseColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDiffuseColor:")
-    public native void setDiffuseColor(@ByValue GLKVector4 value);
-
-    /**
-     * emissiveColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/emissiveColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setEmissiveColor:")
-    public native void setEmissiveColor(@ByValue GLKVector4 value);
-
-    /**
-     * shininess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/shininess">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShininess:")
-    public native void setShininess(float value);
-
-    /**
-     * specularColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/specularColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSpecularColor:")
-    public native void setSpecularColor(@ByValue GLKVector4 value);
-
-    /**
-     * shininess</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/shininess">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("shininess")
-    public native float shininess();
-
-    /**
-     * specularColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/specularColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("specularColor")
-    @ByValue
-    public native GLKVector4 specularColor();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -247,4 +159,92 @@ public class GLKEffectPropertyMaterial extends GLKEffectProperty {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * ambientColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/ambientColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ambientColor")
+    @ByValue
+    public native GLKVector4 ambientColor();
+
+    /**
+     * diffuseColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/diffuseColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("diffuseColor")
+    @ByValue
+    public native GLKVector4 diffuseColor();
+
+    /**
+     * emissiveColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/emissiveColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("emissiveColor")
+    @ByValue
+    public native GLKVector4 emissiveColor();
+
+    @Generated
+    @Selector("init")
+    public native GLKEffectPropertyMaterial init();
+
+    /**
+     * ambientColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/ambientColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAmbientColor:")
+    public native void setAmbientColor(@ByValue GLKVector4 value);
+
+    /**
+     * diffuseColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/diffuseColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDiffuseColor:")
+    public native void setDiffuseColor(@ByValue GLKVector4 value);
+
+    /**
+     * emissiveColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/emissiveColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setEmissiveColor:")
+    public native void setEmissiveColor(@ByValue GLKVector4 value);
+
+    /**
+     * shininess</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/shininess">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShininess:")
+    public native void setShininess(float value);
+
+    /**
+     * specularColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/specularColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSpecularColor:")
+    public native void setSpecularColor(@ByValue GLKVector4 value);
+
+    /**
+     * shininess</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/shininess">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("shininess")
+    public native float shininess();
+
+    /**
+     * specularColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/index.html#//apple_ref/occ/instp/GLKEffectPropertyMaterial/specularColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("specularColor")
+    @ByValue
+    public native GLKVector4 specularColor();
 }

@@ -67,43 +67,9 @@ public class CNPostalAddressFormatter extends NSFormatter {
     public static native NSAttributedString attributedStringFromPostalAddressStyleWithDefaultAttributes(
             CNPostalAddress postalAddress, @NInt long style, NSDictionary<?, ?> attributes);
 
-    /**
-     * attributedStringFromPostalAddress:withDefaultAttributes:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddressFormatter_Class/index.html#//apple_ref/occ/instm/CNPostalAddressFormatter/attributedStringFromPostalAddress:withDefaultAttributes:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("attributedStringFromPostalAddress:withDefaultAttributes:")
-    public native NSAttributedString attributedStringFromPostalAddressWithDefaultAttributes(
-            CNPostalAddress postalAddress, NSDictionary<?, ?> attributes);
-
-    @Generated
-    @Selector("init")
-    public native CNPostalAddressFormatter init();
-
-    @Generated
-    @Selector("setStyle:")
-    public native void setStyle(@NInt long value);
-
-    /**
-     * stringFromPostalAddress:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddressFormatter_Class/index.html#//apple_ref/occ/instm/CNPostalAddressFormatter/stringFromPostalAddress:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stringFromPostalAddress:")
-    public native String stringFromPostalAddress(CNPostalAddress postalAddress);
-
     @Generated
     @Selector("stringFromPostalAddress:style:")
     public static native String stringFromPostalAddressStyle(CNPostalAddress postalAddress, @NInt long style);
-
-    @Generated
-    @Selector("style")
-    @NInt
-    public native long style();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNPostalAddressFormatter initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -204,4 +170,38 @@ public class CNPostalAddressFormatter extends NSFormatter {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * attributedStringFromPostalAddress:withDefaultAttributes:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddressFormatter_Class/index.html#//apple_ref/occ/instm/CNPostalAddressFormatter/attributedStringFromPostalAddress:withDefaultAttributes:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("attributedStringFromPostalAddress:withDefaultAttributes:")
+    public native NSAttributedString attributedStringFromPostalAddressWithDefaultAttributes(
+            CNPostalAddress postalAddress, NSDictionary<?, ?> attributes);
+
+    @Generated
+    @Selector("init")
+    public native CNPostalAddressFormatter init();
+
+    @Generated
+    @Selector("setStyle:")
+    public native void setStyle(@NInt long value);
+
+    /**
+     * stringFromPostalAddress:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNPostalAddressFormatter_Class/index.html#//apple_ref/occ/instm/CNPostalAddressFormatter/stringFromPostalAddress:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stringFromPostalAddress:")
+    public native String stringFromPostalAddress(CNPostalAddress postalAddress);
+
+    @Generated
+    @Selector("style")
+    @NInt
+    public native long style();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNPostalAddressFormatter initWithCoder(NSCoder aDecoder);
 }

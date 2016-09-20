@@ -71,33 +71,6 @@ public class UIPrintPaper extends NSObject {
             NSArray<? extends UIPrintPaper> paperList);
 
     @Generated
-    @Selector("init")
-    public native UIPrintPaper init();
-
-    /**
-     * paperSize</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintPaper_Class/index.html#//apple_ref/occ/instp/UIPrintPaper/paperSize">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("paperSize")
-    @ByValue
-    public native CGSize paperSize();
-
-    @Generated
-    @Selector("printRect")
-    @ByValue
-    public native CGRect printRect();
-
-    /**
-     * printableRect</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintPaper_Class/index.html#//apple_ref/occ/instp/UIPrintPaper/printableRect">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("printableRect")
-    @ByValue
-    public native CGRect printableRect();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -196,4 +169,31 @@ public class UIPrintPaper extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIPrintPaper init();
+
+    /**
+     * paperSize</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintPaper_Class/index.html#//apple_ref/occ/instp/UIPrintPaper/paperSize">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("paperSize")
+    @ByValue
+    public native CGSize paperSize();
+
+    @Generated
+    @Selector("printRect")
+    @ByValue
+    public native CGRect printRect();
+
+    /**
+     * printableRect</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPrintPaper_Class/index.html#//apple_ref/occ/instp/UIPrintPaper/printableRect">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("printableRect")
+    @ByValue
+    public native CGRect printableRect();
 }

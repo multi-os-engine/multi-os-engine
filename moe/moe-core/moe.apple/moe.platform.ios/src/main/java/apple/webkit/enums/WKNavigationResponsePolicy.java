@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class WKNavigationResponsePolicy {
+    @Generated @NInt public static final long Cancel = 0x0000000000000000L;
+    @Generated @NInt public static final long Allow = 0x0000000000000001L;
+
     @Generated
     private WKNavigationResponsePolicy() {
     }
-
-    @Generated @NInt public static final long Cancel = 0x0000000000000000L;
-    @Generated @NInt public static final long Allow = 0x0000000000000001L;
 }

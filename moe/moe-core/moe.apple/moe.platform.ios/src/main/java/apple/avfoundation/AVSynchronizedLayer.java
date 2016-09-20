@@ -62,32 +62,8 @@ public class AVSynchronizedLayer extends CALayer {
     public static native AVSynchronizedLayer alloc();
 
     @Generated
-    @Selector("init")
-    public native AVSynchronizedLayer init();
-
-    @Generated
-    @Selector("initWithLayer:")
-    public native AVSynchronizedLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
-
-    @Generated
     @Selector("layer")
     public static native AVSynchronizedLayer layer();
-
-    /**
-     * playerItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSynchronizedLayer_Class/index.html#//apple_ref/occ/instp/AVSynchronizedLayer/playerItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("playerItem")
-    public native AVPlayerItem playerItem();
-
-    /**
-     * playerItem</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSynchronizedLayer_Class/index.html#//apple_ref/occ/instp/AVSynchronizedLayer/playerItem">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPlayerItem:")
-    public native void setPlayerItem(AVPlayerItem value);
 
     /**
      * synchronizedLayerWithPlayerItem:</br>
@@ -96,10 +72,6 @@ public class AVSynchronizedLayer extends CALayer {
     @Generated
     @Selector("synchronizedLayerWithPlayerItem:")
     public static native AVSynchronizedLayer synchronizedLayerWithPlayerItem(AVPlayerItem playerItem);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native AVSynchronizedLayer initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -214,4 +186,32 @@ public class AVSynchronizedLayer extends CALayer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVSynchronizedLayer init();
+
+    @Generated
+    @Selector("initWithLayer:")
+    public native AVSynchronizedLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+
+    /**
+     * playerItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSynchronizedLayer_Class/index.html#//apple_ref/occ/instp/AVSynchronizedLayer/playerItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("playerItem")
+    public native AVPlayerItem playerItem();
+
+    /**
+     * playerItem</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVSynchronizedLayer_Class/index.html#//apple_ref/occ/instp/AVSynchronizedLayer/playerItem">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPlayerItem:")
+    public native void setPlayerItem(AVPlayerItem value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native AVSynchronizedLayer initWithCoder(NSCoder aDecoder);
 }

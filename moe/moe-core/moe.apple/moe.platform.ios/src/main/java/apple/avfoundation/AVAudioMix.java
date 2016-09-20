@@ -61,29 +61,6 @@ public class AVAudioMix extends NSObject implements NSCopying, NSMutableCopying 
     public static native AVAudioMix alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native AVAudioMix init();
-
-    /**
-     * inputParameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMix_Class/index.html#//apple_ref/occ/instp/AVAudioMix/inputParameters">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("inputParameters")
-    public native NSArray<? extends AVAudioMixInputParameters> inputParameters();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -182,4 +159,27 @@ public class AVAudioMix extends NSObject implements NSCopying, NSMutableCopying 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native AVAudioMix init();
+
+    /**
+     * inputParameters</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioMix_Class/index.html#//apple_ref/occ/instp/AVAudioMix/inputParameters">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("inputParameters")
+    public native NSArray<? extends AVAudioMixInputParameters> inputParameters();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
 }

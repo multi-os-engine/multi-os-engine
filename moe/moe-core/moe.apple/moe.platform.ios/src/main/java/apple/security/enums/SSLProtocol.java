@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SSLProtocol {
-    @Generated
-    private SSLProtocol() {
-    }
-
     @Generated public static final int SSLProtocolUnknown = 0x00000000;
     @Generated public static final int SSLProtocol3 = 0x00000002;
     @Generated public static final int TLSProtocol1 = 0x00000004;
@@ -34,4 +30,8 @@ public final class SSLProtocol {
     @Generated public static final int SSLProtocol3Only = 0x00000003;
     @Generated public static final int TLSProtocol1Only = 0x00000005;
     @Generated public static final int SSLProtocolAll = 0x00000006;
+
+    @Generated
+    private SSLProtocol() {
+    }
 }

@@ -60,22 +60,6 @@ public class AVMetadataItemValueRequest extends NSObject {
     public static native AVMetadataItemValueRequest alloc();
 
     @Generated
-    @Selector("init")
-    public native AVMetadataItemValueRequest init();
-
-    @Generated
-    @Selector("metadataItem")
-    public native AVMetadataItem metadataItem();
-
-    @Generated
-    @Selector("respondWithError:")
-    public native void respondWithError(NSError error);
-
-    @Generated
-    @Selector("respondWithValue:")
-    public native void respondWithValue(@Mapped(ObjCObjectMapper.class) Object value);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -174,4 +158,20 @@ public class AVMetadataItemValueRequest extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVMetadataItemValueRequest init();
+
+    @Generated
+    @Selector("metadataItem")
+    public native AVMetadataItem metadataItem();
+
+    @Generated
+    @Selector("respondWithError:")
+    public native void respondWithError(NSError error);
+
+    @Generated
+    @Selector("respondWithValue:")
+    public native void respondWithValue(@Mapped(ObjCObjectMapper.class) Object value);
 }

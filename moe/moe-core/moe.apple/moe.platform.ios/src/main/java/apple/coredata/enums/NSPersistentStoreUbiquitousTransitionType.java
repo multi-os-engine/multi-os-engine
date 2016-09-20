@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSPersistentStoreUbiquitousTransitionType {
-    @Generated
-    private NSPersistentStoreUbiquitousTransitionType() {
-    }
-
     @Generated @NUInt public static final long AccountAdded = 0x0000000000000001L;
     @Generated @NUInt public static final long AccountRemoved = 0x0000000000000002L;
     @Generated @NUInt public static final long ContentRemoved = 0x0000000000000003L;
     @Generated @NUInt public static final long InitialImportCompleted = 0x0000000000000004L;
+
+    @Generated
+    private NSPersistentStoreUbiquitousTransitionType() {
+    }
 }

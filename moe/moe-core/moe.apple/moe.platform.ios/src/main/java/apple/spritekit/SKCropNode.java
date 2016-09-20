@@ -61,36 +61,12 @@ public class SKCropNode extends SKNode {
     public static native SKCropNode alloc();
 
     @Generated
-    @Selector("init")
-    public native SKCropNode init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKCropNode initWithCoder(NSCoder aDecoder);
-
-    /**
-     * maskNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCropNode_Ref/index.html#//apple_ref/occ/instp/SKCropNode/maskNode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maskNode")
-    public native SKNode maskNode();
-
-    @Generated
     @Selector("node")
     public static native SKCropNode node();
 
     @Generated
     @Selector("nodeWithFileNamed:")
     public static native SKCropNode nodeWithFileNamed(String filename);
-
-    /**
-     * maskNode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCropNode_Ref/index.html#//apple_ref/occ/instp/SKCropNode/maskNode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaskNode:")
-    public native void setMaskNode(SKNode value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -209,4 +185,28 @@ public class SKCropNode extends SKNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native SKCropNode init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKCropNode initWithCoder(NSCoder aDecoder);
+
+    /**
+     * maskNode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCropNode_Ref/index.html#//apple_ref/occ/instp/SKCropNode/maskNode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maskNode")
+    public native SKNode maskNode();
+
+    /**
+     * maskNode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKCropNode_Ref/index.html#//apple_ref/occ/instp/SKCropNode/maskNode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaskNode:")
+    public native void setMaskNode(SKNode value);
 }

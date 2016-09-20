@@ -65,55 +65,6 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
     public static native AVTimedMetadataGroup alloc();
 
     @Generated
-    @Selector("copyFormatDescription")
-    public native CMFormatDescriptionRef copyFormatDescription();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native AVTimedMetadataGroup init();
-
-    /**
-     * initWithItems:timeRange:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTimedMetadataGroup_Class/index.html#//apple_ref/occ/instm/AVTimedMetadataGroup/initWithItems:timeRange:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithItems:timeRange:")
-    public native AVTimedMetadataGroup initWithItemsTimeRange(NSArray<? extends AVMetadataItem> items,
-            @ByValue CMTimeRange timeRange);
-
-    @Generated
-    @Selector("initWithSampleBuffer:")
-    public native AVTimedMetadataGroup initWithSampleBuffer(CMSampleBufferRef sampleBuffer);
-
-    /**
-     * items</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTimedMetadataGroup_Class/index.html#//apple_ref/occ/instp/AVTimedMetadataGroup/items">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("items")
-    public native NSArray<? extends AVMetadataItem> items();
-
-    /**
-     * timeRange</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTimedMetadataGroup_Class/index.html#//apple_ref/occ/instp/AVTimedMetadataGroup/timeRange">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("timeRange")
-    @ByValue
-    public native CMTimeRange timeRange();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -212,4 +163,53 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("copyFormatDescription")
+    public native CMFormatDescriptionRef copyFormatDescription();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native AVTimedMetadataGroup init();
+
+    /**
+     * initWithItems:timeRange:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTimedMetadataGroup_Class/index.html#//apple_ref/occ/instm/AVTimedMetadataGroup/initWithItems:timeRange:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithItems:timeRange:")
+    public native AVTimedMetadataGroup initWithItemsTimeRange(NSArray<? extends AVMetadataItem> items,
+            @ByValue CMTimeRange timeRange);
+
+    @Generated
+    @Selector("initWithSampleBuffer:")
+    public native AVTimedMetadataGroup initWithSampleBuffer(CMSampleBufferRef sampleBuffer);
+
+    /**
+     * items</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTimedMetadataGroup_Class/index.html#//apple_ref/occ/instp/AVTimedMetadataGroup/items">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("items")
+    public native NSArray<? extends AVMetadataItem> items();
+
+    /**
+     * timeRange</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVTimedMetadataGroup_Class/index.html#//apple_ref/occ/instp/AVTimedMetadataGroup/timeRange">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("timeRange")
+    @ByValue
+    public native CMTimeRange timeRange();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
 }

@@ -33,11 +33,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class IUnknownVTbl extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public IUnknownVTbl() {
@@ -73,35 +73,13 @@ public final class IUnknownVTbl extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setQueryInterface(@FunctionPtr(name = "call_QueryInterface") Function_QueryInterface value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_QueryInterface {
-        @Generated
-        int call_QueryInterface(VoidPtr arg0, @ByValue CFUUIDBytes arg1,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setAddRef(@FunctionPtr(name = "call_AddRef") Function_AddRef value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AddRef {
-        @Generated
-        int call_AddRef(VoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRelease(@FunctionPtr(name = "call_Release") Function_Release value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_Release {
-        @Generated
-        int call_Release(VoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -117,4 +95,26 @@ public final class IUnknownVTbl extends StructObject {
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_Release")
     public native Function_Release Release();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_QueryInterface {
+        @Generated
+        int call_QueryInterface(VoidPtr arg0, @ByValue CFUUIDBytes arg1,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AddRef {
+        @Generated
+        int call_AddRef(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_Release {
+        @Generated
+        int call_Release(VoidPtr arg0);
+    }
 }

@@ -63,105 +63,6 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     @Selector("alloc")
     public static native AVAudioUnitGenerator alloc();
 
-    /**
-     * bypass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitGenerator_Class/index.html#//apple_ref/occ/instp/AVAudioUnitGenerator/bypass">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bypass")
-    public native boolean bypass();
-
-    @Generated
-    @Selector("init")
-    public native AVAudioUnitGenerator init();
-
-    /**
-     * initWithAudioComponentDescription:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitGenerator_Class/index.html#//apple_ref/occ/instm/AVAudioUnitGenerator/initWithAudioComponentDescription:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAudioComponentDescription:")
-    public native AVAudioUnitGenerator initWithAudioComponentDescription(
-            @ByValue AudioComponentDescription audioComponentDescription);
-
-    @Generated
-    @Selector("obstruction")
-    public native float obstruction();
-
-    @Generated
-    @Selector("occlusion")
-    public native float occlusion();
-
-    @Generated
-    @Selector("pan")
-    public native float pan();
-
-    @Generated
-    @Selector("position")
-    @ByValue
-    public native AVAudio3DPoint position();
-
-    @Generated
-    @Selector("rate")
-    public native float rate();
-
-    @Generated
-    @Selector("renderingAlgorithm")
-    @NInt
-    public native long renderingAlgorithm();
-
-    @Generated
-    @Selector("reverbBlend")
-    public native float reverbBlend();
-
-    /**
-     * bypass</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitGenerator_Class/index.html#//apple_ref/occ/instp/AVAudioUnitGenerator/bypass">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBypass:")
-    public native void setBypass(boolean value);
-
-    @Generated
-    @Selector("setObstruction:")
-    public native void setObstruction(float value);
-
-    @Generated
-    @Selector("setOcclusion:")
-    public native void setOcclusion(float value);
-
-    @Generated
-    @Selector("setPan:")
-    public native void setPan(float value);
-
-    @Generated
-    @Selector("setPosition:")
-    public native void setPosition(@ByValue AVAudio3DPoint value);
-
-    @Generated
-    @Selector("setRate:")
-    public native void setRate(float value);
-
-    @Generated
-    @Selector("setRenderingAlgorithm:")
-    public native void setRenderingAlgorithm(@NInt long value);
-
-    @Generated
-    @Selector("setReverbBlend:")
-    public native void setReverbBlend(float value);
-
-    @Generated
-    @Selector("setVolume:")
-    public native void setVolume(float value);
-
-    @Generated
-    @Selector("volume")
-    public native float volume();
-
-    @Generated
-    @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -267,4 +168,103 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bypass</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitGenerator_Class/index.html#//apple_ref/occ/instp/AVAudioUnitGenerator/bypass">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bypass")
+    public native boolean bypass();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioUnitGenerator init();
+
+    /**
+     * initWithAudioComponentDescription:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitGenerator_Class/index.html#//apple_ref/occ/instm/AVAudioUnitGenerator/initWithAudioComponentDescription:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAudioComponentDescription:")
+    public native AVAudioUnitGenerator initWithAudioComponentDescription(
+            @ByValue AudioComponentDescription audioComponentDescription);
+
+    @Generated
+    @Selector("obstruction")
+    public native float obstruction();
+
+    @Generated
+    @Selector("occlusion")
+    public native float occlusion();
+
+    @Generated
+    @Selector("pan")
+    public native float pan();
+
+    @Generated
+    @Selector("position")
+    @ByValue
+    public native AVAudio3DPoint position();
+
+    @Generated
+    @Selector("rate")
+    public native float rate();
+
+    @Generated
+    @Selector("renderingAlgorithm")
+    @NInt
+    public native long renderingAlgorithm();
+
+    @Generated
+    @Selector("reverbBlend")
+    public native float reverbBlend();
+
+    /**
+     * bypass</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioUnitGenerator_Class/index.html#//apple_ref/occ/instp/AVAudioUnitGenerator/bypass">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBypass:")
+    public native void setBypass(boolean value);
+
+    @Generated
+    @Selector("setObstruction:")
+    public native void setObstruction(float value);
+
+    @Generated
+    @Selector("setOcclusion:")
+    public native void setOcclusion(float value);
+
+    @Generated
+    @Selector("setPan:")
+    public native void setPan(float value);
+
+    @Generated
+    @Selector("setPosition:")
+    public native void setPosition(@ByValue AVAudio3DPoint value);
+
+    @Generated
+    @Selector("setRate:")
+    public native void setRate(float value);
+
+    @Generated
+    @Selector("setRenderingAlgorithm:")
+    public native void setRenderingAlgorithm(@NInt long value);
+
+    @Generated
+    @Selector("setReverbBlend:")
+    public native void setReverbBlend(float value);
+
+    @Generated
+    @Selector("setVolume:")
+    public native void setVolume(float value);
+
+    @Generated
+    @Selector("volume")
+    public native float volume();
+
+    @Generated
+    @Selector("destinationForMixer:bus:")
+    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
 }

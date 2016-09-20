@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSLocaleLanguageDirection {
-    @Generated
-    private NSLocaleLanguageDirection() {
-    }
-
     @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
     @Generated @NUInt public static final long LeftToRight = 0x0000000000000001L;
     @Generated @NUInt public static final long RightToLeft = 0x0000000000000002L;
     @Generated @NUInt public static final long TopToBottom = 0x0000000000000003L;
     @Generated @NUInt public static final long BottomToTop = 0x0000000000000004L;
+
+    @Generated
+    private NSLocaleLanguageDirection() {
+    }
 }

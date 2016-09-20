@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class GKLeaderboardTimeScope {
-    @Generated
-    private GKLeaderboardTimeScope() {
-    }
-
     @Generated @NInt public static final long Today = 0x0000000000000000L;
     @Generated @NInt public static final long Week = 0x0000000000000001L;
     @Generated @NInt public static final long AllTime = 0x0000000000000002L;
+
+    @Generated
+    private GKLeaderboardTimeScope() {
+    }
 }

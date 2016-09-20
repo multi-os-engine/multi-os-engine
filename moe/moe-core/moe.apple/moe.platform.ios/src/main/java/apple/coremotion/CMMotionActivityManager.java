@@ -62,10 +62,6 @@ public class CMMotionActivityManager extends NSObject {
     @Selector("alloc")
     public static native CMMotionActivityManager alloc();
 
-    @Generated
-    @Selector("init")
-    public native CMMotionActivityManager init();
-
     /**
      * isActivityAvailable</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/clm/CMMotionActivityManager/isActivityAvailable">iOS Dev Center</a>
@@ -73,48 +69,6 @@ public class CMMotionActivityManager extends NSObject {
     @Generated
     @Selector("isActivityAvailable")
     public static native boolean isActivityAvailable();
-
-    /**
-     * queryActivityStartingFromDate:toDate:toQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/instm/CMMotionActivityManager/queryActivityStartingFromDate:toDate:toQueue:withHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("queryActivityStartingFromDate:toDate:toQueue:withHandler:")
-    public native void queryActivityStartingFromDateToDateToQueueWithHandler(NSDate start, NSDate end,
-            NSOperationQueue queue,
-            @ObjCBlock(name = "call_queryActivityStartingFromDateToDateToQueueWithHandler") Block_queryActivityStartingFromDateToDateToQueueWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_queryActivityStartingFromDateToDateToQueueWithHandler {
-        @Generated
-        void call_queryActivityStartingFromDateToDateToQueueWithHandler(NSArray<? extends CMMotionActivity> arg0,
-                NSError arg1);
-    }
-
-    /**
-     * startActivityUpdatesToQueue:withHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/instm/CMMotionActivityManager/startActivityUpdatesToQueue:withHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("startActivityUpdatesToQueue:withHandler:")
-    public native void startActivityUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startActivityUpdatesToQueueWithHandler") Block_startActivityUpdatesToQueueWithHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_startActivityUpdatesToQueueWithHandler {
-        @Generated
-        void call_startActivityUpdatesToQueueWithHandler(CMMotionActivity arg0);
-    }
-
-    /**
-     * stopActivityUpdates</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/instm/CMMotionActivityManager/stopActivityUpdates">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("stopActivityUpdates")
-    public native void stopActivityUpdates();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -215,4 +169,50 @@ public class CMMotionActivityManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CMMotionActivityManager init();
+
+    /**
+     * queryActivityStartingFromDate:toDate:toQueue:withHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/instm/CMMotionActivityManager/queryActivityStartingFromDate:toDate:toQueue:withHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("queryActivityStartingFromDate:toDate:toQueue:withHandler:")
+    public native void queryActivityStartingFromDateToDateToQueueWithHandler(NSDate start, NSDate end,
+            NSOperationQueue queue,
+            @ObjCBlock(name = "call_queryActivityStartingFromDateToDateToQueueWithHandler") Block_queryActivityStartingFromDateToDateToQueueWithHandler handler);
+
+    /**
+     * startActivityUpdatesToQueue:withHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/instm/CMMotionActivityManager/startActivityUpdatesToQueue:withHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("startActivityUpdatesToQueue:withHandler:")
+    public native void startActivityUpdatesToQueueWithHandler(NSOperationQueue queue,
+            @ObjCBlock(name = "call_startActivityUpdatesToQueueWithHandler") Block_startActivityUpdatesToQueueWithHandler handler);
+
+    /**
+     * stopActivityUpdates</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionActivityManager_class/index.html#//apple_ref/occ/instm/CMMotionActivityManager/stopActivityUpdates">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("stopActivityUpdates")
+    public native void stopActivityUpdates();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_queryActivityStartingFromDateToDateToQueueWithHandler {
+        @Generated
+        void call_queryActivityStartingFromDateToDateToQueueWithHandler(NSArray<? extends CMMotionActivity> arg0,
+                NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startActivityUpdatesToQueueWithHandler {
+        @Generated
+        void call_startActivityUpdatesToQueueWithHandler(CMMotionActivity arg0);
+    }
 }

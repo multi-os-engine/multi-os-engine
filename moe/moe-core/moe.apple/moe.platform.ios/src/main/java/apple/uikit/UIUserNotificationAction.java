@@ -59,101 +59,14 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
         super(peer);
     }
 
-    /**
-     * activationMode</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/activationMode">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("activationMode")
-    @NUInt
-    public native long activationMode();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native UIUserNotificationAction alloc();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native UIUserNotificationAction init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native UIUserNotificationAction initWithCoder(NSCoder aDecoder);
-
-    /**
-     * authenticationRequired</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/authenticationRequired">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isAuthenticationRequired")
-    public native boolean isAuthenticationRequired();
-
-    /**
-     * destructive</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/destructive">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("isDestructive")
-    public native boolean isDestructive();
-
-    @Generated
-    @Selector("mutableCopyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * title</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/title">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("title")
-    public native String title();
-
-    /**
-     * behavior</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/behavior">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("behavior")
-    @NUInt
-    public native long behavior();
-
-    /**
-     * parameters</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/parameters">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("parameters")
-    public native NSDictionary<?, ?> parameters();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -254,4 +167,91 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * activationMode</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/activationMode">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("activationMode")
+    @NUInt
+    public native long activationMode();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native UIUserNotificationAction init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIUserNotificationAction initWithCoder(NSCoder aDecoder);
+
+    /**
+     * authenticationRequired</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/authenticationRequired">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isAuthenticationRequired")
+    public native boolean isAuthenticationRequired();
+
+    /**
+     * destructive</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/destructive">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("isDestructive")
+    public native boolean isDestructive();
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * title</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/title">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    /**
+     * behavior</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/behavior">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("behavior")
+    @NUInt
+    public native long behavior();
+
+    /**
+     * parameters</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIUserNotificationAction_class/index.html#//apple_ref/occ/instp/UIUserNotificationAction/parameters">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("parameters")
+    public native NSDictionary<?, ?> parameters();
 }

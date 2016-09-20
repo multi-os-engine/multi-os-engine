@@ -61,75 +61,6 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     public static native UIPanGestureRecognizer alloc();
 
     @Generated
-    @Selector("init")
-    public native UIPanGestureRecognizer init();
-
-    @Generated
-    @Selector("initWithTarget:action:")
-    public native UIPanGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
-            SEL action);
-
-    /**
-     * maximumNumberOfTouches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPanGestureRecognizer/maximumNumberOfTouches">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumNumberOfTouches")
-    @NUInt
-    public native long maximumNumberOfTouches();
-
-    /**
-     * minimumNumberOfTouches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPanGestureRecognizer/minimumNumberOfTouches">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("minimumNumberOfTouches")
-    @NUInt
-    public native long minimumNumberOfTouches();
-
-    /**
-     * maximumNumberOfTouches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPanGestureRecognizer/maximumNumberOfTouches">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMaximumNumberOfTouches:")
-    public native void setMaximumNumberOfTouches(@NUInt long value);
-
-    /**
-     * minimumNumberOfTouches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPanGestureRecognizer/minimumNumberOfTouches">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setMinimumNumberOfTouches:")
-    public native void setMinimumNumberOfTouches(@NUInt long value);
-
-    /**
-     * setTranslation:inView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIPanGestureRecognizer/setTranslation:inView:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTranslation:inView:")
-    public native void setTranslationInView(@ByValue CGPoint translation, UIView view);
-
-    /**
-     * translationInView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIPanGestureRecognizer/translationInView:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("translationInView:")
-    @ByValue
-    public native CGPoint translationInView(UIView view);
-
-    /**
-     * velocityInView:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIPanGestureRecognizer/velocityInView:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("velocityInView:")
-    @ByValue
-    public native CGPoint velocityInView(UIView view);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -228,4 +159,73 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native UIPanGestureRecognizer init();
+
+    @Generated
+    @Selector("initWithTarget:action:")
+    public native UIPanGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
+            SEL action);
+
+    /**
+     * maximumNumberOfTouches</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPanGestureRecognizer/maximumNumberOfTouches">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumNumberOfTouches")
+    @NUInt
+    public native long maximumNumberOfTouches();
+
+    /**
+     * minimumNumberOfTouches</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPanGestureRecognizer/minimumNumberOfTouches">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("minimumNumberOfTouches")
+    @NUInt
+    public native long minimumNumberOfTouches();
+
+    /**
+     * maximumNumberOfTouches</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPanGestureRecognizer/maximumNumberOfTouches">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMaximumNumberOfTouches:")
+    public native void setMaximumNumberOfTouches(@NUInt long value);
+
+    /**
+     * minimumNumberOfTouches</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instp/UIPanGestureRecognizer/minimumNumberOfTouches">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setMinimumNumberOfTouches:")
+    public native void setMinimumNumberOfTouches(@NUInt long value);
+
+    /**
+     * setTranslation:inView:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIPanGestureRecognizer/setTranslation:inView:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTranslation:inView:")
+    public native void setTranslationInView(@ByValue CGPoint translation, UIView view);
+
+    /**
+     * translationInView:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIPanGestureRecognizer/translationInView:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("translationInView:")
+    @ByValue
+    public native CGPoint translationInView(UIView view);
+
+    /**
+     * velocityInView:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIPanGestureRecognizer_Class/index.html#//apple_ref/occ/instm/UIPanGestureRecognizer/velocityInView:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("velocityInView:")
+    @ByValue
+    public native CGPoint velocityInView(UIView view);
 }

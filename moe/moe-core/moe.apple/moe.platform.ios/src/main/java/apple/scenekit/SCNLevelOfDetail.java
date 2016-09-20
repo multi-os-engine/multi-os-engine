@@ -63,32 +63,6 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native SCNLevelOfDetail alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * geometry</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLevelOfDetail_Class/index.html#//apple_ref/occ/instp/SCNLevelOfDetail/geometry">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("geometry")
-    public native SCNGeometry geometry();
-
-    @Generated
-    @Selector("init")
-    public native SCNLevelOfDetail init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SCNLevelOfDetail initWithCoder(NSCoder aDecoder);
-
     /**
      * levelOfDetailWithGeometry:screenSpaceRadius:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLevelOfDetail_Class/index.html#//apple_ref/occ/clm/SCNLevelOfDetail/levelOfDetailWithGeometry:screenSpaceRadius:">iOS Dev Center</a>
@@ -107,33 +81,9 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
     public static native SCNLevelOfDetail levelOfDetailWithGeometryWorldSpaceDistance(SCNGeometry geometry,
             @NFloat double distance);
 
-    /**
-     * screenSpaceRadius</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLevelOfDetail_Class/index.html#//apple_ref/occ/instp/SCNLevelOfDetail/screenSpaceRadius">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("screenSpaceRadius")
-    @NFloat
-    public native double screenSpaceRadius();
-
     @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * worldSpaceDistance</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLevelOfDetail_Class/index.html#//apple_ref/occ/instp/SCNLevelOfDetail/worldSpaceDistance">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("worldSpaceDistance")
-    @NFloat
-    public native double worldSpaceDistance();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -234,4 +184,54 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * geometry</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLevelOfDetail_Class/index.html#//apple_ref/occ/instp/SCNLevelOfDetail/geometry">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("geometry")
+    public native SCNGeometry geometry();
+
+    @Generated
+    @Selector("init")
+    public native SCNLevelOfDetail init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SCNLevelOfDetail initWithCoder(NSCoder aDecoder);
+
+    /**
+     * screenSpaceRadius</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLevelOfDetail_Class/index.html#//apple_ref/occ/instp/SCNLevelOfDetail/screenSpaceRadius">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("screenSpaceRadius")
+    @NFloat
+    public native double screenSpaceRadius();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * worldSpaceDistance</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SCNLevelOfDetail_Class/index.html#//apple_ref/occ/instp/SCNLevelOfDetail/worldSpaceDistance">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("worldSpaceDistance")
+    @NFloat
+    public native double worldSpaceDistance();
 }

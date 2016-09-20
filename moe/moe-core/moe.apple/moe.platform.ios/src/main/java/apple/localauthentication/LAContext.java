@@ -64,89 +64,6 @@ public class LAContext extends NSObject {
     @Selector("alloc")
     public static native LAContext alloc();
 
-    /**
-     * canEvaluatePolicy:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html#//apple_ref/occ/instm/LAContext/canEvaluatePolicy:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("canEvaluatePolicy:error:")
-    public native boolean canEvaluatePolicyError(@NInt long policy, Ptr<NSError> error);
-
-    /**
-     * evaluatePolicy:localizedReason:reply:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html#//apple_ref/occ/instm/LAContext/evaluatePolicy:localizedReason:reply:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("evaluatePolicy:localizedReason:reply:")
-    public native void evaluatePolicyLocalizedReasonReply(@NInt long policy, String localizedReason,
-            @ObjCBlock(name = "call_evaluatePolicyLocalizedReasonReply") Block_evaluatePolicyLocalizedReasonReply reply);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_evaluatePolicyLocalizedReasonReply {
-        @Generated
-        void call_evaluatePolicyLocalizedReasonReply(boolean arg0, NSError arg1);
-    }
-
-    @Generated
-    @Selector("init")
-    public native LAContext init();
-
-    @Generated
-    @Selector("localizedFallbackTitle")
-    public native String localizedFallbackTitle();
-
-    @Deprecated
-    @Generated
-    @Selector("maxBiometryFailures")
-    public native NSNumber maxBiometryFailures();
-
-    @Generated
-    @Selector("setLocalizedFallbackTitle:")
-    public native void setLocalizedFallbackTitle(String value);
-
-    @Deprecated
-    @Generated
-    @Selector("setMaxBiometryFailures:")
-    public native void setMaxBiometryFailures(NSNumber value);
-
-    @Generated
-    @Selector("evaluateAccessControl:operation:localizedReason:reply:")
-    public native void evaluateAccessControlOperationLocalizedReasonReply(SecAccessControlRef accessControl,
-            @NInt long operation, String localizedReason,
-            @ObjCBlock(name = "call_evaluateAccessControlOperationLocalizedReasonReply") Block_evaluateAccessControlOperationLocalizedReasonReply reply);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_evaluateAccessControlOperationLocalizedReasonReply {
-        @Generated
-        void call_evaluateAccessControlOperationLocalizedReasonReply(boolean arg0, NSError arg1);
-    }
-
-    @Generated
-    @Selector("evaluatedPolicyDomainState")
-    public native NSData evaluatedPolicyDomainState();
-
-    @Generated
-    @Selector("invalidate")
-    public native void invalidate();
-
-    @Generated
-    @Selector("isCredentialSet:")
-    public native boolean isCredentialSet(@NInt long type);
-
-    @Generated
-    @Selector("setCredential:type:")
-    public native boolean setCredentialType(NSData credential, @NInt long type);
-
-    @Generated
-    @Selector("setTouchIDAuthenticationAllowableReuseDuration:")
-    public native void setTouchIDAuthenticationAllowableReuseDuration(double value);
-
-    @Generated
-    @Selector("touchIDAuthenticationAllowableReuseDuration")
-    public native double touchIDAuthenticationAllowableReuseDuration();
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -246,4 +163,87 @@ public class LAContext extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * canEvaluatePolicy:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html#//apple_ref/occ/instm/LAContext/canEvaluatePolicy:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("canEvaluatePolicy:error:")
+    public native boolean canEvaluatePolicyError(@NInt long policy, Ptr<NSError> error);
+
+    /**
+     * evaluatePolicy:localizedReason:reply:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/LocalAuthentication/Reference/LAContext_Class/index.html#//apple_ref/occ/instm/LAContext/evaluatePolicy:localizedReason:reply:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("evaluatePolicy:localizedReason:reply:")
+    public native void evaluatePolicyLocalizedReasonReply(@NInt long policy, String localizedReason,
+            @ObjCBlock(name = "call_evaluatePolicyLocalizedReasonReply") Block_evaluatePolicyLocalizedReasonReply reply);
+
+    @Generated
+    @Selector("init")
+    public native LAContext init();
+
+    @Generated
+    @Selector("localizedFallbackTitle")
+    public native String localizedFallbackTitle();
+
+    @Deprecated
+    @Generated
+    @Selector("maxBiometryFailures")
+    public native NSNumber maxBiometryFailures();
+
+    @Generated
+    @Selector("setLocalizedFallbackTitle:")
+    public native void setLocalizedFallbackTitle(String value);
+
+    @Deprecated
+    @Generated
+    @Selector("setMaxBiometryFailures:")
+    public native void setMaxBiometryFailures(NSNumber value);
+
+    @Generated
+    @Selector("evaluateAccessControl:operation:localizedReason:reply:")
+    public native void evaluateAccessControlOperationLocalizedReasonReply(SecAccessControlRef accessControl,
+            @NInt long operation, String localizedReason,
+            @ObjCBlock(name = "call_evaluateAccessControlOperationLocalizedReasonReply") Block_evaluateAccessControlOperationLocalizedReasonReply reply);
+
+    @Generated
+    @Selector("evaluatedPolicyDomainState")
+    public native NSData evaluatedPolicyDomainState();
+
+    @Generated
+    @Selector("invalidate")
+    public native void invalidate();
+
+    @Generated
+    @Selector("isCredentialSet:")
+    public native boolean isCredentialSet(@NInt long type);
+
+    @Generated
+    @Selector("setCredential:type:")
+    public native boolean setCredentialType(NSData credential, @NInt long type);
+
+    @Generated
+    @Selector("setTouchIDAuthenticationAllowableReuseDuration:")
+    public native void setTouchIDAuthenticationAllowableReuseDuration(double value);
+
+    @Generated
+    @Selector("touchIDAuthenticationAllowableReuseDuration")
+    public native double touchIDAuthenticationAllowableReuseDuration();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_evaluatePolicyLocalizedReasonReply {
+        @Generated
+        void call_evaluatePolicyLocalizedReasonReply(boolean arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_evaluateAccessControlOperationLocalizedReasonReply {
+        @Generated
+        void call_evaluateAccessControlOperationLocalizedReasonReply(boolean arg0, NSError arg1);
+    }
 }

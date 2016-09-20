@@ -60,53 +60,6 @@ public class AVCaptureOutput extends NSObject {
     @Selector("alloc")
     public static native AVCaptureOutput alloc();
 
-    /**
-     * connectionWithMediaType:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureOutput/connectionWithMediaType:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connectionWithMediaType:")
-    public native AVCaptureConnection connectionWithMediaType(String mediaType);
-
-    /**
-     * connections</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureOutput/connections">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("connections")
-    public native NSArray<?> connections();
-
-    @Generated
-    @Selector("init")
-    public native AVCaptureOutput init();
-
-    /**
-     * metadataOutputRectOfInterestForRect:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureOutput/metadataOutputRectOfInterestForRect:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("metadataOutputRectOfInterestForRect:")
-    @ByValue
-    public native CGRect metadataOutputRectOfInterestForRect(@ByValue CGRect rectInOutputCoordinates);
-
-    /**
-     * rectForMetadataOutputRectOfInterest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureOutput/rectForMetadataOutputRectOfInterest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("rectForMetadataOutputRectOfInterest:")
-    @ByValue
-    public native CGRect rectForMetadataOutputRectOfInterest(@ByValue CGRect rectInMetadataOutputCoordinates);
-
-    /**
-     * transformedMetadataObjectForMetadataObject:connection:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureOutput/transformedMetadataObjectForMetadataObject:connection:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("transformedMetadataObjectForMetadataObject:connection:")
-    public native AVMetadataObject transformedMetadataObjectForMetadataObjectConnection(AVMetadataObject metadataObject,
-            AVCaptureConnection connection);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -206,4 +159,51 @@ public class AVCaptureOutput extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * connectionWithMediaType:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureOutput/connectionWithMediaType:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connectionWithMediaType:")
+    public native AVCaptureConnection connectionWithMediaType(String mediaType);
+
+    /**
+     * connections</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/instp/AVCaptureOutput/connections">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("connections")
+    public native NSArray<?> connections();
+
+    @Generated
+    @Selector("init")
+    public native AVCaptureOutput init();
+
+    /**
+     * metadataOutputRectOfInterestForRect:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureOutput/metadataOutputRectOfInterestForRect:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("metadataOutputRectOfInterestForRect:")
+    @ByValue
+    public native CGRect metadataOutputRectOfInterestForRect(@ByValue CGRect rectInOutputCoordinates);
+
+    /**
+     * rectForMetadataOutputRectOfInterest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureOutput/rectForMetadataOutputRectOfInterest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("rectForMetadataOutputRectOfInterest:")
+    @ByValue
+    public native CGRect rectForMetadataOutputRectOfInterest(@ByValue CGRect rectInMetadataOutputCoordinates);
+
+    /**
+     * transformedMetadataObjectForMetadataObject:connection:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVCaptureOutput_Class/index.html#//apple_ref/occ/instm/AVCaptureOutput/transformedMetadataObjectForMetadataObject:connection:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("transformedMetadataObjectForMetadataObject:connection:")
+    public native AVMetadataObject transformedMetadataObjectForMetadataObjectConnection(AVMetadataObject metadataObject,
+            AVCaptureConnection connection);
 }

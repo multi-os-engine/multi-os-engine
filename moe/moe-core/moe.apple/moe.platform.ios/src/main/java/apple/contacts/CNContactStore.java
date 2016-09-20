@@ -72,94 +72,6 @@ public class CNContactStore extends NSObject {
     @NInt
     public static native long authorizationStatusForEntityType(@NInt long entityType);
 
-    /**
-     * containersMatchingPredicate:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/containersMatchingPredicate:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("containersMatchingPredicate:error:")
-    public native NSArray<? extends CNContainer> containersMatchingPredicateError(NSPredicate predicate,
-            Ptr<NSError> error);
-
-    /**
-     * defaultContainerIdentifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/defaultContainerIdentifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultContainerIdentifier")
-    public native String defaultContainerIdentifier();
-
-    /**
-     * enumerateContactsWithFetchRequest:error:usingBlock:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/enumerateContactsWithFetchRequest:error:usingBlock:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("enumerateContactsWithFetchRequest:error:usingBlock:")
-    public native boolean enumerateContactsWithFetchRequestErrorUsingBlock(CNContactFetchRequest fetchRequest,
-            Ptr<NSError> error,
-            @ObjCBlock(name = "call_enumerateContactsWithFetchRequestErrorUsingBlock") Block_enumerateContactsWithFetchRequestErrorUsingBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_enumerateContactsWithFetchRequestErrorUsingBlock {
-        @Generated
-        void call_enumerateContactsWithFetchRequestErrorUsingBlock(CNContact arg0, BoolPtr arg1);
-    }
-
-    /**
-     * executeSaveRequest:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/executeSaveRequest:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("executeSaveRequest:error:")
-    public native boolean executeSaveRequestError(CNSaveRequest saveRequest, Ptr<NSError> error);
-
-    /**
-     * groupsMatchingPredicate:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/groupsMatchingPredicate:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("groupsMatchingPredicate:error:")
-    public native NSArray<? extends CNGroup> groupsMatchingPredicateError(NSPredicate predicate, Ptr<NSError> error);
-
-    @Generated
-    @Selector("init")
-    public native CNContactStore init();
-
-    /**
-     * requestAccessForEntityType:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/requestAccessForEntityType:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("requestAccessForEntityType:completionHandler:")
-    public native void requestAccessForEntityTypeCompletionHandler(@NInt long entityType,
-            @ObjCBlock(name = "call_requestAccessForEntityTypeCompletionHandler") Block_requestAccessForEntityTypeCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestAccessForEntityTypeCompletionHandler {
-        @Generated
-        void call_requestAccessForEntityTypeCompletionHandler(boolean arg0, NSError arg1);
-    }
-
-    /**
-     * unifiedContactWithIdentifier:keysToFetch:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/unifiedContactWithIdentifier:keysToFetch:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unifiedContactWithIdentifier:keysToFetch:error:")
-    public native CNContact unifiedContactWithIdentifierKeysToFetchError(String identifier, NSArray<?> keys,
-            Ptr<NSError> error);
-
-    /**
-     * unifiedContactsMatchingPredicate:keysToFetch:error:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/unifiedContactsMatchingPredicate:keysToFetch:error:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("unifiedContactsMatchingPredicate:keysToFetch:error:")
-    public native NSArray<? extends CNContact> unifiedContactsMatchingPredicateKeysToFetchError(NSPredicate predicate,
-            NSArray<?> keys, Ptr<NSError> error);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -259,4 +171,92 @@ public class CNContactStore extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * containersMatchingPredicate:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/containersMatchingPredicate:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("containersMatchingPredicate:error:")
+    public native NSArray<? extends CNContainer> containersMatchingPredicateError(NSPredicate predicate,
+            Ptr<NSError> error);
+
+    /**
+     * defaultContainerIdentifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/defaultContainerIdentifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultContainerIdentifier")
+    public native String defaultContainerIdentifier();
+
+    /**
+     * enumerateContactsWithFetchRequest:error:usingBlock:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/enumerateContactsWithFetchRequest:error:usingBlock:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("enumerateContactsWithFetchRequest:error:usingBlock:")
+    public native boolean enumerateContactsWithFetchRequestErrorUsingBlock(CNContactFetchRequest fetchRequest,
+            Ptr<NSError> error,
+            @ObjCBlock(name = "call_enumerateContactsWithFetchRequestErrorUsingBlock") Block_enumerateContactsWithFetchRequestErrorUsingBlock block);
+
+    /**
+     * executeSaveRequest:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/executeSaveRequest:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("executeSaveRequest:error:")
+    public native boolean executeSaveRequestError(CNSaveRequest saveRequest, Ptr<NSError> error);
+
+    /**
+     * groupsMatchingPredicate:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/groupsMatchingPredicate:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("groupsMatchingPredicate:error:")
+    public native NSArray<? extends CNGroup> groupsMatchingPredicateError(NSPredicate predicate, Ptr<NSError> error);
+
+    @Generated
+    @Selector("init")
+    public native CNContactStore init();
+
+    /**
+     * requestAccessForEntityType:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/requestAccessForEntityType:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("requestAccessForEntityType:completionHandler:")
+    public native void requestAccessForEntityTypeCompletionHandler(@NInt long entityType,
+            @ObjCBlock(name = "call_requestAccessForEntityTypeCompletionHandler") Block_requestAccessForEntityTypeCompletionHandler completionHandler);
+
+    /**
+     * unifiedContactWithIdentifier:keysToFetch:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/unifiedContactWithIdentifier:keysToFetch:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unifiedContactWithIdentifier:keysToFetch:error:")
+    public native CNContact unifiedContactWithIdentifierKeysToFetchError(String identifier, NSArray<?> keys,
+            Ptr<NSError> error);
+
+    /**
+     * unifiedContactsMatchingPredicate:keysToFetch:error:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNContactStore_Class/index.html#//apple_ref/occ/instm/CNContactStore/unifiedContactsMatchingPredicate:keysToFetch:error:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("unifiedContactsMatchingPredicate:keysToFetch:error:")
+    public native NSArray<? extends CNContact> unifiedContactsMatchingPredicateKeysToFetchError(NSPredicate predicate,
+            NSArray<?> keys, Ptr<NSError> error);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateContactsWithFetchRequestErrorUsingBlock {
+        @Generated
+        void call_enumerateContactsWithFetchRequestErrorUsingBlock(CNContact arg0, BoolPtr arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestAccessForEntityTypeCompletionHandler {
+        @Generated
+        void call_requestAccessForEntityTypeCompletionHandler(boolean arg0, NSError arg1);
+    }
 }

@@ -126,34 +126,6 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
             int inFlags, Ptr<AudioFileID> outAudioFile);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioFileInitializeWithCallbacks_1 {
-        @Generated
-        int call_AudioFileInitializeWithCallbacks_1(VoidPtr arg0, long arg1, int arg2, VoidPtr arg3, IntPtr arg4);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioFileInitializeWithCallbacks_2 {
-        @Generated
-        int call_AudioFileInitializeWithCallbacks_2(VoidPtr arg0, long arg1, int arg2, ConstVoidPtr arg3, IntPtr arg4);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioFileInitializeWithCallbacks_3 {
-        @Generated
-        long call_AudioFileInitializeWithCallbacks_3(VoidPtr arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioFileInitializeWithCallbacks_4 {
-        @Generated
-        int call_AudioFileInitializeWithCallbacks_4(VoidPtr arg0, long arg1);
-    }
-
     /**
      * AudioFileOpenWithCallbacks</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MusicAudio/Reference/AudioFileConvertRef/index.html#//apple_ref/c/func/AudioFileOpenWithCallbacks">iOS Dev Center</a>
@@ -166,34 +138,6 @@ public final class AudioToolbox {
             @FunctionPtr(name = "call_AudioFileOpenWithCallbacks_3") Function_AudioFileOpenWithCallbacks_3 inGetSizeFunc,
             @FunctionPtr(name = "call_AudioFileOpenWithCallbacks_4") Function_AudioFileOpenWithCallbacks_4 inSetSizeFunc,
             int inFileTypeHint, Ptr<AudioFileID> outAudioFile);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioFileOpenWithCallbacks_1 {
-        @Generated
-        int call_AudioFileOpenWithCallbacks_1(VoidPtr arg0, long arg1, int arg2, VoidPtr arg3, IntPtr arg4);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioFileOpenWithCallbacks_2 {
-        @Generated
-        int call_AudioFileOpenWithCallbacks_2(VoidPtr arg0, long arg1, int arg2, ConstVoidPtr arg3, IntPtr arg4);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioFileOpenWithCallbacks_3 {
-        @Generated
-        long call_AudioFileOpenWithCallbacks_3(VoidPtr arg0);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioFileOpenWithCallbacks_4 {
-        @Generated
-        int call_AudioFileOpenWithCallbacks_4(VoidPtr arg0, long arg1);
-    }
 
     /**
      * AudioFileClose</br>
@@ -359,21 +303,6 @@ public final class AudioToolbox {
             @FunctionPtr(name = "call_AudioFileStreamOpen_2") Function_AudioFileStreamOpen_2 inPacketsProc,
             int inFileTypeHint, Ptr<AudioFileStreamID> outAudioFileStream);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioFileStreamOpen_1 {
-        @Generated
-        void call_AudioFileStreamOpen_1(VoidPtr arg0, VoidPtr arg1, int arg2, IntPtr arg3);
-    }
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioFileStreamOpen_2 {
-        @Generated
-        void call_AudioFileStreamOpen_2(VoidPtr arg0, int arg1, int arg2, ConstVoidPtr arg3,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription arg4);
-    }
-
     /**
      * AudioFileStreamParseBytes</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MusicAudio/Reference/AudioStreamReference/index.html#//apple_ref/c/func/AudioFileStreamParseBytes">iOS Dev Center</a>
@@ -457,13 +386,6 @@ public final class AudioToolbox {
             VoidPtr inUserData, CFRunLoopRef inCallbackRunLoop, CFStringRef inCallbackRunLoopMode, int inFlags,
             Ptr<AudioQueueRef> outAQ);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioQueueNewOutput {
-        @Generated
-        void call_AudioQueueNewOutput(VoidPtr arg0, VoidPtr arg1, AudioQueueBuffer arg2);
-    }
-
     /**
      * AudioQueueNewInput</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MusicAudio/Reference/AudioQueueReference/index.html#//apple_ref/c/func/AudioQueueNewInput">iOS Dev Center</a>
@@ -475,14 +397,6 @@ public final class AudioToolbox {
             @FunctionPtr(name = "call_AudioQueueNewInput") Function_AudioQueueNewInput inCallbackProc,
             VoidPtr inUserData, CFRunLoopRef inCallbackRunLoop, CFStringRef inCallbackRunLoopMode, int inFlags,
             Ptr<AudioQueueRef> outAQ);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioQueueNewInput {
-        @Generated
-        void call_AudioQueueNewInput(VoidPtr arg0, VoidPtr arg1, AudioQueueBuffer arg2, AudioTimeStamp arg3, int arg4,
-                @ReferenceInfo(type = AudioStreamPacketDescription.class) ConstPtr<AudioStreamPacketDescription> arg5);
-    }
 
     /**
      * AudioQueueDispose</br>
@@ -645,13 +559,6 @@ public final class AudioToolbox {
             @FunctionPtr(name = "call_AudioQueueAddPropertyListener") Function_AudioQueueAddPropertyListener inProc,
             VoidPtr inUserData);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioQueueAddPropertyListener {
-        @Generated
-        void call_AudioQueueAddPropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2);
-    }
-
     /**
      * AudioQueueRemovePropertyListener</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MusicAudio/Reference/AudioQueueReference/index.html#//apple_ref/c/func/AudioQueueRemovePropertyListener">iOS Dev Center</a>
@@ -661,13 +568,6 @@ public final class AudioToolbox {
     public static native int AudioQueueRemovePropertyListener(AudioQueueRef inAQ, int inID,
             @FunctionPtr(name = "call_AudioQueueRemovePropertyListener") Function_AudioQueueRemovePropertyListener inProc,
             VoidPtr inUserData);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioQueueRemovePropertyListener {
-        @Generated
-        void call_AudioQueueRemovePropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2);
-    }
 
     /**
      * AudioQueueCreateTimeline</br>
@@ -753,15 +653,6 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription outProcessingFormat,
             Ptr<AudioQueueProcessingTapRef> outAQTap);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioQueueProcessingTapNew {
-        @Generated
-        void call_AudioQueueProcessingTapNew(VoidPtr arg0, VoidPtr arg1, int arg2,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg3, IntPtr arg4,
-                IntPtr arg5, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg6);
-    }
-
     @Generated
     @CFunction
     public static native int AudioQueueProcessingTapDispose(AudioQueueProcessingTapRef inAQTap);
@@ -789,13 +680,6 @@ public final class AudioToolbox {
     public static native int AudioSessionInitialize(CFRunLoopRef inRunLoop, CFStringRef inRunLoopMode,
             @FunctionPtr(name = "call_AudioSessionInitialize") Function_AudioSessionInitialize inInterruptionListener,
             VoidPtr inClientData);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioSessionInitialize {
-        @Generated
-        void call_AudioSessionInitialize(VoidPtr arg0, int arg1);
-    }
 
     /**
      * AudioSessionSetActive</br>
@@ -853,13 +737,6 @@ public final class AudioToolbox {
             @FunctionPtr(name = "call_AudioSessionAddPropertyListener") Function_AudioSessionAddPropertyListener inProc,
             VoidPtr inClientData);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioSessionAddPropertyListener {
-        @Generated
-        void call_AudioSessionAddPropertyListener(VoidPtr arg0, int arg1, int arg2, ConstVoidPtr arg3);
-    }
-
     /**
      * AudioSessionRemovePropertyListener</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioToolbox/Reference/AudioSessionServicesReference/index.html#//apple_ref/c/func/AudioSessionRemovePropertyListener">iOS Dev Center</a>
@@ -879,13 +756,6 @@ public final class AudioToolbox {
     public static native int AudioSessionRemovePropertyListenerWithUserData(int inID,
             @FunctionPtr(name = "call_AudioSessionRemovePropertyListenerWithUserData") Function_AudioSessionRemovePropertyListenerWithUserData inProc,
             VoidPtr inClientData);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioSessionRemovePropertyListenerWithUserData {
-        @Generated
-        void call_AudioSessionRemovePropertyListenerWithUserData(VoidPtr arg0, int arg1, int arg2, ConstVoidPtr arg3);
-    }
 
     /**
      * AudioServicesPlayAlertSound</br>
@@ -929,13 +799,6 @@ public final class AudioToolbox {
             CFStringRef inRunLoopMode,
             @FunctionPtr(name = "call_AudioServicesAddSystemSoundCompletion") Function_AudioServicesAddSystemSoundCompletion inCompletionRoutine,
             VoidPtr inClientData);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioServicesAddSystemSoundCompletion {
-        @Generated
-        void call_AudioServicesAddSystemSoundCompletion(int arg0, VoidPtr arg1);
-    }
 
     /**
      * AudioServicesRemoveSystemSoundCompletion</br>
@@ -1205,15 +1068,6 @@ public final class AudioToolbox {
             @FunctionPtr(name = "call_AUGraphAddRenderNotify") Function_AUGraphAddRenderNotify inCallback,
             VoidPtr inRefCon);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AUGraphAddRenderNotify {
-        @Generated
-        int call_AUGraphAddRenderNotify(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
-    }
-
     /**
      * AUGraphRemoveRenderNotify</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/AudioToolbox/Reference/AUGraphServicesReference/index.html#//apple_ref/c/func/AUGraphRemoveRenderNotify">iOS Dev Center</a>
@@ -1223,15 +1077,6 @@ public final class AudioToolbox {
     public static native int AUGraphRemoveRenderNotify(AUGraph inGraph,
             @FunctionPtr(name = "call_AUGraphRemoveRenderNotify") Function_AUGraphRemoveRenderNotify inCallback,
             VoidPtr inRefCon);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AUGraphRemoveRenderNotify {
-        @Generated
-        int call_AUGraphRemoveRenderNotify(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
-    }
 
     /**
      * AudioConverterNew</br>
@@ -1320,16 +1165,6 @@ public final class AudioToolbox {
             VoidPtr inInputDataProcUserData, IntPtr ioOutputDataPacketSize,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outOutputData,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_AudioConverterFillComplexBuffer {
-        @Generated
-        int call_AudioConverterFillComplexBuffer(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg2,
-                @ReferenceInfo(type = AudioStreamPacketDescription.class, depth = 2) Ptr<Ptr<AudioStreamPacketDescription>> arg3,
-                VoidPtr arg4);
-    }
 
     /**
      * AudioConverterConvertComplexBuffer</br>
@@ -1747,15 +1582,6 @@ public final class AudioToolbox {
     public static native int MusicSequenceSetUserCallback(MusicSequence inSequence,
             @FunctionPtr(name = "call_MusicSequenceSetUserCallback") Function_MusicSequenceSetUserCallback inCallback,
             VoidPtr inClientData);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_MusicSequenceSetUserCallback {
-        @Generated
-        void call_MusicSequenceSetUserCallback(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, double arg3,
-                @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData arg4,
-                double arg5, double arg6);
-    }
 
     /**
      * MusicSequenceBeatsToBarBeatTime</br>
@@ -2212,17 +2038,191 @@ public final class AudioToolbox {
     public static native void AudioServicesPlayAlertSoundWithCompletion(int inSystemSoundID,
             @ObjCBlock(name = "call_AudioServicesPlayAlertSoundWithCompletion") Block_AudioServicesPlayAlertSoundWithCompletion inCompletionBlock);
 
+    @Generated
+    @CFunction
+    public static native void AudioServicesPlaySystemSoundWithCompletion(int inSystemSoundID,
+            @ObjCBlock(name = "call_AudioServicesPlaySystemSoundWithCompletion") Block_AudioServicesPlaySystemSoundWithCompletion inCompletionBlock);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioFileInitializeWithCallbacks_1 {
+        @Generated
+        int call_AudioFileInitializeWithCallbacks_1(VoidPtr arg0, long arg1, int arg2, VoidPtr arg3, IntPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioFileInitializeWithCallbacks_2 {
+        @Generated
+        int call_AudioFileInitializeWithCallbacks_2(VoidPtr arg0, long arg1, int arg2, ConstVoidPtr arg3, IntPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioFileInitializeWithCallbacks_3 {
+        @Generated
+        long call_AudioFileInitializeWithCallbacks_3(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioFileInitializeWithCallbacks_4 {
+        @Generated
+        int call_AudioFileInitializeWithCallbacks_4(VoidPtr arg0, long arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioFileOpenWithCallbacks_1 {
+        @Generated
+        int call_AudioFileOpenWithCallbacks_1(VoidPtr arg0, long arg1, int arg2, VoidPtr arg3, IntPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioFileOpenWithCallbacks_2 {
+        @Generated
+        int call_AudioFileOpenWithCallbacks_2(VoidPtr arg0, long arg1, int arg2, ConstVoidPtr arg3, IntPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioFileOpenWithCallbacks_3 {
+        @Generated
+        long call_AudioFileOpenWithCallbacks_3(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioFileOpenWithCallbacks_4 {
+        @Generated
+        int call_AudioFileOpenWithCallbacks_4(VoidPtr arg0, long arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioFileStreamOpen_1 {
+        @Generated
+        void call_AudioFileStreamOpen_1(VoidPtr arg0, VoidPtr arg1, int arg2, IntPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioFileStreamOpen_2 {
+        @Generated
+        void call_AudioFileStreamOpen_2(VoidPtr arg0, int arg1, int arg2, ConstVoidPtr arg3,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioQueueNewOutput {
+        @Generated
+        void call_AudioQueueNewOutput(VoidPtr arg0, VoidPtr arg1, AudioQueueBuffer arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioQueueNewInput {
+        @Generated
+        void call_AudioQueueNewInput(VoidPtr arg0, VoidPtr arg1, AudioQueueBuffer arg2, AudioTimeStamp arg3, int arg4,
+                @ReferenceInfo(type = AudioStreamPacketDescription.class) ConstPtr<AudioStreamPacketDescription> arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioQueueAddPropertyListener {
+        @Generated
+        void call_AudioQueueAddPropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioQueueRemovePropertyListener {
+        @Generated
+        void call_AudioQueueRemovePropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioQueueProcessingTapNew {
+        @Generated
+        void call_AudioQueueProcessingTapNew(VoidPtr arg0, VoidPtr arg1, int arg2,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg3, IntPtr arg4,
+                IntPtr arg5, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg6);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioSessionInitialize {
+        @Generated
+        void call_AudioSessionInitialize(VoidPtr arg0, int arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioSessionAddPropertyListener {
+        @Generated
+        void call_AudioSessionAddPropertyListener(VoidPtr arg0, int arg1, int arg2, ConstVoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioSessionRemovePropertyListenerWithUserData {
+        @Generated
+        void call_AudioSessionRemovePropertyListenerWithUserData(VoidPtr arg0, int arg1, int arg2, ConstVoidPtr arg3);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioServicesAddSystemSoundCompletion {
+        @Generated
+        void call_AudioServicesAddSystemSoundCompletion(int arg0, VoidPtr arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AUGraphAddRenderNotify {
+        @Generated
+        int call_AUGraphAddRenderNotify(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
+                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AUGraphRemoveRenderNotify {
+        @Generated
+        int call_AUGraphRemoveRenderNotify(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
+                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_AudioConverterFillComplexBuffer {
+        @Generated
+        int call_AudioConverterFillComplexBuffer(VoidPtr arg0, IntPtr arg1,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg2,
+                @ReferenceInfo(type = AudioStreamPacketDescription.class, depth = 2) Ptr<Ptr<AudioStreamPacketDescription>> arg3,
+                VoidPtr arg4);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_MusicSequenceSetUserCallback {
+        @Generated
+        void call_MusicSequenceSetUserCallback(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, double arg3,
+                @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData arg4,
+                double arg5, double arg6);
+    }
+
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_AudioServicesPlayAlertSoundWithCompletion {
         @Generated
         void call_AudioServicesPlayAlertSoundWithCompletion();
     }
-
-    @Generated
-    @CFunction
-    public static native void AudioServicesPlaySystemSoundWithCompletion(int inSystemSoundID,
-            @ObjCBlock(name = "call_AudioServicesPlaySystemSoundWithCompletion") Block_AudioServicesPlaySystemSoundWithCompletion inCompletionBlock);
 
     @Runtime(CRuntime.class)
     @Generated

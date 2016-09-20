@@ -55,70 +55,10 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
         super(peer);
     }
 
-    /**
-     * APIToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchWebAuthTokenOperation_class/index.html#//apple_ref/occ/instp/CKFetchWebAuthTokenOperation/APIToken">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("APIToken")
-    public native String APIToken();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native CKFetchWebAuthTokenOperation alloc();
-
-    /**
-     * fetchWebAuthTokenCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchWebAuthTokenOperation_class/index.html#//apple_ref/occ/instp/CKFetchWebAuthTokenOperation/fetchWebAuthTokenCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchWebAuthTokenCompletionBlock")
-    @ObjCBlock(name = "call_fetchWebAuthTokenCompletionBlock_ret")
-    public native Block_fetchWebAuthTokenCompletionBlock_ret fetchWebAuthTokenCompletionBlock();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchWebAuthTokenCompletionBlock_ret {
-        @Generated
-        void call_fetchWebAuthTokenCompletionBlock_ret(String arg0, NSError arg1);
-    }
-
-    @Generated
-    @Selector("init")
-    public native CKFetchWebAuthTokenOperation init();
-
-    /**
-     * initWithAPIToken:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchWebAuthTokenOperation_class/index.html#//apple_ref/occ/instm/CKFetchWebAuthTokenOperation/initWithAPIToken:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithAPIToken:")
-    public native CKFetchWebAuthTokenOperation initWithAPIToken(String APIToken);
-
-    /**
-     * APIToken</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchWebAuthTokenOperation_class/index.html#//apple_ref/occ/instp/CKFetchWebAuthTokenOperation/APIToken">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAPIToken:")
-    public native void setAPIToken(String value);
-
-    /**
-     * fetchWebAuthTokenCompletionBlock</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchWebAuthTokenOperation_class/index.html#//apple_ref/occ/instp/CKFetchWebAuthTokenOperation/fetchWebAuthTokenCompletionBlock">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFetchWebAuthTokenCompletionBlock:")
-    public native void setFetchWebAuthTokenCompletionBlock(
-            @ObjCBlock(name = "call_setFetchWebAuthTokenCompletionBlock") Block_setFetchWebAuthTokenCompletionBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setFetchWebAuthTokenCompletionBlock {
-        @Generated
-        void call_setFetchWebAuthTokenCompletionBlock(String arg0, NSError arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -219,4 +159,64 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * APIToken</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchWebAuthTokenOperation_class/index.html#//apple_ref/occ/instp/CKFetchWebAuthTokenOperation/APIToken">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("APIToken")
+    public native String APIToken();
+
+    /**
+     * fetchWebAuthTokenCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchWebAuthTokenOperation_class/index.html#//apple_ref/occ/instp/CKFetchWebAuthTokenOperation/fetchWebAuthTokenCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchWebAuthTokenCompletionBlock")
+    @ObjCBlock(name = "call_fetchWebAuthTokenCompletionBlock_ret")
+    public native Block_fetchWebAuthTokenCompletionBlock_ret fetchWebAuthTokenCompletionBlock();
+
+    @Generated
+    @Selector("init")
+    public native CKFetchWebAuthTokenOperation init();
+
+    /**
+     * initWithAPIToken:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchWebAuthTokenOperation_class/index.html#//apple_ref/occ/instm/CKFetchWebAuthTokenOperation/initWithAPIToken:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithAPIToken:")
+    public native CKFetchWebAuthTokenOperation initWithAPIToken(String APIToken);
+
+    /**
+     * APIToken</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchWebAuthTokenOperation_class/index.html#//apple_ref/occ/instp/CKFetchWebAuthTokenOperation/APIToken">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAPIToken:")
+    public native void setAPIToken(String value);
+
+    /**
+     * fetchWebAuthTokenCompletionBlock</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CloudKit/Reference/CKFetchWebAuthTokenOperation_class/index.html#//apple_ref/occ/instp/CKFetchWebAuthTokenOperation/fetchWebAuthTokenCompletionBlock">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFetchWebAuthTokenCompletionBlock:")
+    public native void setFetchWebAuthTokenCompletionBlock(
+            @ObjCBlock(name = "call_setFetchWebAuthTokenCompletionBlock") Block_setFetchWebAuthTokenCompletionBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchWebAuthTokenCompletionBlock_ret {
+        @Generated
+        void call_fetchWebAuthTokenCompletionBlock_ret(String arg0, NSError arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setFetchWebAuthTokenCompletionBlock {
+        @Generated
+        void call_setFetchWebAuthTokenCompletionBlock(String arg0, NSError arg1);
+    }
 }

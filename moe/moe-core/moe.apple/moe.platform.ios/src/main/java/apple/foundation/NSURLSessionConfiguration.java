@@ -51,6 +51,144 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSURLSessionConfiguration alloc();
+
+    /**
+     * backgroundSessionConfiguration:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/clm/NSURLSessionConfiguration/backgroundSessionConfiguration:">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("backgroundSessionConfiguration:")
+    public static native NSURLSessionConfiguration backgroundSessionConfiguration(String identifier);
+
+    /**
+     * backgroundSessionConfigurationWithIdentifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/clm/NSURLSessionConfiguration/backgroundSessionConfigurationWithIdentifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("backgroundSessionConfigurationWithIdentifier:")
+    public static native NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier(String identifier);
+
+    /**
+     * defaultSessionConfiguration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/clm/NSURLSessionConfiguration/defaultSessionConfiguration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("defaultSessionConfiguration")
+    public static native NSURLSessionConfiguration defaultSessionConfiguration();
+
+    /**
+     * ephemeralSessionConfiguration</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/clm/NSURLSessionConfiguration/ephemeralSessionConfiguration">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("ephemeralSessionConfiguration")
+    public static native NSURLSessionConfiguration ephemeralSessionConfiguration();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * HTTPAdditionalHeaders</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/instp/NSURLSessionConfiguration/HTTPAdditionalHeaders">iOS Dev Center</a>
@@ -133,11 +271,6 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("URLCredentialStorage")
     public native NSURLCredentialStorage URLCredentialStorage();
 
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSURLSessionConfiguration alloc();
-
     /**
      * allowsCellularAccess</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/instp/NSURLSessionConfiguration/allowsCellularAccess">iOS Dev Center</a>
@@ -145,23 +278,6 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("allowsCellularAccess")
     public native boolean allowsCellularAccess();
-
-    /**
-     * backgroundSessionConfiguration:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/clm/NSURLSessionConfiguration/backgroundSessionConfiguration:">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("backgroundSessionConfiguration:")
-    public static native NSURLSessionConfiguration backgroundSessionConfiguration(String identifier);
-
-    /**
-     * backgroundSessionConfigurationWithIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/clm/NSURLSessionConfiguration/backgroundSessionConfigurationWithIdentifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("backgroundSessionConfigurationWithIdentifier:")
-    public static native NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier(String identifier);
 
     /**
      * connectionProxyDictionary</br>
@@ -176,22 +292,6 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
-
-    /**
-     * defaultSessionConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/clm/NSURLSessionConfiguration/defaultSessionConfiguration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("defaultSessionConfiguration")
-    public static native NSURLSessionConfiguration defaultSessionConfiguration();
-
-    /**
-     * ephemeralSessionConfiguration</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/clm/NSURLSessionConfiguration/ephemeralSessionConfiguration">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("ephemeralSessionConfiguration")
-    public static native NSURLSessionConfiguration ephemeralSessionConfiguration();
 
     /**
      * identifier</br>
@@ -212,6 +312,14 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("isDiscretionary")
     public native boolean isDiscretionary();
+
+    /**
+     * discretionary</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/instp/NSURLSessionConfiguration/discretionary">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDiscretionary:")
+    public native void setDiscretionary(boolean value);
 
     /**
      * networkServiceType</br>
@@ -262,14 +370,6 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("setConnectionProxyDictionary:")
     public native void setConnectionProxyDictionary(NSDictionary<?, ?> value);
-
-    /**
-     * discretionary</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSURLSessionConfiguration_class/index.html#//apple_ref/occ/instp/NSURLSessionConfiguration/discretionary">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDiscretionary:")
-    public native void setDiscretionary(boolean value);
 
     /**
      * HTTPAdditionalHeaders</br>
@@ -438,104 +538,4 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("shouldUseExtendedBackgroundIdleMode")
     public native boolean shouldUseExtendedBackgroundIdleMode();
-
-    @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

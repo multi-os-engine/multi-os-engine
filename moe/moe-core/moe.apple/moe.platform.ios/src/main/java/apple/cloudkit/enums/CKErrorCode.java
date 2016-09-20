@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CKErrorCode {
-    @Generated
-    private CKErrorCode() {
-    }
-
     @Generated @NInt public static final long InternalError = 0x0000000000000001L;
     @Generated @NInt public static final long PartialFailure = 0x0000000000000002L;
     @Generated @NInt public static final long NetworkUnavailable = 0x0000000000000003L;
@@ -53,4 +49,8 @@ public final class CKErrorCode {
     @Generated @NInt public static final long ZoneNotFound = 0x000000000000001AL;
     @Generated @NInt public static final long LimitExceeded = 0x000000000000001BL;
     @Generated @NInt public static final long UserDeletedZone = 0x000000000000001CL;
+
+    @Generated
+    private CKErrorCode() {
+    }
 }

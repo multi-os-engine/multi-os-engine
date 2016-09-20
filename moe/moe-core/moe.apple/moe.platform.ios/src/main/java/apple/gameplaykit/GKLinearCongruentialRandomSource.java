@@ -60,42 +60,6 @@ public class GKLinearCongruentialRandomSource extends GKRandomSource {
     @Selector("alloc")
     public static native GKLinearCongruentialRandomSource alloc();
 
-    /**
-     * init</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKLinearCongruentialRandomSource_Class/index.html#//apple_ref/occ/instm/GKLinearCongruentialRandomSource/init">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("init")
-    public native GKLinearCongruentialRandomSource init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKLinearCongruentialRandomSource initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithSeed:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKLinearCongruentialRandomSource_Class/index.html#//apple_ref/occ/instm/GKLinearCongruentialRandomSource/initWithSeed:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSeed:")
-    public native GKLinearCongruentialRandomSource initWithSeed(long seed);
-
-    /**
-     * seed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKLinearCongruentialRandomSource_Class/index.html#//apple_ref/occ/instp/GKLinearCongruentialRandomSource/seed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("seed")
-    public native long seed();
-
-    /**
-     * seed</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKLinearCongruentialRandomSource_Class/index.html#//apple_ref/occ/instp/GKLinearCongruentialRandomSource/seed">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSeed:")
-    public native void setSeed(long value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -200,13 +164,49 @@ public class GKLinearCongruentialRandomSource extends GKRandomSource {
     public static native boolean supportsSecureCoding();
 
     @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * init</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKLinearCongruentialRandomSource_Class/index.html#//apple_ref/occ/instm/GKLinearCongruentialRandomSource/init">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("init")
+    public native GKLinearCongruentialRandomSource init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKLinearCongruentialRandomSource initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithSeed:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKLinearCongruentialRandomSource_Class/index.html#//apple_ref/occ/instm/GKLinearCongruentialRandomSource/initWithSeed:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSeed:")
+    public native GKLinearCongruentialRandomSource initWithSeed(long seed);
+
+    /**
+     * seed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKLinearCongruentialRandomSource_Class/index.html#//apple_ref/occ/instp/GKLinearCongruentialRandomSource/seed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("seed")
+    public native long seed();
+
+    /**
+     * seed</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameplayKit/Reference/GKLinearCongruentialRandomSource_Class/index.html#//apple_ref/occ/instp/GKLinearCongruentialRandomSource/seed">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSeed:")
+    public native void setSeed(long value);
+
+    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
 }

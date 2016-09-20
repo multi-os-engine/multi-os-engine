@@ -60,14 +60,6 @@ public class MPSImageIntegral extends MPSUnaryImageKernel {
     public static native MPSImageIntegral alloc();
 
     @Generated
-    @Selector("init")
-    public native MPSImageIntegral init();
-
-    @Generated
-    @Selector("initWithDevice:")
-    public native MPSImageIntegral initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -166,4 +158,12 @@ public class MPSImageIntegral extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native MPSImageIntegral init();
+
+    @Generated
+    @Selector("initWithDevice:")
+    public native MPSImageIntegral initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 }

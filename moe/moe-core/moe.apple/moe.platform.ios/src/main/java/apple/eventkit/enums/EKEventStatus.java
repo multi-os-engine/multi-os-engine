@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class EKEventStatus {
-    @Generated
-    private EKEventStatus() {
-    }
-
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Confirmed = 0x0000000000000001L;
     @Generated @NInt public static final long Tentative = 0x0000000000000002L;
     @Generated @NInt public static final long Canceled = 0x0000000000000003L;
+
+    @Generated
+    private EKEventStatus() {
+    }
 }

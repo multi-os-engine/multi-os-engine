@@ -64,87 +64,6 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     public static native GKTurnBasedMatchmakerViewController alloc();
 
     @Generated
-    @Selector("init")
-    public native GKTurnBasedMatchmakerViewController init();
-
-    /**
-     * initWithMatchRequest:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatchmakerViewController/initWithMatchRequest:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithMatchRequest:")
-    public native GKTurnBasedMatchmakerViewController initWithMatchRequest(GKMatchRequest request);
-
-    @Generated
-    @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native GKTurnBasedMatchmakerViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
-
-    @Generated
-    @Selector("initWithNibName:bundle:")
-    public native GKTurnBasedMatchmakerViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
-
-    @Generated
-    @Selector("initWithRootViewController:")
-    public native GKTurnBasedMatchmakerViewController initWithRootViewController(UIViewController rootViewController);
-
-    /**
-     * showExistingMatches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatchmakerViewController/showExistingMatches">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setShowExistingMatches:")
-    public native void setShowExistingMatches(boolean value);
-
-    /**
-     * turnBasedMatchmakerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatchmakerViewController/turnBasedMatchmakerDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setTurnBasedMatchmakerDelegate:")
-    public native void setTurnBasedMatchmakerDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) GKTurnBasedMatchmakerViewControllerDelegate value);
-
-    /**
-     * turnBasedMatchmakerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatchmakerViewController/turnBasedMatchmakerDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setTurnBasedMatchmakerDelegate(
-            @Mapped(ObjCObjectMapper.class) GKTurnBasedMatchmakerViewControllerDelegate value) {
-        Object __old = turnBasedMatchmakerDelegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setTurnBasedMatchmakerDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
-    /**
-     * showExistingMatches</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatchmakerViewController/showExistingMatches">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("showExistingMatches")
-    public native boolean showExistingMatches();
-
-    /**
-     * turnBasedMatchmakerDelegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatchmakerViewController/turnBasedMatchmakerDelegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("turnBasedMatchmakerDelegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native GKTurnBasedMatchmakerViewControllerDelegate turnBasedMatchmakerDelegate();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native GKTurnBasedMatchmakerViewController initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -255,4 +174,85 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native GKTurnBasedMatchmakerViewController init();
+
+    /**
+     * initWithMatchRequest:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instm/GKTurnBasedMatchmakerViewController/initWithMatchRequest:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithMatchRequest:")
+    public native GKTurnBasedMatchmakerViewController initWithMatchRequest(GKMatchRequest request);
+
+    @Generated
+    @Selector("initWithNavigationBarClass:toolbarClass:")
+    public native GKTurnBasedMatchmakerViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
+            Class toolbarClass);
+
+    @Generated
+    @Selector("initWithNibName:bundle:")
+    public native GKTurnBasedMatchmakerViewController initWithNibNameBundle(String nibNameOrNil,
+            NSBundle nibBundleOrNil);
+
+    @Generated
+    @Selector("initWithRootViewController:")
+    public native GKTurnBasedMatchmakerViewController initWithRootViewController(UIViewController rootViewController);
+
+    /**
+     * showExistingMatches</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatchmakerViewController/showExistingMatches">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setShowExistingMatches:")
+    public native void setShowExistingMatches(boolean value);
+
+    /**
+     * turnBasedMatchmakerDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatchmakerViewController/turnBasedMatchmakerDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setTurnBasedMatchmakerDelegate:")
+    public native void setTurnBasedMatchmakerDelegate_unsafe(
+            @Mapped(ObjCObjectMapper.class) GKTurnBasedMatchmakerViewControllerDelegate value);
+
+    /**
+     * turnBasedMatchmakerDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatchmakerViewController/turnBasedMatchmakerDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setTurnBasedMatchmakerDelegate(
+            @Mapped(ObjCObjectMapper.class) GKTurnBasedMatchmakerViewControllerDelegate value) {
+        Object __old = turnBasedMatchmakerDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setTurnBasedMatchmakerDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * showExistingMatches</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatchmakerViewController/showExistingMatches">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("showExistingMatches")
+    public native boolean showExistingMatches();
+
+    /**
+     * turnBasedMatchmakerDelegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/index.html#//apple_ref/occ/instp/GKTurnBasedMatchmakerViewController/turnBasedMatchmakerDelegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("turnBasedMatchmakerDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native GKTurnBasedMatchmakerViewControllerDelegate turnBasedMatchmakerDelegate();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native GKTurnBasedMatchmakerViewController initWithCoder(NSCoder aDecoder);
 }

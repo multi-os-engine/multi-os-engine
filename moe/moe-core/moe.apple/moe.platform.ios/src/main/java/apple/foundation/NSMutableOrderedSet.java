@@ -56,6 +56,170 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
         super(peer);
     }
 
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native NSMutableOrderedSet<?> alloc();
+
+    @Generated
+    @Selector("orderedSet")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSet();
+
+    @Generated
+    @Selector("orderedSetWithArray:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArray(NSArray<_ObjectType> array);
+
+    @Generated
+    @Selector("orderedSetWithArray:range:copyItems:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArrayRangeCopyItems(
+            NSArray<_ObjectType> array, @ByValue NSRange range, boolean flag);
+
+    /**
+     * orderedSetWithCapacity:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSMutableOrderedSet_Class/index.html#//apple_ref/occ/clm/NSMutableOrderedSet/orderedSetWithCapacity:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("orderedSetWithCapacity:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithCapacity(@NUInt long numItems);
+
+    @Generated
+    @Selector("orderedSetWithObject:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObject(
+            @Mapped(ObjCObjectMapper.class) _ObjectType object);
+
+    @Generated
+    @Variadic()
+    @Selector("orderedSetWithObjects:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObjects(
+            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
+
+    @Generated
+    @Selector("orderedSetWithObjects:count:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObjectsCount(ConstPtr<_ObjectType> objects,
+            @NUInt long cnt);
+
+    @Generated
+    @Selector("orderedSetWithOrderedSet:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSet(NSOrderedSet<_ObjectType> set);
+
+    @Generated
+    @Selector("orderedSetWithOrderedSet:range:copyItems:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSetRangeCopyItems(
+            NSOrderedSet<_ObjectType> set, @ByValue NSRange range, boolean flag);
+
+    @Generated
+    @Selector("orderedSetWithSet:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSet(NSSet<_ObjectType> set);
+
+    @Generated
+    @Selector("orderedSetWithSet:copyItems:")
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSetCopyItems(NSSet<_ObjectType> set,
+            boolean flag);
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
     /**
      * addObject:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSMutableOrderedSet_Class/index.html#//apple_ref/occ/instm/NSMutableOrderedSet/addObject:">iOS Dev Center</a>
@@ -79,11 +243,6 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Generated
     @Selector("addObjectsFromArray:")
     public native void addObjectsFromArray(NSArray<_ObjectType> array);
-
-    @Generated
-    @Owned
-    @Selector("alloc")
-    public static native NSMutableOrderedSet<?> alloc();
 
     /**
      * exchangeObjectAtIndex:withObjectAtIndex:</br>
@@ -225,61 +384,6 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Selector("moveObjectsAtIndexes:toIndex:")
     public native void moveObjectsAtIndexesToIndex(NSIndexSet indexes, @NUInt long idx);
 
-    @Generated
-    @Selector("orderedSet")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSet();
-
-    @Generated
-    @Selector("orderedSetWithArray:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArray(NSArray<_ObjectType> array);
-
-    @Generated
-    @Selector("orderedSetWithArray:range:copyItems:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArrayRangeCopyItems(
-            NSArray<_ObjectType> array, @ByValue NSRange range, boolean flag);
-
-    /**
-     * orderedSetWithCapacity:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSMutableOrderedSet_Class/index.html#//apple_ref/occ/clm/NSMutableOrderedSet/orderedSetWithCapacity:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("orderedSetWithCapacity:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithCapacity(@NUInt long numItems);
-
-    @Generated
-    @Selector("orderedSetWithObject:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObject(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object);
-
-    @Generated
-    @Variadic()
-    @Selector("orderedSetWithObjects:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObjects(
-            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
-
-    @Generated
-    @Selector("orderedSetWithObjects:count:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObjectsCount(ConstPtr<_ObjectType> objects,
-            @NUInt long cnt);
-
-    @Generated
-    @Selector("orderedSetWithOrderedSet:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSet(NSOrderedSet<_ObjectType> set);
-
-    @Generated
-    @Selector("orderedSetWithOrderedSet:range:copyItems:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSetRangeCopyItems(
-            NSOrderedSet<_ObjectType> set, @ByValue NSRange range, boolean flag);
-
-    @Generated
-    @Selector("orderedSetWithSet:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSet(NSSet<_ObjectType> set);
-
-    @Generated
-    @Selector("orderedSetWithSet:copyItems:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSetCopyItems(NSSet<_ObjectType> set,
-            boolean flag);
-
     /**
      * removeAllObjects</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSMutableOrderedSet_Class/index.html#//apple_ref/occ/instm/NSMutableOrderedSet/removeAllObjects">iOS Dev Center</a>
@@ -379,15 +483,6 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public native void sortRangeOptionsUsingComparator(@ByValue NSRange range, @NUInt long opts,
             @ObjCBlock(name = "call_sortRangeOptionsUsingComparator") Block_sortRangeOptionsUsingComparator cmptr);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sortRangeOptionsUsingComparator {
-        @Generated
-        @NInt
-        long call_sortRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
-
     /**
      * sortUsingComparator:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSMutableOrderedSet_Class/index.html#//apple_ref/occ/instm/NSMutableOrderedSet/sortUsingComparator:">iOS Dev Center</a>
@@ -396,15 +491,6 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Selector("sortUsingComparator:")
     public native void sortUsingComparator(
             @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sortUsingComparator {
-        @Generated
-        @NInt
-        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
 
     /**
      * sortUsingDescriptors:</br>
@@ -423,15 +509,6 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public native void sortWithOptionsUsingComparator(@NUInt long opts,
             @ObjCBlock(name = "call_sortWithOptionsUsingComparator") Block_sortWithOptionsUsingComparator cmptr);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sortWithOptionsUsingComparator {
-        @Generated
-        @NInt
-        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
-    }
-
     /**
      * unionOrderedSet:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSMutableOrderedSet_Class/index.html#//apple_ref/occ/instm/NSMutableOrderedSet/unionOrderedSet:">iOS Dev Center</a>
@@ -449,112 +526,35 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public native void unionSet(NSSet<_ObjectType> other);
 
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
-
-    @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_sortRangeOptionsUsingComparator {
+        @Generated
+        @NInt
+        long call_sortRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sortUsingComparator {
+        @Generated
+        @NInt
+        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sortWithOptionsUsingComparator {
+        @Generated
+        @NInt
+        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
 }

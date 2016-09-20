@@ -21,13 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIStackViewDistribution {
-    @Generated
-    private UIStackViewDistribution() {
-    }
-
     @Generated @NInt public static final long Fill = 0x0000000000000000L;
     @Generated @NInt public static final long FillEqually = 0x0000000000000001L;
     @Generated @NInt public static final long FillProportionally = 0x0000000000000002L;
     @Generated @NInt public static final long EqualSpacing = 0x0000000000000003L;
     @Generated @NInt public static final long EqualCentering = 0x0000000000000004L;
+
+    @Generated
+    private UIStackViewDistribution() {
+    }
 }

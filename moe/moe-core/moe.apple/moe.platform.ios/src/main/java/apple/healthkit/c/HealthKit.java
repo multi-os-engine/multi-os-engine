@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Library("HealthKit")
 @Runtime(CRuntime.class)
 public final class HealthKit {
+    @Generated @NUInt public static final long HKObjectQueryNoLimit = 0x0000000000000000L;
+
     static {
         NatJ.register();
     }
@@ -712,6 +714,4 @@ public final class HealthKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKQuantityTypeIdentifierAppleExerciseTime();
-
-    @Generated @NUInt public static final long HKObjectQueryNoLimit = 0x0000000000000000L;
 }

@@ -31,11 +31,11 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CGDataProviderSequentialCallbacks extends StructObject {
+    private static long __natjCache;
+
     static {
         NatJ.register();
     }
-
-    private static long __natjCache;
 
     @Generated
     public CGDataProviderSequentialCallbacks() {
@@ -59,46 +59,17 @@ public final class CGDataProviderSequentialCallbacks extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setGetBytes(@FunctionPtr(name = "call_getBytes") Function_getBytes value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_getBytes {
-        @Generated
-        @NUInt
-        long call_getBytes(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2);
-    }
-
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setSkipForward(@FunctionPtr(name = "call_skipForward") Function_skipForward value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_skipForward {
-        @Generated
-        long call_skipForward(VoidPtr arg0, long arg1);
-    }
 
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setRewind(@FunctionPtr(name = "call_rewind") Function_rewind value);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_rewind {
-        @Generated
-        void call_rewind(VoidPtr arg0);
-    }
-
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_releaseInfo {
-        @Generated
-        void call_releaseInfo(VoidPtr arg0);
-    }
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -119,4 +90,33 @@ public final class CGDataProviderSequentialCallbacks extends StructObject {
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
     public native Function_releaseInfo releaseInfo();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_getBytes {
+        @Generated
+        @NUInt
+        long call_getBytes(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_skipForward {
+        @Generated
+        long call_skipForward(VoidPtr arg0, long arg1);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_rewind {
+        @Generated
+        void call_rewind(VoidPtr arg0);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_releaseInfo {
+        @Generated
+        void call_releaseInfo(VoidPtr arg0);
+    }
 }

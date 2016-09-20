@@ -21,10 +21,6 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVAudioSessionErrorCode {
-    @Generated
-    private AVAudioSessionErrorCode() {
-    }
-
     @Generated @NInt public static final long CodeNone = 0x0000000000000000L;
     @Generated @NInt public static final long CodeMediaServicesFailed = 0x000000006D737276L;
     @Generated @NInt public static final long CodeIsBusy = 0x0000000021616374L;
@@ -38,4 +34,8 @@ public final class AVAudioSessionErrorCode {
     @Generated @NInt public static final long InsufficientPriority = 0x0000000021707269L;
     @Generated @NInt public static final long CodeUnspecified = 0x0000000077686174L;
     @Generated @NInt public static final long CodeResourceNotAvailable = 0x0000000021726573L;
+
+    @Generated
+    private AVAudioSessionErrorCode() {
+    }
 }

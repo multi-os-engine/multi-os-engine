@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SLRequestMethod {
-    @Generated
-    private SLRequestMethod() {
-    }
-
     @Generated @NInt public static final long GET = 0x0000000000000000L;
     @Generated @NInt public static final long POST = 0x0000000000000001L;
     @Generated @NInt public static final long DELETE = 0x0000000000000002L;
     @Generated @NInt public static final long PUT = 0x0000000000000003L;
+
+    @Generated
+    private SLRequestMethod() {
+    }
 }

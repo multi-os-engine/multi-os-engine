@@ -65,6 +65,127 @@ public class UIApplication extends UIResponder {
     public static native UIApplication alloc();
 
     /**
+     * registerObjectForStateRestoration:restorationIdentifier:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/clm/UIApplication/registerObjectForStateRestoration:restorationIdentifier:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("registerObjectForStateRestoration:restorationIdentifier:")
+    public static native void registerObjectForStateRestorationRestorationIdentifier(
+            @Mapped(ObjCObjectMapper.class) UIStateRestoring object, String restorationIdentifier);
+
+    /**
+     * sharedApplication</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/clm/UIApplication/sharedApplication">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sharedApplication")
+    public static native UIApplication sharedApplication();
+
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
+
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
+
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
+
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
+
+    @Generated
+    @Selector("clearTextInputContextIdentifier:")
+    public static native void clearTextInputContextIdentifier(String identifier);
+
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
+
+    @Generated
+    @Selector("description")
+    public static native String description_static();
+
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
+
+    @Generated
+    @Selector("initialize")
+    public static native void initialize();
+
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
+
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
+
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
+
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+
+    @Generated
+    @Selector("load")
+    public static native void load_objc_static();
+
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
+
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
+
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
+
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion_static(@NInt long aVersion);
+
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
+
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
      * applicationIconBadgeNumber</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instp/UIApplication/applicationIconBadgeNumber">iOS Dev Center</a>
      */
@@ -117,13 +238,6 @@ public class UIApplication extends UIResponder {
     public native long beginBackgroundTaskWithExpirationHandler(
             @ObjCBlock(name = "call_beginBackgroundTaskWithExpirationHandler") Block_beginBackgroundTaskWithExpirationHandler handler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_beginBackgroundTaskWithExpirationHandler {
-        @Generated
-        void call_beginBackgroundTaskWithExpirationHandler();
-    }
-
     /**
      * beginBackgroundTaskWithName:expirationHandler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instm/UIApplication/beginBackgroundTaskWithName:expirationHandler:">iOS Dev Center</a>
@@ -133,13 +247,6 @@ public class UIApplication extends UIResponder {
     @NUInt
     public native long beginBackgroundTaskWithNameExpirationHandler(String taskName,
             @ObjCBlock(name = "call_beginBackgroundTaskWithNameExpirationHandler") Block_beginBackgroundTaskWithNameExpirationHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_beginBackgroundTaskWithNameExpirationHandler {
-        @Generated
-        void call_beginBackgroundTaskWithNameExpirationHandler();
-    }
 
     /**
      * beginIgnoringInteractionEvents</br>
@@ -278,6 +385,14 @@ public class UIApplication extends UIResponder {
     public native boolean isIdleTimerDisabled();
 
     /**
+     * idleTimerDisabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instp/UIApplication/idleTimerDisabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setIdleTimerDisabled:")
+    public native void setIdleTimerDisabled(boolean value);
+
+    /**
      * isIgnoringInteractionEvents</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instm/UIApplication/isIgnoringInteractionEvents">iOS Dev Center</a>
      */
@@ -292,6 +407,14 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("isNetworkActivityIndicatorVisible")
     public native boolean isNetworkActivityIndicatorVisible();
+
+    /**
+     * networkActivityIndicatorVisible</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instp/UIApplication/networkActivityIndicatorVisible">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setNetworkActivityIndicatorVisible:")
+    public native void setNetworkActivityIndicatorVisible(boolean value);
 
     /**
      * protectedDataAvailable</br>
@@ -311,6 +434,15 @@ public class UIApplication extends UIResponder {
     public native boolean isProximitySensingEnabled();
 
     /**
+     * proximitySensingEnabled</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instp/UIApplication/proximitySensingEnabled">iOS Dev Center</a>
+     */
+    @Generated
+    @Deprecated
+    @Selector("setProximitySensingEnabled:")
+    public native void setProximitySensingEnabled(boolean value);
+
+    /**
      * isRegisteredForRemoteNotifications</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instm/UIApplication/isRegisteredForRemoteNotifications">iOS Dev Center</a>
      */
@@ -325,6 +457,15 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("isStatusBarHidden")
     public native boolean isStatusBarHidden();
+
+    /**
+     * statusBarHidden</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instp/UIApplication/statusBarHidden">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("setStatusBarHidden:")
+    public native void setStatusBarHidden(boolean value);
 
     /**
      * keyWindow</br>
@@ -374,15 +515,6 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("registerForRemoteNotifications")
     public native void registerForRemoteNotifications();
-
-    /**
-     * registerObjectForStateRestoration:restorationIdentifier:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/clm/UIApplication/registerObjectForStateRestoration:restorationIdentifier:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("registerObjectForStateRestoration:restorationIdentifier:")
-    public static native void registerObjectForStateRestorationRestorationIdentifier(
-            @Mapped(ObjCObjectMapper.class) UIStateRestoring object, String restorationIdentifier);
 
     /**
      * registerUserNotificationSettings:</br>
@@ -466,14 +598,6 @@ public class UIApplication extends UIResponder {
     }
 
     /**
-     * idleTimerDisabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instp/UIApplication/idleTimerDisabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setIdleTimerDisabled:")
-    public native void setIdleTimerDisabled(boolean value);
-
-    /**
      * setKeepAliveTimeout:handler:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instm/UIApplication/setKeepAliveTimeout:handler:">iOS Dev Center</a>
      */
@@ -483,13 +607,6 @@ public class UIApplication extends UIResponder {
     public native boolean setKeepAliveTimeoutHandler(double timeout,
             @ObjCBlock(name = "call_setKeepAliveTimeoutHandler") Block_setKeepAliveTimeoutHandler keepAliveHandler);
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setKeepAliveTimeoutHandler {
-        @Generated
-        void call_setKeepAliveTimeoutHandler();
-    }
-
     /**
      * setMinimumBackgroundFetchInterval:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instm/UIApplication/setMinimumBackgroundFetchInterval:">iOS Dev Center</a>
@@ -497,14 +614,6 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("setMinimumBackgroundFetchInterval:")
     public native void setMinimumBackgroundFetchInterval(double minimumBackgroundFetchInterval);
-
-    /**
-     * networkActivityIndicatorVisible</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instp/UIApplication/networkActivityIndicatorVisible">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setNetworkActivityIndicatorVisible:")
-    public native void setNetworkActivityIndicatorVisible(boolean value);
 
     /**
      * setNewsstandIconImage:</br>
@@ -516,30 +625,12 @@ public class UIApplication extends UIResponder {
     public native void setNewsstandIconImage(UIImage image);
 
     /**
-     * proximitySensingEnabled</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instp/UIApplication/proximitySensingEnabled">iOS Dev Center</a>
-     */
-    @Generated
-    @Deprecated
-    @Selector("setProximitySensingEnabled:")
-    public native void setProximitySensingEnabled(boolean value);
-
-    /**
      * scheduledLocalNotifications</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instp/UIApplication/scheduledLocalNotifications">iOS Dev Center</a>
      */
     @Generated
     @Selector("setScheduledLocalNotifications:")
     public native void setScheduledLocalNotifications(NSArray<? extends UILocalNotification> value);
-
-    /**
-     * statusBarHidden</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/instp/UIApplication/statusBarHidden">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("setStatusBarHidden:")
-    public native void setStatusBarHidden(boolean value);
 
     /**
      * setStatusBarHidden:animated:</br>
@@ -594,14 +685,6 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("setStatusBarStyle:animated:")
     public native void setStatusBarStyleAnimated(@NInt long statusBarStyle, boolean animated);
-
-    /**
-     * sharedApplication</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/clm/UIApplication/sharedApplication">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sharedApplication")
-    public static native UIApplication sharedApplication();
 
     /**
      * statusBarFrame</br>
@@ -688,107 +771,24 @@ public class UIApplication extends UIResponder {
     @Selector("shortcutItems")
     public native NSArray<? extends UIApplicationShortcutItem> shortcutItems();
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("accessInstanceVariablesDirectly")
-    public static native boolean accessInstanceVariablesDirectly();
+    public interface Block_beginBackgroundTaskWithExpirationHandler {
+        @Generated
+        void call_beginBackgroundTaskWithExpirationHandler();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public interface Block_beginBackgroundTaskWithNameExpirationHandler {
+        @Generated
+        void call_beginBackgroundTaskWithNameExpirationHandler();
+    }
 
+    @Runtime(ObjCRuntime.class)
     @Generated
-    @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
-
-    @Generated
-    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
-
-    @Generated
-    @Selector("classFallbacksForKeyedArchiver")
-    public static native NSArray<String> classFallbacksForKeyedArchiver();
-
-    @Generated
-    @Selector("classForKeyedUnarchiver")
-    public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
-
-    @Generated
-    @Selector("debugDescription")
-    public static native String debugDescription_static();
-
-    @Generated
-    @Selector("description")
-    public static native String description_static();
-
-    @Generated
-    @Selector("hash")
-    @NUInt
-    public static native long hash_static();
-
-    @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
-    @Selector("instanceMethodForSelector:")
-    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
-    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instanceMethodSignatureForSelector:")
-    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
-
-    @Generated
-    @Selector("instancesRespondToSelector:")
-    public static native boolean instancesRespondToSelector(SEL aSelector);
-
-    @Generated
-    @Selector("isSubclassOfClass:")
-    public static native boolean isSubclassOfClass(Class aClass);
-
-    @Generated
-    @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
-
-    @Generated
-    @Owned
-    @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
-
-    @Generated
-    @Selector("resolveClassMethod:")
-    public static native boolean resolveClassMethod(SEL sel);
-
-    @Generated
-    @Selector("resolveInstanceMethod:")
-    public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setVersion:")
-    public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("superclass")
-    public static native Class superclass_static();
-
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
+    public interface Block_setKeepAliveTimeoutHandler {
+        @Generated
+        void call_setKeepAliveTimeoutHandler();
+    }
 }

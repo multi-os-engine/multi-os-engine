@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class AVAudioConverterPrimeMethod {
-    @Generated
-    private AVAudioConverterPrimeMethod() {
-    }
-
     @Generated @NInt public static final long Pre = 0x0000000000000000L;
     @Generated @NInt public static final long Normal = 0x0000000000000001L;
     @Generated @NInt public static final long None = 0x0000000000000002L;
+
+    @Generated
+    private AVAudioConverterPrimeMethod() {
+    }
 }

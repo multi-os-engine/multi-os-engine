@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSFileCoordinatorReadingOptions {
-    @Generated
-    private NSFileCoordinatorReadingOptions() {
-    }
-
     @Generated @NUInt public static final long WithoutChanges = 0x0000000000000001L;
     @Generated @NUInt public static final long ResolvesSymbolicLink = 0x0000000000000002L;
     @Generated @NUInt public static final long ImmediatelyAvailableMetadataOnly = 0x0000000000000004L;
     @Generated @NUInt public static final long ForUploading = 0x0000000000000008L;
+
+    @Generated
+    private NSFileCoordinatorReadingOptions() {
+    }
 }

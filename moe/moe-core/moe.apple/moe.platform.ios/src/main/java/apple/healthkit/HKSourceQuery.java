@@ -65,28 +65,6 @@ public class HKSourceQuery extends HKQuery {
     public static native HKSourceQuery alloc();
 
     @Generated
-    @Selector("init")
-    public native HKSourceQuery init();
-
-    /**
-     * initWithSampleType:samplePredicate:completionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceQuery_Class/index.html#//apple_ref/occ/instm/HKSourceQuery/initWithSampleType:samplePredicate:completionHandler:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithSampleType:samplePredicate:completionHandler:")
-    public native HKSourceQuery initWithSampleTypeSamplePredicateCompletionHandler(HKSampleType sampleType,
-            NSPredicate objectPredicate,
-            @ObjCBlock(name = "call_initWithSampleTypeSamplePredicateCompletionHandler") Block_initWithSampleTypeSamplePredicateCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithSampleTypeSamplePredicateCompletionHandler {
-        @Generated
-        void call_initWithSampleTypeSamplePredicateCompletionHandler(HKSourceQuery arg0, NSSet<? extends HKSource> arg1,
-                NSError arg2);
-    }
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -280,4 +258,26 @@ public class HKSourceQuery extends HKQuery {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native HKSourceQuery init();
+
+    /**
+     * initWithSampleType:samplePredicate:completionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKSourceQuery_Class/index.html#//apple_ref/occ/instm/HKSourceQuery/initWithSampleType:samplePredicate:completionHandler:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithSampleType:samplePredicate:completionHandler:")
+    public native HKSourceQuery initWithSampleTypeSamplePredicateCompletionHandler(HKSampleType sampleType,
+            NSPredicate objectPredicate,
+            @ObjCBlock(name = "call_initWithSampleTypeSamplePredicateCompletionHandler") Block_initWithSampleTypeSamplePredicateCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithSampleTypeSamplePredicateCompletionHandler {
+        @Generated
+        void call_initWithSampleTypeSamplePredicateCompletionHandler(HKSourceQuery arg0, NSSet<? extends HKSource> arg1,
+                NSError arg2);
+    }
 }

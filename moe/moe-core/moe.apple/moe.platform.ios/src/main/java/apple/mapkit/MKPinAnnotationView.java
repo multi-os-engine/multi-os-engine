@@ -71,72 +71,12 @@ public class MKPinAnnotationView extends MKAnnotationView {
     public static native MKPinAnnotationView alloc();
 
     /**
-     * animatesDrop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/animatesDrop">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("animatesDrop")
-    public native boolean animatesDrop();
-
-    @Generated
-    @Selector("init")
-    public native MKPinAnnotationView init();
-
-    @Generated
-    @Selector("initWithAnnotation:reuseIdentifier:")
-    public native MKPinAnnotationView initWithAnnotationReuseIdentifier(
-            @Mapped(ObjCObjectMapper.class) MKAnnotation annotation, String reuseIdentifier);
-
-    @Generated
-    @Selector("initWithFrame:")
-    public native MKPinAnnotationView initWithFrame(@ByValue CGRect frame);
-
-    /**
-     * pinColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinColor">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("pinColor")
-    @NUInt
-    public native long pinColor();
-
-    /**
-     * animatesDrop</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/animatesDrop">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setAnimatesDrop:")
-    public native void setAnimatesDrop(boolean value);
-
-    /**
-     * pinColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinColor">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("setPinColor:")
-    public native void setPinColor(@NUInt long value);
-
-    /**
      * greenPinColor</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/clm/MKPinAnnotationView/greenPinColor">iOS Dev Center</a>
      */
     @Generated
     @Selector("greenPinColor")
     public static native UIColor greenPinColor();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MKPinAnnotationView initWithCoder(NSCoder aDecoder);
-
-    /**
-     * pinTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("pinTintColor")
-    public native UIColor pinTintColor();
 
     /**
      * purplePinColor</br>
@@ -153,14 +93,6 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Generated
     @Selector("redPinColor")
     public static native UIColor redPinColor();
-
-    /**
-     * pinTintColor</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinTintColor">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setPinTintColor:")
-    public native void setPinTintColor(UIColor value);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -215,23 +147,9 @@ public class MKPinAnnotationView extends MKAnnotationView {
     public static native Object appearance();
 
     @Generated
-    @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
-        return appearance();
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollection(UITraitCollection trait);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
-        return appearanceForTraitCollection(trait);
-    }
 
     @Generated
     @Variadic()
@@ -242,27 +160,10 @@ public class MKPinAnnotationView extends MKAnnotationView {
             @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
-        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
-    }
 
     @Generated
     @Variadic()
@@ -273,24 +174,9 @@ public class MKPinAnnotationView extends MKAnnotationView {
             Object... varargs);
 
     @Generated
-    @Deprecated
-    @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
-        return appearanceWhenContainedIn(ContainerClass, varargs);
-    }
-
-    @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
-
-    @Generated
-    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
-        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
-    }
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -488,4 +374,118 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * animatesDrop</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/animatesDrop">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("animatesDrop")
+    public native boolean animatesDrop();
+
+    @Generated
+    @Selector("init")
+    public native MKPinAnnotationView init();
+
+    @Generated
+    @Selector("initWithAnnotation:reuseIdentifier:")
+    public native MKPinAnnotationView initWithAnnotationReuseIdentifier(
+            @Mapped(ObjCObjectMapper.class) MKAnnotation annotation, String reuseIdentifier);
+
+    @Generated
+    @Selector("initWithFrame:")
+    public native MKPinAnnotationView initWithFrame(@ByValue CGRect frame);
+
+    /**
+     * pinColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinColor">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("pinColor")
+    @NUInt
+    public native long pinColor();
+
+    /**
+     * animatesDrop</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/animatesDrop">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setAnimatesDrop:")
+    public native void setAnimatesDrop(boolean value);
+
+    /**
+     * pinColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinColor">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("setPinColor:")
+    public native void setPinColor(@NUInt long value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MKPinAnnotationView initWithCoder(NSCoder aDecoder);
+
+    /**
+     * pinTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("pinTintColor")
+    public native UIColor pinTintColor();
+
+    /**
+     * pinTintColor</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/MapKit/Reference/MKPinAnnotationView_Class/index.html#//apple_ref/occ/instp/MKPinAnnotationView/pinTintColor">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setPinTintColor:")
+    public native void setPinTintColor(UIColor value);
+
+    @Generated
+    @ProtocolClassMethod("appearance")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearance() {
+        return appearance();
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollection")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+        return appearanceForTraitCollection(trait);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+            NSArray<?> containerTypes) {
+        return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
+    }
+
+    @Generated
+    @Deprecated
+    @ProtocolClassMethod("appearanceWhenContainedIn")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+        return appearanceWhenContainedIn(ContainerClass, varargs);
+    }
+
+    @Generated
+    @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+        return appearanceWhenContainedInInstancesOfClasses(containerTypes);
+    }
 }

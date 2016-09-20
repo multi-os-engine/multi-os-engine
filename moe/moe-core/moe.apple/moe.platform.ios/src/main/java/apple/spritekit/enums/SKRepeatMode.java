@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class SKRepeatMode {
+    @Generated @NInt public static final long Clamp = 0x0000000000000001L;
+    @Generated @NInt public static final long Loop = 0x0000000000000002L;
+
     @Generated
     private SKRepeatMode() {
     }
-
-    @Generated @NInt public static final long Clamp = 0x0000000000000001L;
-    @Generated @NInt public static final long Loop = 0x0000000000000002L;
 }

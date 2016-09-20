@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIWebViewNavigationType {
-    @Generated
-    private UIWebViewNavigationType() {
-    }
-
     @Generated @NInt public static final long LinkClicked = 0x0000000000000000L;
     @Generated @NInt public static final long FormSubmitted = 0x0000000000000001L;
     @Generated @NInt public static final long BackForward = 0x0000000000000002L;
     @Generated @NInt public static final long Reload = 0x0000000000000003L;
     @Generated @NInt public static final long FormResubmitted = 0x0000000000000004L;
     @Generated @NInt public static final long Other = 0x0000000000000005L;
+
+    @Generated
+    private UIWebViewNavigationType() {
+    }
 }

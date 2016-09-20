@@ -58,51 +58,6 @@ public class SKProductsRequest extends SKRequest {
     @Selector("alloc")
     public static native SKProductsRequest alloc();
 
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsRequest/index.html#//apple_ref/occ/instp/SKProductsRequest/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("delegate")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object delegate();
-
-    @Generated
-    @Selector("init")
-    public native SKProductsRequest init();
-
-    /**
-     * initWithProductIdentifiers:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsRequest/index.html#//apple_ref/occ/instm/SKProductsRequest/initWithProductIdentifiers:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithProductIdentifiers:")
-    public native SKProductsRequest initWithProductIdentifiers(NSSet<String> productIdentifiers);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsRequest/index.html#//apple_ref/occ/instp/SKProductsRequest/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
-
-    /**
-     * delegate</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsRequest/index.html#//apple_ref/occ/instp/SKProductsRequest/delegate">iOS Dev Center</a>
-     */
-    @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
-        Object __old = delegate();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setDelegate_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -202,4 +157,49 @@ public class SKProductsRequest extends SKRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsRequest/index.html#//apple_ref/occ/instp/SKProductsRequest/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object delegate();
+
+    @Generated
+    @Selector("init")
+    public native SKProductsRequest init();
+
+    /**
+     * initWithProductIdentifiers:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsRequest/index.html#//apple_ref/occ/instm/SKProductsRequest/initWithProductIdentifiers:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithProductIdentifiers:")
+    public native SKProductsRequest initWithProductIdentifiers(NSSet<String> productIdentifiers);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsRequest/index.html#//apple_ref/occ/instp/SKProductsRequest/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * delegate</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKProductsRequest/index.html#//apple_ref/occ/instp/SKProductsRequest/delegate">iOS Dev Center</a>
+     */
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 }

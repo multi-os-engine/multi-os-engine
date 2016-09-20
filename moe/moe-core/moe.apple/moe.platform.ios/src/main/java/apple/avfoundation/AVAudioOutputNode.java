@@ -59,10 +59,6 @@ public class AVAudioOutputNode extends AVAudioIONode {
     public static native AVAudioOutputNode alloc();
 
     @Generated
-    @Selector("init")
-    public native AVAudioOutputNode init();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -161,4 +157,8 @@ public class AVAudioOutputNode extends AVAudioIONode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native AVAudioOutputNode init();
 }

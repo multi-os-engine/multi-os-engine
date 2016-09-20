@@ -59,19 +59,6 @@ public class CBCentral extends CBPeer {
     public static native CBCentral alloc();
 
     @Generated
-    @Selector("init")
-    public native CBCentral init();
-
-    /**
-     * maximumUpdateValueLength</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentral_Class/index.html#//apple_ref/occ/instp/CBCentral/maximumUpdateValueLength">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("maximumUpdateValueLength")
-    @NUInt
-    public native long maximumUpdateValueLength();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -170,4 +157,17 @@ public class CBCentral extends CBPeer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("init")
+    public native CBCentral init();
+
+    /**
+     * maximumUpdateValueLength</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentral_Class/index.html#//apple_ref/occ/instp/CBCentral/maximumUpdateValueLength">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("maximumUpdateValueLength")
+    @NUInt
+    public native long maximumUpdateValueLength();
 }

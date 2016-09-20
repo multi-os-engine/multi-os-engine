@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CNPostalAddressFormatterStyle {
+    @Generated @NInt public static final long CNPostalAddressFormatterStyleMailingAddress = 0x0000000000000000L;
+
     @Generated
     private CNPostalAddressFormatterStyle() {
     }
-
-    @Generated @NInt public static final long CNPostalAddressFormatterStyleMailingAddress = 0x0000000000000000L;
 }

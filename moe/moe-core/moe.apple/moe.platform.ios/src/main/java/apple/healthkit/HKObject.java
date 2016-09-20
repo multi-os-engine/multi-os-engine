@@ -58,73 +58,14 @@ public class HKObject extends NSObject implements NSSecureCoding {
         super(peer);
     }
 
-    /**
-     * UUID</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/UUID">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("UUID")
-    public native NSUUID UUID();
-
     @Generated
     @Owned
     @Selector("alloc")
     public static native HKObject alloc();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native HKObject init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native HKObject initWithCoder(NSCoder aDecoder);
-
-    /**
-     * metadata</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/metadata">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("metadata")
-    public native NSDictionary<String, ?> metadata();
-
-    /**
-     * source</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/source">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("source")
-    public native HKSource source();
-
-    @Generated
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * device</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/device">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("device")
-    public native HKDevice device();
-
-    /**
-     * sourceRevision</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/sourceRevision">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sourceRevision")
-    public native HKSourceRevision sourceRevision();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -225,4 +166,63 @@ public class HKObject extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version();
+
+    /**
+     * UUID</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/UUID">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("UUID")
+    public native NSUUID UUID();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native HKObject init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKObject initWithCoder(NSCoder aDecoder);
+
+    /**
+     * metadata</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/metadata">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("metadata")
+    public native NSDictionary<String, ?> metadata();
+
+    /**
+     * source</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/source">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("source")
+    public native HKSource source();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * device</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/device">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("device")
+    public native HKDevice device();
+
+    /**
+     * sourceRevision</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/sourceRevision">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sourceRevision")
+    public native HKSourceRevision sourceRevision();
 }

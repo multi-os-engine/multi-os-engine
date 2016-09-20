@@ -59,30 +59,6 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
     @Selector("alloc")
     public static native NSFetchedPropertyDescription alloc();
 
-    /**
-     * fetchRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSFetchedPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSFetchedPropertyDescription/fetchRequest">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("fetchRequest")
-    public native NSFetchRequest fetchRequest();
-
-    @Generated
-    @Selector("init")
-    public native NSFetchedPropertyDescription init();
-
-    /**
-     * fetchRequest</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSFetchedPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSFetchedPropertyDescription/fetchRequest">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setFetchRequest:")
-    public native void setFetchRequest(NSFetchRequest value);
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native NSFetchedPropertyDescription initWithCoder(NSCoder aDecoder);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -182,4 +158,28 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * fetchRequest</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSFetchedPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSFetchedPropertyDescription/fetchRequest">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("fetchRequest")
+    public native NSFetchRequest fetchRequest();
+
+    @Generated
+    @Selector("init")
+    public native NSFetchedPropertyDescription init();
+
+    /**
+     * fetchRequest</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSFetchedPropertyDescription_Class/index.html#//apple_ref/occ/instp/NSFetchedPropertyDescription/fetchRequest">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setFetchRequest:")
+    public native void setFetchRequest(NSFetchRequest value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSFetchedPropertyDescription initWithCoder(NSCoder aDecoder);
 }

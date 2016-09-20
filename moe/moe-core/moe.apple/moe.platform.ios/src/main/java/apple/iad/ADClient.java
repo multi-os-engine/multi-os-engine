@@ -58,47 +58,9 @@ public class ADClient extends NSObject {
     }
 
     @Generated
-    @Selector("addClientToSegments:replaceExisting:")
-    public native void addClientToSegmentsReplaceExisting(NSArray<?> segmentIdentifiers, boolean replaceExisting);
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native ADClient alloc();
-
-    /**
-     * determineAppInstallationAttributionWithCompletionHandler:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADClient/index.html#//apple_ref/occ/instm/ADClient/determineAppInstallationAttributionWithCompletionHandler:">iOS Dev Center</a>
-     */
-    @Deprecated
-    @Generated
-    @Selector("determineAppInstallationAttributionWithCompletionHandler:")
-    public native void determineAppInstallationAttributionWithCompletionHandler(
-            @ObjCBlock(name = "call_determineAppInstallationAttributionWithCompletionHandler") Block_determineAppInstallationAttributionWithCompletionHandler completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_determineAppInstallationAttributionWithCompletionHandler {
-        @Generated
-        void call_determineAppInstallationAttributionWithCompletionHandler(boolean arg0);
-    }
-
-    @Generated
-    @Selector("init")
-    public native ADClient init();
-
-    @Deprecated
-    @Generated
-    @Selector("lookupAdConversionDetails:")
-    public native void lookupAdConversionDetails(
-            @ObjCBlock(name = "call_lookupAdConversionDetails") Block_lookupAdConversionDetails completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_lookupAdConversionDetails {
-        @Generated
-        void call_lookupAdConversionDetails(NSDate arg0, NSDate arg1);
-    }
 
     /**
      * sharedClient</br>
@@ -107,18 +69,6 @@ public class ADClient extends NSObject {
     @Generated
     @Selector("sharedClient")
     public static native ADClient sharedClient();
-
-    @Generated
-    @Selector("requestAttributionDetailsWithBlock:")
-    public native void requestAttributionDetailsWithBlock(
-            @ObjCBlock(name = "call_requestAttributionDetailsWithBlock") Block_requestAttributionDetailsWithBlock completionHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_requestAttributionDetailsWithBlock {
-        @Generated
-        void call_requestAttributionDetailsWithBlock(NSDictionary<?, ?> arg0, NSError arg1);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -219,4 +169,54 @@ public class ADClient extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("addClientToSegments:replaceExisting:")
+    public native void addClientToSegmentsReplaceExisting(NSArray<?> segmentIdentifiers, boolean replaceExisting);
+
+    /**
+     * determineAppInstallationAttributionWithCompletionHandler:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/iAd/Reference/ADClient/index.html#//apple_ref/occ/instm/ADClient/determineAppInstallationAttributionWithCompletionHandler:">iOS Dev Center</a>
+     */
+    @Deprecated
+    @Generated
+    @Selector("determineAppInstallationAttributionWithCompletionHandler:")
+    public native void determineAppInstallationAttributionWithCompletionHandler(
+            @ObjCBlock(name = "call_determineAppInstallationAttributionWithCompletionHandler") Block_determineAppInstallationAttributionWithCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("init")
+    public native ADClient init();
+
+    @Deprecated
+    @Generated
+    @Selector("lookupAdConversionDetails:")
+    public native void lookupAdConversionDetails(
+            @ObjCBlock(name = "call_lookupAdConversionDetails") Block_lookupAdConversionDetails completionHandler);
+
+    @Generated
+    @Selector("requestAttributionDetailsWithBlock:")
+    public native void requestAttributionDetailsWithBlock(
+            @ObjCBlock(name = "call_requestAttributionDetailsWithBlock") Block_requestAttributionDetailsWithBlock completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_determineAppInstallationAttributionWithCompletionHandler {
+        @Generated
+        void call_determineAppInstallationAttributionWithCompletionHandler(boolean arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_lookupAdConversionDetails {
+        @Generated
+        void call_lookupAdConversionDetails(NSDate arg0, NSDate arg1);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestAttributionDetailsWithBlock {
+        @Generated
+        void call_requestAttributionDetailsWithBlock(NSDictionary<?, ?> arg0, NSError arg1);
+    }
 }

@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class GLKFogMode {
-    @Generated
-    private GLKFogMode() {
-    }
-
     @Generated public static final int Exp = 0x00000000;
     @Generated public static final int Exp2 = 0x00000001;
     @Generated public static final int Linear = 0x00000002;
+
+    @Generated
+    private GLKFogMode() {
+    }
 }

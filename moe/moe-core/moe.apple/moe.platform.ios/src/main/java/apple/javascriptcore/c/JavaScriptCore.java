@@ -323,15 +323,6 @@ public final class JavaScriptCore {
     public static native JSObjectRef JSObjectMakeFunctionWithCallback(JSContextRef ctx, JSStringRef name,
             @FunctionPtr(name = "call_JSObjectMakeFunctionWithCallback") Function_JSObjectMakeFunctionWithCallback callAsFunction);
 
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_JSObjectMakeFunctionWithCallback {
-        @Generated
-        VoidPtr call_JSObjectMakeFunctionWithCallback(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, @NUInt long arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg4,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg5);
-    }
-
     /**
      * JSObjectMakeConstructor</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/JavaScriptCore/Reference/JSObjectRef_header_reference/index.html#//apple_ref/c/func/JSObjectMakeConstructor">iOS Dev Center</a>
@@ -340,15 +331,6 @@ public final class JavaScriptCore {
     @CFunction
     public static native JSObjectRef JSObjectMakeConstructor(JSContextRef ctx, JSClassRef jsClass,
             @FunctionPtr(name = "call_JSObjectMakeConstructor") Function_JSObjectMakeConstructor callAsConstructor);
-
-    @Runtime(CRuntime.class)
-    @Generated
-    public interface Function_JSObjectMakeConstructor {
-        @Generated
-        VoidPtr call_JSObjectMakeConstructor(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
-    }
 
     /**
      * JSObjectMakeArray</br>
@@ -793,4 +775,22 @@ public final class JavaScriptCore {
     @Generated
     @CFunction
     public static native boolean JSValueIsDate(JSContextRef ctx, JSValueRef value);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_JSObjectMakeFunctionWithCallback {
+        @Generated
+        VoidPtr call_JSObjectMakeFunctionWithCallback(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, @NUInt long arg3,
+                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg4,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg5);
+    }
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_JSObjectMakeConstructor {
+        @Generated
+        VoidPtr call_JSObjectMakeConstructor(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2,
+                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg3,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
+    }
 }

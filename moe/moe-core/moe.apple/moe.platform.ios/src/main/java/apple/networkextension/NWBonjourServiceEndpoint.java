@@ -59,40 +59,12 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     public static native NWBonjourServiceEndpoint alloc();
 
     /**
-     * domain</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWBonjourServiceEndpointClassRef/index.html#//apple_ref/occ/instp/NWBonjourServiceEndpoint/domain">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("domain")
-    public native String domain();
-
-    /**
      * endpointWithName:type:domain:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWBonjourServiceEndpointClassRef/index.html#//apple_ref/occ/clm/NWBonjourServiceEndpoint/endpointWithName:type:domain:">iOS Dev Center</a>
      */
     @Generated
     @Selector("endpointWithName:type:domain:")
     public static native NWBonjourServiceEndpoint endpointWithNameTypeDomain(String name, String type, String domain);
-
-    @Generated
-    @Selector("init")
-    public native NWBonjourServiceEndpoint init();
-
-    /**
-     * name</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWBonjourServiceEndpointClassRef/index.html#//apple_ref/occ/instp/NWBonjourServiceEndpoint/name">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
-    /**
-     * type</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWBonjourServiceEndpointClassRef/index.html#//apple_ref/occ/instp/NWBonjourServiceEndpoint/type">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("type")
-    public native String type();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -193,4 +165,32 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * domain</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWBonjourServiceEndpointClassRef/index.html#//apple_ref/occ/instp/NWBonjourServiceEndpoint/domain">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("domain")
+    public native String domain();
+
+    @Generated
+    @Selector("init")
+    public native NWBonjourServiceEndpoint init();
+
+    /**
+     * name</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWBonjourServiceEndpointClassRef/index.html#//apple_ref/occ/instp/NWBonjourServiceEndpoint/name">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    /**
+     * type</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/NetworkExtension/Reference/NWBonjourServiceEndpointClassRef/index.html#//apple_ref/occ/instp/NWBonjourServiceEndpoint/type">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("type")
+    public native String type();
 }

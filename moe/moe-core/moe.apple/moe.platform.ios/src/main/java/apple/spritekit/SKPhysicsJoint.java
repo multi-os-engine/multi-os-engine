@@ -63,68 +63,6 @@ public class SKPhysicsJoint extends NSObject implements NSCoding {
     @Selector("alloc")
     public static native SKPhysicsJoint alloc();
 
-    /**
-     * bodyA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/bodyA">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bodyA")
-    public native SKPhysicsBody bodyA();
-
-    /**
-     * bodyB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/bodyB">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("bodyB")
-    public native SKPhysicsBody bodyB();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
-    @Selector("init")
-    public native SKPhysicsJoint init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native SKPhysicsJoint initWithCoder(NSCoder aDecoder);
-
-    /**
-     * reactionForce</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/reactionForce">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reactionForce")
-    @ByValue
-    public native CGVector reactionForce();
-
-    /**
-     * reactionTorque</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/reactionTorque">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("reactionTorque")
-    @NFloat
-    public native double reactionTorque();
-
-    /**
-     * bodyA</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/bodyA">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBodyA:")
-    public native void setBodyA(SKPhysicsBody value);
-
-    /**
-     * bodyB</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/bodyB">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setBodyB:")
-    public native void setBodyB(SKPhysicsBody value);
-
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
@@ -224,4 +162,66 @@ public class SKPhysicsJoint extends NSObject implements NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * bodyA</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/bodyA">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bodyA")
+    public native SKPhysicsBody bodyA();
+
+    /**
+     * bodyB</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/bodyB">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("bodyB")
+    public native SKPhysicsBody bodyB();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("init")
+    public native SKPhysicsJoint init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native SKPhysicsJoint initWithCoder(NSCoder aDecoder);
+
+    /**
+     * reactionForce</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/reactionForce">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reactionForce")
+    @ByValue
+    public native CGVector reactionForce();
+
+    /**
+     * reactionTorque</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/reactionTorque">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("reactionTorque")
+    @NFloat
+    public native double reactionTorque();
+
+    /**
+     * bodyA</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/bodyA">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBodyA:")
+    public native void setBodyA(SKPhysicsBody value);
+
+    /**
+     * bodyB</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SKPhysicsJoint_Ref/index.html#//apple_ref/occ/instp/SKPhysicsJoint/bodyB">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setBodyB:")
+    public native void setBodyB(SKPhysicsBody value);
 }

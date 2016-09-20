@@ -62,75 +62,6 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     @Selector("alloc")
     public static native CNLabeledValue<?> alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    /**
-     * identifier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instp/CNLabeledValue/identifier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("identifier")
-    public native String identifier();
-
-    @Generated
-    @Selector("init")
-    public native CNLabeledValue<?> init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native CNLabeledValue<?> initWithCoder(NSCoder aDecoder);
-
-    /**
-     * initWithLabel:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instm/CNLabeledValue/initWithLabel:value:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithLabel:value:")
-    public native CNLabeledValue<?> initWithLabelValue(String label, @Mapped(ObjCObjectMapper.class) Object value);
-
-    /**
-     * label</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instp/CNLabeledValue/label">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("label")
-    public native String label();
-
-    /**
-     * labeledValueBySettingLabel:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instm/CNLabeledValue/labeledValueBySettingLabel:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("labeledValueBySettingLabel:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object labeledValueBySettingLabel(String label);
-
-    /**
-     * labeledValueBySettingLabel:value:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instm/CNLabeledValue/labeledValueBySettingLabel:value:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("labeledValueBySettingLabel:value:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object labeledValueBySettingLabelValue(String label, @Mapped(ObjCObjectMapper.class) Object value);
-
-    /**
-     * labeledValueBySettingValue:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instm/CNLabeledValue/labeledValueBySettingValue:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("labeledValueBySettingValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object labeledValueBySettingValue(@Mapped(ObjCObjectMapper.class) Object value);
-
     /**
      * labeledValueWithLabel:value:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/clm/CNLabeledValue/labeledValueWithLabel:value:">iOS Dev Center</a>
@@ -151,21 +82,6 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     @Generated
     @Selector("supportsSecureCoding")
     public static native <_ValueType> boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * value</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instp/CNLabeledValue/value">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("value")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object value();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -266,4 +182,88 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    /**
+     * identifier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instp/CNLabeledValue/identifier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("init")
+    public native CNLabeledValue<?> init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CNLabeledValue<?> initWithCoder(NSCoder aDecoder);
+
+    /**
+     * initWithLabel:value:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instm/CNLabeledValue/initWithLabel:value:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithLabel:value:")
+    public native CNLabeledValue<?> initWithLabelValue(String label, @Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * label</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instp/CNLabeledValue/label">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("label")
+    public native String label();
+
+    /**
+     * labeledValueBySettingLabel:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instm/CNLabeledValue/labeledValueBySettingLabel:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("labeledValueBySettingLabel:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object labeledValueBySettingLabel(String label);
+
+    /**
+     * labeledValueBySettingLabel:value:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instm/CNLabeledValue/labeledValueBySettingLabel:value:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("labeledValueBySettingLabel:value:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object labeledValueBySettingLabelValue(String label, @Mapped(ObjCObjectMapper.class) Object value);
+
+    /**
+     * labeledValueBySettingValue:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instm/CNLabeledValue/labeledValueBySettingValue:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("labeledValueBySettingValue:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object labeledValueBySettingValue(@Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    /**
+     * value</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Contacts/Reference/CNLabeledValue_Class/index.html#//apple_ref/occ/instp/CNLabeledValue/value">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("value")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object value();
 }

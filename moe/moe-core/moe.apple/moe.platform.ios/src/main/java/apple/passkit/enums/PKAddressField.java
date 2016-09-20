@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class PKAddressField {
-    @Generated
-    private PKAddressField() {
-    }
-
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long PostalAddress = 0x0000000000000001L;
     @Generated @NUInt public static final long Phone = 0x0000000000000002L;
     @Generated @NUInt public static final long Email = 0x0000000000000004L;
     @Generated @NUInt public static final long Name = 0x0000000000000008L;
     @Generated @NUInt public static final long All = 0x000000000000000FL;
+
+    @Generated
+    private PKAddressField() {
+    }
 }

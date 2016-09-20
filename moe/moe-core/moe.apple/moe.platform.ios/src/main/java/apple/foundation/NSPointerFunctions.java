@@ -58,24 +58,6 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSPointerFunctions alloc();
 
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
-    @Selector("init")
-    public native NSPointerFunctions init();
-
-    /**
-     * initWithOptions:</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instm/NSPointerFunctions/initWithOptions:">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("initWithOptions:")
-    public native NSPointerFunctions initWithOptions(@NUInt long options);
-
     /**
      * pointerFunctionsWithOptions:</br>
      * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/clm/NSPointerFunctions/pointerFunctionsWithOptions:">iOS Dev Center</a>
@@ -83,105 +65,6 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Generated
     @Selector("pointerFunctionsWithOptions:")
     public static native NSPointerFunctions pointerFunctionsWithOptions(@NUInt long options);
-
-    /**
-     * descriptionFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/descriptionFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setDescriptionFunction:")
-    public native void setDescriptionFunction(
-            @FunctionPtr(name = "call_setDescriptionFunction") Function_setDescriptionFunction value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Function_setDescriptionFunction {
-        @Generated
-        @MappedReturn(ObjCStringMapper.class)
-        String call_setDescriptionFunction(ConstVoidPtr arg0);
-    }
-
-    /**
-     * sizeFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/sizeFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setSizeFunction:")
-    public native void setSizeFunction(@FunctionPtr(name = "call_setSizeFunction") Function_setSizeFunction value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Function_setSizeFunction {
-        @Generated
-        @NUInt
-        long call_setSizeFunction(ConstVoidPtr arg0);
-    }
-
-    /**
-     * usesStrongWriteBarrier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/usesStrongWriteBarrier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUsesStrongWriteBarrier:")
-    public native void setUsesStrongWriteBarrier(boolean value);
-
-    /**
-     * usesWeakReadAndWriteBarriers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/usesWeakReadAndWriteBarriers">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("setUsesWeakReadAndWriteBarriers:")
-    public native void setUsesWeakReadAndWriteBarriers(boolean value);
-
-    /**
-     * usesStrongWriteBarrier</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/usesStrongWriteBarrier">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("usesStrongWriteBarrier")
-    public native boolean usesStrongWriteBarrier();
-
-    /**
-     * usesWeakReadAndWriteBarriers</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/usesWeakReadAndWriteBarriers">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("usesWeakReadAndWriteBarriers")
-    public native boolean usesWeakReadAndWriteBarriers();
-
-    /**
-     * descriptionFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/descriptionFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("descriptionFunction")
-    @FunctionPtr(name = "call_descriptionFunction_ret")
-    public native Function_descriptionFunction_ret descriptionFunction();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Function_descriptionFunction_ret {
-        @Generated
-        @MappedReturn(ObjCStringMapper.class)
-        String call_descriptionFunction_ret(ConstVoidPtr arg0);
-    }
-
-    /**
-     * sizeFunction</br>
-     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/sizeFunction">iOS Dev Center</a>
-     */
-    @Generated
-    @Selector("sizeFunction")
-    @FunctionPtr(name = "call_sizeFunction_ret")
-    public native Function_sizeFunction_ret sizeFunction();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Function_sizeFunction_ret {
-        @Generated
-        @NUInt
-        long call_sizeFunction_ret(ConstVoidPtr arg0);
-    }
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -282,4 +165,121 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("init")
+    public native NSPointerFunctions init();
+
+    /**
+     * initWithOptions:</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instm/NSPointerFunctions/initWithOptions:">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("initWithOptions:")
+    public native NSPointerFunctions initWithOptions(@NUInt long options);
+
+    /**
+     * descriptionFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/descriptionFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setDescriptionFunction:")
+    public native void setDescriptionFunction(
+            @FunctionPtr(name = "call_setDescriptionFunction") Function_setDescriptionFunction value);
+
+    /**
+     * sizeFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/sizeFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setSizeFunction:")
+    public native void setSizeFunction(@FunctionPtr(name = "call_setSizeFunction") Function_setSizeFunction value);
+
+    /**
+     * usesStrongWriteBarrier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/usesStrongWriteBarrier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUsesStrongWriteBarrier:")
+    public native void setUsesStrongWriteBarrier(boolean value);
+
+    /**
+     * usesWeakReadAndWriteBarriers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/usesWeakReadAndWriteBarriers">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("setUsesWeakReadAndWriteBarriers:")
+    public native void setUsesWeakReadAndWriteBarriers(boolean value);
+
+    /**
+     * usesStrongWriteBarrier</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/usesStrongWriteBarrier">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("usesStrongWriteBarrier")
+    public native boolean usesStrongWriteBarrier();
+
+    /**
+     * usesWeakReadAndWriteBarriers</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/usesWeakReadAndWriteBarriers">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("usesWeakReadAndWriteBarriers")
+    public native boolean usesWeakReadAndWriteBarriers();
+
+    /**
+     * descriptionFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/descriptionFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("descriptionFunction")
+    @FunctionPtr(name = "call_descriptionFunction_ret")
+    public native Function_descriptionFunction_ret descriptionFunction();
+
+    /**
+     * sizeFunction</br>
+     * Original documentation: <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSPointerFunctions_Class/index.html#//apple_ref/occ/instp/NSPointerFunctions/sizeFunction">iOS Dev Center</a>
+     */
+    @Generated
+    @Selector("sizeFunction")
+    @FunctionPtr(name = "call_sizeFunction_ret")
+    public native Function_sizeFunction_ret sizeFunction();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_setDescriptionFunction {
+        @Generated
+        @MappedReturn(ObjCStringMapper.class)
+        String call_setDescriptionFunction(ConstVoidPtr arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_setSizeFunction {
+        @Generated
+        @NUInt
+        long call_setSizeFunction(ConstVoidPtr arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_descriptionFunction_ret {
+        @Generated
+        @MappedReturn(ObjCStringMapper.class)
+        String call_descriptionFunction_ret(ConstVoidPtr arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_sizeFunction_ret {
+        @Generated
+        @NUInt
+        long call_sizeFunction_ret(ConstVoidPtr arg0);
+    }
 }

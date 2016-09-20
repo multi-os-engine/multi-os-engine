@@ -60,39 +60,6 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
     public static native AVMutableDateRangeMetadataGroup alloc();
 
     @Generated
-    @Selector("endDate")
-    public native NSDate endDate();
-
-    @Generated
-    @Selector("init")
-    public native AVMutableDateRangeMetadataGroup init();
-
-    @Generated
-    @Selector("initWithItems:startDate:endDate:")
-    public native AVMutableDateRangeMetadataGroup initWithItemsStartDateEndDate(NSArray<? extends AVMetadataItem> items,
-            NSDate startDate, NSDate endDate);
-
-    @Generated
-    @Selector("items")
-    public native NSArray<? extends AVMetadataItem> items();
-
-    @Generated
-    @Selector("setEndDate:")
-    public native void setEndDate(NSDate value);
-
-    @Generated
-    @Selector("setItems:")
-    public native void setItems(NSArray<? extends AVMetadataItem> value);
-
-    @Generated
-    @Selector("setStartDate:")
-    public native void setStartDate(NSDate value);
-
-    @Generated
-    @Selector("startDate")
-    public native NSDate startDate();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -191,4 +158,37 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("endDate")
+    public native NSDate endDate();
+
+    @Generated
+    @Selector("init")
+    public native AVMutableDateRangeMetadataGroup init();
+
+    @Generated
+    @Selector("initWithItems:startDate:endDate:")
+    public native AVMutableDateRangeMetadataGroup initWithItemsStartDateEndDate(NSArray<? extends AVMetadataItem> items,
+            NSDate startDate, NSDate endDate);
+
+    @Generated
+    @Selector("items")
+    public native NSArray<? extends AVMetadataItem> items();
+
+    @Generated
+    @Selector("setEndDate:")
+    public native void setEndDate(NSDate value);
+
+    @Generated
+    @Selector("setItems:")
+    public native void setItems(NSArray<? extends AVMetadataItem> value);
+
+    @Generated
+    @Selector("setStartDate:")
+    public native void setStartDate(NSDate value);
+
+    @Generated
+    @Selector("startDate")
+    public native NSDate startDate();
 }

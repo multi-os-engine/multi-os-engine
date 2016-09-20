@@ -20,10 +20,6 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class filesec_property_t {
-    @Generated
-    private filesec_property_t() {
-    }
-
     @Generated public static final int FILESEC_OWNER = 0x00000001;
     @Generated public static final int FILESEC_GROUP = 0x00000002;
     @Generated public static final int FILESEC_UUID = 0x00000003;
@@ -32,4 +28,8 @@ public final class filesec_property_t {
     @Generated public static final int FILESEC_GRPUUID = 0x00000006;
     @Generated public static final int FILESEC_ACL_RAW = 0x00000064;
     @Generated public static final int FILESEC_ACL_ALLOCSIZE = 0x00000065;
+
+    @Generated
+    private filesec_property_t() {
+    }
 }
