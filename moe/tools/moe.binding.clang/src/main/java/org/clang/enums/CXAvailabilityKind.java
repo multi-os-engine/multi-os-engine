@@ -16,21 +16,16 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXAvailabilityKind {
-	@Generated
-	private CXAvailabilityKind() {
-	}
+    @Generated public static final int Available = 0x00000000;
+    @Generated public static final int Deprecated = 0x00000001;
+    @Generated public static final int NotAvailable = 0x00000002;
+    @Generated public static final int NotAccessible = 0x00000003;
 
-	@Generated
-	public static final int Available = 0x00000000;
-	@Generated
-	public static final int Deprecated = 0x00000001;
-	@Generated
-	public static final int NotAvailable = 0x00000002;
-	@Generated
-	public static final int NotAccessible = 0x00000003;
+    @Generated
+    private CXAvailabilityKind() {
+    }
 }

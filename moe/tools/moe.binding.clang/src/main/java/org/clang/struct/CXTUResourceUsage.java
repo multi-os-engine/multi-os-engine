@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -30,55 +29,54 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CXTUResourceUsage extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXTUResourceUsage() {
-		super(CXTUResourceUsage.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXTUResourceUsage(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXTUResourceUsage() {
+        super(CXTUResourceUsage.class);
+    }
 
-	@Generated
-	public CXTUResourceUsage(
-			VoidPtr data,
-			int numEntries,
-			@UncertainArgument("Options: reference, array Fallback: reference") CXTUResourceUsageEntry entries) {
-		super(CXTUResourceUsage.class);
-		setData(data);
-		setNumEntries(numEntries);
-		setEntries(entries);
-	}
+    @Generated
+    protected CXTUResourceUsage(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native VoidPtr data();
+    @Generated
+    public CXTUResourceUsage(VoidPtr data, int numEntries,
+            @UncertainArgument("Options: reference, array Fallback: reference") CXTUResourceUsageEntry entries) {
+        super(CXTUResourceUsage.class);
+        setData(data);
+        setNumEntries(numEntries);
+        setEntries(entries);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setData(VoidPtr value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native VoidPtr data();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native int numEntries();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setData(VoidPtr value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setNumEntries(int value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native int numEntries();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXTUResourceUsageEntry entries();
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setNumEntries(int value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setEntries(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXTUResourceUsageEntry value);
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXTUResourceUsageEntry entries();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setEntries(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXTUResourceUsageEntry value);
 }

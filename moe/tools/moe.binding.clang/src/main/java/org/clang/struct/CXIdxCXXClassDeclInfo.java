@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -31,55 +30,56 @@ import org.moe.natj.general.ptr.ConstPtr;
 @Generated
 @Structure()
 public final class CXIdxCXXClassDeclInfo extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXIdxCXXClassDeclInfo() {
-		super(CXIdxCXXClassDeclInfo.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXIdxCXXClassDeclInfo(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXIdxCXXClassDeclInfo() {
+        super(CXIdxCXXClassDeclInfo.class);
+    }
 
-	@Generated
-	public CXIdxCXXClassDeclInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo declInfo,
-			ConstPtr<ConstPtr<CXIdxBaseClassInfo>> bases, int numBases) {
-		super(CXIdxCXXClassDeclInfo.class);
-		setDeclInfo(declInfo);
-		setBases(bases);
-		setNumBases(numBases);
-	}
+    @Generated
+    protected CXIdxCXXClassDeclInfo(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxDeclInfo declInfo();
+    @Generated
+    public CXIdxCXXClassDeclInfo(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo declInfo,
+            ConstPtr<ConstPtr<CXIdxBaseClassInfo>> bases, int numBases) {
+        super(CXIdxCXXClassDeclInfo.class);
+        setDeclInfo(declInfo);
+        setBases(bases);
+        setNumBases(numBases);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setDeclInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxDeclInfo declInfo();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	@ReferenceInfo(type = CXIdxBaseClassInfo.class, depth = 2)
-	public native ConstPtr<ConstPtr<CXIdxBaseClassInfo>> bases();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setDeclInfo(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setBases(ConstPtr<ConstPtr<CXIdxBaseClassInfo>> value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    @ReferenceInfo(type = CXIdxBaseClassInfo.class, depth = 2)
+    public native ConstPtr<ConstPtr<CXIdxBaseClassInfo>> bases();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	public native int numBases();
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setBases(ConstPtr<ConstPtr<CXIdxBaseClassInfo>> value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setNumBases(int value);
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    public native int numBases();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setNumBases(int value);
 }

@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -32,51 +31,50 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CXCursorAndRangeVisitor extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXCursorAndRangeVisitor() {
-		super(CXCursorAndRangeVisitor.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXCursorAndRangeVisitor(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXCursorAndRangeVisitor() {
+        super(CXCursorAndRangeVisitor.class);
+    }
 
-	@Generated
-	public CXCursorAndRangeVisitor(VoidPtr context, @FunctionPtr(name = "call_visit") Function_visit visit) {
-		super(CXCursorAndRangeVisitor.class);
-		setContext(context);
-		setVisit(visit);
-	}
+    @Generated
+    protected CXCursorAndRangeVisitor(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native VoidPtr context();
+    @Generated
+    public CXCursorAndRangeVisitor(VoidPtr context, @FunctionPtr(name = "call_visit") Function_visit visit) {
+        super(CXCursorAndRangeVisitor.class);
+        setContext(context);
+        setVisit(visit);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setContext(VoidPtr value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native VoidPtr context();
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setVisit(
-			@FunctionPtr(name = "call_visit") Function_visit value);
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setContext(VoidPtr value);
 
-	@Runtime(CRuntime.class)
-	@Generated
-	static public interface Function_visit {
-		@Generated
-		public int call_visit(VoidPtr arg0, @ByValue CXCursor arg1,
-				@ByValue CXSourceRange arg2);
-	}
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setVisit(@FunctionPtr(name = "call_visit") Function_visit value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	@FunctionPtr(name = "call_visit")
-	public native Function_visit visit();
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    @FunctionPtr(name = "call_visit")
+    public native Function_visit visit();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    static public interface Function_visit {
+        @Generated
+        public int call_visit(VoidPtr arg0, @ByValue CXCursor arg1, @ByValue CXSourceRange arg2);
+    }
 }

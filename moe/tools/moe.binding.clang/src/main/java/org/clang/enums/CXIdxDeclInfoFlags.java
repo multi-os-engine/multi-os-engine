@@ -16,15 +16,13 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXIdxDeclInfoFlags {
-	@Generated
-	private CXIdxDeclInfoFlags() {
-	}
+    @Generated public static final int CXIdxDeclFlag_Skipped = 0x00000001;
 
-	@Generated
-	public static final int CXIdxDeclFlag_Skipped = 0x00000001;
+    @Generated
+    private CXIdxDeclInfoFlags() {
+    }
 }

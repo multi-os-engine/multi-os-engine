@@ -16,167 +16,171 @@ limitations under the License.
 
 package org.clang.struct;
 
-
+import org.clang.c.clang;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
-import org.moe.natj.general.ann.*;
+import org.moe.natj.general.ann.ByValue;
+import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ann.UncertainArgument;
+import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.ConstPtr;
-import org.clang.c.clang;
 
 @Generated
 @Structure()
 public final class CXIdxDeclInfo extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXIdxDeclInfo() {
-		super(CXIdxDeclInfo.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXIdxDeclInfo(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXIdxDeclInfo() {
+        super(CXIdxDeclInfo.class);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxEntityInfo entityInfo();
+    @Generated
+    protected CXIdxDeclInfo(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setEntityInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxEntityInfo entityInfo();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	@ByValue
-	public native CXCursor cursor();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setEntityInfo(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setCursor(@ByValue CXCursor value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    @ByValue
+    public native CXCursor cursor();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	@ByValue
-	public native CXIdxLoc loc();
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setCursor(@ByValue CXCursor value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setLoc(@ByValue CXIdxLoc value);
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    @ByValue
+    public native CXIdxLoc loc();
 
-	@Generated
-	@StructureField(order = 3, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxContainerInfo semanticContainer();
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setLoc(@ByValue CXIdxLoc value);
 
-	@Generated
-	@StructureField(order = 3, isGetter = false)
-	public native void setSemanticContainer(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxContainerInfo value);
+    @Generated
+    @StructureField(order = 3, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxContainerInfo semanticContainer();
 
-	@Generated
-	@StructureField(order = 4, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxContainerInfo lexicalContainer();
+    @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setSemanticContainer(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxContainerInfo value);
 
-	@Generated
-	@StructureField(order = 4, isGetter = false)
-	public native void setLexicalContainer(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxContainerInfo value);
+    @Generated
+    @StructureField(order = 4, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxContainerInfo lexicalContainer();
 
-	@Generated
-	@StructureField(order = 5, isGetter = true)
-	public native int isRedeclaration();
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setLexicalContainer(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxContainerInfo value);
 
-	@Generated
-	@StructureField(order = 5, isGetter = false)
-	public native void setIsRedeclaration(int value);
+    @Generated
+    @StructureField(order = 5, isGetter = true)
+    public native int isRedeclaration();
 
-	@Generated
-	@StructureField(order = 6, isGetter = true)
-	public native int isDefinition();
+    @Generated
+    @StructureField(order = 5, isGetter = false)
+    public native void setIsRedeclaration(int value);
 
-	@Generated
-	@StructureField(order = 6, isGetter = false)
-	public native void setIsDefinition(int value);
+    @Generated
+    @StructureField(order = 6, isGetter = true)
+    public native int isDefinition();
 
-	@Generated
-	@StructureField(order = 7, isGetter = true)
-	public native int isContainer();
+    @Generated
+    @StructureField(order = 6, isGetter = false)
+    public native void setIsDefinition(int value);
 
-	@Generated
-	@StructureField(order = 7, isGetter = false)
-	public native void setIsContainer(int value);
+    @Generated
+    @StructureField(order = 7, isGetter = true)
+    public native int isContainer();
 
-	@Generated
-	@StructureField(order = 8, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxContainerInfo declAsContainer();
+    @Generated
+    @StructureField(order = 7, isGetter = false)
+    public native void setIsContainer(int value);
 
-	@Generated
-	@StructureField(order = 8, isGetter = false)
-	public native void setDeclAsContainer(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxContainerInfo value);
+    @Generated
+    @StructureField(order = 8, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxContainerInfo declAsContainer();
 
-	@Generated
-	@StructureField(order = 9, isGetter = true)
-	public native int isImplicit();
+    @Generated
+    @StructureField(order = 8, isGetter = false)
+    public native void setDeclAsContainer(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxContainerInfo value);
 
-	@Generated
-	@StructureField(order = 9, isGetter = false)
-	public native void setIsImplicit(int value);
+    @Generated
+    @StructureField(order = 9, isGetter = true)
+    public native int isImplicit();
 
-	@Generated
-	@StructureField(order = 10, isGetter = true)
-	@ReferenceInfo(type = CXIdxAttrInfo.class, depth = 2)
-	public native ConstPtr<ConstPtr<CXIdxAttrInfo>> attributes();
+    @Generated
+    @StructureField(order = 9, isGetter = false)
+    public native void setIsImplicit(int value);
 
-	@Generated
-	@StructureField(order = 10, isGetter = false)
-	public native void setAttributes(ConstPtr<ConstPtr<CXIdxAttrInfo>> value);
+    @Generated
+    @StructureField(order = 10, isGetter = true)
+    @ReferenceInfo(type = CXIdxAttrInfo.class, depth = 2)
+    public native ConstPtr<ConstPtr<CXIdxAttrInfo>> attributes();
 
-	@Generated
-	@StructureField(order = 11, isGetter = true)
-	public native int numAttributes();
+    @Generated
+    @StructureField(order = 10, isGetter = false)
+    public native void setAttributes(ConstPtr<ConstPtr<CXIdxAttrInfo>> value);
 
-	@Generated
-	@StructureField(order = 11, isGetter = false)
-	public native void setNumAttributes(int value);
+    @Generated
+    @StructureField(order = 11, isGetter = true)
+    public native int numAttributes();
 
-	@Generated
-	@StructureField(order = 12, isGetter = true)
-	public native int flags();
+    @Generated
+    @StructureField(order = 11, isGetter = false)
+    public native void setNumAttributes(int value);
 
-	@Generated
-	@StructureField(order = 12, isGetter = false)
-	public native void setFlags(int value);
+    @Generated
+    @StructureField(order = 12, isGetter = true)
+    public native int flags();
 
-	/* Comfort java methods */
-	public CXIdxObjCContainerDeclInfo getObjCContainerDeclInfo() {
-		return clang.clang_index_getObjCContainerDeclInfo(this);
-	}
+    @Generated
+    @StructureField(order = 12, isGetter = false)
+    public native void setFlags(int value);
 
-	public CXIdxObjCInterfaceDeclInfo getObjCInterfaceDeclInfo() {
-		return clang.clang_index_getObjCInterfaceDeclInfo(this);
-	}
+    /* Comfort java methods */
+    public CXIdxObjCContainerDeclInfo getObjCContainerDeclInfo() {
+        return clang.clang_index_getObjCContainerDeclInfo(this);
+    }
 
-	public CXIdxObjCCategoryDeclInfo getObjCCategoryDeclInfo() {
-		return clang.clang_index_getObjCCategoryDeclInfo(this);
-	}
+    public CXIdxObjCInterfaceDeclInfo getObjCInterfaceDeclInfo() {
+        return clang.clang_index_getObjCInterfaceDeclInfo(this);
+    }
 
-	public CXIdxObjCProtocolRefListInfo getObjCProtocolRefListInfo() {
-		return clang.clang_index_getObjCProtocolRefListInfo(this);
-	}
+    public CXIdxObjCCategoryDeclInfo getObjCCategoryDeclInfo() {
+        return clang.clang_index_getObjCCategoryDeclInfo(this);
+    }
 
-	public CXIdxObjCPropertyDeclInfo getObjCPropertyDeclInfo() {
-		return clang.clang_index_getObjCPropertyDeclInfo(this);
-	}
+    public CXIdxObjCProtocolRefListInfo getObjCProtocolRefListInfo() {
+        return clang.clang_index_getObjCProtocolRefListInfo(this);
+    }
+
+    public CXIdxObjCPropertyDeclInfo getObjCPropertyDeclInfo() {
+        return clang.clang_index_getObjCPropertyDeclInfo(this);
+    }
 }

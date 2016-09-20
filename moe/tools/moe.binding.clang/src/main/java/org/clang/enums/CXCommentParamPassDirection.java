@@ -16,19 +16,15 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXCommentParamPassDirection {
-	@Generated
-	private CXCommentParamPassDirection() {
-	}
+    @Generated public static final int In = 0x00000000;
+    @Generated public static final int Out = 0x00000001;
+    @Generated public static final int InOut = 0x00000002;
 
-	@Generated
-	public static final int In = 0x00000000;
-	@Generated
-	public static final int Out = 0x00000001;
-	@Generated
-	public static final int InOut = 0x00000002;
+    @Generated
+    private CXCommentParamPassDirection() {
+    }
 }

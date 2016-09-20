@@ -16,21 +16,16 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXIdxEntityCXXTemplateKind {
-	@Generated
-	private CXIdxEntityCXXTemplateKind() {
-	}
+    @Generated public static final int CXIdxEntity_NonTemplate = 0x00000000;
+    @Generated public static final int CXIdxEntity_Template = 0x00000001;
+    @Generated public static final int CXIdxEntity_TemplatePartialSpecialization = 0x00000002;
+    @Generated public static final int CXIdxEntity_TemplateSpecialization = 0x00000003;
 
-	@Generated
-	public static final int CXIdxEntity_NonTemplate = 0x00000000;
-	@Generated
-	public static final int CXIdxEntity_Template = 0x00000001;
-	@Generated
-	public static final int CXIdxEntity_TemplatePartialSpecialization = 0x00000002;
-	@Generated
-	public static final int CXIdxEntity_TemplateSpecialization = 0x00000003;
+    @Generated
+    private CXIdxEntityCXXTemplateKind() {
+    }
 }

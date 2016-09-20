@@ -16,41 +16,26 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXObjCPropertyAttrKind {
-	@Generated
-	private CXObjCPropertyAttrKind() {
-	}
+    @Generated public static final int CXObjCPropertyAttr_noattr = 0x00000000;
+    @Generated public static final int CXObjCPropertyAttr_readonly = 0x00000001;
+    @Generated public static final int CXObjCPropertyAttr_getter = 0x00000002;
+    @Generated public static final int CXObjCPropertyAttr_assign = 0x00000004;
+    @Generated public static final int CXObjCPropertyAttr_readwrite = 0x00000008;
+    @Generated public static final int CXObjCPropertyAttr_retain = 0x00000010;
+    @Generated public static final int CXObjCPropertyAttr_copy = 0x00000020;
+    @Generated public static final int CXObjCPropertyAttr_nonatomic = 0x00000040;
+    @Generated public static final int CXObjCPropertyAttr_setter = 0x00000080;
+    @Generated public static final int CXObjCPropertyAttr_atomic = 0x00000100;
+    @Generated public static final int CXObjCPropertyAttr_weak = 0x00000200;
+    @Generated public static final int CXObjCPropertyAttr_strong = 0x00000400;
+    @Generated public static final int CXObjCPropertyAttr_unsafe_unretained = 0x00000800;
+    @Generated public static final int CXObjCPropertyAttr_class = 0x00001000;
 
-	@Generated
-	public static final int CXObjCPropertyAttr_noattr = 0x00000000;
-	@Generated
-	public static final int CXObjCPropertyAttr_readonly = 0x00000001;
-	@Generated
-	public static final int CXObjCPropertyAttr_getter = 0x00000002;
-	@Generated
-	public static final int CXObjCPropertyAttr_assign = 0x00000004;
-	@Generated
-	public static final int CXObjCPropertyAttr_readwrite = 0x00000008;
-	@Generated
-	public static final int CXObjCPropertyAttr_retain = 0x00000010;
-	@Generated
-	public static final int CXObjCPropertyAttr_copy = 0x00000020;
-	@Generated
-	public static final int CXObjCPropertyAttr_nonatomic = 0x00000040;
-	@Generated
-	public static final int CXObjCPropertyAttr_setter = 0x00000080;
-	@Generated
-	public static final int CXObjCPropertyAttr_atomic = 0x00000100;
-	@Generated
-	public static final int CXObjCPropertyAttr_weak = 0x00000200;
-	@Generated
-	public static final int CXObjCPropertyAttr_strong = 0x00000400;
-	@Generated
-	public static final int CXObjCPropertyAttr_unsafe_unretained = 0x00000800;
-	@Generated
-	public static final int CXObjCPropertyAttr_class = 0x00001000;
+    @Generated
+    private CXObjCPropertyAttrKind() {
+    }
 }

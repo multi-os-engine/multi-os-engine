@@ -16,19 +16,15 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXNameRefFlags {
-	@Generated
-	private CXNameRefFlags() {
-	}
+    @Generated public static final int Qualifier = 0x00000001;
+    @Generated public static final int TemplateArgs = 0x00000002;
+    @Generated public static final int SinglePiece = 0x00000004;
 
-	@Generated
-	public static final int Qualifier = 0x00000001;
-	@Generated
-	public static final int TemplateArgs = 0x00000002;
-	@Generated
-	public static final int SinglePiece = 0x00000004;
+    @Generated
+    private CXNameRefFlags() {
+    }
 }

@@ -16,7 +16,7 @@ limitations under the License.
 
 package org.clang.struct;
 
-
+import org.clang.c.clang;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -24,123 +24,123 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.ConstVoidPtr;
-import org.clang.c.clang;
 
 @Generated
 @Structure()
 public final class CXCursor extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXCursor() {
-		super(CXCursor.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXCursor(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXCursor() {
+        super(CXCursor.class);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native int kind();
+    @Generated
+    protected CXCursor(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setKind(int value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native int kind();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native int xdata();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setKind(int value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setXdata(int value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native int xdata();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true, count = 3)
-	public native ConstVoidPtr data(int field_idx);
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setXdata(int value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false, count = 3)
-	public native void setData(ConstVoidPtr value, int field_idx);
+    @Generated
+    @StructureField(order = 2, isGetter = true, count = 3)
+    public native ConstVoidPtr data(int field_idx);
 
-	/* General java methods */
-	@Override
-	public String toString() {
-		CXString tmp = clang.clang_getCursorSpelling(this);
-		if (tmp == null) {
-			throw new IllegalStateException("CXCursors are extected to have spelling");
-		}
-		String result = clang.clang_getCString(tmp);
-		if (result == null) {
-			throw new IllegalStateException("Failed to retrieve string from CXString");
-		}
-		clang.clang_disposeString(tmp);
-		return result;
-	}
+    @Generated
+    @StructureField(order = 2, isGetter = false, count = 3)
+    public native void setData(ConstVoidPtr value, int field_idx);
 
-	/* Comfort java methods */
-	public CXSourceLocation getCursorLocation() {
-		return clang.clang_getCursorLocation(this);
-	}
+    /* General java methods */
+    @Override
+    public String toString() {
+        CXString tmp = clang.clang_getCursorSpelling(this);
+        if (tmp == null) {
+            throw new IllegalStateException("CXCursors are extected to have spelling");
+        }
+        String result = clang.clang_getCString(tmp);
+        if (result == null) {
+            throw new IllegalStateException("Failed to retrieve string from CXString");
+        }
+        clang.clang_disposeString(tmp);
+        return result;
+    }
 
-	public int getCursorAvailability() {
-		return clang.clang_getCursorAvailability(this);
-	}
+    /* Comfort java methods */
+    public CXSourceLocation getCursorLocation() {
+        return clang.clang_getCursorLocation(this);
+    }
 
-	public CXType getTypedefDeclUnderlyingType() {
-		return clang.clang_getTypedefDeclUnderlyingType(this);
-	}
+    public int getCursorAvailability() {
+        return clang.clang_getCursorAvailability(this);
+    }
 
-	public CXType getCursorType() {
-		return clang.clang_getCursorType(this);
-	}
+    public CXType getTypedefDeclUnderlyingType() {
+        return clang.clang_getTypedefDeclUnderlyingType(this);
+    }
 
-	public CXCursor getCursorDefinition() {
-		return clang.clang_getCursorDefinition(this);
-	}
+    public CXType getCursorType() {
+        return clang.clang_getCursorType(this);
+    }
 
-	public CXString getCursorUSR() {
-		return clang.clang_getCursorUSR(this);
-	}
+    public CXCursor getCursorDefinition() {
+        return clang.clang_getCursorDefinition(this);
+    }
 
-	public boolean isVariadic() {
-		return clang.clang_Cursor_isVariadic(this) != 0;
-	}
+    public CXString getCursorUSR() {
+        return clang.clang_getCursorUSR(this);
+    }
 
-	public boolean isBitField() {
-		return clang.clang_Cursor_isBitField(this) != 0;
-	}
+    public boolean isVariadic() {
+        return clang.clang_Cursor_isVariadic(this) != 0;
+    }
 
-	public int getNumArguments() {
-		return clang.clang_Cursor_getNumArguments(this);
-	}
+    public boolean isBitField() {
+        return clang.clang_Cursor_isBitField(this) != 0;
+    }
 
-	public CXCursor getArgument(int i) {
-		return clang.clang_Cursor_getArgument(this, i);
-	}
+    public int getNumArguments() {
+        return clang.clang_Cursor_getNumArguments(this);
+    }
 
-	public CXType getCursorResultType() {
-		return clang.clang_getCursorResultType(this);
-	}
+    public CXCursor getArgument(int i) {
+        return clang.clang_Cursor_getArgument(this, i);
+    }
 
-	public boolean isObjCOptional() {
-		return clang.clang_Cursor_isObjCOptional(this) != 0;
-	}
+    public CXType getCursorResultType() {
+        return clang.clang_getCursorResultType(this);
+    }
 
-	public long getEnumConstantDeclValue() {
-		return clang.clang_getEnumConstantDeclValue(this);
-	}
+    public boolean isObjCOptional() {
+        return clang.clang_Cursor_isObjCOptional(this) != 0;
+    }
 
-	public CXType getEnumDeclIntegerType() {
-		return clang.clang_getEnumDeclIntegerType(this);
-	}
+    public long getEnumConstantDeclValue() {
+        return clang.clang_getEnumConstantDeclValue(this);
+    }
 
-	public boolean isInlined() {
-		return clang.clang_Cursor_isInlined(this) != 0;
-	}
+    public CXType getEnumDeclIntegerType() {
+        return clang.clang_getEnumDeclIntegerType(this);
+    }
+
+    public boolean isInlined() {
+        return clang.clang_Cursor_isInlined(this) != 0;
+    }
 }

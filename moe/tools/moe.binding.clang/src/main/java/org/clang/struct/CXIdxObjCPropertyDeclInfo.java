@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -29,59 +28,60 @@ import org.moe.natj.general.ann.UncertainReturn;
 @Generated
 @Structure()
 public final class CXIdxObjCPropertyDeclInfo extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXIdxObjCPropertyDeclInfo() {
-		super(CXIdxObjCPropertyDeclInfo.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXIdxObjCPropertyDeclInfo(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXIdxObjCPropertyDeclInfo() {
+        super(CXIdxObjCPropertyDeclInfo.class);
+    }
 
-	@Generated
-	public CXIdxObjCPropertyDeclInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo declInfo,
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo getter,
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo setter) {
-		super(CXIdxObjCPropertyDeclInfo.class);
-		setDeclInfo(declInfo);
-		setGetter(getter);
-		setSetter(setter);
-	}
+    @Generated
+    protected CXIdxObjCPropertyDeclInfo(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxDeclInfo declInfo();
+    @Generated
+    public CXIdxObjCPropertyDeclInfo(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo declInfo,
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo getter,
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo setter) {
+        super(CXIdxObjCPropertyDeclInfo.class);
+        setDeclInfo(declInfo);
+        setGetter(getter);
+        setSetter(setter);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setDeclInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxDeclInfo declInfo();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxEntityInfo getter();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setDeclInfo(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setGetter(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxEntityInfo getter();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxEntityInfo setter();
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setGetter(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setSetter(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo value);
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxEntityInfo setter();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setSetter(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo value);
 }

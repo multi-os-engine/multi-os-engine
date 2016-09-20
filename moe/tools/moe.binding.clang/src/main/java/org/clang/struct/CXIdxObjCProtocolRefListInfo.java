@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -29,43 +28,43 @@ import org.moe.natj.general.ptr.ConstPtr;
 @Generated
 @Structure()
 public final class CXIdxObjCProtocolRefListInfo extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXIdxObjCProtocolRefListInfo() {
-		super(CXIdxObjCProtocolRefListInfo.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXIdxObjCProtocolRefListInfo(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXIdxObjCProtocolRefListInfo() {
+        super(CXIdxObjCProtocolRefListInfo.class);
+    }
 
-	@Generated
-	public CXIdxObjCProtocolRefListInfo(ConstPtr<ConstPtr<CXIdxObjCProtocolRefInfo>> protocols, int numProtocols) {
-		super(CXIdxObjCProtocolRefListInfo.class);
-		setProtocols(protocols);
-		setNumProtocols(numProtocols);
-	}
+    @Generated
+    protected CXIdxObjCProtocolRefListInfo(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	@ReferenceInfo(type = CXIdxObjCProtocolRefInfo.class, depth = 2)
-	public native ConstPtr<ConstPtr<CXIdxObjCProtocolRefInfo>> protocols();
+    @Generated
+    public CXIdxObjCProtocolRefListInfo(ConstPtr<ConstPtr<CXIdxObjCProtocolRefInfo>> protocols, int numProtocols) {
+        super(CXIdxObjCProtocolRefListInfo.class);
+        setProtocols(protocols);
+        setNumProtocols(numProtocols);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setProtocols(
-			ConstPtr<ConstPtr<CXIdxObjCProtocolRefInfo>> value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    @ReferenceInfo(type = CXIdxObjCProtocolRefInfo.class, depth = 2)
+    public native ConstPtr<ConstPtr<CXIdxObjCProtocolRefInfo>> protocols();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native int numProtocols();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setProtocols(ConstPtr<ConstPtr<CXIdxObjCProtocolRefInfo>> value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setNumProtocols(int value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native int numProtocols();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setNumProtocols(int value);
 }

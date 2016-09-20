@@ -16,7 +16,7 @@ limitations under the License.
 
 package org.clang.struct;
 
-
+import org.clang.c.clang;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -26,47 +26,47 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
-import org.clang.c.clang;
 
 @Generated
 @Structure()
 public final class CXIdxLoc extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXIdxLoc() {
-		super(CXIdxLoc.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXIdxLoc(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXIdxLoc() {
+        super(CXIdxLoc.class);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true, count = 2)
-	public native VoidPtr ptr_data(int field_idx);
+    @Generated
+    protected CXIdxLoc(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false, count = 2)
-	public native void setPtr_data(VoidPtr value, int field_idx);
+    @Generated
+    @StructureField(order = 0, isGetter = true, count = 2)
+    public native VoidPtr ptr_data(int field_idx);
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native int int_data();
+    @Generated
+    @StructureField(order = 0, isGetter = false, count = 2)
+    public native void setPtr_data(VoidPtr value, int field_idx);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setInt_data(int value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native int int_data();
 
-	/* Comfort java methods */
-	public VoidPtr getFileLocation() {
-		@SuppressWarnings("unchecked")
-		Ptr<VoidPtr> file_ref = (Ptr<VoidPtr>) PtrFactory.newPointerPtr(Void.class, 2, 1, true, false);
-		clang.clang_indexLoc_getFileLocation(this, null, file_ref, null, null, null);
-		return file_ref.get();
-	}
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setInt_data(int value);
+
+    /* Comfort java methods */
+    public VoidPtr getFileLocation() {
+        @SuppressWarnings("unchecked") Ptr<VoidPtr> file_ref = (Ptr<VoidPtr>)PtrFactory
+                .newPointerPtr(Void.class, 2, 1, true, false);
+        clang.clang_indexLoc_getFileLocation(this, null, file_ref, null, null, null);
+        return file_ref.get();
+    }
 }

@@ -16,23 +16,17 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXTypeLayoutError {
-	@Generated
-	private CXTypeLayoutError() {
-	}
+    @Generated public static final int Invalid = 0xFFFFFFFF;
+    @Generated public static final int Incomplete = 0xFFFFFFFE;
+    @Generated public static final int Dependent = 0xFFFFFFFD;
+    @Generated public static final int NotConstantSize = 0xFFFFFFFC;
+    @Generated public static final int InvalidFieldName = 0xFFFFFFFB;
 
-	@Generated
-	public static final int Invalid = 0xFFFFFFFF;
-	@Generated
-	public static final int Incomplete = 0xFFFFFFFE;
-	@Generated
-	public static final int Dependent = 0xFFFFFFFD;
-	@Generated
-	public static final int NotConstantSize = 0xFFFFFFFC;
-	@Generated
-	public static final int InvalidFieldName = 0xFFFFFFFB;
+    @Generated
+    private CXTypeLayoutError() {
+    }
 }

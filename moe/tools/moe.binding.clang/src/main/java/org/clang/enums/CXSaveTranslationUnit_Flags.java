@@ -16,15 +16,13 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXSaveTranslationUnit_Flags {
-	@Generated
-	private CXSaveTranslationUnit_Flags() {
-	}
+    @Generated public static final int CXSaveTranslationUnit_None = 0x00000000;
 
-	@Generated
-	public static final int CXSaveTranslationUnit_None = 0x00000000;
+    @Generated
+    private CXSaveTranslationUnit_Flags() {
+    }
 }

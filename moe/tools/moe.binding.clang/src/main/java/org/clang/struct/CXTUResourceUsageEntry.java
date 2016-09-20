@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -27,41 +26,42 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure()
 public final class CXTUResourceUsageEntry extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXTUResourceUsageEntry() {
-		super(CXTUResourceUsageEntry.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXTUResourceUsageEntry(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXTUResourceUsageEntry() {
+        super(CXTUResourceUsageEntry.class);
+    }
 
-	@Generated
-	public CXTUResourceUsageEntry(int kind, long amount) {
-		super(CXTUResourceUsageEntry.class);
-		setKind(kind);
-		setAmount(amount);
-	}
+    @Generated
+    protected CXTUResourceUsageEntry(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native int kind();
+    @Generated
+    public CXTUResourceUsageEntry(int kind, long amount) {
+        super(CXTUResourceUsageEntry.class);
+        setKind(kind);
+        setAmount(amount);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setKind(int value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native int kind();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native long amount();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setKind(int value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setAmount(long value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native long amount();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setAmount(long value);
 }

@@ -16,21 +16,16 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXNullabilityKind {
-	@Generated
-	private CXNullabilityKind() {
-	}
+    @Generated public static final int NonNull = 0x00000000;
+    @Generated public static final int Nullable = 0x00000001;
+    @Generated public static final int Unspecified = 0x00000002;
+    @Generated public static final int Invalid = 0x00000064;
 
-	@Generated
-	public static final int NonNull = 0x00000000;
-	@Generated
-	public static final int Nullable = 0x00000001;
-	@Generated
-	public static final int Unspecified = 0x00000002;
-	@Generated
-	public static final int Invalid = 0x00000064;
+    @Generated
+    private CXNullabilityKind() {
+    }
 }

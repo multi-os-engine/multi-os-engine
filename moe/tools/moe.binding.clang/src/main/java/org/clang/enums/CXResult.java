@@ -16,19 +16,15 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXResult {
-	@Generated
-	private CXResult() {
-	}
+    @Generated public static final int CXResult_Success = 0x00000000;
+    @Generated public static final int CXResult_Invalid = 0x00000001;
+    @Generated public static final int CXResult_VisitBreak = 0x00000002;
 
-	@Generated
-	public static final int CXResult_Success = 0x00000000;
-	@Generated
-	public static final int CXResult_Invalid = 0x00000001;
-	@Generated
-	public static final int CXResult_VisitBreak = 0x00000002;
+    @Generated
+    private CXResult() {
+    }
 }

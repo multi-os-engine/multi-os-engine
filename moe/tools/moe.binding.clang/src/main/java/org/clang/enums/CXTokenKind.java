@@ -16,23 +16,17 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXTokenKind {
-	@Generated
-	private CXTokenKind() {
-	}
+    @Generated public static final int Punctuation = 0x00000000;
+    @Generated public static final int Keyword = 0x00000001;
+    @Generated public static final int Identifier = 0x00000002;
+    @Generated public static final int Literal = 0x00000003;
+    @Generated public static final int Comment = 0x00000004;
 
-	@Generated
-	public static final int Punctuation = 0x00000000;
-	@Generated
-	public static final int Keyword = 0x00000001;
-	@Generated
-	public static final int Identifier = 0x00000002;
-	@Generated
-	public static final int Literal = 0x00000003;
-	@Generated
-	public static final int Comment = 0x00000004;
+    @Generated
+    private CXTokenKind() {
+    }
 }

@@ -16,7 +16,7 @@ limitations under the License.
 
 package org.clang.struct;
 
-
+import org.clang.c.clang;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -24,65 +24,65 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.ConstVoidPtr;
-import org.clang.c.clang;
 
 @Generated
 @Structure()
 public final class CXString extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXString() {
-		super(CXString.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXString(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXString() {
+        super(CXString.class);
+    }
 
-	@Generated
-	public CXString(ConstVoidPtr data, int private_flags) {
-		super(CXString.class);
-		setData(data);
-		setPrivate_flags(private_flags);
-	}
+    @Generated
+    protected CXString(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native ConstVoidPtr data();
+    @Generated
+    public CXString(ConstVoidPtr data, int private_flags) {
+        super(CXString.class);
+        setData(data);
+        setPrivate_flags(private_flags);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setData(ConstVoidPtr value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native ConstVoidPtr data();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native int private_flags();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setData(ConstVoidPtr value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setPrivate_flags(int value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native int private_flags();
 
-	/* General java methods */
-	@Override
-	public String toString() {
-		String str = clang.clang_getCString(this);
-		if (str == null) {
-			throw new IllegalStateException("Failed to retrieve string from CXString");
-		}
-		return str;
-	}
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setPrivate_flags(int value);
 
-	/* Comfort java methods */
-	public void dispose() {
-		clang.clang_disposeString(this);
-	}
+    /* General java methods */
+    @Override
+    public String toString() {
+        String str = clang.clang_getCString(this);
+        if (str == null) {
+            throw new IllegalStateException("Failed to retrieve string from CXString");
+        }
+        return str;
+    }
 
-	public String getCString() {
-		return clang.clang_getCString(this);
-	}
+    /* Comfort java methods */
+    public void dispose() {
+        clang.clang_disposeString(this);
+    }
+
+    public String getCString() {
+        return clang.clang_getCString(this);
+    }
 }

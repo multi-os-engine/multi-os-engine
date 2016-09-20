@@ -25,7 +25,8 @@ public class StdHeaders {
 
     private static String PATH;
 
-    private StdHeaders() {}
+    private StdHeaders() {
+    }
 
     public static synchronized String getPath() {
         if (PATH != null) {

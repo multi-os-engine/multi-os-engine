@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -29,45 +28,45 @@ import org.moe.natj.general.ann.UncertainReturn;
 @Generated
 @Structure()
 public final class CXIdxObjCContainerDeclInfo extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXIdxObjCContainerDeclInfo() {
-		super(CXIdxObjCContainerDeclInfo.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXIdxObjCContainerDeclInfo(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXIdxObjCContainerDeclInfo() {
+        super(CXIdxObjCContainerDeclInfo.class);
+    }
 
-	@Generated
-	public CXIdxObjCContainerDeclInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo declInfo,
-			int kind) {
-		super(CXIdxObjCContainerDeclInfo.class);
-		setDeclInfo(declInfo);
-		setKind(kind);
-	}
+    @Generated
+    protected CXIdxObjCContainerDeclInfo(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxDeclInfo declInfo();
+    @Generated
+    public CXIdxObjCContainerDeclInfo(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo declInfo, int kind) {
+        super(CXIdxObjCContainerDeclInfo.class);
+        setDeclInfo(declInfo);
+        setKind(kind);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setDeclInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxDeclInfo declInfo();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native int kind();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setDeclInfo(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setKind(int value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native int kind();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setKind(int value);
 }

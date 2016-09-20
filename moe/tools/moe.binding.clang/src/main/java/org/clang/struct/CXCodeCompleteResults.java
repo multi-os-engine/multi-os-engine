@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -29,45 +28,46 @@ import org.moe.natj.general.ann.UncertainReturn;
 @Generated
 @Structure()
 public final class CXCodeCompleteResults extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXCodeCompleteResults() {
-		super(CXCodeCompleteResults.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXCodeCompleteResults(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXCodeCompleteResults() {
+        super(CXCodeCompleteResults.class);
+    }
 
-	@Generated
-	public CXCodeCompleteResults(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXCompletionResult Results,
-			int NumResults) {
-		super(CXCodeCompleteResults.class);
-		setResults(Results);
-		setNumResults(NumResults);
-	}
+    @Generated
+    protected CXCodeCompleteResults(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXCompletionResult Results();
+    @Generated
+    public CXCodeCompleteResults(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXCompletionResult Results,
+            int NumResults) {
+        super(CXCodeCompleteResults.class);
+        setResults(Results);
+        setNumResults(NumResults);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setResults(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXCompletionResult value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXCompletionResult Results();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native int NumResults();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setResults(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXCompletionResult value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setNumResults(int value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native int NumResults();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setNumResults(int value);
 }

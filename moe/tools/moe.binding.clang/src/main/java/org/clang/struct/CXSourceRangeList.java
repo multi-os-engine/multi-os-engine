@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -29,45 +28,45 @@ import org.moe.natj.general.ann.UncertainReturn;
 @Generated
 @Structure()
 public final class CXSourceRangeList extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXSourceRangeList() {
-		super(CXSourceRangeList.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXSourceRangeList(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXSourceRangeList() {
+        super(CXSourceRangeList.class);
+    }
 
-	@Generated
-	public CXSourceRangeList(
-			int count,
-			@UncertainArgument("Options: reference, array Fallback: reference") CXSourceRange ranges) {
-		super(CXSourceRangeList.class);
-		setCount(count);
-		setRanges(ranges);
-	}
+    @Generated
+    protected CXSourceRangeList(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native int count();
+    @Generated
+    public CXSourceRangeList(int count,
+            @UncertainArgument("Options: reference, array Fallback: reference") CXSourceRange ranges) {
+        super(CXSourceRangeList.class);
+        setCount(count);
+        setRanges(ranges);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setCount(int value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native int count();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXSourceRange ranges();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setCount(int value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setRanges(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXSourceRange value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXSourceRange ranges();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setRanges(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXSourceRange value);
 }

@@ -16,29 +16,20 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CX_StorageClass {
-	@Generated
-	private CX_StorageClass() {
-	}
+    @Generated public static final int Invalid = 0x00000000;
+    @Generated public static final int None = 0x00000001;
+    @Generated public static final int Extern = 0x00000002;
+    @Generated public static final int Static = 0x00000003;
+    @Generated public static final int PrivateExtern = 0x00000004;
+    @Generated public static final int OpenCLWorkGroupLocal = 0x00000005;
+    @Generated public static final int Auto = 0x00000006;
+    @Generated public static final int Register = 0x00000007;
 
-	@Generated
-	public static final int Invalid = 0x00000000;
-	@Generated
-	public static final int None = 0x00000001;
-	@Generated
-	public static final int Extern = 0x00000002;
-	@Generated
-	public static final int Static = 0x00000003;
-	@Generated
-	public static final int PrivateExtern = 0x00000004;
-	@Generated
-	public static final int OpenCLWorkGroupLocal = 0x00000005;
-	@Generated
-	public static final int Auto = 0x00000006;
-	@Generated
-	public static final int Register = 0x00000007;
+    @Generated
+    private CX_StorageClass() {
+    }
 }

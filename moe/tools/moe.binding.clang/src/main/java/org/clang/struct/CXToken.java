@@ -16,7 +16,8 @@ limitations under the License.
 
 package org.clang.struct;
 
-
+import org.clang.c.clang;
+import org.clang.opaque.CXTranslationUnit;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -24,49 +25,48 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.VoidPtr;
-import org.clang.c.clang;
-import org.clang.opaque.CXTranslationUnit;
 
 @Generated
 @Structure()
 public final class CXToken extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXToken() {
-		super(CXToken.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXToken(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXToken() {
+        super(CXToken.class);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true, count = 4)
-	public native int int_data(int field_idx);
+    @Generated
+    protected CXToken(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false, count = 4)
-	public native void setInt_data(int value, int field_idx);
+    @Generated
+    @StructureField(order = 0, isGetter = true, count = 4)
+    public native int int_data(int field_idx);
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native VoidPtr ptr_data();
+    @Generated
+    @StructureField(order = 0, isGetter = false, count = 4)
+    public native void setInt_data(int value, int field_idx);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setPtr_data(VoidPtr value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native VoidPtr ptr_data();
 
-	/* Comfort java methods */
-	public int getTokenKind() {
-		return clang.clang_getTokenKind(this);
-	}
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setPtr_data(VoidPtr value);
 
-	public CXString getTokenSpelling(CXTranslationUnit tu) {
-		return clang.clang_getTokenSpelling(tu, this);
-	}
+    /* Comfort java methods */
+    public int getTokenKind() {
+        return clang.clang_getTokenKind(this);
+    }
+
+    public CXString getTokenSpelling(CXTranslationUnit tu) {
+        return clang.clang_getTokenSpelling(tu, this);
+    }
 }

@@ -16,7 +16,7 @@ limitations under the License.
 
 package org.clang.struct;
 
-
+import org.clang.opaque.CXTranslationUnit;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -24,46 +24,46 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.ConstVoidPtr;
-import org.clang.opaque.CXTranslationUnit;
 
 @Generated
 @Structure()
 public final class CXComment extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXComment() {
-		super(CXComment.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXComment(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXComment() {
+        super(CXComment.class);
+    }
 
-	@Generated
-	public CXComment(ConstVoidPtr ASTNode, CXTranslationUnit TranslationUnit) {
-		super(CXComment.class);
-		setASTNode(ASTNode);
-		setTranslationUnit(TranslationUnit);
-	}
+    @Generated
+    protected CXComment(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native ConstVoidPtr ASTNode();
+    @Generated
+    public CXComment(ConstVoidPtr ASTNode, CXTranslationUnit TranslationUnit) {
+        super(CXComment.class);
+        setASTNode(ASTNode);
+        setTranslationUnit(TranslationUnit);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setASTNode(ConstVoidPtr value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native ConstVoidPtr ASTNode();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native CXTranslationUnit TranslationUnit();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setASTNode(ConstVoidPtr value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setTranslationUnit(CXTranslationUnit value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native CXTranslationUnit TranslationUnit();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setTranslationUnit(CXTranslationUnit value);
 }

@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -29,59 +28,60 @@ import org.moe.natj.general.ann.UncertainReturn;
 @Generated
 @Structure()
 public final class CXIdxObjCInterfaceDeclInfo extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXIdxObjCInterfaceDeclInfo() {
-		super(CXIdxObjCInterfaceDeclInfo.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXIdxObjCInterfaceDeclInfo(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXIdxObjCInterfaceDeclInfo() {
+        super(CXIdxObjCInterfaceDeclInfo.class);
+    }
 
-	@Generated
-	public CXIdxObjCInterfaceDeclInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxObjCContainerDeclInfo containerInfo,
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxBaseClassInfo superInfo,
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxObjCProtocolRefListInfo protocols) {
-		super(CXIdxObjCInterfaceDeclInfo.class);
-		setContainerInfo(containerInfo);
-		setSuperInfo(superInfo);
-		setProtocols(protocols);
-	}
+    @Generated
+    protected CXIdxObjCInterfaceDeclInfo(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxObjCContainerDeclInfo containerInfo();
+    @Generated
+    public CXIdxObjCInterfaceDeclInfo(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxObjCContainerDeclInfo containerInfo,
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxBaseClassInfo superInfo,
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxObjCProtocolRefListInfo protocols) {
+        super(CXIdxObjCInterfaceDeclInfo.class);
+        setContainerInfo(containerInfo);
+        setSuperInfo(superInfo);
+        setProtocols(protocols);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setContainerInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxObjCContainerDeclInfo value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxObjCContainerDeclInfo containerInfo();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxBaseClassInfo superInfo();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setContainerInfo(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxObjCContainerDeclInfo value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setSuperInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxBaseClassInfo value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxBaseClassInfo superInfo();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxObjCProtocolRefListInfo protocols();
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setSuperInfo(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxBaseClassInfo value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setProtocols(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxObjCProtocolRefListInfo value);
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxObjCProtocolRefListInfo protocols();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setProtocols(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxObjCProtocolRefListInfo value);
 }

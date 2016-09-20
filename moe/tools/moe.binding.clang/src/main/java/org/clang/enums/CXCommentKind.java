@@ -16,39 +16,25 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXCommentKind {
-	@Generated
-	private CXCommentKind() {
-	}
+    @Generated public static final int Null = 0x00000000;
+    @Generated public static final int Text = 0x00000001;
+    @Generated public static final int InlineCommand = 0x00000002;
+    @Generated public static final int HTMLStartTag = 0x00000003;
+    @Generated public static final int HTMLEndTag = 0x00000004;
+    @Generated public static final int Paragraph = 0x00000005;
+    @Generated public static final int BlockCommand = 0x00000006;
+    @Generated public static final int ParamCommand = 0x00000007;
+    @Generated public static final int TParamCommand = 0x00000008;
+    @Generated public static final int VerbatimBlockCommand = 0x00000009;
+    @Generated public static final int VerbatimBlockLine = 0x0000000A;
+    @Generated public static final int VerbatimLine = 0x0000000B;
+    @Generated public static final int FullComment = 0x0000000C;
 
-	@Generated
-	public static final int Null = 0x00000000;
-	@Generated
-	public static final int Text = 0x00000001;
-	@Generated
-	public static final int InlineCommand = 0x00000002;
-	@Generated
-	public static final int HTMLStartTag = 0x00000003;
-	@Generated
-	public static final int HTMLEndTag = 0x00000004;
-	@Generated
-	public static final int Paragraph = 0x00000005;
-	@Generated
-	public static final int BlockCommand = 0x00000006;
-	@Generated
-	public static final int ParamCommand = 0x00000007;
-	@Generated
-	public static final int TParamCommand = 0x00000008;
-	@Generated
-	public static final int VerbatimBlockCommand = 0x00000009;
-	@Generated
-	public static final int VerbatimBlockLine = 0x0000000A;
-	@Generated
-	public static final int VerbatimLine = 0x0000000B;
-	@Generated
-	public static final int FullComment = 0x0000000C;
+    @Generated
+    private CXCommentKind() {
+    }
 }

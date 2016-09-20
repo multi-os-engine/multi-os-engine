@@ -16,19 +16,15 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXCodeComplete_Flags {
-	@Generated
-	private CXCodeComplete_Flags() {
-	}
+    @Generated public static final int Macros = 0x00000001;
+    @Generated public static final int CodePatterns = 0x00000002;
+    @Generated public static final int BriefComments = 0x00000004;
 
-	@Generated
-	public static final int Macros = 0x00000001;
-	@Generated
-	public static final int CodePatterns = 0x00000002;
-	@Generated
-	public static final int BriefComments = 0x00000004;
+    @Generated
+    private CXCodeComplete_Flags() {
+    }
 }

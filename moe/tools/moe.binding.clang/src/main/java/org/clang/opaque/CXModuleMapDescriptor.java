@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.opaque;
 
-
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.OpaquePtr;
 import org.moe.natj.general.Pointer;
@@ -27,11 +26,11 @@ import org.moe.natj.general.ptr.impl.OpaquePtrImpl;
 @Generated
 @Runtime(CRuntime.class)
 public interface CXModuleMapDescriptor extends OpaquePtr {
-	@Generated
-	static class Impl extends OpaquePtrImpl implements CXModuleMapDescriptor {
-		@Generated
-		protected Impl(Pointer peer) {
-			super(peer);
-		}
-	}
+    @Generated
+    static class Impl extends OpaquePtrImpl implements CXModuleMapDescriptor {
+        @Generated
+        protected Impl(Pointer peer) {
+            super(peer);
+        }
+    }
 }

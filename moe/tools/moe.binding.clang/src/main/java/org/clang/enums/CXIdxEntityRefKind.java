@@ -16,17 +16,14 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXIdxEntityRefKind {
-	@Generated
-	private CXIdxEntityRefKind() {
-	}
+    @Generated public static final int CXIdxEntityRef_Direct = 0x00000001;
+    @Generated public static final int CXIdxEntityRef_Implicit = 0x00000002;
 
-	@Generated
-	public static final int CXIdxEntityRef_Direct = 0x00000001;
-	@Generated
-	public static final int CXIdxEntityRef_Implicit = 0x00000002;
+    @Generated
+    private CXIdxEntityRefKind() {
+    }
 }

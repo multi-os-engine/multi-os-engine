@@ -16,21 +16,16 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXLanguageKind {
-	@Generated
-	private CXLanguageKind() {
-	}
+    @Generated public static final int Invalid = 0x00000000;
+    @Generated public static final int C = 0x00000001;
+    @Generated public static final int ObjC = 0x00000002;
+    @Generated public static final int CPlusPlus = 0x00000003;
 
-	@Generated
-	public static final int Invalid = 0x00000000;
-	@Generated
-	public static final int C = 0x00000001;
-	@Generated
-	public static final int ObjC = 0x00000002;
-	@Generated
-	public static final int CPlusPlus = 0x00000003;
+    @Generated
+    private CXLanguageKind() {
+    }
 }

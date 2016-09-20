@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -29,55 +28,58 @@ import org.moe.natj.general.ann.UncertainReturn;
 @Generated
 @Structure()
 public final class CXUnsavedFile extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXUnsavedFile() {
-		super(CXUnsavedFile.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXUnsavedFile(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXUnsavedFile() {
+        super(CXUnsavedFile.class);
+    }
 
-	@UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native String Filename();
+    @Generated
+    protected CXUnsavedFile(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setFilename(@UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
+    @Generated
+    public CXUnsavedFile(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String Filename,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String Contents,
+            long Length) {
+        super(CXUnsavedFile.class);
+        setFilename(Filename);
+        setContents(Contents);
+        setLength(Length);
+    }
 
-	@UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native String Contents();
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native String Filename();
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setContents(@UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setFilename(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	public native long Length();
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native String Contents();
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setLength(long value);
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setContents(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
-	@Generated
-	public CXUnsavedFile(
-			@UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String Filename,
-			@UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String Contents,
-			long Length) {
-		super(CXUnsavedFile.class);
-		setFilename(Filename);
-		setContents(Contents);
-		setLength(Length);
-	}
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    public native long Length();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setLength(long value);
 }

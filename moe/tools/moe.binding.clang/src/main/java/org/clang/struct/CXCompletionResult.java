@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -28,41 +27,42 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CXCompletionResult extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXCompletionResult() {
-		super(CXCompletionResult.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXCompletionResult(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXCompletionResult() {
+        super(CXCompletionResult.class);
+    }
 
-	@Generated
-	public CXCompletionResult(int CursorKind, VoidPtr CompletionString) {
-		super(CXCompletionResult.class);
-		setCursorKind(CursorKind);
-		setCompletionString(CompletionString);
-	}
+    @Generated
+    protected CXCompletionResult(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native int CursorKind();
+    @Generated
+    public CXCompletionResult(int CursorKind, VoidPtr CompletionString) {
+        super(CXCompletionResult.class);
+        setCursorKind(CursorKind);
+        setCompletionString(CompletionString);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setCursorKind(int value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native int CursorKind();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native VoidPtr CompletionString();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setCursorKind(int value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setCompletionString(VoidPtr value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native VoidPtr CompletionString();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setCompletionString(VoidPtr value);
 }

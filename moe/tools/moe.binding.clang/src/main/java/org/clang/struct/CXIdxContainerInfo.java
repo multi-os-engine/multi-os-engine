@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -28,33 +27,34 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure()
 public final class CXIdxContainerInfo extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXIdxContainerInfo() {
-		super(CXIdxContainerInfo.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXIdxContainerInfo(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXIdxContainerInfo() {
+        super(CXIdxContainerInfo.class);
+    }
 
-	@Generated
-	public CXIdxContainerInfo(@ByValue CXCursor cursor) {
-		super(CXIdxContainerInfo.class);
-		setCursor(cursor);
-	}
+    @Generated
+    protected CXIdxContainerInfo(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	@ByValue
-	public native CXCursor cursor();
+    @Generated
+    public CXIdxContainerInfo(@ByValue CXCursor cursor) {
+        super(CXIdxContainerInfo.class);
+        setCursor(cursor);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setCursor(@ByValue CXCursor value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    @ByValue
+    public native CXCursor cursor();
+
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setCursor(@ByValue CXCursor value);
 }

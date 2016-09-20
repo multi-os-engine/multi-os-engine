@@ -16,33 +16,22 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXTemplateArgumentKind {
-	@Generated
-	private CXTemplateArgumentKind() {
-	}
+    @Generated public static final int Null = 0x00000000;
+    @Generated public static final int Type = 0x00000001;
+    @Generated public static final int Declaration = 0x00000002;
+    @Generated public static final int NullPtr = 0x00000003;
+    @Generated public static final int Integral = 0x00000004;
+    @Generated public static final int Template = 0x00000005;
+    @Generated public static final int TemplateExpansion = 0x00000006;
+    @Generated public static final int Expression = 0x00000007;
+    @Generated public static final int Pack = 0x00000008;
+    @Generated public static final int Invalid = 0x00000009;
 
-	@Generated
-	public static final int Null = 0x00000000;
-	@Generated
-	public static final int Type = 0x00000001;
-	@Generated
-	public static final int Declaration = 0x00000002;
-	@Generated
-	public static final int NullPtr = 0x00000003;
-	@Generated
-	public static final int Integral = 0x00000004;
-	@Generated
-	public static final int Template = 0x00000005;
-	@Generated
-	public static final int TemplateExpansion = 0x00000006;
-	@Generated
-	public static final int Expression = 0x00000007;
-	@Generated
-	public static final int Pack = 0x00000008;
-	@Generated
-	public static final int Invalid = 0x00000009;
+    @Generated
+    private CXTemplateArgumentKind() {
+    }
 }

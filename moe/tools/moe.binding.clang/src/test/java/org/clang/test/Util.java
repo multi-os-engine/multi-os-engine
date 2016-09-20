@@ -23,19 +23,19 @@ import java.io.InputStream;
 
 public class Util {
 
-	public static String getPathForTempResource(String file) {
-		File temp = null;
-		try {
-			ClassLoader classLoader = Util.class.getClassLoader();
+    public static String getPathForTempResource(String file) {
+        File temp = null;
+        try {
+            ClassLoader classLoader = Util.class.getClassLoader();
 
-			InputStream is = classLoader.getResourceAsStream(file);
+            InputStream is = classLoader.getResourceAsStream(file);
             if (is == null) {
                 throw new IOException();
             }
             try {
                 byte buffer[] = new byte[2048];
                 int read;
-                
+
                 temp = File.createTempFile("tempfile", ".m");
                 temp.deleteOnExit();
                 FileOutputStream os = new FileOutputStream(temp);
@@ -49,13 +49,13 @@ public class Util {
                 }
             } finally {
                 is.close();
-			}
-		} catch (IOException e) {
-			System.err.println("An error occured during printing the file.");
-		}
+            }
+        } catch (IOException e) {
+            System.err.println("An error occured during printing the file.");
+        }
 
-		if (temp == null) return null;
-		return temp.getAbsolutePath();
-	}
+        if (temp == null) return null;
+        return temp.getAbsolutePath();
+    }
 
 }

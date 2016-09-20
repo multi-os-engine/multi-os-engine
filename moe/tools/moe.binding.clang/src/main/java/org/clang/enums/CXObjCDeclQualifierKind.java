@@ -16,27 +16,19 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXObjCDeclQualifierKind {
-	@Generated
-	private CXObjCDeclQualifierKind() {
-	}
+    @Generated public static final int CXObjCDeclQualifier_None = 0x00000000;
+    @Generated public static final int CXObjCDeclQualifier_In = 0x00000001;
+    @Generated public static final int CXObjCDeclQualifier_Inout = 0x00000002;
+    @Generated public static final int CXObjCDeclQualifier_Out = 0x00000004;
+    @Generated public static final int CXObjCDeclQualifier_Bycopy = 0x00000008;
+    @Generated public static final int CXObjCDeclQualifier_Byref = 0x00000010;
+    @Generated public static final int CXObjCDeclQualifier_Oneway = 0x00000020;
 
-	@Generated
-	public static final int CXObjCDeclQualifier_None = 0x00000000;
-	@Generated
-	public static final int CXObjCDeclQualifier_In = 0x00000001;
-	@Generated
-	public static final int CXObjCDeclQualifier_Inout = 0x00000002;
-	@Generated
-	public static final int CXObjCDeclQualifier_Out = 0x00000004;
-	@Generated
-	public static final int CXObjCDeclQualifier_Bycopy = 0x00000008;
-	@Generated
-	public static final int CXObjCDeclQualifier_Byref = 0x00000010;
-	@Generated
-	public static final int CXObjCDeclQualifier_Oneway = 0x00000020;
+    @Generated
+    private CXObjCDeclQualifierKind() {
+    }
 }

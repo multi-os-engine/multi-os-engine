@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -28,42 +27,43 @@ import org.moe.natj.general.ptr.ConstVoidPtr;
 @Generated
 @Structure()
 public final class CXSourceRange extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXSourceRange() {
-		super(CXSourceRange.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXSourceRange(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXSourceRange() {
+        super(CXSourceRange.class);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true, count = 2)
-	public native ConstVoidPtr ptr_data(int field_idx);
+    @Generated
+    protected CXSourceRange(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false, count = 2)
-	public native void setPtr_data(ConstVoidPtr value, int field_idx);
+    @Generated
+    @StructureField(order = 0, isGetter = true, count = 2)
+    public native ConstVoidPtr ptr_data(int field_idx);
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native int begin_int_data();
+    @Generated
+    @StructureField(order = 0, isGetter = false, count = 2)
+    public native void setPtr_data(ConstVoidPtr value, int field_idx);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setBegin_int_data(int value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native int begin_int_data();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	public native int end_int_data();
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setBegin_int_data(int value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setEnd_int_data(int value);
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    public native int end_int_data();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setEnd_int_data(int value);
 }

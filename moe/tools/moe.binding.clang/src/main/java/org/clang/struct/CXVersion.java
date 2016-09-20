@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -27,50 +26,51 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure()
 public final class CXVersion extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXVersion() {
-		super(CXVersion.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXVersion(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXVersion() {
+        super(CXVersion.class);
+    }
 
-	@Generated
-	public CXVersion(int Major, int Minor, int Subminor) {
-		super(CXVersion.class);
-		setMajor(Major);
-		setMinor(Minor);
-		setSubminor(Subminor);
-	}
+    @Generated
+    protected CXVersion(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native int Major();
+    @Generated
+    public CXVersion(int Major, int Minor, int Subminor) {
+        super(CXVersion.class);
+        setMajor(Major);
+        setMinor(Minor);
+        setSubminor(Subminor);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setMajor(int value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native int Major();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native int Minor();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setMajor(int value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setMinor(int value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native int Minor();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	public native int Subminor();
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setMinor(int value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setSubminor(int value);
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    public native int Subminor();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setSubminor(int value);
 }

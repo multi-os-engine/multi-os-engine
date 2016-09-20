@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -31,68 +30,70 @@ import org.moe.natj.general.ptr.VoidPtr;
 @Generated
 @Structure()
 public final class CXIdxIncludedFileInfo extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXIdxIncludedFileInfo() {
-		super(CXIdxIncludedFileInfo.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXIdxIncludedFileInfo(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXIdxIncludedFileInfo() {
+        super(CXIdxIncludedFileInfo.class);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	@ByValue
-	public native CXIdxLoc hashLoc();
+    @Generated
+    protected CXIdxIncludedFileInfo(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setHashLoc(@ByValue CXIdxLoc value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    @ByValue
+    public native CXIdxLoc hashLoc();
 
-	@UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native String filename();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setHashLoc(@ByValue CXIdxLoc value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setFilename(@UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native String filename();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	public native VoidPtr file();
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setFilename(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setFile(VoidPtr value);
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    public native VoidPtr file();
 
-	@Generated
-	@StructureField(order = 3, isGetter = true)
-	public native int isImport();
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setFile(VoidPtr value);
 
-	@Generated
-	@StructureField(order = 3, isGetter = false)
-	public native void setIsImport(int value);
+    @Generated
+    @StructureField(order = 3, isGetter = true)
+    public native int isImport();
 
-	@Generated
-	@StructureField(order = 4, isGetter = true)
-	public native int isAngled();
+    @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setIsImport(int value);
 
-	@Generated
-	@StructureField(order = 4, isGetter = false)
-	public native void setIsAngled(int value);
+    @Generated
+    @StructureField(order = 4, isGetter = true)
+    public native int isAngled();
 
-	@Generated
-	@StructureField(order = 5, isGetter = true)
-	public native int isModuleImport();
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setIsAngled(int value);
 
-	@Generated
-	@StructureField(order = 5, isGetter = false)
-	public native void setIsModuleImport(int value);
+    @Generated
+    @StructureField(order = 5, isGetter = true)
+    public native int isModuleImport();
+
+    @Generated
+    @StructureField(order = 5, isGetter = false)
+    public native void setIsModuleImport(int value);
 }

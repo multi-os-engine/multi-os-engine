@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -27,26 +26,27 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure()
 public final class CXFileUniqueID extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXFileUniqueID() {
-		super(CXFileUniqueID.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXFileUniqueID(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXFileUniqueID() {
+        super(CXFileUniqueID.class);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true, count = 3)
-	public native long data(int field_idx);
+    @Generated
+    protected CXFileUniqueID(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false, count = 3)
-	public native void setData(long value, int field_idx);
+    @Generated
+    @StructureField(order = 0, isGetter = true, count = 3)
+    public native long data(int field_idx);
+
+    @Generated
+    @StructureField(order = 0, isGetter = false, count = 3)
+    public native void setData(long value, int field_idx);
 }

@@ -16,23 +16,17 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXErrorCode {
-	@Generated
-	private CXErrorCode() {
-	}
+    @Generated public static final int Success = 0x00000000;
+    @Generated public static final int Failure = 0x00000001;
+    @Generated public static final int Crashed = 0x00000002;
+    @Generated public static final int InvalidArguments = 0x00000003;
+    @Generated public static final int ASTReadError = 0x00000004;
 
-	@Generated
-	public static final int Success = 0x00000000;
-	@Generated
-	public static final int Failure = 0x00000001;
-	@Generated
-	public static final int Crashed = 0x00000002;
-	@Generated
-	public static final int InvalidArguments = 0x00000003;
-	@Generated
-	public static final int ASTReadError = 0x00000004;
+    @Generated
+    private CXErrorCode() {
+    }
 }

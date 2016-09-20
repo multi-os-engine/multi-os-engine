@@ -16,21 +16,16 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXGlobalOptFlags {
-	@Generated
-	private CXGlobalOptFlags() {
-	}
+    @Generated public static final int CXGlobalOpt_None = 0x00000000;
+    @Generated public static final int CXGlobalOpt_ThreadBackgroundPriorityForIndexing = 0x00000001;
+    @Generated public static final int CXGlobalOpt_ThreadBackgroundPriorityForEditing = 0x00000002;
+    @Generated public static final int CXGlobalOpt_ThreadBackgroundPriorityForAll = 0x00000003;
 
-	@Generated
-	public static final int CXGlobalOpt_None = 0x00000000;
-	@Generated
-	public static final int CXGlobalOpt_ThreadBackgroundPriorityForIndexing = 0x00000001;
-	@Generated
-	public static final int CXGlobalOpt_ThreadBackgroundPriorityForEditing = 0x00000002;
-	@Generated
-	public static final int CXGlobalOpt_ThreadBackgroundPriorityForAll = 0x00000003;
+    @Generated
+    private CXGlobalOptFlags() {
+    }
 }

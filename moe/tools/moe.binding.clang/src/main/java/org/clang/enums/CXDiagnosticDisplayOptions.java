@@ -16,25 +16,18 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXDiagnosticDisplayOptions {
-	@Generated
-	private CXDiagnosticDisplayOptions() {
-	}
+    @Generated public static final int SourceLocation = 0x00000001;
+    @Generated public static final int Column = 0x00000002;
+    @Generated public static final int SourceRanges = 0x00000004;
+    @Generated public static final int Option = 0x00000008;
+    @Generated public static final int CategoryId = 0x00000010;
+    @Generated public static final int CategoryName = 0x00000020;
 
-	@Generated
-	public static final int SourceLocation = 0x00000001;
-	@Generated
-	public static final int Column = 0x00000002;
-	@Generated
-	public static final int SourceRanges = 0x00000004;
-	@Generated
-	public static final int Option = 0x00000008;
-	@Generated
-	public static final int CategoryId = 0x00000010;
-	@Generated
-	public static final int CategoryName = 0x00000020;
+    @Generated
+    private CXDiagnosticDisplayOptions() {
+    }
 }

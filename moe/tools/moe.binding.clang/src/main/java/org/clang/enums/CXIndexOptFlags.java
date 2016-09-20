@@ -16,25 +16,18 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXIndexOptFlags {
-	@Generated
-	private CXIndexOptFlags() {
-	}
+    @Generated public static final int CXIndexOpt_None = 0x00000000;
+    @Generated public static final int CXIndexOpt_SuppressRedundantRefs = 0x00000001;
+    @Generated public static final int CXIndexOpt_IndexFunctionLocalSymbols = 0x00000002;
+    @Generated public static final int CXIndexOpt_IndexImplicitTemplateInstantiations = 0x00000004;
+    @Generated public static final int CXIndexOpt_SuppressWarnings = 0x00000008;
+    @Generated public static final int CXIndexOpt_SkipParsedBodiesInSession = 0x00000010;
 
-	@Generated
-	public static final int CXIndexOpt_None = 0x00000000;
-	@Generated
-	public static final int CXIndexOpt_SuppressRedundantRefs = 0x00000001;
-	@Generated
-	public static final int CXIndexOpt_IndexFunctionLocalSymbols = 0x00000002;
-	@Generated
-	public static final int CXIndexOpt_IndexImplicitTemplateInstantiations = 0x00000004;
-	@Generated
-	public static final int CXIndexOpt_SuppressWarnings = 0x00000008;
-	@Generated
-	public static final int CXIndexOpt_SkipParsedBodiesInSession = 0x00000010;
+    @Generated
+    private CXIndexOptFlags() {
+    }
 }

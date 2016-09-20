@@ -16,21 +16,16 @@ limitations under the License.
 
 package org.clang.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXCommentInlineCommandRenderKind {
-	@Generated
-	private CXCommentInlineCommandRenderKind() {
-	}
+    @Generated public static final int Normal = 0x00000000;
+    @Generated public static final int Bold = 0x00000001;
+    @Generated public static final int Monospaced = 0x00000002;
+    @Generated public static final int Emphasized = 0x00000003;
 
-	@Generated
-	public static final int Normal = 0x00000000;
-	@Generated
-	public static final int Bold = 0x00000001;
-	@Generated
-	public static final int Monospaced = 0x00000002;
-	@Generated
-	public static final int Emphasized = 0x00000003;
+    @Generated
+    private CXCommentInlineCommandRenderKind() {
+    }
 }

@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.clang.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -30,56 +29,56 @@ import org.moe.natj.general.ann.UncertainReturn;
 @Generated
 @Structure()
 public final class CXIdxBaseClassInfo extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public CXIdxBaseClassInfo() {
-		super(CXIdxBaseClassInfo.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CXIdxBaseClassInfo(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public CXIdxBaseClassInfo() {
+        super(CXIdxBaseClassInfo.class);
+    }
 
-	@Generated
-	public CXIdxBaseClassInfo(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo base,
-			@ByValue CXCursor cursor, @ByValue CXIdxLoc loc) {
-		super(CXIdxBaseClassInfo.class);
-		setBase(base);
-		setCursor(cursor);
-		setLoc(loc);
-	}
+    @Generated
+    protected CXIdxBaseClassInfo(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	@UncertainReturn("Options: reference, array Fallback: reference")
-	public native CXIdxEntityInfo base();
+    @Generated
+    public CXIdxBaseClassInfo(@UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo base,
+            @ByValue CXCursor cursor, @ByValue CXIdxLoc loc) {
+        super(CXIdxBaseClassInfo.class);
+        setBase(base);
+        setCursor(cursor);
+        setLoc(loc);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setBase(
-			@UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public native CXIdxEntityInfo base();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	@ByValue
-	public native CXCursor cursor();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setBase(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setCursor(@ByValue CXCursor value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    @ByValue
+    public native CXCursor cursor();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	@ByValue
-	public native CXIdxLoc loc();
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setCursor(@ByValue CXCursor value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setLoc(@ByValue CXIdxLoc value);
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    @ByValue
+    public native CXIdxLoc loc();
+
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setLoc(@ByValue CXIdxLoc value);
 }
