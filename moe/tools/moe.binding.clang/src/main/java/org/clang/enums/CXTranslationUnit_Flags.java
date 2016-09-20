@@ -29,6 +29,8 @@ public final class CXTranslationUnit_Flags {
     @Generated public static final int CXXChainedPCH = 0x00000020;
     @Generated public static final int SkipFunctionBodies = 0x00000040;
     @Generated public static final int IncludeBriefCommentsInCodeCompletion = 0x00000080;
+    @Generated public static final int CreatePreambleOnFirstParse = 0x00000100;
+    @Generated public static final int KeepGoing = 0x00000200;
 
     @Generated
     private CXTranslationUnit_Flags() {

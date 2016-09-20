@@ -124,61 +124,61 @@ public final class IndexerCallbacks extends StructObject {
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_abortQuery {
+    public interface Function_abortQuery {
         @Generated
-        public int call_abortQuery(VoidPtr arg0, VoidPtr arg1);
+        int call_abortQuery(VoidPtr arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_diagnostic {
+    public interface Function_diagnostic {
         @Generated
-        public void call_diagnostic(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_diagnostic(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_enteredMainFile {
+    public interface Function_enteredMainFile {
         @Generated
-        public VoidPtr call_enteredMainFile(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        VoidPtr call_enteredMainFile(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_ppIncludedFile {
+    public interface Function_ppIncludedFile {
         @Generated
-        public VoidPtr call_ppIncludedFile(VoidPtr arg0,
+        VoidPtr call_ppIncludedFile(VoidPtr arg0,
                 @UncertainArgument("Options: reference, array Fallback: reference") CXIdxIncludedFileInfo arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_importedASTFile {
+    public interface Function_importedASTFile {
         @Generated
-        public VoidPtr call_importedASTFile(VoidPtr arg0,
+        VoidPtr call_importedASTFile(VoidPtr arg0,
                 @UncertainArgument("Options: reference, array Fallback: reference") CXIdxImportedASTFileInfo arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_startedTranslationUnit {
+    public interface Function_startedTranslationUnit {
         @Generated
-        public VoidPtr call_startedTranslationUnit(VoidPtr arg0, VoidPtr arg1);
+        VoidPtr call_startedTranslationUnit(VoidPtr arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_indexDeclaration {
+    public interface Function_indexDeclaration {
         @Generated
-        public void call_indexDeclaration(VoidPtr arg0,
+        void call_indexDeclaration(VoidPtr arg0,
                 @UncertainArgument("Options: reference, array Fallback: reference") CXIdxDeclInfo arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_indexEntityReference {
+    public interface Function_indexEntityReference {
         @Generated
-        public void call_indexEntityReference(VoidPtr arg0,
+        void call_indexEntityReference(VoidPtr arg0,
                 @UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityRefInfo arg1);
     }
 }

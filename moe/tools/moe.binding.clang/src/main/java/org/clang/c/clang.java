@@ -43,6 +43,7 @@ import org.clang.struct.CXSourceLocation;
 import org.clang.struct.CXSourceRange;
 import org.clang.struct.CXSourceRangeList;
 import org.clang.struct.CXString;
+import org.clang.struct.CXStringSet;
 import org.clang.struct.CXTUResourceUsage;
 import org.clang.struct.CXToken;
 import org.clang.struct.CXType;
@@ -1628,54 +1629,158 @@ public final class clang {
     @CFunction
     public static native int clang_cursor_getEvaluatedValue(@ByValue CXCursor arg1, LongPtr arg2);
 
+    @Generated
+    @CFunction
+    public static native void clang_disposeStringSet(
+            @UncertainArgument("Options: reference, array Fallback: reference") CXStringSet set);
+
+    @Generated
+    @CFunction
+    public static native int clang_parseTranslationUnit2FullArgv(VoidPtr CIdx,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String source_filename,
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] command_line_args,
+            int num_command_line_args,
+            @UncertainArgument("Options: reference, array Fallback: reference") CXUnsavedFile unsaved_files,
+            int num_unsaved_files, int options, Ptr<CXTranslationUnit> out_TU);
+
+    @Generated
+    @CFunction
+    public static native int clang_Cursor_hasAttrs(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    public static native int clang_getCursorVisibility(@ByValue CXCursor cursor);
+
+    @Generated
+    @CFunction
+    public static native int clang_Cursor_isMacroFunctionLike(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    public static native int clang_Cursor_isMacroBuiltin(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    public static native int clang_Cursor_isFunctionInlined(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CXString clang_Type_getObjCEncoding(@ByValue CXType type);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public static native CXStringSet clang_Cursor_getCXXManglings(@ByValue CXCursor arg1);
+
+    @Generated
+    @CFunction
+    public static native int clang_CXXConstructor_isConvertingConstructor(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    public static native int clang_CXXConstructor_isCopyConstructor(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    public static native int clang_CXXConstructor_isDefaultConstructor(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    public static native int clang_CXXConstructor_isMoveConstructor(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    public static native int clang_CXXField_isMutable(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    public static native int clang_CXXMethod_isDefaulted(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr clang_Cursor_Evaluate(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
+    public static native int clang_EvalResult_getKind(VoidPtr E);
+
+    @Generated
+    @CFunction
+    public static native int clang_EvalResult_getAsInt(VoidPtr E);
+
+    @Generated
+    @CFunction
+    public static native double clang_EvalResult_getAsDouble(VoidPtr E);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    public static native String clang_EvalResult_getAsStr(VoidPtr E);
+
+    @Generated
+    @CFunction
+    public static native void clang_EvalResult_dispose(VoidPtr E);
+
+    @Generated
+    @CFunction
+    public static native int clang_indexSourceFileFullArgv(VoidPtr arg1, VoidPtr client_data,
+            @UncertainArgument("Options: reference, array Fallback: reference") IndexerCallbacks index_callbacks,
+            int index_callbacks_size, int index_options,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String source_filename,
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] command_line_args,
+            int num_command_line_args,
+            @UncertainArgument("Options: reference, array Fallback: reference") CXUnsavedFile unsaved_files,
+            int num_unsaved_files, Ptr<CXTranslationUnit> out_TU, int TU_options);
+
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_clang_visitChildren {
+    public interface Function_clang_visitChildren {
         @Generated
-        public int call_clang_visitChildren(@ByValue CXCursor arg0, @ByValue CXCursor arg1, VoidPtr arg2);
+        int call_clang_visitChildren(@ByValue CXCursor arg0, @ByValue CXCursor arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Block_clang_visitChildrenWithBlock {
+    public interface Block_clang_visitChildrenWithBlock {
         @Generated
-        public int call_clang_visitChildrenWithBlock(@ByValue CXCursor arg0, @ByValue CXCursor arg1);
+        int call_clang_visitChildrenWithBlock(@ByValue CXCursor arg0, @ByValue CXCursor arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_clang_executeOnThread {
+    public interface Function_clang_executeOnThread {
         @Generated
-        public void call_clang_executeOnThread(VoidPtr arg0);
+        void call_clang_executeOnThread(VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_clang_getInclusions {
+    public interface Function_clang_getInclusions {
         @Generated
-        public void call_clang_getInclusions(VoidPtr arg0,
+        void call_clang_getInclusions(VoidPtr arg0,
                 @UncertainArgument("Options: reference, array Fallback: reference") CXSourceLocation arg1, int arg2,
                 VoidPtr arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Block_clang_findReferencesInFileWithBlock {
+    public interface Block_clang_findReferencesInFileWithBlock {
         @Generated
-        public int call_clang_findReferencesInFileWithBlock(@ByValue CXCursor arg0, @ByValue CXSourceRange arg1);
+        int call_clang_findReferencesInFileWithBlock(@ByValue CXCursor arg0, @ByValue CXSourceRange arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Block_clang_findIncludesInFileWithBlock {
+    public interface Block_clang_findIncludesInFileWithBlock {
         @Generated
-        public int call_clang_findIncludesInFileWithBlock(@ByValue CXCursor arg0, @ByValue CXSourceRange arg1);
+        int call_clang_findIncludesInFileWithBlock(@ByValue CXCursor arg0, @ByValue CXSourceRange arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_clang_Type_visitFields {
+    public interface Function_clang_Type_visitFields {
         @Generated
-        public int call_clang_Type_visitFields(@ByValue CXCursor arg0, VoidPtr arg1);
+        int call_clang_Type_visitFields(@ByValue CXCursor arg0, VoidPtr arg1);
     }
 }

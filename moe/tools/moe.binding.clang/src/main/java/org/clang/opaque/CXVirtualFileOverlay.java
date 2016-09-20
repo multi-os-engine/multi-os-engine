@@ -27,7 +27,7 @@ import org.moe.natj.general.ptr.impl.OpaquePtrImpl;
 @Runtime(CRuntime.class)
 public interface CXVirtualFileOverlay extends OpaquePtr {
     @Generated
-    static class Impl extends OpaquePtrImpl implements CXVirtualFileOverlay {
+    class Impl extends OpaquePtrImpl implements CXVirtualFileOverlay {
         @Generated
         protected Impl(Pointer peer) {
             super(peer);

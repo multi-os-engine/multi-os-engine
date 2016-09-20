@@ -96,6 +96,42 @@
   {
     "c-function": [
       {
+        "clang_Cursor_getCXXManglings": [
+          {
+            "location": [
+              {
+                "-1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "clang_EvalResult_getAsStr": [
+          {
+            "location": [
+              {
+                "-1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "clang_ModuleMapDescriptor_setFrameworkModuleName": [
           {
             "location": [
@@ -616,6 +652,24 @@
         ]
       },
       {
+        "clang_disposeStringSet": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "clang_disposeTokens": [
           {
             "location": [
@@ -900,6 +954,54 @@
       },
       {
         "clang_indexSourceFile": [
+          {
+            "location": [
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              },
+              {
+                "5": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "6": {
+                  "match": {
+                    "options": [
+                      "java.string.array",
+                      "c.const-byte-ptr-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "8": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "clang_indexSourceFileFullArgv": [
           {
             "location": [
               {
@@ -1300,6 +1402,44 @@
       },
       {
         "clang_parseTranslationUnit2": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "2": {
+                  "match": {
+                    "options": [
+                      "java.string.array",
+                      "c.const-byte-ptr-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "4": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "clang_parseTranslationUnit2FullArgv": [
           {
             "location": [
               {
@@ -1792,6 +1932,24 @@
             "field": [
               {
                 "ranges": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "CXStringSet": [
+          {
+            "field": [
+              {
+                "Strings": {
                   "match": {
                     "options": [
                       "reference",

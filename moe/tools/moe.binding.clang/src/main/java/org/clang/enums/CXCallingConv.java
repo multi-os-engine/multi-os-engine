@@ -34,6 +34,9 @@ public final class CXCallingConv {
     @Generated public static final int X86VectorCall = 0x0000000C;
     @Generated public static final int Invalid = 0x00000064;
     @Generated public static final int Unexposed = 0x000000C8;
+    @Generated public static final int Swift = 0x0000000D;
+    @Generated public static final int PreserveMost = 0x0000000E;
+    @Generated public static final int PreserveAll = 0x0000000F;
 
     @Generated
     private CXCallingConv() {

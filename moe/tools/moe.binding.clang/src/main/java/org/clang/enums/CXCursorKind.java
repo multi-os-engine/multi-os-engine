@@ -128,7 +128,7 @@ public final class CXCursorKind {
     @Generated public static final int LambdaExpr = 0x00000090;
     @Generated public static final int ObjCBoolLiteralExpr = 0x00000091;
     @Generated public static final int ObjCSelfExpr = 0x00000092;
-    @Generated public static final int LastExpr = 0x00000092;
+    @Generated public static final int LastExpr = 0x00000094;
     @Generated public static final int FirstStmt = 0x000000C8;
     @Generated public static final int UnexposedStmt = 0x000000C8;
     @Generated public static final int LabelStmt = 0x000000C9;
@@ -189,7 +189,7 @@ public final class CXCursorKind {
     @Generated public static final int OMPCancellationPointDirective = 0x000000FF;
     @Generated public static final int OMPCancelDirective = 0x00000100;
     @Generated public static final int OMPTargetDataDirective = 0x00000101;
-    @Generated public static final int LastStmt = 0x00000101;
+    @Generated public static final int LastStmt = 0x0000010D;
     @Generated public static final int TranslationUnit = 0x0000012C;
     @Generated public static final int FirstAttr = 0x00000190;
     @Generated public static final int UnexposedAttr = 0x00000190;
@@ -209,7 +209,7 @@ public final class CXCursorKind {
     @Generated public static final int CUDAGlobalAttr = 0x0000019E;
     @Generated public static final int CUDAHostAttr = 0x0000019F;
     @Generated public static final int CUDASharedAttr = 0x000001A0;
-    @Generated public static final int LastAttr = 0x000001A0;
+    @Generated public static final int LastAttr = 0x000001A3;
     @Generated public static final int PreprocessingDirective = 0x000001F4;
     @Generated public static final int MacroDefinition = 0x000001F5;
     @Generated public static final int MacroExpansion = 0x000001F6;
@@ -219,8 +219,27 @@ public final class CXCursorKind {
     @Generated public static final int LastPreprocessing = 0x000001F7;
     @Generated public static final int ModuleImportDecl = 0x00000258;
     @Generated public static final int FirstExtraDecl = 0x00000258;
-    @Generated public static final int LastExtraDecl = 0x00000258;
+    @Generated public static final int LastExtraDecl = 0x0000025A;
     @Generated public static final int OverloadCandidate = 0x000002BC;
+    @Generated public static final int OMPArraySectionExpr = 0x00000093;
+    @Generated public static final int ObjCAvailabilityCheckExpr = 0x00000094;
+    @Generated public static final int OMPTaskLoopDirective = 0x00000102;
+    @Generated public static final int OMPTaskLoopSimdDirective = 0x00000103;
+    @Generated public static final int OMPDistributeDirective = 0x00000104;
+    @Generated public static final int OMPTargetEnterDataDirective = 0x00000105;
+    @Generated public static final int OMPTargetExitDataDirective = 0x00000106;
+    @Generated public static final int OMPTargetParallelDirective = 0x00000107;
+    @Generated public static final int OMPTargetParallelForDirective = 0x00000108;
+    @Generated public static final int OMPTargetUpdateDirective = 0x00000109;
+    @Generated public static final int OMPDistributeParallelForDirective = 0x0000010A;
+    @Generated public static final int OMPDistributeParallelForSimdDirective = 0x0000010B;
+    @Generated public static final int OMPDistributeSimdDirective = 0x0000010C;
+    @Generated public static final int OMPTargetParallelForSimdDirective = 0x0000010D;
+    @Generated public static final int VisibilityAttr = 0x000001A1;
+    @Generated public static final int DLLExport = 0x000001A2;
+    @Generated public static final int DLLImport = 0x000001A3;
+    @Generated public static final int TypeAliasTemplateDecl = 0x00000259;
+    @Generated public static final int StaticAssert = 0x0000025A;
 
     @Generated
     private CXCursorKind() {

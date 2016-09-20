@@ -27,7 +27,7 @@ import org.moe.natj.general.ptr.impl.OpaquePtrImpl;
 @Runtime(CRuntime.class)
 public interface CXCursorSet extends OpaquePtr {
     @Generated
-    static class Impl extends OpaquePtrImpl implements CXCursorSet {
+    class Impl extends OpaquePtrImpl implements CXCursorSet {
         @Generated
         protected Impl(Pointer peer) {
             super(peer);

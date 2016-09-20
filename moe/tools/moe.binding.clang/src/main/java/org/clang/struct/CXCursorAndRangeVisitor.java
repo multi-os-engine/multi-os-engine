@@ -73,8 +73,8 @@ public final class CXCursorAndRangeVisitor extends StructObject {
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_visit {
+    public interface Function_visit {
         @Generated
-        public int call_visit(VoidPtr arg0, @ByValue CXCursor arg1, @ByValue CXSourceRange arg2);
+        int call_visit(VoidPtr arg0, @ByValue CXCursor arg1, @ByValue CXSourceRange arg2);
     }
 }

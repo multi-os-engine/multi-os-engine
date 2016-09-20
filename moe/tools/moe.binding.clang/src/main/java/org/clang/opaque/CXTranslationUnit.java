@@ -27,7 +27,7 @@ import org.moe.natj.general.ptr.impl.OpaquePtrImpl;
 @Runtime(CRuntime.class)
 public interface CXTranslationUnit extends OpaquePtr {
     @Generated
-    static class Impl extends OpaquePtrImpl implements CXTranslationUnit {
+    class Impl extends OpaquePtrImpl implements CXTranslationUnit {
         @Generated
         protected Impl(Pointer peer) {
             super(peer);
