@@ -17,8 +17,8 @@ limitations under the License.
 package org.moe.natjgen.test.pointers;
 
 public class VoidPointers extends AbstractPointersTest {
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp(Void.class.getSimpleName(), "void", "VoidPtr", "ConstVoidPtr");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp(Void.class.getSimpleName(), "void", "VoidPtr", "ConstVoidPtr");
+    }
 }

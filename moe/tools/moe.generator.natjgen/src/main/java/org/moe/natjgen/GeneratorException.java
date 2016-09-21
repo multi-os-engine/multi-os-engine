@@ -18,17 +18,17 @@ package org.moe.natjgen;
 
 public class GeneratorException extends Exception {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	public GeneratorException() {
-		super();
-	}
+    public GeneratorException() {
+        super();
+    }
 
-	public GeneratorException(String message) {
-		super(message);
-	}
+    public GeneratorException(String message) {
+        super(message);
+    }
 
 }

@@ -16,37 +16,36 @@ limitations under the License.
 
 package org.moe.natjgen.test.structs;
 
-import org.moe.natjgen.Constants;
-import org.moe.natjgen.test.AbstractNatJGenTest;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.NormalAnnotation;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
+import org.moe.natjgen.Constants;
 
 public class SimpleLongStruct extends AbstractStructTest {
 
-	public void test_getter_f1() {
-		MethodDeclaration method = getMethod("f1");
-		assertExistsAndGenerated(method);
+    public void test_getter_f1() {
+        MethodDeclaration method = getMethod("f1");
+        assertExistsAndGenerated(method);
 
-		assertPrimitiveType(method.getReturnType2(), "long");
+        assertPrimitiveType(method.getReturnType2(), "long");
 
-		assertNumberOfArguments(method, 0);
+        assertNumberOfArguments(method, 0);
 
-		NormalAnnotation sfa = assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
-		assertNormalAnnotationHasValue(sfa, "isGetter", true);
-	}
+        NormalAnnotation sfa = assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
+        assertNormalAnnotationHasValue(sfa, "isGetter", true);
+    }
 
-	public void test_setter_f1() {
-		MethodDeclaration method = getMethod("setF1");
-		assertExistsAndGenerated(method);
+    public void test_setter_f1() {
+        MethodDeclaration method = getMethod("setF1");
+        assertExistsAndGenerated(method);
 
-		assertPrimitiveType(method.getReturnType2(), "void");
+        assertPrimitiveType(method.getReturnType2(), "void");
 
-		assertNumberOfArguments(method, 1);
-		assertPrimitiveType(((SingleVariableDeclaration)method.parameters().get(0)).getType(), "long");
+        assertNumberOfArguments(method, 1);
+        assertPrimitiveType(((SingleVariableDeclaration)method.parameters().get(0)).getType(), "long");
 
-		NormalAnnotation sfa = assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
-		assertNormalAnnotationHasValue(sfa, "isGetter", false);
-	}
+        NormalAnnotation sfa = assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
+        assertNormalAnnotationHasValue(sfa, "isGetter", false);
+    }
 
 }

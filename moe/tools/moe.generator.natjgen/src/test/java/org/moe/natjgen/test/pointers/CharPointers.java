@@ -17,8 +17,8 @@ limitations under the License.
 package org.moe.natjgen.test.pointers;
 
 public class CharPointers extends AbstractPointersTest {
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp(Character.class.getSimpleName(), "moe_unichar_t", "CharPtr", "ConstCharPtr");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp(Character.class.getSimpleName(), "moe_unichar_t", "CharPtr", "ConstCharPtr");
+    }
 }

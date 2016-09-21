@@ -18,13 +18,13 @@ package org.moe.natjgen;
 
 public class UnsupportedTypeException extends GeneratorException {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	public UnsupportedTypeException(Type type, String resolverName) {
-		super(resolverName + " doesn't support type [" + type.toString() + "]");
-	}
+    public UnsupportedTypeException(Type type, String resolverName) {
+        super(resolverName + " doesn't support type [" + type.toString() + "]");
+    }
 
 }

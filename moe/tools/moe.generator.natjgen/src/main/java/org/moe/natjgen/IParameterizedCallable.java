@@ -20,24 +20,24 @@ import java.util.ArrayList;
 
 public interface IParameterizedCallable extends ICallable {
 
-	/**
-	 * Returns the argument list of the callable
-	 * 
-	 * @return arguments
-	 */
-	public ArrayList<CalleeArgument> getArguments();
+    /**
+     * Returns the argument list of the callable
+     *
+     * @return arguments
+     */
+    public ArrayList<CalleeArgument> getArguments();
 
-	/**
-	 * Returns true if the last parameter is variadic
-	 * 
-	 * @return true if the last parameter is variadic
-	 */
-	public boolean isVariadic();
+    /**
+     * Returns true if the last parameter is variadic
+     *
+     * @return true if the last parameter is variadic
+     */
+    public boolean isVariadic();
 
-	/**
-	 * Returns the name of the variadic argument
-	 * 
-	 * @return the name of the variadic argument
-	 */
-	public String getVariadicName();
+    /**
+     * Returns the name of the variadic argument
+     *
+     * @return the name of the variadic argument
+     */
+    public String getVariadicName();
 }

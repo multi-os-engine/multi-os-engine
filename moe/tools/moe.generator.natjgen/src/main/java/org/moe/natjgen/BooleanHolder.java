@@ -21,8 +21,8 @@ package org.moe.natjgen;
  */
 public final class BooleanHolder {
 
-	/**
-	 * Value
-	 */
-	boolean value = false;
+    /**
+     * Value
+     */
+    boolean value = false;
 }

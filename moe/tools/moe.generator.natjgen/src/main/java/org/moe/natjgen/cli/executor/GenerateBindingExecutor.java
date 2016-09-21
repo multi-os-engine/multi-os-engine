@@ -16,6 +16,13 @@ limitations under the License.
 
 package org.moe.natjgen.cli.executor;
 
+import org.moe.natjgen.Configuration;
+import org.moe.natjgen.Indexer;
+import org.moe.natjgen.cli.NatjGenConfig;
+import org.moe.natjgen.cli.NatjGenUIConfig;
+import org.moe.natjgen.helper.MOEJavaProject;
+import org.moe.natjgen.nativelibs.NatJGenNativeLoader;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -26,138 +33,122 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.moe.natjgen.cli.NatjGenConfig;
-import org.moe.natjgen.cli.NatjGenUIConfig;
-import org.moe.natjgen.Configuration;
-import org.moe.natjgen.Indexer;
-import org.moe.natjgen.helper.MOEJavaProject;
-import org.moe.natjgen.nativelibs.NatJGenNativeLoader;
-
 public class GenerateBindingExecutor implements IExecutor {
 
-	private String pathToProject;
-	private String packageName;
-	
-	private String headers;
-	private boolean isCreateFromPrototype;
-	
-	public GenerateBindingExecutor(){
-		
-	}
+    private String pathToProject;
+    private String packageName;
 
-	
-	public GenerateBindingExecutor(String pathToProject, String packageName, String headers,
-	        boolean isCreateFromPrototype) {
-		super();
-		this.pathToProject = pathToProject;
-		this.packageName = packageName;
-		this.headers = headers;
-		this.isCreateFromPrototype = isCreateFromPrototype;
-	}
+    private String headers;
+    private boolean isCreateFromPrototype;
 
+    public GenerateBindingExecutor() {
 
+    }
 
-	public void setPathToProject(String pathToProject) {
-		this.pathToProject = pathToProject;
-	}
+    public GenerateBindingExecutor(String pathToProject, String packageName, String headers,
+            boolean isCreateFromPrototype) {
+        super();
+        this.pathToProject = pathToProject;
+        this.packageName = packageName;
+        this.headers = headers;
+        this.isCreateFromPrototype = isCreateFromPrototype;
+    }
 
-	public void setPackageName(String packageName) {
-		this.packageName = packageName;
-	}
+    public void setPathToProject(String pathToProject) {
+        this.pathToProject = pathToProject;
+    }
 
-	public void setHeaders(String headers) {
-		this.headers = headers;
-	}
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
 
+    public void setHeaders(String headers) {
+        this.headers = headers;
+    }
 
+    public void setCreateFromPrototype(boolean isCreateFromPrototype) {
+        this.isCreateFromPrototype = isCreateFromPrototype;
+    }
 
-	public void setCreateFromPrototype(boolean isCreateFromPrototype) {
-		this.isCreateFromPrototype = isCreateFromPrototype;
-	}
+    @Override
+    public void execute() throws IOException {
 
-	@Override
-	public void execute() throws IOException {
+        //collect all header files
+        List<String> result = new ArrayList<String>();
+        if (headers.contains(":")) {
+            String[] headersArray = headers.split(":");
+            for (String header : headersArray) {
+                if (!header.isEmpty()) {
+                    result.add(header.replace(":", ""));
+                }
+            }
+        } else {
+            File tmp = new File(headers);
+            if (tmp.exists()) {
+                if (tmp.isDirectory()) {
+                    result.addAll(getAllFiles(tmp));
+                } else {
+                    result.add(headers);
+                }
+            } else {
+                throw new IOException(String.format("specified header %s does not exists", headers));
+            }
+        }
 
-		//collect all header files
-		List<String> result = new ArrayList<String>();
-		if(headers.contains(":")){
-			String[] headersArray = headers.split(":");
-			for(String header : headersArray){
-				if(!header.isEmpty()){
-					result.add(header.replace(":", ""));
-				}
-			}
-		}
-		else{
-			File tmp = new File(headers);
-			if(tmp.exists()){
-				if(tmp.isDirectory()){
-					result.addAll(getAllFiles(tmp));
-				}else{
-					result.add(headers);
-				}
-			}
-			else{
-				throw new IOException(String.format("specified header %s does not exists", headers));
-			}
-		}
+        // Initialize native libraries
+        NatJGenNativeLoader.initNatives();
 
-		// Initialize native libraries
-		NatJGenNativeLoader.initNatives();
-		
-		// Read arguments
-		String projectName = "";
-		MOEJavaProject project = new MOEJavaProject(projectName, pathToProject);
-		
-		String natJGenBody = null;
-		if(isCreateFromPrototype){
-			for(String file : result){
-				
-				String content = new String(Files.readAllBytes(Paths.get(file)));
-				Pattern interfacePattern = Pattern.compile(".*@\\s*interface\\s*");
-				Matcher interfaceMatcher = interfacePattern.matcher(content);
-				while(interfaceMatcher.find()){
-					String subContent = content.substring(interfaceMatcher.end());
-					int spaceIdx = subContent.indexOf(":");
-					String name = subContent.substring(0, spaceIdx).trim();
-					natJGenBody = NatjGenUIConfig.generateNatjGenFile(packageName, name, Arrays.asList(file));
-					generate(project, natJGenBody);
-				}
-			}
-		}
-		else{
-			natJGenBody = NatjGenConfig.generate(packageName, result);
-			generate(project, natJGenBody);
-		}
-		
-	}
-	
-	private List<String> getAllFiles(File directory){
-		List<String> result = new ArrayList<>();
-		for(File child : directory.listFiles()){
-			if(child.isDirectory()){
-				result.addAll(getAllFiles(child));
-			}
-			else{
-				if(child.getName().endsWith(".h")){
-					result.add(child.getPath());
-				}
-				
-			}
-		}
-		
-		return result;
-	}
-	
-	private boolean generate(final MOEJavaProject project, final String natjgenContent) {
-		Indexer indexer = null;
-		try {
-			indexer = new Indexer(project, Configuration.createFromString(natjgenContent));
-			indexer.generate(null);
-		} catch (Exception e) {
-			return false;
-		}
-		return true;
-	}
+        // Read arguments
+        String projectName = "";
+        MOEJavaProject project = new MOEJavaProject(projectName, pathToProject);
+
+        String natJGenBody = null;
+        if (isCreateFromPrototype) {
+            for (String file : result) {
+
+                String content = new String(Files.readAllBytes(Paths.get(file)));
+                Pattern interfacePattern = Pattern.compile(".*@\\s*interface\\s*");
+                Matcher interfaceMatcher = interfacePattern.matcher(content);
+                while (interfaceMatcher.find()) {
+                    String subContent = content.substring(interfaceMatcher.end());
+                    int spaceIdx = subContent.indexOf(":");
+                    String name = subContent.substring(0, spaceIdx).trim();
+                    natJGenBody = NatjGenUIConfig.generateNatjGenFile(packageName, name, Arrays.asList(file));
+                    generate(project, natJGenBody);
+                }
+            }
+        } else {
+            natJGenBody = NatjGenConfig.generate(packageName, result);
+            generate(project, natJGenBody);
+        }
+
+    }
+
+    private List<String> getAllFiles(File directory) {
+        List<String> result = new ArrayList<>();
+        for (File child : directory.listFiles()) {
+            if (child.isDirectory()) {
+                result.addAll(getAllFiles(child));
+            } else {
+                if (child.getName().endsWith(".h")) {
+                    result.add(child.getPath());
+                }
+
+            }
+        }
+
+        return result;
+    }
+
+    private boolean generate(final MOEJavaProject project, final String natjgenContent) {
+        Indexer indexer = null;
+        try {
+            indexer = new Indexer(project, Configuration.createFromString(natjgenContent));
+            indexer.generate(null);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
 
 }

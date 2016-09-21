@@ -20,120 +20,117 @@ import java.util.ArrayList;
 
 public final class CVariable extends AbstractModelElement implements ICallable {
 
-	/**
-	 * Type of the variable
-	 */
-	private final Type type;
+    /**
+     * Type of the variable
+     */
+    private final Type type;
 
-	/**
-	 * Java name of the variable
-	 */
-	private String javaName = null;
+    /**
+     * Java name of the variable
+     */
+    private String javaName = null;
 
-	/**
-	 * Indicated whether the variable binding code should be generated or not
-	 */
-	private boolean dontGenerate = false;
+    /**
+     * Indicated whether the variable binding code should be generated or not
+     */
+    private boolean dontGenerate = false;
 
-	/**
-	 * Optional value for the variable
-	 */
-	private ConstantValue value;
+    /**
+     * Optional value for the variable
+     */
+    private ConstantValue value;
 
-	/**
-	 * Create a new C variable
-	 * 
-	 * @param name
-	 *            name of the variable
-	 * @param type
-	 *            type of the variable
-	 */
-	public CVariable(String name, Type type) {
-		super(name, true);
+    /**
+     * Create a new C variable
+     *
+     * @param name name of the variable
+     * @param type type of the variable
+     */
+    public CVariable(String name, Type type) {
+        super(name, true);
 
-		// Check values
-		if (type == null) {
-			throw new RuntimeException("Variable type cannot be null!");
-		}
+        // Check values
+        if (type == null) {
+            throw new RuntimeException("Variable type cannot be null!");
+        }
 
-		// Set values
-		this.type = type;
+        // Set values
+        this.type = type;
 
-		// Update helper information
-		updateJavaMethodName();
-	}
+        // Update helper information
+        updateJavaMethodName();
+    }
 
-	public Type getType() {
-		return type;
-	}
+    public Type getType() {
+        return type;
+    }
 
-	public String getJavaName() {
-		return javaName;
-	}
+    public String getJavaName() {
+        return javaName;
+    }
 
-	public boolean getDontGenerate() {
-		return dontGenerate;
-	}
+    public boolean getDontGenerate() {
+        return dontGenerate;
+    }
 
-	public void setDontGenerate() {
-		this.dontGenerate = true;
-	}
+    public void setDontGenerate() {
+        this.dontGenerate = true;
+    }
 
-	public ConstantValue getValue() {
-		return value;
-	}
+    public ConstantValue getValue() {
+        return value;
+    }
 
-	public void setValue(ConstantValue value) {
-		if (this.value != null) {
-			throw new RuntimeException("Variable already has an associated value");
-		}
-		if (value == null) {
-			throw new NullPointerException();
-		}
-		this.value = value;
-	}
+    public void setValue(ConstantValue value) {
+        if (this.value != null) {
+            throw new RuntimeException("Variable already has an associated value");
+        }
+        if (value == null) {
+            throw new NullPointerException();
+        }
+        this.value = value;
+    }
 
-	/**
-	 * Update Java side name of the method
-	 */
-	private void updateJavaMethodName() {
-		javaName = getName();
+    /**
+     * Update Java side name of the method
+     */
+    private void updateJavaMethodName() {
+        javaName = getName();
 
-		// Add '_c' suffix if special case
-		if (JavaRestrictions.isReserved(javaName)) {
-			javaName += "_c";
-		}
-	}
+        // Add '_c' suffix if special case
+        if (JavaRestrictions.isReserved(javaName)) {
+            javaName += "_c";
+        }
+    }
 
-	/**
-	 * Append a suffix to the java name
-	 * 
-	 * @param sfx
-	 *            suffix to append
-	 */
-	public void addJavaSuffix(String sfx) {
-		javaName += sfx;
-	}
+    /**
+     * Append a suffix to the java name
+     *
+     * @param sfx suffix to append
+     */
+    public void addJavaSuffix(String sfx) {
+        javaName += sfx;
+    }
 
-	public void validate(Generator generator) {
-		dontGenerate = dontGenerate | !isSupported(generator, null);
-	}
+    public void validate(Generator generator) {
+        dontGenerate = dontGenerate | !isSupported(generator, null);
+    }
 
-	public boolean isSupported(Generator generator, ArrayList<String> problems) {
-		boolean isSupported = true;
+    public boolean isSupported(Generator generator, ArrayList<String> problems) {
+        boolean isSupported = true;
 
-		ArrayList<String> innerP = problems == null ? null : new ArrayList<String>();
-		if (!type.isSupported(generator, innerP)) {
-			Util.transferProblems("bad variable type", innerP, problems);
-			isSupported = false;
-		}
+        ArrayList<String> innerP = problems == null ? null : new ArrayList<String>();
+        if (!type.isSupported(generator, innerP)) {
+            Util.transferProblems("bad variable type", innerP, problems);
+            isSupported = false;
+        }
 
-		return isSupported;
-	}
+        return isSupported;
+    }
 
-	@Override
-	public String getDefaultRuntime() {
-		return Constants.CRuntimeFQ;
-	}
+    @Override
+    public String getDefaultRuntime() {
+        return Constants.CRuntimeFQ;
+    }
 
 }

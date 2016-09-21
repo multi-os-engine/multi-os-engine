@@ -18,10 +18,10 @@ package org.moe.natjgen.cli.exceptions;
 
 public class WrapNatJGenException extends Exception {
 
-	public WrapNatJGenException(String string) {
-		super(string);
-	}
+    public WrapNatJGenException(String string) {
+        super(string);
+    }
 
-	private static final long serialVersionUID = -2467276494452732779L;
+    private static final long serialVersionUID = -2467276494452732779L;
 
 }

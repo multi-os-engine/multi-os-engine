@@ -16,49 +16,49 @@ limitations under the License.
 
 package org.moe.natjgen.test.c_enums;
 
-import org.moe.natjgen.test.AbstractNatJGenTest;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.PrimitiveType;
+import org.moe.natjgen.test.AbstractNatJGenTest;
 
 public class UCharEnum extends AbstractCEnumTest {
 
-	@Override
-	protected void optionalIgnore() {
-		AbstractNatJGenTest.assumeHasControlMethod_HasSizedEnums();
-	}
+    @Override
+    protected void optionalIgnore() {
+        AbstractNatJGenTest.assumeHasControlMethod_HasSizedEnums();
+    }
 
-	@Override
-	protected String getType() {
-		return "byte";
-	}
+    @Override
+    protected String getType() {
+        return "byte";
+    }
 
-	@Override
-	protected String getZeroValue() {
-		return "0";
-	}
+    @Override
+    protected String getZeroValue() {
+        return "0";
+    }
 
-	@Override
-	protected String getOneValue() {
-		return "1";
-	}
+    @Override
+    protected String getOneValue() {
+        return "1";
+    }
 
-	@Override
-	protected String getMinValue() {
-		return "0";
-	}
+    @Override
+    protected String getMinValue() {
+        return "0";
+    }
 
-	@Override
-	protected String getMaxValue() {
-		return "-1"; // 0xFF
-	}
+    @Override
+    protected String getMaxValue() {
+        return "-1"; // 0xFF
+    }
 
-	@Override
-	public void test_diff() {
-		FieldDeclaration field = getField(diff_name);
-		AbstractNatJGenTest.assertExistsAndGenerated(field);
-		AbstractNatJGenTest.assertPrimitiveType(field.getType(), getType());
+    @Override
+    public void test_diff() {
+        FieldDeclaration field = getField(diff_name);
+        AbstractNatJGenTest.assertExistsAndGenerated(field);
+        AbstractNatJGenTest.assertPrimitiveType(field.getType(), getType());
 
-		AbstractNatJGenTest.assertInitialValue(field, PrimitiveType.BYTE, "85", null, "-86", null);
-	}
+        AbstractNatJGenTest.assertInitialValue(field, PrimitiveType.BYTE, "85", null, "-86", null);
+    }
 
 }

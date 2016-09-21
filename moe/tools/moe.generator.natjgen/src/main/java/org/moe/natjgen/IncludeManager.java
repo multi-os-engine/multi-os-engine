@@ -16,58 +16,56 @@ limitations under the License.
 
 package org.moe.natjgen;
 
+import org.clang.c.clang;
+import org.clang.struct.CXIdxIncludedFileInfo;
+import org.clang.struct.CXIdxLoc;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.clang.c.clang;
-import org.clang.struct.CXIdxIncludedFileInfo;
-import org.clang.struct.CXIdxLoc;
-
 public class IncludeManager {
 
-	Map<String, Set<String>> map = new HashMap<String, Set<String>>();
+    Map<String, Set<String>> map = new HashMap<String, Set<String>>();
 
-	/**
-	 * Callback to the indexer
-	 * 
-	 * @param client
-	 *            additional data
-	 * @param decl
-	 *            currently indexed import
-	 */
-	@SuppressWarnings("unused")
-	private int ppIncludedFile(long client, CXIdxIncludedFileInfo decl) {
-		try {
-			if (decl.isImport() == 0 && decl.isModuleImport() == 0) {
-				return 0;
-			}
-			// #import <Availability.h>
-			// #import <Foundation/Foundation.h>
-			// #include <asl.h>
-			// #include <mach/mach.h>
-			String val = (decl.isImport() == 1) ? "#import <" : "#include <";
-			val += decl.filename() + ">";
+    /**
+     * Callback to the indexer
+     *
+     * @param client additional data
+     * @param decl   currently indexed import
+     */
+    @SuppressWarnings("unused")
+    private int ppIncludedFile(long client, CXIdxIncludedFileInfo decl) {
+        try {
+            if (decl.isImport() == 0 && decl.isModuleImport() == 0) {
+                return 0;
+            }
+            // #import <Availability.h>
+            // #import <Foundation/Foundation.h>
+            // #include <asl.h>
+            // #include <mach/mach.h>
+            String val = (decl.isImport() == 1) ? "#import <" : "#include <";
+            val += decl.filename() + ">";
 
-			CXIdxLoc loc = decl.hashLoc();
-			String key = clang.clang_getFileName(loc.getFileLocation()).toString();
-			Set<String> vals = map.get(key);
-			if (vals == null) {
-				vals = new HashSet<String>();
-				map.put(key, vals);
-			}
-			vals.add(val);
+            CXIdxLoc loc = decl.hashLoc();
+            String key = clang.clang_getFileName(loc.getFileLocation()).toString();
+            Set<String> vals = map.get(key);
+            if (vals == null) {
+                vals = new HashSet<String>();
+                map.put(key, vals);
+            }
+            vals.add(val);
 
-			return 0;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return 1;
-		}
-	}
+            return 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 1;
+        }
+    }
 
-	public Set<String> getIncludesForLocation(String location) {
-		return map.get(location);
-	}
+    public Set<String> getIncludesForLocation(String location) {
+        return map.get(location);
+    }
 
 }

@@ -20,14 +20,14 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 
 public class PrimEmptyArrayStruct extends AbstractStructTest {
 
-	public void test_getter_f1() {
-		MethodDeclaration method = getMethod("f1");
-		assertNull(method);
-	}
+    public void test_getter_f1() {
+        MethodDeclaration method = getMethod("f1");
+        assertNull(method);
+    }
 
-	public void test_setter_f1() {
-		MethodDeclaration method = getMethod("setF1");
-		assertNull(method);
-	}
+    public void test_setter_f1() {
+        MethodDeclaration method = getMethod("setF1");
+        assertNull(method);
+    }
 
 }

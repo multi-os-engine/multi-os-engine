@@ -18,14 +18,14 @@ package org.moe.natjgen.test.helpers;
 
 public class ClassVal {
 
-	private final String clazz;
+    private final String clazz;
 
-	public ClassVal(String clazz) {
-		this.clazz = clazz;
-	}
+    public ClassVal(String clazz) {
+        this.clazz = clazz;
+    }
 
-	public String get() {
-		return clazz;
-	}
+    public String get() {
+        return clazz;
+    }
 
 }

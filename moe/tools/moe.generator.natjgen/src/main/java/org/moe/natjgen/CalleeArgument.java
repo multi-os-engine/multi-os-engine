@@ -21,78 +21,76 @@ package org.moe.natjgen;
  */
 public class CalleeArgument {
 
-	/**
-	 * Name of the argument
-	 */
-	private String name;
+    /**
+     * Name of the argument
+     */
+    private String name;
 
-	/**
-	 * Type of the argument
-	 */
-	private Type type;
+    /**
+     * Type of the argument
+     */
+    private Type type;
 
-	/**
-	 * Additional suffix for the name of the argument (for name collisions)
-	 */
-	private String suffix = "";
+    /**
+     * Additional suffix for the name of the argument (for name collisions)
+     */
+    private String suffix = "";
 
-	/**
-	 * Create a new Argument.
-	 * 
-	 * @param name
-	 *            the name of the argument
-	 * @param type
-	 *            the type of the argument
-	 */
-	public CalleeArgument(String name, Type type) {
-		// Check values
-		if (name == null || name.length() == 0) {
-			throw new RuntimeException("Argument name must have a length greater then 0!");
-		}
-		if (type == null) {
-			throw new RuntimeException("Argument type cannot be null!");
-		}
+    /**
+     * Create a new Argument.
+     *
+     * @param name the name of the argument
+     * @param type the type of the argument
+     */
+    public CalleeArgument(String name, Type type) {
+        // Check values
+        if (name == null || name.length() == 0) {
+            throw new RuntimeException("Argument name must have a length greater then 0!");
+        }
+        if (type == null) {
+            throw new RuntimeException("Argument type cannot be null!");
+        }
 
-		// Set values
-		this.name = name;
-		this.type = type;
+        // Set values
+        this.name = name;
+        this.type = type;
 
-		if (JavaRestrictions.isReserved(this.name)) {
-			pushSuffix();
-		}
-	}
+        if (JavaRestrictions.isReserved(this.name)) {
+            pushSuffix();
+        }
+    }
 
-	/**
-	 * Get the raw name of the argument
-	 * 
-	 * @return argument's name
-	 */
-	public String getRawName() {
-		return name;
-	}
+    /**
+     * Get the raw name of the argument
+     *
+     * @return argument's name
+     */
+    public String getRawName() {
+        return name;
+    }
 
-	/**
-	 * Get the type of the argument
-	 * 
-	 * @return argument's type
-	 */
-	public Type getType() {
-		return type;
-	}
+    /**
+     * Get the type of the argument
+     *
+     * @return argument's type
+     */
+    public Type getType() {
+        return type;
+    }
 
-	/**
-	 * Add additional '_' as suffix for the arguments name
-	 */
-	public void pushSuffix() {
-		suffix += "_";
-	}
+    /**
+     * Add additional '_' as suffix for the arguments name
+     */
+    public void pushSuffix() {
+        suffix += "_";
+    }
 
-	/**
-	 * Get the full name of the argument, contains the additional suffix
-	 * 
-	 * @return argument's full name
-	 */
-	public String getName() {
-		return name + suffix;
-	}
+    /**
+     * Get the full name of the argument, contains the additional suffix
+     *
+     * @return argument's full name
+     */
+    public String getName() {
+        return name + suffix;
+    }
 }

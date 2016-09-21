@@ -20,6 +20,5 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 
 public class WrapNatJTest {
-	@Rule
-	public TemporaryFolder tmpDir = new TemporaryFolder();
+    @Rule public TemporaryFolder tmpDir = new TemporaryFolder();
 }

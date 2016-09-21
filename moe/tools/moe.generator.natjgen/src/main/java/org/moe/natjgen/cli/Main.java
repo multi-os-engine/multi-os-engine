@@ -16,42 +16,42 @@ limitations under the License.
 
 package org.moe.natjgen.cli;
 
-import org.moe.natjgen.cli.executor.IExecutor;
-import org.moe.natjgen.cli.manager.ExecutorManager;
-import org.moe.natjgen.cli.utils.params.OptionsHandler;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.ParseException;
+import org.moe.natjgen.cli.executor.IExecutor;
+import org.moe.natjgen.cli.manager.ExecutorManager;
+import org.moe.natjgen.cli.utils.params.OptionsHandler;
 
 public class Main {
 
-	public static final String WRAP_NATJ_GEN = "wrapnatjgen";
+    public static final String WRAP_NATJ_GEN = "wrapnatjgen";
 
-	public static void main(String[] argc) {
-		if (System.getenv("MOE_HOME") == null) {
-			System.err.println("MOE_HOME env var is not set");
-			System.exit(1);
-		}
-		try {
-			System.out.println("wrapnatjgen running...");
+    public static void main(String[] argc) {
+        if (System.getenv("MOE_HOME") == null) {
+            System.err.println("MOE_HOME env var is not set");
+            System.exit(1);
+        }
+        try {
+            System.out.println("wrapnatjgen running...");
 
-			DefaultParser parser = new DefaultParser();
-			CommandLine cmd = parser.parse(OptionsHandler.getAvalibleOptions(), argc);
+            DefaultParser parser = new DefaultParser();
+            CommandLine cmd = parser.parse(OptionsHandler.getAvalibleOptions(), argc);
 
-			IExecutor executor = ExecutorManager.getExecutorByParams(cmd);
+            IExecutor executor = ExecutorManager.getExecutorByParams(cmd);
 
-			if (executor != null) {
-				executor.execute();
-			}
+            if (executor != null) {
+                executor.execute();
+            }
 
-			System.exit(0);
-		} catch (ParseException e) {
-			System.err.println(e.getMessage());
-			System.exit(1);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			System.exit(-1);
-		}
-	}
+            System.exit(0);
+        } catch (ParseException e) {
+            System.err.println(e.getMessage());
+            System.exit(1);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.exit(-1);
+        }
+    }
 }

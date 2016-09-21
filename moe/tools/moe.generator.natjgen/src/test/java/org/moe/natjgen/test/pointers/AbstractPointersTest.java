@@ -16,322 +16,322 @@ limitations under the License.
 
 package org.moe.natjgen.test.pointers;
 
-import org.moe.natjgen.Constants;
-import org.moe.natjgen.test.AbstractNatJGenTest;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.NormalAnnotation;
+import org.moe.natjgen.Constants;
+import org.moe.natjgen.test.AbstractNatJGenTest;
 
 public abstract class AbstractPointersTest extends AbstractNatJGenTest {
 
-	protected String javaT;
-	protected String nativeT;
-	protected String natjPtrT;
-	protected String natjConstPtrT;
+    protected String javaT;
+    protected String nativeT;
+    protected String natjPtrT;
+    protected String natjConstPtrT;
 
-	protected abstract void setUp() throws Exception;
+    protected abstract void setUp() throws Exception;
 
-	protected boolean baseTypeIsPrimitive() {
-		return true;
-	}
+    protected boolean baseTypeIsPrimitive() {
+        return true;
+    }
 
-	protected void setUp(String javaT, String nativeT, String natjPtrT, String natjConstPtrT) throws Exception {
-		this.javaT = javaT;
-		this.nativeT = nativeT;
-		this.natjPtrT = natjPtrT;
-		this.natjConstPtrT = natjConstPtrT;
-		assertNotNull(this.nativeT);
-		assertNotNull(this.nativeT);
-		assertNotNull(this.natjPtrT);
-		assertNotNull(this.natjConstPtrT);
+    protected void setUp(String javaT, String nativeT, String natjPtrT, String natjConstPtrT) throws Exception {
+        this.javaT = javaT;
+        this.nativeT = nativeT;
+        this.natjPtrT = natjPtrT;
+        this.natjConstPtrT = natjConstPtrT;
+        assertNotNull(this.nativeT);
+        assertNotNull(this.nativeT);
+        assertNotNull(this.natjPtrT);
+        assertNotNull(this.natjConstPtrT);
 
-		setUpClass(null, "c/Globals.java", "Globals");
-	}
+        setUpClass(null, "c/Globals.java", "Globals");
+    }
 
-	public void test_T_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		if (baseTypeIsPrimitive()) {
-			assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		} else {
-			NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-			assertReferenceInfoEquals(refInfo, javaT, 1);
-		}
+    public void test_T_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        if (baseTypeIsPrimitive()) {
+            assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        } else {
+            NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+            assertReferenceInfoEquals(refInfo, javaT, 1);
+        }
 
-		assertEquals(natjPtrT, method.getReturnType2().toString());
-	}
+        assertEquals(natjPtrT, method.getReturnType2().toString());
+    }
 
-	public void test_const_T_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		if (baseTypeIsPrimitive()) {
-			assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		} else {
-			NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-			assertReferenceInfoEquals(refInfo, javaT, 1);
-		}
+    public void test_const_T_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        if (baseTypeIsPrimitive()) {
+            assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        } else {
+            NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+            assertReferenceInfoEquals(refInfo, javaT, 1);
+        }
 
-		assertEquals(natjConstPtrT, method.getReturnType2().toString());
-	}
+        assertEquals(natjConstPtrT, method.getReturnType2().toString());
+    }
 
-	public void test_T_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 2);
+    public void test_T_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 2);
 
-		assertEquals("Ptr<" + natjPtrT + ">", method.getReturnType2().toString());
-	}
+        assertEquals("Ptr<" + natjPtrT + ">", method.getReturnType2().toString());
+    }
 
-	public void test_T_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 2);
+    public void test_T_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 2);
 
-		assertEquals("ConstPtr<" + natjPtrT + ">", method.getReturnType2().toString());
-	}
+        assertEquals("ConstPtr<" + natjPtrT + ">", method.getReturnType2().toString());
+    }
 
-	public void test_const_T_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 2);
+    public void test_const_T_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 2);
 
-		assertEquals("Ptr<" + natjConstPtrT + ">", method.getReturnType2().toString());
-	}
+        assertEquals("Ptr<" + natjConstPtrT + ">", method.getReturnType2().toString());
+    }
 
-	public void test_const_T_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 2);
+    public void test_const_T_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 2);
 
-		assertEquals("ConstPtr<" + natjConstPtrT + ">", method.getReturnType2().toString());
-	}
+        assertEquals("ConstPtr<" + natjConstPtrT + ">", method.getReturnType2().toString());
+    }
 
-	public void test_T_ptr_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 3);
+    public void test_T_ptr_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 3);
 
-		assertEquals("Ptr<Ptr<" + natjPtrT + ">>", method.getReturnType2().toString());
-	}
+        assertEquals("Ptr<Ptr<" + natjPtrT + ">>", method.getReturnType2().toString());
+    }
 
-	public void test_T_ptr_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_const_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 3);
+    public void test_T_ptr_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_const_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 3);
 
-		assertEquals("ConstPtr<Ptr<" + natjPtrT + ">>", method.getReturnType2().toString());
-	}
+        assertEquals("ConstPtr<Ptr<" + natjPtrT + ">>", method.getReturnType2().toString());
+    }
 
-	public void test_T_ptr_const_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 3);
+    public void test_T_ptr_const_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 3);
 
-		assertEquals("Ptr<ConstPtr<" + natjPtrT + ">>", method.getReturnType2().toString());
-	}
+        assertEquals("Ptr<ConstPtr<" + natjPtrT + ">>", method.getReturnType2().toString());
+    }
 
-	public void test_T_ptr_const_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_const_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 3);
+    public void test_T_ptr_const_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_const_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 3);
 
-		assertEquals("ConstPtr<ConstPtr<" + natjPtrT + ">>", method.getReturnType2().toString());
-	}
+        assertEquals("ConstPtr<ConstPtr<" + natjPtrT + ">>", method.getReturnType2().toString());
+    }
 
-	public void test_const_T_ptr_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 3);
+    public void test_const_T_ptr_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 3);
 
-		assertEquals("Ptr<Ptr<" + natjConstPtrT + ">>", method.getReturnType2().toString());
-	}
+        assertEquals("Ptr<Ptr<" + natjConstPtrT + ">>", method.getReturnType2().toString());
+    }
 
-	public void test_const_T_ptr_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_const_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 3);
+    public void test_const_T_ptr_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_const_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 3);
 
-		assertEquals("ConstPtr<Ptr<" + natjConstPtrT + ">>", method.getReturnType2().toString());
-	}
+        assertEquals("ConstPtr<Ptr<" + natjConstPtrT + ">>", method.getReturnType2().toString());
+    }
 
-	public void test_const_T_ptr_const_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 3);
+    public void test_const_T_ptr_const_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 3);
 
-		assertEquals("Ptr<ConstPtr<" + natjConstPtrT + ">>", method.getReturnType2().toString());
-	}
+        assertEquals("Ptr<ConstPtr<" + natjConstPtrT + ">>", method.getReturnType2().toString());
+    }
 
-	public void test_const_T_ptr_const_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_const_ptr_fn_ret");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertReferenceInfoEquals(refInfo, javaT, 3);
+    public void test_const_T_ptr_const_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_const_ptr_fn_ret");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        NormalAnnotation refInfo = assertHasNormalAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertReferenceInfoEquals(refInfo, javaT, 3);
 
-		assertEquals("ConstPtr<ConstPtr<" + natjConstPtrT + ">>", method.getReturnType2().toString());
-	}
+        assertEquals("ConstPtr<ConstPtr<" + natjConstPtrT + ">>", method.getReturnType2().toString());
+    }
 
-	public void test_T_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_T_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals(natjPtrT, getArgType(method, 0).toString());
-	}
+        assertEquals(natjPtrT, getArgType(method, 0).toString());
+    }
 
-	public void test_const_T_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_const_T_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals(natjConstPtrT, getArgType(method, 0).toString());
-	}
+        assertEquals(natjConstPtrT, getArgType(method, 0).toString());
+    }
 
-	public void test_T_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_T_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("Ptr<" + natjPtrT + ">", getArgType(method, 0).toString());
-	}
+        assertEquals("Ptr<" + natjPtrT + ">", getArgType(method, 0).toString());
+    }
 
-	public void test_T_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_T_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("ConstPtr<" + natjPtrT + ">", getArgType(method, 0).toString());
-	}
+        assertEquals("ConstPtr<" + natjPtrT + ">", getArgType(method, 0).toString());
+    }
 
-	public void test_const_T_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_const_T_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("Ptr<" + natjConstPtrT + ">", getArgType(method, 0).toString());
-	}
+        assertEquals("Ptr<" + natjConstPtrT + ">", getArgType(method, 0).toString());
+    }
 
-	public void test_const_T_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_const_T_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("ConstPtr<" + natjConstPtrT + ">", getArgType(method, 0).toString());
-	}
+        assertEquals("ConstPtr<" + natjConstPtrT + ">", getArgType(method, 0).toString());
+    }
 
-	public void test_T_ptr_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_T_ptr_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("Ptr<Ptr<" + natjPtrT + ">>", getArgType(method, 0).toString());
-	}
+        assertEquals("Ptr<Ptr<" + natjPtrT + ">>", getArgType(method, 0).toString());
+    }
 
-	public void test_T_ptr_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_const_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_T_ptr_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_const_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("ConstPtr<Ptr<" + natjPtrT + ">>", getArgType(method, 0).toString());
-	}
+        assertEquals("ConstPtr<Ptr<" + natjPtrT + ">>", getArgType(method, 0).toString());
+    }
 
-	public void test_T_ptr_const_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_T_ptr_const_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("Ptr<ConstPtr<" + natjPtrT + ">>", getArgType(method, 0).toString());
-	}
+        assertEquals("Ptr<ConstPtr<" + natjPtrT + ">>", getArgType(method, 0).toString());
+    }
 
-	public void test_T_ptr_const_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_const_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_T_ptr_const_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_const_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("ConstPtr<ConstPtr<" + natjPtrT + ">>", getArgType(method, 0).toString());
-	}
+        assertEquals("ConstPtr<ConstPtr<" + natjPtrT + ">>", getArgType(method, 0).toString());
+    }
 
-	public void test_const_T_ptr_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_const_T_ptr_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("Ptr<Ptr<" + natjConstPtrT + ">>", getArgType(method, 0).toString());
-	}
+        assertEquals("Ptr<Ptr<" + natjConstPtrT + ">>", getArgType(method, 0).toString());
+    }
 
-	public void test_const_T_ptr_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_const_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_const_T_ptr_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_const_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("ConstPtr<Ptr<" + natjConstPtrT + ">>", getArgType(method, 0).toString());
-	}
+        assertEquals("ConstPtr<Ptr<" + natjConstPtrT + ">>", getArgType(method, 0).toString());
+    }
 
-	public void test_const_T_ptr_const_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_const_T_ptr_const_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("Ptr<ConstPtr<" + natjConstPtrT + ">>", getArgType(method, 0).toString());
-	}
+        assertEquals("Ptr<ConstPtr<" + natjConstPtrT + ">>", getArgType(method, 0).toString());
+    }
 
-	public void test_const_T_ptr_const_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_const_ptr_fn_arg");
-		assertExistsAndGenerated(method);
-		assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
-		assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
-		assertNumberOfArguments(method, 1);
+    public void test_const_T_ptr_const_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_const_ptr_fn_arg");
+        assertExistsAndGenerated(method);
+        assertHasAnnotation(method, Constants.CFunctionAnnotationFQ);
+        assertHasNoAnnotation(method, Constants.ReferenceInfoAnnotationFQ);
+        assertNumberOfArguments(method, 1);
 
-		assertEquals("ConstPtr<ConstPtr<" + natjConstPtrT + ">>", getArgType(method, 0).toString());
-	}
+        assertEquals("ConstPtr<ConstPtr<" + natjConstPtrT + ">>", getArgType(method, 0).toString());
+    }
 }

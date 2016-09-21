@@ -16,37 +16,40 @@ limitations under the License.
 
 package org.moe.natjgen.test.structs;
 
-import org.moe.natjgen.Constants;
-import org.moe.natjgen.test.AbstractNatJGenTest;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.NormalAnnotation;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
+import org.moe.natjgen.Constants;
+import org.moe.natjgen.test.AbstractNatJGenTest;
 
 public class StructStruct extends AbstractStructTest {
 
-	public void test_getter_f1() {
-		MethodDeclaration method = getMethod("f1");
-		AbstractNatJGenTest.assertExistsAndGenerated(method);
+    public void test_getter_f1() {
+        MethodDeclaration method = getMethod("f1");
+        AbstractNatJGenTest.assertExistsAndGenerated(method);
 
-		AbstractNatJGenTest.assertSimpleType(method.getReturnType2(), "CallbackStruct");
+        AbstractNatJGenTest.assertSimpleType(method.getReturnType2(), "CallbackStruct");
 
-		AbstractNatJGenTest.assertNumberOfArguments(method, 0);
+        AbstractNatJGenTest.assertNumberOfArguments(method, 0);
 
-		NormalAnnotation sfa = AbstractNatJGenTest.assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
-		AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "isGetter", true);
-	}
+        NormalAnnotation sfa = AbstractNatJGenTest
+                .assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
+        AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "isGetter", true);
+    }
 
-	public void test_setter_f1() {
-		MethodDeclaration method = getMethod("setF1");
-		AbstractNatJGenTest.assertExistsAndGenerated(method);
+    public void test_setter_f1() {
+        MethodDeclaration method = getMethod("setF1");
+        AbstractNatJGenTest.assertExistsAndGenerated(method);
 
-		AbstractNatJGenTest.assertPrimitiveType(method.getReturnType2(), "void");
+        AbstractNatJGenTest.assertPrimitiveType(method.getReturnType2(), "void");
 
-		AbstractNatJGenTest.assertNumberOfArguments(method, 1);
-		AbstractNatJGenTest.assertSimpleType(((SingleVariableDeclaration)method.parameters().get(0)).getType(), "CallbackStruct");
+        AbstractNatJGenTest.assertNumberOfArguments(method, 1);
+        AbstractNatJGenTest
+                .assertSimpleType(((SingleVariableDeclaration)method.parameters().get(0)).getType(), "CallbackStruct");
 
-		NormalAnnotation sfa = AbstractNatJGenTest.assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
-		AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "isGetter", false);
-	}
+        NormalAnnotation sfa = AbstractNatJGenTest
+                .assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
+        AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "isGetter", false);
+    }
 
 }

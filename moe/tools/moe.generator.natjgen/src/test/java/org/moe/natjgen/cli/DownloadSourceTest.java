@@ -16,7 +16,10 @@ limitations under the License.
 
 package org.moe.natjgen.cli;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.moe.natjgen.cli.exceptions.UnsupportedTypeException;
+import org.moe.natjgen.cli.utils.GrabUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,67 +31,72 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
-import org.junit.Ignore;
-import org.moe.natjgen.cli.exceptions.UnsupportedTypeException;
-
-import org.junit.Test;
-
-import org.moe.natjgen.cli.utils.GrabUtils;
+import static org.junit.Assert.assertTrue;
 
 @Ignore
 public class DownloadSourceTest extends WrapNatJTest {
-	
-	@Test
-	public void downloadFromRemote() throws FileAlreadyExistsException, FileNotFoundException, URISyntaxException, IOException, UnsupportedTypeException {
-		URI link = new URI("https://github.com/NatJPods/Specs/archive/master.zip");
-		File output = new File(tmpDir.newFolder(),"tempFile");
-		HashMap<URI,File> map = new HashMap<URI,File>();
-		map.put(link, output);
-		GrabUtils.download(map);
-		assertTrue(output.exists());
-	}
-	
-	@Test
-	public void downloadFromRemoteDirectly() throws FileAlreadyExistsException, FileNotFoundException, URISyntaxException, IOException, UnsupportedTypeException {
-		URI link = new URI("https://github.com/NatJPods/Specs/archive/master.zip");
-		File output = new File(tmpDir.newFolder(),"tempFile");
-		GrabUtils.downloadFileFromRemote(link, output);
-		assertTrue(output.exists());
-	}
-	
-	@Test
-	public void downloadFromGit() throws FileAlreadyExistsException, FileNotFoundException, URISyntaxException, IOException, UnsupportedTypeException {
-		String git = "https://github.com/NatJPods/Bindings.git";
-		String tag = "Example";
-		String path = "Bindings/Google/1.3.2";
-		URI link = new URI(git + "#" + tag + ":" + path);
-		File output = new File(tmpDir.newFolder(),"tempFolder");
-		HashMap<URI,File> map = new HashMap<URI,File>();
-		map.put(link, output);
-		GrabUtils.download(map);
-		assertTrue(output.isDirectory());
-	}
-	
-	@Test
-	public void downloadFromGitDirectly() throws FileAlreadyExistsException, FileNotFoundException, URISyntaxException, IOException, UnsupportedTypeException {
-		String git = "https://github.com/NatJPods/Bindings.git";
-		String tag = "Example";
-		Path path = Paths.get("Bindings/Google/1.3.2");
-		URI link = new URI(git);
-		File output = new File(tmpDir.newFolder(),"tempFolder");
-		GrabUtils.downloadFileFromGit(link,tag,path,output);
-		assertTrue(output.isDirectory());
-	}
-	
-	@Test
-	public void downloadFromLocal() throws FileAlreadyExistsException, FileNotFoundException, URISyntaxException, IOException, UnsupportedTypeException {
-		File input = new File(tmpDir.newFolder(),"tempFolder");
-		input.mkdir();
-		File output = new File(tmpDir.newFolder(),"tempFolder");
-		HashMap<URI,File> map = new HashMap<URI,File>();
-		map.put(input.toURI(), output);
-		GrabUtils.download(map);
-		assertTrue(output.isDirectory());
-	}
-	
+
+    @Test
+    public void downloadFromRemote()
+            throws FileAlreadyExistsException, FileNotFoundException, URISyntaxException, IOException,
+            UnsupportedTypeException {
+        URI link = new URI("https://github.com/NatJPods/Specs/archive/master.zip");
+        File output = new File(tmpDir.newFolder(), "tempFile");
+        HashMap<URI, File> map = new HashMap<URI, File>();
+        map.put(link, output);
+        GrabUtils.download(map);
+        assertTrue(output.exists());
+    }
+
+    @Test
+    public void downloadFromRemoteDirectly()
+            throws FileAlreadyExistsException, FileNotFoundException, URISyntaxException, IOException,
+            UnsupportedTypeException {
+        URI link = new URI("https://github.com/NatJPods/Specs/archive/master.zip");
+        File output = new File(tmpDir.newFolder(), "tempFile");
+        GrabUtils.downloadFileFromRemote(link, output);
+        assertTrue(output.exists());
+    }
+
+    @Test
+    public void downloadFromGit()
+            throws FileAlreadyExistsException, FileNotFoundException, URISyntaxException, IOException,
+            UnsupportedTypeException {
+        String git = "https://github.com/NatJPods/Bindings.git";
+        String tag = "Example";
+        String path = "Bindings/Google/1.3.2";
+        URI link = new URI(git + "#" + tag + ":" + path);
+        File output = new File(tmpDir.newFolder(), "tempFolder");
+        HashMap<URI, File> map = new HashMap<URI, File>();
+        map.put(link, output);
+        GrabUtils.download(map);
+        assertTrue(output.isDirectory());
+    }
+
+    @Test
+    public void downloadFromGitDirectly()
+            throws FileAlreadyExistsException, FileNotFoundException, URISyntaxException, IOException,
+            UnsupportedTypeException {
+        String git = "https://github.com/NatJPods/Bindings.git";
+        String tag = "Example";
+        Path path = Paths.get("Bindings/Google/1.3.2");
+        URI link = new URI(git);
+        File output = new File(tmpDir.newFolder(), "tempFolder");
+        GrabUtils.downloadFileFromGit(link, tag, path, output);
+        assertTrue(output.isDirectory());
+    }
+
+    @Test
+    public void downloadFromLocal()
+            throws FileAlreadyExistsException, FileNotFoundException, URISyntaxException, IOException,
+            UnsupportedTypeException {
+        File input = new File(tmpDir.newFolder(), "tempFolder");
+        input.mkdir();
+        File output = new File(tmpDir.newFolder(), "tempFolder");
+        HashMap<URI, File> map = new HashMap<URI, File>();
+        map.put(input.toURI(), output);
+        GrabUtils.download(map);
+        assertTrue(output.isDirectory());
+    }
+
 }

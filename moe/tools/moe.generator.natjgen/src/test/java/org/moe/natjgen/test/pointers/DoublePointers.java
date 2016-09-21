@@ -17,8 +17,8 @@ limitations under the License.
 package org.moe.natjgen.test.pointers;
 
 public class DoublePointers extends AbstractPointersTest {
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp(Double.class.getSimpleName(), "double", "DoublePtr", "ConstDoublePtr");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp(Double.class.getSimpleName(), "double", "DoublePtr", "ConstDoublePtr");
+    }
 }

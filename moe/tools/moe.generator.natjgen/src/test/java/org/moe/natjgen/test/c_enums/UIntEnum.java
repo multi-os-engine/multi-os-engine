@@ -20,38 +20,38 @@ import org.eclipse.jdt.core.dom.FieldDeclaration;
 
 public class UIntEnum extends AbstractCEnumTest {
 
-	@Override
-	protected String getType() {
-		return "int";
-	}
+    @Override
+    protected String getType() {
+        return "int";
+    }
 
-	@Override
-	protected String getZeroValue() {
-		return "0x00000000";
-	}
+    @Override
+    protected String getZeroValue() {
+        return "0x00000000";
+    }
 
-	@Override
-	protected String getOneValue() {
-		return "0x00000001";
-	}
+    @Override
+    protected String getOneValue() {
+        return "0x00000001";
+    }
 
-	@Override
-	protected String getMinValue() {
-		return "0x00000000";
-	}
+    @Override
+    protected String getMinValue() {
+        return "0x00000000";
+    }
 
-	@Override
-	protected String getMaxValue() {
-		return "0xFFFFFFFF";
-	}
+    @Override
+    protected String getMaxValue() {
+        return "0xFFFFFFFF";
+    }
 
-	@Override
-	public void test_diff() {
-		FieldDeclaration field = getField(diff_name);
-		assertExistsAndGenerated(field);
-		assertPrimitiveType(field.getType(), getType());
+    @Override
+    public void test_diff() {
+        FieldDeclaration field = getField(diff_name);
+        assertExistsAndGenerated(field);
+        assertPrimitiveType(field.getType(), getType());
 
-		assertInitialValue(field, null, "0x55555555", null, "0xAAAAAAAA", null);
-	}
+        assertInitialValue(field, null, "0x55555555", null, "0xAAAAAAAA", null);
+    }
 
 }

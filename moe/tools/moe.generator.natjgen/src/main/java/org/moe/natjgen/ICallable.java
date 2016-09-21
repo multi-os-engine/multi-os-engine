@@ -18,25 +18,25 @@ package org.moe.natjgen;
 
 public interface ICallable {
 
-	/**
-	 * Returns the java method name the callable will be bound to
-	 * 
-	 * @return java method name
-	 */
-	public String getJavaName();
+    /**
+     * Returns the java method name the callable will be bound to
+     *
+     * @return java method name
+     */
+    public String getJavaName();
 
-	/**
-	 * Returns the callable's type
-	 * 
-	 * @return type
-	 */
-	public Type getType();
+    /**
+     * Returns the callable's type
+     *
+     * @return type
+     */
+    public Type getType();
 
-	/**
-	 * Return the callable's default runtime's fully qualified name
-	 * 
-	 * @return default runtime
-	 */
-	public String getDefaultRuntime();
+    /**
+     * Return the callable's default runtime's fully qualified name
+     *
+     * @return default runtime
+     */
+    public String getDefaultRuntime();
 
 }

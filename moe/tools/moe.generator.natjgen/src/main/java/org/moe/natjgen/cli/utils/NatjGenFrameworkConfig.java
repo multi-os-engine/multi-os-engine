@@ -22,31 +22,31 @@ import java.util.List;
 import java.util.Set;
 
 public class NatjGenFrameworkConfig {
-    public static String generate(String packageName, Set<String> frameworksSearchPaths, String outputPath, List<String> headers) {
+    public static String generate(String packageName, Set<String> frameworksSearchPaths, String outputPath,
+            List<String> headers) {
         List<String> sources = new ArrayList<String>();
         List<String> headerSearchPaths = new ArrayList<String>();
-        
+
         String frameworkPath = "";
-        
+
         String path;
 
         int pos;
         boolean found;
 
-        for(String header : headers) {
+        for (String header : headers) {
             pos = header.lastIndexOf(File.separator);
 
-            if(pos != -1) {
+            if (pos != -1) {
                 path = header.substring(0, pos);
                 header = header.substring(pos + 1);
-            }
-            else {
+            } else {
                 path = "";
             }
 
             sources.add(header);
 
-            if(!path.isEmpty()) {
+            if (!path.isEmpty()) {
                 found = false;
 
                 for (String searchPath : headerSearchPaths) {
@@ -55,7 +55,7 @@ public class NatjGenFrameworkConfig {
                     }
                 }
 
-                if(!found) {
+                if (!found) {
                     headerSearchPaths.add(path);
                 }
             }
@@ -63,7 +63,7 @@ public class NatjGenFrameworkConfig {
 
         String sourcePlaceholder = "\"";
 
-        for(String source : sources) {
+        for (String source : sources) {
             sourcePlaceholder += "#import \\\"" + source + "\\\"\n";
         }
 
@@ -71,64 +71,35 @@ public class NatjGenFrameworkConfig {
 
         String pathsPlaceholder = "";
 
-        for(String headerPath : headerSearchPaths) {
+        for (String headerPath : headerSearchPaths) {
             pathsPlaceholder += "\"" + headerPath + "\",\n";
         }
-        
-        for(String frameworkSerchPath : frameworksSearchPaths) {
-        	frameworkPath += "\"" + frameworkSerchPath + "\",\n";
-        }
-        
 
-        if(pathsPlaceholder.lastIndexOf(",\n") != -1) {
+        for (String frameworkSerchPath : frameworksSearchPaths) {
+            frameworkPath += "\"" + frameworkSerchPath + "\",\n";
+        }
+
+        if (pathsPlaceholder.lastIndexOf(",\n") != -1) {
             pathsPlaceholder = pathsPlaceholder.substring(0, pathsPlaceholder.length() - 2);
         }
-        
-        if(frameworkPath.lastIndexOf(",\n") != -1) {
+
+        if (frameworkPath.lastIndexOf(",\n") != -1) {
             frameworkPath = frameworkPath.substring(0, frameworkPath.length() - 2);
         }
 
-        String template = "{\n" +
-                "  \"platform\": \"iOS\",\n" +
-                "  \"package-base\": \"__package_name__\",\n" +
-                "  \"base-sdk\": \"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk\",\n" +
-                "  \"header-search-paths\": [],\n" +
-                "  \"framework-search-paths\": [" +
-                "    __framework_path__\n" +
-                "],\n" +
-                "  \"user-header-search-paths\": [\n" +
-                "    __header_search_paths__\n" +
-                "  ],\n" +
-                "  \"source\": __source__,\n" +
-                "  \"output\": \"__output_path__\",\n" +
-                "  \"docsets\": [],\n" +
-                "  \"unit-rules\": [\n" +
-                "    {\n" +
-                "      \"final\": false,\n" +
-                "      \"conditions\": [\n" +
-                "        {\n" +
-                "          \"condition\": \"path-prefix\",\n" +
-                "          \"value\": \"${SDK}\"\n" +
-                "        }\n" +
-                "      ],\n" +
-                "      \"actions\": [\n" +
-                "        {\n" +
-                "          \"action\": \"replace-package-base\",\n" +
-                "          \"value\": \"apple\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "          \"action\": \"handling-mode\",\n" +
-                "          \"value\": \"external\"\n" +
-                "        }\n" +
-                "      ]\n" +
-                "    }\n" +
-                "  ],\n" +
-                "  \"type-config-clean-output\": false,\n" +
-                "  \"header-file-resolving-paths\": [\n" +
-                "    \"${SDK}/usr/include\",\n" +
-                "    \"${SDK}/System/Library/Frameworks\"\n" +
-                "  ]\n" +
-                "}";
+        String template = "{\n" + "  \"platform\": \"iOS\",\n" + "  \"package-base\": \"__package_name__\",\n"
+                + "  \"base-sdk\": \"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk\",\n"
+                + "  \"header-search-paths\": [],\n" + "  \"framework-search-paths\": [" + "    __framework_path__\n"
+                + "],\n" + "  \"user-header-search-paths\": [\n" + "    __header_search_paths__\n" + "  ],\n"
+                + "  \"source\": __source__,\n" + "  \"output\": \"__output_path__\",\n" + "  \"docsets\": [],\n"
+                + "  \"unit-rules\": [\n" + "    {\n" + "      \"final\": false,\n" + "      \"conditions\": [\n"
+                + "        {\n" + "          \"condition\": \"path-prefix\",\n" + "          \"value\": \"${SDK}\"\n"
+                + "        }\n" + "      ],\n" + "      \"actions\": [\n" + "        {\n"
+                + "          \"action\": \"replace-package-base\",\n" + "          \"value\": \"apple\"\n"
+                + "        },\n" + "        {\n" + "          \"action\": \"handling-mode\",\n"
+                + "          \"value\": \"external\"\n" + "        }\n" + "      ]\n" + "    }\n" + "  ],\n"
+                + "  \"type-config-clean-output\": false,\n" + "  \"header-file-resolving-paths\": [\n"
+                + "    \"${SDK}/usr/include\",\n" + "    \"${SDK}/System/Library/Frameworks\"\n" + "  ]\n" + "}";
 
         template = template.replace("__package_name__", packageName);
         template = template.replace("__header_search_paths__", pathsPlaceholder);

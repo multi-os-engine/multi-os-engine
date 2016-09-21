@@ -21,32 +21,31 @@ import org.eclipse.jdt.core.dom.SimpleType;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.TypeParameter;
-
 import org.moe.natjgen.test.AbstractObjCClassTest;
 
 public class InheritedParamedClass3 extends AbstractObjCClassTest {
-	public void test_class_with_templates() {
-		TypeDeclaration decl = getClassDecl();
-		assertEquals("InheritedParamedClass3", decl.getName().getIdentifier());
-		assertEquals(2, decl.typeParameters().size());
-		assertEquals("_T", ((TypeParameter)decl.typeParameters().get(0)).getName().getIdentifier());
-		assertEquals("_Y", ((TypeParameter)decl.typeParameters().get(1)).getName().getIdentifier());
-	}
+    public void test_class_with_templates() {
+        TypeDeclaration decl = getClassDecl();
+        assertEquals("InheritedParamedClass3", decl.getName().getIdentifier());
+        assertEquals(2, decl.typeParameters().size());
+        assertEquals("_T", ((TypeParameter)decl.typeParameters().get(0)).getName().getIdentifier());
+        assertEquals("_Y", ((TypeParameter)decl.typeParameters().get(1)).getName().getIdentifier());
+    }
 
-	public void test_superclass_with_templates() {
-		TypeDeclaration decl = getClassDecl();
+    public void test_superclass_with_templates() {
+        TypeDeclaration decl = getClassDecl();
 
-		assertTrue(decl.getSuperclassType().isParameterizedType());
-		ParameterizedType superClass = (ParameterizedType)decl.getSuperclassType();
+        assertTrue(decl.getSuperclassType().isParameterizedType());
+        ParameterizedType superClass = (ParameterizedType)decl.getSuperclassType();
 
-		assertTrue(superClass.getType().isSimpleType());
-		SimpleType superClassBase = (SimpleType)superClass.getType();
+        assertTrue(superClass.getType().isSimpleType());
+        SimpleType superClassBase = (SimpleType)superClass.getType();
 
-		assertEquals("ParamedClass1", superClassBase.getName().getFullyQualifiedName());
-		assertEquals(1, superClass.typeArguments().size());
+        assertEquals("ParamedClass1", superClassBase.getName().getFullyQualifiedName());
+        assertEquals(1, superClass.typeArguments().size());
 
-		Type tmp = (Type)superClass.typeArguments().get(0);
-		assertTrue(tmp.isSimpleType());
-		assertEquals("_T", ((SimpleType)tmp).getName().getFullyQualifiedName());
-	}
+        Type tmp = (Type)superClass.typeArguments().get(0);
+        assertTrue(tmp.isSimpleType());
+        assertEquals("_T", ((SimpleType)tmp).getName().getFullyQualifiedName());
+    }
 }

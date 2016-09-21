@@ -18,10 +18,10 @@ package org.moe.natjgen.cli.exceptions;
 
 public class CheckArchitectureException extends WrapNatJGenException {
 
-	public CheckArchitectureException(String string) {
-		super(string);
-	}
+    public CheckArchitectureException(String string) {
+        super(string);
+    }
 
-	private static final long serialVersionUID = -2317188212365142739L;
+    private static final long serialVersionUID = -2317188212365142739L;
 
 }

@@ -17,26 +17,26 @@ limitations under the License.
 package org.moe.natjgen;
 
 public enum ObjCMethodFamily {
-	/**
-	 * Method family is not determined
-	 */
-	UNDEFINED,
+    /**
+     * Method family is not determined
+     */
+    UNDEFINED,
 
-	/**
-	 * The family of general methods, ie.:
-	 * <code> -[NSArray objectAtIndex:] </code>
-	 */
-	DEFAULT,
+    /**
+     * The family of general methods, ie.:
+     * <code> -[NSArray objectAtIndex:] </code>
+     */
+    DEFAULT,
 
-	/**
-	 * The family of initializer methods, ie.:
-	 * <code> -[NSArray initWithContentsOfFile:] </code>
-	 */
-	INIT,
+    /**
+     * The family of initializer methods, ie.:
+     * <code> -[NSArray initWithContentsOfFile:] </code>
+     */
+    INIT,
 
-	/**
-	 * The family of factory methods, ie.:
-	 * <code> +[NSArray arrayWithContentsOfFile:] </code>
-	 */
-	FACTORY
+    /**
+     * The family of factory methods, ie.:
+     * <code> +[NSArray arrayWithContentsOfFile:] </code>
+     */
+    FACTORY
 }

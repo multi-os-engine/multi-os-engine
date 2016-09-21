@@ -14,40 +14,39 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-
 package org.moe.natjgen.util;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class FileUtil {
 
-	private static final Logger LOG = LoggerFactory.getLogger(FileUtil.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FileUtil.class);
 
-	public static boolean writeResource(File path, String name, String extension, String contents) {
-		File f = new File(path, name + "." + extension);
-		File p = f.getParentFile();
-		if (!p.exists() && !p.mkdirs()) {
-			LOG.error("Failed to create parent directory " + p.getAbsolutePath());
-			return false;
-		}
-		PrintWriter out = null;
-		try {
-			out = new PrintWriter(f.getAbsolutePath());
-			out.print(contents);
-		} catch (FileNotFoundException e) {
-			LOG.error("Failed to write file " + f.getAbsolutePath());
-			return false;
-		} finally {
-			if (out != null) {
-				out.close();
-			}
-		}
-		return true;
-	}
+    public static boolean writeResource(File path, String name, String extension, String contents) {
+        File f = new File(path, name + "." + extension);
+        File p = f.getParentFile();
+        if (!p.exists() && !p.mkdirs()) {
+            LOG.error("Failed to create parent directory " + p.getAbsolutePath());
+            return false;
+        }
+        PrintWriter out = null;
+        try {
+            out = new PrintWriter(f.getAbsolutePath());
+            out.print(contents);
+        } catch (FileNotFoundException e) {
+            LOG.error("Failed to write file " + f.getAbsolutePath());
+            return false;
+        } finally {
+            if (out != null) {
+                out.close();
+            }
+        }
+        return true;
+    }
 
 }

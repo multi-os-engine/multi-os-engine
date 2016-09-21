@@ -19,23 +19,22 @@ package org.moe.natjgen.test.objc_generics;
 import org.eclipse.jdt.core.dom.SimpleType;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.TypeParameter;
-
 import org.moe.natjgen.test.AbstractObjCClassTest;
 
 public class ParamedClass1WithUnused extends AbstractObjCClassTest {
-	public void test_class_with_templates() {
-		TypeDeclaration decl = getClassDecl();
-		assertEquals("ParamedClass1WithUnused", decl.getName().getIdentifier());
-		assertEquals(1, decl.typeParameters().size());
-		assertEquals("_T", ((TypeParameter)decl.typeParameters().get(0)).getName().getIdentifier());
-	}
+    public void test_class_with_templates() {
+        TypeDeclaration decl = getClassDecl();
+        assertEquals("ParamedClass1WithUnused", decl.getName().getIdentifier());
+        assertEquals(1, decl.typeParameters().size());
+        assertEquals("_T", ((TypeParameter)decl.typeParameters().get(0)).getName().getIdentifier());
+    }
 
-	public void test_superclass_with_templates() {
-		TypeDeclaration decl = getClassDecl();
+    public void test_superclass_with_templates() {
+        TypeDeclaration decl = getClassDecl();
 
-		assertTrue(decl.getSuperclassType().isSimpleType());
-		SimpleType superClass = (SimpleType)decl.getSuperclassType();
+        assertTrue(decl.getSuperclassType().isSimpleType());
+        SimpleType superClass = (SimpleType)decl.getSuperclassType();
 
-		assertEquals("NSObject", superClass.getName().getFullyQualifiedName());
-	}
+        assertEquals("NSObject", superClass.getName().getFullyQualifiedName());
+    }
 }

@@ -16,33 +16,33 @@ limitations under the License.
 
 package org.moe.natjgen.test.objc_generics;
 
-import org.moe.natjgen.test.AbstractObjCClassTest;
 import org.eclipse.jdt.core.dom.ParameterizedType;
 import org.eclipse.jdt.core.dom.SimpleType;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
+import org.moe.natjgen.test.AbstractObjCClassTest;
 
 public class InheritedParamedClass5 extends AbstractObjCClassTest {
-	public void test_class_with_templates() {
-		TypeDeclaration decl = getClassDecl();
-		assertEquals("InheritedParamedClass5", decl.getName().getIdentifier());
-		assertEquals(0, decl.typeParameters().size());
-	}
+    public void test_class_with_templates() {
+        TypeDeclaration decl = getClassDecl();
+        assertEquals("InheritedParamedClass5", decl.getName().getIdentifier());
+        assertEquals(0, decl.typeParameters().size());
+    }
 
-	public void test_superclass_with_templates() {
-		TypeDeclaration decl = getClassDecl();
+    public void test_superclass_with_templates() {
+        TypeDeclaration decl = getClassDecl();
 
-		assertTrue(decl.getSuperclassType().isParameterizedType());
-		ParameterizedType superClass = (ParameterizedType)decl.getSuperclassType();
+        assertTrue(decl.getSuperclassType().isParameterizedType());
+        ParameterizedType superClass = (ParameterizedType)decl.getSuperclassType();
 
-		assertTrue(superClass.getType().isSimpleType());
-		SimpleType superClassBase = (SimpleType)superClass.getType();
+        assertTrue(superClass.getType().isSimpleType());
+        SimpleType superClassBase = (SimpleType)superClass.getType();
 
-		assertEquals("ParamedClass1", superClassBase.getName().getFullyQualifiedName());
-		assertEquals(1, superClass.typeArguments().size());
+        assertEquals("ParamedClass1", superClassBase.getName().getFullyQualifiedName());
+        assertEquals(1, superClass.typeArguments().size());
 
-		Type tmp = (Type)superClass.typeArguments().get(0);
-		assertTrue(tmp.isSimpleType());
-		assertEquals("String", ((SimpleType)tmp).getName().getFullyQualifiedName());
-	}
+        Type tmp = (Type)superClass.typeArguments().get(0);
+        assertTrue(tmp.isSimpleType());
+        assertEquals("String", ((SimpleType)tmp).getName().getFullyQualifiedName());
+    }
 }

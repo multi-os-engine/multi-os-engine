@@ -22,91 +22,91 @@ import org.slf4j.LoggerFactory;
 
 public class COpaquePtrManager extends AbstractUnitManager {
 
-	/**
-	 * Logger for the class
-	 */
-	private static final Logger LOG = LoggerFactory.getLogger(COpaquePtrManager.class);
+    /**
+     * Logger for the class
+     */
+    private static final Logger LOG = LoggerFactory.getLogger(COpaquePtrManager.class);
 
-	private final String rootName;
+    private final String rootName;
 
-	public String getRootName() {
-		return rootName;
-	}
+    public String getRootName() {
+        return rootName;
+    }
 
-	private final boolean rootIsConst;
+    private final boolean rootIsConst;
 
-	public boolean isRootConst() {
-		return rootIsConst;
-	}
+    public boolean isRootConst() {
+        return rootIsConst;
+    }
 
-	private COpaquePtrManager rootManager;
+    private COpaquePtrManager rootManager;
 
-	protected COpaquePtrManager(Indexer indexer, String name_fq, CXType rootType) {
-		super(indexer, name_fq);
-		rootName = rootType.getTypeDeclaration().toString();
-		rootIsConst = rootType.isConstQualifiedType();
-	}
+    protected COpaquePtrManager(Indexer indexer, String name_fq, CXType rootType) {
+        super(indexer, name_fq);
+        rootName = rootType.getTypeDeclaration().toString();
+        rootIsConst = rootType.isConstQualifiedType();
+    }
 
-	@Override
-	public boolean isSupported() {
-		return true;
-	}
+    @Override
+    public boolean isSupported() {
+        return true;
+    }
 
-	@Override
-	public void preparationPhase_Final() {
-		if (!rootIsConst) {
-			rootManager = getGenerator().getConstOpaqueTypeManager(rootName);
-		}
-	}
+    @Override
+    public void preparationPhase_Final() {
+        if (!rootIsConst) {
+            rootManager = getGenerator().getConstOpaqueTypeManager(rootName);
+        }
+    }
 
-	@Override
-	public void update() {
-		ClassMemberEditor cme = updateClass();
-		COpaquePtrImplManager adMan = new COpaquePtrImplManager(this);
-		try {
-			adMan.update(cme);
-		} catch (GeneratorException e) {
-			LOG.error("Failed to generate implementation class.");
-		}
-		cme.close();
-	}
+    @Override
+    public void update() {
+        ClassMemberEditor cme = updateClass();
+        COpaquePtrImplManager adMan = new COpaquePtrImplManager(this);
+        try {
+            adMan.update(cme);
+        } catch (GeneratorException e) {
+            LOG.error("Failed to generate implementation class.");
+        }
+        cme.close();
+    }
 
-	@Override
-	public void cleanup() {
-	}
+    @Override
+    public void cleanup() {
+    }
 
-	/**
-	 * Update class information
-	 * 
-	 * @return ClassMemberEditor for the class
-	 * @throws GeneratorException
-	 */
-	private ClassMemberEditor updateClass() {
-		try {
-			ClassEditor editor = new ClassEditor(this, getClassDecl(), isNew());
-			if (editor.isEditable()) {
-				editor.setInterface();
-				editor.setClassName(getUnitName());
-				editor.setSuperClass(null);
-				if (rootManager != null) {
-					editor.setInterfaces(addImport(rootManager));
-				} else {
-					editor.setInterfaces(addImport(Constants.OpaquePtrFQ));
-				}
+    /**
+     * Update class information
+     *
+     * @return ClassMemberEditor for the class
+     * @throws GeneratorException
+     */
+    private ClassMemberEditor updateClass() {
+        try {
+            ClassEditor editor = new ClassEditor(this, getClassDecl(), isNew());
+            if (editor.isEditable()) {
+                editor.setInterface();
+                editor.setClassName(getUnitName());
+                editor.setSuperClass(null);
+                if (rootManager != null) {
+                    editor.setInterfaces(addImport(rootManager));
+                } else {
+                    editor.setInterfaces(addImport(Constants.OpaquePtrFQ));
+                }
 
-				ModifierEditor modifiers = editor.getModifiers();
-				modifiers.setPublic();
-				modifiers.setRuntime(addImport(Constants.CRuntimeFQ));
-				modifiers.setGenerated();
+                ModifierEditor modifiers = editor.getModifiers();
+                modifiers.setPublic();
+                modifiers.setRuntime(addImport(Constants.CRuntimeFQ));
+                modifiers.setGenerated();
 
-				editor.close();
-			}
-			logOK(Statistics.C_OPAQUE_TYPE);
-			return editor.getMemberEditor();
-		} catch (GeneratorException e) {
-			logFAIL(Statistics.C_OPAQUE_TYPE, getFullyQualifiedName(), null, LOG, e);
-			return null;
-		}
-	}
+                editor.close();
+            }
+            logOK(Statistics.C_OPAQUE_TYPE);
+            return editor.getMemberEditor();
+        } catch (GeneratorException e) {
+            logFAIL(Statistics.C_OPAQUE_TYPE, getFullyQualifiedName(), null, LOG, e);
+            return null;
+        }
+    }
 
 }

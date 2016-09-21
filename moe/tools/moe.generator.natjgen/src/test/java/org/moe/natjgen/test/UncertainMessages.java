@@ -17,12 +17,12 @@ limitations under the License.
 package org.moe.natjgen.test;
 
 public final class UncertainMessages {
-	private UncertainMessages() {
+    private UncertainMessages() {
 
-	}
+    }
 
-	public static final String JAVA_STRING__C_CONST_BYTE_PTR__FALLBACK__JAVA_STRING = "\"Options: java.string, c.const-byte-ptr Fallback: java.string\"";
-	public static final String JAVA_STRING_ARRAY__C_CONST_BYTE_PTR_PTR__FALLBACK__JAVA_STRING_ARRAY = "\"Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array\"";
-	public static final String REFERENCE__ARRAY__FALLBACK__REFERENCE = "\"Options: reference, array Fallback: reference\"";
+    public static final String JAVA_STRING__C_CONST_BYTE_PTR__FALLBACK__JAVA_STRING = "\"Options: java.string, c.const-byte-ptr Fallback: java.string\"";
+    public static final String JAVA_STRING_ARRAY__C_CONST_BYTE_PTR_PTR__FALLBACK__JAVA_STRING_ARRAY = "\"Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array\"";
+    public static final String REFERENCE__ARRAY__FALLBACK__REFERENCE = "\"Options: reference, array Fallback: reference\"";
 
 }

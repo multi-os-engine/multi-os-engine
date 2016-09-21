@@ -20,186 +20,186 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 
 public class ObjCSELPointers extends AbstractPointersTest {
 
-	@Override
-	protected void optionalIgnore() {
-		assumeHasControlMethod_HasObjC();
-	}
+    @Override
+    protected void optionalIgnore() {
+        assumeHasControlMethod_HasObjC();
+    }
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp("SEL", "SEL", "Ptr<SEL>", "ConstPtr<SEL>");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp("SEL", "SEL", "Ptr<SEL>", "ConstPtr<SEL>");
+    }
 
-	@Override
-	protected boolean baseTypeIsPrimitive() {
-		return false;
-	}
+    @Override
+    protected boolean baseTypeIsPrimitive() {
+        return false;
+    }
 
-	@Override
-	public void test_T_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_const_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_const_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_const_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_const_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_const_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_const_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_const_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_const_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_const_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_const_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_const_ptr_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_const_ptr_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_const_ptr_const_ptr_fn_ret() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_const_ptr_fn_ret");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_const_ptr_const_ptr_fn_ret() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_const_ptr_fn_ret");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_const_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_ptr_const_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_const_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_const_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_T_ptr_const_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_const_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_T_ptr_const_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("" + nativeT + "_ptr_const_ptr_const_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_const_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_ptr_const_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_const_ptr_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_const_ptr_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_ptr_fn_arg");
+        assertNull(method);
+    }
 
-	@Override
-	public void test_const_T_ptr_const_ptr_const_ptr_fn_arg() {
-		MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_const_ptr_fn_arg");
-		assertNull(method);
-	}
+    @Override
+    public void test_const_T_ptr_const_ptr_const_ptr_fn_arg() {
+        MethodDeclaration method = getStaticMethod("const_" + nativeT + "_ptr_const_ptr_const_ptr_fn_arg");
+        assertNull(method);
+    }
 }

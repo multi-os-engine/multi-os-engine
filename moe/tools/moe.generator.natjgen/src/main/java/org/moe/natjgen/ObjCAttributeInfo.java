@@ -18,82 +18,79 @@ package org.moe.natjgen;
 
 public class ObjCAttributeInfo {
 
-	/**
-	 * IBAction attribute kind
-	 */
-	public static final int IBACTION = 0;
+    /**
+     * IBAction attribute kind
+     */
+    public static final int IBACTION = 0;
 
-	/**
-	 * IBOutlet attribute kind
-	 */
-	public static final int IBOUTLET = 1;
+    /**
+     * IBOutlet attribute kind
+     */
+    public static final int IBOUTLET = 1;
 
-	/**
-	 * IBOutletCollection attribute kind
-	 */
-	public static final int IBOUTLETCOLLECTION = 2;
+    /**
+     * IBOutletCollection attribute kind
+     */
+    public static final int IBOUTLETCOLLECTION = 2;
 
-	/**
-	 * The kind of the attribute
-	 */
-	private final int kind;
+    /**
+     * The kind of the attribute
+     */
+    private final int kind;
 
-	/**
-	 * The value of the attribute
-	 */
-	private final String value;
+    /**
+     * The value of the attribute
+     */
+    private final String value;
 
-	/**
-	 * Create a new {@link ObjCAttributeInfo} object
-	 * 
-	 * @param kind
-	 *            kind of the attribute
-	 */
-	public ObjCAttributeInfo(int kind) {
-		this(kind, null);
-	}
+    /**
+     * Create a new {@link ObjCAttributeInfo} object
+     *
+     * @param kind kind of the attribute
+     */
+    public ObjCAttributeInfo(int kind) {
+        this(kind, null);
+    }
 
-	/**
-	 * Create a new {@link ObjCAttributeInfo} object
-	 * 
-	 * @param kind
-	 *            kind of the attribute
-	 * @param value
-	 *            value of the attribute
-	 */
-	public ObjCAttributeInfo(int kind, String value) {
-		if (kind < IBACTION || kind > IBOUTLETCOLLECTION) {
-			throw new IllegalArgumentException();
-		}
+    /**
+     * Create a new {@link ObjCAttributeInfo} object
+     *
+     * @param kind  kind of the attribute
+     * @param value value of the attribute
+     */
+    public ObjCAttributeInfo(int kind, String value) {
+        if (kind < IBACTION || kind > IBOUTLETCOLLECTION) {
+            throw new IllegalArgumentException();
+        }
 
-		if (kind != IBOUTLETCOLLECTION && value != null) {
-			throw new IllegalArgumentException();
-		}
+        if (kind != IBOUTLETCOLLECTION && value != null) {
+            throw new IllegalArgumentException();
+        }
 
-		if (kind == IBOUTLETCOLLECTION && value == null) {
-			throw new IllegalArgumentException();
-		}
+        if (kind == IBOUTLETCOLLECTION && value == null) {
+            throw new IllegalArgumentException();
+        }
 
-		this.kind = kind;
-		this.value = value;
-	}
+        this.kind = kind;
+        this.value = value;
+    }
 
-	/**
-	 * Returns the attibute's kind
-	 * 
-	 * @return kind
-	 */
-	public int getKind() {
-		return kind;
-	}
+    /**
+     * Returns the attibute's kind
+     *
+     * @return kind
+     */
+    public int getKind() {
+        return kind;
+    }
 
-	/**
-	 * Returns the attribute's value
-	 * 
-	 * @return
-	 */
-	public String getValue() {
-		return value;
-	}
+    /**
+     * Returns the attribute's value
+     *
+     * @return
+     */
+    public String getValue() {
+        return value;
+    }
 
 }

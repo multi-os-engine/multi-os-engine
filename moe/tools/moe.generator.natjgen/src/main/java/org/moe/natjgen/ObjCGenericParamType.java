@@ -21,70 +21,70 @@ import org.clang.struct.CXType;
 
 public class ObjCGenericParamType {
 
-	private final int location;
+    private final int location;
 
-	private final ObjCClassManager manager;
+    private final ObjCClassManager manager;
 
-	private final String name;
+    private final String name;
 
-	private final String usr;
+    private final String usr;
 
-	private final int variance;
+    private final int variance;
 
-	public ObjCGenericParamType(int location, ObjCClassManager manager, CXType type, int variance) {
-		this.location = location;
-		this.manager = manager;
-		this.name = "_" + type.getTypeSpelling().toString();
-		this.usr = type.getTypeDeclaration().getCursorUSR().toString();
-		this.variance = variance;
-		if (location < 0) {
-			throw new IllegalArgumentException();
-		}
-		if (manager == null) {
-			throw new NullPointerException();
-		}
-		if (name == null) {
-			throw new NullPointerException();
-		}
-		if (name.length() == 0) {
-			throw new IllegalArgumentException();
-		}
-		if (usr == null) {
-			throw new NullPointerException();
-		}
-		if (usr.length() == 0) {
-			throw new IllegalArgumentException();
-		}
-		if (variance == CXObjCTypeParamVariance.Invalid) {
-			throw new IllegalArgumentException();
-		}
-	}
+    public ObjCGenericParamType(int location, ObjCClassManager manager, CXType type, int variance) {
+        this.location = location;
+        this.manager = manager;
+        this.name = "_" + type.getTypeSpelling().toString();
+        this.usr = type.getTypeDeclaration().getCursorUSR().toString();
+        this.variance = variance;
+        if (location < 0) {
+            throw new IllegalArgumentException();
+        }
+        if (manager == null) {
+            throw new NullPointerException();
+        }
+        if (name == null) {
+            throw new NullPointerException();
+        }
+        if (name.length() == 0) {
+            throw new IllegalArgumentException();
+        }
+        if (usr == null) {
+            throw new NullPointerException();
+        }
+        if (usr.length() == 0) {
+            throw new IllegalArgumentException();
+        }
+        if (variance == CXObjCTypeParamVariance.Invalid) {
+            throw new IllegalArgumentException();
+        }
+    }
 
-	public int getLocation() {
-		return location;
-	}
+    public int getLocation() {
+        return location;
+    }
 
-	public ObjCClassManager getManager() {
-		return manager;
-	}
+    public ObjCClassManager getManager() {
+        return manager;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getUSR() {
-		return usr;
-	}
+    public String getUSR() {
+        return usr;
+    }
 
-	public boolean isInvariant() {
-		return variance == CXObjCTypeParamVariance.Invariant;
-	}
+    public boolean isInvariant() {
+        return variance == CXObjCTypeParamVariance.Invariant;
+    }
 
-	public boolean isCovariant() {
-		return variance == CXObjCTypeParamVariance.Covariant;
-	}
+    public boolean isCovariant() {
+        return variance == CXObjCTypeParamVariance.Covariant;
+    }
 
-	public boolean isContravariant() {
-		return variance == CXObjCTypeParamVariance.Contravariant;
-	}
+    public boolean isContravariant() {
+        return variance == CXObjCTypeParamVariance.Contravariant;
+    }
 }

@@ -16,6 +16,19 @@ limitations under the License.
 
 package org.moe.natjgen.cli.executor;
 
+import org.apache.commons.compress.archivers.jar.JarArchiveOutputStream;
+import org.apache.commons.io.FileUtils;
+import org.moe.natjgen.Configuration;
+import org.moe.natjgen.Indexer;
+import org.moe.natjgen.cli.exceptions.CheckArchitectureException;
+import org.moe.natjgen.cli.exceptions.UnsupportedTypeException;
+import org.moe.natjgen.cli.utils.ArchiveUtils;
+import org.moe.natjgen.cli.utils.GrabUtils;
+import org.moe.natjgen.cli.utils.NatJFileUtils;
+import org.moe.natjgen.cli.utils.NatjGenFrameworkConfig;
+import org.moe.natjgen.helper.MOEJavaProject;
+import org.moe.natjgen.nativelibs.NatJGenNativeLoader;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -31,259 +44,244 @@ import java.util.Set;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
-import org.apache.commons.compress.archivers.jar.JarArchiveOutputStream;
-import org.apache.commons.io.FileUtils;
+public abstract class AbstractLinkExecutor implements IExecutor {
 
-import org.moe.natjgen.cli.exceptions.CheckArchitectureException;
-import org.moe.natjgen.cli.exceptions.UnsupportedTypeException;
-import org.moe.natjgen.cli.utils.ArchiveUtils;
-import org.moe.natjgen.cli.utils.GrabUtils;
-import org.moe.natjgen.cli.utils.NatJFileUtils;
-import org.moe.natjgen.cli.utils.NatjGenFrameworkConfig;
-import org.moe.natjgen.Configuration;
-import org.moe.natjgen.Indexer;
-import org.moe.natjgen.helper.MOEJavaProject;
-import org.moe.natjgen.nativelibs.NatJGenNativeLoader;
+    protected final String MOE_TYPE = "MOE_TYPE";
 
-public abstract class AbstractLinkExecutor implements IExecutor{
+    protected final String UNIVERSAL_MANIFEST_CONST = "MOE_ThirdpartyFramework_universal";
 
-	protected final String MOE_TYPE = "MOE_TYPE";
+    protected final String IOS_SIMULATOR_MANIFEST_CONST = "MOE_ThirdpartyFramework_ios_simulator";
+    protected final String IOS_DEVICE_MANIFEST_CONST = "MOE_ThirdpartyFramework_ios_device";
 
-	protected final String UNIVERSAL_MANIFEST_CONST = "MOE_ThirdpartyFramework_universal";
+    protected final String MOE_BUNDLE_FOLDER_RESOURCES = "MOE_BUNDLE_FOLDER_RESOURCES";
+    protected final String MOE_BUNDLE_FILE_RESOURCES = "MOE_BUNDLE_FILE_RESOURCES";
 
-	protected final String IOS_SIMULATOR_MANIFEST_CONST = "MOE_ThirdpartyFramework_ios_simulator";
-	protected final String IOS_DEVICE_MANIFEST_CONST = "MOE_ThirdpartyFramework_ios_device";
+    private String packageName;
+    private String[] frameworks;
+    private String[] javaSource;
+    private String[] headers;
+    private String[] bundle;
+    private String outFile;
+    private String ldFlags;
 
-	protected final String MOE_BUNDLE_FOLDER_RESOURCES = "MOE_BUNDLE_FOLDER_RESOURCES";
-	protected final String MOE_BUNDLE_FILE_RESOURCES = "MOE_BUNDLE_FILE_RESOURCES";
+    public AbstractLinkExecutor(String packageName, String[] frameworks, String[] javaSource, String[] headers,
+            String[] bundle2, String outFile, String ldFlags) {
+        this.packageName = packageName;
+        this.frameworks = frameworks;
+        this.javaSource = javaSource;
+        this.headers = headers;
+        this.bundle = bundle2;
+        this.outFile = outFile;
+        this.ldFlags = ldFlags;
+    }
 
-	private String packageName;
-	private String[] frameworks;
-	private String[] javaSource;
-	private String[] headers;
-	private String[] bundle;
-	private String outFile;
-	private String ldFlags;
+    @Override
+    public void execute() throws IOException, URISyntaxException, InterruptedException, CheckArchitectureException,
+            UnsupportedTypeException {
 
-	public AbstractLinkExecutor(String packageName, String[] frameworks, String[] javaSource, String[] headers, String[] bundle2, String outFile, String ldFlags) {
-		this.packageName = packageName;
-		this.frameworks = frameworks;
-		this.javaSource = javaSource;
-		this.headers = headers;
-		this.bundle = bundle2;
-		this.outFile = outFile;
-		this.ldFlags = ldFlags;
-	}
+        //collect all header files
+        List<String> headerList = new ArrayList<String>();
+        if (headers != null) {
+            for (String header : headers) {
+                if (header != null && !header.isEmpty()) {
+                    File tmp = new File(header);
+                    if (tmp.isDirectory()) {
+                        Collection<File> files = FileUtils.listFiles(tmp, new String[] { "h" }, true);
+                        for (File file : files)
+                            headerList.add(file.getAbsolutePath());
+                    } else {
+                        headerList.add(header);
+                    }
+                }
+            }
+        }
 
-	@Override
-	public void execute() throws IOException, URISyntaxException, InterruptedException, CheckArchitectureException, UnsupportedTypeException {
+        List<String> frameworkList = new ArrayList<String>();
+        Set<String> frameworksSearchPaths = new HashSet<String>();
+        if (frameworks != null) {
 
-		//collect all header files
-		List<String> headerList = new ArrayList<String>();
-		if (headers != null) {
-			for (String header : headers) {
-				if (header != null && !header.isEmpty()) {
-					File tmp = new File(header);
-					if (tmp.isDirectory()) {
-						Collection<File> files = FileUtils.listFiles(tmp, new String[]{"h"}, true);
-						for (File file : files)
-							headerList.add(file.getAbsolutePath());
-					} else {
-						headerList.add(header);
-					}
-				}
-			}
-		}
+            for (String framework : frameworks) {
+                frameworkList.add(framework);
+                File frFile = new File(framework);
+                frameworksSearchPaths.add(frFile.getParent());
+            }
 
-		List<String> frameworkList = new ArrayList<String>();
-		Set<String> frameworksSearchPaths = new HashSet<String>();
-		if (frameworks != null) {
+        }
 
-			for (String framework : frameworks) {
-				frameworkList.add(framework);
-				File frFile = new File(framework);
-				frameworksSearchPaths.add(frFile.getParent());
-			}
+        // Initialize native libraries
+        NatJGenNativeLoader.initNatives();
 
-		}
+        // Read arguments
+        MOEJavaProject project = new MOEJavaProject("", "/");
 
-		// Initialize native libraries
-		NatJGenNativeLoader.initNatives();
+        boolean generated = true;
+        File tmpDir = NatJFileUtils.getNewTempDirectory();
+        if (javaSource == null) {
 
-		// Read arguments
-		MOEJavaProject project = new MOEJavaProject("", "/");
+            //generate bindings for all frameworks
+            String natJGenBody = NatjGenFrameworkConfig
+                    .generate(packageName, frameworksSearchPaths, tmpDir.getPath(), headerList);
 
-		boolean generated = true;
-		File tmpDir = NatJFileUtils.getNewTempDirectory();
-		if (javaSource == null) {
+            //generate bindings
+            generated = generate(project, natJGenBody);
+        } else {
 
-			//generate bindings for all frameworks
-			String natJGenBody = NatjGenFrameworkConfig.generate(packageName,
-					frameworksSearchPaths,
-					tmpDir.getPath(),
-					headerList);
+            Set<URI> links = new HashSet<URI>();
+            for (String jsource : javaSource) {
+                links.add(new URI(jsource));
+            }
+            GrabUtils.downloadToFolder(links, tmpDir);
+        }
 
-			//generate bindings
-			generated = generate(project, natJGenBody);
-		} else {
+        if (generated) {
+            //try to compile generated jars
+            File destinationJavacDir = new File(tmpDir, "result");
+            destinationJavacDir.mkdir();
 
-			Set<URI> links = new HashSet<URI>();
-			for (String jsource : javaSource) {
-				links.add( new URI(jsource) );
-			}
-			GrabUtils.downloadToFolder(links, tmpDir);
-		}
+            String indePath = System.getenv("MOE_HOME");
+            if (indePath != null && !indePath.isEmpty()) {
+                String coreJar = indePath + File.separator + "sdk" + File.separator + "moe-core.jar";
+                String iosJar = indePath + File.separator + "sdk" + File.separator + "moe-ios.jar";
 
+                String compileList = createCompileFileList(tmpDir, javaSource != null ? null : packageName);
 
-		if (generated) {
-			//try to compile generated jars
-			File destinationJavacDir = new File(tmpDir, "result");
-			destinationJavacDir.mkdir();
+                String classPathArg = String.format("%s:%s", coreJar, iosJar);
+                ProcessBuilder processBuilder = new ProcessBuilder("javac", "@" + compileList, "-cp", classPathArg,
+                        "-d", destinationJavacDir.getPath());
+                Process process = processBuilder.start();
+                process.waitFor();
 
-			String indePath = System.getenv("MOE_HOME");
-			if (indePath != null && !indePath.isEmpty()) {
-				String coreJar = indePath + File.separator + "sdk" + File.separator + "moe-core.jar";
-				String iosJar = indePath + File.separator + "sdk" + File.separator + "moe-ios.jar";
+                if (process.exitValue() == 0 || headerList.size() == 0) {
+                    //try to create lib subdirectory
+                    File libTemp = new File(destinationJavacDir, "lib");
+                    if (!(libTemp.mkdir())) {
+                        throw new IOException("Could not create temp directory: " + libTemp.getAbsolutePath());
+                    }
 
-				String compileList = createCompileFileList(tmpDir, javaSource != null ? null : packageName);
+                    //try to create bundle subdirectory
+                    File bundleTemp = new File(destinationJavacDir, "bundle");
+                    if (!(bundleTemp.mkdir())) {
+                        throw new IOException("Could not create temp directory: " + bundleTemp.getAbsolutePath());
+                    }
 
-				String classPathArg = String.format("%s:%s", coreJar, iosJar);
-				ProcessBuilder processBuilder = new ProcessBuilder("javac", "@" + compileList, "-cp", classPathArg, "-d", destinationJavacDir.getPath());
-				Process process = processBuilder.start();
-				process.waitFor();
+                    copyLibrary(libTemp, frameworkList);
 
-				if (process.exitValue() == 0 || headerList.size() == 0) {
-					//try to create lib subdirectory
-					File libTemp = new File(destinationJavacDir, "lib");
-					if (!(libTemp.mkdir())) {
-						throw new IOException("Could not create temp directory: " + libTemp.getAbsolutePath());
-					}
+                    if (bundle != null) {
+                        copyBundle(bundleTemp, bundle);
+                    }
 
-					//try to create bundle subdirectory
-					File bundleTemp = new File(destinationJavacDir, "bundle");
-					if (!(bundleTemp.mkdir())) {
-						throw new IOException("Could not create temp directory: " + bundleTemp.getAbsolutePath());
-					}
+                    Map<String, String> flags = getManifestProperties(frameworkList);
 
-					copyLibrary(libTemp, frameworkList);
+                    //create manifest file
+                    Manifest manifest = new Manifest();
+                    manifest.getMainAttributes().put(Attributes.Name.MANIFEST_VERSION, "1.0");
 
-					if (bundle != null) {
-						copyBundle(bundleTemp, bundle);
-					}
+                    //Logic from CocoaPods; for more information visit https://github.com/CocoaPods/CocoaPods/issues/3537
+                    String moe_type = flags.get(MOE_TYPE);
+                    if (moe_type != null && moe_type.contains("static")) {
+                        if (ldFlags != null && !ldFlags.isEmpty()) {
+                            if (ldFlags.endsWith(";")) ldFlags += "-ObjC;";
+                            else ldFlags += ";-ObjC;";
+                        } else {
+                            ldFlags = "-ObjC;";
+                        }
+                    }
 
-					Map<String, String> flags = getManifestProperties(frameworkList);
+                    if (ldFlags != null && !ldFlags.isEmpty()) {
+                        flags.put("MOE_CUSTOM_LINKER_FLAGS", ldFlags);
+                    }
 
-					//create manifest file
-					Manifest manifest = new Manifest();
-					manifest.getMainAttributes().put(Attributes.Name.MANIFEST_VERSION, "1.0");
-					
-					//Logic from CocoaPods; for more information visit https://github.com/CocoaPods/CocoaPods/issues/3537
-					String moe_type = flags.get(MOE_TYPE);
-					if ( moe_type != null && moe_type.contains("static") ) {
-						if (ldFlags != null && !ldFlags.isEmpty()) {
-							if (ldFlags.endsWith(";")) 
-								ldFlags += "-ObjC;";
-							else 
-								ldFlags += ";-ObjC;";
-						} else {
-							ldFlags = "-ObjC;";
-						}
-					}
+                    for (Map.Entry<String, String> entry : flags.entrySet()) {
+                        manifest.getMainAttributes().put(new Attributes.Name(entry.getKey()), entry.getValue());
+                    }
 
-					if (ldFlags != null && !ldFlags.isEmpty()) {
-						flags.put("MOE_CUSTOM_LINKER_FLAGS", ldFlags);
-					}
+                    //try to create manifest subdirectory
+                    File manifestTemp = new File(destinationJavacDir, "META-INF");
+                    if (!(manifestTemp.mkdir())) {
+                        throw new IOException("Could not create temp directory: " + bundleTemp.getAbsolutePath());
+                    }
 
-					for (Map.Entry<String, String> entry : flags.entrySet()) {
-						manifest.getMainAttributes().put(new Attributes.Name(entry.getKey()), entry.getValue());
-					}
+                    String manifestFileName = "MANIFEST.MF";
+                    File manifestFile = new File(manifestTemp, manifestFileName);
+                    FileOutputStream manOut = new FileOutputStream(manifestFile);
+                    manifest.write(manOut);
+                    manOut.close();
 
-					//try to create manifest subdirectory
-					File manifestTemp = new File(destinationJavacDir, "META-INF");
-					if (!(manifestTemp.mkdir())) {
-						throw new IOException("Could not create temp directory: " + bundleTemp.getAbsolutePath());
-					}
-					
-					String manifestFileName = "MANIFEST.MF";
-					File manifestFile = new File(manifestTemp, manifestFileName);
-					FileOutputStream manOut = new FileOutputStream(manifestFile);
-					manifest.write(manOut);
-					manOut.close();
-					
-					//try to pack custom content into jar
-					File jarFile = new File(outFile);
+                    //try to pack custom content into jar
+                    File jarFile = new File(outFile);
 
-					FileOutputStream jarFos = null;
-					JarArchiveOutputStream target = null;
-				try {
-						jarFos = new FileOutputStream(jarFile);
-						target = new JarArchiveOutputStream(jarFos);
+                    FileOutputStream jarFos = null;
+                    JarArchiveOutputStream target = null;
+                    try {
+                        jarFos = new FileOutputStream(jarFile);
+                        target = new JarArchiveOutputStream(jarFos);
 
-						for (File file : destinationJavacDir.listFiles()) {
-							ArchiveUtils.addFileToJar(destinationJavacDir, file, target);
-						}
-						target.close();
+                        for (File file : destinationJavacDir.listFiles()) {
+                            ArchiveUtils.addFileToJar(destinationJavacDir, file, target);
+                        }
+                        target.close();
 
-					} finally {
-						if (jarFos != null) {
-							jarFos.close();
-						}
+                    } finally {
+                        if (jarFos != null) {
+                            jarFos.close();
+                        }
 
-						if (target != null) {
-							target.close();
-						}
-					}
-				} else {
-					throw new IOException("An error occured during process of bindings compilation");
-				}
-			} else {
-				throw new IOException("Could not find system variable - MOE_HOME");
-			}
-		} else {
-			throw new IOException("An error occured during process of bindings generation");
-		}
+                        if (target != null) {
+                            target.close();
+                        }
+                    }
+                } else {
+                    throw new IOException("An error occured during process of bindings compilation");
+                }
+            } else {
+                throw new IOException("Could not find system variable - MOE_HOME");
+            }
+        } else {
+            throw new IOException("An error occured during process of bindings generation");
+        }
 
-	}
+    }
 
-	protected abstract void copyLibrary(File destination, List<String> libList) throws CheckArchitectureException, IOException;
+    protected abstract void copyLibrary(File destination, List<String> libList)
+            throws CheckArchitectureException, IOException;
 
-	protected abstract void copyBundle(File destination, String[] bundleFlag) throws IOException;
+    protected abstract void copyBundle(File destination, String[] bundleFlag) throws IOException;
 
-	protected abstract Map<String, String> getManifestProperties(List<String> libList);
+    protected abstract Map<String, String> getManifestProperties(List<String> libList);
 
-	private boolean generate(final MOEJavaProject project, final String natjgenContent) {
-		Indexer indexer = null;
-		try {
-			indexer = new Indexer(project, Configuration.createFromString(natjgenContent));
-			indexer.generate(null);
-		} catch (Exception e) {
-			return false;
-		}
-		return true;
-	}
+    private boolean generate(final MOEJavaProject project, final String natjgenContent) {
+        Indexer indexer = null;
+        try {
+            indexer = new Indexer(project, Configuration.createFromString(natjgenContent));
+            indexer.generate(null);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
 
-	private String createCompileFileList(File baseDir, String packageName) throws IOException {
-		Collection<File> fileList = null;
-		if (packageName != null) {
-			int firstPackgIdx = packageName.indexOf(".");
-			String pkgName = firstPackgIdx >= 0 ? packageName.substring(0, firstPackgIdx) : packageName;
-			fileList = FileUtils.listFiles(new File(baseDir, pkgName), new String[]{"java"}, true);
-		} else {
-			fileList = FileUtils.listFiles(baseDir, new String[]{"java"}, true);
-		}
+    private String createCompileFileList(File baseDir, String packageName) throws IOException {
+        Collection<File> fileList = null;
+        if (packageName != null) {
+            int firstPackgIdx = packageName.indexOf(".");
+            String pkgName = firstPackgIdx >= 0 ? packageName.substring(0, firstPackgIdx) : packageName;
+            fileList = FileUtils.listFiles(new File(baseDir, pkgName), new String[] { "java" }, true);
+        } else {
+            fileList = FileUtils.listFiles(baseDir, new String[] { "java" }, true);
+        }
 
-		File sources = new File(baseDir, "sources.txt");
-		if (!sources.exists()) {
-			sources.createNewFile();
-		}
+        File sources = new File(baseDir, "sources.txt");
+        if (!sources.exists()) {
+            sources.createNewFile();
+        }
 
-		PrintWriter out = new PrintWriter(sources);
-		for (File file : fileList) {
-			out.println(file);
-		}
-		out.close();
+        PrintWriter out = new PrintWriter(sources);
+        for (File file : fileList) {
+            out.println(file);
+        }
+        out.close();
 
-		return sources.getPath();
-	}
+        return sources.getPath();
+    }
 
 }

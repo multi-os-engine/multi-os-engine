@@ -16,45 +16,45 @@ limitations under the License.
 
 package org.moe.natjgen;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import org.eclipse.jdt.core.dom.Javadoc;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.text.edits.TextEditGroup;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class XcodeDocumentation {
 
-	public static final String DocCLanguage = "C";
-	public static final String DocObjectiveCLanguage = "Objective-C";
+    public static final String DocCLanguage = "C";
+    public static final String DocObjectiveCLanguage = "Objective-C";
 
-	public static final String DocFunctionType = "func";
-	public static final String DocMacroType = "macro";
+    public static final String DocFunctionType = "func";
+    public static final String DocMacroType = "macro";
 
-	public static final String DocClassMethodType = "clm";
-	public static final String DocInstanceMethodType = "instm";
-	public static final String DocInstancePropertyType = "instp";
-	public static final String DocInterfaceClassMethodType = "intfcm";
-	public static final String DocInterfaceMethodType = "intfm";
-	public static final String DocInterfacePropertyType = "intfp";
+    public static final String DocClassMethodType = "clm";
+    public static final String DocInstanceMethodType = "instm";
+    public static final String DocInstancePropertyType = "instp";
+    public static final String DocInterfaceClassMethodType = "intfcm";
+    public static final String DocInterfaceMethodType = "intfm";
+    public static final String DocInterfacePropertyType = "intfp";
 
-	interface IXcodeDocumenrationImpl {
-		Javadoc getJavaDoc(ASTRewrite rewrite, ArrayList<CalleeArgument> args);
-	}
+    interface IXcodeDocumenrationImpl {
+        Javadoc getJavaDoc(ASTRewrite rewrite, ArrayList<CalleeArgument> args);
+    }
 
-	private final IXcodeDocumenrationImpl impl;
+    private final IXcodeDocumenrationImpl impl;
 
-	public XcodeDocumentation(Indexer indexer, String lang, String type, String element, String name,
-			TextEditGroup editGroup) throws IOException {
-		if ("true".equals(System.getProperty("moe.natjgen.doc.full", "false"))) {
-			impl = new XcodeFullDocumentation(indexer, lang, type, element, name, editGroup);
-		} else {
-			impl = new XcodeLinkedDocumentation(indexer, lang, type, element, name, editGroup);
-		}
-	}
+    public XcodeDocumentation(Indexer indexer, String lang, String type, String element, String name,
+            TextEditGroup editGroup) throws IOException {
+        if ("true".equals(System.getProperty("moe.natjgen.doc.full", "false"))) {
+            impl = new XcodeFullDocumentation(indexer, lang, type, element, name, editGroup);
+        } else {
+            impl = new XcodeLinkedDocumentation(indexer, lang, type, element, name, editGroup);
+        }
+    }
 
-	public Javadoc getJavaDoc(ASTRewrite rewrite, ArrayList<CalleeArgument> args) {
-		return impl.getJavaDoc(rewrite, args);
-	}
+    public Javadoc getJavaDoc(ASTRewrite rewrite, ArrayList<CalleeArgument> args) {
+        return impl.getJavaDoc(rewrite, args);
+    }
 
 }

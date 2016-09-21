@@ -18,20 +18,19 @@ package org.moe.natjgen.test.pointers;
 
 public class ObjCObjectPointers extends AbstractPointersTest {
 
-	@Override
-	protected void optionalIgnore() {
-		assumeHasControlMethod_HasObjC();
-	}
+    @Override
+    protected void optionalIgnore() {
+        assumeHasControlMethod_HasObjC();
+    }
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp("moe_objc_class", "moe_objc_class", "Ptr<moe_objc_class>",
-				"ConstPtr<moe_objc_class>");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp("moe_objc_class", "moe_objc_class", "Ptr<moe_objc_class>", "ConstPtr<moe_objc_class>");
+    }
 
-	@Override
-	protected boolean baseTypeIsPrimitive() {
-		return false;
-	}
+    @Override
+    protected boolean baseTypeIsPrimitive() {
+        return false;
+    }
 
 }

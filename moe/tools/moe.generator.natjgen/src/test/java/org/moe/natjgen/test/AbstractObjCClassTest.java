@@ -18,14 +18,14 @@ package org.moe.natjgen.test;
 
 public abstract class AbstractObjCClassTest extends AbstractNatJGenTest {
 
-	@Override
-	protected void optionalIgnore() {
-		assumeHasControlMethod_HasObjC();
-	}
+    @Override
+    protected void optionalIgnore() {
+        assumeHasControlMethod_HasObjC();
+    }
 
-	@Override
-	protected void setUp() throws Exception {
-		String simpleName = this.getClass().getSimpleName();
-		setUpClass(null, "" + simpleName + ".java", simpleName);
-	}
+    @Override
+    protected void setUp() throws Exception {
+        String simpleName = this.getClass().getSimpleName();
+        setUpClass(null, "" + simpleName + ".java", simpleName);
+    }
 }

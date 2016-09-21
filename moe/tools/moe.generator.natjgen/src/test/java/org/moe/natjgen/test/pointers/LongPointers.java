@@ -17,8 +17,8 @@ limitations under the License.
 package org.moe.natjgen.test.pointers;
 
 public class LongPointers extends AbstractPointersTest {
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp(Long.class.getSimpleName(), "moe_int64_t", "LongPtr", "ConstLongPtr");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp(Long.class.getSimpleName(), "moe_int64_t", "LongPtr", "ConstLongPtr");
+    }
 }

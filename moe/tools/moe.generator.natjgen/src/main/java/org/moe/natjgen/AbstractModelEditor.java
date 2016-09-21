@@ -20,105 +20,103 @@ import org.clang.enums.CXIdxAttrKind;
 import org.clang.struct.CXIdxAttrInfo;
 import org.clang.struct.CXIdxDeclInfo;
 import org.clang.struct.CXIdxIBOutletCollectionAttrInfo;
-
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.impl.PtrUtils;
 
 abstract class AbstractModelEditor implements IModelEditor {
 
-	protected final Indexer indexer;
-	protected final int memModel;
-	protected final Configuration configuration;
+    protected final Indexer indexer;
+    protected final int memModel;
+    protected final Configuration configuration;
 
-	protected AbstractModelEditor(Indexer indexer, int memModel) {
-		if (indexer == null) {
-			throw new NullPointerException();
-		}
-		this.indexer = indexer;
-		this.memModel = memModel;
-		this.configuration = indexer.getConfiguration();
-	}
+    protected AbstractModelEditor(Indexer indexer, int memModel) {
+        if (indexer == null) {
+            throw new NullPointerException();
+        }
+        this.indexer = indexer;
+        this.memModel = memModel;
+        this.configuration = indexer.getConfiguration();
+    }
 
-	/**
-	 * Get the Objective-C member attribute for a declaration
-	 *
-	 * @param decl
-	 *            declaration
-	 * @return {@link ObjCAttributeInfo} or null if there is none
-	 */
-	protected static final ObjCAttributeInfo getObjCMemberAttribute(CXIdxDeclInfo decl) {
-		ObjCAttributeInfo attrInfo = null;
-		int count = decl.numAttributes();
-		for (int i = 0; i < count; ++i) {
-			// Use element reference here! Underlying structure is not really
-			// CXIdxAttrInfo and
-			// is greater in size than CXIdxAttrInfo.
-			CXIdxAttrInfo info = PtrUtils.getElemRef((Ptr<CXIdxAttrInfo>)decl.attributes().get(i), 0);
-			switch (info.kind()) {
-			case CXIdxAttrKind.CXIdxAttr_IBAction:
-				attrInfo = new ObjCAttributeInfo(ObjCAttributeInfo.IBACTION);
-				i = count;
-				break;
-			case CXIdxAttrKind.CXIdxAttr_IBOutlet:
-				attrInfo = new ObjCAttributeInfo(ObjCAttributeInfo.IBOUTLET);
-				i = count;
-				break;
-			case CXIdxAttrKind.CXIdxAttr_IBOutletCollection:
-				CXIdxIBOutletCollectionAttrInfo collInfo = info.getIBOutletCollectionAttrInfo();
-				attrInfo = new ObjCAttributeInfo(ObjCAttributeInfo.IBOUTLETCOLLECTION,
-						collInfo.classCursor().toString());
-				i = count;
-				break;
+    /**
+     * Get the Objective-C member attribute for a declaration
+     *
+     * @param decl declaration
+     * @return {@link ObjCAttributeInfo} or null if there is none
+     */
+    protected static final ObjCAttributeInfo getObjCMemberAttribute(CXIdxDeclInfo decl) {
+        ObjCAttributeInfo attrInfo = null;
+        int count = decl.numAttributes();
+        for (int i = 0; i < count; ++i) {
+            // Use element reference here! Underlying structure is not really
+            // CXIdxAttrInfo and
+            // is greater in size than CXIdxAttrInfo.
+            CXIdxAttrInfo info = PtrUtils.getElemRef((Ptr<CXIdxAttrInfo>)decl.attributes().get(i), 0);
+            switch (info.kind()) {
+            case CXIdxAttrKind.CXIdxAttr_IBAction:
+                attrInfo = new ObjCAttributeInfo(ObjCAttributeInfo.IBACTION);
+                i = count;
+                break;
+            case CXIdxAttrKind.CXIdxAttr_IBOutlet:
+                attrInfo = new ObjCAttributeInfo(ObjCAttributeInfo.IBOUTLET);
+                i = count;
+                break;
+            case CXIdxAttrKind.CXIdxAttr_IBOutletCollection:
+                CXIdxIBOutletCollectionAttrInfo collInfo = info.getIBOutletCollectionAttrInfo();
+                attrInfo = new ObjCAttributeInfo(ObjCAttributeInfo.IBOUTLETCOLLECTION,
+                        collInfo.classCursor().toString());
+                i = count;
+                break;
 
-			default:
-				break;
-			}
-		}
-		return attrInfo;
-	}
+            default:
+                break;
+            }
+        }
+        return attrInfo;
+    }
 
-	final protected Statistics statLog() {
-		return indexer.stats;
-	}
+    final protected Statistics statLog() {
+        return indexer.stats;
+    }
 
-	final protected TypeLogger typeLog() {
-		return indexer.tStats;
-	}
+    final protected TypeLogger typeLog() {
+        return indexer.tStats;
+    }
 
-	final protected Generator getGenerator() {
-		return indexer.getGenerator();
-	}
+    final protected Generator getGenerator() {
+        return indexer.getGenerator();
+    }
 
-	@Override
-	public void preProcess() {
-		for (ObjCClassManager manager : getGenerator().getAllObjCClasss()) {
-			manager.resetEditorState();
-		}
-		for (ObjCClassManager manager : getGenerator().getAllObjCProtocols()) {
-			manager.resetEditorState();
-		}
-		for (CEnumManager manager : getGenerator().getAllCEnums()) {
-			manager.resetEditorState();
-		}
-		for (CManager manager : getGenerator().getAllCManagers()) {
-			manager.resetEditorState();
-		}
-	}
+    @Override
+    public void preProcess() {
+        for (ObjCClassManager manager : getGenerator().getAllObjCClasss()) {
+            manager.resetEditorState();
+        }
+        for (ObjCClassManager manager : getGenerator().getAllObjCProtocols()) {
+            manager.resetEditorState();
+        }
+        for (CEnumManager manager : getGenerator().getAllCEnums()) {
+            manager.resetEditorState();
+        }
+        for (CManager manager : getGenerator().getAllCManagers()) {
+            manager.resetEditorState();
+        }
+    }
 
-	@Override
-	public void postProcess() {
-		for (ObjCClassManager manager : getGenerator().getAllObjCClasss()) {
-			manager.disableUneditedMethods();
-		}
-		for (ObjCClassManager manager : getGenerator().getAllObjCProtocols()) {
-			manager.disableUneditedMethods();
-		}
-		for (CEnumManager manager : getGenerator().getAllCEnums()) {
-			manager.disableUneditedMethods();
-		}
-		for (CManager manager : getGenerator().getAllCManagers()) {
-			manager.disableUneditedMethods();
-		}
-	}
+    @Override
+    public void postProcess() {
+        for (ObjCClassManager manager : getGenerator().getAllObjCClasss()) {
+            manager.disableUneditedMethods();
+        }
+        for (ObjCClassManager manager : getGenerator().getAllObjCProtocols()) {
+            manager.disableUneditedMethods();
+        }
+        for (CEnumManager manager : getGenerator().getAllCEnums()) {
+            manager.disableUneditedMethods();
+        }
+        for (CManager manager : getGenerator().getAllCManagers()) {
+            manager.disableUneditedMethods();
+        }
+    }
 
 }

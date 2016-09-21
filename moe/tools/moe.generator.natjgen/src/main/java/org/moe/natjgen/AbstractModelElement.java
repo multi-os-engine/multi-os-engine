@@ -18,71 +18,68 @@ package org.moe.natjgen;
 
 abstract class AbstractModelElement {
 
-	/**
-	 * Element's name.
-	 */
-	private String name;
+    /**
+     * Element's name.
+     */
+    private String name;
 
-	/**
-	 * Editor pass count.
-	 */
-	private boolean edited = true;
+    /**
+     * Editor pass count.
+     */
+    private boolean edited = true;
 
-	/**
-	 * Creates a new Model Element.
-	 * 
-	 * @param name
-	 *            element's name
-	 * @param requiresName
-	 *            boolean indicating whether the name can be null or not
-	 */
-	AbstractModelElement(String name, boolean requiresName) {
-		if (requiresName && name == null) {
-			throw new NullPointerException();
-		}
-		this.name = name;
-	}
+    /**
+     * Creates a new Model Element.
+     *
+     * @param name         element's name
+     * @param requiresName boolean indicating whether the name can be null or not
+     */
+    AbstractModelElement(String name, boolean requiresName) {
+        if (requiresName && name == null) {
+            throw new NullPointerException();
+        }
+        this.name = name;
+    }
 
-	/**
-	 * Returns the element's name.
-	 * 
-	 * @return the element's name
-	 */
-	final public String getName() {
-		return name;
-	}
+    /**
+     * Returns the element's name.
+     *
+     * @return the element's name
+     */
+    final public String getName() {
+        return name;
+    }
 
-	/**
-	 * Sets the element's name.
-	 * 
-	 * @param name
-	 *            new name
-	 */
-	final void setName(String name) {
-		this.name = name;
-	}
+    /**
+     * Sets the element's name.
+     *
+     * @param name new name
+     */
+    final void setName(String name) {
+        this.name = name;
+    }
 
-	/**
-	 * Returns the edited flag.
-	 * 
-	 * @return the edited flag
-	 */
-	final public boolean isEdited() {
-		return edited;
-	}
+    /**
+     * Returns the edited flag.
+     *
+     * @return the edited flag
+     */
+    final public boolean isEdited() {
+        return edited;
+    }
 
-	/**
-	 * Sets the edited flag.
-	 */
-	final public void setEdited() {
-		this.edited = true;
-	}
+    /**
+     * Sets the edited flag.
+     */
+    final public void setEdited() {
+        this.edited = true;
+    }
 
-	/**
-	 * Clears the edited flag.
-	 */
-	final public void clearEdited() {
-		this.edited = true;
-	}
+    /**
+     * Clears the edited flag.
+     */
+    final public void clearEdited() {
+        this.edited = true;
+    }
 
 }

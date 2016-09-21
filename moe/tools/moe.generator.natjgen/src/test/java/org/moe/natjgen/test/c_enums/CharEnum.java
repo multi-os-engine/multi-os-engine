@@ -21,43 +21,43 @@ import org.eclipse.jdt.core.dom.PrimitiveType;
 
 public class CharEnum extends AbstractCEnumTest {
 
-	@Override
-	protected void optionalIgnore() {
-		assumeHasControlMethod_HasSizedEnums();
-	}
+    @Override
+    protected void optionalIgnore() {
+        assumeHasControlMethod_HasSizedEnums();
+    }
 
-	@Override
-	protected String getType() {
-		return "byte";
-	}
+    @Override
+    protected String getType() {
+        return "byte";
+    }
 
-	@Override
-	protected String getZeroValue() {
-		return "0";
-	}
+    @Override
+    protected String getZeroValue() {
+        return "0";
+    }
 
-	@Override
-	protected String getOneValue() {
-		return "1";
-	}
+    @Override
+    protected String getOneValue() {
+        return "1";
+    }
 
-	@Override
-	protected String getMinValue() {
-		return "-128";
-	}
+    @Override
+    protected String getMinValue() {
+        return "-128";
+    }
 
-	@Override
-	protected String getMaxValue() {
-		return "127";
-	}
+    @Override
+    protected String getMaxValue() {
+        return "127";
+    }
 
-	@Override
-	public void test_diff() {
-		FieldDeclaration field = getField(diff_name);
-		assertExistsAndGenerated(field);
-		assertPrimitiveType(field.getType(), getType());
+    @Override
+    public void test_diff() {
+        FieldDeclaration field = getField(diff_name);
+        assertExistsAndGenerated(field);
+        assertPrimitiveType(field.getType(), getType());
 
-		assertInitialValue(field, PrimitiveType.BYTE, "85", null, "-86", null);
-	}
+        assertInitialValue(field, PrimitiveType.BYTE, "85", null, "-86", null);
+    }
 
 }

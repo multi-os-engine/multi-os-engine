@@ -16,41 +16,46 @@ limitations under the License.
 
 package org.moe.natjgen.test.structs;
 
-import org.moe.natjgen.Constants;
-import org.moe.natjgen.test.AbstractNatJGenTest;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.NormalAnnotation;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
+import org.moe.natjgen.Constants;
+import org.moe.natjgen.test.AbstractNatJGenTest;
 
 public class PrimSingleArrayStruct extends AbstractStructTest {
 
-	public void test_getter_f1() {
-		MethodDeclaration method = getMethod("f1");
-		AbstractNatJGenTest.assertExistsAndGenerated(method);
+    public void test_getter_f1() {
+        MethodDeclaration method = getMethod("f1");
+        AbstractNatJGenTest.assertExistsAndGenerated(method);
 
-		AbstractNatJGenTest.assertPrimitiveType(method.getReturnType2(), "int");
+        AbstractNatJGenTest.assertPrimitiveType(method.getReturnType2(), "int");
 
-		AbstractNatJGenTest.assertNumberOfArguments(method, 1);
-		AbstractNatJGenTest.assertPrimitiveType(((SingleVariableDeclaration)method.parameters().get(0)).getType(), "int");
+        AbstractNatJGenTest.assertNumberOfArguments(method, 1);
+        AbstractNatJGenTest
+                .assertPrimitiveType(((SingleVariableDeclaration)method.parameters().get(0)).getType(), "int");
 
-		NormalAnnotation sfa = AbstractNatJGenTest.assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
-		AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "isGetter", true);
-		AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "count", 5);
-	}
+        NormalAnnotation sfa = AbstractNatJGenTest
+                .assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
+        AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "isGetter", true);
+        AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "count", 5);
+    }
 
-	public void test_setter_f1() {
-		MethodDeclaration method = getMethod("setF1");
-		AbstractNatJGenTest.assertExistsAndGenerated(method);
+    public void test_setter_f1() {
+        MethodDeclaration method = getMethod("setF1");
+        AbstractNatJGenTest.assertExistsAndGenerated(method);
 
-		AbstractNatJGenTest.assertPrimitiveType(method.getReturnType2(), "void");
+        AbstractNatJGenTest.assertPrimitiveType(method.getReturnType2(), "void");
 
-		AbstractNatJGenTest.assertNumberOfArguments(method, 2);
-		AbstractNatJGenTest.assertPrimitiveType(((SingleVariableDeclaration)method.parameters().get(0)).getType(), "int");
-		AbstractNatJGenTest.assertPrimitiveType(((SingleVariableDeclaration)method.parameters().get(1)).getType(), "int");
+        AbstractNatJGenTest.assertNumberOfArguments(method, 2);
+        AbstractNatJGenTest
+                .assertPrimitiveType(((SingleVariableDeclaration)method.parameters().get(0)).getType(), "int");
+        AbstractNatJGenTest
+                .assertPrimitiveType(((SingleVariableDeclaration)method.parameters().get(1)).getType(), "int");
 
-		NormalAnnotation sfa = AbstractNatJGenTest.assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
-		AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "isGetter", false);
-		AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "count", 5);
-	}
+        NormalAnnotation sfa = AbstractNatJGenTest
+                .assertHasNormalAnnotation(method, Constants.StructureFieldAnnotationFQ);
+        AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "isGetter", false);
+        AbstractNatJGenTest.assertNormalAnnotationHasValue(sfa, "count", 5);
+    }
 
 }

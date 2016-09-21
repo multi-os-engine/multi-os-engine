@@ -21,10 +21,10 @@ import org.moe.natjgen.util.Path;
 
 public class NatJGenNativeLoader {
 
-	public static void initNatives() {
+    public static void initNatives() {
 
-		// Only use for testing clang builds!
-		// System.load("/Volumes/Developer/NoBackup/git/build-release/lib/libclang.3.8.dylib");
+        // Only use for testing clang builds!
+        // System.load("/Volumes/Developer/NoBackup/git/build-release/lib/libclang.3.8.dylib");
 
 		/*
          * @formatter:off

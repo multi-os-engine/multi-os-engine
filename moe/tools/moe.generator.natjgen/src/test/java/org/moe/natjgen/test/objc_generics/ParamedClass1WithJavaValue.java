@@ -16,33 +16,33 @@ limitations under the License.
 
 package org.moe.natjgen.test.objc_generics;
 
-import org.moe.natjgen.test.AbstractObjCClassTest;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.SimpleType;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.TypeParameter;
+import org.moe.natjgen.test.AbstractObjCClassTest;
 
 public class ParamedClass1WithJavaValue extends AbstractObjCClassTest {
-	public void test_class_with_templates() {
-		TypeDeclaration decl = getClassDecl();
-		assertEquals("ParamedClass1WithJavaValue", decl.getName().getIdentifier());
-		assertEquals(1, decl.typeParameters().size());
-		assertEquals("_Object", ((TypeParameter)decl.typeParameters().get(0)).getName().getIdentifier());
-	}
+    public void test_class_with_templates() {
+        TypeDeclaration decl = getClassDecl();
+        assertEquals("ParamedClass1WithJavaValue", decl.getName().getIdentifier());
+        assertEquals(1, decl.typeParameters().size());
+        assertEquals("_Object", ((TypeParameter)decl.typeParameters().get(0)).getName().getIdentifier());
+    }
 
-	public void test_superclass_with_templates() {
-		TypeDeclaration decl = getClassDecl();
+    public void test_superclass_with_templates() {
+        TypeDeclaration decl = getClassDecl();
 
-		assertTrue(decl.getSuperclassType().isSimpleType());
-		SimpleType superClass = (SimpleType)decl.getSuperclassType();
+        assertTrue(decl.getSuperclassType().isSimpleType());
+        SimpleType superClass = (SimpleType)decl.getSuperclassType();
 
-		assertEquals("NSObject", superClass.getName().getFullyQualifiedName());
-	}
+        assertEquals("NSObject", superClass.getName().getFullyQualifiedName());
+    }
 
-	public void test_method_object_word() {
-		MethodDeclaration method = getMethod("object_word");
-		assertExistsAndGenerated(method);
-		assertEquals(0, method.parameters().size());
-		assertSimpleType(method.getReturnType2(), "_Object");
-	}
+    public void test_method_object_word() {
+        MethodDeclaration method = getMethod("object_word");
+        assertExistsAndGenerated(method);
+        assertEquals(0, method.parameters().size());
+        assertSimpleType(method.getReturnType2(), "_Object");
+    }
 }

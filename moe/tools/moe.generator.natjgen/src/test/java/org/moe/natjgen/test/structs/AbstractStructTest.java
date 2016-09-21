@@ -20,11 +20,11 @@ import org.moe.natjgen.test.AbstractNatJGenTest;
 
 public abstract class AbstractStructTest extends AbstractNatJGenTest {
 
-	private final String name = getClass().getSimpleName();
+    private final String name = getClass().getSimpleName();
 
-	@Override
-	protected void setUp() throws Exception {
-		setUpClass(null, "struct/" + name + ".java", name);
-	}
+    @Override
+    protected void setUp() throws Exception {
+        setUpClass(null, "struct/" + name + ".java", name);
+    }
 
 }

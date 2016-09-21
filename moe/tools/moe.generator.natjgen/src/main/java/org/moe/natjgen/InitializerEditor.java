@@ -16,8 +16,6 @@ limitations under the License.
 
 package org.moe.natjgen;
 
-import java.util.List;
-
 import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.Expression;
 import org.eclipse.jdt.core.dom.ExpressionStatement;
@@ -27,83 +25,85 @@ import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.Statement;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 
+import java.util.List;
+
 public class InitializerEditor extends EditContext {
 
-	private final Initializer decl;
-	private final ModifierEditor modifiers;
+    private final Initializer decl;
+    private final ModifierEditor modifiers;
 
-	InitializerEditor(AbstractUnitManager manager, Initializer decl) {
-		super(manager);
-		this.decl = decl;
-		this.modifiers = new ModifierEditor(manager, decl, Initializer.MODIFIERS2_PROPERTY, true);
-	}
+    InitializerEditor(AbstractUnitManager manager, Initializer decl) {
+        super(manager);
+        this.decl = decl;
+        this.modifiers = new ModifierEditor(manager, decl, Initializer.MODIFIERS2_PROPERTY, true);
+    }
 
-	@Override
-	public boolean isEditable() {
-		return modifiers.isEditable();
-	}
+    @Override
+    public boolean isEditable() {
+        return modifiers.isEditable();
+    }
 
-	@Override
-	public void close() throws GeneratorException {
-		modifiers.close();
-	}
+    @Override
+    public void close() throws GeneratorException {
+        modifiers.close();
+    }
 
-	public ModifierEditor getModifiers() {
-		return modifiers;
-	}
+    public ModifierEditor getModifiers() {
+        return modifiers;
+    }
 
-	@SuppressWarnings("unchecked")
-	public boolean hasNatJRegister() {
-		Block block = (Block)getRewrite().get(decl, Initializer.BODY_PROPERTY);
+    @SuppressWarnings("unchecked")
+    public boolean hasNatJRegister() {
+        Block block = (Block)getRewrite().get(decl, Initializer.BODY_PROPERTY);
 
-		if (block == null) {
-			return false;
-		}
+        if (block == null) {
+            return false;
+        }
 
-		ListRewrite block_stmts = getRewrite().getListRewrite(block, Block.STATEMENTS_PROPERTY);
-		for (Statement stmt : (List<Statement>)block_stmts.getRewrittenList()) {
-			if (stmt instanceof ExpressionStatement) {
-				Expression expr = (Expression)getRewrite().get(stmt, ExpressionStatement.EXPRESSION_PROPERTY);
-				if (expr instanceof MethodInvocation) {
-					Expression cls = (Expression)getRewrite().get(expr, MethodInvocation.EXPRESSION_PROPERTY);
-					if (!(cls instanceof SimpleName)) {
-						continue;
-					}
+        ListRewrite block_stmts = getRewrite().getListRewrite(block, Block.STATEMENTS_PROPERTY);
+        for (Statement stmt : (List<Statement>)block_stmts.getRewrittenList()) {
+            if (stmt instanceof ExpressionStatement) {
+                Expression expr = (Expression)getRewrite().get(stmt, ExpressionStatement.EXPRESSION_PROPERTY);
+                if (expr instanceof MethodInvocation) {
+                    Expression cls = (Expression)getRewrite().get(expr, MethodInvocation.EXPRESSION_PROPERTY);
+                    if (!(cls instanceof SimpleName)) {
+                        continue;
+                    }
 
-					String identifier = (String)getRewrite().get(cls, SimpleName.IDENTIFIER_PROPERTY);
-					if (!identifier.equals(Constants.NatJ) && !identifier.equals(Constants.NatJFQ)) {
-						continue;
-					}
+                    String identifier = (String)getRewrite().get(cls, SimpleName.IDENTIFIER_PROPERTY);
+                    if (!identifier.equals(Constants.NatJ) && !identifier.equals(Constants.NatJFQ)) {
+                        continue;
+                    }
 
-					SimpleName method = (SimpleName)getRewrite().get(expr, MethodInvocation.NAME_PROPERTY);
-					String methodId = (String)getRewrite().get(method, SimpleName.IDENTIFIER_PROPERTY);
-					if (methodId.equals(Constants.NatJRegisterMethod)) {
-						return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
+                    SimpleName method = (SimpleName)getRewrite().get(expr, MethodInvocation.NAME_PROPERTY);
+                    String methodId = (String)getRewrite().get(method, SimpleName.IDENTIFIER_PROPERTY);
+                    if (methodId.equals(Constants.NatJRegisterMethod)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
-	public void insertNatJRegister() throws GeneratorException {
-		editLock();
+    public void insertNatJRegister() throws GeneratorException {
+        editLock();
 
-		Block block = (Block)getRewrite().get(decl, Initializer.BODY_PROPERTY);
+        Block block = (Block)getRewrite().get(decl, Initializer.BODY_PROPERTY);
 
-		if (block == null) {
-			block = getAST().newBlock();
-			getRewrite().set(decl, Initializer.BODY_PROPERTY, block, getEditGroup());
-		}
+        if (block == null) {
+            block = getAST().newBlock();
+            getRewrite().set(decl, Initializer.BODY_PROPERTY, block, getEditGroup());
+        }
 
-		ListRewrite block_stmts = getRewrite().getListRewrite(block, Block.STATEMENTS_PROPERTY);
-		MethodInvocation invoke = getAST().newMethodInvocation();
-		ExpressionStatement expr_stmt = getAST().newExpressionStatement(invoke);
-		block_stmts.insertFirst(expr_stmt, getEditGroup());
-		getRewrite().set(invoke, MethodInvocation.EXPRESSION_PROPERTY,
-				getAST().newSimpleName(getManager().addImport(Constants.NatJFQ)), getEditGroup());
-		getRewrite().set(invoke, MethodInvocation.NAME_PROPERTY, getAST().newSimpleName(Constants.NatJRegisterMethod),
-				getEditGroup());
-	}
+        ListRewrite block_stmts = getRewrite().getListRewrite(block, Block.STATEMENTS_PROPERTY);
+        MethodInvocation invoke = getAST().newMethodInvocation();
+        ExpressionStatement expr_stmt = getAST().newExpressionStatement(invoke);
+        block_stmts.insertFirst(expr_stmt, getEditGroup());
+        getRewrite().set(invoke, MethodInvocation.EXPRESSION_PROPERTY,
+                getAST().newSimpleName(getManager().addImport(Constants.NatJFQ)), getEditGroup());
+        getRewrite().set(invoke, MethodInvocation.NAME_PROPERTY, getAST().newSimpleName(Constants.NatJRegisterMethod),
+                getEditGroup());
+    }
 
 }

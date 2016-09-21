@@ -19,8 +19,8 @@ package org.moe.natjgen.test.pointers;
 import org.moe.natj.general.ann.NFloat;
 
 public class NFloatPointers extends AbstractPointersTest {
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp(NFloat.class.getSimpleName(), "moe_nfloat_t", "NFloatPtr", "ConstNFloatPtr");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp(NFloat.class.getSimpleName(), "moe_nfloat_t", "NFloatPtr", "ConstNFloatPtr");
+    }
 }

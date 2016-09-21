@@ -17,8 +17,8 @@ limitations under the License.
 package org.moe.natjgen.test.pointers;
 
 public class IntPointers extends AbstractPointersTest {
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp(Integer.class.getSimpleName(), "int", "IntPtr", "ConstIntPtr");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp(Integer.class.getSimpleName(), "int", "IntPtr", "ConstIntPtr");
+    }
 }

@@ -26,68 +26,68 @@ import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 
 public class ConstructorEditor extends MethodEditor {
 
-	public ConstructorEditor(AbstractUnitManager manager, MethodDeclaration decl, boolean isNew) {
-		super(manager, decl, isNew);
-		if (isNew) {
-			getRewrite().set(decl, MethodDeclaration.NAME_PROPERTY, getAST().newSimpleName(getManager().getUnitName()),
-					getEditGroup());
-			getRewrite().set(decl, MethodDeclaration.CONSTRUCTOR_PROPERTY, Boolean.TRUE, getEditGroup());
-		}
-	}
+    public ConstructorEditor(AbstractUnitManager manager, MethodDeclaration decl, boolean isNew) {
+        super(manager, decl, isNew);
+        if (isNew) {
+            getRewrite().set(decl, MethodDeclaration.NAME_PROPERTY, getAST().newSimpleName(getManager().getUnitName()),
+                    getEditGroup());
+            getRewrite().set(decl, MethodDeclaration.CONSTRUCTOR_PROPERTY, Boolean.TRUE, getEditGroup());
+        }
+    }
 
-	public void setBodyAsEmpty() {
-		Block block = getAST().newBlock();
-		getRewrite().set(methodDecl, MethodDeclaration.BODY_PROPERTY, block, getEditGroup());
-	}
+    public void setBodyAsEmpty() {
+        Block block = getAST().newBlock();
+        getRewrite().set(methodDecl, MethodDeclaration.BODY_PROPERTY, block, getEditGroup());
+    }
 
-	public void setBodyAsSuperInitWithClassAsArg() {
-		Block block = getAST().newBlock();
-		getRewrite().set(methodDecl, MethodDeclaration.BODY_PROPERTY, block, getEditGroup());
-		ListRewrite block_stmts = getRewrite().getListRewrite(block, Block.STATEMENTS_PROPERTY);
-		SuperConstructorInvocation invoke = getAST().newSuperConstructorInvocation();
-		block_stmts.insertLast(invoke, getEditGroup());
-		ListRewrite invoke_args = getRewrite().getListRewrite(invoke, SuperConstructorInvocation.ARGUMENTS_PROPERTY);
-		TypeLiteral literal = getAST().newTypeLiteral();
-		invoke_args.insertLast(literal, getEditGroup());
-		getRewrite().set(literal, TypeLiteral.TYPE_PROPERTY,
-				getAST().newSimpleType(getAST().newName(getManager().getUnitName())), getEditGroup());
-	}
+    public void setBodyAsSuperInitWithClassAsArg() {
+        Block block = getAST().newBlock();
+        getRewrite().set(methodDecl, MethodDeclaration.BODY_PROPERTY, block, getEditGroup());
+        ListRewrite block_stmts = getRewrite().getListRewrite(block, Block.STATEMENTS_PROPERTY);
+        SuperConstructorInvocation invoke = getAST().newSuperConstructorInvocation();
+        block_stmts.insertLast(invoke, getEditGroup());
+        ListRewrite invoke_args = getRewrite().getListRewrite(invoke, SuperConstructorInvocation.ARGUMENTS_PROPERTY);
+        TypeLiteral literal = getAST().newTypeLiteral();
+        invoke_args.insertLast(literal, getEditGroup());
+        getRewrite().set(literal, TypeLiteral.TYPE_PROPERTY,
+                getAST().newSimpleType(getAST().newName(getManager().getUnitName())), getEditGroup());
+    }
 
-	public void setBodyAsSuperInitWithPointerAsArg(String varname) {
-		Block block = getAST().newBlock();
-		getRewrite().set(methodDecl, MethodDeclaration.BODY_PROPERTY, block, getEditGroup());
-		ListRewrite block_stmts = getRewrite().getListRewrite(block, Block.STATEMENTS_PROPERTY);
-		SuperConstructorInvocation invoke = getAST().newSuperConstructorInvocation();
-		block_stmts.insertLast(invoke, getEditGroup());
-		ListRewrite invoke_args = getRewrite().getListRewrite(invoke, SuperConstructorInvocation.ARGUMENTS_PROPERTY);
-		invoke_args.insertLast(getAST().newSimpleName(varname), getEditGroup());
-	}
+    public void setBodyAsSuperInitWithPointerAsArg(String varname) {
+        Block block = getAST().newBlock();
+        getRewrite().set(methodDecl, MethodDeclaration.BODY_PROPERTY, block, getEditGroup());
+        ListRewrite block_stmts = getRewrite().getListRewrite(block, Block.STATEMENTS_PROPERTY);
+        SuperConstructorInvocation invoke = getAST().newSuperConstructorInvocation();
+        block_stmts.insertLast(invoke, getEditGroup());
+        ListRewrite invoke_args = getRewrite().getListRewrite(invoke, SuperConstructorInvocation.ARGUMENTS_PROPERTY);
+        invoke_args.insertLast(getAST().newSimpleName(varname), getEditGroup());
+    }
 
-	public void setBodyAsSuperInitWithFieldSetters(String[] setters, String[] getters) {
-		if (setters == null || getters == null || setters.length != getters.length) {
-			throw new IllegalArgumentException();
-		}
+    public void setBodyAsSuperInitWithFieldSetters(String[] setters, String[] getters) {
+        if (setters == null || getters == null || setters.length != getters.length) {
+            throw new IllegalArgumentException();
+        }
 
-		Block block = getAST().newBlock();
-		getRewrite().set(methodDecl, MethodDeclaration.BODY_PROPERTY, block, getEditGroup());
-		ListRewrite block_stmts = getRewrite().getListRewrite(block, Block.STATEMENTS_PROPERTY);
-		SuperConstructorInvocation invoke = getAST().newSuperConstructorInvocation();
-		block_stmts.insertLast(invoke, getEditGroup());
-		ListRewrite invoke_args = getRewrite().getListRewrite(invoke, SuperConstructorInvocation.ARGUMENTS_PROPERTY);
-		TypeLiteral literal = getAST().newTypeLiteral();
-		invoke_args.insertLast(literal, getEditGroup());
-		getRewrite().set(literal, TypeLiteral.TYPE_PROPERTY,
-				getAST().newSimpleType(getAST().newName(getManager().getUnitName())), getEditGroup());
+        Block block = getAST().newBlock();
+        getRewrite().set(methodDecl, MethodDeclaration.BODY_PROPERTY, block, getEditGroup());
+        ListRewrite block_stmts = getRewrite().getListRewrite(block, Block.STATEMENTS_PROPERTY);
+        SuperConstructorInvocation invoke = getAST().newSuperConstructorInvocation();
+        block_stmts.insertLast(invoke, getEditGroup());
+        ListRewrite invoke_args = getRewrite().getListRewrite(invoke, SuperConstructorInvocation.ARGUMENTS_PROPERTY);
+        TypeLiteral literal = getAST().newTypeLiteral();
+        invoke_args.insertLast(literal, getEditGroup());
+        getRewrite().set(literal, TypeLiteral.TYPE_PROPERTY,
+                getAST().newSimpleType(getAST().newName(getManager().getUnitName())), getEditGroup());
 
-		for (int i = 0; i < setters.length; i++) {
-			MethodInvocation setfieldinvoke = getAST().newMethodInvocation();
-			Statement stmt = getAST().newExpressionStatement(setfieldinvoke);
-			block_stmts.insertLast(stmt, getEditGroup());
-			getRewrite().set(setfieldinvoke, MethodInvocation.NAME_PROPERTY, getAST().newSimpleName(setters[i]),
-					getEditGroup());
-			ListRewrite arglrw = getRewrite().getListRewrite(setfieldinvoke, MethodInvocation.ARGUMENTS_PROPERTY);
-			arglrw.insertLast(getAST().newSimpleName(getters[i]), getEditGroup());
-		}
-	}
+        for (int i = 0; i < setters.length; i++) {
+            MethodInvocation setfieldinvoke = getAST().newMethodInvocation();
+            Statement stmt = getAST().newExpressionStatement(setfieldinvoke);
+            block_stmts.insertLast(stmt, getEditGroup());
+            getRewrite().set(setfieldinvoke, MethodInvocation.NAME_PROPERTY, getAST().newSimpleName(setters[i]),
+                    getEditGroup());
+            ListRewrite arglrw = getRewrite().getListRewrite(setfieldinvoke, MethodInvocation.ARGUMENTS_PROPERTY);
+            arglrw.insertLast(getAST().newSimpleName(getters[i]), getEditGroup());
+        }
+    }
 
 }

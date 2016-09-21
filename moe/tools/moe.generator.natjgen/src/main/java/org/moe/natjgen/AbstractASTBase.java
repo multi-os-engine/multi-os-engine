@@ -23,33 +23,33 @@ import org.eclipse.jdt.core.dom.SimpleType;
 
 public abstract class AbstractASTBase {
 
-	protected AbstractUnitManager getManager() {
-		return null;
-	}
+    protected AbstractUnitManager getManager() {
+        return null;
+    }
 
-	protected abstract AST getAST();
+    protected abstract AST getAST();
 
-	protected SimpleType newSimpleType(String name) {
-		if (getManager() != null) {
-			name = getManager().addImport(name);
-		}
-		return getAST().newSimpleType(getAST().newName(name));
-	}
+    protected SimpleType newSimpleType(String name) {
+        if (getManager() != null) {
+            name = getManager().addImport(name);
+        }
+        return getAST().newSimpleType(getAST().newName(name));
+    }
 
-	protected SimpleType newUnimportedSimpleType(final String name) {
-		return getAST().newSimpleType(getAST().newName(name));
-	}
+    protected SimpleType newUnimportedSimpleType(final String name) {
+        return getAST().newSimpleType(getAST().newName(name));
+    }
 
-	protected SimpleType newSimpleType(final AbstractUnitManager unit) {
-		if (getManager() == null) {
-			throw new NullPointerException();
-		}
-		final String name = getManager().addImport(unit);
-		return getAST().newSimpleType(getAST().newName(name));
-	}
+    protected SimpleType newSimpleType(final AbstractUnitManager unit) {
+        if (getManager() == null) {
+            throw new NullPointerException();
+        }
+        final String name = getManager().addImport(unit);
+        return getAST().newSimpleType(getAST().newName(name));
+    }
 
-	protected PrimitiveType newPrimitiveType(final Code typeCode) {
-		return getAST().newPrimitiveType(typeCode);
-	}
+    protected PrimitiveType newPrimitiveType(final Code typeCode) {
+        return getAST().newPrimitiveType(typeCode);
+    }
 
 }

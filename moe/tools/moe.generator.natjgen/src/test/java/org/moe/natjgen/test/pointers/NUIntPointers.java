@@ -19,8 +19,8 @@ package org.moe.natjgen.test.pointers;
 import org.moe.natj.general.ann.NUInt;
 
 public class NUIntPointers extends AbstractPointersTest {
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp(NUInt.class.getSimpleName(), "moe_nuint_t", "NUIntPtr", "ConstNUIntPtr");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp(NUInt.class.getSimpleName(), "moe_nuint_t", "NUIntPtr", "ConstNUIntPtr");
+    }
 }

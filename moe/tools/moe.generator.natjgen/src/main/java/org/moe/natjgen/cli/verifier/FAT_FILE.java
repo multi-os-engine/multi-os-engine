@@ -30,13 +30,13 @@ public class FAT_FILE {
 
     List<mach_header> archs = new ArrayList<mach_header>();
 
-    FAT_FILE( Path fatFile ) throws UnsupportedTypeException {
+    FAT_FILE(Path fatFile) throws UnsupportedTypeException {
         try {
             byte[] filedata = Files.readAllBytes(fatFile);
             fat_header fatHeader = new fat_header(filedata);
             int nArch = fatHeader.getNArch();
             boolean isBigEndian = fatHeader.isBigEndian();
-            for( int i = 0; i < nArch; i++) {
+            for (int i = 0; i < nArch; i++) {
                 fat_arch fatArch = new fat_arch(filedata, 8 + i * 20, true);
                 mach_header header = new mach_header(filedata, fatArch.getOffset());
                 archs.add(header);
@@ -49,8 +49,9 @@ public class FAT_FILE {
     List<ArchitectureVerifier.CPU_TYPE> getCPU_TYPEs() throws UnsupportedTypeException {
         List<ArchitectureVerifier.CPU_TYPE> archList = new ArrayList<ArchitectureVerifier.CPU_TYPE>();
         for (mach_header arch : archs) {
-            ArchitectureVerifier.CPU_TYPE type = ArchitectureVerifier.CPU_TYPE.getArchByCPUType( arch.getCputype(), arch.getCpuSubtype() );
-            type.setStatic( arch.isStatic() );
+            ArchitectureVerifier.CPU_TYPE type = ArchitectureVerifier.CPU_TYPE
+                    .getArchByCPUType(arch.getCputype(), arch.getCpuSubtype());
+            type.setStatic(arch.isStatic());
             archList.add(type);
         }
         return archList;
@@ -69,16 +70,20 @@ public class FAT_FILE {
 
         fat_header(byte[] filedata) throws UnsupportedTypeException {
             magic = readInt(filedata, 0, true);
-            if(magic == FAT_MAGIC) { //big endian
+            if (magic == FAT_MAGIC) { //big endian
                 nfat_arch = readInt(filedata, 4, true);
-            } else if ( magic == FAT_CIGAM) { //little endian
+            } else if (magic == FAT_CIGAM) { //little endian
                 nfat_arch = readInt(filedata, 4, false);
-            } else
-                throw new UnsupportedTypeException("Not a fat file");
+            } else throw new UnsupportedTypeException("Not a fat file");
         }
 
-        int getNArch() { return nfat_arch; }
-        boolean isBigEndian() { return magic == FAT_MAGIC; }
+        int getNArch() {
+            return nfat_arch;
+        }
+
+        boolean isBigEndian() {
+            return magic == FAT_MAGIC;
+        }
     }
 
     private static class fat_arch {
@@ -89,7 +94,7 @@ public class FAT_FILE {
 
         public enum CPU_TYPE {
 
-            ANY("ANY",-1),
+            ANY("ANY", -1),
             VAX("VAX", 1),
             ROMP("ROMP", 2),
             NS32032("NS32032", 4),
@@ -102,8 +107,10 @@ public class FAT_FILE {
             ARM("ARM", 12),
             MC88000("MC88000", 13),
             SPARC("SPARC", 14),
-            I860("I860", 15), // big-endian
-            I860_LITTLE("I860_LITTLE", 16), // little-endian
+            I860("I860", 15),
+            // big-endian
+            I860_LITTLE("I860_LITTLE", 16),
+            // little-endian
             RS6000("RS6000", 17),
             MC98000("MC98000", 18),
             POWERPC("POWERPC", 18),
@@ -115,7 +122,7 @@ public class FAT_FILE {
             private String cpu_type;
             private int cpu_id;
 
-            CPU_TYPE( String _cpu_type, int _cpu_id ) {
+            CPU_TYPE(String _cpu_type, int _cpu_id) {
                 cpu_type = _cpu_type;
                 cpu_id = _cpu_id;
             }
@@ -139,21 +146,23 @@ public class FAT_FILE {
             }
         }
 
-        private int	cputype;	/* cpu specifier (int) */
-        private int	cpusubtype;	/* machine specifier (int) */
-        private int	offset;		/* file offset to this object file */
-        private int	size;		/* size of this object file */
-        private int	align;		/* alignment as a power of 2 */
+        private int cputype;	/* cpu specifier (int) */
+        private int cpusubtype;	/* machine specifier (int) */
+        private int offset;		/* file offset to this object file */
+        private int size;		/* size of this object file */
+        private int align;		/* alignment as a power of 2 */
 
         fat_arch(byte[] filedata, int begining, boolean isBigEndian) {
             cputype = readInt(filedata, begining, isBigEndian);
             cpusubtype = readInt(filedata, begining + 4, isBigEndian);
             offset = readInt(filedata, begining + 8, isBigEndian);
             size = readInt(filedata, begining + 12, isBigEndian);
-            align = readInt( filedata, begining + 16, isBigEndian);
+            align = readInt(filedata, begining + 16, isBigEndian);
         }
 
-        public int getOffset() { return offset; }
+        public int getOffset() {
+            return offset;
+        }
 
     }
 
@@ -169,14 +178,14 @@ public class FAT_FILE {
             MH_FVMLIB(0x3, false),		/* fixed VM shared library file */
             //MH_CORE	(0x4,???),		/* core file */
             //MH_PRELOAD(0x5,???),		/* preloaded executable file */
-            MH_DYLIB(0x6,false),		/* dynamically bound shared library */
-            MH_DYLINKER(0x7,false),		/* dynamic link editor */
-            MH_BUNDLE(0x8,false),		/* dynamically bound bundle file */
-            MH_DYLIB_STUB(0x9,false),		/* shared library stub for static */
-					/*  linking only, no section contents */
-            MH_DSYM(0xa,true),		/* companion file with only debug */
-					/*  sections */
-            MH_KEXT_BUNDLE(0xb,true);		/* x86_64 kexts */
+            MH_DYLIB(0x6, false),		/* dynamically bound shared library */
+            MH_DYLINKER(0x7, false),		/* dynamic link editor */
+            MH_BUNDLE(0x8, false),		/* dynamically bound bundle file */
+            MH_DYLIB_STUB(0x9, false),		/* shared library stub for static */
+            /*  linking only, no section contents */
+            MH_DSYM(0xa, true),		/* companion file with only debug */
+            /*  sections */
+            MH_KEXT_BUNDLE(0xb, true);		/* x86_64 kexts */
 
             private int id;
             private boolean isStatic;
@@ -186,7 +195,7 @@ public class FAT_FILE {
                 isStatic = _isStatic;
             }
 
-            public static boolean isStatic( int _id ) throws UnsupportedTypeException {
+            public static boolean isStatic(int _id) throws UnsupportedTypeException {
                 for (FILE_TYPE type : FILE_TYPE.values()) {
                     if (type.id == _id) {
                         return type.isStatic;
@@ -204,37 +213,44 @@ public class FAT_FILE {
         private static final int MH_MAGIC_64 = 0xfeedfacf; /* the 64-bit mach magic number */
         private static final int MH_CIGAM_64 = 0xcffaedfe; /* NXSwapInt(MH_MAGIC_64) */
 
-        private int	magic;		/* mach magic number identifier */
-        private int	cputype;	/* cpu specifier */
-        private int	cpusubtype;	/* machine specifier */
-        private int	filetype;	/* type of file */
-        private int	ncmds;		/* number of load commands */
-        private int	sizeofcmds;	/* the size of all the load commands */
-        private int	flags;		/* flags */
-        private int	reserved;	/* reserved; for 64bit */
+        private int magic;		/* mach magic number identifier */
+        private int cputype;	/* cpu specifier */
+        private int cpusubtype;	/* machine specifier */
+        private int filetype;	/* type of file */
+        private int ncmds;		/* number of load commands */
+        private int sizeofcmds;	/* the size of all the load commands */
+        private int flags;		/* flags */
+        private int reserved;	/* reserved; for 64bit */
 
         mach_header(byte[] filedata, int begining) {
-            magic = readInt( filedata, begining, true);
+            magic = readInt(filedata, begining, true);
             boolean isBigEndian = (magic == MH_MAGIC || magic == MH_MAGIC_64);
             cputype = readInt(filedata, begining + 4, isBigEndian);
             cpusubtype = readInt(filedata, begining + 8, isBigEndian);
             filetype = readInt(filedata, begining + 12, isBigEndian);
             ncmds = readInt(filedata, begining + 16, isBigEndian);
-            sizeofcmds = readInt( filedata, begining + 20, isBigEndian);
-            flags = readInt( filedata, begining + 24, isBigEndian);
-            reserved = readInt( filedata, begining + 28, isBigEndian);
+            sizeofcmds = readInt(filedata, begining + 20, isBigEndian);
+            flags = readInt(filedata, begining + 24, isBigEndian);
+            reserved = readInt(filedata, begining + 28, isBigEndian);
         }
 
-        public int getCputype() { return cputype; }
-        public int getCpuSubtype() { return cpusubtype; }
+        public int getCputype() {
+            return cputype;
+        }
+
+        public int getCpuSubtype() {
+            return cpusubtype;
+        }
+
         public boolean isStatic() throws UnsupportedTypeException {
             return FILE_TYPE.isStatic(filetype);
         }
     }
 
     private static int readInt(byte[] filedata, int index, boolean isBigEndian) {
-        ByteBuffer wrapped = ByteBuffer.wrap(new byte[]{filedata[index], filedata[index + 1], filedata[index + 2], filedata[index + 3]});
-        wrapped.order( isBigEndian ? ByteOrder.BIG_ENDIAN : ByteOrder.LITTLE_ENDIAN );
+        ByteBuffer wrapped = ByteBuffer
+                .wrap(new byte[] { filedata[index], filedata[index + 1], filedata[index + 2], filedata[index + 3] });
+        wrapped.order(isBigEndian ? ByteOrder.BIG_ENDIAN : ByteOrder.LITTLE_ENDIAN);
         return wrapped.getInt();
     }
 }

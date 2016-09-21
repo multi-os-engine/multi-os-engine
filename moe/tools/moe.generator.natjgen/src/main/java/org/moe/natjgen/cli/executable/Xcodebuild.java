@@ -20,9 +20,9 @@ import java.io.File;
 
 public class Xcodebuild {
 
-	public void execute(File dir, String... command) {
-		// TODO Auto-generated method stub
+    public void execute(File dir, String... command) {
+        // TODO Auto-generated method stub
 
-	}
+    }
 
 }

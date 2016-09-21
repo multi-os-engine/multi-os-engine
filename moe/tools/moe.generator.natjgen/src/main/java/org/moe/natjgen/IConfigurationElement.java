@@ -20,10 +20,10 @@ import java.util.ArrayList;
 
 public interface IConfigurationElement {
 
-	/**
-	 * Get a list of validation entries from the object
-	 * 
-	 * @return list of validation entries
-	 */
-	ArrayList<ValidationEntry> getProblems();
+    /**
+     * Get a list of validation entries from the object
+     *
+     * @return list of validation entries
+     */
+    ArrayList<ValidationEntry> getProblems();
 }

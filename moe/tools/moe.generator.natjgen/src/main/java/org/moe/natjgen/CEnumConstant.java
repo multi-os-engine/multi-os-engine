@@ -23,89 +23,87 @@ import org.apache.commons.lang3.StringEscapeUtils;
  */
 public final class CEnumConstant extends AbstractModelElement implements ICallable {
 
-	/**
-	 * Long value of the constant
-	 */
-	private final ConstantValue value;
+    /**
+     * Long value of the constant
+     */
+    private final ConstantValue value;
 
-	/**
-	 * Indicated whether the function binding code should be generated or not
-	 */
-	private boolean dontGenerate = false;
+    /**
+     * Indicated whether the function binding code should be generated or not
+     */
+    private boolean dontGenerate = false;
 
-	/**
-	 * Create a constant
-	 * 
-	 * @param name
-	 *            name of the constant
-	 * @param value
-	 *            long value of the constant
-	 */
-	public CEnumConstant(String name, ConstantValue value) {
-		super(name, true);
+    /**
+     * Create a constant
+     *
+     * @param name  name of the constant
+     * @param value long value of the constant
+     */
+    public CEnumConstant(String name, ConstantValue value) {
+        super(name, true);
 
-		// Check values
-		if (value == null) throw new RuntimeException("Value cannot be null!");
+        // Check values
+        if (value == null) throw new RuntimeException("Value cannot be null!");
 
-		// Set value
-		this.value = value;
-	}
+        // Set value
+        this.value = value;
+    }
 
-	/**
-	 * Returns the type of the constant
-	 * 
-	 * @return type
-	 */
-	public Type getType() {
-		return value.getType();
-	}
+    /**
+     * Returns the type of the constant
+     *
+     * @return type
+     */
+    public Type getType() {
+        return value.getType();
+    }
 
-	/**
-	 * Returns the long value of the constant
-	 * 
-	 * @return value
-	 */
-	public ConstantValue getValue() {
-		return value;
-	}
+    /**
+     * Returns the long value of the constant
+     *
+     * @return value
+     */
+    public ConstantValue getValue() {
+        return value;
+    }
 
-	@Override
-	public String getJavaName() {
-		return getName();
-	}
+    @Override
+    public String getJavaName() {
+        return getName();
+    }
 
-	@Override
-	public String getDefaultRuntime() {
-		return Constants.CRuntimeFQ;
-	}
+    @Override
+    public String getDefaultRuntime() {
+        return Constants.CRuntimeFQ;
+    }
 
-	public boolean getDontGenerate() {
-		return dontGenerate;
-	}
+    public boolean getDontGenerate() {
+        return dontGenerate;
+    }
 
-	public void setDontGenerate() {
-		this.dontGenerate = true;
-	}
+    public void setDontGenerate() {
+        this.dontGenerate = true;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder b = new StringBuilder();
-		b.append("<constant name=\"");
-		b.append(StringEscapeUtils.escapeXml(getName()));
-		b.append("\"");
+    @Override
+    public String toString() {
+        StringBuilder b = new StringBuilder();
+        b.append("<constant name=\"");
+        b.append(StringEscapeUtils.escapeXml(getName()));
+        b.append("\"");
 
-		b.append(" value=\"");
-		b.append(Long.toHexString(value.getValue()));
-		b.append("\"");
+        b.append(" value=\"");
+        b.append(Long.toHexString(value.getValue()));
+        b.append("\"");
 
-		if (value.hasDifferent32BitValue()) {
-			b.append(" value32=\"");
-			b.append(Long.toHexString(value.getValue32()));
-			b.append("\"");
-		}
+        if (value.hasDifferent32BitValue()) {
+            b.append(" value32=\"");
+            b.append(Long.toHexString(value.getValue32()));
+            b.append("\"");
+        }
 
-		b.append(" />");
+        b.append(" />");
 
-		return b.toString();
-	}
+        return b.toString();
+    }
 }

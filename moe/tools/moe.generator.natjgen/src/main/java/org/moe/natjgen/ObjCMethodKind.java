@@ -17,18 +17,18 @@ limitations under the License.
 package org.moe.natjgen;
 
 public enum ObjCMethodKind {
-	/**
-	 * Method kind, class or instance
-	 */
-	METHOD,
+    /**
+     * Method kind, class or instance
+     */
+    METHOD,
 
-	/**
-	 * Property getter method kind
-	 */
-	PROPERTY_GETTER,
+    /**
+     * Property getter method kind
+     */
+    PROPERTY_GETTER,
 
-	/**
-	 * Property setter method kind
-	 */
-	PROPERTY_SETTER
+    /**
+     * Property setter method kind
+     */
+    PROPERTY_SETTER
 }

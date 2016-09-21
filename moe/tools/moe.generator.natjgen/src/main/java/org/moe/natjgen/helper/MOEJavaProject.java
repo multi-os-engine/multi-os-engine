@@ -16,34 +16,34 @@ limitations under the License.
 
 package org.moe.natjgen.helper;
 
-import java.io.File;
-
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 
+import java.io.File;
+
 public class MOEJavaProject {
 
-	private String name;
+    private String name;
 
-	private IPath location;
+    private IPath location;
 
-	public MOEJavaProject(String name, String location) {
-		this.location = new Path(location + File.separator + name);
-		this.name = name;
-	}
+    public MOEJavaProject(String name, String location) {
+        this.location = new Path(location + File.separator + name);
+        this.name = name;
+    }
 
-	public IPath getLocation() {
-		return location;
-	}
+    public IPath getLocation() {
+        return location;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void refreshLocal(int depthInfinite, IProgressMonitor monitor) {
-		// TODO Auto-generated method stub
+    public void refreshLocal(int depthInfinite, IProgressMonitor monitor) {
+        // TODO Auto-generated method stub
 
-	}
+    }
 
 }

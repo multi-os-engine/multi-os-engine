@@ -17,53 +17,52 @@ limitations under the License.
 package org.moe.natjgen.test.c_enums;
 
 import org.eclipse.jdt.core.dom.FieldDeclaration;
-
 import org.moe.natjgen.Constants;
 
 public class ULongEnum extends AbstractCEnumTest {
 
-	@Override
-	protected String getNativeAnnotation() {
-		return Constants.NUIntAnnotationFQ;
-	}
+    @Override
+    protected String getNativeAnnotation() {
+        return Constants.NUIntAnnotationFQ;
+    }
 
-	@Override
-	protected String getType() {
-		return "long";
-	}
+    @Override
+    protected String getType() {
+        return "long";
+    }
 
-	@Override
-	protected String getZeroValue() {
-		return "0x0000000000000000L";
-	}
+    @Override
+    protected String getZeroValue() {
+        return "0x0000000000000000L";
+    }
 
-	@Override
-	protected String getOneValue() {
-		return "0x0000000000000001L";
-	}
+    @Override
+    protected String getOneValue() {
+        return "0x0000000000000001L";
+    }
 
-	@Override
-	protected String getMinValue() {
-		return "0x0000000000000000L";
-	}
+    @Override
+    protected String getMinValue() {
+        return "0x0000000000000000L";
+    }
 
-	@Override
-	protected String getMaxValue() {
-		return "0xFFFFFFFFFFFFFFFFL";
-	}
+    @Override
+    protected String getMaxValue() {
+        return "0xFFFFFFFFFFFFFFFFL";
+    }
 
-	@Override
-	protected String getMaxValue2() {
-		return "0x00000000FFFFFFFFL";
-	}
+    @Override
+    protected String getMaxValue2() {
+        return "0x00000000FFFFFFFFL";
+    }
 
-	@Override
-	public void test_diff() {
-		FieldDeclaration field = getField(diff_name);
-		assertExistsAndGenerated(field);
-		assertPrimitiveType(field.getType(), getType());
+    @Override
+    public void test_diff() {
+        FieldDeclaration field = getField(diff_name);
+        assertExistsAndGenerated(field);
+        assertPrimitiveType(field.getType(), getType());
 
-		assertInitialValue(field, null, "0x5555555555555555L", null, "0x00000000AAAAAAAAL", null);
-	}
+        assertInitialValue(field, null, "0x5555555555555555L", null, "0x00000000AAAAAAAAL", null);
+    }
 
 }

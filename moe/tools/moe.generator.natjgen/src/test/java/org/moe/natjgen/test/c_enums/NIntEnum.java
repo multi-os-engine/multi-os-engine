@@ -17,7 +17,7 @@ limitations under the License.
 package org.moe.natjgen.test.c_enums;
 
 public class NIntEnum extends LongEnum {
-	/*
-	 * The class body is empty but THIS IS NOT A NO_OP TEST!!!
+    /*
+     * The class body is empty but THIS IS NOT A NO_OP TEST!!!
 	 */
 }

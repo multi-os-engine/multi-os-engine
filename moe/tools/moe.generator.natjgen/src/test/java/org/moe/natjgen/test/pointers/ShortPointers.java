@@ -17,8 +17,8 @@ limitations under the License.
 package org.moe.natjgen.test.pointers;
 
 public class ShortPointers extends AbstractPointersTest {
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp(Short.class.getSimpleName(), "short", "ShortPtr", "ConstShortPtr");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp(Short.class.getSimpleName(), "short", "ShortPtr", "ConstShortPtr");
+    }
 }

@@ -17,8 +17,8 @@ limitations under the License.
 package org.moe.natjgen.test.pointers;
 
 public class FloatPointers extends AbstractPointersTest {
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp(Float.class.getSimpleName(), "float", "FloatPtr", "ConstFloatPtr");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp(Float.class.getSimpleName(), "float", "FloatPtr", "ConstFloatPtr");
+    }
 }

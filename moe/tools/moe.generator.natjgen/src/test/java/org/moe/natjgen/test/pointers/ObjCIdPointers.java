@@ -20,19 +20,19 @@ import org.moe.natj.objc.ObjCObject;
 
 public class ObjCIdPointers extends AbstractPointersTest {
 
-	@Override
-	protected void optionalIgnore() {
-		assumeHasControlMethod_HasObjC();
-	}
+    @Override
+    protected void optionalIgnore() {
+        assumeHasControlMethod_HasObjC();
+    }
 
-	@Override
-	protected void setUp() throws Exception {
-		String name = ObjCObject.class.getSimpleName();
-		super.setUp(name, "id", "Ptr<" + name + ">", "ConstPtr<" + name + ">");
-	}
+    @Override
+    protected void setUp() throws Exception {
+        String name = ObjCObject.class.getSimpleName();
+        super.setUp(name, "id", "Ptr<" + name + ">", "ConstPtr<" + name + ">");
+    }
 
-	@Override
-	protected boolean baseTypeIsPrimitive() {
-		return false;
-	}
+    @Override
+    protected boolean baseTypeIsPrimitive() {
+        return false;
+    }
 }

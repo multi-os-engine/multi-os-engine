@@ -16,6 +16,9 @@ limitations under the License.
 
 package org.moe.natjgen.helper;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -24,54 +27,51 @@ import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class MOEICompilationUnit {
 
-	/**
-	 * Logger for this class
-	 */
-	private static final Logger LOG = LoggerFactory.getLogger(MOEICompilationUnit.class);
+    /**
+     * Logger for this class
+     */
+    private static final Logger LOG = LoggerFactory.getLogger(MOEICompilationUnit.class);
 
-	private String source;
+    private String source;
 
-	private String location;
+    private String location;
 
-	public void save() {
-		Writer out = null;
-		try {
-			out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(location), "UTF-8"));
-		} catch (FileNotFoundException e) {
-			LOG.error("Unable save" + location, e);
-		} catch (UnsupportedEncodingException e) {
-			LOG.error("Unable save" + location, e);
-		}
-		try {
-			out.write(source);
-		} catch (IOException e) {
-			LOG.error("Unable save java file", e);
-		} finally {
-			try {
-				if (out != null) {
-					out.close();
-				}
-			} catch (IOException e) {
-				LOG.error("Unable close Writer", e);
-			}
-		}
-	}
+    public void save() {
+        Writer out = null;
+        try {
+            out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(location), "UTF-8"));
+        } catch (FileNotFoundException e) {
+            LOG.error("Unable save" + location, e);
+        } catch (UnsupportedEncodingException e) {
+            LOG.error("Unable save" + location, e);
+        }
+        try {
+            out.write(source);
+        } catch (IOException e) {
+            LOG.error("Unable save java file", e);
+        } finally {
+            try {
+                if (out != null) {
+                    out.close();
+                }
+            } catch (IOException e) {
+                LOG.error("Unable close Writer", e);
+            }
+        }
+    }
 
-	public void setSource(String newSource) {
-		this.source = newSource;
-	}
+    public void setSource(String newSource) {
+        this.source = newSource;
+    }
 
-	public String getSource() {
-		return source;
-	}
+    public String getSource() {
+        return source;
+    }
 
-	public void setLocation(String path) {
-		this.location = path;
-	}
+    public void setLocation(String path) {
+        this.location = path;
+    }
 
 }

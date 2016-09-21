@@ -18,32 +18,30 @@ package org.moe.natjgen;
 
 public final class JavaRestrictions {
 
-	/**
-	 * An array of special names reserved by Java
-	 */
-	private static final String javaReserved[] = new String[] {
-			"abstract", "assert", "boolean", "break", "byte", "case", "catch", "char", "class", "const", "continue",
-			"default", "do", "double", "else", "enum", "extends", "final", "finally", "float", "for", "finalize",
-			"goto", "if", "implements", "import", "instanceof", "int", "interface", "load", "long", "native", "new",
-			"notify", "notifyAll", "null", "package", "private", "protected", "public", "return", "short", "static",
-			"strictfp", "super", "switch", "synchronized", "this", "throw", "throws", "transient", "try", "void",
-			"volatile", "wait", "while"
-	};
+    /**
+     * An array of special names reserved by Java
+     */
+    private static final String javaReserved[] = new String[] { "abstract", "assert", "boolean", "break", "byte",
+            "case", "catch", "char", "class", "const", "continue", "default", "do", "double", "else", "enum", "extends",
+            "final", "finally", "float", "for", "finalize", "goto", "if", "implements", "import", "instanceof", "int",
+            "interface", "load", "long", "native", "new", "notify", "notifyAll", "null", "package", "private",
+            "protected", "public", "return", "short", "static", "strictfp", "super", "switch", "synchronized", "this",
+            "throw", "throws", "transient", "try", "void", "volatile", "wait", "while"
+    };
 
-	/**
-	 * Tells whether the given name is reserved by Java or not
-	 * 
-	 * @param name
-	 *            the name to check
-	 * @return true if reserved otherwise false
-	 */
-	public static boolean isReserved(String name) {
-		for (String res : javaReserved) {
-			if (res.equals(name)) {
-				return true;
-			}
-		}
-		return false;
-	}
+    /**
+     * Tells whether the given name is reserved by Java or not
+     *
+     * @param name the name to check
+     * @return true if reserved otherwise false
+     */
+    public static boolean isReserved(String name) {
+        for (String res : javaReserved) {
+            if (res.equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

@@ -18,55 +18,55 @@ package org.moe.natjgen;
 
 public class COpaquePtrImplManager {
 
-	private final AbstractUnitManager manager;
+    private final AbstractUnitManager manager;
 
-	public COpaquePtrImplManager(AbstractUnitManager manager) {
-		if (manager == null) {
-			throw new IllegalArgumentException();
-		}
+    public COpaquePtrImplManager(AbstractUnitManager manager) {
+        if (manager == null) {
+            throw new IllegalArgumentException();
+        }
 
-		this.manager = manager;
-	}
+        this.manager = manager;
+    }
 
-	public final String getName() {
-		return "Impl";
-	}
+    public final String getName() {
+        return "Impl";
+    }
 
-	public final void update(ClassMemberEditor cme) throws GeneratorException {
-		if (cme.getManager() != manager) {
-			return;
-		}
+    public final void update(ClassMemberEditor cme) throws GeneratorException {
+        if (cme.getManager() != manager) {
+            return;
+        }
 
-		ClassEditor editor = cme.getBlockClass(getName());
+        ClassEditor editor = cme.getBlockClass(getName());
 
-		if (editor != null && editor.isEditable()) {
-			editor.setClass();
-			editor.setClassName(getName());
-			editor.setSuperClass(manager.addImport(Constants.OpaquePtrImplFQ));
-			editor.setInterfaces(manager.getUnitName());
+        if (editor != null && editor.isEditable()) {
+            editor.setClass();
+            editor.setClassName(getName());
+            editor.setSuperClass(manager.addImport(Constants.OpaquePtrImplFQ));
+            editor.setInterfaces(manager.getUnitName());
 
-			ModifierEditor modifiers = editor.getModifiers();
-			modifiers.setGenerated();
+            ModifierEditor modifiers = editor.getModifiers();
+            modifiers.setGenerated();
 
-			editor.close();
-		}
+            editor.close();
+        }
 
-		Type pointerCAT = new Type(Constants.PointerFQ, true);
-		String pointerCAN = "peer";
-		ConstructorEditor pointerC = editor.getMemberEditor().setConstructor(pointerCAT);
-		if (pointerC != null && pointerC.isEditable()) {
-			pointerC.setName(getName());
-			pointerC.getModifiers().setProtected();
-			pointerC.getModifiers().setGenerated();
-			pointerC.setArgumentCount(1);
-			pointerC.setArgument(0, pointerCAN, pointerCAT, TypeResolver.PRIMITIVE_RESOLVER);
-			pointerC.setBodyAsSuperInitWithPointerAsArg(pointerCAN);
-			pointerC.close();
-		}
-	}
+        Type pointerCAT = new Type(Constants.PointerFQ, true);
+        String pointerCAN = "peer";
+        ConstructorEditor pointerC = editor.getMemberEditor().setConstructor(pointerCAT);
+        if (pointerC != null && pointerC.isEditable()) {
+            pointerC.setName(getName());
+            pointerC.getModifiers().setProtected();
+            pointerC.getModifiers().setGenerated();
+            pointerC.setArgumentCount(1);
+            pointerC.setArgument(0, pointerCAN, pointerCAT, TypeResolver.PRIMITIVE_RESOLVER);
+            pointerC.setBodyAsSuperInitWithPointerAsArg(pointerCAN);
+            pointerC.close();
+        }
+    }
 
-	public final AbstractUnitManager getManager() {
-		return manager;
-	}
+    public final AbstractUnitManager getManager() {
+        return manager;
+    }
 
 }

@@ -18,13 +18,13 @@ package org.moe.natjgen.cli.exceptions;
 
 public class UnsupportedTypeException extends WrapNatJGenException {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -638814131428407695L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = -638814131428407695L;
 
-	public UnsupportedTypeException(String string) {
-		super(string);
-	}
+    public UnsupportedTypeException(String string) {
+        super(string);
+    }
 
 }

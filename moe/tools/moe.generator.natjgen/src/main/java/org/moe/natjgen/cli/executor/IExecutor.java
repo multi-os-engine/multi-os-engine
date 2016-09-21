@@ -16,29 +16,20 @@ limitations under the License.
 
 package org.moe.natjgen.cli.executor;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.security.spec.InvalidParameterSpecException;
-
-import javax.management.OperationsException;
-
 import org.apache.commons.compress.archivers.ArchiveException;
 import org.apache.commons.compress.compressors.CompressorException;
-
 import org.moe.natjgen.cli.exceptions.CheckArchitectureException;
 import org.moe.natjgen.cli.exceptions.UnsupportedTypeException;
 import org.moe.natjgen.cli.exceptions.WrapNatJGenException;
 
+import javax.management.OperationsException;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.security.spec.InvalidParameterSpecException;
+
 public interface IExecutor {
-	public void execute() throws //TODO: Special exceptions
-	IOException, 
-	URISyntaxException, 
-	InterruptedException, 
-	CheckArchitectureException, 
-	OperationsException, 
-	InvalidParameterSpecException, 
-	CompressorException, 
-	ArchiveException, 
-	UnsupportedTypeException, 
-	WrapNatJGenException;
+    public void execute() throws //TODO: Special exceptions
+            IOException, URISyntaxException, InterruptedException, CheckArchitectureException, OperationsException,
+            InvalidParameterSpecException, CompressorException, ArchiveException, UnsupportedTypeException,
+            WrapNatJGenException;
 }

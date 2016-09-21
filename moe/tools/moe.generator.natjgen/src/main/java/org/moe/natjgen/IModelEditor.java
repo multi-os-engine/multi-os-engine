@@ -20,110 +20,98 @@ import org.clang.struct.CXIdxDeclInfo;
 
 interface IModelEditor {
 
-	/**
-	 * Process declaration of an Objective-C class
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processObjCClass(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of an Objective-C class
+     *
+     * @param decl declaration
+     */
+    void processObjCClass(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of an Objective-C category
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processObjCCategory(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of an Objective-C category
+     *
+     * @param decl declaration
+     */
+    void processObjCCategory(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of an Objective-C protocol
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processObjCProtocol(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of an Objective-C protocol
+     *
+     * @param decl declaration
+     */
+    void processObjCProtocol(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of an Objective-C instance/class method
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processObjCMethod(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of an Objective-C instance/class method
+     *
+     * @param decl declaration
+     */
+    void processObjCMethod(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of an Objective-C property
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processObjCProperty(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of an Objective-C property
+     *
+     * @param decl declaration
+     */
+    void processObjCProperty(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of a C struct
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processStruct(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of a C struct
+     *
+     * @param decl declaration
+     */
+    void processStruct(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of a C struct's field
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processField(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of a C struct's field
+     *
+     * @param decl declaration
+     */
+    void processField(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of a C enum
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processEnum(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of a C enum
+     *
+     * @param decl declaration
+     */
+    void processEnum(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of a C enum's constant
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processEnumConstant(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of a C enum's constant
+     *
+     * @param decl declaration
+     */
+    void processEnumConstant(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of a C function
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processFunction(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of a C function
+     *
+     * @param decl declaration
+     */
+    void processFunction(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of a C global variable
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processVariable(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of a C global variable
+     *
+     * @param decl declaration
+     */
+    void processVariable(CXIdxDeclInfo decl);
 
-	/**
-	 * Process declaration of typedef
-	 * 
-	 * @param decl
-	 *            declaration
-	 */
-	void processTypedef(CXIdxDeclInfo decl);
+    /**
+     * Process declaration of typedef
+     *
+     * @param decl declaration
+     */
+    void processTypedef(CXIdxDeclInfo decl);
 
-	/**
-	 * Call this before any processing.
-	 */
-	void preProcess();
+    /**
+     * Call this before any processing.
+     */
+    void preProcess();
 
-	/**
-	 * Call this after any processing.
-	 */
-	void postProcess();
+    /**
+     * Call this after any processing.
+     */
+    void postProcess();
 
 }
